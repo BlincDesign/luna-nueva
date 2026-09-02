@@ -1,0 +1,377 @@
+{%- comment -%}
+  Product Detail List
+  ------------------------------------------------------------
+  Merchant picks a list of products in the theme editor.
+  Each card pulls:
+    - title, description, background color, image  → product.metafields.custom.product_details (metaobject reference)
+    - origin, agave, additives, rested, body, nom   → product metafields (namespace: custom)
+{%- endcomment -%}
+
+<div
+  class="pdl"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="pdl__header">
+    <div class="pdl__heading-group">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="pdl__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="pdl__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.right_text != blank -%}
+      <a href="{{ section.settings.right_link | default: '#' }}" class="pdl__right">
+        {{ section.settings.right_text }}
+        <span aria-hidden="true">→</span>
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="pdl__grid">
+    {%- for product in section.settings.products -%}
+      {%- liquid
+        assign details = product.metafields.custom.product_details.value
+        assign bg_color = details.background.value | default: '#D9C7A6'
+
+        assign category_label = product.metafields.custom.category.value | default: product.type
+        assign origin = product.metafields.custom.origin.value
+        assign agave = product.metafields.custom.agave.value
+        assign additives = product.metafields.custom.additives.value
+        assign rested = product.metafields.custom.rested.value
+        assign body_field = product.metafields.custom.body.value
+        assign nom = product.metafields.custom.nom.value
+
+        assign abv = product.metafields.custom.abv.value
+        assign proof = product.metafields.custom.proof.value
+        assign net_content = product.metafields.custom.net_content.value
+      -%}
+
+      <div class="pdc" style="--pdc-bg: {{ bg_color }};">
+        <div class="pdc__arch">
+          {%- if details.image != blank -%}
+            {{
+              details.image
+              | image_url: width: 800
+              | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: details.title
+            }}
+          {%- elsif product.featured_image != blank -%}
+            {{
+              product.featured_image
+              | image_url: width: 800
+              | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
+            }}
+          {%- endif -%}
+        </div>
+
+        <div class="pdc__body">
+          <h3 class="pdc__title">{{ details.title | default: product.title }}</h3>
+
+          {%- if details.description != blank -%}
+            <p class="pdc__desc">{{ details.description }}</p>
+          {%- endif -%}
+
+          <div class="pdc__table">
+            {%- if category_label != blank or origin != blank -%}
+              <div class="pdc__row pdc__row--lead">
+                <span class="pdc__label pdc__label--strong">{{ category_label }}</span>
+                {%- if origin != blank -%}
+                  <span class="pdc__value">ORIGIN · {{ origin }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            {%- if agave != blank -%}
+              <div class="pdc__row">
+                <span class="pdc__label">Agave</span>
+                <span class="pdc__value">{{ agave }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if additives != blank -%}
+              <div class="pdc__row">
+                <span class="pdc__label">Additives</span>
+                <span class="pdc__value">{{ additives }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if rested != blank -%}
+              <div class="pdc__row">
+                <span class="pdc__label">Rested</span>
+                <span class="pdc__value">{{ rested }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if body_field != blank -%}
+              <div class="pdc__row">
+                <span class="pdc__label">Body</span>
+                <span class="pdc__value">{{ body_field }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if nom != blank -%}
+              <div class="pdc__row">
+                <span class="pdc__label">NOM</span>
+                <span class="pdc__value">{{ nom }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if abv != blank or proof != blank or net_content != blank -%}
+              <div class="pdc__row pdc__row--foot">
+                <span class="pdc__foot">
+                  {%- if abv != blank -%}{{ abv }}% ALC/VOL{%- endif -%}
+                  {%- if abv != blank and proof != blank -%}·{%- endif -%}
+                  {%- if proof != blank -%}{{ proof }} PROOF{%- endif -%}
+                </span>
+                {%- if net_content != blank -%}
+                  <span class="pdc__foot">CONT NET {{ net_content }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <a href="{{ product.url }}" class="pdc__explore">Explore <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    {%- else -%}
+      <p class="pdl__empty">Select products in the section settings to display them here.</p>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .pdl__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 0 24px;
+  }
+
+  .pdl__title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 8px;
+    color: #1a1a1a;
+  }
+
+  .pdl__subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #5c5c5c;
+    margin: 0;
+    max-width: 480px;
+  }
+
+  .pdl__right {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+
+  .pdl__right:hover {
+    opacity: 0.7;
+  }
+
+  .pdl__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .pdl__empty {
+    color: #7a7a7a;
+    font-size: 14px;
+  }
+
+  .pdc {
+    background: #b9c4bb;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: inherit;
+  }
+
+  .pdc__arch {
+    background: var(--pdc-bg);
+    border-radius: 200px 200px 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px 24px 0;
+    min-height: 300px;
+  }
+
+  .pdc__bottle {
+    max-height: 280px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .pdc__body {
+    padding: 28px 24px 24px;
+  }
+
+  .pdc__title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 10px;
+    color: #1a1a1a;
+  }
+
+  .pdc__desc {
+    color: #5c5c5c;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+
+  .pdc__table {
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .pdc__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .pdc__row--lead {
+    padding: 11px 0;
+  }
+
+  .pdc__label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a7a7a;
+  }
+
+  .pdc__label--strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .pdc__value {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: right;
+  }
+
+  .pdc__row--foot {
+    border-top: none;
+  }
+
+  .pdc__foot {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #5c5c5c;
+  }
+
+  .pdc__explore {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+  }
+
+  .pdc__explore:hover {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 749px) {
+    .pdl__title { font-size: 26px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Detail List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Selection"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "right_text",
+      "label": "Right-side link text",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "right_link",
+      "label": "Right-side link URL"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products",
+      "limit": 12
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Detail List"
+    }
+  ]
+}
+{% endschema %}
