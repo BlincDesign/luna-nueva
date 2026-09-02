@@ -299,7 +299,7 @@
         "label": "t:settings_schema.typography.settings.type_header_base_size.label",
         "default": 32,
         "min": 22,
-        "max": 60,
+        "max": 70,
         "unit": "px"
       },
       {
