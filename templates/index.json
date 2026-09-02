@@ -35,8 +35,7 @@
       "type": "custom__product-details",
       "name": "Product Detail List",
       "settings": {
-        "heading": "Our Selection",
-        "subtitle": "",
+        "heading": "Three Expressions",
         "right_text": "View all",
         "right_link": "",
         "products": [
