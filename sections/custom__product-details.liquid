@@ -156,7 +156,7 @@
         assign details = product.metafields.custom.product_details.value
         assign bg_color = details.background.value | default: '#D9C7A6'
 
-        assign category_label = product.metafields.custom.category.value | default: product.type
+        assign category_label = product.type
         assign origin = product.metafields.custom.origin.value
         assign agave = product.metafields.custom.agave.value
         assign additives = product.metafields.custom.additives.value
