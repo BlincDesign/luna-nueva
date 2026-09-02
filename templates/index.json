@@ -47,11 +47,19 @@
             "enlarge_text": true,
             "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>"
           }
+        },
+        "button_c7KAPk": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "text",
+        "button_c7KAPk"
       ],
       "settings": {
         "align_text": "center",
