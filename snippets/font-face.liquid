@@ -13,4 +13,29 @@
   {{ base_font_bold | font_face: font_display: 'swap' }}
   {{ base_font_italic | font_face: font_display: 'swap' }}
   {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+
+
+  @font-face {
+    font-family: 'Averia Serif Libre';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('{{ 'https://cdn.shopify.com/s/files/1/0737/8619/6244/files/AveriaSerifLibre-Light.woff2?v=1788372376' | asset_url }}') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Averia Serif Libre';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('{{ 'https://cdn.shopify.com/s/files/1/0737/8619/6244/files/AveriaSerifLibre-Regular.woff2?v=1788372376' | asset_url }}') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Averia Serif Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('{{ 'https://cdn.shopify.com/s/files/1/0737/8619/6244/files/AveriaSerifLibre-Bold.woff2?v=1788372376' | asset_url }}') format('woff2');
+  }
 {%- endstyle -%}
