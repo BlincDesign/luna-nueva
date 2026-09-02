@@ -233,7 +233,7 @@
         "type": "text",
         "id": "custom_header_font_filename",
         "label": "Custom heading font file name",
-        "info": "Enter the file name without the .woff2 extension."
+        "info": "Enter the font file name. This overrides the heading and body font selectors."
       },
       {
         "type": "font_picker",
@@ -335,7 +335,7 @@
         "type": "text",
         "id": "custom_base_font_filename",
         "label": "Custom body font file name",
-        "info": "Enter the file name without the .woff2 extension."
+        "info": "Enter the font file name. This overrides the heading and body font selectors."
       },
       {
         "type": "font_picker",
