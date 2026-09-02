@@ -173,6 +173,7 @@
 .mobile-nav__link.mobile-nav__link--heading {
   font-size: 30px !important;
   position: relative;
+  font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
 }
 
 .mobile-nav__link.mobile-nav__link--heading:after {
@@ -260,3 +261,4 @@
     padding: 15px 0;
   }
 }
+
