@@ -36,6 +36,7 @@
       "name": "Product Detail List",
       "settings": {
         "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
         "right_text": "View all",
         "right_link": "",
         "products": [
