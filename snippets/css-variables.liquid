@@ -1,13 +1,13 @@
 {%- style -%}
   :root {
-    --typeHeaderPrimary: {{ settings.type_header_font_family.family }};
+    --typeHeaderPrimary: {% if custom_header_font_filename != blank %}'{{ custom_header_font_filename }}'{% else %}{{ settings.type_header_font_family.family }}{% endif %};
     --typeHeaderFallback: {{ settings.type_header_font_family.fallback_families }};
     --typeHeaderSize: {{ settings.type_header_base_size | default: '32' | append: 'px' }};
     --typeHeaderWeight: {{ settings.type_header_font_family.weight }};
     --typeHeaderLineHeight: {{ settings.type_header_line_height | default: 1.4 }};
     --typeHeaderSpacing: {{ settings.type_header_spacing | default: '25' | divided_by: 1000.00 | append: 'em' }};
 
-    --typeBasePrimary:{{ settings.type_base_font_family.family }};
+    --typeBasePrimary:{% if custom_base_font_filename != blank %} '{{ custom_base_font_filename }}'{% else %}{{ settings.type_base_font_family.family }}{% endif %};
     --typeBaseFallback:{{ settings.type_base_font_family.fallback_families }};
     --typeBaseSize: {{ settings.type_base_size | default: '16' | append: 'px' }};
     --typeBaseWeight: {{ settings.type_base_font_family.weight }};
