@@ -63,12 +63,6 @@
         "default": "#ffffff"
       },
       {
-        "type": "color",
-        "id": "color_cart_dot",
-        "label": "t:settings_schema.colors.settings.color_cart_dot.label",
-        "default": "#ff4f33"
-      },
-      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header_header"
       },
