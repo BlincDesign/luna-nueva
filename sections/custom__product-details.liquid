@@ -105,7 +105,7 @@
 {% endstyle %}
 
 <div
-  class="product-details__list page-width"
+  class="page-width"
 >
   <div class="pdl__header">
     <div class="pdl__heading-group">
@@ -125,7 +125,7 @@
     {%- endif -%}
   </div>
 
-  <div class="pdl__grid">
+  <div class="product-details__list pdl__grid">
     {%- for product in section.settings.products -%}
       {%- liquid
         assign details = product.metafields.custom.product_details.value
@@ -239,6 +239,7 @@
 {% schema %}
 {
   "name": "Product Detail List",
+  "class": "section--scheme-secondary",
   "settings": [
     {
       "type": "text",
