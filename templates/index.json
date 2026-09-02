@@ -31,6 +31,23 @@
         "lazyload_images": true
       }
     },
+    "custom_product_details_JbJXVn": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "heading": "Our Selection",
+        "subtitle": "",
+        "right_text": "View all",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver-1",
+          "luna-nueva-silver",
+          "luna-nueva-reposado"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -118,6 +135,7 @@
   },
   "order": [
     "text_and_image_zBb9nf",
+    "custom_product_details_JbJXVn",
     "rich-text",
     "featured-collection-switcher",
     "newsletter"
