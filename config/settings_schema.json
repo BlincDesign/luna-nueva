@@ -230,6 +230,12 @@
         "content": "t:settings_schema.typography.settings.header_headings"
       },
       {
+        "type": "text",
+        "id": "custom_header_font_filename",
+        "label": "Custom heading font file name",
+        "info": "Enter the file name without the .woff2 extension."
+      },
+      {
         "type": "font_picker",
         "id": "type_header_font_family",
         "label": "t:settings_schema.typography.settings.type_header_font_family.label",
@@ -324,6 +330,12 @@
       {
         "type": "header",
         "content": "t:settings_schema.typography.settings.header_body_text"
+      },
+      {
+        "type": "text",
+        "id": "custom_base_font_filename",
+        "label": "Custom body font file name",
+        "info": "Enter the file name without the .woff2 extension."
       },
       {
         "type": "font_picker",
