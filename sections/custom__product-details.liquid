@@ -1,105 +1,107 @@
 {% style %}
-#shopify-section-{{ section.id }} .site-footer{
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-}
-
-@media only screen and (max-width:589px){
-  #shopify-section-{{ section.id }} .site-footer{
-      padding-top: {{ section.settings.padding_top_mb }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-  }
-}
-
-
-  .pdl__header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 38px;
+  #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
   }
 
-  .pdl__right {
-    font-weight: 700;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 2px;
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
   }
 
-  .pdl__grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
 
-  .pdl__grid .pdc {
-    flex: 1;
-  }
+    .pdl__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+    }
 
-  .pdc__arch {
-    background: var(--pdc-bg);
-    border-radius: 300px 300px 0 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 70px 24px 0px;
-    margin-bottom: 24px;
-  }
+    .pdl__right {
+      font-weight: 700;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2px;
+    }
 
-  .pdc__bottle {
-    max-height: 530px;
-    width: auto;
-  }
+    .pdl__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
 
-  .pdc__title {
-    font-size: 48px;
-    margin-bottom: 10px;
-  }
+    .pdl__grid .pdc {
+      flex: 1;
+    }
 
-  .pdc__desc {
-    margin-bottom: 14px;
-  }
+    .pdc__arch {
+      background: var(--pdc-bg);
+      border-radius: 300px 300px 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 70px 24px 0px;
+      margin-bottom: 24px;
+    }
 
-  .pdc__table {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
+    .pdc__bottle {
+      max-height: 530px;
+      width: auto;
+    }
 
-  .pdc__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    font-size: 11px;
-    text-transform: uppercase;
-  }
+    .pdc__title {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
 
-  .pdc__row--lead {
-    padding: 11px 0;
-  }
+    .pdc__desc {
+      margin-bottom: 14px;
+      max-width: 250px;
+    }
 
-  .pdc__value {
-    font-weight: 700;
-  }
+    .pdc__table {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
 
-  .pdc__explore {
-    display: inline-block;
-    margin-top: 18px;
-    font-weight: 700;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 2px;
-  }
+    .pdc__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
 
-  .pdc__explore:hover {
-    opacity: 0.7;
-  }
+    .pdc__row--lead {
+      padding: 11px 0;
+    }
 
-  .pdl__empty {
-    color: #7a7a7a;
-    font-size: 14px;
-  }
+    .pdc__value {
+      font-weight: 700;
+    }
+
+    .pdc__explore {
+      display: inline-block;
+      margin-top: 18px;
+      font-weight: 700;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2px;
+    }
+
+    .pdc__explore:hover {
+      opacity: 0.7;
+    }
+
+    .pdl__empty {
+      color: #7a7a7a;
+      font-size: 14px;
+    }
 {% endstyle %}
 
 <div
@@ -266,7 +268,16 @@
       "label": "Products",
       "limit": 12
     },
-    { "type": "header", "content": "Desktop spacing" },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -287,9 +298,9 @@
       "unit": "px",
       "default": 40
     },
-    { 
-        "type": "header", 
-        "content": "Mobile spacing"
+    {
+      "type": "header",
+      "content": "Mobile spacing"
     },
     {
       "type": "range",
