@@ -1,1 +1,117 @@
-{"sections":{"text_and_image_zBb9nf":{"type":"text-and-image","name":"t:sections.text-and-image.presets.image_with_text.name","settings":{"image":"shopify:\/\/shop_images\/hero-raised.jpg","image_mask":"square","image2_mask":"none","subtitle":"100% Blue Weber Agave · Additive-Free","title":"","text":"<h1>Born in the Mountains.<br\/>Made for the Sea.<br\/>Guided by the Moon.<\/h1>","button_label":"","button_link":"","button_style":"primary","align_text":"left","image_width":"66","layout":"right","divider":false,"top_padding":true,"bottom_padding":true,"lazyload_images":true}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","disabled":true,"settings":{"title":"Rich text"}},"text":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.<\/p>"}}},"block_order":["heading","text"],"settings":{"align_text":"center","narrow_column":true,"divider":false}},"featured-collection-switcher":{"type":"featured-collection-switcher","settings":{"title":"Our Products","collection1":"blanco","collection2":"","per_row":2,"view_all":false,"divider":false}},"newsletter":{"type":"newsletter","blocks":{"title":{"type":"title","settings":{"title":"Sign Up for Our Newsletter","heading_size":"h2"}},"text":{"type":"text","settings":{"text":"<p>Subscribe to learn about Luna Nueva events, special offers, giveaways, and recipes.<\/p>"}},"form":{"type":"form","settings":{}}},"block_order":["title","text","form"],"settings":{"align_text":"center","image_width":"33","image_mask":"none","image_position":"right","color_background":"#f9f9f9","color_text":"#1c1d1d","top_padding":true,"bottom_padding":true}}},"order":["text_and_image_zBb9nf","rich-text","featured-collection-switcher","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "text_and_image_zBb9nf": {
+      "type": "text-and-image",
+      "name": "t:sections.text-and-image.presets.image_with_text.name",
+      "settings": {
+        "image": "shopify://shop_images/hero-raised.jpg",
+        "image_mask": "square",
+        "image2_mask": "none",
+        "subtitle": "100% Blue Weber Agave · Additive-Free",
+        "title": "",
+        "text": "<h1>Born in the Mountains.<br/>Made for the Sea.<br/>Guided by the Moon.</h1>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "66",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Rich text"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "featured-collection-switcher": {
+      "type": "featured-collection-switcher",
+      "settings": {
+        "title": "Our Products",
+        "collection1": "blanco",
+        "collection2": "",
+        "per_row": 3,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "Sign Up for Our Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Subscribe to learn about Luna Nueva events, special offers, giveaways, and recipes.</p>"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "text",
+        "form"
+      ],
+      "settings": {
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d",
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    }
+  },
+  "order": [
+    "text_and_image_zBb9nf",
+    "rich-text",
+    "featured-collection-switcher",
+    "newsletter"
+  ]
+}
