@@ -1,13 +1,106 @@
+{% style %}
+.pdl__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+.pdl__right {
+  font-weight: 700;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 2px;
+}
+
+.pdl__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.pdl__grid .pdc {
+  flex: 1;
+}
+
+.pdc__arch {
+  background: var(--pdc-bg);
+  border-radius: 300px 300px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 70px 24px 0px;
+  margin-bottom: 24px;
+}
+
+.pdc__bottle {
+  max-height: 530px;
+  width: auto;
+}
+
+.pdc__title {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.pdc__desc {
+  margin-bottom: 14px;
+}
+
+.pdc__table {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.pdc__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.pdc__row--lead {
+  padding: 11px 0;
+}
+
+.pdc__value {
+  font-weight: 700;
+}
+
+.pdc__explore {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 2px;
+}
+
+.pdc__explore:hover {
+  opacity: 0.7;
+}
+
+.pdl__empty {
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+{% endstyle %}
+
+
 <div
   class="product-details__list page-width"
 >
   <div class="pdl__header">
     <div class="pdl__heading-group">
       {%- if section.settings.preheading != blank -%}
-        <p>{{ section.settings.preheading }}</p>
+        <p class="subheading ">{{ section.settings.preheading }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2>{{ section.settings.heading }}</h2>
+        <h2 class="heading rte">{{ section.settings.heading }}</h2>
       {%- endif -%}
     </div>
 
@@ -65,7 +158,7 @@
           <div class="pdc__table">
             {%- if category_label != blank or origin != blank -%}
               <div class="pdc__row pdc__row--lead">
-                <span class="pdc__label pdc__label--strong">{{ category_label }}</span>
+                <span class="pdc__label">{{ category_label }}</span>
                 {%- if origin != blank -%}
                   <span class="pdc__value">ORIGIN · {{ origin }}</span>
                 {%- endif -%}
@@ -129,6 +222,7 @@
     {%- endfor -%}
   </div>
 </div>
+
 
 {% schema %}
 {
