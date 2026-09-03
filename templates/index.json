@@ -175,6 +175,7 @@
           "settings": {
             "title": "Get invited to the next one.",
             "heading_size": "h1",
+            "text_width": 720,
             "margin_bottom": 17
           }
         },
@@ -182,7 +183,6 @@
           "type": "text",
           "settings": {
             "text": "<h5>Events, new releases, and the occasional recipe worth making.</h5>",
-            "font_size": 28,
             "text_width": 660,
             "margin_bottom": 36
           }
