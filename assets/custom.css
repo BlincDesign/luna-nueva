@@ -1,3 +1,20 @@
+.background-image {
+    position: relative;
+}
+
+.background-image:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+    background-repeat: repeat;
+    opacity: .42;
+    mix-blend-mode: soft-light;
+}
+
+
 /* Header Start and Navigation */
 
 .site-header.header--fixed {

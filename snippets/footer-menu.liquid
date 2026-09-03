@@ -1,16 +1,16 @@
 {% if linklists[block.settings.menu].links.size > 0 %}
   {% if block.settings.show_footer_title %}
-    <h2 class="footer__title small--hide">
+    <h2 class="footer__title">
       {{ linklists[block.settings.menu].title }}
     </h2>
-    <button type="button" class="footer__title collapsible-trigger collapsible-trigger-btn medium-up--hide" aria-controls="Footer-{{ block.id }}">
+    {% comment %} <button type="button" class="footer__title collapsible-trigger collapsible-trigger-btn medium-up--hide" aria-controls="Footer-{{ block.id }}">
       {{ linklists[block.settings.menu].title }}
       {%- render 'collapsible-icons' -%}
-    </button>
+    </button> {% endcomment %}
   {% endif %}
   <div
     {% if block.settings.show_footer_title %}
-      id="Footer-{{ block.id }}" class="collapsible-content collapsible-content--small"
+      id="Footer-{{ block.id }}" class="collapsible-content "
     {% endif %}>
     <div class="collapsible-content__inner">
       <div class="footer__collapsible{% unless block.settings.show_footer_title %} footer_collapsible--disabled{% endunless %}">

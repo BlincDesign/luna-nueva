@@ -2,11 +2,57 @@
   .newsletter-{{ section.id }} {
     background-color: {{ section.settings.color_background }};
     color: {{ section.settings.color_text }};
+    padding-top: {{ section.settings.padding_top }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom }}px !important;
   }
 
   .newsletter-{{ section.id }} .input-group-btn {
     background-color: {{ section.settings.color_background }};
   }
+
+  .newsletter-{{ section.id }} .newsletter-section {
+    padding: 0;
+}
+
+    @media only screen and (max-width:589px){
+      .newsletter-{{ section.id }}{
+          padding-top: {{ section.settings.padding_top_mb }}px !important;
+          padding-bottom: {{ section.settings.padding_bottom_mb }}px !important;
+      }
+    }
+
+
+  .newsletter-section__content .newsletter__input-group {
+      width: 100%;
+      max-width: 520px;
+      gap: 10px;
+      background-color: transparent;
+  }
+
+  .newsletter-section__content .newsletter__input-group .newsletter__input {
+      border-color: rgba(249,246,241,.22);
+      border-radius: 50px;
+      padding: 15px 20px;
+  }
+
+  .newsletter-section__content .newsletter__input-group .newsletter__input::placeholder {
+      color: rgba(249,246,241,.66);
+  }
+
+  .newsletter-section__content .newsletter__input-group .input-group-btn {
+      flex: 0 0 100px;
+  }
+
+  .newsletter-section__content .newsletter__input-group .input-group-btn button {
+      width: 100%;
+      border-radius: 50px !important;
+  }
+
+  .newsletter-section .rte p {
+      margin-bottom: 0;
+  }
+
+
 {%- endstyle -%}
 
 {% render 'newsletter-section', section: section %}
@@ -14,6 +60,7 @@
 {% schema %}
   {
     "name": "t:sections.newsletter.name",
+    "class": "background-image",
     "max_blocks": 6,
     "blocks": [
       {
@@ -46,10 +93,6 @@
               {
                 "value": "h1",
                 "label": "t:common.heading_size.options.large.label"
-              },
-              {
-                "value": "h0",
-                "label": "t:common.heading_size.options.extra_large.label"
               }
             ]
           }
@@ -64,6 +107,44 @@
             "id": "text",
             "label": "t:sections.newsletter.blocks.text.settings.text.label",
             "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+          }
+        ]
+      },
+      {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+          {
+            "type": "range",
+            "id": "icon_size",
+            "label": "Icon size",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 26
+          },
+          {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon color",
+            "default": "#D39655"
+          },
+          {
+            "type": "text",
+            "id": "icon_box_shadow",
+            "label": "Box shadow",
+            "default": "inset -8px -2px 0 0 #2D3135"
+          },
+          {
+            "type": "range",
+            "id": "icon_margin_bottom",
+            "label": "Margin bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 24
           }
         ]
       },
@@ -218,16 +299,52 @@
         "default": "#1c1d1d"
       },
       {
-        "type": "checkbox",
-        "id": "top_padding",
-        "label": "t:sections.newsletter.settings.top_padding.label",
-        "default": true
+        "type": "header",
+        "content": "Desktop spacing"
       },
       {
-        "type": "checkbox",
-        "id": "bottom_padding",
-        "label": "t:sections.newsletter.settings.bottom_padding.label",
-        "default": true
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "Mobile spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mb",
+        "label": "Padding top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mb",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
       }
     ],
     "presets": [

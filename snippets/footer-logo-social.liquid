@@ -26,6 +26,14 @@
     </div>
   {%- endif -%}
 
-  {% render 'social-icons', additional_classes: 'footer__social' %}
+  {%- if block.settings.info != blank -%}
+  <div class="info">
+    {{ block.settings.info }}
+  </div>
+  {%- endif -%}
+
+  {%- if block.settings.show_social_icons -%}
+    {% render 'social-icons', additional_classes: 'footer__social' %}
+  {%- endif -%}
 
 </div>

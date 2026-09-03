@@ -22,6 +22,24 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
+
+                {%- when 'icon' -%}
+                  {% style %}
+                    #shopify-section-{{ section.id }} .theme-block .newsletter-icon {
+                      display: block;
+                      width: {{ block.settings.icon_size }}px;
+                      height: {{ block.settings.icon_size }}px;
+                      margin: 0 auto {{ block.settings.icon_margin_bottom }}px;
+                      border-radius: 50%;
+                      background-color: {{ block.settings.icon_color }};
+
+                      {% if block.settings.icon_box_shadow != blank %}
+                        box-shadow: {{ block.settings.icon_box_shadow }};
+                      {% endif %}
+                    }
+                  {% endstyle %}
+                  <div class="newsletter-icon"></div>
+
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
                   <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}</p>

@@ -53,9 +53,9 @@
       }
     },
     "newsletter_form": {
-      "newsletter_email": "Enter your email",
+      "newsletter_email": "Email address",
       "newsletter_confirmation": "Thanks for subscribing",
-      "submit": "Subscribe"
+      "submit": "Join"
     },
     "search": {
       "view_more": "Show all results for \"{{ terms }}\"",
