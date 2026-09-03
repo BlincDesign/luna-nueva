@@ -60,7 +60,6 @@
     min-height: {{ section.settings.button_height }}px;
     padding: 10px {{ section.settings.button_horizontal_padding }}px;
     font-size: {{ section.settings.button_font_size }}px;
-    font-family: {{ section.settings.button_font.family }}, {{ section.settings.button_font.fallback_families }};
     font-style: {{ section.settings.button_font.style }};
     font-weight: {{ section.settings.button_font.weight }};
     line-height: 1;
@@ -269,13 +268,6 @@
       "label": "Text font",
       "default": "assistant_n4"
     },
-    {
-      "type": "font_picker",
-      "id": "button_font",
-      "label": "Button font",
-      "default": "assistant_n4"
-    },
-
     {
       "type": "header",
       "content": "Font size"
