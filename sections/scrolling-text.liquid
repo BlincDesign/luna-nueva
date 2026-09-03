@@ -1,3 +1,4 @@
+
 {% render 'scrolling-text', section: section %}
 
 
@@ -62,7 +63,43 @@
       "max": 300,
       "step": 10,
       "unit": "s"
-    }
+    },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background color",
+        "default": "#D39655"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#2D3135"
+      },
+      {
+        "type": "header",
+        "content": "Desktop spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      }
   ],
     "blocks": [
     {
