@@ -134,6 +134,42 @@
         "top_padding": true,
         "bottom_padding": true
       }
+    },
+    "custom_rich_text_NYyzpe": {
+      "type": "custom_rich_text",
+      "blocks": {
+        "icon_rWgKgX": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#D39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135"
+          }
+        },
+        "heading_tVjGA9": {
+          "type": "heading",
+          "settings": {
+            "title": "When you drink less, what you drink should <strong>mean more.</strong>",
+            "highlight_color": "#D99A4D"
+          }
+        }
+      },
+      "block_order": [
+        "icon_rWgKgX",
+        "heading_tVjGA9"
+      ],
+      "name": "t:sections.rich-text.presets.cus_rich_text.name",
+      "settings": {
+        "background_color": "#2d3135",
+        "text_color": "#f9f6f1",
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": true,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
     }
   },
   "order": [
@@ -141,6 +177,7 @@
     "custom_product_details_JbJXVn",
     "rich-text",
     "featured-collection-switcher",
-    "newsletter"
+    "newsletter",
+    "custom_rich_text_NYyzpe"
   ]
 }
