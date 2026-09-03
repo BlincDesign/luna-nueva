@@ -142,7 +142,7 @@
           "type": "icon",
           "settings": {
             "icon_size": 26,
-            "icon_color": "#D39655",
+            "icon_color": "#d39655",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135"
           }
         },
@@ -150,7 +150,7 @@
           "type": "heading",
           "settings": {
             "title": "When you drink less, what you drink should <strong>mean more.</strong>",
-            "highlight_color": "#D99A4D"
+            "highlight_color": "#d99a4d"
           }
         }
       },
