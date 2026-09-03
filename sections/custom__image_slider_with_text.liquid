@@ -78,14 +78,6 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
-  /*
-    FIX: removed `display: flex; flex-wrap: nowrap;` from this container.
-    Flickity manages cell layout itself (it injects a .flickity-viewport /
-    .flickity-slider wrapper and positions cells with inline transforms).
-    A flex parent fights that positioning and breaks height calculation.
-    We just need position:relative so Flickity's viewport can be absolutely
-    positioned inside it, and overflow:hidden to clip the track pre-init.
-  */
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
@@ -93,13 +85,7 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
     width: 100%;
-    /*
-      FIX: reserve height via aspect-ratio so the cell has real height
-      the instant it's in the DOM — Flickity reads this at init instead
-      of a 0px lazy-loaded image, so it never locks in height:0.
-      Adjust the ratio to match your actual slide images.
-    */
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
@@ -228,10 +214,7 @@
       pageDots: true,
       pauseAutoPlayOnHover: true
     });
-
-    // Belt-and-suspenders: if any slide image (lazy-loaded past the first)
-    // finishes loading after Flickity has already measured cell sizes,
-    // force a resize so the layout/height stays correct.
+    
     var images = sliderEl.querySelectorAll('.image-slider-text__image');
     images.forEach(function (img) {
       if (!img.complete) {
