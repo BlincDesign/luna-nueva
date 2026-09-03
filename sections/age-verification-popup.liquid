@@ -6,10 +6,15 @@
 
 
 .age-confirmation {
+  display: flex !important;
   background-color: var(--age-confirmation-bg);
   color: var(--age-confirmation-color);
   height: 100vh;
-  z-index: 100;
+  z-index: 9999;
+}
+
+.age-confirmation[hidden] {
+  display: none !important;
 }
 
 .age-confirmation .modal__inner {
@@ -152,21 +157,33 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  (function () {
     var root = document.getElementById('AgeConfirmation-{{ section.id }}');
     if (!root) return;
 
     var cookieName = root.id;
 
-    if (Cookies.get(cookieName)) return;
+    function getCookie(name) {
+      var match = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+      return match ? decodeURIComponent(match[1]) : null;
+    }
 
-    var modal = new theme.Modals(root.id, 'age-confirmation-modal', {
-      closeOffContentClick: false
-    });
+    function setCookie(name, value, days) {
+      var expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+    }
 
-    modal.open();
+    function hide() {
+      root.hidden = true;
+      document.documentElement.classList.remove('modal-open');
+    }
 
-    theme.a11y.lockMobileScrolling(`#${root.id}`, document.querySelector('#MainContent'));
+    if (getCookie(cookieName)) {
+      hide();
+      return;
+    }
+
+    document.documentElement.classList.add('modal-open');
 
     var yesButton = root.querySelector('[data-age-confirmation-yes]');
     var noButton = root.querySelector('[data-age-confirmation-no]');
@@ -174,9 +191,8 @@
 
     if (yesButton) {
       yesButton.addEventListener('click', function () {
-        Cookies.set(cookieName, 'entered', { expires: 365, sameSite: 'none', secure: true });
-        modal.close();
-        theme.a11y.unlockMobileScrolling(`#${root.id}`, document.querySelector('#MainContent'));
+        setCookie(cookieName, 'entered', 365);
+        hide();
       });
     }
 
@@ -187,7 +203,7 @@
         }
       });
     }
-  });
+  })();
 </script>
 
 {% schema %}
