@@ -183,7 +183,7 @@
           "settings": {
             "text": "<h5>Events, new releases, and the occasional recipe worth making.</h5>",
             "font_size": 28,
-            "text_width": 600,
+            "text_width": 660,
             "margin_bottom": 36
           }
         },
