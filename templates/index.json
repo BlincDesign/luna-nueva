@@ -80,7 +80,7 @@
       "name": "t:sections.marquee.presets.scrolling_text.name",
       "settings": {
         "plus_icon": "shopify://shop_images/sparkle-icon.svg",
-        "plus_icon_size": 15,
+        "plus_icon_size": 13,
         "text_size": 11,
         "text_spacing": true,
         "direction": "left",
