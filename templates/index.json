@@ -38,7 +38,7 @@
       ],
       "name": "Image slider with text",
       "settings": {
-        "slider_autoplay_enabled": false,
+        "slider_autoplay_enabled": true,
         "slider_autoplay": 3000,
         "preheading": "100% Blue Weber Agave · Additive-Free",
         "heading": "Every great night begins with a new moon.",
