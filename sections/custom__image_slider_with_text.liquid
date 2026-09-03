@@ -24,7 +24,6 @@
     {% else %}
       font-family: {{ section.settings.preheading_font.family }}, {{ section.settings.preheading_font.fallback_families }};
     {% endif %}
-    font-style: {{ section.settings.preheading_font.style }};
     font-weight: 700;
     line-height: 1.2;
     color: {{ section.settings.preheading_color }};
@@ -40,7 +39,6 @@
     {% else %}
       font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
     {% endif %}
-    font-style: {{ section.settings.heading_font.style }};
     color: {{ section.settings.heading_color }};
   }
 
@@ -56,7 +54,6 @@
   {% else %}
     font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }};
   {% endif %}
-    font-style: {{ section.settings.text_font.style }};
     font-weight: normal;
     color: {{ section.settings.text_color }};
   }
