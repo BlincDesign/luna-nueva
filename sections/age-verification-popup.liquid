@@ -147,16 +147,16 @@
             </div>
           {% endif %}
 
-          {% if section.settings.error_message != blank %}
-            <p class="age-confirmation__error" data-age-confirmation-error role="alert" hidden>
-              {{ section.settings.error_message }}
-            </p>
-          {% endif %}
-
           {% if section.settings.text != blank %}
             <div class="age-confirmation__text rte">
               {{ section.settings.text }}
             </div>
+          {% endif %}
+
+          {% if section.settings.error_message != blank %}
+            <p class="age-confirmation__error" data-age-confirmation-error role="alert" hidden>
+              {{ section.settings.error_message }}
+            </p>
           {% endif %}
         </div>
       </div>
