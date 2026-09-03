@@ -103,39 +103,25 @@
       "blocks": {
         "eyebrow_CeK6D3": {
           "type": "eyebrow",
-          "settings": {}
+          "settings": {
+            "title": "IN THE WILD"
+          }
         },
         "heading_hmw6Hn": {
           "type": "heading",
           "settings": {
             "title": "Where it actually gets poured."
           }
-        },
-        "text_BfJf4k": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p>Use this text to share information about your brand with your customers.</p>"
-          }
-        },
-        "button_gHnVxV": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "See what's coming up →"
-          }
         }
       },
       "block_order": [
         "eyebrow_CeK6D3",
-        "heading_hmw6Hn",
-        "text_BfJf4k",
-        "button_gHnVxV"
+        "heading_hmw6Hn"
       ],
       "name": "Custom Multi Column",
       "settings": {
-        "background_color": "#AEBFB4",
-        "text_color": "#2D3135",
+        "background_color": "#aebfb4",
+        "text_color": "#2d3135",
         "padding_top": 80,
         "padding_bottom": 80,
         "mobile_padding_top": 80,
