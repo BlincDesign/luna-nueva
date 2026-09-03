@@ -37,23 +37,21 @@
           {% if section.settings.yes_button_label != blank or section.settings.no_button_label != blank %}
             <div class="age-confirmation__actions">
               {% if section.settings.yes_button_label != blank %}
-                <button
-                  type="button"
-                  class="age-confirmation__button age-confirmation__button--yes"
-                  data-age-confirmation-yes
-                >
-                  {{ section.settings.yes_button_label }}
-                </button>
+                {% render 'button',
+                  label: section.settings.yes_button_label,
+                  type: section.settings.yes_button_type,
+                  as: 'button',
+                  attributes: 'data-age-confirmation-yes'
+                %}
               {% endif %}
 
               {% if section.settings.no_button_label != blank %}
-                <button
-                  type="button"
-                  class="age-confirmation__button age-confirmation__button--no"
-                  data-age-confirmation-no
-                >
-                  {{ section.settings.no_button_label }}
-                </button>
+                {% render 'button',
+                  label: section.settings.no_button_label,
+                  type: section.settings.no_button_type,
+                  as: 'button',
+                  attributes: 'data-age-confirmation-no'
+                %}
               {% endif %}
             </div>
           {% endif %}
@@ -176,10 +174,32 @@
       "default": "Yes"
     },
     {
+      "type": "select",
+      "id": "yes_button_type",
+      "label": "\"Yes\" button style",
+      "default": "secondary",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
+    },
+    {
       "type": "text",
       "id": "no_button_label",
       "label": "\"No\" button label",
       "default": "No"
+    },
+    {
+      "type": "select",
+      "id": "no_button_type",
+      "label": "\"No\" button style",
+      "default": "link",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
     },
     {
       "type": "header",
