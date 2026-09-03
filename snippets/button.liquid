@@ -4,29 +4,35 @@
   BEM classes defined in custom.css.
 
   @param {string} label - Button text
-  @param {string} url - Link destination
+  @param {string} [url] - Link destination (required unless as: 'button')
   @param {string} [type] ('primary'|'secondary'|'link') - Visual style (default: 'primary')
+  @param {string} [as] ('a'|'button') - HTML element to render (default: 'a')
   @param {string} [id] - Optional id attribute
   @param {string} [class] - Additional classes to append
+  @param {string} [attributes] - Additional raw HTML attributes (e.g. data-* hooks)
   @param {boolean} [arrow] - Append an animated arrow after the label
 
   @example
-  {% render 'button', label: 'Shop now', url: '/collections/all', type: 'primary' %}
+  {% render 'button', label: 'Shop now', url: '/collections/all', type: 'primary', arrow: true %}
+  {% render 'button', label: 'Yes', as: 'button', type: 'secondary', attributes: 'data-confirm-yes' %}
 {% enddoc %}
 
 {% liquid
   assign type = type | default: 'primary'
+  assign as = as | default: 'a'
   assign classlist = 'btn btn--' | append: type
   if class != blank
     assign classlist = classlist | append: ' ' | append: class
   endif
 %}
 
-<a
+<{{ as }}
   {%- if id != blank %} id="{{ id }}"{% endif %}
-  href="{{ url | default: '#' }}"
+  {%- if as == 'a' %} href="{{ url | default: '#' }}"{% endif %}
+  {%- if as == 'button' %} type="button"{% endif %}
   class="{{ classlist }}"
+  {%- if attributes != blank %} {{ attributes }}{% endif %}
 >
   {{- label | escape -}}
   {%- if type == "primary" and arrow != false %}<span class="btn__arrow">→</span>{% endif -%}
-</a>
+</{{ as }}>
