@@ -457,16 +457,31 @@
       "id": "button_2_link",
       "label": "Button 2 link"
     },
-
     {
       "type": "header",
-      "content": "Text typography"
+      "content": "Font family"
     },
     {
       "type": "font_picker",
       "id": "preheading_font",
       "label": "Preheading font",
       "default": "assistant_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "text_font",
+      "label": "Text font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "header",
+      "content": "Font size"
     },
     {
       "type": "range",
@@ -480,29 +495,6 @@
     },
     {
       "type": "range",
-      "id": "preheading_margin",
-      "label": "Preheading bottom spacing",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 10
-    },
-    {
-      "type": "color",
-      "id": "preheading_color",
-      "label": "Preheading color",
-      "default": "#000000"
-    },
-
-    {
-      "type": "font_picker",
-      "id": "heading_font",
-      "label": "Heading font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "range",
       "id": "heading_size",
       "label": "Heading size",
       "min": 20,
@@ -510,48 +502,6 @@
       "step": 1,
       "unit": "px",
       "default": 48
-    },
-    {
-      "type": "range",
-      "id": "mobile_heading_size",
-      "label": "Mobile heading size",
-      "min": 18,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 34
-    },
-    {
-      "type": "range",
-      "id": "heading_line_height",
-      "label": "Heading line height",
-      "min": 0.8,
-      "max": 2,
-      "step": 0.1,
-      "default": 1.1
-    },
-    {
-      "type": "range",
-      "id": "heading_margin",
-      "label": "Heading bottom spacing",
-      "min": 0,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 20
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading color",
-      "default": "#000000"
-    },
-
-    {
-      "type": "font_picker",
-      "id": "text_font",
-      "label": "Text font",
-      "default": "assistant_n4"
     },
     {
       "type": "range",
@@ -565,13 +515,12 @@
     },
     {
       "type": "range",
-      "id": "mobile_text_size",
-      "label": "Mobile text size",
-      "min": 10,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "default": 15
+      "id": "heading_line_height",
+      "label": "Heading line height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.1
     },
     {
       "type": "range",
@@ -583,6 +532,52 @@
       "default": 1.5
     },
     {
+      "type": "header",
+      "content": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "preheading_color",
+      "label": "Preheading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Text spacing"
+    },
+    {
+      "type": "range",
+      "id": "preheading_margin",
+      "label": "Preheading bottom spacing",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "heading_margin",
+      "label": "Heading bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
       "type": "range",
       "id": "text_margin",
       "label": "Text bottom spacing",
@@ -592,66 +587,34 @@
       "unit": "px",
       "default": 30
     },
-
     {
       "type": "header",
-      "content": "Buttons"
-    },
-    {
-      "type": "font_picker",
-      "id": "button_font",
-      "label": "Button font",
-      "default": "assistant_n4"
+      "content": "Mobile font size"
     },
     {
       "type": "range",
-      "id": "button_font_size",
-      "label": "Button font size",
+      "id": "mobile_heading_size",
+      "label": "Mobile heading size",
+      "min": 18,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Mobile text size",
       "min": 10,
       "max": 30,
       "step": 1,
       "unit": "px",
-      "default": 14
+      "default": 15
     },
+
     {
-      "type": "range",
-      "id": "mobile_button_font_size",
-      "label": "Mobile button font size",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "button_height",
-      "label": "Button height",
-      "min": 30,
-      "max": 80,
-      "step": 1,
-      "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "button_horizontal_padding",
-      "label": "Button horizontal padding",
-      "min": 10,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 25
-    },
-    {
-      "type": "range",
-      "id": "button_radius",
-      "label": "Button corner radius",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 0
+      "type": "header",
+      "content": "Buttons"
     },
     {
       "type": "range",
@@ -702,12 +665,6 @@
       "id": "background_color",
       "label": "Background color",
       "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#000000"
     },
 
     {
