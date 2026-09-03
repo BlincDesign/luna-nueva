@@ -87,47 +87,6 @@
         "divider": false
       }
     },
-    "custom_multi_column_KyjbHm": {
-      "type": "custom_multi_column",
-      "blocks": {
-        "heading_9hkNN6": {
-          "type": "heading",
-          "settings": {
-            "title": "<h2>Three Expressions</h2>"
-          }
-        },
-        "text_BfBrTU": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_wzxytx": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Button"
-          }
-        }
-      },
-      "block_order": [
-        "heading_9hkNN6",
-        "text_BfBrTU",
-        "button_wzxytx"
-      ],
-      "name": "Custom Multi Column",
-      "settings": {
-        "background_color": "#aebfb4",
-        "text_color": "#2d3135",
-        "align_text": "left",
-        "narrow_column": false,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
-      }
-    },
     "featured-collection-switcher": {
       "type": "featured-collection-switcher",
       "settings": {
@@ -217,7 +176,6 @@
     "text_and_image_zBb9nf",
     "custom_product_details_JbJXVn",
     "rich-text",
-    "custom_multi_column_KyjbHm",
     "featured-collection-switcher",
     "newsletter",
     "custom_rich_text_NYyzpe"
