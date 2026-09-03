@@ -42,16 +42,14 @@
     "age-verification-popup": {
       "type": "age-verification-popup",
       "settings": {
-        "enable_test_mode": false,
-        "image": "shopify://shop_images/background-2.svg",
-        "blur_image": false,
+        "logo": "shopify://shop_images/logo-green.png",
         "heading": "Confirm your age",
         "text": "<p>Are you 21 years old or older?</p>",
-        "decline_button_label": "No I'm not",
-        "approve_button_label": "Yes I am",
-        "decline_heading": "Come back when you're older",
-        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>",
-        "return_button_label": "Oops, I entered incorrectly"
+        "yes_button_label": "Yes",
+        "no_button_label": "No",
+        "error_message": "Sorry, you must be of legal drinking age to enter this site.",
+        "background_color": "#2D3135",
+        "text_color": "#ffffff"
       }
     }
   },
