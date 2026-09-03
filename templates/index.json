@@ -31,6 +31,62 @@
         "lazyload_images": true
       }
     },
+    "scrolling_text_PacCqL": {
+      "type": "scrolling-text",
+      "blocks": {
+        "text_qMKaix": {
+          "type": "text",
+          "settings": {
+            "text": "Additive-Free",
+            "link": ""
+          }
+        },
+        "text_g9xiaM": {
+          "type": "text",
+          "settings": {
+            "text": "NOM 1414 · Vivanco Family Distillery",
+            "link": ""
+          }
+        },
+        "text_3XjJqt": {
+          "type": "text",
+          "settings": {
+            "text": "Highlands & Lowlands of Jalisco",
+            "link": ""
+          }
+        },
+        "text_KXmmmN": {
+          "type": "text",
+          "settings": {
+            "text": "100% Blue Weber Agave",
+            "link": ""
+          }
+        },
+        "text_AqEe9j": {
+          "type": "text",
+          "settings": {
+            "text": "Poured Across California",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_qMKaix",
+        "text_g9xiaM",
+        "text_3XjJqt",
+        "text_KXmmmN",
+        "text_AqEe9j"
+      ],
+      "name": "t:sections.marquee.presets.scrolling_text.name",
+      "settings": {
+        "plus_icon": "shopify://shop_images/sparkle-icon.svg",
+        "plus_icon_size": 12,
+        "text_size": 20,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 100
+      }
+    },
     "custom_product_details_JbJXVn": {
       "type": "custom__product-details",
       "name": "Product Detail List",
@@ -101,17 +157,26 @@
     "newsletter": {
       "type": "newsletter",
       "blocks": {
+        "icon_dcxAif": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 31,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "icon_margin_bottom": 38
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
-            "title": "Sign Up for Our Newsletter",
-            "heading_size": "h2"
+            "title": "Get invited to the next one.",
+            "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Subscribe to learn about Luna Nueva events, special offers, giveaways, and recipes.</p>"
+            "text": "<p>Events, new releases, and the occasional recipe worth making.</p>"
           }
         },
         "form": {
@@ -120,6 +185,7 @@
         }
       },
       "block_order": [
+        "icon_dcxAif",
         "title",
         "text",
         "form"
@@ -129,15 +195,18 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "color_background": "#f9f9f9",
-        "color_text": "#1c1d1d",
-        "top_padding": true,
-        "bottom_padding": true
+        "color_background": "#2D3135",
+        "color_text": "#FFFFFF",
+        "padding_top": 140,
+        "padding_bottom": 140,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     }
   },
   "order": [
     "text_and_image_zBb9nf",
+    "scrolling_text_PacCqL",
     "custom_product_details_JbJXVn",
     "rich-text",
     "featured-collection-switcher",
