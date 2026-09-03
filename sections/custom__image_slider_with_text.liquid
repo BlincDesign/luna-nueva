@@ -122,9 +122,7 @@
 {% endstyle %}
 
 <div class="image-slider-text__grid">
-
   <div class="image-slider-text__content">
-
     {% if section.settings.preheading != blank %}
       <div class="image-slider-text__preheading">
         {{ section.settings.preheading }}
@@ -145,7 +143,6 @@
 
     {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
-
         {% if section.settings.button_1_label != blank %}
           <a
             href="{{ section.settings.button_1_link }}"
@@ -163,14 +160,11 @@
             {{ section.settings.button_2_label }}
           </a>
         {% endif %}
-
       </div>
     {% endif %}
-
   </div>
 
   <div class="image-slider-text__slides">
-
     {% for block in section.blocks %}
       <div
         class="image-slider-text__slide"
@@ -189,9 +183,7 @@
         {% endif %}
       </div>
     {% endfor %}
-
   </div>
-
 </div>
 
 <script>
@@ -219,20 +211,20 @@
   "class": "section-image-slider-text",
   "settings": [
     {
-        "type": "checkbox",
-        "id": "slider_autoplay_enabled",
-        "label": "Enable autoplay",
-        "default": true
-        },
-        {
-        "type": "range",
-        "id": "slider_autoplay",
-        "label": "Autoplay speed",
-        "min": 1000,
-        "max": 9000,
-        "step": 500,
-        "unit": "ms",
-        "default": 4000
+      "type": "checkbox",
+      "id": "slider_autoplay_enabled",
+      "label": "Enable autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slider_autoplay",
+      "label": "Autoplay speed",
+      "min": 1000,
+      "max": 9000,
+      "step": 500,
+      "unit": "ms",
+      "default": 4000
     },
     {
       "type": "header",
