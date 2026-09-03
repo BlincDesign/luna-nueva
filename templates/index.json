@@ -77,42 +77,11 @@
         "container_width": 1400,
         "content_width": 550,
         "column_gap": 70,
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "mobile_padding_top": 50,
         "mobile_padding_bottom": 50,
         "mobile_column_gap": 40
-      }
-    },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "settings": {
-        "title": "Our Products",
-        "collection1": "blanco",
-        "collection2": "",
-        "per_row": 3,
-        "view_all": false,
-        "divider": false
-      }
-    },
-    "custom_product_details_JbJXVn": {
-      "type": "custom__product-details",
-      "name": "Product Detail List",
-      "settings": {
-        "heading": "Three Expressions",
-        "preheading": "THE COLLECTION",
-        "right_text": "750ml · Additive-Free · Jalisco",
-        "right_link": "",
-        "products": [
-          "luna-nueva-silver-1",
-          "luna-nueva-silver",
-          "luna-nueva-reposado"
-        ],
-        "section_background": "#aebfb4",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
       }
     },
     "scrolling_text_PacCqL": {
@@ -173,6 +142,37 @@
         "color_text": "#2d3135",
         "padding_top": 15,
         "padding_bottom": 15
+      }
+    },
+    "featured-collection-switcher": {
+      "type": "featured-collection-switcher",
+      "settings": {
+        "title": "Our Products",
+        "collection1": "blanco",
+        "collection2": "",
+        "per_row": 3,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "custom_product_details_JbJXVn": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver-1",
+          "luna-nueva-silver",
+          "luna-nueva-reposado"
+        ],
+        "section_background": "#aebfb4",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "rich-text": {
