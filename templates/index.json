@@ -89,28 +89,6 @@
         "mobile_padding_bottom": 50
       }
     },
-    "text_and_image_zBb9nf": {
-      "type": "text-and-image",
-      "name": "t:sections.text-and-image.presets.image_with_text.name",
-      "settings": {
-        "image": "shopify://shop_images/hero-raised.jpg",
-        "image_mask": "square",
-        "image2_mask": "none",
-        "subtitle": "100% Blue Weber Agave · Additive-Free",
-        "title": "",
-        "text": "<h1>Every great night<br/>begins with <br/>a new moon.</h1>",
-        "button_label": "Shop the collection",
-        "button_link": "#",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "66",
-        "layout": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
     "scrolling_text_PacCqL": {
       "type": "scrolling-text",
       "blocks": {
@@ -295,7 +273,6 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
-    "text_and_image_zBb9nf",
     "scrolling_text_PacCqL",
     "custom_product_details_JbJXVn",
     "rich-text",
