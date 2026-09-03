@@ -51,7 +51,6 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin-bottom: 35px;
-    font-size: {{ section.settings.text_size }}px;
     {% if section.settings.custom_text_font != blank %}
     font-family: '{{ section.settings.custom_text_font }}', sans-serif;
   {% else %}
@@ -59,6 +58,10 @@
   {% endif %}
     font-weight: normal;
     color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-slider-text__text h5 {
+    font-size: {{ section.settings.text_size }}px;
   }
 
     #shopify-section-{{ section.id }} .image-slider-text__content  .image-slider-text__text * {
