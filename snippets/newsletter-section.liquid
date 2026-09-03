@@ -60,6 +60,11 @@
                     .theme-block--{{ block.id }}{
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
+                    
+                    .theme-block--{{ block.id }} .enlarge-text {
+                      font-size: {{ block.settings.font_size }}px;
+                      max-width: {{ block.settings.text_width }}px;
+                    }
                   {% endstyle %}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">
