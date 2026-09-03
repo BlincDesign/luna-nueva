@@ -1,20 +1,15 @@
 {% style %}
   #shopify-section-{{ section.id }} .age-confirmation {
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto;
-    padding: 32px 24px;
-    text-align: center;
     background-color: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }};
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation[hidden] {
-    display: none;
+  #shopify-section-{{ section.id }} .age-confirmation .modal__inner {
+    background-color: transparent;
+  }
+
+  #shopify-section-{{ section.id }} .age-confirmation.modal--square .modal__centered-content {
+    background-color: transparent;
   }
 
   #shopify-section-{{ section.id }} .age-confirmation__inner {
@@ -23,7 +18,8 @@
     align-items: center;
     gap: 24px;
     max-width: 560px;
-    margin: auto;
+    margin: 0 auto;
+    text-align: center;
   }
 
   #shopify-section-{{ section.id }} .age-confirmation__logo img {
@@ -101,104 +97,100 @@
 
 <div
   id="AgeConfirmation-{{ section.id }}"
-  class="age-confirmation"
+  class="age-confirmation modal modal--square modal--mobile-friendly"
   role="dialog"
   aria-modal="true"
   {% if section.settings.heading != blank %}
     aria-labelledby="AgeConfirmationHeading-{{ section.id }}"
   {% endif %}
 >
-  <div class="age-confirmation__inner">
-    {% if section.settings.logo != blank %}
-      <div class="age-confirmation__logo">
-        {{
-          section.settings.logo
-          | image_url: width: 400
-          | image_tag: loading: 'lazy', alt: section.settings.logo.alt | default: shop.name
-        }}
+  <div class="modal__inner" data-nosnippet>
+    <div class="modal__centered">
+      <div class="modal__centered-content modal__centered-content--padded">
+        <div class="age-confirmation__inner">
+          {% if section.settings.logo != blank %}
+            <div class="age-confirmation__logo">
+              {{
+                section.settings.logo
+                | image_url: width: 400
+                | image_tag: loading: 'lazy', alt: section.settings.logo.alt | default: shop.name
+              }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.heading != blank %}
+            <h2 id="AgeConfirmationHeading-{{ section.id }}" class="age-confirmation__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.yes_button_label != blank or section.settings.no_button_label != blank %}
+            <div class="age-confirmation__actions">
+              {% if section.settings.yes_button_label != blank %}
+                <button
+                  type="button"
+                  class="age-confirmation__button age-confirmation__button--yes"
+                  data-age-confirmation-yes
+                >
+                  {{ section.settings.yes_button_label }}
+                </button>
+              {% endif %}
+
+              {% if section.settings.no_button_label != blank %}
+                <button
+                  type="button"
+                  class="age-confirmation__button age-confirmation__button--no"
+                  data-age-confirmation-no
+                >
+                  {{ section.settings.no_button_label }}
+                </button>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if section.settings.error_message != blank %}
+            <p class="age-confirmation__error" data-age-confirmation-error role="alert" hidden>
+              {{ section.settings.error_message }}
+            </p>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="age-confirmation__text rte">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+        </div>
       </div>
-    {% endif %}
-
-    {% if section.settings.heading != blank %}
-      <h2 id="AgeConfirmationHeading-{{ section.id }}" class="age-confirmation__heading">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
-
-    {% if section.settings.yes_button_label != blank or section.settings.no_button_label != blank %}
-      <div class="age-confirmation__actions">
-        {% if section.settings.yes_button_label != blank %}
-          <button
-            type="button"
-            class="age-confirmation__button age-confirmation__button--yes"
-            data-age-confirmation-yes
-          >
-            {{ section.settings.yes_button_label }}
-          </button>
-        {% endif %}
-
-        {% if section.settings.no_button_label != blank %}
-          <button
-            type="button"
-            class="age-confirmation__button age-confirmation__button--no"
-            data-age-confirmation-no
-          >
-            {{ section.settings.no_button_label }}
-          </button>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    {% if section.settings.error_message != blank %}
-      <p class="age-confirmation__error" data-age-confirmation-error role="alert" hidden>
-        {{ section.settings.error_message }}
-      </p>
-    {% endif %}
-
-    {% if section.settings.text != blank %}
-      <div class="age-confirmation__text rte">
-        {{ section.settings.text }}
-      </div>
-    {% endif %}
+    </div>
   </div>
 </div>
 
 <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var root = document.getElementById('AgeConfirmation-{{ section.id }}');
     if (!root) return;
 
-    var cookieName = 'luna_age_confirmed';
-    var cookieMaxAge = 60 * 60 * 24 * 365;
+    var cookieName = root.id;
+
+    if (Cookies.get(cookieName)) return;
+
+    var modal = new theme.Modals(root.id, 'age-confirmation-modal', {
+      closeOffContentClick: false
+    });
+
+    modal.open();
+
+    theme.a11y.lockMobileScrolling(`#${root.id}`, document.querySelector('#MainContent'));
+
     var yesButton = root.querySelector('[data-age-confirmation-yes]');
     var noButton = root.querySelector('[data-age-confirmation-no]');
     var errorMessage = root.querySelector('[data-age-confirmation-error]');
 
-    function getCookie(name) {
-      var match = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
-      return match ? match[1] : null;
-    }
-
-    function setCookie(name, value, maxAge) {
-      document.cookie = name + '=' + value + '; max-age=' + maxAge + '; path=/; SameSite=Lax';
-    }
-
-    function hide() {
-      root.hidden = true;
-      document.documentElement.classList.remove('lock-scroll');
-    }
-
-    if (getCookie(cookieName) === '1') {
-      hide();
-      return;
-    }
-
-    document.documentElement.classList.add('lock-scroll');
-
     if (yesButton) {
       yesButton.addEventListener('click', function () {
-        setCookie(cookieName, '1', cookieMaxAge);
-        hide();
+        Cookies.set(cookieName, 'entered', { expires: 365, sameSite: 'none', secure: true });
+        modal.close();
+        theme.a11y.unlockMobileScrolling(`#${root.id}`, document.querySelector('#MainContent'));
       });
     }
 
@@ -209,7 +201,7 @@
         }
       });
     }
-  })();
+  });
 </script>
 
 {% schema %}
