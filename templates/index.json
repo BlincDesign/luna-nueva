@@ -9,6 +9,86 @@
  */
 {
   "sections": {
+    "custom_image_slider_with_text_fFfUKJ": {
+      "type": "custom__image_slider_with_text",
+      "blocks": {
+        "image_bzwiJi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg",
+            "image_link": ""
+          }
+        },
+        "image_JyBeaM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-ocean.jpg",
+            "image_link": ""
+          }
+        },
+        "image_xpFnMR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-tailgate.jpg",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bzwiJi",
+        "image_JyBeaM",
+        "image_xpFnMR"
+      ],
+      "name": "Image slider with text",
+      "settings": {
+        "preheading": "100% Blue Weber Agave · Additive-Free",
+        "heading": "Every great night begins with a new moon.",
+        "text": "<p>Additive-free tequila from the Highlands and Lowlands of Jalisco.</p>",
+        "button_1_label": "Shop now",
+        "button_1_link": "",
+        "button_2_label": "Learn more",
+        "button_2_link": "",
+        "preheading_font": "assistant_n4",
+        "preheading_size": 14,
+        "preheading_margin": 10,
+        "preheading_color": "#000000",
+        "heading_font": "assistant_n4",
+        "heading_size": 48,
+        "mobile_heading_size": 34,
+        "heading_line_height": 1.1,
+        "heading_margin": 20,
+        "heading_color": "#000000",
+        "text_font": "assistant_n4",
+        "text_size": 16,
+        "mobile_text_size": 15,
+        "text_line_height": 1.5,
+        "text_margin": 30,
+        "button_font": "assistant_n4",
+        "button_font_size": 14,
+        "mobile_button_font_size": 14,
+        "button_height": 48,
+        "button_horizontal_padding": 25,
+        "button_radius": 0,
+        "button_gap": 10,
+        "button_1_background": "#000000",
+        "button_1_text_color": "#FFFFFF",
+        "button_2_background": "transparent",
+        "button_2_text_color": "#000000",
+        "button_2_border_color": "#000000",
+        "autoplay": true,
+        "autoplay_speed": 2000,
+        "container_width": 1400,
+        "content_width": 550,
+        "column_gap": 70,
+        "mobile_column_gap": 40,
+        "background_color": "#FFFFFF",
+        "text_color": "#000000",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 50
+      }
+    },
     "text_and_image_zBb9nf": {
       "type": "text-and-image",
       "name": "t:sections.text-and-image.presets.image_with_text.name",
@@ -183,6 +263,7 @@
           "type": "text",
           "settings": {
             "text": "<h5>Events, new releases, and the occasional recipe worth making.</h5>",
+            "text_color": "#f9f6f1",
             "text_width": 660,
             "margin_bottom": 36
           }
@@ -213,6 +294,7 @@
     }
   },
   "order": [
+    "custom_image_slider_with_text_fFfUKJ",
     "text_and_image_zBb9nf",
     "scrolling_text_PacCqL",
     "custom_product_details_JbJXVn",
