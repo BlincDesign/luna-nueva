@@ -1,25 +1,3 @@
-{% liquid
-  assign slide_count = section.blocks.size
-  assign period_ms = section.settings.slider_autoplay
-  assign fade_ms = 1500
-
-  if fade_ms >= period_ms
-    assign fade_ms = period_ms | divided_by: 2
-  endif
-
-  assign total_ms = period_ms | times: slide_count
-  assign total_ms_f = total_ms | times: 1.0
-
-  assign fade_in_end_percent = fade_ms | times: 1.0 | divided_by: total_ms_f | times: 100 | round: 3
-  assign hold_end_percent = 100.0 | divided_by: slide_count | round: 3
-  assign fade_out_end_ms = period_ms | plus: fade_ms
-  assign fade_out_end_percent = fade_out_end_ms | times: 1.0 | divided_by: total_ms_f | times: 100 | round: 3
-
-  assign animate_slides = false
-  if section.settings.slider_autoplay_enabled and slide_count > 1
-    assign animate_slides = true
-  endif
-%}
 {% style %}
   #shopify-section-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
@@ -100,7 +78,11 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
-  /* Pure-CSS crossfade slider — no Flickity, no JS */
+  /*
+    Crossfade slider — no Flickity. Slides stack via position:absolute and
+    fade between each other on an "is-active" class. A small vanilla JS
+    controller toggles that class (autoplay + click-to-jump on dots).
+  */
 
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
@@ -112,35 +94,14 @@
     position: absolute;
     inset: 0;
     opacity: 0;
+    z-index: 0;
+    transition: opacity 1.5s cubic-bezier(.4, 0, .2, 1);
   }
 
-  {% if animate_slides %}
-    #shopify-section-{{ section.id }} .image-slider-text__slide {
-      animation-name: image-slider-fade-{{ section.id }};
-      animation-duration: {{ total_ms }}ms;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-      animation-fill-mode: backwards;
-    }
-
-    {% for block in section.blocks %}
-      #shopify-section-{{ section.id }} .image-slider-text__slide:nth-child({{ forloop.index }}) {
-        animation-delay: {{ forloop.index0 | times: period_ms }}ms;
-      }
-    {% endfor %}
-
-    @keyframes image-slider-fade-{{ section.id }} {
-      0% { opacity: 0; }
-      {{ fade_in_end_percent }}% { opacity: 1; }
-      {{ hold_end_percent }}% { opacity: 1; }
-      {{ fade_out_end_percent }}% { opacity: 0; }
-      100% { opacity: 0; }
-    }
-  {% else %}
-    #shopify-section-{{ section.id }} .image-slider-text__slide:first-child {
-      opacity: 1;
-    }
-  {% endif %}
+  #shopify-section-{{ section.id }} .image-slider-text__slide.is-active {
+    opacity: 1;
+    z-index: 1;
+  }
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
     display: block;
@@ -162,34 +123,17 @@
   #shopify-section-{{ section.id }} .image-slider-text__dot {
     width: 8px;
     height: 8px;
+    padding: 0;
+    border: none;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
-  {% if animate_slides %}
-    #shopify-section-{{ section.id }} .image-slider-text__dot {
-      animation-name: image-slider-dot-{{ section.id }};
-      animation-duration: {{ total_ms }}ms;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-      animation-fill-mode: backwards;
-    }
-
-    {% for block in section.blocks %}
-      #shopify-section-{{ section.id }} .image-slider-text__dot:nth-child({{ forloop.index }}) {
-        animation-delay: {{ forloop.index0 | times: period_ms }}ms;
-      }
-    {% endfor %}
-
-    @keyframes image-slider-dot-{{ section.id }} {
-      0%, {{ hold_end_percent }}% { background-color: #ffffff; }
-      {{ hold_end_percent }}%, 100% { background-color: rgba(255, 255, 255, 0.45); }
-    }
-  {% else %}
-    #shopify-section-{{ section.id }} .image-slider-text__dot:first-child {
-      background-color: #ffffff;
-    }
-  {% endif %}
+  #shopify-section-{{ section.id }} .image-slider-text__dot.is-active {
+    background-color: #ffffff;
+  }
 
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} {
@@ -262,10 +206,14 @@
     {% endif %}
   </div>
 
-  <div class="image-slider-text__slides">
+  <div
+    class="image-slider-text__slides"
+    data-autoplay-enabled="{{ section.settings.slider_autoplay_enabled }}"
+    data-autoplay-speed="{{ section.settings.slider_autoplay }}"
+  >
     {% for block in section.blocks %}
       <div
-        class="image-slider-text__slide"
+        class="image-slider-text__slide{% if forloop.first %} is-active{% endif %}"
         {{ block.shopify_attributes }}
       >
         {% if block.settings.image != blank %}
@@ -294,14 +242,86 @@
     {% endfor %}
 
     {% if section.blocks.size > 1 %}
-      <div class="image-slider-text__dots">
+      <div class="image-slider-text__dots" role="tablist" aria-label="Slides">
         {% for block in section.blocks %}
-          <span class="image-slider-text__dot"></span>
+          <button
+            type="button"
+            class="image-slider-text__dot{% if forloop.first %} is-active{% endif %}"
+            role="tab"
+            aria-label="Go to slide {{ forloop.index }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          ></button>
         {% endfor %}
       </div>
     {% endif %}
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sliderEl = document.querySelector(
+      '#shopify-section-{{ section.id }} .image-slider-text__slides'
+    );
+    if (!sliderEl) return;
+
+    var slides = sliderEl.querySelectorAll('.image-slider-text__slide');
+    var dots = sliderEl.querySelectorAll('.image-slider-text__dot');
+
+    if (slides.length <= 1) return;
+
+    var autoplayEnabled = sliderEl.dataset.autoplayEnabled === 'true';
+    var autoplaySpeed = parseInt(sliderEl.dataset.autoplaySpeed, 10) || 4000;
+    var current = 0;
+    var timer = null;
+
+    function goTo(index) {
+      if (index === current) return;
+
+      slides[current].classList.remove('is-active');
+      if (dots[current]) {
+        dots[current].classList.remove('is-active');
+        dots[current].setAttribute('aria-selected', 'false');
+      }
+
+      current = index;
+
+      slides[current].classList.add('is-active');
+      if (dots[current]) {
+        dots[current].classList.add('is-active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+    }
+
+    function next() {
+      goTo((current + 1) % slides.length);
+    }
+
+    function startAutoplay() {
+      if (!autoplayEnabled) return;
+      stopAutoplay();
+      timer = setInterval(next, autoplaySpeed);
+    }
+
+    function stopAutoplay() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        goTo(index);
+        startAutoplay();
+      });
+    });
+
+    sliderEl.addEventListener('mouseenter', stopAutoplay);
+    sliderEl.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  });
+</script>
 
 {% schema %}
 {
