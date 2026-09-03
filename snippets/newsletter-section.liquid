@@ -75,7 +75,7 @@
                     }
 
                     .theme-block--{{ block.id }} .enlarge-text h5{
-                      font-size: 28px !important;
+                      font-size: 28px;
                     }
 
                     .theme-block--{{ block.id }} .enlarge-text * {
@@ -84,8 +84,9 @@
 
                     @media only screen and (max-width: 589px) {
                     .theme-block--{{ block.id }} .enlarge-text h5{
-                      font-size: 38px !important;
+                      font-size: 22px;
                     }
+                  }
 
                   {% endstyle %}
                 {%- if block.settings.text != blank -%}
