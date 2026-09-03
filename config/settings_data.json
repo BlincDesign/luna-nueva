@@ -35,7 +35,7 @@
     "custom_header_font_filename": "AveriaSerifLibre-Regular",
     "type_header_font_family": "cardo_i4",
     "type_header_spacing": "-25",
-    "type_header_base_size": 70,
+    "type_header_base_size": 67,
     "type_header_line_height": 1.2,
     "type_header_accent_transform": true,
     "type_headers_align_text": false,
