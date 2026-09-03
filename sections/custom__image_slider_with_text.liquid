@@ -190,7 +190,7 @@
     {% if section.settings.heading != blank %}
       {% assign heading_parts = section.settings.heading | split: '||' %}
 
-      <div class="image-slider-text__heading">
+      <h2 class="image-slider-text__heading">
         {% for part in heading_parts %}
           {% if forloop.index0 == 0 or forloop.index0 == 2 or forloop.index0 == 4 %}
             {{ part }}
@@ -198,7 +198,7 @@
             <span class="image-slider-text__highlight">{{ part }}</span>
           {% endif %}
         {% endfor %}
-      </div>
+      </h2>
     {% endif %}
 
     {% if section.settings.text != blank %}
