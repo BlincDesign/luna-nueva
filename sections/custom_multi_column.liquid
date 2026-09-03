@@ -33,55 +33,17 @@
         #shopify-section-{{ section.id }} h2 {
           color: {{ section.settings.text_color }};
         }
-
-        #shopify-section-{{ section.id }} h2 strong {
-          color: var(--heading-highlight-color);
-        }
-
-        #shopify-section-{{ section.id }} .page-width {
-          position: relative;
-          z-index: 1;
-          padding-top: 56px;
-        }
-
-        #shopify-section-{{ section.id }} .divider {
-          position: relative;
-          border-top: 1px solid #f9f6f138;
-        }
 </style>
 
-{%- if section.settings.divider -%}
-  <div class="divider">
-{%- endif -%}
 
 <div class="text-{{ section.settings.align_text }} page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
   {%- for block in section.blocks -%}
     <div class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
         {%- when 'icon' -%}
-          {% style %}
-                #shopify-section-{{ section.id }} .divider .newsletter-icon {
-              position: absolute;
-              top: 0;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              width: {{ block.settings.icon_size }}px;
-              height: {{ block.settings.icon_size }}px;
-              margin: 0;
-              border-radius: 50%;
-              background-color: {{ block.settings.icon_color }};
-              {% if block.settings.icon_box_shadow != blank %}
-                box-shadow: {{ block.settings.icon_box_shadow }};
-              {% endif %}
-            }
-          {% endstyle %}
-
-          <div class="newsletter-icon"></div>
 
         {%- when 'heading' -%}
-          <h2 style="--heading-highlight-color: {{ block.settings.highlight_color }};">
-            {{ block.settings.title }}
-          </h2>
+          <h2> {{ block.settings.title }} </h2>
 
         {%- when 'page' -%}
           <div class="rte">
@@ -119,10 +81,6 @@
     </div>
   {%- endfor -%}
 </div>
-
-{%- if section.settings.divider -%}
-  </div>
-{%- endif -%}
 
 {% schema %}
 {
@@ -171,13 +129,6 @@
       "label": "t:sections.rich-text.settings.narrow_column.label",
       "default": true
     },
-    {
-      "type": "checkbox",
-      "id": "divider",
-      "label": "t:sections.rich-text.settings.divider.label",
-      "default": false
-    },
-
     {
       "type": "header",
       "content": "Padding"
@@ -230,49 +181,13 @@
 
   "blocks": [
     {
-      "type": "icon",
-      "name": "Icon",
-      "settings": [
-        {
-          "type": "range",
-          "id": "icon_size",
-          "label": "Icon size",
-          "min": 10,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "default": 26
-        },
-        {
-          "type": "color",
-          "id": "icon_color",
-          "label": "Icon color",
-          "default": "#D39655"
-        },
-        {
-          "type": "text",
-          "id": "icon_box_shadow",
-          "label": "Box shadow",
-          "default": "inset -8px -2px 0 0 #2D3135"
-        }
-      ]
-    },
-    {
       "type": "heading",
       "name": "t:sections.rich-text.blocks.heading.name",
       "settings": [
         {
-          "type": "inline_richtext",
+          "type": "richtext",
           "id": "title",
-          "label": "t:sections.rich-text.blocks.heading.settings.title.label",
-          "default": "When you drink less, what you drink should <strong>mean more.</strong>",
-          "info": "The selected color has been applied to the bold text."
-        },
-        {
-          "type": "color",
-          "id": "highlight_color",
-          "label": "Highlight color",
-          "default": "#D99A4D"
+          "label": "t:sections.rich-text.blocks.heading.settings.title.label"
         }
       ]
     },
@@ -328,9 +243,6 @@
     {
       "name": "Custom Multi Column",
       "blocks": [
-        {
-          "type": "icon"
-        },
         {
           "type": "heading"
         }
