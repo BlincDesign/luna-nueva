@@ -223,6 +223,107 @@
     ]
   },
   {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg",
+        "label": "Background",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border_hover",
+        "label": "Border (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border_hover",
+        "label": "Border (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Link"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text_hover",
+        "label": "Text (hover)",
+        "default": "#7a7a7a"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
