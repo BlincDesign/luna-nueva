@@ -98,6 +98,19 @@
         "divider": false
       }
     },
+    "custom_multi_column_KLgL7h": {
+      "type": "custom_multi_column",
+      "name": "Custom Multi Column",
+      "settings": {
+        "background_color": "#AEBFB4",
+        "text_color": "#f9f6f1",
+        "align_text": "left",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
+    },
     "newsletter": {
       "type": "newsletter",
       "blocks": {
@@ -169,30 +182,6 @@
         "padding_bottom": 120,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 80
-      }
-    },
-    "custom_multi_column_KLgL7h": {
-      "type": "custom_multi_column",
-      "blocks": {
-        "heading_RYD9Qk": {
-          "type": "heading",
-          "settings": {
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_RYD9Qk"
-      ],
-      "name": "Custom Multi Column",
-      "settings": {
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
-        "align_text": "center",
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
       }
     }
   },
