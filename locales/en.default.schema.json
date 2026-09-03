@@ -2223,9 +2223,6 @@
         },
         "cus_rich_text": {
           "name": "Custom rich text"
-        },
-        "cus_multi_column": {
-          "name": "Custom rich text"
         }
       }
     },
