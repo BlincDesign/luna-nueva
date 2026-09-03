@@ -1,6 +1,6 @@
 {% if linklists[block.settings.menu].links.size > 0 %}
   {% if block.settings.show_footer_title %}
-    <span class="footer__title">
+    <span class="footer__title-wrap">
       {{ linklists[block.settings.menu].title }}
     </span>
     {% comment %} <button type="button" class="footer__title collapsible-trigger collapsible-trigger-btn medium-up--hide" aria-controls="Footer-{{ block.id }}">
