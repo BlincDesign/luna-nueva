@@ -45,6 +45,10 @@
     color: {{ section.settings.heading_color }};
   }
 
+  #shopify-section-{{ section.id }} .image-slider-text__highlight {
+      color: {{ section.settings.heading_highlight_color }};
+    }
+
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin-bottom: 35px;
     font-size: {{ section.settings.text_size }}px;
@@ -184,8 +188,16 @@
     {% endif %}
 
     {% if section.settings.heading != blank %}
+      {% assign heading_parts = section.settings.heading | split: '||' %}
+
       <h2 class="image-slider-text__heading">
-        {{ section.settings.heading }}
+        {% for part in heading_parts %}
+          {% if forloop.index0 == 0 or forloop.index0 == 2 or forloop.index0 == 4 %}
+            {{ part }}
+          {% else %}
+            <span class="image-slider-text__highlight">{{ part }}</span>
+          {% endif %}
+        {% endfor %}
       </h2>
     {% endif %}
 
@@ -318,6 +330,13 @@
       "id": "heading",
       "label": "Heading",
       "default": "Image slider with text"
+    },
+    {
+      "type": "color",
+      "id": "heading_highlight_color",
+      "label": "Heading highlight color",
+      "default": "#C89B6D",
+      "info": "Add || before and after text in the heading to apply the highlight color. Example: New collection ||is here||"
     },
     {
       "type": "richtext",
