@@ -112,11 +112,19 @@
           "settings": {
             "title": "Where it actually gets poured."
           }
+        },
+        "text_9tiTLk": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.<br/><br/></p>"
+          }
         }
       },
       "block_order": [
         "eyebrow_CeK6D3",
-        "heading_hmw6Hn"
+        "heading_hmw6Hn",
+        "text_9tiTLk"
       ],
       "name": "Custom Multi Column",
       "settings": {
