@@ -25,9 +25,9 @@
 
 /* Global button system */
 
-.btn--primary,
-.btn--secondary,
-.btn--link {
+.button--primary,
+.button--secondary,
+.button--link {
   background-color: var(--btn-bg, transparent);
   border-color: var(--btn-border, transparent);
   color: var(--btn-color, inherit);
@@ -40,8 +40,8 @@
     transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-.btn--primary,
-.btn--secondary {
+.button--primary,
+.button--secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
@@ -52,9 +52,9 @@
   will-change: transform;
 }
 
-.btn--primary:hover,
-.btn--secondary:hover,
-.btn--link:hover {
+.button--primary:hover,
+.button--secondary:hover,
+.button--link:hover {
   background-color: var(--btn-hover-bg, var(--btn-bg, transparent));
   border-color: var(--btn-hover-border, var(--btn-border, transparent));
   color: var(--btn-hover-color, var(--btn-color, inherit));
@@ -65,7 +65,7 @@
   transform: translateY(-2px);
 }
 
-.btn--primary {
+.button--primary {
   --btn-bg: var(--btn-primary-bg);
   --btn-border: var(--btn-primary-border);
   --btn-color: var(--btn-primary-color);
@@ -74,7 +74,7 @@
   --btn-hover-color: var(--btn-primary-color-hover);
 }
 
-.btn--secondary {
+.button--secondary {
   --btn-bg: var(--btn-secondary-bg);
   --btn-border: var(--btn-secondary-border);
   --btn-color: var(--btn-secondary-color);
@@ -83,7 +83,7 @@
   --btn-hover-color: var(--btn-secondary-color-hover);
 }
 
-.btn--link {
+.button--link {
   --btn-color: var(--btn-link-color);
   --btn-hover-color: var(--btn-link-color-hover);
   min-width: 0;
@@ -93,13 +93,13 @@
   text-decoration: underline;
 }
 
-.btn__arrow {
+.button__arrow {
   display: inline-block;
   margin-left: 0.5em;
   transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-[data-animate_buttons="true"] .btn:hover .btn__arrow {
+[data-animate_buttons="true"] .button:hover .button__arrow {
   transform: translateX(4px);
 }
 
