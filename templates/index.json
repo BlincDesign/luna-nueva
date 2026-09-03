@@ -51,31 +51,6 @@
         "padding_bottom_mb": 40
       }
     },
-    "custom_multi_column_KyjbHm": {
-      "type": "custom_multi_column",
-      "blocks": {
-        "heading_9hkNN6": {
-          "type": "heading",
-          "settings": {
-            "title": "<h2>Three Expressions</h2>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_9hkNN6"
-      ],
-      "name": "Custom Multi Column",
-      "settings": {
-        "background_color": "#AEBFB4",
-        "text_color": "#2D3135",
-        "align_text": "left",
-        "narrow_column": true,
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
-      }
-    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -110,6 +85,31 @@
         "align_text": "center",
         "narrow_column": true,
         "divider": false
+      }
+    },
+    "custom_multi_column_KyjbHm": {
+      "type": "custom_multi_column",
+      "blocks": {
+        "heading_9hkNN6": {
+          "type": "heading",
+          "settings": {
+            "title": "<h2>Three Expressions</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9hkNN6"
+      ],
+      "name": "Custom Multi Column",
+      "settings": {
+        "background_color": "#aebfb4",
+        "text_color": "#2d3135",
+        "align_text": "left",
+        "narrow_column": true,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
       }
     },
     "featured-collection-switcher": {
@@ -200,8 +200,8 @@
   "order": [
     "text_and_image_zBb9nf",
     "custom_product_details_JbJXVn",
-    "custom_multi_column_KyjbHm",
     "rich-text",
+    "custom_multi_column_KyjbHm",
     "featured-collection-switcher",
     "newsletter",
     "custom_rich_text_NYyzpe"
