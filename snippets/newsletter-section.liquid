@@ -29,7 +29,7 @@
                       display: block;
                       width: {{ block.settings.icon_size }}px;
                       height: {{ block.settings.icon_size }}px;
-                      margin: 0 auto {{ block.settings.icon_margin_bottom }}px;
+                      margin: 0 auto;
                       border-radius: 50%;
                       background-color: {{ block.settings.icon_color }};
 
@@ -37,14 +37,30 @@
                         box-shadow: {{ block.settings.icon_box_shadow }};
                       {% endif %}
                     }
+                    
+                    .newsletter-{{ section.id }} .theme-block{
+                      margin-bottom : {{ block.settings.margin_bottom }}px;
+                    }
+
                   {% endstyle %}
                   <div class="newsletter-icon"></div>
 
               {%- when 'title' -%}
+                {% style %}
+                    .newsletter-{{ section.id }} .theme-block{
+                      margin-bottom : {{ block.settings.margin_bottom }}px;
+                    }
+                  {% endstyle %}
+
                 {%- if block.settings.title != blank -%}
                   <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}</p>
                 {%- endif -%}
               {%- when 'text' -%}
+                {% style %}
+                    .newsletter-{{ section.id }} .theme-block{
+                      margin-bottom : {{ block.settings.margin_bottom }}px;
+                    }
+                  {% endstyle %}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">
                     <div class="enlarge-text">
