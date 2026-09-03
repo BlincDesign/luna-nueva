@@ -52,6 +52,11 @@
                       margin: 0 auto;
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
+
+                    .theme-block--{{ block.id }} h1{
+                      font-size: 38px;
+                    }
+
                   {% endstyle %}
 
                 {%- if block.settings.title != blank -%}
