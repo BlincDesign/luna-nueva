@@ -1,0 +1,30 @@
+{% doc %}
+  Global button component. Renders an anchor styled from the theme's
+  Buttons settings (Primary, Secondary, Link) via the .btn / .btn--{type}
+  BEM classes defined in custom.css.
+
+  @param {string} label - Button text
+  @param {string} url - Link destination
+  @param {string} [type] ('primary'|'secondary'|'link') - Visual style (default: 'primary')
+  @param {string} [id] - Optional id attribute
+  @param {string} [class] - Additional classes to append
+
+  @example
+  {% render 'button', label: 'Shop now', url: '/collections/all', type: 'primary' %}
+{% enddoc %}
+
+{% liquid
+  assign type = type | default: 'primary'
+  assign classlist = 'btn btn--' | append: type
+  if class != blank
+    assign classlist = classlist | append: ' ' | append: class
+  endif
+%}
+
+<a
+  {%- if id != blank %} id="{{ id }}"{% endif %}
+  href="{{ url | default: '#' }}"
+  class="{{ classlist }}"
+>
+  {{- label | escape -}}
+</a>
