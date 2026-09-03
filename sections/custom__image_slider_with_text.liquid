@@ -78,19 +78,35 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
+  /*
+    FIX: removed `display: flex; flex-wrap: nowrap;` from this container.
+    Flickity manages cell layout itself (it injects a .flickity-viewport /
+    .flickity-slider wrapper and positions cells with inline transforms).
+    A flex parent fights that positioning and breaks height calculation.
+    We just need position:relative so Flickity's viewport can be absolutely
+    positioned inside it, and overflow:hidden to clip the track pre-init.
+  */
   #shopify-section-{{ section.id }} .image-slider-text__slides {
-    display: flex;
-    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
     width: 100%;
+    /*
+      FIX: reserve height via aspect-ratio so the cell has real height
+      the instant it's in the DOM — Flickity reads this at init instead
+      of a 0px lazy-loaded image, so it never locks in height:0.
+      Adjust the ratio to match your actual slide images.
+    */
+    aspect-ratio: 16 / 9;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   @media screen and (max-width: 749px) {
@@ -171,11 +187,22 @@
         {{ block.shopify_attributes }}
       >
         {% if block.settings.image != blank %}
+          {% liquid
+            assign img_loading = 'lazy'
+            assign img_fetchpriority = nil
+            if forloop.first
+              assign img_loading = 'eager'
+              assign img_fetchpriority = 'high'
+            endif
+          %}
           {{
             block.settings.image
             | image_url: width: 1600
             | image_tag:
-              loading: 'lazy',
+              loading: img_loading,
+              fetchpriority: img_fetchpriority,
+              width: block.settings.image.width,
+              height: block.settings.image.height,
               widths: '400, 600, 800, 1000, 1200, 1600',
               class: 'image-slider-text__image',
               alt: block.settings.image.alt
@@ -188,11 +215,11 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var slider = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
+    var sliderEl = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
 
-    if (!slider) return;
+    if (!sliderEl) return;
 
-    new Flickity(slider, {
+    var flkty = new Flickity(sliderEl, {
       cellAlign: 'left',
       contain: true,
       wrapAround: true,
@@ -201,8 +228,22 @@
       pageDots: true,
       pauseAutoPlayOnHover: true
     });
+
+    // Belt-and-suspenders: if any slide image (lazy-loaded past the first)
+    // finishes loading after Flickity has already measured cell sizes,
+    // force a resize so the layout/height stays correct.
+    var images = sliderEl.querySelectorAll('.image-slider-text__image');
+    images.forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener('load', function () {
+          flkty.resize();
+        });
+      }
+    });
   });
 </script>
+
+
 
 {% schema %}
 {
