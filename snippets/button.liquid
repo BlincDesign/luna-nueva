@@ -8,6 +8,7 @@
   @param {string} [type] ('primary'|'secondary'|'link') - Visual style (default: 'primary')
   @param {string} [id] - Optional id attribute
   @param {string} [class] - Additional classes to append
+  @param {boolean} [arrow] - Append an animated arrow after the label
 
   @example
   {% render 'button', label: 'Shop now', url: '/collections/all', type: 'primary' %}
@@ -27,4 +28,5 @@
   class="{{ classlist }}"
 >
   {{- label | escape -}}
+  {%- if type == "primary" and arrow != false %}<span class="btn__arrow">→</span>{% endif -%}
 </a>
