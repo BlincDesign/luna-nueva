@@ -40,7 +40,6 @@
   {%- for block in section.blocks -%}
     <div class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
-        {%- when 'icon' -%}
 
         {%- when 'heading' -%}
           <h2> {{ block.settings.title }} </h2>
