@@ -9,28 +9,45 @@
  */
 {
   "sections": {
+    "custom_product_details_JbJXVn": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver-1",
+          "luna-nueva-silver",
+          "luna-nueva-reposado"
+        ],
+        "section_background": "#aebfb4",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_image_slider_with_text_fFfUKJ": {
       "type": "custom__image_slider_with_text",
       "blocks": {
         "image_bzwiJi": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg",
-            "image_link": ""
+            "image": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg"
           }
         },
         "image_JyBeaM": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hero-ocean.jpg",
-            "image_link": ""
+            "image": "shopify://shop_images/hero-ocean.jpg"
           }
         },
         "image_xpFnMR": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hero-tailgate.jpg",
-            "image_link": ""
+            "image": "shopify://shop_images/hero-tailgate.jpg"
           }
         }
       },
@@ -51,9 +68,11 @@
         "preheading_font": "assistant_n4",
         "heading_font": "assistant_n4",
         "text_font": "assistant_n4",
+        "button_font": "assistant_n4",
         "preheading_size": 14,
         "heading_size": 48,
         "text_size": 16,
+        "button_font_size": 14,
         "heading_line_height": 1.1,
         "text_line_height": 1.5,
         "preheading_color": "#000000",
@@ -62,19 +81,27 @@
         "preheading_margin": 10,
         "heading_margin": 20,
         "text_margin": 30,
+        "mobile_preheading_size": 13,
         "mobile_heading_size": 34,
         "mobile_text_size": 15,
         "button_gap": 10,
+        "button_height": 48,
+        "button_horizontal_padding": 25,
+        "button_radius": 0,
         "button_1_background": "#000000",
         "button_1_text_color": "#ffffff",
         "button_2_background": "rgba(0,0,0,0)",
         "button_2_text_color": "#000000",
         "button_2_border_color": "#000000",
-        "background_color": "#AEBFB4",
+        "background_color": "#aebfb4",
+        "container_width": 1400,
+        "content_width": 550,
+        "column_gap": 70,
         "padding_top": 80,
         "padding_bottom": 80,
         "mobile_padding_top": 50,
-        "mobile_padding_bottom": 50
+        "mobile_padding_bottom": 50,
+        "mobile_column_gap": 40
       }
     },
     "scrolling_text_PacCqL": {
@@ -135,26 +162,6 @@
         "color_text": "#2d3135",
         "padding_top": 15,
         "padding_bottom": 15
-      }
-    },
-    "custom_product_details_JbJXVn": {
-      "type": "custom__product-details",
-      "name": "Product Detail List",
-      "settings": {
-        "heading": "Three Expressions",
-        "preheading": "THE COLLECTION",
-        "right_text": "750ml · Additive-Free · Jalisco",
-        "right_link": "",
-        "products": [
-          "luna-nueva-silver-1",
-          "luna-nueva-silver",
-          "luna-nueva-reposado"
-        ],
-        "section_background": "#aebfb4",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
       }
     },
     "rich-text": {
@@ -260,9 +267,9 @@
     }
   },
   "order": [
+    "custom_product_details_JbJXVn",
     "custom_image_slider_with_text_fFfUKJ",
     "scrolling_text_PacCqL",
-    "custom_product_details_JbJXVn",
     "rich-text",
     "featured-collection-switcher",
     "newsletter"
