@@ -95,10 +95,26 @@
           "settings": {
             "title": "<h2>Three Expressions</h2>"
           }
+        },
+        "text_BfBrTU": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_wzxytx": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
         }
       },
       "block_order": [
-        "heading_9hkNN6"
+        "heading_9hkNN6",
+        "text_BfBrTU",
+        "button_wzxytx"
       ],
       "name": "Custom Multi Column",
       "settings": {
