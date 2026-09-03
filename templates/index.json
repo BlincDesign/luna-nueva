@@ -31,6 +31,26 @@
         "lazyload_images": true
       }
     },
+    "custom_product_details_JbJXVn": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver-1",
+          "luna-nueva-silver",
+          "luna-nueva-reposado"
+        ],
+        "section_background": "#aebfb4",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_multi_column_KyjbHm": {
       "type": "custom_multi_column",
       "blocks": {
@@ -54,26 +74,6 @@
         "padding_bottom": 120,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
-      }
-    },
-    "custom_product_details_JbJXVn": {
-      "type": "custom__product-details",
-      "name": "Product Detail List",
-      "settings": {
-        "heading": "Three Expressions",
-        "preheading": "THE COLLECTION",
-        "right_text": "750ml · Additive-Free · Jalisco",
-        "right_link": "",
-        "products": [
-          "luna-nueva-silver-1",
-          "luna-nueva-silver",
-          "luna-nueva-reposado"
-        ],
-        "section_background": "#aebfb4",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
       }
     },
     "rich-text": {
@@ -199,8 +199,8 @@
   },
   "order": [
     "text_and_image_zBb9nf",
-    "custom_multi_column_KyjbHm",
     "custom_product_details_JbJXVn",
+    "custom_multi_column_KyjbHm",
     "rich-text",
     "featured-collection-switcher",
     "newsletter",
