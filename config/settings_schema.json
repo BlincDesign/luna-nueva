@@ -227,6 +227,34 @@
     "settings": [
       {
         "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "range",
+        "id": "button_border_radius",
+        "label": "Border radius",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "button_font_size",
+        "label": "Font size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 12
+      },
+      {
+        "type": "paragraph",
+        "content": "Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
+      },
+      {
+        "type": "header",
         "content": "Primary"
       },
       {
