@@ -58,13 +58,11 @@
               {%- when 'text' -%}
                 {% style %}
                     .theme-block--{{ block.id }}{
-                      margin-bottom : {{ block.settings.margin_bottom }}px;
-                    }
-                    
-                    .theme-block--{{ block.id }} .enlarge-text {
                       max-width: {{ block.settings.text_width }}px;
                       margin: 0 auto;
+                      margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
+
                     .theme-block--{{ block.id }} .enlarge-text h5{
                       font-size: 28px !important;
                     }
