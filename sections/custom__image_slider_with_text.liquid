@@ -78,61 +78,19 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
-  /*
-    Crossfade slider — no Flickity. Slides stack via position:absolute and
-    fade between each other on an "is-active" class. A small vanilla JS
-    controller toggles that class (autoplay + click-to-jump on dots).
-  */
-
   #shopify-section-{{ section.id }} .image-slider-text__slides {
-    position: relative;
-    overflow: hidden;
-    height: 90vh;
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 1.5s cubic-bezier(.4, 0, .2, 1);
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__slide.is-active {
-    opacity: 1;
-    z-index: 1;
+    width: 100%;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    gap: 8px;
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__dot {
-    width: 8px;
-    height: 8px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.45);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__dot.is-active {
-    background-color: #ffffff;
+    height: auto;
   }
 
   @media screen and (max-width: 749px) {
@@ -206,33 +164,18 @@
     {% endif %}
   </div>
 
-  <div
-    class="image-slider-text__slides"
-    data-autoplay-enabled="{{ section.settings.slider_autoplay_enabled }}"
-    data-autoplay-speed="{{ section.settings.slider_autoplay }}"
-  >
+  <div class="image-slider-text__slides">
     {% for block in section.blocks %}
       <div
-        class="image-slider-text__slide{% if forloop.first %} is-active{% endif %}"
+        class="image-slider-text__slide"
         {{ block.shopify_attributes }}
       >
         {% if block.settings.image != blank %}
-          {% liquid
-            assign img_loading = 'lazy'
-            assign img_fetchpriority = nil
-            if forloop.first
-              assign img_loading = 'eager'
-              assign img_fetchpriority = 'high'
-            endif
-          %}
           {{
             block.settings.image
             | image_url: width: 1600
             | image_tag:
-              loading: img_loading,
-              fetchpriority: img_fetchpriority,
-              width: block.settings.image.width,
-              height: block.settings.image.height,
+              loading: 'lazy',
               widths: '400, 600, 800, 1000, 1200, 1600',
               class: 'image-slider-text__image',
               alt: block.settings.image.alt
@@ -240,86 +183,25 @@
         {% endif %}
       </div>
     {% endfor %}
-
-    {% if section.blocks.size > 1 %}
-      <div class="image-slider-text__dots" role="tablist" aria-label="Slides">
-        {% for block in section.blocks %}
-          <button
-            type="button"
-            class="image-slider-text__dot{% if forloop.first %} is-active{% endif %}"
-            role="tab"
-            aria-label="Go to slide {{ forloop.index }}"
-            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-          ></button>
-        {% endfor %}
-      </div>
-    {% endif %}
   </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var sliderEl = document.querySelector(
-      '#shopify-section-{{ section.id }} .image-slider-text__slides'
-    );
-    if (!sliderEl) return;
+    var slider = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
 
-    var slides = sliderEl.querySelectorAll('.image-slider-text__slide');
-    var dots = sliderEl.querySelectorAll('.image-slider-text__dot');
+    if (!slider) return;
 
-    if (slides.length <= 1) return;
-
-    var autoplayEnabled = sliderEl.dataset.autoplayEnabled === 'true';
-    var autoplaySpeed = parseInt(sliderEl.dataset.autoplaySpeed, 10) || 4000;
-    var current = 0;
-    var timer = null;
-
-    function goTo(index) {
-      if (index === current) return;
-
-      slides[current].classList.remove('is-active');
-      if (dots[current]) {
-        dots[current].classList.remove('is-active');
-        dots[current].setAttribute('aria-selected', 'false');
-      }
-
-      current = index;
-
-      slides[current].classList.add('is-active');
-      if (dots[current]) {
-        dots[current].classList.add('is-active');
-        dots[current].setAttribute('aria-selected', 'true');
-      }
-    }
-
-    function next() {
-      goTo((current + 1) % slides.length);
-    }
-
-    function startAutoplay() {
-      if (!autoplayEnabled) return;
-      stopAutoplay();
-      timer = setInterval(next, autoplaySpeed);
-    }
-
-    function stopAutoplay() {
-      if (timer) {
-        clearInterval(timer);
-        timer = null;
-      }
-    }
-
-    dots.forEach(function (dot, index) {
-      dot.addEventListener('click', function () {
-        goTo(index);
-        startAutoplay();
-      });
+    new Flickity(slider, {
+      cellAlign: 'left',
+      contain: true,
+      wrapAround: true,
+      autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
+      prevNextButtons: false,
+      pageDots: true,
+      fade: true,
+      pauseAutoPlayOnHover: true
     });
-
-    sliderEl.addEventListener('mouseenter', stopAutoplay);
-    sliderEl.addEventListener('mouseleave', startAutoplay);
-
-    startAutoplay();
   });
 </script>
 
