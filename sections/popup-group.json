@@ -46,9 +46,9 @@
         "heading": "Are you 21 or older?",
         "text": "<p>By entering, you confirm you are of legal drinking age. Please enjoy responsibly.</p>",
         "yes_button_label": "Yes",
-        "yes_button_type": "secondary",
+        "yes_button_type": "primary",
         "no_button_label": "No",
-        "no_button_type": "link",
+        "no_button_type": "secondary",
         "error_message": "Sorry, you must be of legal drinking age to enter this site.",
         "background_color": "#2d3135",
         "text_color": "#ffffff"
