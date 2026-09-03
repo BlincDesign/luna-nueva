@@ -85,6 +85,7 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
     width: 100%;
+    height: 100vh;
     aspect-ratio: 1;
   }
 
@@ -214,7 +215,7 @@
       pageDots: true,
       pauseAutoPlayOnHover: true
     });
-    
+
     var images = sliderEl.querySelectorAll('.image-slider-text__image');
     images.forEach(function (img) {
       if (!img.complete) {
