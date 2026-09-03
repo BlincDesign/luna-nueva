@@ -47,7 +47,9 @@
 
               {%- when 'title' -%}
                 {% style %}
-                    .theme-block--{{ block.id }} {
+                    .theme-block--{{ block.id }}{
+                      max-width: {{ block.settings.text_width }}px;
+                      margin: 0 auto;
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
                   {% endstyle %}
