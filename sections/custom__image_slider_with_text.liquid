@@ -80,20 +80,20 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
+  #shopify-section-{{ section.id }} .image-slider-text__slides {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .image-slider-text__slide {
+    flex: 1 0 0;
+  }
+
   #shopify-section-{{ section.id }} .image-slider-text__image {
     display: block;
     width: 100%;
     height: auto;
   }
-
-  .image-slider-text__slides {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.image-slider-text__slide {
-    flex: 1 0 0;
-}
 
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} {
@@ -124,87 +124,77 @@
   }
 {% endstyle %}
 
-<div class="image-slider-text">
-  <div class="image-slider-text__container">
+<div class="image-slider-text__grid">
 
-    <div class="image-slider-text__grid">
+  <div class="image-slider-text__content">
 
-      <div class="image-slider-text__content">
+    {% if section.settings.preheading != blank %}
+      <div class="image-slider-text__preheading">
+        {{ section.settings.preheading }}
+      </div>
+    {% endif %}
 
-        {% if section.settings.preheading != blank %}
-          <div class="image-slider-text__preheading">
-            {{ section.settings.preheading }}
-          </div>
+    {% if section.settings.heading != blank %}
+      <h2 class="image-slider-text__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.text != blank %}
+      <div class="image-slider-text__text rte">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+      <div class="image-slider-text__buttons">
+
+        {% if section.settings.button_1_label != blank %}
+          <a
+            href="{{ section.settings.button_1_link }}"
+            class="image-slider-text__button image-slider-text__button--primary"
+          >
+            {{ section.settings.button_1_label }}
+          </a>
         {% endif %}
 
-        {% if section.settings.heading != blank %}
-          <h2 class="image-slider-text__heading">
-            {{ section.settings.heading }}
-          </h2>
-        {% endif %}
-
-        {% if section.settings.text != blank %}
-          <div class="image-slider-text__text rte">
-            {{ section.settings.text }}
-          </div>
-        {% endif %}
-
-        {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
-          <div class="image-slider-text__buttons">
-
-            {% if section.settings.button_1_label != blank %}
-              <a
-                href="{{ section.settings.button_1_link }}"
-                class="image-slider-text__button image-slider-text__button--primary"
-              >
-                {{ section.settings.button_1_label }}
-              </a>
-            {% endif %}
-
-            {% if section.settings.button_2_label != blank %}
-              <a
-                href="{{ section.settings.button_2_link }}"
-                class="image-slider-text__button image-slider-text__button--secondary"
-              >
-                {{ section.settings.button_2_label }}
-              </a>
-            {% endif %}
-
-          </div>
+        {% if section.settings.button_2_label != blank %}
+          <a
+            href="{{ section.settings.button_2_link }}"
+            class="image-slider-text__button image-slider-text__button--secondary"
+          >
+            {{ section.settings.button_2_label }}
+          </a>
         {% endif %}
 
       </div>
-
-      <div class="image-slider-text__slider">
-
-        <div class="image-slider-text__slides">
-
-          {% for block in section.blocks %}
-            <div
-              class="image-slider-text__slide"
-              {{ block.shopify_attributes }}
-            >
-              {% if block.settings.image != blank %}
-                {{
-                  block.settings.image
-                  | image_url: width: 1600
-                  | image_tag:
-                    loading: 'lazy',
-                    widths: '400, 600, 800, 1000, 1200, 1600',
-                    class: 'image-slider-text__image',
-                    alt: block.settings.image.alt
-                }}
-              {% endif %}
-            </div>
-          {% endfor %}
-
-        </div>
-
-      </div>
-
-    </div>
+    {% endif %}
 
   </div>
+
+  <div class="image-slider-text__slides">
+
+    {% for block in section.blocks %}
+      <div
+        class="image-slider-text__slide"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.image != blank %}
+          {{
+            block.settings.image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800, 1000, 1200, 1600',
+              class: 'image-slider-text__image',
+              alt: block.settings.image.alt
+          }}
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+
 </div>
 
 {% schema %}
