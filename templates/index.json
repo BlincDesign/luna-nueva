@@ -181,7 +181,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Events, new releases, and the occasional recipe worth making.</p>",
+            "text": "<h5>Events, new releases, and the occasional recipe worth making.</h5>",
             "font_size": 28,
             "text_width": 600,
             "margin_bottom": 36
