@@ -93,7 +93,7 @@
 
           {%- when 'eyebrow' -%}
             <div class="theme-block" {{ block.shopify_attributes }}>
-              {{ block.settings.title }}
+              {{ block.settings.eyebrow }}
             </div>
 
           {%- when 'heading' -%}
@@ -252,10 +252,10 @@
       "name": "Eyebrow",
       "settings": [
         {
-          "type": "inline_richtext",
-          "id": "title",
+          "type": "text",
+          "id": "eyebrow",
           "label": "Eyebrow",
-          "default": "IN THE WILD"
+          "default": "<p>IN THE WILD</p>"
         }
       ]
     },
