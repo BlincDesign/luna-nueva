@@ -43,8 +43,8 @@
       "type": "age-verification-popup",
       "settings": {
         "logo": "shopify://shop_images/logo-green.png",
-        "heading": "Confirm your age",
-        "text": "<p>Are you 21 years old or older?</p>",
+        "heading": "Are you 21 or older?",
+        "text": "<p>By entering, you confirm you are of legal drinking age. Please enjoy responsibly.</p>",
         "yes_button_label": "Yes",
         "no_button_label": "No",
         "error_message": "Sorry, you must be of legal drinking age to enter this site.",
