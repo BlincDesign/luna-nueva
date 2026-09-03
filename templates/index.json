@@ -112,11 +112,27 @@
           "settings": {
             "title": "Where it actually gets poured."
           }
+        },
+        "text_BfJf4k": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Use this text to share information about your brand with your customers.</p>"
+          }
+        },
+        "button_gHnVxV": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "See what's coming up →"
+          }
         }
       },
       "block_order": [
         "eyebrow_CeK6D3",
-        "heading_hmw6Hn"
+        "heading_hmw6Hn",
+        "text_BfJf4k",
+        "button_gHnVxV"
       ],
       "name": "Custom Multi Column",
       "settings": {
