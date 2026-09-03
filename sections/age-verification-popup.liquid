@@ -1,16 +1,9 @@
 {% style %}
 #shopify-section-{{ section.id }} {
-    --age-confirmation-bg: {{ section.settings.background_color }};
-    --age-confirmation-color: {{ section.settings.text_color }};
-  }
-
-
-
-
-.age-confirmation__logo {
-   max-width: 190px;
-    margin-bottom: 38px;
+  --age-confirmation-bg: {{ section.settings.background_color }};
+  --age-confirmation-color: {{ section.settings.text_color }};
 }
+
 
 .age-confirmation {
   background-color: var(--age-confirmation-bg);
@@ -21,6 +14,7 @@
 
 .age-confirmation .modal__inner {
   background-color: transparent;
+  box-shadow: none;
 }
 
 .age-confirmation__inner {
@@ -32,6 +26,11 @@
   text-align: center;
 }
 
+
+.age-confirmation__logo {
+  max-width: 190px;
+  margin-bottom: 38px;
+}
 
 .age-confirmation__heading {
   font-size: 43px;
