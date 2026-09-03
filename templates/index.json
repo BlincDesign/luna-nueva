@@ -100,13 +100,31 @@
     },
     "custom_multi_column_KLgL7h": {
       "type": "custom_multi_column",
+      "blocks": {
+        "eyebrow_CeK6D3": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "IN THE WILD"
+          }
+        },
+        "heading_hmw6Hn": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured."
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_CeK6D3",
+        "heading_hmw6Hn"
+      ],
       "name": "Custom Multi Column",
       "settings": {
         "background_color": "#AEBFB4",
-        "text_color": "#f9f6f1",
+        "text_color": "#2D3135",
         "align_text": "left",
-        "padding_top": 120,
-        "padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
       }
