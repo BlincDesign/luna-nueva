@@ -102,8 +102,20 @@
     opacity: 1;
   }
 
-  .image-slider-text__slides  .flickity-page-dots {
-      bottom: 20px;
+  .image-slider-text__slides .flickity-page-dots {
+      bottom: 18px;
+      left: 0;
+      right: 0;
+      width: max-content;
+      margin-inline: auto;
+      display: flex;
+      gap: .55rem;
+      justify-content: center;
+      z-index: 3;
+      padding: .4rem .7rem;
+      border-radius: 999px;
+      background: rgba(45, 49, 53, .42);
+      backdrop-filter: blur(5px);
   }
 
   @media screen and (max-width: 749px) {
