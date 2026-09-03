@@ -17,7 +17,7 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
-    margin: 0 0 {{ section.settings.preheading_margin }}px;
+    margin-bottom: 20px;
     font-size: {{ section.settings.preheading_size }}px;
     {% if section.settings.custom_preheading_font != blank %}
       font-family: '{{ section.settings.custom_preheading_font }}', sans-serif;
@@ -33,7 +33,7 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading {
-    margin: 0 0 {{ section.settings.heading_margin }}px;
+    margin-bottom: 40px;
     font-size: {{ section.settings.heading_size }}px;
     {% if section.settings.custom_heading_font != blank %}
       font-family: '{{ section.settings.custom_heading_font }}', sans-serif;
@@ -46,7 +46,7 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__text {
-    margin: 0 0 {{ section.settings.text_margin }}px;
+    margin-bottom: 35px;
     font-size: {{ section.settings.text_size }}px;
     {% if section.settings.custom_text_font != blank %}
     font-family: '{{ section.settings.custom_text_font }}', sans-serif;
@@ -552,41 +552,6 @@
       "step": 10,
       "unit": "px",
       "default": 550
-    },
-
-    {
-      "type": "header",
-      "content": "Text spacing"
-    },
-    {
-      "type": "range",
-      "id": "preheading_margin",
-      "label": "Preheading bottom spacing",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "heading_margin",
-      "label": "Heading bottom spacing",
-      "min": 0,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "text_margin",
-      "label": "Text bottom spacing",
-      "min": 0,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 30
     },
     {
       "type": "header",
