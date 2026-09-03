@@ -58,6 +58,10 @@
   .medium-down--hide{
     display:none !important;
   }
+
+  .main-content .shopify-section:nth-child(1) {
+      margin-top: 93px;
+  }
 }
 
 @media only screen and (min-width:901px){
