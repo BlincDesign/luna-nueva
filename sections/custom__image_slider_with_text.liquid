@@ -93,15 +93,6 @@
     height: auto;
   }
 
-   {% for block in section.blocks limit: 1 %}
-    {% if block.settings.image != blank %}
-      #shopify-section-{{ section.id }} .image-slider-text__slides {
-        height: 0;
-        padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;
-      }
-    {% endif %}
-  {% endfor %}
-
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} {
       padding-top: {{ section.settings.mobile_padding_top }}px;
