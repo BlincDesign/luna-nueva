@@ -40,10 +40,8 @@
   {%- for block in section.blocks -%}
     <div class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
-
         {%- when 'heading' -%}
           <h2> {{ block.settings.title }} </h2>
-
         {%- when 'page' -%}
           <div class="rte">
             {%- if block.settings.page_text != blank -%}
@@ -52,16 +50,13 @@
               {{ 'home_page.onboarding.no_content' | t }}
             {%- endif -%}
           </div>
-
         {%- when 'text' -%}
           <div class="rte">
             {%- if block.settings.text != blank -%}
               {%- if block.settings.enlarge_text %}
                 <div class="enlarge-text">
               {% endif -%}
-
               {{ block.settings.text }}
-
               {%- if block.settings.enlarge_text %}
                 </div>
               {% endif -%}
@@ -69,7 +64,6 @@
               {{ 'home_page.onboarding.no_content' | t }}
             {%- endif -%}
           </div>
-
         {%- when 'button' -%}
           <div class="rte">
             <a href="{{ block.settings.link }}" class="btn">
