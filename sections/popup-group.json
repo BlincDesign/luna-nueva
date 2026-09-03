@@ -48,7 +48,7 @@
         "yes_button_label": "Yes",
         "no_button_label": "No",
         "error_message": "Sorry, you must be of legal drinking age to enter this site.",
-        "background_color": "#2D3135",
+        "background_color": "#2d3135",
         "text_color": "#ffffff"
       }
     }
