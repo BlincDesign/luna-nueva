@@ -164,23 +164,25 @@
         "icon_dcxAif": {
           "type": "icon",
           "settings": {
-            "icon_size": 31,
+            "icon_size": 26,
             "icon_color": "#d39655",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "icon_margin_bottom": 38
+            "margin_bottom": 38
           }
         },
         "title": {
           "type": "title",
           "settings": {
             "title": "Get invited to the next one.",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "margin_bottom": 17
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Events, new releases, and the occasional recipe worth making.</p>"
+            "text": "<p>Events, new releases, and the occasional recipe worth making.</p>",
+            "margin_bottom": 36
           }
         },
         "form": {
