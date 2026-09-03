@@ -1,100 +1,102 @@
 {% style %}
-  .age-confirmation {
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
-    height: 100vh;
-    z-index: 100;
+#shopify-section-{{ section.id }} {
+    --age-confirmation-bg: {{ section.settings.background_color }};
+    --age-confirmation-color: {{ section.settings.text_color }};
   }
+.age-confirmation {
+  background-color: var(--age-confirmation-bg);
+  color: var(--age-confirmation-color);
+  height: 100vh;
+  z-index: 100;
+}
 
-  .age-confirmation .modal__inner {
-    background-color: transparent;
-  }
+.age-confirmation .modal__inner {
+  background-color: transparent;
+}
 
-  .age-confirmation.modal--square .modal__centered-content {
-    background-color: transparent;
-  }
+.age-confirmation.modal--square .modal__centered-content {
+  background-color: transparent;
+}
 
-  .age-confirmation__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    max-width: 560px;
-    margin: 0 auto;
-    text-align: center;
-  }
+.age-confirmation__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .age-confirmation__logo img {
-    display: block;
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-  }
+.age-confirmation__logo img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
 
+.age-confirmation__heading {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.age-confirmation__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.age-confirmation__button {
+  display: inline-block;
+  min-width: 140px;
+  padding: 14px 32px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.age-confirmation__button--yes {
+  background-color: var(--age-confirmation-color);
+  color: var(--age-confirmation-bg);
+}
+
+.age-confirmation__button--no {
+  background: none;
+  color: inherit;
+}
+
+.age-confirmation__error {
+  margin: 0;
+  font-size: 13px;
+  color: #e8635a;
+}
+
+.age-confirmation__text {
+  margin: 0;
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 589px) {
   .age-confirmation__heading {
-    margin: 0;
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-size: 34px;
-    line-height: 1.2;
-    color: inherit;
-  }
-
-  .age-confirmation__actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    font-size: 26px;
   }
 
   .age-confirmation__button {
-    display: inline-block;
-    min-width: 140px;
-    padding: 14px 32px;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    background: none;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    cursor: pointer;
+    min-width: 0;
+    flex: 1 1 auto;
   }
-
-  .age-confirmation__button--yes {
-    background-color: {{ section.settings.text_color }};
-    color: {{ section.settings.background_color }};
-  }
-
-  .age-confirmation__button--no {
-    background: none;
-    color: inherit;
-  }
-
-  .age-confirmation__error {
-    margin: 0;
-    font-size: 13px;
-    color: #e8635a;
-  }
-
-  .age-confirmation__text {
-    margin: 0;
-    max-width: 420px;
-    font-size: 13px;
-    line-height: 1.5;
-    opacity: 0.7;
-  }
-
-  @media only screen and (max-width: 589px) {
-    .age-confirmation__heading {
-      font-size: 26px;
-    }
-
-    .age-confirmation__button {
-      min-width: 0;
-      flex: 1 1 auto;
-    }
-  }
+}
 {% endstyle %}
 
 <div
