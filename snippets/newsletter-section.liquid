@@ -18,14 +18,14 @@
     <div class="newsletter-section newsletter-section--image-{{ section.settings.image_position }} {% unless section.settings.image != blank %}newsletter-section--no-image{% endunless %}">
       <div class="newsletter-section__content">
         {%- for block in section.blocks -%}
-          <div class="theme-block" {{ block.shopify_attributes }}>
+          <div class="theme-block theme-block--{{ block.id }}" {{ block.shopify_attributes }}>
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
 
                 {%- when 'icon' -%}
                   {% style %}
-                    #shopify-section-{{ section.id }} .theme-block .newsletter-icon {
+                    #shopify-section-{{ section.id }} theme-block--{{ block.id }} .newsletter-icon {
                       display: block;
                       width: {{ block.settings.icon_size }}px;
                       height: {{ block.settings.icon_size }}px;
@@ -38,7 +38,7 @@
                       {% endif %}
                     }
                     
-                    .newsletter-{{ section.id }} .theme-block{
+                    .theme-block--{{ block.id }} {
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
 
@@ -47,7 +47,7 @@
 
               {%- when 'title' -%}
                 {% style %}
-                    .newsletter-{{ section.id }} .theme-block{
+                    .theme-block--{{ block.id }} {
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
                   {% endstyle %}
@@ -57,7 +57,7 @@
                 {%- endif -%}
               {%- when 'text' -%}
                 {% style %}
-                    .newsletter-{{ section.id }} .theme-block{
+                    .theme-block--{{ block.id }}{
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
                   {% endstyle %}
