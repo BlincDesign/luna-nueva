@@ -65,8 +65,12 @@
                       max-width: {{ block.settings.text_width }}px;
                       margin: 0 auto;
                     }
-                    .theme-block--{{ block.id }} .enlarge-text p{
-                      font-size: {{ block.settings.font_size }}px;
+                    .theme-block--{{ block.id }} .enlarge-text h5{
+                      font-size: 28px !important;
+                    }
+
+                    .theme-block--{{ block.id }} .enlarge-text * {
+                        margin: 0;
                     }
                   {% endstyle %}
                 {%- if block.settings.text != blank -%}
