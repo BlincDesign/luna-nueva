@@ -57,7 +57,7 @@
         "heading_9hkNN6": {
           "type": "heading",
           "settings": {
-            "title": ""
+            "title": "<h2>Three Expressions</h2>"
           }
         }
       },
@@ -68,7 +68,7 @@
       "settings": {
         "background_color": "#AEBFB4",
         "text_color": "#2D3135",
-        "align_text": "center",
+        "align_text": "left",
         "narrow_column": true,
         "padding_top": 120,
         "padding_bottom": 120,
