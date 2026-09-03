@@ -50,21 +50,20 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: {{ section.settings.button_gap }}px;
+    gap: 20px;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: {{ section.settings.button_height }}px;
-    padding: 10px {{ section.settings.button_horizontal_padding }}px;
+    min-height: 40px;
+    padding: 10px;
     font-size: {{ section.settings.button_font_size }}px;
     font-style: {{ section.settings.button_font.style }};
     font-weight: {{ section.settings.button_font.weight }};
     line-height: 1;
     text-decoration: none;
-    border-radius: {{ section.settings.button_radius }}px;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__button--primary {
@@ -195,12 +194,46 @@
 
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var slider = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
+
+    if (!slider) return;
+
+    new Flickity(slider, {
+      cellAlign: 'left',
+      contain: true,
+      wrapAround: true,
+      autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
+      prevNextButtons: false,
+      pageDots: true,
+      pauseAutoPlayOnHover: true
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Image slider with text",
   "tag": "section",
   "class": "section-image-slider-text",
   "settings": [
+    {
+        "type": "checkbox",
+        "id": "slider_autoplay_enabled",
+        "label": "Enable autoplay",
+        "default": true
+        },
+        {
+        "type": "range",
+        "id": "slider_autoplay",
+        "label": "Autoplay speed",
+        "min": 1000,
+        "max": 9000,
+        "step": 500,
+        "unit": "ms",
+        "default": 4000
+    },
     {
       "type": "header",
       "content": "Content"
@@ -429,46 +462,6 @@
       "content": "Buttons"
     },
     {
-      "type": "range",
-      "id": "button_gap",
-      "label": "Button spacing",
-      "min": 0,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "button_height",
-      "label": "Button height",
-      "min": 30,
-      "max": 80,
-      "step": 1,
-      "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "button_horizontal_padding",
-      "label": "Button horizontal padding",
-      "min": 10,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 25
-    },
-    {
-      "type": "range",
-      "id": "button_radius",
-      "label": "Button corner radius",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    },
-    {
       "type": "color",
       "id": "button_1_background",
       "label": "Button 1 background",
@@ -498,7 +491,6 @@
       "label": "Button 2 border color",
       "default": "#000000"
     },
-
     {
       "type": "header",
       "content": "Layout"
