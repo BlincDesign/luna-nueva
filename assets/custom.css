@@ -508,3 +508,53 @@ a.pdl__right {
 
 
 /* End age verification popup */
+
+
+
+/* Global button system */
+
+.btn--primary,
+.btn--secondary,
+.btn--link {
+  background-color: var(--btn-bg, transparent);
+  border-color: var(--btn-border, transparent);
+  color: var(--btn-color, inherit);
+}
+
+.btn--primary:hover,
+.btn--secondary:hover,
+.btn--link:hover {
+  background-color: var(--btn-hover-bg, var(--btn-bg, transparent));
+  border-color: var(--btn-hover-border, var(--btn-border, transparent));
+  color: var(--btn-hover-color, var(--btn-color, inherit));
+}
+
+.btn--primary {
+  --btn-bg: var(--btn-primary-bg);
+  --btn-border: var(--btn-primary-border);
+  --btn-color: var(--btn-primary-color);
+  --btn-hover-bg: var(--btn-primary-bg-hover);
+  --btn-hover-border: var(--btn-primary-border-hover);
+  --btn-hover-color: var(--btn-primary-color-hover);
+}
+
+.btn--secondary {
+  --btn-bg: var(--btn-secondary-bg);
+  --btn-border: var(--btn-secondary-border);
+  --btn-color: var(--btn-secondary-color);
+  --btn-hover-bg: var(--btn-secondary-bg-hover);
+  --btn-hover-border: var(--btn-secondary-border-hover);
+  --btn-hover-color: var(--btn-secondary-color-hover);
+}
+
+.btn--link {
+  --btn-color: var(--btn-link-color);
+  --btn-hover-color: var(--btn-link-color-hover);
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+/* End global button system */
