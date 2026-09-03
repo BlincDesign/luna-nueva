@@ -84,7 +84,11 @@
         "text_size": 20,
         "text_spacing": true,
         "direction": "left",
-        "speed": 100
+        "speed": 100,
+        "color_background": "#d39655",
+        "color_text": "#2d3135",
+        "padding_top": 14,
+        "padding_bottom": 14
       }
     },
     "custom_product_details_JbJXVn": {
@@ -195,8 +199,8 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "color_background": "#2D3135",
-        "color_text": "#FFFFFF",
+        "color_background": "#2d3135",
+        "color_text": "#ffffff",
         "padding_top": 140,
         "padding_bottom": 140,
         "padding_top_mb": 40,
