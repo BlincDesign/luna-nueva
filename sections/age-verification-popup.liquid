@@ -1,20 +1,20 @@
 {% style %}
-  #shopify-section-{{ section.id }} .age-confirmation {
+  .age-confirmation {
     background-color: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }};
     height: 100vh;
     z-index: 100;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation .modal__inner {
+  .age-confirmation .modal__inner {
     background-color: transparent;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation.modal--square .modal__centered-content {
+  .age-confirmation.modal--square .modal__centered-content {
     background-color: transparent;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__inner {
+  .age-confirmation__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,14 +24,14 @@
     text-align: center;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__logo img {
+  .age-confirmation__logo img {
     display: block;
     width: 100%;
     max-width: 220px;
     height: auto;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__heading {
+  .age-confirmation__heading {
     margin: 0;
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
     font-size: 34px;
@@ -39,14 +39,14 @@
     color: inherit;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__actions {
+  .age-confirmation__actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__button {
+  .age-confirmation__button {
     display: inline-block;
     min-width: 140px;
     padding: 14px 32px;
@@ -61,23 +61,23 @@
     cursor: pointer;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__button--yes {
+  .age-confirmation__button--yes {
     background-color: {{ section.settings.text_color }};
     color: {{ section.settings.background_color }};
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__button--no {
+  .age-confirmation__button--no {
     background: none;
     color: inherit;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__error {
+  .age-confirmation__error {
     margin: 0;
     font-size: 13px;
     color: #e8635a;
   }
 
-  #shopify-section-{{ section.id }} .age-confirmation__text {
+  .age-confirmation__text {
     margin: 0;
     max-width: 420px;
     font-size: 13px;
@@ -86,11 +86,11 @@
   }
 
   @media only screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .age-confirmation__heading {
+    .age-confirmation__heading {
       font-size: 26px;
     }
 
-    #shopify-section-{{ section.id }} .age-confirmation__button {
+    .age-confirmation__button {
       min-width: 0;
       flex: 1 1 auto;
     }
