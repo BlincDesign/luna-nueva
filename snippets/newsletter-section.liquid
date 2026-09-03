@@ -62,9 +62,11 @@
                     }
                     
                     .theme-block--{{ block.id }} .enlarge-text {
-                      font-size: {{ block.settings.font_size }}px;
                       max-width: {{ block.settings.text_width }}px;
                       margin: 0 auto;
+                    }
+                    .theme-block--{{ block.id }} .enlarge-text p{
+                      font-size: {{ block.settings.font_size }}px;
                     }
                   {% endstyle %}
                 {%- if block.settings.text != blank -%}
