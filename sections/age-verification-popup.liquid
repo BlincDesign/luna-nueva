@@ -3,10 +3,10 @@
   --age-confirmation-bg: {{ section.settings.background_color }};
   --age-confirmation-color: {{ section.settings.text_color }};
 
-  --btn-bg: red;
-  --btn-border: var(--btn-primary-border);
-  --btn-color: var(--btn-primary-color);
-  --btn-hover-bg: var(--btn-primary-bg-hover);
+  --btn-bg: #D39655;
+  --btn-border: #D39655;
+  --btn-color: transparent;
+  --btn-hover-bg: #E0A768;
   --btn-hover-border: var(--btn-primary-border-hover);
   --btn-hover-color: var(--btn-primary-color-hover);
 }
@@ -48,7 +48,8 @@
                   label: section.settings.yes_button_label,
                   type: section.settings.yes_button_type,
                   as: 'button',
-                  attributes: 'data-age-confirmation-yes'
+                  attributes: 'data-age-confirmation-yes',
+                  arrow: false
                 %}
               {% endif %}
 
@@ -57,7 +58,8 @@
                   label: section.settings.no_button_label,
                   type: section.settings.no_button_type,
                   as: 'button',
-                  attributes: 'data-age-confirmation-no'
+                  attributes: 'data-age-confirmation-no',
+                  arrow: false
                 %}
               {% endif %}
             </div>
