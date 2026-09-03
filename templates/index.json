@@ -103,9 +103,7 @@
       "blocks": {
         "eyebrow_CeK6D3": {
           "type": "eyebrow",
-          "settings": {
-            "eyebrow": "IN THE WILD"
-          }
+          "settings": {}
         },
         "heading_hmw6Hn": {
           "type": "heading",
@@ -138,7 +136,6 @@
       "settings": {
         "background_color": "#AEBFB4",
         "text_color": "#2D3135",
-        "align_text": "left",
         "padding_top": 80,
         "padding_bottom": 80,
         "mobile_padding_top": 80,

@@ -93,7 +93,7 @@
 
           {%- when 'eyebrow' -%}
             <div class="theme-block" {{ block.shopify_attributes }}>
-              {{ block.settings.eyebrow }}
+              {{ block.settings.title }}
             </div>
 
           {%- when 'heading' -%}
@@ -171,30 +171,7 @@
       "label": "Text color",
       "default": "#f9f6f1"
     },
-    {
-      "type": "header",
-      "content": "Alignment"
-    },
-    {
-      "type": "select",
-      "id": "align_text",
-      "label": "t:sections.rich-text.settings.align_text.label",
-      "default": "center",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.rich-text.settings.align_text.options.left.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.rich-text.settings.align_text.options.center.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.rich-text.settings.align_text.options.right.label"
-        }
-      ]
-    },
+
     {
       "type": "header",
       "content": "Padding"
@@ -252,10 +229,10 @@
       "name": "Eyebrow",
       "settings": [
         {
-          "type": "text",
-          "id": "eyebrow",
+          "type": "inline_richtext",
+          "id": "title",
           "label": "Eyebrow",
-          "default": "<p>IN THE WILD</p>"
+          "default": "IN THE WILD"
         }
       ]
     },
