@@ -1,3 +1,25 @@
+{% liquid
+  assign slide_count = section.blocks.size
+  assign period_ms = section.settings.slider_autoplay
+  assign fade_ms = 1500
+
+  if fade_ms >= period_ms
+    assign fade_ms = period_ms | divided_by: 2
+  endif
+
+  assign total_ms = period_ms | times: slide_count
+  assign total_ms_f = total_ms | times: 1.0
+
+  assign fade_in_end_percent = fade_ms | times: 1.0 | divided_by: total_ms_f | times: 100 | round: 3
+  assign hold_end_percent = 100.0 | divided_by: slide_count | round: 3
+  assign fade_out_end_ms = period_ms | plus: fade_ms
+  assign fade_out_end_percent = fade_out_end_ms | times: 1.0 | divided_by: total_ms_f | times: 100 | round: 3
+
+  assign animate_slides = false
+  if section.settings.slider_autoplay_enabled and slide_count > 1
+    assign animate_slides = true
+  endif
+%}
 {% style %}
   #shopify-section-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
@@ -78,53 +100,96 @@
     border: 1px solid {{ section.settings.button_2_border_color }};
   }
 
+  /* Pure-CSS crossfade slider — no Flickity, no JS */
+
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
     height: 90vh;
   }
 
-  /*
-    FIX: force every cell to stack in the exact same spot instead of
-    sitting side-by-side. Flickity normally moves the whole track
-    (.flickity-slider) horizontally and lines cells up with `left`.
-    We cancel both so nothing physically slides — the opacity rule
-    below (is-selected) is what creates the transition instead.
-  */
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-slider {
-    transform: none !important;
-  }
-
   #shopify-section-{{ section.id }} .image-slider-text__slide {
-    width: 100%;
-    height: 90vh;
-    aspect-ratio: 1;
-    position: absolute !important;
-    top: 0;
-    left: 0 !important;
-    z-index: 0;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slide.is-selected {
-    z-index: 1;
-  }
+  {% if animate_slides %}
+    #shopify-section-{{ section.id }} .image-slider-text__slide {
+      animation-name: image-slider-fade-{{ section.id }};
+      animation-duration: {{ total_ms }}ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-fill-mode: backwards;
+    }
+
+    {% for block in section.blocks %}
+      #shopify-section-{{ section.id }} .image-slider-text__slide:nth-child({{ forloop.index }}) {
+        animation-delay: {{ forloop.index0 | times: period_ms }}ms;
+      }
+    {% endfor %}
+
+    @keyframes image-slider-fade-{{ section.id }} {
+      0% { opacity: 0; }
+      {{ fade_in_end_percent }}% { opacity: 1; }
+      {{ hold_end_percent }}% { opacity: 1; }
+      {{ fade_out_end_percent }}% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  {% else %}
+    #shopify-section-{{ section.id }} .image-slider-text__slide:first-child {
+      opacity: 1;
+    }
+  {% endif %}
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s cubic-bezier(.4, 0, .2, 1);
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slide.is-selected .image-slider-text__image {
-    opacity: 1;
+  #shopify-section-{{ section.id }} .image-slider-text__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 8px;
   }
 
-  .image-slider-text__slides  .flickity-page-dots {
-      bottom: 20px;
+  #shopify-section-{{ section.id }} .image-slider-text__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.45);
   }
+
+  {% if animate_slides %}
+    #shopify-section-{{ section.id }} .image-slider-text__dot {
+      animation-name: image-slider-dot-{{ section.id }};
+      animation-duration: {{ total_ms }}ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-fill-mode: backwards;
+    }
+
+    {% for block in section.blocks %}
+      #shopify-section-{{ section.id }} .image-slider-text__dot:nth-child({{ forloop.index }}) {
+        animation-delay: {{ forloop.index0 | times: period_ms }}ms;
+      }
+    {% endfor %}
+
+    @keyframes image-slider-dot-{{ section.id }} {
+      0%, {{ hold_end_percent }}% { background-color: #ffffff; }
+      {{ hold_end_percent }}%, 100% { background-color: rgba(255, 255, 255, 0.45); }
+    }
+  {% else %}
+    #shopify-section-{{ section.id }} .image-slider-text__dot:first-child {
+      background-color: #ffffff;
+    }
+  {% endif %}
 
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} {
@@ -227,37 +292,16 @@
         {% endif %}
       </div>
     {% endfor %}
+
+    {% if section.blocks.size > 1 %}
+      <div class="image-slider-text__dots">
+        {% for block in section.blocks %}
+          <span class="image-slider-text__dot"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var sliderEl = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
-
-    if (!sliderEl) return;
-
-    var flkty = new Flickity(sliderEl, {
-      cellAlign: 'left',
-      contain: true,
-      wrapAround: true,
-      autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
-      prevNextButtons: false,
-      pageDots: true,
-      pauseAutoPlayOnHover: true
-    });
-
-    var images = sliderEl.querySelectorAll('.image-slider-text__image');
-    images.forEach(function (img) {
-      if (!img.complete) {
-        img.addEventListener('load', function () {
-          flkty.resize();
-        });
-      }
-    });
-  });
-</script>
-
-
 
 {% schema %}
 {
