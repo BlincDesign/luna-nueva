@@ -1,157 +1,78 @@
 <style>
-  .background-image {
-    position: relative;
-  }
+        .background-image {
+          position: relative;
+        }
 
-  .background-image:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-      url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
-      url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
-    background-repeat: repeat;
-    opacity: .42;
-    mix-blend-mode: soft-light;
-  }
-
-  #shopify-section-{{ section.id }}.background-image {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.background_color }};
-  }
-
-  #shopify-section-{{ section.id }} h2 {
-    color: {{ section.settings.text_color }};
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__content {
-    position: relative;
-    z-index: 1;
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__left,
-  #shopify-section-{{ section.id }} .rich-text__right {
-    flex: 1;
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__left {
-    max-width: 600px;
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    max-width: 400px;
-  }
+        .background-image:before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          background-image: url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
+            url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+          background-repeat: repeat;
+          opacity: .42;
+          mix-blend-mode: soft-light;
+        }
+    #shopify-section-{{ section.id }}.background-image {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+          }
 
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }}.background-image {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
-
-    #shopify-section-{{ section.id }} .rich-text__main {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 32px;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__left,
-    #shopify-section-{{ section.id }} .rich-text__right {
-      max-width: none;
-      width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__right {
-      align-items: flex-start;
-      text-align: left;
-    }
   }
+        #shopify-section-{{ section.id }}.background-image {
+          background-color: {{ section.settings.background_color }};
+        }
+
+        #shopify-section-{{ section.id }} h2 {
+          color: {{ section.settings.text_color }};
+        }
 </style>
 
-<div class="rich-text__content page-width">
 
-  <div class="rich-text__main flex">
-
-    <!-- Left Content: Eyebrow + Heading -->
-    <div class="rich-text__left flex flex-column">
-
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-
-          {%- when 'eyebrow' -%}
-            <div class="theme-block" {{ block.shopify_attributes }}>
-              {{ block.settings.title }}
-            </div>
-
-          {%- when 'heading' -%}
-            <div class="theme-block" {{ block.shopify_attributes }}>
-              <h2>
-                {{ block.settings.title }}
-              </h2>
-            </div>
-
-        {%- endcase -%}
-      {%- endfor -%}
-
+<div class="text-{{ section.settings.align_text }} page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+  {%- for block in section.blocks -%}
+    <div class="theme-block" {{ block.shopify_attributes }}>
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+          <h2> {{ block.settings.title }} </h2>
+        {%- when 'page' -%}
+          <div class="rte">
+            {%- if block.settings.page_text != blank -%}
+              {{ pages[block.settings.page_text].content }}
+            {%- else -%}
+              {{ 'home_page.onboarding.no_content' | t }}
+            {%- endif -%}
+          </div>
+        {%- when 'text' -%}
+          <div class="rte">
+            {%- if block.settings.text != blank -%}
+              {%- if block.settings.enlarge_text %}
+                <div class="enlarge-text">
+              {% endif -%}
+              {{ block.settings.text }}
+              {%- if block.settings.enlarge_text %}
+                </div>
+              {% endif -%}
+            {%- else -%}
+              {{ 'home_page.onboarding.no_content' | t }}
+            {%- endif -%}
+          </div>
+        {%- when 'button' -%}
+          <div class="rte">
+            <a href="{{ block.settings.link }}" class="btn">
+              {{ block.settings.link_text }}
+            </a>
+          </div>
+      {%- endcase -%}
     </div>
-
-
-    <!-- Right Content: Text + Button -->
-    <div class="rich-text__right">
-
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-
-          {%- when 'text' -%}
-            <div class="theme-block" {{ block.shopify_attributes }}>
-              <div class="rte">
-                {%- if block.settings.text != blank -%}
-
-                  {%- if block.settings.enlarge_text -%}
-                    <div class="enlarge-text">
-                  {%- endif -%}
-
-                  {{ block.settings.text }}
-
-                  {%- if block.settings.enlarge_text -%}
-                    </div>
-                  {%- endif -%}
-
-                {%- else -%}
-                  {{ 'home_page.onboarding.no_content' | t }}
-                {%- endif -%}
-              </div>
-            </div>
-
-          {%- when 'button' -%}
-            <div class="theme-block" {{ block.shopify_attributes }}>
-              <div class="rte">
-                <a href="{{ block.settings.link }}" class="btn">
-                  {{ block.settings.link_text }}
-                </a>
-              </div>
-            </div>
-
-        {%- endcase -%}
-      {%- endfor -%}
-
-    </div>
-
-  </div>
-
+  {%- endfor -%}
 </div>
 
 {% schema %}
@@ -171,7 +92,36 @@
       "label": "Text color",
       "default": "#f9f6f1"
     },
-
+    {
+      "type": "header",
+      "content": "Alignment"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:sections.rich-text.settings.align_text.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.align_text.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.align_text.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.align_text.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "t:sections.rich-text.settings.narrow_column.label",
+      "default": false
+    },
     {
       "type": "header",
       "content": "Padding"
@@ -184,7 +134,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 120
+      "default": 120                        
     },
     {
       "type": "range",
@@ -196,7 +146,6 @@
       "unit": "px",
       "default": 120
     },
-
     {
       "type": "header",
       "content": "Mobile Spacing"
@@ -225,31 +174,16 @@
 
   "blocks": [
     {
-      "type": "eyebrow",
-      "name": "Eyebrow",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "title",
-          "label": "Eyebrow",
-          "default": "IN THE WILD"
-        }
-      ]
-    },
-
-    {
       "type": "heading",
       "name": "t:sections.rich-text.blocks.heading.name",
       "settings": [
         {
-          "type": "inline_richtext",
+          "type": "richtext",
           "id": "title",
-          "label": "t:sections.rich-text.blocks.heading.settings.title.label",
-          "default": "Where it actually gets poured."
+          "label": "t:sections.rich-text.blocks.heading.settings.title.label"
         }
       ]
     },
-
     {
       "type": "text",
       "name": "t:sections.rich-text.blocks.text.name",
@@ -264,11 +198,10 @@
           "id": "text",
           "type": "richtext",
           "label": "t:sections.rich-text.blocks.text.settings.text.label",
-          "default": "<p>Use this text to share information about your brand with your customers.</p>"
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         }
       ]
     },
-
     {
       "type": "button",
       "name": "t:sections.rich-text.blocks.button.name",
@@ -282,11 +215,10 @@
           "type": "text",
           "id": "link_text",
           "label": "t:sections.rich-text.blocks.button.settings.link_text.label",
-          "default": "See what's coming up →"
+          "default": "Button"
         }
       ]
     },
-
     {
       "type": "page",
       "name": "t:sections.rich-text.blocks.page.name",
@@ -305,16 +237,7 @@
       "name": "Custom Multi Column",
       "blocks": [
         {
-          "type": "eyebrow"
-        },
-        {
           "type": "heading"
-        },
-        {
-          "type": "text"
-        },
-        {
-          "type": "button"
         }
       ]
     }
