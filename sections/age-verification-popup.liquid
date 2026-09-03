@@ -173,17 +173,33 @@
       document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
     }
 
-    function hide() {
-      root.hidden = true;
-      document.documentElement.classList.remove('modal-open');
+    function lockScroll() {
+      var scrollY = window.scrollY || window.pageYOffset;
+      document.body.dataset.ageConfirmationScrollY = scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + scrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    }
+
+    function unlockScroll() {
+      var scrollY = document.body.dataset.ageConfirmationScrollY || '0';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, parseInt(scrollY, 10));
+      delete document.body.dataset.ageConfirmationScrollY;
     }
 
     if (getCookie(cookieName)) {
-      hide();
+      root.hidden = true;
       return;
     }
 
-    document.documentElement.classList.add('modal-open');
+    lockScroll();
 
     var yesButton = root.querySelector('[data-age-confirmation-yes]');
     var noButton = root.querySelector('[data-age-confirmation-no]');
@@ -192,7 +208,8 @@
     if (yesButton) {
       yesButton.addEventListener('click', function () {
         setCookie(cookieName, 'entered', 365);
-        hide();
+        unlockScroll();
+        root.hidden = true;
       });
     }
 
