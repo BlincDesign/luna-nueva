@@ -19,7 +19,11 @@
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
     margin: 0 0 {{ section.settings.preheading_margin }}px;
     font-size: {{ section.settings.preheading_size }}px;
-    font-family: {{ section.settings.preheading_font.family }}, {{ section.settings.preheading_font.fallback_families }};
+    {% if section.settings.custom_preheading_font != blank %}
+      font-family: '{{ section.settings.custom_preheading_font }}', sans-serif;
+    {% else %}
+      font-family: {{ section.settings.preheading_font.family }}, {{ section.settings.preheading_font.fallback_families }};
+    {% endif %}
     font-style: {{ section.settings.preheading_font.style }};
     font-weight: {{ section.settings.preheading_font.weight }};
     line-height: 1.2;
@@ -31,7 +35,11 @@
   #shopify-section-{{ section.id }} .image-slider-text__heading {
     margin: 0 0 {{ section.settings.heading_margin }}px;
     font-size: {{ section.settings.heading_size }}px;
-    font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+    {% if section.settings.custom_heading_font != blank %}
+      font-family: '{{ section.settings.custom_heading_font }}', sans-serif;
+    {% else %}
+      font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+    {% endif %}
     font-style: {{ section.settings.heading_font.style }};
     font-weight: {{ section.settings.heading_font.weight }};
     line-height: {{ section.settings.heading_line_height }};
@@ -41,7 +49,11 @@
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin: 0 0 {{ section.settings.text_margin }}px;
     font-size: {{ section.settings.text_size }}px;
+    {% if section.settings.custom_text_font != blank %}
+    font-family: '{{ section.settings.custom_text_font }}', sans-serif;
+  {% else %}
     font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }};
+  {% endif %}
     font-style: {{ section.settings.text_font.style }};
     font-weight: {{ section.settings.text_font.weight }};
     line-height: {{ section.settings.text_line_height }};
