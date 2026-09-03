@@ -131,6 +131,10 @@
     transform: translateX(5px);
   }
 
+  .pdc .pdc__explore--wrapper {
+    text-align: center;
+  }
+
 
 @media only screen and (max-width: 989px) {
   .pdl__grid .pdc {
@@ -273,9 +277,11 @@
             {%- endif -%}
           </div>
 
-          <a href="{{ product.url }}" class="pdc__explore"
-            >Explore <span class="pdc__arrow" aria-hidden="true">→</span></a
-          >
+          <div class="pdc__explore--wrapper">
+            <a href="{{ product.url }}" class="pdc__explore"
+              >Explore <span class="pdc__arrow" aria-hidden="true">→</span></a
+            >
+          </div>
         </div>
       </div>
     {%- else -%}
