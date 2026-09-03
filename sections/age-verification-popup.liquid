@@ -1,4 +1,4 @@
-{% style %}
+{% comment %} {% style %}
   #shopify-section-{{ section.id }} .age-confirmation {
     background-color: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }};
@@ -95,7 +95,7 @@
       flex: 1 1 auto;
     }
   }
-{% endstyle %}
+{% endstyle %} {% endcomment %}
 
 <div
   id="AgeConfirmation-{{ section.id }}"
