@@ -296,16 +296,6 @@
     "custom_media_gallery_9bgdN4": {
       "type": "custom__media-gallery",
       "blocks": {
-        "content_tng9Wc": {
-          "type": "content",
-          "settings": {
-            "eyebrow": "Bring the Party",
-            "heading": "The bottle you grab before the night starts.",
-            "body": "",
-            "button_label": "See what's coming up",
-            "button_url": ""
-          }
-        },
         "image_64U3Pa": {
           "type": "image",
           "settings": {
@@ -355,7 +345,6 @@
         }
       },
       "block_order": [
-        "content_tng9Wc",
         "image_64U3Pa",
         "image_Un9eVf",
         "image_FJdmEK",
@@ -365,7 +354,6 @@
       "name": "Media gallery - grid",
       "settings": {
         "full_width": false,
-        "content_position": "above",
         "content_width": 30,
         "tile_width_min": 360,
         "tile_width_max": 360,
