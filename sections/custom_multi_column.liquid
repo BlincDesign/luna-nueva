@@ -1,102 +1,102 @@
 <style>
-  #shopify-section-{{ section.id }} .button.button--primary {
-  --btn-bg: #D39655;
-  --btn-border: #D39655;
-  --btn-color: #fff;
-  --btn-hover-bg: #E0A768;
-  --btn-hover-border: #D39655;
-  --btn-hover-color: #fff;
-}
-
-#shopify-section-{{ section.id }} .button.button--secondary {
-  --btn-bg: transparent;
-  --btn-border: #fff;
-  --btn-color: #fff;
-  --btn-hover-bg: #fff;
-  --btn-hover-border: #fff;
-  --btn-hover-color: #2D3135;
-}
-    .background-image {
-      position: relative;
-    }
-
-    .background-image:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background-image:
-        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
-        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
-      background-repeat: repeat;
-      opacity: .42;
-      mix-blend-mode: soft-light;
-    }
-
-    #shopify-section-{{ section.id }}.background-image {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-      background-color: {{ section.settings.background_color }};
-    }
-
-    #shopify-section-{{ section.id }} h2 {
-      color: {{ section.settings.text_color }};
-      margin: 0;
-    }
-  .theme-block:first-child {
-      margin-bottom: 10px;
+    #shopify-section-{{ section.id }} .button.button--primary {
+    --btn-bg: #D39655;
+    --btn-border: #D39655;
+    --btn-color: #fff;
+    --btn-hover-bg: #E0A768;
+    --btn-hover-border: #D39655;
+    --btn-hover-color: #fff;
   }
-    {% comment %} #shopify-section-{{ section.id }} .rich-text__content {
-      position: relative;
-      z-index: 1;
-    } {% endcomment %}
 
-    #shopify-section-{{ section.id }} .rich-text__main {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__left,
-    #shopify-section-{{ section.id }} .rich-text__right {
-      flex: 1;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__left {
-      max-width: 600px;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__right {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-    }
-
-    @media screen and (max-width: 768px) {
-      #shopify-section-{{ section.id }}.background-image {
-        padding-top: {{ section.settings.mobile_padding_top }}px;
-        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  #shopify-section-{{ section.id }} .button.button--secondary {
+    --btn-bg: transparent;
+    --btn-border: #fff;
+    --btn-color: #fff;
+    --btn-hover-bg: #fff;
+    --btn-hover-border: #fff;
+    --btn-hover-color: #2D3135;
+  }
+      .background-image {
+        position: relative;
       }
 
+      .background-image:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
+          url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+        background-repeat: repeat;
+        opacity: .42;
+        mix-blend-mode: soft-light;
+      }
+
+      #shopify-section-{{ section.id }}.background-image {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        background-color: {{ section.settings.background_color }};
+      }
+
+      #shopify-section-{{ section.id }} h2 {
+        color: {{ section.settings.text_color }};
+        margin: 0;
+      }
+    .theme-block:first-child {
+        margin-bottom: 10px;
+    }
+      {% comment %} #shopify-section-{{ section.id }} .rich-text__content {
+        position: relative;
+        z-index: 1;
+      } {% endcomment %}
+
       #shopify-section-{{ section.id }} .rich-text__main {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 40px;
       }
 
       #shopify-section-{{ section.id }} .rich-text__left,
       #shopify-section-{{ section.id }} .rich-text__right {
-        max-width: none;
-        width: 100%;
+        flex: 1;
+      }
+
+      #shopify-section-{{ section.id }} .rich-text__left {
+        max-width: 600px;
       }
 
       #shopify-section-{{ section.id }} .rich-text__right {
-        align-items: flex-start;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
       }
-    }
+
+      @media screen and (max-width: 768px) {
+        #shopify-section-{{ section.id }}.background-image {
+          padding-top: {{ section.settings.mobile_padding_top }}px;
+          padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__main {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__left,
+        #shopify-section-{{ section.id }} .rich-text__right {
+          max-width: none;
+          width: 100%;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__right {
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
 </style>
 
 <div class="rich-text__content page-width">
@@ -143,11 +143,12 @@
 
           {%- when 'button' -%}
             <div class="theme-block" {{ block.shopify_attributes }}>
-              <div class="rte">
-                <a href="{{ block.settings.link }}" class="btn">
-                  {{ block.settings.link_text }}
-                </a>
-              </div>
+              {% render 'button',
+                label: block.settings.link_text,
+                url: block.settings.link,
+                type: block.settings.button_type,
+                arrow: false
+              %}
             </div>
         {%- endcase -%}
       {%- endfor -%}
@@ -269,21 +270,40 @@
         }
       ]
     },
-
     {
       "type": "button",
-      "name": "t:sections.rich-text.blocks.button.name",
+      "name": "Button",
       "settings": [
         {
           "type": "url",
           "id": "link",
-          "label": "t:sections.rich-text.blocks.button.settings.link.label"
+          "label": "Button link"
         },
         {
           "type": "text",
           "id": "link_text",
-          "label": "t:sections.rich-text.blocks.button.settings.link_text.label",
-          "default": "See what's coming up →"
+          "label": "Button text",
+          "default": "SEE WHAT'S COMING UP →"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button style",
+          "default": "secondary",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ]
         }
       ]
     },
