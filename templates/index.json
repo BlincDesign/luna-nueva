@@ -362,7 +362,83 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "section_background": "#2D3135",
+        "section_background": "#2d3135",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_media_gallery_JxCFTk": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_8McHDm": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
+            "image_one_caption": "Pacific Coast Highway",
+            "image_two_caption": ""
+          }
+        },
+        "image_tNqcUt": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one_caption": "Bring the party",
+            "image_two": "shopify://shop_images/wild-tailgate.jpg",
+            "image_two_caption": "The tailgate, Malibu"
+          }
+        },
+        "image_4xURFm": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-yellow-table.jpg",
+            "image_one_caption": "Silver · served long",
+            "image_two": "shopify://shop_images/wild-pch.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_RMRHLR": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
+            "image_one_caption": "Make the table longer",
+            "image_two_caption": ""
+          }
+        },
+        "image_LeFpBe": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-coupe.jpg",
+            "image_one_caption": "Late afternoon",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_8McHDm",
+        "image_tNqcUt",
+        "image_4xURFm",
+        "image_RMRHLR",
+        "image_LeFpBe"
+      ],
+      "name": "Media gallery - grid",
+      "settings": {
+        "full_width": false,
+        "content_width": 30,
+        "tile_width_min": 360,
+        "tile_width_max": 360,
+        "row_height": 360,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 260,
+        "gap": 16,
+        "section_background": "#2d3135",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mb": 40,
@@ -468,6 +544,7 @@
     "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
+    "custom_media_gallery_JxCFTk",
     "rich-text",
     "newsletter"
   ]
