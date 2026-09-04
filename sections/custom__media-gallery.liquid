@@ -22,12 +22,17 @@
   single image) follow the shape the tile already has: a normal
   (half-height) tile is short and wide, so two images sit side by side;
   a tall (full-height) tile is narrow and tall, so two images stack.
+
+  CSS below is split in two: {% stylesheet %} holds every rule that never
+  depends on a setting — it's plain CSS, safe to lift into custom.css
+  wholesale whenever that migration happens. {% style %}, scoped to this
+  section's id, holds only the handful of rules that read a setting value.
 {%- endcomment -%}
 
 {%- liquid
-  assign content_block = null
+  assign content_block = nil
   for block in section.blocks
-    if block.type == 'content' and content_block == null
+    if block.type == 'content' and content_block == nil
       assign content_block = block
     endif
   endfor
@@ -51,53 +56,39 @@
   assign m_intercept = section.settings.tile_width_mobile_min | minus: m_min_contribution | round: 3
 -%}
 
-{% style %}
-  #shopify-section-{{ section.id }} .media-gallery__inner {
+{% stylesheet %}
+  .media-gallery__inner {
     display: flex;
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__inner--above {
+  .media-gallery__inner--above {
     flex-direction: column;
     gap: 32px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__inner--before {
+  .media-gallery__inner--before {
     flex-direction: row;
     align-items: center;
     gap: clamp(32px, 5vw, 96px);
   }
 
-  #shopify-section-{{ section.id }} .media-gallery {
-    {% if section.settings.background_color != blank %}
-      background-color: {{ section.settings.background_color }};
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
-    flex: 0 0 {{ section.settings.content_width }}%;
-    max-width: {{ section.settings.content_width }}%;
-    min-width: 0;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__media {
+  .media-gallery__media {
     flex: 1 1 0;
     min-width: 0;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__eyebrow {
+  .media-gallery__eyebrow {
     margin: 0 0 12px;
     font-size: 13px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__heading {
+  .media-gallery__heading {
     margin: 0 0 16px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__body {
+  .media-gallery__body {
     margin: 0 0 24px;
   }
 
@@ -105,43 +96,38 @@
      tiles pack two-per-column automatically, and a tall tile just spans
      both rows of its own column. That auto-placement is what a flex
      track can't give us for free. */
-  #shopify-section-{{ section.id }} .media-gallery__grid {
+  .media-gallery__grid {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
-    grid-auto-columns: clamp({{ section.settings.tile_width_min }}px, calc({{ d_intercept }}px + {{ d_coefficient }}vw), {{ section.settings.tile_width_max }}px);
-    gap: {{ section.settings.gap }}px;
     padding-bottom: 12px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__tile {
+  .media-gallery__tile {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: {{ section.settings.gap }}px;
     margin: 0;
     overflow: hidden;
     border-radius: 4px;
     scroll-snap-align: start;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__tile--tall {
+  .media-gallery__tile--tall {
     grid-row: span 2;
     flex-direction: column;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__image {
+  .media-gallery__image {
     position: relative;
     flex: 1 1 0;
     min-width: 0;
     min-height: 0;
     overflow: hidden;
-    border-radius: 18px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__image image-element,
-  #shopify-section-{{ section.id }} .media-gallery__image .media-gallery__image-img,
-  #shopify-section-{{ section.id }} .media-gallery__image .placeholder-svg {
+  .media-gallery__image image-element,
+  .media-gallery__image .media-gallery__image-img,
+  .media-gallery__image .placeholder-svg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -149,7 +135,7 @@
     object-fit: cover;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__caption {
+  .media-gallery__caption {
     position: absolute;
     left: 12px;
     bottom: 12px;
@@ -165,20 +151,51 @@
   }
 
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__inner--before {
+    .media-gallery__inner--before {
       flex-direction: column;
       align-items: stretch;
       gap: 32px;
     }
 
-    #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
+    .media-gallery__inner--before .media-gallery__content {
       flex-basis: 100%;
       max-width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% style %}
+  #shopify-section-{{ section.id }} .media-gallery__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery {
+    {% if section.settings.background_color != blank %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
+    flex: 0 0 {{ section.settings.content_width }}%;
+    max-width: {{ section.settings.content_width }}%;
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__grid {
+    grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
+    grid-auto-columns: clamp({{ section.settings.tile_width_min }}px, calc({{ d_intercept }}px + {{ d_coefficient }}vw), {{ section.settings.tile_width_max }}px);
+    gap: {{ section.settings.gap }}px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__tile {
+    gap: {{ section.settings.gap }}px;
+  }
+
+  @media screen and (max-width: 900px) {
+    #shopify-section-{{ section.id }} .media-gallery__inner {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
   }
 
@@ -253,6 +270,7 @@
       "type": "checkbox",
       "id": "full_width",
       "label": "Full width",
+      "info": "Stretch the section edge-to-edge instead of matching the width of the rest of the page.",
       "default": false
     },
     {
@@ -263,18 +281,18 @@
       "type": "select",
       "id": "content_position",
       "label": "Content position",
-      "info": "Only applies when a Content block has been added.",
+      "info": "Only used when a Content block has been added below.",
       "default": "before",
       "options": [
-        { "value": "above", "label": "Above gallery" },
-        { "value": "before", "label": "Before gallery" }
+        { "value": "above", "label": "Above the gallery" },
+        { "value": "before", "label": "Beside the gallery" }
       ]
     },
     {
       "type": "range",
       "id": "content_width",
       "label": "Content width",
-      "info": "Only applies in \"Before gallery\" position. Content and gallery stack below 900px.",
+      "info": "How much space the text takes up when placed beside the gallery. On smaller screens it always moves above the gallery instead.",
       "min": 20,
       "max": 60,
       "step": 5,
@@ -287,50 +305,75 @@
     },
     {
       "type": "paragraph",
-      "content": "The gallery is a 2-row wall that scrolls and drags sideways once tiles overflow the container."
+      "content": "Images are arranged in two rows. If they don't all fit, visitors can scroll or drag sideways to see the rest."
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "tile_width_min",
-      "label": "Tile width — min (desktop)",
-      "info": "Tile width scales fluidly with screen size between min and max, instead of jumping at a breakpoint.",
-      "default": 595
+      "label": "Smallest tile width (desktop)",
+      "info": "Tile width scales smoothly between the smallest and largest values as the screen size changes, so the gallery adapts to every device.",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 240
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "tile_width_max",
-      "label": "Tile width — max (desktop)",
-      "default": 300
+      "label": "Largest tile width (desktop)",
+      "min": 240,
+      "max": 480,
+      "step": 10,
+      "unit": "px",
+      "default": 360
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "row_height",
-      "label": "Row height (desktop)",
-      "info": "A normal tile is one row tall. A wide tile spans both rows.",
+      "label": "Tile height (desktop)",
+      "info": "The height of a standard tile. A full-height tile (set on the Image block) is twice this, plus the gap.",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
       "default": 220
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "tile_width_mobile_min",
-      "label": "Tile width — min (mobile)",
+      "label": "Smallest tile width (mobile)",
+      "min": 100,
+      "max": 220,
+      "step": 10,
+      "unit": "px",
       "default": 150
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "tile_width_mobile_max",
-      "label": "Tile width — max (mobile)",
+      "label": "Largest tile width (mobile)",
+      "min": 180,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
       "default": 280
     },
     {
-      "type": "number",
+      "type": "range",
       "id": "row_height_mobile",
-      "label": "Row height (mobile)",
+      "label": "Tile height (mobile)",
+      "min": 100,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
       "default": 150
     },
     {
       "type": "range",
       "id": "gap",
-      "label": "Gap",
+      "label": "Space between images",
+      "info": "Used both between tiles in the gallery and between two images sharing one tile.",
       "min": 0,
       "max": 48,
       "step": 2,
@@ -344,7 +387,7 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
+      "label": "Space above (desktop)",
       "min": 0,
       "max": 160,
       "step": 4,
@@ -354,7 +397,7 @@
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
+      "label": "Space below (desktop)",
       "min": 0,
       "max": 160,
       "step": 4,
@@ -364,7 +407,7 @@
     {
       "type": "range",
       "id": "mobile_padding_top",
-      "label": "Padding top (mobile)",
+      "label": "Space above (mobile)",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -374,7 +417,7 @@
     {
       "type": "range",
       "id": "mobile_padding_bottom",
-      "label": "Padding bottom (mobile)",
+      "label": "Space below (mobile)",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -400,7 +443,8 @@
         {
           "type": "text",
           "id": "eyebrow",
-          "label": "Eyebrow",
+          "label": "Eyebrow text",
+          "info": "Small label shown above the heading.",
           "default": "Bring the Party"
         },
         {
@@ -412,13 +456,13 @@
         {
           "type": "richtext",
           "id": "body",
-          "label": "Body",
+          "label": "Description",
           "default": "<p>Add your description here.</p>"
         },
         {
           "type": "text",
           "id": "button_label",
-          "label": "Button label",
+          "label": "Button text",
           "default": "See what's coming up"
         },
         {
@@ -435,29 +479,30 @@
         {
           "type": "checkbox",
           "id": "tall",
-          "label": "Full height (spans both rows)",
-          "info": "Off: a half-height tile — two images (if both are set) sit side by side. On: a full-height tile — two images stack instead.",
+          "label": "Full-height tile",
+          "info": "Makes this tile twice as tall, standing out from the rest of the gallery. If you add two images below, they'll stack on top of each other instead of sitting side by side.",
           "default": false
         },
         {
           "type": "image_picker",
           "id": "image_one",
-          "label": "Image one"
+          "label": "First image"
         },
         {
           "type": "text",
           "id": "image_one_caption",
-          "label": "Image one caption"
+          "label": "First image caption"
         },
         {
           "type": "image_picker",
           "id": "image_two",
-          "label": "Image two"
+          "label": "Second image",
+          "info": "Optional. Add a second photo to share this tile with the first image."
         },
         {
           "type": "text",
           "id": "image_two_caption",
-          "label": "Image two caption"
+          "label": "Second image caption"
         }
       ]
     }
