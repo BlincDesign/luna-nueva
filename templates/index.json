@@ -233,18 +233,38 @@
         "image_64U3Pa": {
           "type": "image",
           "settings": {
-            "tall": true,
+            "tall": false,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_LJRUH8": {
+          "type": "image",
+          "settings": {
+            "tall": false,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/hero-tailgate.jpg",
             "image_two_caption": ""
           }
         },
-        "image_dmmxMh": {
+        "image_3egAxC": {
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_DYamVL": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/hero-tailgate.jpg",
             "image_two_caption": ""
           }
         }
@@ -252,7 +272,9 @@
       "block_order": [
         "content_tng9Wc",
         "image_64U3Pa",
-        "image_dmmxMh"
+        "image_LJRUH8",
+        "image_3egAxC",
+        "image_DYamVL"
       ],
       "name": "Media gallery - grid",
       "settings": {
