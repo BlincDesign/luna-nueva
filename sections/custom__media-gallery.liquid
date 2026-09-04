@@ -1,3 +1,25 @@
+{%- comment -%}
+  Tile sizing model (all driven by section settings, see schema below):
+
+  Desktop (>= 750px)
+    tall OFF -> tile is `tile_width` wide, `tile_height` tall. The two
+      images stack (column) and split that height 50/50.
+    tall ON  -> tile is two tile-widths + one gap wide, `tile_height`
+      tall. The two images sit side by side (row) and split that width
+      50/50, each filling the full height.
+
+  Mobile (< 750px) — the axis flips relative to desktop
+    tall OFF -> tile is full width, `mobile_tile_height` tall. The two
+      images sit side by side (row) and split that width 50/50.
+    tall ON  -> tile is full width, auto height. The two images stack
+      (column), each explicitly `mobile_tile_height` tall.
+
+  A block with only image_one set always renders that image alone at
+  100% of whatever box the tile resolves to above.
+
+  Scrolling/dragging is intentionally not implemented yet.
+{%- endcomment -%}
+
 {%- liquid
   assign content_block = nil
   assign content_index = -1
@@ -23,10 +45,14 @@
   endif
 
   assign image_blocks = section.blocks | where: 'type', 'image'
+  assign half_gap = section.settings.gap | divided_by: 2.0
 -%}
 
 {% style %}
   #shopify-section-{{ section.id }} .media-gallery__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
@@ -38,33 +64,104 @@
   }
 
   #shopify-section-{{ section.id }} .media-gallery__content {
+    width: 100%;
     max-width: {{ section.settings.content_width }}%;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__grid,
-  #shopify-section-{{ section.id }} .media-gallery__track {
+  #shopify-section-{{ section.id }} .media-gallery__eyebrow {
+    margin: 0 0 12px;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__heading {
+    margin: 0 0 16px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__body {
+    margin: 0 0 24px;
+  }
+
+  /* Tiles: the tile itself is the flex row/column; tile-media is the
+     per-image sizing slot; image is the cropped visual box. */
+  #shopify-section-{{ section.id }} .media-gallery__tile-media {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__image image-element,
+  #shopify-section-{{ section.id }} .media-gallery__image .media-gallery__image-img,
+  #shopify-section-{{ section.id }} .media-gallery__image .placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__caption {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 1;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+
+  /* Gallery wrap — flexbox, not grid: a "tall" tile's width is just
+     2 tile-widths + 1 gap, which flex-basis/calc() expresses directly.
+     The grid equivalent would need column spans to line up with a
+     percentage track size, which is far more fragile. */
+  #shopify-section-{{ section.id }} .media-gallery__grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: {{ section.settings.gap }}px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__grid {
-    grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
-  }
-
   #shopify-section-{{ section.id }} .media-gallery__tile {
-    --media-gallery-card-width: {{ section.settings.card_width }}px;
-    --media-gallery-gap: {{ section.settings.gap }}px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 {{ section.settings.tile_width }}%;
+    max-width: {{ section.settings.tile_width }}%;
+    height: {{ section.settings.tile_height }}px;
+    gap: {{ section.settings.gap }}px;
   }
 
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .media-gallery__grid {
-      grid-template-columns: repeat({{ section.settings.columns_tablet }}, 1fr);
-    }
+  /* tall, desktop: double-wide, row of two, each full tile height */
+  #shopify-section-{{ section.id }} .media-gallery__tile--wide {
+    flex-direction: row;
+    flex-basis: calc({{ section.settings.tile_width }}% * 2 + {{ section.settings.gap }}px);
+    max-width: calc({{ section.settings.tile_width }}% * 2 + {{ section.settings.gap }}px);
   }
 
-  @media screen and (min-width: 990px) {
-    #shopify-section-{{ section.id }} .media-gallery__grid {
-      grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
-    }
+  #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media {
+    flex: 0 0 calc(50% - {{ half_gap }}px);
+    width: calc(50% - {{ half_gap }}px);
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media:only-child {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* not tall, desktop: normal width, column of two, splitting the height */
+  #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media {
+    flex: 1 1 0;
+    width: 100%;
   }
 
   @media screen and (max-width: 749px) {
@@ -76,241 +173,44 @@
     #shopify-section-{{ section.id }} .media-gallery__content {
       max-width: 100%;
     }
+
+    /* One tile per row on mobile regardless of tall */
+    #shopify-section-{{ section.id }} .media-gallery__tile {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    /* not tall, mobile: row of two sharing the mobile tile height */
+    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) {
+      flex-direction: row;
+      height: {{ section.settings.mobile_tile_height }}px;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media {
+      flex: 0 0 calc(50% - {{ half_gap }}px);
+      width: calc(50% - {{ half_gap }}px);
+      height: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media:only-child {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    /* tall, mobile: column of two, each image explicitly sized —
+       the tile itself is auto height, not the mobile tile height */
+    #shopify-section-{{ section.id }} .media-gallery__tile--wide {
+      flex-direction: column;
+      height: auto;
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media {
+      flex: 0 0 {{ section.settings.mobile_tile_height }}px;
+      width: 100%;
+      height: {{ section.settings.mobile_tile_height }}px;
+    }
   }
-
-
-
-
-  
-/* Story gallery section */
-
-.story-gallery__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.story-gallery--left .story-gallery__inner,
-.story-gallery--right .story-gallery__inner {
-    flex-direction: row;
-    align-items: center;
-}
-
-.story-gallery--right .story-gallery__inner {
-    flex-direction: row-reverse;
-}
-
-.story-gallery__content {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: var(--story-gallery-content-width, 480px);
-}
-
-.story-gallery--above .story-gallery__content {
-    max-width: 100%;
-}
-
-.story-gallery__gallery {
-    position: relative;
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-.story-gallery--gallery-only .story-gallery__content {
-    display: none;
-}
-
-.story-gallery__eyebrow {
-    margin: 0 0 12px;
-    font-size: 13px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-}
-
-.story-gallery__heading {
-    margin: 0 0 16px;
-}
-
-.story-gallery__text {
-    margin: 0 0 24px;
-}
-
-.story-gallery__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-}
-
-.story-gallery__track {
-    display: flex;
-    gap: var(--story-gallery-gap, 16px);
-    padding-bottom: 4px;
-}
-
-.story-gallery__tile {
-    position: relative;
-    flex: 0 0 var(--story-gallery-tile-width, 320px);
-    width: var(--story-gallery-tile-width, 320px);
-    scroll-snap-align: start;
-}
-
-.story-gallery__tile--pair {
-    flex-basis: calc(var(--story-gallery-tile-width, 320px) * 1.6);
-    width: calc(var(--story-gallery-tile-width, 320px) * 1.6);
-}
-
-.story-gallery__tile-media {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-}
-
-.story-gallery__tile-image-wrap {
-    position: relative;
-    flex: 1 1 0;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.story-gallery__tile--tall .story-gallery__tile-image-wrap {
-    aspect-ratio: 3 / 5;
-}
-
-.story-gallery__tile-image-wrap image-element,
-.story-gallery__tile-image-wrap img,
-.story-gallery__tile-image-wrap .placeholder-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.story-gallery__caption {
-    margin: 8px 0 0;
-    font-size: 13px;
-}
-
-.story-gallery__caption--overlay {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    z-index: 1;
-    margin: 0;
-    padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    border-radius: 999px;
-}
-
-.story-gallery__drag-hint {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 12px 0 0;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.story-gallery__gallery drag-scroller:not([data-overflowing]) ~ .story-gallery__drag-hint {
-    display: none;
-}
-
-@media screen and (max-width: 749px) {
-    .story-gallery--left .story-gallery__inner,
-    .story-gallery--right .story-gallery__inner {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .story-gallery__content {
-        max-width: 100%;
-    }
-}
-
-/* End story gallery section */
-
-
-/* Media gallery section */
-
-.media-gallery__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.media-gallery--media-only .media-gallery__content {
-    display: none;
-}
-
-.media-gallery__content {
-    width: 100%;
-}
-
-.media-gallery__eyebrow {
-    margin: 0 0 12px;
-    font-size: 13px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-}
-
-.media-gallery__heading {
-    margin: 0 0 16px;
-}
-
-.media-gallery__body {
-    margin: 0 0 24px;
-}
-
-.media-gallery__actions {
-    display: flex;
-}
-
-/* Fixed grid mode */
-
-.media-gallery__grid {
-    display: grid;
-    grid-auto-flow: row dense;
-}
-
-.media-gallery__tile--wide {
-    grid-column: span 1;
-}
-
-@media screen and (min-width: 750px) {
-    .media-gallery--grid .media-gallery__tile--wide {
-        grid-column: span 2;
-    }
-}
-
-/* Scrolling row mode */
-
-.media-gallery__scroll drag-scroller {
-    display: block;
-}
-
-.media-gallery__track {
-    display: flex;
-}
-
-.media-gallery--scroll .media-gallery__tile {
-    flex: 0 0 var(--media-gallery-card-width, 320px);
-    width: var(--media-gallery-card-width, 320px);
-    scroll-snap-align: start;
-}
-
-.media-gallery--scroll .media-gallery__tile--wide {
-    flex-basis: calc(var(--media-gallery-card-width, 320px) * 2 + var(--media-gallery-gap, 16px));
-    width: calc(var(--media-gallery-card-width, 320px) * 2 + var(--media-gallery-gap, 16px));
-}
-
-
-
 {% endstyle %}
 
 {% capture content_markup %}
@@ -336,28 +236,15 @@
 
 {% capture media_markup %}
   {% if image_blocks.size > 0 %}
-    {% if section.settings.layout_mode == 'scroll' %}
-      {% capture track %}
-        <div class="media-gallery__track">
-          {% for block in image_blocks %}
-            {% render 'media-gallery-tile', block: block, layout_mode: section.settings.layout_mode, card_width: section.settings.card_width, columns_desktop: section.settings.columns_desktop %}
-          {% endfor %}
-        </div>
-      {% endcapture %}
-      <div class="media-gallery__scroll">
-        {% render 'layout.drag-scroller', slot: track, label: 'Media gallery, scroll horizontally' %}
-      </div>
-    {% else %}
-      <div class="media-gallery__grid">
-        {% for block in image_blocks %}
-          {% render 'media-gallery-tile', block: block, layout_mode: section.settings.layout_mode, card_width: section.settings.card_width, columns_desktop: section.settings.columns_desktop %}
-        {% endfor %}
-      </div>
-    {% endif %}
+    <div class="media-gallery__grid">
+      {% for block in image_blocks %}
+        {% render 'media-gallery-tile', block: block, tile_width: section.settings.tile_width %}
+      {% endfor %}
+    </div>
   {% endif %}
 {% endcapture %}
 
-<div class="media-gallery media-gallery--{{ section.settings.layout_mode }}{% if content_block == nil %} media-gallery--media-only{% endif %}">
+<div class="media-gallery">
   <div class="media-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}">
     {% if content_after_media %}
       {{ media_markup }}
@@ -380,70 +267,10 @@
       "content": "Layout"
     },
     {
-      "type": "select",
-      "id": "layout_mode",
-      "label": "Layout mode",
-      "default": "grid",
-      "options": [
-        { "value": "grid", "label": "Fixed grid" },
-        { "value": "scroll", "label": "Scrolling row" }
-      ]
-    },
-    {
       "type": "checkbox",
       "id": "full_width",
       "label": "Full width",
       "default": false
-    },
-    {
-      "type": "header",
-      "content": "Grid columns"
-    },
-    {
-      "type": "paragraph",
-      "content": "Only applies in Fixed grid mode."
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "label": "Columns — desktop",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "columns_tablet",
-      "label": "Columns — tablet",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 2
-    },
-    {
-      "type": "range",
-      "id": "columns_mobile",
-      "label": "Columns — mobile",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "header",
-      "content": "Scrolling row"
-    },
-    {
-      "type": "range",
-      "id": "card_width",
-      "label": "Card width",
-      "info": "Only applies in Scrolling row mode. Controls how much of the next card peeks into view.",
-      "min": 200,
-      "max": 480,
-      "step": 10,
-      "unit": "px",
-      "default": 320
     },
     {
       "type": "header",
@@ -462,7 +289,39 @@
     },
     {
       "type": "header",
-      "content": "Spacing"
+      "content": "Gallery"
+    },
+    {
+      "type": "range",
+      "id": "tile_width",
+      "label": "Tile width (desktop)",
+      "info": "A wide tile (see Image block) is 2 tile-widths plus one gap.",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "tile_height",
+      "label": "Tile height (desktop)",
+      "min": 200,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "mobile_tile_height",
+      "label": "Tile height (mobile)",
+      "info": "For a wide tile this is the height of each image, since they stack on mobile.",
+      "min": 150,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 450
     },
     {
       "type": "range",
@@ -472,7 +331,11 @@
       "max": 48,
       "step": 2,
       "unit": "px",
-      "default": 16
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -564,7 +427,6 @@
     {
       "type": "image",
       "name": "Image",
-      "limit": 9,
       "settings": [
         {
           "type": "checkbox",
@@ -597,30 +459,23 @@
   ],
   "presets": [
     {
-      "name": "Media gallery - grid",
-      "settings": {
-        "layout_mode": "grid"
-      },
+      "name": "Media gallery",
       "blocks": [
         { "type": "content" },
         { "type": "image" },
         { "type": "image" },
-        { "type": "image" },
+        { "type": "image", "settings": { "tall": true } },
         { "type": "image" }
       ]
     },
     {
-      "name": "Media gallery - scrolling wall",
-      "settings": {
-        "layout_mode": "scroll"
-      },
+      "name": "Media gallery - media only",
       "blocks": [
         { "type": "image", "settings": { "tall": true } },
         { "type": "image" },
         { "type": "image" },
         { "type": "image" },
-        { "type": "image" },
-        { "type": "image", "settings": { "tall": true } }
+        { "type": "image" }
       ]
     }
   ]
