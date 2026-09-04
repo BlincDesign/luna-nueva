@@ -131,7 +131,7 @@
               </div>
 
             {%- when 'text' -%}
-              <div class="theme-block" {{ block.shopify_attributes }}>
+              <div class="theme-block has--highlight" {{ block.shopify_attributes }}>
                 <div
                   class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                   data-block-id="{{ block.id }}"
@@ -313,28 +313,28 @@
       ]
     },
     {
-        "type": "header",
-        "content": "Column Width"
+      "type": "header",
+      "content": "Column Width"
     },
     {
-        "type": "range",
-        "id": "left_column_width",
-        "label": "Left column width",
-        "min": 20,
-        "max": 80,
-        "step": 1,
-        "unit": "%",
-        "default": 50
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Left column width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
     },
     {
-        "type": "range",
-        "id": "right_column_width",
-        "label": "Right column width",
-        "min": 20,
-        "max": 80,
-        "step": 1,
-        "unit": "%",
-        "default": 50
+      "type": "range",
+      "id": "right_column_width",
+      "label": "Right column width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
     },
     {
       "type": "header",
