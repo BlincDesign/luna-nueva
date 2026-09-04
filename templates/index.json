@@ -273,6 +273,75 @@
         "mobile_padding_bottom": 48
       }
     },
+    "custom_rich_text_columns_TwtQDb": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_DXAxHU": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_7FY4NB": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_LLrkkX": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers.</p>",
+            "position": "right"
+          }
+        },
+        "button_bCtMDn": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP →",
+            "button_type": "secondary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_DXAxHU",
+        "heading_7FY4NB",
+        "text_LLrkkX",
+        "button_bCtMDn"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "background_color": "#2d3135",
+        "text_color": "#f9f6f1",
+        "align_text": "left",
+        "align_vertical": "flex-end",
+        "left_column_width": 50,
+        "right_column_width": 50,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
+    },
     "custom_product_details_JbJXVn": {
       "type": "custom__product-details",
       "name": "Product Detail List",
@@ -372,11 +441,21 @@
     "custom_media_gallery_JxCFTk": {
       "type": "custom__media-gallery",
       "blocks": {
+        "content_PqQkbn": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Bring the Party",
+            "heading": "The bottle you grab before the night starts.",
+            "body": "<p>Add your description here.</p>",
+            "button_label": "See what's coming up",
+            "button_url": ""
+          }
+        },
         "image_8McHDm": {
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
+            "video_one": "shopify://files/videos/dispo.mp4",
             "image_one_caption": "Pacific Coast Highway",
             "image_two_caption": ""
           }
@@ -421,6 +500,7 @@
         }
       },
       "block_order": [
+        "content_PqQkbn",
         "image_8McHDm",
         "image_tNqcUt",
         "image_4xURFm",
@@ -438,7 +518,7 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "section_background": "#2d3135",
+        "section_background": "#AEBFB4",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mb": 40,
@@ -542,6 +622,7 @@
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
     "custom_story_teaser_grtbFU",
+    "custom_rich_text_columns_TwtQDb",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
