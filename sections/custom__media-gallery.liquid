@@ -7,11 +7,7 @@
   endfor
 
   assign image_blocks = section.blocks | where: 'type', 'image'
-
-  # Fluid tile width: clamp(min, calc(intercept + coefficient*vw), max), scaling
-  # linearly between (viewport_min, tile_width_min) and (viewport_max, tile_width_max)
-  # instead of jumping between two fixed values at the breakpoint — same technique
-  # design.html uses for .wall's grid-auto-columns (clamp(240px, 25vw, 360px)).
+  
   assign d_span = section.settings.tile_width_max | minus: section.settings.tile_width_min
   assign d_slope = d_span | divided_by: 610.0
   assign d_coefficient = d_slope | times: 100 | round: 3
@@ -53,10 +49,6 @@
     margin: 0 0 24px;
   }
 
-  /* The wall — CSS Grid, not flex: grid-auto-flow: column lets normal
-     tiles pack two-per-column automatically, and a tall tile just spans
-     both rows of its own column. That auto-placement is what a flex
-     track can't give us for free. */
   .media-gallery__grid {
     display: grid;
     grid-auto-flow: column;
@@ -160,8 +152,6 @@
     }
   }
 
-  /* The wall itself only steps down at its own (narrower) breakpoint —
-     it stays a 2-row scroller here, just with smaller tiles. */
   @media screen and (max-width: 680px) {
     #shopify-section-{{ section.id }} .media-gallery__grid {
       grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
