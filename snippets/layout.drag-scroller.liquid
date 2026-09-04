@@ -35,6 +35,12 @@
     display: none;
   }
 
+  drag-scroller img,
+  drag-scroller video {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
   drag-scroller[data-dragging] {
     cursor: grabbing;
     scroll-snap-type: none;
@@ -159,6 +165,12 @@
       // hijacking it with 1:1 JS tracking only makes it feel worse.
       // Only take over for mouse/pen drag.
       if (event.pointerType === 'touch') return
+
+      // Stops the browser's native image/text drag from starting when the
+      // press lands on a photo — that's what hijacks the gesture into
+      // "picking up" the image instead of scrolling. -webkit-user-drag
+      // covers Chrome/Safari; this covers Firefox too.
+      event.preventDefault()
 
       this.cancelMomentum()
       this.dragging = true

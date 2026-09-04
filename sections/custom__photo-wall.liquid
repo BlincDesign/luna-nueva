@@ -75,7 +75,8 @@
               widths: '225, 340, 450, 680, 900',
               sizes: '(min-width: 990px) 340px, 45vw',
               alt: block.settings.alt | default: block.settings.caption,
-              class: 'pw-img'
+              class: 'pw-img',
+              draggable: false
             }}
           {% else %}
             {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
