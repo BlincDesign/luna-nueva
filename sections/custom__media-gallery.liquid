@@ -3,11 +3,12 @@
   7, "the uneven grid") and .ev/.ev-grid (section 8, "community & events")
   rather than from a hand-written spec:
 
-  Content + media (from .ev)
-    A real two-column split — content_width controls the content column,
-    media takes the rest — that stacks to one column at <=900px (.ev's own
-    breakpoint). Which block renders first (content vs the first image
-    block) decides left/top vs right/bottom; there's no separate setting.
+  Content + media (from .ev, plus .sec-head's "content above the wall")
+    content_position picks the arrangement: "before" is .ev's real
+    two-column split (content_width controls the content column, media
+    takes the rest, stacks to one column at <=900px); "above" stacks
+    content full width above the gallery, unconditionally, matching how
+    sections 7/9 put their heading above the wall instead of beside it.
 
   The gallery wall (from .wall)
     CSS Grid, grid-auto-flow: column, exactly 2 fixed-height rows,
@@ -25,27 +26,11 @@
 
 {%- liquid
   assign content_block = nil
-  assign content_index = -1
-  assign first_image_index = -1
-
   for block in section.blocks
-    case block.type
-      when 'content'
-        if content_block == nil
-          assign content_block = block
-          assign content_index = forloop.index0
-        endif
-      when 'image'
-        if first_image_index == -1
-          assign first_image_index = forloop.index0
-        endif
-    endcase
+    if block.type == 'content' and content_block == nil
+      assign content_block = block
+    endif
   endfor
-
-  assign content_after_media = false
-  if content_block != nil and first_image_index != -1 and content_index > first_image_index
-    assign content_after_media = true
-  endif
 
   assign image_blocks = section.blocks | where: 'type', 'image'
 -%}
@@ -53,11 +38,19 @@
 {% style %}
   #shopify-section-{{ section.id }} .media-gallery__inner {
     display: flex;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__inner--above {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__inner--before {
     flex-direction: row;
     align-items: center;
     gap: clamp(32px, 5vw, 96px);
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
   #shopify-section-{{ section.id }} .media-gallery {
@@ -66,7 +59,7 @@
     {% endif %}
   }
 
-  #shopify-section-{{ section.id }} .media-gallery__content {
+  #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
     flex: 0 0 {{ section.settings.content_width }}%;
     max-width: {{ section.settings.content_width }}%;
     min-width: 0;
@@ -157,14 +150,17 @@
 
   @media screen and (max-width: 900px) {
     #shopify-section-{{ section.id }} .media-gallery__inner {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 32px;
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
 
-    #shopify-section-{{ section.id }} .media-gallery__content {
+    #shopify-section-{{ section.id }} .media-gallery__inner--before {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
       flex-basis: 100%;
       max-width: 100%;
     }
@@ -221,14 +217,9 @@
 {% endcapture %}
 
 <div class="media-gallery">
-  <div class="media-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}">
-    {% if content_after_media %}
-      {{ media_markup }}
-      {{ content_markup }}
-    {% else %}
-      {{ content_markup }}
-      {{ media_markup }}
-    {% endif %}
+  <div class="media-gallery__inner media-gallery__inner--{{ section.settings.content_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
+    {{ content_markup }}
+    {{ media_markup }}
   </div>
 </div>
 
@@ -253,10 +244,21 @@
       "content": "Content"
     },
     {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "info": "Only applies when a Content block has been added.",
+      "default": "before",
+      "options": [
+        { "value": "above", "label": "Above gallery" },
+        { "value": "before", "label": "Before gallery" }
+      ]
+    },
+    {
       "type": "range",
       "id": "content_width",
       "label": "Content width",
-      "info": "Only applies when a Content block has been added. Content and gallery stack below 900px.",
+      "info": "Only applies in \"Before gallery\" position. Content and gallery stack below 900px.",
       "min": 20,
       "max": 60,
       "step": 5,
