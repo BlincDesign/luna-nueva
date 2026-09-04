@@ -2,10 +2,17 @@
 #shopify-section-{{ section.id }} {
   --age-confirmation-bg: {{ section.settings.background_color }};
   --age-confirmation-color: {{ section.settings.text_color }};
+
+  --btn-primary-bg: #D39655;
+  --btn-primary-border: #D39655;
+  --btn-primary-color: #fff;
+  --btn-primary-hover-bg: #E0A768;
+  --btn-primary-hover-border: #D39655;
+  --btn-primary-hover-color: #D39655;
 }
 
-#shopify-section-{{ section.id }} .button {
---btn-primary-bg: #D39655;
+/* #shopify-section-{{ section.id }} .button {
+  --btn-primary-bg: #D39655;
   --btn-primary-border: #D39655;
   --btn-primary-color: #fff;
   
@@ -21,7 +28,7 @@
   --btn-secondary-bg-hover: #fff;
   --btn-secondary-border-hover: #fff;
   --btn-secondary-color-hover: #2D3135;
-}
+} */
 
 {% endstyle %}
 
