@@ -225,7 +225,7 @@
           "settings": {
             "eyebrow": "Bring the Party",
             "heading": "The bottle you grab before the night starts.",
-            "body": "<p>Add your description here.</p>",
+            "body": "",
             "button_label": "See what's coming up",
             "button_url": ""
           }
