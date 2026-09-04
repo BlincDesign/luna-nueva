@@ -3,7 +3,6 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: {{ section.settings.section_background }};
-      color: {{ section.settings.color_text }};
   }
 
   @media only screen and (max-width:589px){
@@ -13,55 +12,9 @@
     }
   }
 
-  #shopify-section-{{ section.id }} .pw-head{
-    display: grid;
-    grid-template-columns: minmax(0,1fr) auto;
-    align-items: end;
-    gap: 1.4rem 2.5rem;
-    margin-bottom: clamp(38px, 4.6vw, 66px);
-  }
-  #shopify-section-{{ section.id }} .pw-eyebrow{
-    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
-    font-weight: 700;
-    font-size: .74rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    margin: 0 0 1.15rem;
-    opacity: .66;
-  }
-  #shopify-section-{{ section.id }} .pw-head h2{
-    margin: 0;
-    max-width: 22ch;
-  }
-  #shopify-section-{{ section.id }} .pw-aux{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1.15rem;
-  }
-  #shopify-section-{{ section.id }} .pw-aux > *{ margin: 0; }
-  #shopify-section-{{ section.id }} .pw-desc{
-    max-width: 30ch;
-    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
-    font-size: .885rem;
-    line-height: 1.75;
-    opacity: .84;
-  }
-  #shopify-section-{{ section.id }} .pw-hint{
-    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
-    font-size: .74rem;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    opacity: .66;
-  }
-  #shopify-section-{{ section.id }} .pw-hint i{
-    display: block;
-    width: 30px;
-    height: 1px;
-    background: currentColor;
+  #shopify-section-{{ section.id }} .pw-bleed{
+    margin-right: calc(50% - 50vw);
+    padding-right: clamp(20px, 4.4vw, 68px);
   }
 
   #shopify-section-{{ section.id }} .pw-track{
@@ -128,59 +81,42 @@
   }
 {% endstyle %}
 
-<div class="page-width">
-  <div class="pw-head">
-    <div>
-      {% if section.settings.eyebrow != blank %}
-        <p class="pw-eyebrow">{{ section.settings.eyebrow }}</p>
-      {% endif %}
-      {% if section.settings.heading != blank %}
-        <h2>{{ section.settings.heading }}</h2>
-      {% endif %}
-    </div>
-    <div class="pw-aux">
-      {% if section.settings.description != blank %}
-        <p class="pw-desc">{{ section.settings.description }}</p>
-      {% endif %}
-      {% if section.settings.show_drag_hint %}
-        <p class="pw-hint"><span>{{ section.settings.drag_hint_text }}</span><i></i></p>
-      {% endif %}
+{% if section.blocks.size > 0 %}
+  <div class="page-width">
+    <div class="pw-bleed">
+      <photo-wall-gallery>
+        <div class="pw-track" data-pw-track role="region" aria-label="{{ section.settings.gallery_label }}, scroll horizontally" tabindex="0">
+          {% for block in section.blocks %}
+            {% liquid
+              assign size_class = block.settings.size
+              assign align_class = block.settings.align
+            %}
+            <figure
+              class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {% if block.settings.image %}
+                {{ block.settings.image | image_url: width: 900 | image_tag:
+                  loading: 'lazy',
+                  widths: '225, 340, 450, 680, 900',
+                  sizes: '(min-width: 990px) 340px, 45vw',
+                  alt: block.settings.alt | default: block.settings.caption,
+                  class: 'pw-img'
+                }}
+              {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
+              {% endif %}
+              {% if block.settings.caption != blank %}
+                <figcaption>{{ block.settings.caption }}</figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+        <div class="pw-bar" data-pw-bar aria-hidden="true"><i></i></div>
+      </photo-wall-gallery>
     </div>
   </div>
-
-  {% if section.blocks.size > 0 %}
-    <photo-wall-gallery>
-      <div class="pw-track" data-pw-track role="region" aria-label="{{ section.settings.heading | default: section.settings.eyebrow }}, scroll horizontally" tabindex="0">
-        {% for block in section.blocks %}
-          {% liquid
-            assign size_class = block.settings.size
-            assign align_class = block.settings.align
-          %}
-          <figure
-            class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
-            {{ block.shopify_attributes }}
-          >
-            {% if block.settings.image %}
-              {{ block.settings.image | image_url: width: 900 | image_tag:
-                loading: 'lazy',
-                widths: '225, 340, 450, 680, 900',
-                sizes: '(min-width: 990px) 340px, 45vw',
-                alt: block.settings.alt | default: block.settings.caption,
-                class: 'pw-img'
-              }}
-            {% else %}
-              {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
-            {% endif %}
-            {% if block.settings.caption != blank %}
-              <figcaption>{{ block.settings.caption }}</figcaption>
-            {% endif %}
-          </figure>
-        {% endfor %}
-      </div>
-      <div class="pw-bar" data-pw-bar aria-hidden="true"><i></i></div>
-    </photo-wall-gallery>
-  {% endif %}
-</div>
+{% endif %}
 
 {% javascript %}
   if (!customElements.get('photo-wall-gallery')) {
@@ -268,48 +204,14 @@
   "class": "photo_wall_section background-image",
   "settings": [
     {
-      "type": "header",
-      "content": "Content"
-    },
-    {
       "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Shot on a Disposable"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Nobody photographs the good nights properly."
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Flash, grain, and whatever the camera caught. Shot the way the nights actually looked."
-    },
-    {
-      "type": "checkbox",
-      "id": "show_drag_hint",
-      "label": "Show drag hint",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "drag_hint_text",
-      "label": "Drag hint text",
-      "default": "Drag"
+      "id": "gallery_label",
+      "label": "Gallery label (screen readers)",
+      "default": "Event photos"
     },
     {
       "type": "header",
       "content": "Colors"
-    },
-    {
-      "type": "color",
-      "id": "color_text",
-      "label": "Text color",
-      "default": "#2d3135d1"
     },
     {
       "type": "color",
@@ -331,7 +233,7 @@
     },
     {
       "type": "header",
-      "content": "Desktop spacing"
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -354,13 +256,9 @@
       "default": 40
     },
     {
-      "type": "header",
-      "content": "Mobile spacing"
-    },
-    {
       "type": "range",
       "id": "padding_top_mb",
-      "label": "Padding top",
+      "label": "Padding top (mobile)",
       "min": 0,
       "max": 100,
       "step": 2,
@@ -370,7 +268,7 @@
     {
       "type": "range",
       "id": "padding_bottom_mb",
-      "label": "Padding bottom",
+      "label": "Padding bottom (mobile)",
       "min": 0,
       "max": 100,
       "step": 2,
