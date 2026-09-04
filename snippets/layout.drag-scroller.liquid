@@ -1,11 +1,13 @@
 {%- doc -%}
   Wraps horizontally-scrollable content in a custom element that adds
   drag-to-scroll (pointer capture, 6px threshold before a drag counts,
-  applies to every pointer type) plus a self-painting scroll-progress bar,
-  reproducing the draggable-track behavior used throughout design.html
-  (.wall / .wallx / .rail): a thumb whose width is the visible fraction of
-  the track and whose position is the scroll progress, hidden entirely
-  when the track doesn't overflow.
+  momentum on release) for mouse/pen input, plus a self-painting
+  scroll-progress bar: a thumb whose width is the visible fraction of the
+  track and whose position is the scroll progress, hidden entirely when
+  the track doesn't overflow.
+
+  Touch input is left to the browser's native scrolling (with its own
+  momentum) rather than being hijacked by the drag handler.
 
   Also sets a `data-overflowing` attribute the caller can use to hide
   other drag affordances (e.g. a "Drag" hint) when nothing overflows.
@@ -87,6 +89,10 @@
       this.startX = 0
       this.startScrollLeft = 0
       this.paintPending = false
+      this.velocity = 0
+      this.lastX = 0
+      this.lastT = 0
+      this.momentumId = null
     }
 
     connectedCallback() {
@@ -106,6 +112,7 @@
     }
 
     disconnectedCallback() {
+      this.cancelMomentum()
       this.resizeObserver.disconnect()
       this.removeEventListener('pointerdown', this.onPointerDown)
       this.removeEventListener('scroll', this.onScroll)
@@ -148,10 +155,19 @@
     }
 
     onPointerDown(event) {
+      // Touch already gets native momentum scrolling from the browser;
+      // hijacking it with 1:1 JS tracking only makes it feel worse.
+      // Only take over for mouse/pen drag.
+      if (event.pointerType === 'touch') return
+
+      this.cancelMomentum()
       this.dragging = true
       this.moved = false
       this.startX = event.clientX
       this.startScrollLeft = this.scrollLeft
+      this.lastX = event.clientX
+      this.lastT = performance.now()
+      this.velocity = 0
       this.setPointerCapture(event.pointerId)
       this.addEventListener('pointermove', this.onPointerMove)
       this.addEventListener('pointerup', this.onPointerUp)
@@ -167,6 +183,14 @@
         this.setAttribute('data-dragging', '')
       }
       this.scrollLeft = this.startScrollLeft - delta
+
+      const now = performance.now()
+      const dt = now - this.lastT
+      if (dt > 0) {
+        this.velocity = (this.lastX - event.clientX) / dt
+      }
+      this.lastX = event.clientX
+      this.lastT = now
     }
 
     onPointerUp() {
@@ -176,6 +200,31 @@
       this.removeEventListener('pointerup', this.onPointerUp)
       this.removeEventListener('pointercancel', this.onPointerUp)
       this.removeEventListener('pointerleave', this.onPointerUp)
+      this.startMomentum()
+    }
+
+    startMomentum() {
+      const friction = 0.95
+      const minVelocity = 0.02
+      if (Math.abs(this.velocity) < minVelocity) return
+
+      const step = () => {
+        this.velocity *= friction
+        if (Math.abs(this.velocity) < minVelocity) {
+          this.momentumId = null
+          return
+        }
+        this.scrollLeft += this.velocity * 16
+        this.momentumId = requestAnimationFrame(step)
+      }
+      this.momentumId = requestAnimationFrame(step)
+    }
+
+    cancelMomentum() {
+      if (this.momentumId) {
+        cancelAnimationFrame(this.momentumId)
+        this.momentumId = null
+      }
     }
 
     onClickCapture(event) {
