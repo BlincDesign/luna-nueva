@@ -424,6 +424,7 @@
       "settings": {
         "full_width": false,
         "content_width": 30,
+        "flow_right": true,
         "tile_width_min": 360,
         "tile_width_max": 360,
         "row_height": 360,
@@ -492,6 +493,7 @@
       "settings": {
         "full_width": false,
         "content_width": 30,
+        "flow_right": false,
         "tile_width_min": 360,
         "tile_width_max": 360,
         "row_height": 360,
