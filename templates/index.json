@@ -233,7 +233,7 @@
         "image_64U3Pa": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/hero-tailgate.jpg",
@@ -274,11 +274,11 @@
       ],
       "name": "Media gallery - grid",
       "settings": {
-        "layout_mode": "scroll",
+        "layout_mode": "grid",
         "full_width": false,
-        "columns_desktop": 3,
-        "columns_tablet": 2,
-        "columns_mobile": 1,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": 3,
         "card_width": 320,
         "content_width": 40,
         "gap": 16,
