@@ -1,20 +1,10 @@
 {%- doc -%}
-  Renders one media-gallery__tile: a cell in the wall grid in
-  sections/custom__media-gallery.liquid. `tall` makes it grid-row: span 2
-  (full wall height, same width as a normal tile) via CSS alone — this
-  snippet just outputs the tile and its 1-2 images, unaware of the grid
-  math around it.
-
-  Direction of a 2-image split follows the tile's own shape (set in the
-  section's CSS): normal (short, wide) tiles lay images out in a row,
-  tall (narrow, full-height) tiles stack them in a column.
-
   @param block {object} An 'image' type block from section.blocks
-  @param tile_width {number} section.settings.tile_width — desktop px
-  @param tile_width_mobile {number} section.settings.tile_width_mobile — mobile px
+  @param tile_width {number} Upper bound for the tile's rendered width
+  @param tile_width_mobile {number} Same, but section.settings.tile_width_mobile_max
 
   @example
-  {% render 'media-gallery-tile', block: block, tile_width: section.settings.tile_width, tile_width_mobile: section.settings.tile_width_mobile %}
+  {% render 'media-gallery-tile', block: block, tile_width: section.settings.tile_width_max, tile_width_mobile: section.settings.tile_width_mobile_max %}
 {%- enddoc -%}
 
 <div
@@ -25,7 +15,7 @@
     <div class="media-gallery__image">
       {% render 'image-element',
         img: block.settings.image_one,
-        widths: '300, 400, 600, 800',
+        widths: '300, 400, 600, 800, 1000, 1200, 1600',
         sizeVariable: tile_width | append: 'px',
         fallback: tile_width_mobile | append: 'px',
         classes: 'media-gallery__image-img'
@@ -44,7 +34,7 @@
     <div class="media-gallery__image">
       {% render 'image-element',
         img: block.settings.image_two,
-        widths: '300, 400, 600, 800',
+        widths: '300, 400, 600, 800, 1000, 1200, 1600',
         sizeVariable: tile_width | append: 'px',
         fallback: tile_width_mobile | append: 'px',
         classes: 'media-gallery__image-img'
