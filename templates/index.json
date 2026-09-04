@@ -367,7 +367,7 @@
         "full_width": false,
         "content_position": "above",
         "content_width": 30,
-        "tile_width_min": 240,
+        "tile_width_min": 360,
         "tile_width_max": 360,
         "row_height": 280,
         "tile_width_mobile_min": 150,
