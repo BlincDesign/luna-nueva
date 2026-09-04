@@ -1,38 +1,44 @@
 <div
   class="media-gallery__tile{% if block.settings.tall %} media-gallery__tile--tall{% endif %}"
-  {{ block.shopify_attributes }}
+  {{- block.shopify_attributes -}}
 >
-  {% if block.settings.image_one != blank %}
+  {%- if block.settings.image_one != blank -%}
     <div class="media-gallery__image">
-      {% render 'image-element',
+      {%- render 'image-element',
         img: block.settings.image_one,
         widths: '300, 400, 600, 800, 1000, 1200, 1600',
         sizeVariable: tile_width | append: 'px',
         fallback: tile_width_mobile | append: 'px',
         classes: 'media-gallery__image-img'
-      %}
-      {% if block.settings.image_one_caption != blank %}
-        <span class="media-gallery__caption">{{ block.settings.image_one_caption }}</span>
-      {% endif %}
-    </div>
-  {% else %}
-    <div class="media-gallery__image media-gallery__image--placeholder">
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {% endif %}
+      -%}
 
-  {% if block.settings.image_two != blank %}
+      {%- if block.settings.image_one_caption != blank -%}
+        <span class="media-gallery__caption">
+          {{- block.settings.image_one_caption -}}
+        </span>
+      {%- endif -%}
+    </div>
+  {%- else -%}
+    <div class="media-gallery__image media-gallery__image--placeholder">
+      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.image_two != blank -%}
     <div class="media-gallery__image">
-      {% render 'image-element',
+      {%- render 'image-element',
         img: block.settings.image_two,
         widths: '300, 400, 600, 800, 1000, 1200, 1600',
         sizeVariable: tile_width | append: 'px',
         fallback: tile_width_mobile | append: 'px',
         classes: 'media-gallery__image-img'
-      %}
-      {% if block.settings.image_two_caption != blank %}
-        <span class="media-gallery__caption">{{ block.settings.image_two_caption }}</span>
-      {% endif %}
+      -%}
+
+      {%- if block.settings.image_two_caption != blank -%}
+        <span class="media-gallery__caption">
+          {{- block.settings.image_two_caption -}}
+        </span>
+      {%- endif -%}
     </div>
-  {% endif %}
+  {%- endif -%}
 </div>
