@@ -588,3 +588,16 @@ a.pdl__right {
 
 
 /* End age verification popup */
+
+
+.has--highlight em:has(strong) {
+    color: var(--highlight-color);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.has--highlight strong:has(em) {
+    color: var(--highlight-color);
+    font-weight: normal;
+    font-style: normal;
+}
