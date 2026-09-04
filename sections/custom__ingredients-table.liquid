@@ -1,0 +1,633 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .additives {
+    width: 100%;
+  }
+
+  .additives__header {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr) auto;
+    align-items: center;
+
+    border-top: 1px solid rgba(45, 49, 53, 0.35);
+    border-bottom: 1px solid rgba(45, 49, 53, 0.35);
+  }
+
+  .additives__header-left,
+  .additives__header-product,
+  .additives__header-permitted,
+  .additives__header-bottle {
+    padding: 14px 0;
+  }
+
+  .additives__header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  .additives__header-title {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .additives__header-permitted {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .additives__header-bottle {
+    text-align: right;
+  }
+
+  .additives__row {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr) 108px;
+
+    border-bottom: 1px solid rgba(45, 49, 53, 0.35);
+  }
+
+  .additives__additive {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    padding: 18px 0;
+  }
+
+  .additives__icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .additives__icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .additives__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .additives__name {
+    margin: 0;
+    min-width: 0;
+  }
+
+  .additives__progress {
+    width: 100%;
+    padding-right: 30px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .additives__progress-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .additives__progress-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: rgba(45, 49, 53, 0.7);
+  }
+
+  .additives__progress-fill {
+    position: absolute;
+    left: 0;
+
+    width: var(--progress-width);
+    max-width: 100%;
+    height: 1px;
+
+    background: #2D3135;
+  }
+
+  .additives__progress-marker {
+    position: absolute;
+    left: var(--progress-width);
+    top: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    border: 1px solid #2D3135;
+    border-radius: 50%;
+    background: {{ section.settings.background_color }};
+
+    transform: translate(-50%, -50%);
+  }
+
+  .additives__progress-marker-100 {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: #2D3135;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .additives__percentage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 108px;
+
+    font-weight: 700;
+    font-size: 1.06rem;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 589px) {
+
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    .additives__header-luna {
+      display: none;
+    }
+
+    .additives__header {
+      grid-template-columns: 1fr auto;
+    }
+
+    .additives__header-left {
+      grid-column: 1;
+    }
+
+    .additives__header-bottle {
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .additives__header-product,
+    .additives__header-permitted {
+      display: none;
+    }
+
+    .additives__row {
+      grid-template-columns: minmax(0, 1fr) 108px;
+
+      grid-template-areas:
+        "additive percentage"
+        "progress progress";
+    }
+
+    .additives__additive {
+      grid-area: additive;
+
+      padding: 18px 0 10px;
+    }
+
+    .additives__progress {
+      grid-area: progress;
+
+      padding: 0 0 10px;
+    }
+
+    .additives__percentage {
+      grid-area: percentage;
+
+      width: auto;
+      align-self: center;
+      padding-top: 0;
+    }
+  }
+{% endstyle %}
+
+<div class="page-width">
+  <div class="additives">
+    <div class="additives__header">
+      <div class="additives__header-left">
+        <div class="additives__header-title">
+          {{ section.settings.heading_additive }}
+        </div>
+      </div>
+
+      <div class="additives__header-right">
+        <div class="additives__header-title additives__header-luna">
+          {{ section.settings.heading_product }}
+        </div>
+
+        <div style="display: flex;">
+          <div class="additives__header-title additives__header-permitted">
+            {{ section.settings.heading_permitted }}
+          </div>
+
+          <div class="additives__header-title additives__header-bottle">
+            {{ section.settings.heading_bottle }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="additives__body">
+      {% for block in section.blocks %}
+        {% liquid
+          assign percentage_value = block.settings.percentage | strip_html | strip | remove: '%' | replace: ',', '.' | plus: 0.0
+          assign progress_width = percentage_value | times: 100
+        %}
+
+        <div
+          class="additives__row"
+          {{ block.shopify_attributes }}
+        >
+
+          <div class="additives__additive">
+            <div class="additives__icon">
+              {% if block.settings.custom_icon_image != blank %}
+                {{
+                  block.settings.custom_icon_image
+                  | image_url: width: 80
+                  | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
+                }}
+
+              {% elsif block.settings.icon != blank %}
+                {% render 'icon', name: block.settings.icon %}
+
+              {% else %}
+                {% liquid
+                  assign fallback_icons = 'droplet,leaf,cube,half-circle' | split: ','
+                  assign fallback_index = forloop.index0 | modulo: fallback_icons.size
+                  assign fallback_icon = fallback_icons[fallback_index]
+                %}
+
+                {% render 'icon', name: fallback_icon %}
+              {% endif %}
+            </div>
+
+            <div class="additives__name">
+              {{ block.settings.name }}
+            </div>
+          </div>
+
+          <div class="additives__progress">
+            <div
+              class="additives__progress-bar"
+              role="progressbar"
+              aria-valuenow="{{ percentage_value }}"
+              aria-valuemin="0"
+              aria-valuemax="{{ section.settings.maximum_percentage }}"
+              style="--progress-width: {{ progress_width }}%;"
+            >
+              <span class="additives__progress-track"></span>
+
+              <span class="additives__progress-fill"></span>
+
+              <span class="additives__progress-marker"></span>
+
+              <span class="additives__progress-marker-100"></span>
+            </div>
+          </div>
+
+          <div class="additives__percentage">
+            {{ block.settings.percentage }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Additives table",
+  "class": "background-image",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2d3135"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f9f6f1"
+    },
+    {
+      "type": "header",
+      "content": "Table headers"
+    },
+    {
+      "type": "text",
+      "id": "heading_additive",
+      "label": "Additive heading",
+      "default": "ADDITIVE"
+    },
+    {
+      "type": "text",
+      "id": "heading_product",
+      "label": "Product heading",
+      "default": "LUNA NUEVA"
+    },
+    {
+      "type": "text",
+      "id": "heading_permitted",
+      "label": "Permitted heading",
+      "default": "PERMITTED UP TO 1%"
+    },
+    {
+      "type": "text",
+      "id": "heading_bottle",
+      "label": "Bottle heading",
+      "default": "IN THIS BOTTLE"
+    },
+
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "additive",
+      "name": "Additive",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "droplet",
+          "options": [
+            { "label": "None (auto)", "value": "" },
+            { "label": "avatar", "value": "avatar" },
+            { "label": "avatar-2", "value": "avatar-2" },
+            { "label": "bag", "value": "bag" },
+            { "label": "basket", "value": "basket" },
+            { "label": "battery", "value": "battery" },
+            { "label": "bee", "value": "bee" },
+            { "label": "behance", "value": "behance" },
+            { "label": "bicep", "value": "bicep" },
+            { "label": "bicycle", "value": "bicycle" },
+            { "label": "binoculars", "value": "binoculars" },
+            { "label": "bolt", "value": "bolt" },
+            { "label": "bookmark", "value": "bookmark" },
+            { "label": "box", "value": "box" },
+            { "label": "briefcase", "value": "briefcase" },
+            { "label": "bullet", "value": "bullet" },
+            { "label": "bunny", "value": "bunny" },
+            { "label": "calculator", "value": "calculator" },
+            { "label": "icon-top", "value": "icon-top" },
+            { "label": "calendar", "value": "calendar" },
+            { "label": "cart", "value": "cart" },
+            { "label": "cart-2", "value": "cart-2" },
+            { "label": "chat", "value": "chat" },
+            { "label": "checkmark", "value": "checkmark" },
+            { "label": "circle", "value": "circle" },
+            { "label": "clock", "value": "clock" },
+            { "label": "cloud", "value": "cloud" },
+            { "label": "clover", "value": "clover" },
+            { "label": "document", "value": "document" },
+            { "label": "document-2", "value": "document-2" },
+            { "label": "dollar", "value": "dollar" },
+            { "label": "down-arrow", "value": "down-arrow" },
+            { "label": "down-caret", "value": "down-caret" },
+            { "label": "dribbble", "value": "dribbble" },
+            { "label": "email", "value": "email" },
+            { "label": "euro", "value": "euro" },
+            { "label": "eye", "value": "eye" },
+            { "label": "facebook", "value": "facebook" },
+            { "label": "film", "value": "film" },
+            { "label": "fire", "value": "fire" },
+            { "label": "flag", "value": "flag" },
+            { "label": "flickr", "value": "flickr" },
+            { "label": "flower", "value": "flower" },
+            { "label": "gift", "value": "gift" },
+            { "label": "globe", "value": "globe" },
+            { "label": "folder", "value": "folder" },
+            { "label": "gear", "value": "gear" },
+            { "label": "gem", "value": "gem" },
+            { "label": "grid", "value": "grid" },
+            { "label": "hanger", "value": "hanger" },
+            { "label": "heart", "value": "heart" },
+            { "label": "house", "value": "house" },
+            { "label": "houzz", "value": "houzz" },
+            { "label": "info", "value": "info" },
+            { "label": "instagram", "value": "instagram" },
+            { "label": "krona", "value": "krona" },
+            { "label": "leaf", "value": "leaf" },
+            { "label": "leaf-2", "value": "leaf-2" },
+            { "label": "left-arrow", "value": "left-arrow" },
+            { "label": "left-caret", "value": "left-caret" },
+            { "label": "lightbulb", "value": "lightbulb" },
+            { "label": "like", "value": "like" },
+            { "label": "link", "value": "link" },
+            { "label": "linkedin", "value": "linkedin" },
+            { "label": "lock", "value": "lock" },
+            { "label": "map", "value": "map" },
+            { "label": "megaphone", "value": "megaphone" },
+            { "label": "menu", "value": "menu" },
+            { "label": "minus", "value": "minus" },
+            { "label": "moon", "value": "moon" },
+            { "label": "music", "value": "music" },
+            { "label": "paper-clip", "value": "paper-clip" },
+            { "label": "pentagram", "value": "pentagram" },
+            { "label": "phone", "value": "phone" },
+            { "label": "photo", "value": "photo" },
+            { "label": "pin", "value": "pin" },
+            { "label": "pinterest", "value": "pinterest" },
+            { "label": "plus", "value": "plus" },
+            { "label": "pound", "value": "pound" },
+            { "label": "recycle", "value": "recycle" },
+            { "label": "right-arrow", "value": "right-arrow" },
+            { "label": "right-caret", "value": "right-caret" },
+            { "label": "rocket", "value": "rocket" },
+            { "label": "rss", "value": "rss" },
+            { "label": "ruler", "value": "ruler" },
+            { "label": "shield", "value": "shield" },
+            { "label": "skull-and-crossbones", "value": "skull-and-crossbones" },
+            { "label": "skull", "value": "skull" },
+            { "label": "slash", "value": "slash" },
+            { "label": "slider", "value": "slider" },
+            { "label": "snapchat", "value": "snapchat" },
+            { "label": "snowflake", "value": "snowflake" },
+            { "label": "square", "value": "square" },
+            { "label": "star", "value": "star" },
+            { "label": "sun", "value": "sun" },
+            { "label": "sun-2", "value": "sun-2" },
+            { "label": "tag", "value": "tag" },
+            { "label": "tiktok", "value": "tiktok" },
+            { "label": "tree", "value": "tree" },
+            { "label": "triangle", "value": "triangle" },
+            { "label": "truck", "value": "truck" },
+            { "label": "tumblr", "value": "tumblr" },
+            { "label": "twitter", "value": "twitter" },
+            { "label": "umbrella", "value": "umbrella" },
+            { "label": "up-arrow", "value": "up-arrow" },
+            { "label": "up-caret", "value": "up-caret" },
+            { "label": "vimeo", "value": "vimeo" },
+            { "label": "wrench", "value": "wrench" },
+            { "label": "x", "value": "x" },
+            { "label": "yen", "value": "yen" },
+            { "label": "youtube", "value": "youtube" },
+            { "label": "zoom", "value": "zoom" },
+            { "label": "video-thumbnail", "value": "video-thumbnail" },
+            { "label": "3d-thumbnail", "value": "3d-thumbnail" },
+            { "label": "icon-cancel", "value": "icon-cancel" },
+            { "label": "icon-share", "value": "icon-share" },
+            { "label": "icon-plus", "value": "icon-plus" },
+            { "label": "icon-minus", "value": "icon-minus" },
+            { "label": "share_clipboard", "value": "share_clipboard" },
+            {
+              "value": "droplet",
+              "label": "Droplet"
+            },
+            {
+              "value": "cube",
+              "label": "Cube"
+            },
+            {
+              "value": "half-circle",
+              "label": "Half circle"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "name",
+          "label": "Additive name",
+          "default": "Glycerin"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "percentage",
+          "label": "Percentage",
+          "default": "0.00%"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Additives table",
+      "blocks": [
+        {
+          "type": "additive",
+          "settings": {
+            "icon": "droplet",
+            "name": "Glycerin",
+            "percentage": "0.00%"
+          }
+        },
+        {
+          "type": "additive",
+          "settings": {
+            "icon": "leaf",
+            "name": "Oak extract",
+            "percentage": "0.00%"
+          }
+        },
+        {
+          "type": "additive",
+          "settings": {
+            "icon": "cube",
+            "name": "Sugar-based sweetener",
+            "percentage": "0.00%"
+          }
+        },
+        {
+          "type": "additive",
+          "settings": {
+            "icon": "half-circle",
+            "name": "Caramel coloring",
+            "percentage": "0.00%"
+          }
+        }
+      ]
+    }
+  ],
+
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}
