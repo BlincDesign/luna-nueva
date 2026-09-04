@@ -1,15 +1,4 @@
 {%- doc -%}
-  Wraps horizontally-scrollable content in a custom element that adds
-  drag-to-scroll (pointer capture, 6px threshold before a drag counts,
-  applies to every pointer type) plus a self-painting scroll-progress bar,
-  reproducing the draggable-track behavior used throughout design.html
-  (.wall / .wallx / .rail): a thumb whose width is the visible fraction of
-  the track and whose position is the scroll progress, hidden entirely
-  when the track doesn't overflow.
-
-  Also sets a `data-overflowing` attribute the caller can use to hide
-  other drag affordances (e.g. a "Drag" hint) when nothing overflows.
-
   @param slot {string} The scrollable track markup (captured HTML)
   @param label {string} Optional aria-label for the scrollable region
 
