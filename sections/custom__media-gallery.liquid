@@ -115,16 +115,16 @@
 {% endstylesheet %}
 
 {% style %}
+  
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.section_background }};
+  }
+
   #shopify-section-{{ section.id }} .media-gallery__inner {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .media-gallery {
-    {% if section.settings.background_color != blank %}
-      background-color: {{ section.settings.background_color }};
-    {% endif %}
-  }
 
   #shopify-section-{{ section.id }} .media-gallery__content {
     flex: 0 0 {{ section.settings.content_width }}%;
