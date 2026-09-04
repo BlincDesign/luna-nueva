@@ -327,18 +327,6 @@
         "background_color": ""
       }
     },
-    "custom_photo_wall_wEGNLe": {
-      "type": "custom__photo-wall",
-      "name": "Photo Wall",
-      "settings": {
-        "color_text": "#2d3135d1",
-        "section_background": "#2D3135",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -438,7 +426,6 @@
     "text_and_image_TpP37W",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
-    "custom_photo_wall_wEGNLe",
     "rich-text",
     "newsletter"
   ]
