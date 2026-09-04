@@ -142,7 +142,7 @@
             </div>
 
           {%- when 'button' -%}
-            <div class="theme-block" {{ block.shopify_attributes }}>
+            <div class="theme-block button button--secondary" {{ block.shopify_attributes }}>
               {% render 'button',
                 label: block.settings.link_text,
                 url: block.settings.link,
