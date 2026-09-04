@@ -12,33 +12,321 @@
         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} .pw-head{
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    align-items: end;
+    gap: 1.4rem 2.5rem;
+    margin-bottom: clamp(38px, 4.6vw, 66px);
+  }
+  #shopify-section-{{ section.id }} .pw-eyebrow{
+    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
+    font-weight: 700;
+    font-size: .74rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin: 0 0 1.15rem;
+    opacity: .66;
+  }
+  #shopify-section-{{ section.id }} .pw-head h2{
+    margin: 0;
+    max-width: 22ch;
+  }
+  #shopify-section-{{ section.id }} .pw-aux{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.15rem;
+  }
+  #shopify-section-{{ section.id }} .pw-aux > *{ margin: 0; }
+  #shopify-section-{{ section.id }} .pw-desc{
+    max-width: 30ch;
+    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
+    font-size: .885rem;
+    line-height: 1.75;
+    opacity: .84;
+  }
+  #shopify-section-{{ section.id }} .pw-hint{
+    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
+    font-size: .74rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    opacity: .66;
+  }
+  #shopify-section-{{ section.id }} .pw-hint i{
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  #shopify-section-{{ section.id }} .pw-track{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    grid-auto-columns: clamp(224px, 23.6vw, 340px);
+    gap: clamp(14px, 1.7vw, 26px);
+    align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 1.15rem 0 3.2rem;
+    cursor: grab;
+    scrollbar-width: none;
+  }
+  #shopify-section-{{ section.id }} .pw-track::-webkit-scrollbar{ display: none; }
+  #shopify-section-{{ section.id }} .pw-track.pw-dragging{ cursor: grabbing; scroll-snap-type: none; }
+  #shopify-section-{{ section.id }} .pw-track.pw-dragging *{ pointer-events: none; }
+
+  #shopify-section-{{ section.id }} .pw-pol{
+    background: {{ section.settings.card_background }};
+    padding: 9px 9px 34px;
+    box-shadow: 0 16px 34px rgba(0,0,0,.3);
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  #shopify-section-{{ section.id }} .pw-pol img{
+    width: 100%;
+    aspect-ratio: 1 / 1.06;
+    object-fit: cover;
+    display: block;
+  }
+  #shopify-section-{{ section.id }} .pw-pol figcaption{
+    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
+    font-size: .62rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: {{ section.settings.card_text }};
+    padding-top: 9px;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} .pw-pol.pw-tall{ grid-row: span 2; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-tall img{ aspect-ratio: 1 / 1.46; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-wide img{ aspect-ratio: 1 / .82; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-up{ align-self: start; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-dn{ align-self: end; }
+
+  #shopify-section-{{ section.id }} .pw-bar{
+    height: 1px;
+    background: rgba(127,127,127,.25);
+    margin-top: 1.15rem;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  #shopify-section-{{ section.id }} .pw-bar i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: .55;
+    transform-origin: left center;
+    will-change: transform;
+  }
 {% endstyle %}
 
-<div
-  class="page-width"
->
+<div class="page-width">
+  <div class="pw-head">
+    <div>
+      {% if section.settings.eyebrow != blank %}
+        <p class="pw-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+    <div class="pw-aux">
+      {% if section.settings.description != blank %}
+        <p class="pw-desc">{{ section.settings.description }}</p>
+      {% endif %}
+      {% if section.settings.show_drag_hint %}
+        <p class="pw-hint"><span>{{ section.settings.drag_hint_text }}</span><i></i></p>
+      {% endif %}
+    </div>
+  </div>
 
+  {% if section.blocks.size > 0 %}
+    <photo-wall-gallery>
+      <div class="pw-track" data-pw-track role="region" aria-label="{{ section.settings.heading | default: section.settings.eyebrow }}, scroll horizontally" tabindex="0">
+        {% for block in section.blocks %}
+          {% liquid
+            assign size_class = block.settings.size
+            assign align_class = block.settings.align
+          %}
+          <figure
+            class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 900 | image_tag:
+                loading: 'lazy',
+                widths: '225, 340, 450, 680, 900',
+                sizes: '(min-width: 990px) 340px, 45vw',
+                alt: block.settings.alt | default: block.settings.caption,
+                class: 'pw-img'
+              }}
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
+            {% endif %}
+            {% if block.settings.caption != blank %}
+              <figcaption>{{ block.settings.caption }}</figcaption>
+            {% endif %}
+          </figure>
+        {% endfor %}
+      </div>
+      <div class="pw-bar" data-pw-bar aria-hidden="true"><i></i></div>
+    </photo-wall-gallery>
+  {% endif %}
 </div>
+
+{% javascript %}
+  if (!customElements.get('photo-wall-gallery')) {
+    customElements.define('photo-wall-gallery', class PhotoWallGallery extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[data-pw-track]');
+        this.bar = this.querySelector('[data-pw-bar]');
+        this.thumb = this.bar ? this.bar.firstElementChild : null;
+        if (!this.track) return;
+
+        this.down = false;
+        this.startX = 0;
+        this.startScroll = 0;
+        this.pendingPaint = false;
+
+        this.onPointerDown = this.onPointerDown.bind(this);
+        this.onPointerMove = this.onPointerMove.bind(this);
+        this.onPointerUp = this.onPointerUp.bind(this);
+        this.queuePaint = this.queuePaint.bind(this);
+
+        this.track.addEventListener('pointerdown', this.onPointerDown);
+        this.track.addEventListener('pointermove', this.onPointerMove);
+        this.track.addEventListener('pointerup', this.onPointerUp);
+        this.track.addEventListener('pointercancel', this.onPointerUp);
+        this.track.addEventListener('pointerleave', this.onPointerUp);
+        this.track.addEventListener('scroll', this.queuePaint, { passive: true });
+        window.addEventListener('resize', this.queuePaint);
+
+        this.paint();
+      }
+
+      disconnectedCallback() {
+        window.removeEventListener('resize', this.queuePaint);
+      }
+
+      onPointerDown(event) {
+        this.down = true;
+        this.startX = event.clientX;
+        this.startScroll = this.track.scrollLeft;
+        this.track.setPointerCapture(event.pointerId);
+      }
+
+      onPointerMove(event) {
+        if (!this.down) return;
+        var delta = event.clientX - this.startX;
+        if (Math.abs(delta) > 6) this.track.classList.add('pw-dragging');
+        this.track.scrollLeft = this.startScroll - delta;
+      }
+
+      onPointerUp() {
+        this.down = false;
+        this.track.classList.remove('pw-dragging');
+      }
+
+      queuePaint() {
+        if (this.pendingPaint) return;
+        this.pendingPaint = true;
+        var self = this;
+        requestAnimationFrame(function () {
+          self.pendingPaint = false;
+          self.paint();
+        });
+      }
+
+      paint() {
+        if (!this.bar || !this.thumb) return;
+        var span = this.track.scrollWidth - this.track.clientWidth;
+        if (span < 2) {
+          this.bar.style.opacity = '0';
+          return;
+        }
+        this.bar.style.opacity = '1';
+        var fraction = this.track.clientWidth / this.track.scrollWidth;
+        var progress = this.track.scrollLeft / span;
+        this.thumb.style.transform =
+          'translateX(' + (progress * (1 - fraction) * 100).toFixed(3) + '%) scaleX(' + fraction.toFixed(4) + ')';
+      }
+    });
+  }
+{% endjavascript %}
 
 {% schema %}
 {
   "name": "Photo Wall",
   "class": "photo_wall_section background-image",
   "settings": [
-     {
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Shot on a Disposable"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nobody photographs the good nights properly."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Flash, grain, and whatever the camera caught. Shot the way the nights actually looked."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_drag_hint",
+      "label": "Show drag hint",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "drag_hint_text",
+      "label": "Drag hint text",
+      "default": "Drag"
+    },
+    {
       "type": "header",
       "content": "Colors"
     },
     {
-        "type": "color",
-        "id": "color_text",
-        "label": "Text color",
-        "default": "#2d3135d1"
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#2d3135d1"
     },
     {
       "type": "color",
       "id": "section_background",
       "label": "Section background",
+      "default": "#2D3135"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Photo card background",
+      "default": "#F7F4EE"
+    },
+    {
+      "type": "color",
+      "id": "card_text",
+      "label": "Photo caption color",
       "default": "#2D3135"
     },
     {
@@ -90,9 +378,66 @@
       "default": 40
     }
   ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Caption"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "info": "Optional. Falls back to the caption."
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "tall", "label": "Tall (spans two rows)" },
+            { "value": "wide", "label": "Wide" },
+            { "value": "tall wide", "label": "Tall + Wide" }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Row alignment",
+          "info": "Shift the card off-centre for the asymmetric wall effect",
+          "options": [
+            { "value": "", "label": "Center" },
+            { "value": "up", "label": "Shift up" },
+            { "value": "dn", "label": "Shift down" }
+          ],
+          "default": ""
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Photo Wall"
+      "name": "Photo Wall",
+      "blocks": [
+        { "type": "photo", "settings": { "caption": "The sign, 11:01 PM", "size": "tall" } },
+        { "type": "photo", "settings": { "caption": "Round two", "align": "up" } },
+        { "type": "photo", "settings": { "caption": "Behind the bar", "size": "wide", "align": "dn" } },
+        { "type": "photo", "settings": { "caption": "Still here" } },
+        { "type": "photo", "settings": { "caption": "The station" } },
+        { "type": "photo", "settings": { "caption": "The whole room", "size": "tall" } }
+      ]
     }
   ]
 }
