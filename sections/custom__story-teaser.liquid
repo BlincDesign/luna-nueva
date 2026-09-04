@@ -1,15 +1,3 @@
-{%- comment -%}
-  Block-based rebuild of the "Image with text" section (sections/text-and-image.liquid),
-  restyled to match design.html section 5, "STORY TEASER" (.g--char .split): an arch-shaped
-  image on one side, free-form content on the other.
-
-  Unlike text-and-image.liquid, every piece of content (subheading, heading, divider, text,
-  button) is its own repeatable block instead of a fixed set of section settings. Each block
-  carries its own bottom-spacing setting, so merchants can control the rhythm between elements
-  without a developer touching the layout — e.g. the design's two-line heading is just two
-  "Heading" blocks stacked, the second one recoloured to the accent tone.
-{%- endcomment -%}
-
 {% style %}
   #shopify-section-{{ section.id }} .story-teaser {
     background-color: {{ section.settings.background_color }};
