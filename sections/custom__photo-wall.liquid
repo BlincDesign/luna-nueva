@@ -1,0 +1,99 @@
+{% style %}
+  #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
+      color: {{ section.settings.color_text }};
+  }
+
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="page-width"
+>
+hi
+</div>
+
+{% schema %}
+{
+  "name": "Photo Wall",
+  "class": "photo_wall_section background-image",
+  "settings": [
+     {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#2d3135d1"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#2D3135"
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Wall"
+    }
+  ]
+}
+{% endschema %}
