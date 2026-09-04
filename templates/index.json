@@ -128,8 +128,8 @@
       ],
       "name": "Custom Multi Column",
       "settings": {
-        "background_color": "#D39655",
-        "text_color": "#2D3135",
+        "background_color": "#d39655",
+        "text_color": "#2d3135",
         "padding_top": 80,
         "padding_bottom": 80,
         "mobile_padding_top": 80,
