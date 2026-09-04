@@ -137,11 +137,6 @@
       align-items: stretch;
       gap: 32px;
     }
-
-     #shopify-section-{{ section.id }} .media-gallery__content {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
   }
 {% endstylesheet %}
 
@@ -185,6 +180,13 @@
     #shopify-section-{{ section.id }} .media-gallery__grid {
       grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
       grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+     #shopify-section-{{ section.id }} .media-gallery__content {
+      flex-basis: 100%;
+      max-width: 100%;
     }
   }
 {% endstyle %}
