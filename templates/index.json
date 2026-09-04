@@ -240,23 +240,7 @@
             "image_two_caption": ""
           }
         },
-        "image_g9MNEn": {
-          "type": "image",
-          "settings": {
-            "tall": false,
-            "image_one_caption": "",
-            "image_two_caption": ""
-          }
-        },
         "image_dmmxMh": {
-          "type": "image",
-          "settings": {
-            "tall": false,
-            "image_one_caption": "",
-            "image_two_caption": ""
-          }
-        },
-        "image_qdjHMa": {
           "type": "image",
           "settings": {
             "tall": false,
@@ -268,16 +252,14 @@
       "block_order": [
         "content_tng9Wc",
         "image_64U3Pa",
-        "image_g9MNEn",
-        "image_dmmxMh",
-        "image_qdjHMa"
+        "image_dmmxMh"
       ],
       "name": "Media gallery - grid",
       "settings": {
         "full_width": false,
         "content_width": 40,
-        "tile_width": 50,
-        "tile_height": 900,
+        "tile_width": 25,
+        "tile_height": 720,
         "mobile_tile_height": 450,
         "gap": 16,
         "padding_top": 80,
