@@ -3,6 +3,7 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: {{ section.settings.section_background }};
+      overflow-x: hidden;
   }
 
   @media only screen and (max-width:589px){
@@ -17,22 +18,15 @@
     padding-right: clamp(20px, 4.4vw, 68px);
   }
 
-  #shopify-section-{{ section.id }} .pw-track{
+  #shopify-section-{{ section.id }} .pw-grid{
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto auto;
     grid-auto-columns: clamp(224px, 23.6vw, 340px);
     gap: clamp(14px, 1.7vw, 26px);
     align-items: center;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
     padding: 1.15rem 0 3.2rem;
-    cursor: grab;
-    scrollbar-width: none;
   }
-  #shopify-section-{{ section.id }} .pw-track::-webkit-scrollbar{ display: none; }
-  #shopify-section-{{ section.id }} .pw-track.pw-dragging{ cursor: grabbing; scroll-snap-type: none; }
-  #shopify-section-{{ section.id }} .pw-track.pw-dragging *{ pointer-events: none; }
 
   #shopify-section-{{ section.id }} .pw-pol{
     background: {{ section.settings.card_background }};
@@ -61,142 +55,45 @@
   #shopify-section-{{ section.id }} .pw-pol.pw-wide img{ aspect-ratio: 1 / .82; }
   #shopify-section-{{ section.id }} .pw-pol.pw-up{ align-self: start; }
   #shopify-section-{{ section.id }} .pw-pol.pw-dn{ align-self: end; }
-
-  #shopify-section-{{ section.id }} .pw-bar{
-    height: 1px;
-    background: rgba(127,127,127,.25);
-    margin-top: 1.15rem;
-    overflow: hidden;
-    opacity: 1;
-    transition: opacity .3s;
-  }
-  #shopify-section-{{ section.id }} .pw-bar i{
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: currentColor;
-    opacity: .55;
-    transform-origin: left center;
-    will-change: transform;
-  }
 {% endstyle %}
 
 {% if section.blocks.size > 0 %}
+  {% capture photo_grid %}
+    <div class="pw-grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign size_class = block.settings.size
+          assign align_class = block.settings.align
+        %}
+        <figure
+          class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.image %}
+            {{ block.settings.image | image_url: width: 900 | image_tag:
+              loading: 'lazy',
+              widths: '225, 340, 450, 680, 900',
+              sizes: '(min-width: 990px) 340px, 45vw',
+              alt: block.settings.alt | default: block.settings.caption,
+              class: 'pw-img'
+            }}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
+          {% endif %}
+          {% if block.settings.caption != blank %}
+            <figcaption>{{ block.settings.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  {% endcapture %}
+
   <div class="page-width">
     <div class="pw-bleed">
-      <photo-wall-gallery>
-        <div class="pw-track" data-pw-track role="region" aria-label="{{ section.settings.gallery_label }}, scroll horizontally" tabindex="0">
-          {% for block in section.blocks %}
-            {% liquid
-              assign size_class = block.settings.size
-              assign align_class = block.settings.align
-            %}
-            <figure
-              class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {% if block.settings.image %}
-                {{ block.settings.image | image_url: width: 900 | image_tag:
-                  loading: 'lazy',
-                  widths: '225, 340, 450, 680, 900',
-                  sizes: '(min-width: 990px) 340px, 45vw',
-                  alt: block.settings.alt | default: block.settings.caption,
-                  class: 'pw-img'
-                }}
-              {% else %}
-                {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
-              {% endif %}
-              {% if block.settings.caption != blank %}
-                <figcaption>{{ block.settings.caption }}</figcaption>
-              {% endif %}
-            </figure>
-          {% endfor %}
-        </div>
-        <div class="pw-bar" data-pw-bar aria-hidden="true"><i></i></div>
-      </photo-wall-gallery>
+      {% render 'layout.drag-scroller', slot: photo_grid, label: section.settings.gallery_label %}
     </div>
   </div>
 {% endif %}
-
-{% javascript %}
-  if (!customElements.get('photo-wall-gallery')) {
-    customElements.define('photo-wall-gallery', class PhotoWallGallery extends HTMLElement {
-      connectedCallback() {
-        this.track = this.querySelector('[data-pw-track]');
-        this.bar = this.querySelector('[data-pw-bar]');
-        this.thumb = this.bar ? this.bar.firstElementChild : null;
-        if (!this.track) return;
-
-        this.down = false;
-        this.startX = 0;
-        this.startScroll = 0;
-        this.pendingPaint = false;
-
-        this.onPointerDown = this.onPointerDown.bind(this);
-        this.onPointerMove = this.onPointerMove.bind(this);
-        this.onPointerUp = this.onPointerUp.bind(this);
-        this.queuePaint = this.queuePaint.bind(this);
-
-        this.track.addEventListener('pointerdown', this.onPointerDown);
-        this.track.addEventListener('pointermove', this.onPointerMove);
-        this.track.addEventListener('pointerup', this.onPointerUp);
-        this.track.addEventListener('pointercancel', this.onPointerUp);
-        this.track.addEventListener('pointerleave', this.onPointerUp);
-        this.track.addEventListener('scroll', this.queuePaint, { passive: true });
-        window.addEventListener('resize', this.queuePaint);
-
-        this.paint();
-      }
-
-      disconnectedCallback() {
-        window.removeEventListener('resize', this.queuePaint);
-      }
-
-      onPointerDown(event) {
-        this.down = true;
-        this.startX = event.clientX;
-        this.startScroll = this.track.scrollLeft;
-        this.track.setPointerCapture(event.pointerId);
-      }
-
-      onPointerMove(event) {
-        if (!this.down) return;
-        var delta = event.clientX - this.startX;
-        if (Math.abs(delta) > 6) this.track.classList.add('pw-dragging');
-        this.track.scrollLeft = this.startScroll - delta;
-      }
-
-      onPointerUp() {
-        this.down = false;
-        this.track.classList.remove('pw-dragging');
-      }
-
-      queuePaint() {
-        if (this.pendingPaint) return;
-        this.pendingPaint = true;
-        var self = this;
-        requestAnimationFrame(function () {
-          self.pendingPaint = false;
-          self.paint();
-        });
-      }
-
-      paint() {
-        if (!this.bar || !this.thumb) return;
-        var span = this.track.scrollWidth - this.track.clientWidth;
-        if (span < 2) {
-          this.bar.style.opacity = '0';
-          return;
-        }
-        this.bar.style.opacity = '1';
-        var fraction = this.track.clientWidth / this.track.scrollWidth;
-        var progress = this.track.scrollLeft / span;
-        this.thumb.style.transform =
-          'translateX(' + (progress * (1 - fraction) * 100).toFixed(3) + '%) scaleX(' + fraction.toFixed(4) + ')';
-      }
-    });
-  }
-{% endjavascript %}
 
 {% schema %}
 {
@@ -207,7 +104,7 @@
       "type": "text",
       "id": "gallery_label",
       "label": "Gallery label (screen readers)",
-      "default": "Event photos"
+      "default": "Event photos, scroll horizontally"
     },
     {
       "type": "header",
