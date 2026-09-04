@@ -281,7 +281,7 @@
         "full_width": false,
         "content_width": 40,
         "tile_width": 25,
-        "tile_height": 720,
+        "tile_height": 600,
         "mobile_tile_height": 450,
         "gap": 16,
         "padding_top": 80,
