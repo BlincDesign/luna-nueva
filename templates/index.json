@@ -38,6 +38,8 @@
       ],
       "name": "Image slider with text",
       "settings": {
+        "slider_autoplay_enabled": true,
+        "slider_autoplay": 4000,
         "preheading": "100% Blue Weber Agave · Additive-Free",
         "heading": "Every great night begins with a new moon.",
         "text": "<p>Additive-free tequila from the Highlands and Lowlands of Jalisco.</p>",
@@ -171,6 +173,7 @@
         "image_zBkPgJ",
         "image_fBf9p9"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "section_height": "650px",
@@ -184,6 +187,7 @@
     },
     "featured-collection-switcher": {
       "type": "featured-collection-switcher",
+      "disabled": true,
       "settings": {
         "title": "Our Products",
         "collection1": "blanco",
@@ -302,6 +306,82 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "custom_story_gallery_akBfjL": {
+      "type": "custom__story-gallery",
+      "blocks": {
+        "content_jfMzRT": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Bring the Party",
+            "heading": "The bottle you grab before the night starts.",
+            "text": "<p>Add your description here.</p>",
+            "button_1_label": "See what's coming up",
+            "button_1_link": "",
+            "button_2_label": "",
+            "button_2_link": ""
+          }
+        },
+        "image_7bm6cG": {
+          "type": "image",
+          "settings": {
+            "image_1": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg",
+            "image_2": "shopify://shop_images/hero-ocean.jpg",
+            "caption": "",
+            "tall": false
+          }
+        },
+        "image_WGDh33": {
+          "type": "image",
+          "settings": {
+            "image_1": "shopify://shop_images/hero-ocean.jpg",
+            "caption": "",
+            "tall": false
+          }
+        },
+        "image_eP3RYX": {
+          "type": "image",
+          "settings": {
+            "image_1": "shopify://shop_images/image-56217.jpg",
+            "image_2": "shopify://shop_images/ev-toast.jpg",
+            "caption": "",
+            "tall": true
+          }
+        },
+        "image_XkCjRd": {
+          "type": "image",
+          "settings": {
+            "image_2": "shopify://shop_images/ev-toast.jpg",
+            "caption": "",
+            "tall": false
+          }
+        }
+      },
+      "block_order": [
+        "content_jfMzRT",
+        "image_7bm6cG",
+        "image_WGDh33",
+        "image_eP3RYX",
+        "image_XkCjRd"
+      ],
+      "name": "Story gallery - content + gallery",
+      "settings": {
+        "content_position": "left",
+        "full_width": false,
+        "content_width": 460,
+        "tile_width": 340,
+        "tile_width_mobile": 220,
+        "tile_gap": 16,
+        "caption_style": "overlay",
+        "show_drag_hint": true,
+        "drag_hint_label": "Drag",
+        "background_color": "",
+        "text_color": "",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 48,
+        "mobile_padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -311,6 +391,7 @@
     "featured-collection-switcher",
     "custom_product_details_JbJXVn",
     "rich-text",
-    "newsletter"
+    "newsletter",
+    "custom_story_gallery_akBfjL"
   ]
 }
