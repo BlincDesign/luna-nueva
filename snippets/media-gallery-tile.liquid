@@ -1,3 +1,6 @@
+{%- assign tile_width_px = tile_width | append: 'px' -%}
+{%- assign tile_width_mobile_px = tile_width_mobile | append: 'px' -%}
+
 <div
   class="media-gallery__tile{% if block.settings.tall %} media-gallery__tile--tall{% endif %}"
   {{- block.shopify_attributes -}}
@@ -7,8 +10,8 @@
       {%- render 'image-element',
         img: block.settings.image_one,
         widths: '300, 400, 600, 800, 1000, 1200, 1600',
-        sizeVariable: tile_width | append: 'px',
-        fallback: tile_width_mobile | append: 'px',
+        sizeVariable: tile_width_px,
+        fallback: tile_width_mobile_px,
         classes: 'media-gallery__image-img'
       -%}
 
@@ -29,8 +32,8 @@
       {%- render 'image-element',
         img: block.settings.image_two,
         widths: '300, 400, 600, 800, 1000, 1200, 1600',
-        sizeVariable: tile_width | append: 'px',
-        fallback: tile_width_mobile | append: 'px',
+        sizeVariable: tile_width_px,
+        fallback: tile_width_mobile_px,
         classes: 'media-gallery__image-img'
       -%}
 
