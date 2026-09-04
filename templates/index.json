@@ -456,7 +456,7 @@
           "settings": {
             "tall": true,
             "video_one": "shopify://files/videos/dispo.mp4",
-            "image_one_caption": "Pacific Coast Highway",
+            "image_one_caption": "On the night",
             "image_two_caption": ""
           }
         },
@@ -464,37 +464,19 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
-            "image_one_caption": "Bring the party",
-            "image_two": "shopify://shop_images/wild-tailgate.jpg",
-            "image_two_caption": "The tailgate, Malibu"
-          }
-        },
-        "image_4xURFm": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/wild-yellow-table.jpg",
-            "image_one_caption": "Silver · served long",
-            "image_two": "shopify://shop_images/wild-pch.jpg",
+            "image_one": "shopify://shop_images/ev-toast_f8bdfeb1-fa11-485d-a7fb-019a6f5e7398.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-ice.jpg",
             "image_two_caption": ""
           }
         },
-        "image_RMRHLR": {
+        "image_U8VtKq": {
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
-            "image_one_caption": "Make the table longer",
-            "image_two_caption": ""
-          }
-        },
-        "image_LeFpBe": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/wild-coupe.jpg",
-            "image_one_caption": "Late afternoon",
+            "image_one": "shopify://shop_images/ev-pour.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-bartender.jpg",
             "image_two_caption": ""
           }
         }
@@ -503,9 +485,7 @@
         "content_PqQkbn",
         "image_8McHDm",
         "image_tNqcUt",
-        "image_4xURFm",
-        "image_RMRHLR",
-        "image_LeFpBe"
+        "image_U8VtKq"
       ],
       "name": "Media gallery - grid",
       "settings": {
@@ -518,7 +498,7 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "section_background": "#AEBFB4",
+        "section_background": "#aebfb4",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mb": 40,
