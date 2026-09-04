@@ -1,102 +1,61 @@
-{%- liquid
-  assign content_block = nil
-  for block in section.blocks
-    if block.type == 'content' and content_block == nil
-      assign content_block = block
-    endif
-  endfor
+{% style %}
+  #shopify-section-{{ section.id }} .story-teaser {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+  }
 
-  assign image_blocks = section.blocks | where: 'type', 'image'
-
-  # Fluid tile width: clamp(min, calc(intercept + coefficient*vw), max), scaling
-  # linearly between (viewport_min, tile_width_min) and (viewport_max, tile_width_max)
-  # instead of jumping between two fixed values at the breakpoint — same technique
-  # design.html uses for .wall's grid-auto-columns (clamp(240px, 25vw, 360px)).
-  assign d_span = section.settings.tile_width_max | minus: section.settings.tile_width_min
-  assign d_slope = d_span | divided_by: 610.0
-  assign d_coefficient = d_slope | times: 100 | round: 3
-  assign d_min_contribution = d_slope | times: 990
-  assign d_intercept = section.settings.tile_width_min | minus: d_min_contribution | round: 3
-
-  assign m_span = section.settings.tile_width_mobile_max | minus: section.settings.tile_width_mobile_min
-  assign m_slope = m_span | divided_by: 360.0
-  assign m_coefficient = m_slope | times: 100 | round: 3
-  assign m_min_contribution = m_slope | times: 320
-  assign m_intercept = section.settings.tile_width_mobile_min | minus: m_min_contribution | round: 3
--%}
-
-{% stylesheet %}
-  .media-gallery__inner {
+  #shopify-section-{{ section.id }} .story-teaser__inner {
     display: flex;
-  }
-
-  .media-gallery__inner--above {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .media-gallery__inner--before {
-    flex-direction: row;
     align-items: center;
-    gap: clamp(32px, 5vw, 96px);
+    gap: clamp(32px, 5vw, 88px);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  .media-gallery__media {
+  #shopify-section-{{ section.id }} .story-teaser__inner--right {
+    flex-direction: row-reverse;
+  }
+
+  #shopify-section-{{ section.id }} .story-teaser__media,
+  #shopify-section-{{ section.id }} .story-teaser__content {
     flex: 1 1 0;
     min-width: 0;
   }
 
-  .media-gallery__eyebrow {
-    margin: 0 0 12px;
-    font-size: 13px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .media-gallery__heading {
-    margin: 0 0 16px;
-  }
-
-  .media-gallery__body {
-    margin: 0 0 24px;
-  }
-
-  /* The wall — CSS Grid, not flex: grid-auto-flow: column lets normal
-     tiles pack two-per-column automatically, and a tall tile just spans
-     both rows of its own column. That auto-placement is what a flex
-     track can't give us for free. */
-  .media-gallery__grid {
-    display: grid;
-    grid-auto-flow: column;
-    padding-bottom: 12px;
-  }
-
-  .media-gallery__tile {
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
     overflow: hidden;
-    border-radius: 4px;
-    scroll-snap-align: start;
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
-  .media-gallery__tile--tall {
-    grid-row: span 2;
-    flex-direction: column;
+  /* True semicircular cap: the vertical radius has to equal half the width,
+     so it's tied to the fixed aspect ratio rather than a flat percentage. */
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap--arch {
+    aspect-ratio: 1 / 1.321;
+    border-radius: 50% 50% 0 0 / 37.85% 37.85% 0 0;
   }
 
-  .media-gallery__image {
-    position: relative;
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 0;
-    overflow: hidden;
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap--rounded-top {
+    aspect-ratio: 3 / 4;
+    border-radius: 16px 16px 0 0;
   }
 
-  .media-gallery__image image-element,
-  .media-gallery__image .media-gallery__image-img,
-  .media-gallery__image .placeholder-svg {
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap--rounded {
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap--none {
+    aspect-ratio: 3 / 4;
+  }
+
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap image-element,
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap .image-element,
+  #shopify-section-{{ section.id }} .story-teaser__image-wrap .placeholder-svg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -104,136 +63,166 @@
     object-fit: cover;
   }
 
-  .media-gallery__caption {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    z-index: 1;
-    padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+  #shopify-section-{{ section.id }} .story-teaser__caption {
+    margin: 16px 0 0;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 12px;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    border-radius: 999px;
+    opacity: 0.7;
   }
 
+  #shopify-section-{{ section.id }} .story-teaser__divider {
+    border: 0;
+    border-top: 1px solid currentColor;
+    opacity: 0.35;
+  }
+
+  {% for block in section.blocks %}
+    #shopify-section-{{ section.id }} [data-block-id="{{ block.id }}"] {
+      margin-bottom: {{ block.settings.margin_bottom }}px;
+      {% if block.settings.color != blank %}
+        color: {{ block.settings.color }};
+      {% endif %}
+    }
+  {% endfor %}
+
   @media screen and (max-width: 900px) {
-    .media-gallery__inner--before {
+    #shopify-section-{{ section.id }} .story-teaser__inner,
+    #shopify-section-{{ section.id }} .story-teaser__inner--right {
       flex-direction: column;
       align-items: stretch;
-      gap: 32px;
-    }
-
-    .media-gallery__inner--before .media-gallery__content {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-  }
-{% endstylesheet %}
-
-{% style %}
-  #shopify-section-{{ section.id }} .media-gallery__inner {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery {
-    {% if section.settings.background_color != blank %}
-      background-color: {{ section.settings.background_color }};
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__inner--before .media-gallery__content {
-    flex: 0 0 {{ section.settings.content_width }}%;
-    max-width: {{ section.settings.content_width }}%;
-    min-width: 0;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__grid {
-    grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
-    grid-auto-columns: clamp({{ section.settings.tile_width_min }}px, calc({{ d_intercept }}px + {{ d_coefficient }}vw), {{ section.settings.tile_width_max }}px);
-    gap: {{ section.settings.gap }}px;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__tile {
-    gap: {{ section.settings.gap }}px;
-  }
-
-  @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
   }
-
-  /* The wall itself only steps down at its own (narrower) breakpoint —
-     it stays a 2-row scroller here, just with smaller tiles. */
-  @media screen and (max-width: 680px) {
-    #shopify-section-{{ section.id }} .media-gallery__grid {
-      grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
-      grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
-    }
-  }
 {% endstyle %}
 
-{% capture content_markup %}
-  {% if content_block != nil %}
-    <div class="media-gallery__content" {{ content_block.shopify_attributes }}>
-      {% if content_block.settings.eyebrow != blank %}
-        <p class="media-gallery__eyebrow">{{ content_block.settings.eyebrow }}</p>
-      {% endif %}
-      {% if content_block.settings.heading != blank %}
-        <h2 class="media-gallery__heading">{{ content_block.settings.heading }}</h2>
-      {% endif %}
-      {% if content_block.settings.body != blank %}
-        <div class="media-gallery__body rte">{{ content_block.settings.body }}</div>
-      {% endif %}
-      {% if content_block.settings.button_label != blank %}
-        <div class="media-gallery__actions">
-          {% render 'button', label: content_block.settings.button_label, url: content_block.settings.button_url, type: 'primary', arrow: true %}
-        </div>
-      {% endif %}
+<div class="story-teaser">
+  <div class="story-teaser__inner story-teaser__inner--{{ section.settings.image_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="story-teaser__media" data-aos>
+      <div class="story-teaser__image-wrap story-teaser__image-wrap--{{ section.settings.image_shape }}">
+        {%- if section.settings.image != blank -%}
+          {%- render 'image-element',
+            img: section.settings.image,
+            widths: '360, 540, 750, 900, 1080, 1440',
+            sizeVariable: '50vw',
+            fallback: '100vw',
+            loading: section.settings.lazyload_images,
+            classes: 'story-teaser__image'
+          -%}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      {%- if section.settings.image_caption != blank -%}
+        <p class="story-teaser__caption">{{ section.settings.image_caption }}</p>
+      {%- endif -%}
     </div>
-  {% endif %}
-{% endcapture %}
 
-{% capture media_markup %}
-  {% if image_blocks.size > 0 %}
-    <div class="media-gallery__media">
-      {% capture track %}
-        <div class="media-gallery__grid">
-          {% for block in image_blocks %}
-            {% render 'media-gallery-tile',
-              block: block,
-              tile_width: section.settings.tile_width_max,
-              tile_width_mobile: section.settings.tile_width_mobile_max
-            %}
-          {% endfor %}
-        </div>
-      {% endcapture %}
-      {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
+    <div class="story-teaser__content">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'subheading' -%}
+            <p
+              class="subheading story-teaser__subheading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </p>
+          {%- when 'heading' -%}
+            <h2
+              class="h1 story-teaser__heading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text | escape -}}
+            </h2>
+          {%- when 'divider' -%}
+            <hr class="story-teaser__divider" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+          {%- when 'text' -%}
+            <div
+              class="rte story-teaser__text appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </div>
+          {%- when 'button' -%}
+            {%- if block.settings.label != blank -%}
+              <div
+                class="story-teaser__button appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- render 'button',
+                  label: block.settings.label,
+                  url: block.settings.link,
+                  type: block.settings.style,
+                  arrow: true
+                -%}
+              </div>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
-  {% endif %}
-{% endcapture %}
-
-<div class="media-gallery">
-  <div class="media-gallery__inner media-gallery__inner--{{ section.settings.content_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
-    {{ content_markup }}
-    {{ media_markup }}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Media gallery",
+  "name": "Story teaser",
   "tag": "section",
-  "class": "section-media-gallery",
+  "class": "section-story-teaser",
   "settings": [
     {
       "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Image shape",
+      "default": "arch",
+      "options": [
+        { "value": "arch", "label": "Arch" },
+        { "value": "rounded-top", "label": "Rounded top" },
+        { "value": "rounded", "label": "Rounded" },
+        { "value": "square", "label": "Square" },
+        { "value": "none", "label": "None" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload_images",
+      "label": "Lazyload image",
+      "info": "Turn off if this section appears near the top of the page.",
+      "default": true
+    },
+    {
+      "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
     },
     {
       "type": "checkbox",
@@ -243,110 +232,19 @@
     },
     {
       "type": "header",
-      "content": "Content"
+      "content": "Color"
     },
     {
-      "type": "select",
-      "id": "content_position",
-      "label": "Content position",
-      "info": "Only used when a Content block has been added below.",
-      "default": "before",
-      "options": [
-        { "value": "above", "label": "Above the gallery" },
-        { "value": "before", "label": "Beside the gallery" }
-      ]
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2D3135"
     },
     {
-      "type": "range",
-      "id": "content_width",
-      "label": "Content width",
-      "info": "How much space the text takes up when placed beside the gallery. On smaller screens it always moves above the gallery instead.",
-      "min": 20,
-      "max": 60,
-      "step": 5,
-      "unit": "%",
-      "default": 35
-    },
-    {
-      "type": "header",
-      "content": "Gallery"
-    },
-    {
-      "type": "paragraph",
-      "content": "Images are arranged in two rows. If they don't all fit, visitors can scroll or drag sideways to see the rest."
-    },
-    {
-      "type": "range",
-      "id": "tile_width_min",
-      "label": "Smallest tile width (desktop)",
-      "info": "Tile width scales smoothly between the smallest and largest values as the screen size changes, so the gallery adapts to every device.",
-      "min": 160,
-      "max": 360,
-      "step": 10,
-      "unit": "px",
-      "default": 240
-    },
-    {
-      "type": "range",
-      "id": "tile_width_max",
-      "label": "Largest tile width (desktop)",
-      "min": 240,
-      "max": 480,
-      "step": 10,
-      "unit": "px",
-      "default": 360
-    },
-    {
-      "type": "range",
-      "id": "row_height",
-      "label": "Tile height (desktop)",
-      "info": "The height of a standard tile. A full-height tile (set on the Image block) is twice this, plus the gap.",
-      "min": 120,
-      "max": 400,
-      "step": 10,
-      "unit": "px",
-      "default": 220
-    },
-    {
-      "type": "range",
-      "id": "tile_width_mobile_min",
-      "label": "Smallest tile width (mobile)",
-      "min": 100,
-      "max": 220,
-      "step": 10,
-      "unit": "px",
-      "default": 150
-    },
-    {
-      "type": "range",
-      "id": "tile_width_mobile_max",
-      "label": "Largest tile width (mobile)",
-      "min": 180,
-      "max": 360,
-      "step": 10,
-      "unit": "px",
-      "default": 280
-    },
-    {
-      "type": "range",
-      "id": "row_height_mobile",
-      "label": "Tile height (mobile)",
-      "min": 100,
-      "max": 300,
-      "step": 10,
-      "unit": "px",
-      "default": 150
-    },
-    {
-      "type": "range",
-      "id": "gap",
-      "label": "Space between images",
-      "info": "Used both between tiles in the gallery and between two images sharing one tile.",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "unit": "px",
-      "default": 16
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#F9F6F1"
     },
     {
       "type": "header",
@@ -355,27 +253,27 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Space above (desktop)",
+      "label": "Padding top",
       "min": 0,
       "max": 160,
       "step": 4,
       "unit": "px",
-      "default": 80
+      "default": 96
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Space below (desktop)",
+      "label": "Padding bottom",
       "min": 0,
       "max": 160,
       "step": 4,
       "unit": "px",
-      "default": 80
+      "default": 96
     },
     {
       "type": "range",
       "id": "mobile_padding_top",
-      "label": "Space above (mobile)",
+      "label": "Padding top (mobile)",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -385,121 +283,183 @@
     {
       "type": "range",
       "id": "mobile_padding_bottom",
-      "label": "Space below (mobile)",
+      "label": "Padding bottom (mobile)",
       "min": 0,
       "max": 120,
       "step": 4,
       "unit": "px",
       "default": 48
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color"
     }
   ],
   "blocks": [
     {
-      "type": "content",
-      "name": "Content",
-      "limit": 1,
+      "type": "subheading",
+      "name": "Subheading",
       "settings": [
         {
           "type": "text",
-          "id": "eyebrow",
-          "label": "Eyebrow text",
-          "info": "Small label shown above the heading.",
-          "default": "Bring the Party"
+          "id": "text",
+          "label": "Text",
+          "default": "Our Story"
         },
         {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "The bottle you grab before the night starts."
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "info": "Leave blank to use the section's text color."
         },
         {
-          "type": "richtext",
-          "id": "body",
-          "label": "Description",
-          "default": "<p>Add your description here.</p>"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button text",
-          "default": "See what's coming up"
-        },
-        {
-          "type": "url",
-          "id": "button_url",
-          "label": "Button link"
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 18
         }
       ]
     },
     {
-      "type": "image",
-      "name": "Image",
+      "type": "heading",
+      "name": "Heading",
       "settings": [
         {
-          "type": "checkbox",
-          "id": "tall",
-          "label": "Full-height tile",
-          "info": "Makes this tile twice as tall, standing out from the rest of the gallery. If you add two images below, they'll stack on top of each other instead of sitting side by side.",
-          "default": false
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Heading"
         },
         {
-          "type": "image_picker",
-          "id": "image_one",
-          "label": "First image"
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "info": "Leave blank to use the section's text color."
         },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Line color",
+          "info": "Leave blank to use the section's text color."
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "info": "Leave blank to use the section's text color."
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 24
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
         {
           "type": "text",
-          "id": "image_one_caption",
-          "label": "First image caption"
+          "id": "label",
+          "label": "Label",
+          "default": "Read our story"
         },
         {
-          "type": "image_picker",
-          "id": "image_two",
-          "label": "Second image",
-          "info": "Optional. Add a second photo to share this tile with the first image."
+          "type": "url",
+          "id": "link",
+          "label": "Link"
         },
         {
-          "type": "text",
-          "id": "image_two_caption",
-          "label": "Second image caption"
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "default": "primary",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "link", "label": "Link" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 0
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Media gallery",
+      "name": "Story teaser",
       "blocks": [
-        { "type": "content" },
-        { "type": "image", "settings": { "tall": true } },
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image" }
-      ]
-    },
-    {
-      "name": "Media gallery - media only",
-      "blocks": [
-        { "type": "image", "settings": { "tall": true } },
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image", "settings": { "tall": true } },
-        { "type": "image" },
-        { "type": "image" }
+        { "type": "subheading" },
+        { "type": "heading", "settings": { "text": "The liquid is authentic to Mexico." } },
+        {
+          "type": "heading",
+          "settings": { "text": "The culture is California.", "color": "#D39655", "margin_bottom": 18 }
+        },
+        { "type": "divider" },
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>"
+          }
+        },
+        { "type": "button", "settings": { "label": "Read our story" } }
       ]
     }
-  ]
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
 }
 {% endschema %}
