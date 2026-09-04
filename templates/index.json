@@ -362,11 +362,11 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
+        "section_background": "#2D3135",
         "padding_top": 80,
         "padding_bottom": 80,
-        "mobile_padding_top": 48,
-        "mobile_padding_bottom": 48,
-        "background_color": "#2D3135"
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "rich-text": {
