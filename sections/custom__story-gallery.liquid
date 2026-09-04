@@ -1,0 +1,385 @@
+{%- liquid
+  assign content_block = nil
+  for block in section.blocks
+    if block.type == 'content' and content_block == nil
+      assign content_block = block
+    endif
+  endfor
+  assign image_blocks = section.blocks | where: 'type', 'image'
+  assign has_content = false
+  if content_block != nil
+    assign has_content = true
+  endif
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --story-gallery-tile-width: {{ section.settings.tile_width }}px;
+    --story-gallery-gap: {{ section.settings.tile_gap }}px;
+    --story-gallery-content-width: {{ section.settings.content_width }}px;
+    {% if section.settings.background_color != blank %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+    {% if section.settings.text_color != blank %}
+      color: {{ section.settings.text_color }};
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .story-gallery__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --story-gallery-tile-width: {{ section.settings.tile_width_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .story-gallery__inner {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="story-gallery story-gallery--{{ section.settings.content_position }}{% unless has_content %} story-gallery--gallery-only{% endunless %}">
+  <div class="story-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}">
+    {% if has_content %}
+      <div class="story-gallery__content" {{ content_block.shopify_attributes }}>
+        {% if content_block.settings.eyebrow != blank %}
+          <p class="story-gallery__eyebrow">{{ content_block.settings.eyebrow | escape }}</p>
+        {% endif %}
+        {% if content_block.settings.heading != blank %}
+          <h2 class="story-gallery__heading">{{ content_block.settings.heading }}</h2>
+        {% endif %}
+        {% if content_block.settings.text != blank %}
+          <div class="story-gallery__text rte">{{ content_block.settings.text }}</div>
+        {% endif %}
+        {% if content_block.settings.button_1_label != blank or content_block.settings.button_2_label != blank %}
+          <div class="story-gallery__buttons">
+            {% if content_block.settings.button_1_label != blank %}
+              {% render 'button', label: content_block.settings.button_1_label, url: content_block.settings.button_1_link, type: 'primary', arrow: true %}
+            {% endif %}
+            {% if content_block.settings.button_2_label != blank %}
+              {% render 'button', label: content_block.settings.button_2_label, url: content_block.settings.button_2_link, type: 'secondary' %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if image_blocks.size > 0 %}
+      {% capture gallery_track %}
+        <div class="story-gallery__track">
+          {% for block in image_blocks %}
+            <figure
+              class="story-gallery__tile{% if block.settings.tall %} story-gallery__tile--tall{% endif %}{% if block.settings.image_2 != blank %} story-gallery__tile--pair{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <span class="story-gallery__tile-media">
+                <span class="story-gallery__tile-image-wrap">
+                  {% if block.settings.image_1 != blank %}
+                    {% render 'image-element',
+                      img: block.settings.image_1,
+                      widths: '400, 600, 800, 1000, 1200',
+                      sizeVariable: section.settings.tile_width | append: 'px',
+                      fallback: section.settings.tile_width_mobile | append: 'px',
+                      classes: 'story-gallery__tile-img'
+                    %}
+                  {% else %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+                </span>
+                {% if block.settings.image_2 != blank %}
+                  <span class="story-gallery__tile-image-wrap">
+                    {% render 'image-element',
+                      img: block.settings.image_2,
+                      widths: '400, 600, 800, 1000, 1200',
+                      sizeVariable: section.settings.tile_width | append: 'px',
+                      fallback: section.settings.tile_width_mobile | append: 'px',
+                      classes: 'story-gallery__tile-img'
+                    %}
+                  </span>
+                {% endif %}
+              </span>
+              {% if block.settings.caption != blank %}
+                <figcaption class="story-gallery__caption story-gallery__caption--{{ section.settings.caption_style }}">
+                  {{ block.settings.caption | escape }}
+                </figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      {% endcapture %}
+
+      <div class="story-gallery__gallery">
+        {% render 'layout.drag-scroller', slot: gallery_track, label: 'Gallery, scroll horizontally' %}
+        {% if section.settings.show_drag_hint %}
+          <p class="story-gallery__drag-hint" aria-hidden="true">
+            <span>{{ section.settings.drag_hint_label | default: 'Drag' }}</span>
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Story gallery",
+  "tag": "section",
+  "class": "section-story-gallery",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "info": "Only applies when a Content block has been added below.",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left of gallery" },
+        { "value": "right", "label": "Right of gallery" },
+        { "value": "above", "label": "Above gallery" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content width",
+      "min": 280,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 460
+    },
+    {
+      "type": "header",
+      "content": "Gallery"
+    },
+    {
+      "type": "range",
+      "id": "tile_width",
+      "label": "Tile width",
+      "min": 220,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "tile_width_mobile",
+      "label": "Tile width (mobile)",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "tile_gap",
+      "label": "Gap between tiles",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "caption_style",
+      "label": "Caption style",
+      "default": "overlay",
+      "options": [
+        { "value": "overlay", "label": "Overlay chip on image" },
+        { "value": "below", "label": "Below image" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_drag_hint",
+      "label": "Show drag hint",
+      "info": "Only appears once tiles overflow the container and become scrollable.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "drag_hint_label",
+      "label": "Drag hint text",
+      "default": "Drag"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Bring the Party"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "The bottle you grab before the night starts."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add your description here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_1_label",
+          "label": "Button 1 label",
+          "default": "See what's coming up"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "button_2_label",
+          "label": "Button 2 label"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image tile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Second image (optional)",
+          "info": "Adds a second photo alongside the first inside this tile."
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        },
+        {
+          "type": "checkbox",
+          "id": "tall",
+          "label": "Taller tile",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Story gallery - content + gallery",
+      "settings": {
+        "content_position": "left"
+      },
+      "blocks": [
+        { "type": "content" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image", "settings": { "tall": true } },
+        { "type": "image" }
+      ]
+    },
+    {
+      "name": "Story gallery - gallery wall",
+      "blocks": [
+        { "type": "image", "settings": { "tall": true } },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image", "settings": { "tall": true } },
+        { "type": "image", "settings": { "tall": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}
