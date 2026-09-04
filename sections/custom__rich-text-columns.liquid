@@ -1,0 +1,715 @@
+{% style %}
+  {% for block in section.blocks %}
+    .theme-block__button--{{ block.id }} .button.button--primary {
+     --btn-primary-bg: {{ block.settings.button_primary_bg | default: "#1c1d1d" }};
+      --btn-primary-border: {{ block.settings.button_primary_border | default: "#1c1d1d" }};
+      --btn-primary-color: {{ block.settings.button_primary_text | default: "#ffffff" }};
+      --btn-primary-bg-hover: {{ block.settings.button_primary_bg_hover | default: "#3a3a3a" }};
+      --btn-primary-border-hover: {{ block.settings.button_primary_border_hover | default: "#3a3a3a" }};
+      --btn-primary-color-hover: {{ block.settings.button_primary_text_hover | default: "#ffffff" }};
+    }
+
+    .theme-block__button--{{ block.id }} .button.button--secondary {
+      --btn-secondary-bg: {{ block.settings.button_secondary_bg | default: "#ffffff" }};
+      --btn-secondary-border: {{ block.settings.button_secondary_border | default: "#1c1d1d" }};
+      --btn-secondary-color: {{ block.settings.button_secondary_text | default: "#1c1d1d" }};
+      --btn-secondary-bg-hover: {{ block.settings.button_secondary_bg_hover | default: "#1c1d1d" }};
+      --btn-secondary-border-hover: {{ block.settings.button_secondary_border_hover | default: "#1c1d1d" }};
+      --btn-secondary-color-hover: {{ block.settings.button_secondary_text_hover | default: "#ffffff" }};
+    }
+
+    .theme-block__button--{{ block.id }} .button.button--link {
+        --btn-link-color: {{ settings.button_link_text | default: "#1c1d1d" }};
+        --btn-link-color-hover: {{ settings.button_link_text_hover | default: "#7a7a7a" }};
+    }
+  {% endfor %}
+
+
+
+    #shopify-section-{{ section.id }}.background-image {
+      position: relative;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.background_color }};
+    }
+
+    #shopify-section-{{ section.id }}.background-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background-image:
+        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
+        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+
+      background-repeat: repeat;
+      opacity: 0.42;
+      mix-blend-mode: soft-light;
+    }
+
+    #shopify-section-{{ section.id }} .rich-text__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    #shopify-section-{{ section.id }} .rich-text__main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: {{ section.settings.align_vertical }};
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .rich-text__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .rich-text__column.rich-text__column--left {
+        flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+    }
+
+    #shopify-section-{{ section.id }} .rich-text__column.rich-text__column--right {
+        flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+    }
+
+    #shopify-section-{{ section.id }} h2 {
+      color: {{ section.settings.text_color }};
+      margin: 0;
+    }
+
+    @media screen and (max-width: 589px) {
+      #shopify-section-{{ section.id }}.background-image {
+        padding-top: {{ section.settings.mobile_padding_top }}px;
+        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      }
+
+      .rich-text__main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .rich-text__column--left,
+      .rich-text__column--right {
+        width: 100%;
+        max-width: none;
+      }
+    }
+{% endstyle %}
+
+<div class="rich-text__content page-width">
+  <div class="rich-text__main">
+    {%- comment -%}
+      LEFT COLUMN
+    {%- endcomment -%}
+
+    <div class="rich-text__column rich-text__column--left text-{{ section.settings.align_text }}">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.position == 'left' -%}
+          {%- case block.type -%}
+            {%- when 'preheading' -%}
+              <div
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.title }}
+              </div>
+
+            {%- when 'heading' -%}
+              <div
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+
+            {%- when 'text' -%}
+              <div class="theme-block" {{ block.shopify_attributes }}>
+                <div
+                  class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.enlarge_text -%}
+                      <div class="enlarge-text">
+                    {%- endif -%}
+
+                    {{ block.settings.text }}
+
+                    {%- if block.settings.enlarge_text -%}
+                      </div>
+                    {%- endif -%}
+
+                  {%- else -%}
+                    {{ 'home_page.onboarding.no_content' | t }}
+                  {%- endif -%}
+                </div>
+              </div>
+
+            {%- when 'button' -%}
+              <div
+                class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {% render 'button',
+                  label: block.settings.link_text,
+                  url: block.settings.link,
+                  type: block.settings.button_type,
+                  arrow: true
+                %}
+              </div>
+
+            {%- when 'page' -%}
+              {%- if block.settings.page_text != blank -%}
+                <div
+                  class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="rte">
+                    {{ block.settings.page_text.content }}
+                  </div>
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%}
+      RIGHT COLUMN
+    {%- endcomment -%}
+
+    <div class="rich-text__column rich-text__column--right text-{{ section.settings.align_text }}">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.position == 'right' -%}
+          {%- case block.type -%}
+            {%- when 'preheading' -%}
+              <div
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.title }}
+              </div>
+
+            {%- when 'heading' -%}
+              <div
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+
+            {%- when 'text' -%}
+              <div class="theme-block" {{ block.shopify_attributes }}>
+                <div
+                  class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.enlarge_text -%}
+                      <div class="enlarge-text">
+                    {%- endif -%}
+
+                    {{ block.settings.text }}
+
+                    {%- if block.settings.enlarge_text -%}
+                      </div>
+                    {%- endif -%}
+
+                  {%- else -%}
+                    {{ 'home_page.onboarding.no_content' | t }}
+                  {%- endif -%}
+                </div>
+              </div>
+
+            {%- when 'button' -%}
+              <div
+                class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {% render 'button',
+                  label: block.settings.link_text,
+                  url: block.settings.link,
+                  type: block.settings.button_type,
+                  arrow: true
+                %}
+              </div>
+
+            {%- when 'page' -%}
+              {%- if block.settings.page_text != blank -%}
+                <div
+                  class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="rte">
+                    {{ block.settings.page_text.content }}
+                  </div>
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich text columns",
+  "class": "background-image",
+
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2d3135"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f9f6f1"
+    },
+    {
+      "type": "text_alignment",
+      "id": "align_text",
+      "label": "t:sections.rich-text.settings.align_text.label",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "align_vertical",
+      "label": "Vertical align",
+      "default": "flex-end",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+        "type": "header",
+        "content": "Column Width"
+    },
+    {
+        "type": "range",
+        "id": "left_column_width",
+        "label": "Left column width",
+        "min": 20,
+        "max": 80,
+        "step": 1,
+        "unit": "%",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "right_column_width",
+        "label": "Right column width",
+        "min": 20,
+        "max": 80,
+        "step": 1,
+        "unit": "%",
+        "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "preheading",
+      "name": "Preheading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Eyebrow",
+          "default": "IN THE WILD"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Heading",
+          "default": "Where it actually gets poured."
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "Enlarge text",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers.</p>"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "right",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Button text",
+          "default": "SEE WHAT'S COMING UP →"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button style",
+          "default": "secondary",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "right",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Primary",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_bg",
+          "label": "Background",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_border",
+          "label": "Border",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_text",
+          "label": "Text",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_bg_hover",
+          "label": "Background (hover)",
+          "default": "#3a3a3a",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_border_hover",
+          "label": "Border (hover)",
+          "default": "#3a3a3a",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_primary_text_hover",
+          "label": "Text (hover)",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+        },
+        {
+          "type": "header",
+          "content": "Secondary",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_bg",
+          "label": "Background",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_border",
+          "label": "Border",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_text",
+          "label": "Text",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_bg_hover",
+          "label": "Background (hover)",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_border_hover",
+          "label": "Border (hover)",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_secondary_text_hover",
+          "label": "Text (hover)",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+        },
+        {
+          "type": "header",
+          "content": "Link",
+          "visible_if": "{{ block.settings.button_type == 'link' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_link_text",
+          "label": "Text",
+          "default": "#1c1d1d",
+          "visible_if": "{{ block.settings.button_type == 'link' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_link_text_hover",
+          "label": "Text (hover)",
+          "default": "#7a7a7a",
+          "visible_if": "{{ block.settings.button_type == 'link' }}"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "id": "page_text",
+          "type": "page",
+          "label": "Page"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "right",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Rich text columns",
+      "blocks": [
+        {
+          "type": "preheading",
+          "settings": {
+            "position": "left"
+          }
+        },
+        {
+          "type": "heading",
+          "settings": {
+            "position": "left"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "position": "right"
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "position": "right"
+          }
+        }
+      ]
+    }
+  ],
+
+  "disabled_on": {
+    "groups": ["custom.popups", "header"]
+  }
+}
+{% endschema %}
