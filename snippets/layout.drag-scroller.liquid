@@ -24,15 +24,13 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     scroll-snap-type: x proximity;
+    cursor: grab;
   }
 
   drag-scroller::-webkit-scrollbar {
     display: none;
-  }
-
-  drag-scroller[data-overflowing] {
-    cursor: grab;
   }
 
   drag-scroller[data-dragging] {
@@ -44,23 +42,26 @@
     pointer-events: none;
   }
 
+  /* Background of the bar */
   .drag-scroller__bar {
     position: relative;
     height: 1px;
-    background: currentColor;
-    opacity: 0.18;
-    transition: opacity 0.2s ease;
+    margin-top: 12px;
+    background: rgba(249, 246, 241, 0.22);
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
 
+  /* color of the bar */
   .drag-scroller__bar i {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: block;
     width: 100%;
     height: 100%;
-    background: currentColor;
-    transform-origin: 0 0;
+    background: rgb(249, 246, 241);
+    transform-origin: left center;
+    transform: scaleX(1);
+    will-change: transform;
   }
 {% endstylesheet %}
 
@@ -139,7 +140,7 @@
         return
       }
 
-      this.bar.style.opacity = ''
+      this.bar.style.opacity = '1'
       const visibleFraction = this.clientWidth / this.scrollWidth
       const progress = this.scrollLeft / span
       const position = progress * (1 - visibleFraction) * 100
@@ -155,6 +156,7 @@
       this.addEventListener('pointermove', this.onPointerMove)
       this.addEventListener('pointerup', this.onPointerUp)
       this.addEventListener('pointercancel', this.onPointerUp)
+      this.addEventListener('pointerleave', this.onPointerUp)
     }
 
     onPointerMove(event) {
@@ -173,10 +175,10 @@
       this.removeEventListener('pointermove', this.onPointerMove)
       this.removeEventListener('pointerup', this.onPointerUp)
       this.removeEventListener('pointercancel', this.onPointerUp)
+      this.removeEventListener('pointerleave', this.onPointerUp)
     }
 
     onClickCapture(event) {
-      // Suppress the click a drag ends on so dragging across a linked tile doesn't navigate.
       if (this.moved) {
         event.preventDefault()
         event.stopPropagation()
