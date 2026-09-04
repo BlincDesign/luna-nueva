@@ -234,7 +234,9 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
+            "image_two": "shopify://shop_images/hero-tailgate.jpg",
             "image_two_caption": ""
           }
         },
