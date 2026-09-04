@@ -310,7 +310,7 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
             "image_one_caption": "Bring the party",
             "image_two_caption": ""
           }
@@ -321,7 +321,7 @@
             "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
-            "image_two": "shopify://shop_images/image-56217.jpg",
+            "image_two": "shopify://shop_images/wild-tailgate.jpg",
             "image_two_caption": ""
           }
         },
@@ -329,9 +329,9 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one": "shopify://shop_images/wild-yellow-table.jpg",
             "image_one_caption": "",
-            "image_two": "shopify://shop_images/image-56217.jpg",
+            "image_two": "shopify://shop_images/wild-pch.jpg",
             "image_two_caption": ""
           }
         },
@@ -339,7 +339,7 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -348,7 +348,7 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one": "shopify://shop_images/wild-coupe.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
