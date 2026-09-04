@@ -33,6 +33,22 @@
   endfor
 
   assign image_blocks = section.blocks | where: 'type', 'image'
+
+  # Fluid tile width: clamp(min, calc(intercept + coefficient*vw), max), scaling
+  # linearly between (viewport_min, tile_width_min) and (viewport_max, tile_width_max)
+  # instead of jumping between two fixed values at the breakpoint — same technique
+  # design.html uses for .wall's grid-auto-columns (clamp(240px, 25vw, 360px)).
+  assign d_span = section.settings.tile_width_max | minus: section.settings.tile_width_min
+  assign d_slope = d_span | divided_by: 610.0
+  assign d_coefficient = d_slope | times: 100 | round: 3
+  assign d_min_contribution = d_slope | times: 990
+  assign d_intercept = section.settings.tile_width_min | minus: d_min_contribution | round: 3
+
+  assign m_span = section.settings.tile_width_mobile_max | minus: section.settings.tile_width_mobile_min
+  assign m_slope = m_span | divided_by: 360.0
+  assign m_coefficient = m_slope | times: 100 | round: 3
+  assign m_min_contribution = m_slope | times: 320
+  assign m_intercept = section.settings.tile_width_mobile_min | minus: m_min_contribution | round: 3
 -%}
 
 {% style %}
@@ -93,7 +109,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
-    grid-auto-columns: {{ section.settings.tile_width }}px;
+    grid-auto-columns: clamp({{ section.settings.tile_width_min }}px, calc({{ d_intercept }}px + {{ d_coefficient }}vw), {{ section.settings.tile_width_max }}px);
     gap: {{ section.settings.gap }}px;
     padding-bottom: 12px;
   }
@@ -171,7 +187,7 @@
   @media screen and (max-width: 680px) {
     #shopify-section-{{ section.id }} .media-gallery__grid {
       grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
-      grid-auto-columns: {{ section.settings.tile_width_mobile }}px;
+      grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
     }
   }
 {% endstyle %}
@@ -205,8 +221,8 @@
           {% for block in image_blocks %}
             {% render 'media-gallery-tile',
               block: block,
-              tile_width: section.settings.tile_width,
-              tile_width_mobile: section.settings.tile_width_mobile
+              tile_width: section.settings.tile_width_max,
+              tile_width_mobile: section.settings.tile_width_mobile_max
             %}
           {% endfor %}
         </div>
@@ -275,13 +291,24 @@
     },
     {
       "type": "range",
-      "id": "tile_width",
-      "label": "Tile width (desktop)",
+      "id": "tile_width_min",
+      "label": "Tile width — min (desktop)",
+      "info": "Tile width scales fluidly with screen size between min and max, instead of jumping at a breakpoint.",
       "min": 160,
-      "max": 420,
+      "max": 360,
       "step": 10,
       "unit": "px",
-      "default": 300
+      "default": 240
+    },
+    {
+      "type": "range",
+      "id": "tile_width_max",
+      "label": "Tile width — max (desktop)",
+      "min": 240,
+      "max": 480,
+      "step": 10,
+      "unit": "px",
+      "default": 360
     },
     {
       "type": "range",
@@ -296,13 +323,23 @@
     },
     {
       "type": "range",
-      "id": "tile_width_mobile",
-      "label": "Tile width (mobile)",
+      "id": "tile_width_mobile_min",
+      "label": "Tile width — min (mobile)",
       "min": 100,
-      "max": 280,
+      "max": 220,
       "step": 10,
       "unit": "px",
-      "default": 180
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "tile_width_mobile_max",
+      "label": "Tile width — max (mobile)",
+      "min": 180,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 280
     },
     {
       "type": "range",
