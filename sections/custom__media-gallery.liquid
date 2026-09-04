@@ -146,13 +146,13 @@
 {% endstylesheet %}
 
 {% style %}
-  #shopify-section-{{ section.id }}{
+  #shopify-section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
       background-color: {{ section.settings.section_background }};
   }
 
-  @media only screen and (max-width:589px){
+  @media only screen and (max-width:589px) {
     #shopify-section-{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mb }}px;
         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
