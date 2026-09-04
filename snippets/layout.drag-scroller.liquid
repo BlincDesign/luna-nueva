@@ -181,7 +181,6 @@
     }
 
     onClickCapture(event) {
-      // Suppress the click a drag ends on so dragging across a linked tile doesn't navigate.
       if (this.moved) {
         event.preventDefault()
         event.stopPropagation()
