@@ -1,0 +1,429 @@
+<style>
+    #shopify-section-{{ section.id }} .button.button--primary {
+    --btn-bg: #D39655;
+    --btn-border: #D39655;
+    --btn-color: #fff;
+    --btn-hover-bg: #E0A768;
+    --btn-hover-border: #D39655;
+    --btn-hover-color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .button.button--secondary {
+    --btn-bg: transparent;
+    --btn-border: #fff;
+    --btn-color: #fff;
+    --btn-hover-bg: #fff;
+    --btn-hover-border: #fff;
+    --btn-hover-color: #2D3135;
+  }
+
+  /* Button CSS */
+
+.button--primary,
+.button--secondary,
+.button--link {
+    background-color: var(--btn-bg, transparent);
+    border-color: var(--btn-border, transparent);
+    color: var(--btn-color, inherit);
+    font-size: var(--btn-font-size, 12px);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), border-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.button--primary,
+.button--secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1.02rem 1.9rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: var(--btn-radius, 60px);
+    will-change: transform;
+}
+
+.button--primary:hover,
+.button--secondary:hover,
+.button--link:hover {
+    background-color: var(--btn-hover-bg, var(--btn-bg, transparent));
+    border-color: var(--btn-hover-border, var(--btn-border, transparent));
+    color: var(--btn-hover-color, var(--btn-color, inherit));
+}
+
+[data-animate_buttons="true"] .btn--primary:hover,
+[data-animate_buttons="true"] .btn--secondary:hover {
+    transform: translateY(-2px);
+}
+
+.button--primary {
+    --btn-bg: var(--btn-primary-bg);
+    --btn-border: var(--btn-primary-border);
+    --btn-color: var(--btn-primary-color);
+    --btn-hover-bg: var(--btn-primary-bg-hover);
+    --btn-hover-border: var(--btn-primary-border-hover);
+    --btn-hover-color: var(--btn-primary-color-hover);
+}
+
+.button--secondary {
+    --btn-bg: var(--btn-secondary-bg);
+    --btn-border: var(--btn-secondary-border);
+    --btn-color: var(--btn-secondary-color);
+    --btn-hover-bg: var(--btn-secondary-bg-hover);
+    --btn-hover-border: var(--btn-secondary-border-hover);
+    --btn-hover-color: var(--btn-secondary-color-hover);
+}
+
+.button--link {
+    --btn-color: var(--btn-link-color);
+    --btn-hover-color: var(--btn-link-color-hover);
+    min-width: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+}
+
+.button__arrow {
+    display: inline-block;
+    margin-left: 0.5em;
+    transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+[data-animate_buttons="true"] .button:hover .button__arrow {
+    transform: translateX(4px);
+}
+
+
+/* Button CSS */
+
+      .background-image {
+        position: relative;
+      }
+
+      .background-image:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
+          url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+        background-repeat: repeat;
+        opacity: .42;
+        mix-blend-mode: soft-light;
+      }
+
+      #shopify-section-{{ section.id }}.background-image {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        background-color: {{ section.settings.background_color }};
+      }
+
+      #shopify-section-{{ section.id }} h2 {
+        color: {{ section.settings.text_color }};
+        margin: 0;
+      }
+    .theme-block:first-child {
+        margin-bottom: 10px;
+    }
+      {% comment %} #shopify-section-{{ section.id }} .rich-text__content {
+        position: relative;
+        z-index: 1;
+      } {% endcomment %}
+
+      #shopify-section-{{ section.id }} .rich-text__main {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      #shopify-section-{{ section.id }} .rich-text__left,
+      #shopify-section-{{ section.id }} .rich-text__right {
+        flex: 1;
+      }
+
+      #shopify-section-{{ section.id }} .rich-text__left {
+        max-width: 600px;
+      }
+
+      #shopify-section-{{ section.id }} .rich-text__right {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+      }
+
+      @media screen and (max-width: 768px) {
+        #shopify-section-{{ section.id }}.background-image {
+          padding-top: {{ section.settings.mobile_padding_top }}px;
+          padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__main {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__left,
+        #shopify-section-{{ section.id }} .rich-text__right {
+          max-width: none;
+          width: 100%;
+        }
+
+        #shopify-section-{{ section.id }} .rich-text__right {
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+</style>
+
+<div class="rich-text__content page-width">
+  <div class="rich-text__main flex">
+    <div class="rich-text__left flex flex-column">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'eyebrow' -%}
+            <div class="theme-block" {{ block.shopify_attributes }}>
+              {{ block.settings.title }}
+            </div>
+
+          {%- when 'heading' -%}
+            <div class="theme-block" {{ block.shopify_attributes }}>
+              <h2>
+                {{ block.settings.title }}
+              </h2>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    <div class="rich-text__right">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            <div class="theme-block" {{ block.shopify_attributes }}>
+              <div class="rte">
+                {%- if block.settings.text != blank -%}
+                  {%- if block.settings.enlarge_text -%}
+                    <div class="enlarge-text">
+                  {%- endif -%}
+
+                  {{ block.settings.text }}
+
+                  {%- if block.settings.enlarge_text -%}
+                    </div>
+                  {%- endif -%}
+
+                {%- else -%}
+                  {{ 'home_page.onboarding.no_content' | t }}
+                {%- endif -%}
+              </div>
+            </div>
+
+          {%- when 'button' -%}
+            <div class="theme-block" {{ block.shopify_attributes }}>
+              {% render 'button',
+                label: block.settings.link_text,
+                url: block.settings.link,
+                type: block.settings.button_type,
+                arrow: false
+              %}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom rich text",
+  "class": "background-image",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2d3135"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f9f6f1"
+    },
+
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Eyebrow",
+          "default": "IN THE WILD"
+        }
+      ]
+    },
+
+    {
+      "type": "heading",
+      "name": "t:sections.rich-text.blocks.heading.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "t:sections.rich-text.blocks.heading.settings.title.label",
+          "default": "Where it actually gets poured."
+        }
+      ]
+    },
+
+    {
+      "type": "text",
+      "name": "t:sections.rich-text.blocks.text.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "t:sections.rich-text.blocks.text.settings.enlarge_text.label",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.rich-text.blocks.text.settings.text.label",
+          "default": "<p>Use this text to share information about your brand with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Button text",
+          "default": "SEE WHAT'S COMING UP →"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button style",
+          "default": "secondary",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "page",
+      "name": "t:sections.rich-text.blocks.page.name",
+      "settings": [
+        {
+          "id": "page_text",
+          "type": "page",
+          "label": "t:sections.rich-text.blocks.page.settings.page_text.label"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Custom multi column rich text",
+      "blocks": [
+        {
+          "type": "eyebrow"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ],
+
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}
