@@ -197,26 +197,80 @@
         "divider": false
       }
     },
-    "text_and_image_TpP37W": {
-      "type": "text-and-image",
-      "name": "t:sections.text-and-image.presets.image_with_text.name",
+    "custom_story_teaser_grtbFU": {
+      "type": "custom__story-teaser",
+      "blocks": {
+        "subheading_UVChCG": {
+          "type": "subheading",
+          "settings": {
+            "text": "Our Story",
+            "color": "",
+            "margin_bottom": 18
+          }
+        },
+        "heading_KYbVq8": {
+          "type": "heading",
+          "settings": {
+            "text": "The liquid is authentic to Mexico.",
+            "color": "",
+            "margin_bottom": 0
+          }
+        },
+        "heading_rhmfJC": {
+          "type": "heading",
+          "settings": {
+            "text": "The culture is California.",
+            "color": "#d39655",
+            "margin_bottom": 18
+          }
+        },
+        "divider_8JXCFj": {
+          "type": "divider",
+          "settings": {
+            "color": "",
+            "margin_bottom": 30
+          }
+        },
+        "text_RcfkhV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
+            "color": "",
+            "margin_bottom": 24
+          }
+        },
+        "button_hnpTJJ": {
+          "type": "button",
+          "settings": {
+            "label": "Read our story",
+            "link": "",
+            "style": "primary",
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "subheading_UVChCG",
+        "heading_KYbVq8",
+        "heading_rhmfJC",
+        "divider_8JXCFj",
+        "text_RcfkhV",
+        "button_hnpTJJ"
+      ],
+      "name": "Story teaser",
       "settings": {
         "image": "shopify://shop_images/story-pinas.jpg",
-        "image_mask": "rounded-top",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Image with text",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "left",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
+        "image_caption": "Agave piñas · Highlands of Jalisco",
+        "image_shape": "arch",
+        "lazyload_images": true,
+        "image_position": "left",
+        "full_width": false,
+        "background_color": "#2D3135",
+        "text_color": "#F9F6F1",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "mobile_padding_top": 48,
+        "mobile_padding_bottom": 48
       }
     },
     "custom_product_details_JbJXVn": {
@@ -423,7 +477,7 @@
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
-    "text_and_image_TpP37W",
+    "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
     "rich-text",
