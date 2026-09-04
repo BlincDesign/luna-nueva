@@ -87,6 +87,18 @@
     object-fit: cover;
   }
 
+  /* element.video's own wrapper levels (is-land, .element-video) have no
+     size of their own — video-media fills them via its [data-background]
+     rule, so these just need to fill the tile the same way an image does. */
+  .media-gallery__image--video is-land,
+  .media-gallery__image--video .element-video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .media-gallery__caption {
     position: absolute;
     left: 12px;
@@ -419,6 +431,12 @@
           "label": "First image"
         },
         {
+          "type": "video",
+          "id": "video_one",
+          "label": "First video",
+          "info": "Optional. If added, this video plays instead of the first image above."
+        },
+        {
           "type": "text",
           "id": "image_one_caption",
           "label": "First image caption"
@@ -428,6 +446,12 @@
           "id": "image_two",
           "label": "Second image",
           "info": "Optional. Add a second photo to share this tile with the first image."
+        },
+        {
+          "type": "video",
+          "id": "video_two",
+          "label": "Second video",
+          "info": "Optional. If added, this video plays instead of the second image above."
         },
         {
           "type": "text",
