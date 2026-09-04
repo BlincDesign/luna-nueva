@@ -301,7 +301,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
-            "image_one_caption": "Bring the party",
+            "image_one_caption": "Pacific Coast Highway",
             "image_two_caption": ""
           }
         },
@@ -310,9 +310,9 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
-            "image_one_caption": "",
+            "image_one_caption": "Bring the party",
             "image_two": "shopify://shop_images/wild-tailgate.jpg",
-            "image_two_caption": ""
+            "image_two_caption": "The tailgate, Malibu"
           }
         },
         "image_FJdmEK": {
@@ -320,7 +320,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/wild-yellow-table.jpg",
-            "image_one_caption": "",
+            "image_one_caption": "Silver · served long",
             "image_two": "shopify://shop_images/wild-pch.jpg",
             "image_two_caption": ""
           }
@@ -330,7 +330,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
-            "image_one_caption": "",
+            "image_one_caption": "Make the table longer",
             "image_two_caption": ""
           }
         },
@@ -339,7 +339,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/wild-coupe.jpg",
-            "image_one_caption": "",
+            "image_one_caption": "Late afternoon",
             "image_two_caption": ""
           }
         }
