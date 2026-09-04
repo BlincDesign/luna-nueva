@@ -288,7 +288,7 @@
       ],
       "name": "Media gallery - grid",
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "content_width": 30,
         "tile_width": 360,
         "row_height": 280,
