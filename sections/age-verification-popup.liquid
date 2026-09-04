@@ -4,8 +4,7 @@
   --age-confirmation-color: {{ section.settings.text_color }};
 }
 
-#shopify-section-{{ section.id }} .button {
-
+#shopify-section-{{ section.id }} .button.button--primary {
   --btn-bg: #D39655;
   --btn-border: #D39655;
   --btn-color: #fff;
@@ -14,24 +13,15 @@
   --btn-hover-color: #D39655;
 }
 
-/* #shopify-section-{{ section.id }} .button {
-  --btn-primary-bg: #D39655;
-  --btn-primary-border: #D39655;
-  --btn-primary-color: #fff;
-  
-  --btn-primary-hover-bg: #E0A768;
-  --btn-primary-hover-border: #D39655;
-  --btn-primary-hover-color: #D39655;
 
-
-  --btn-secondary-bg: transparent;
-  --btn-secondary-border: #fff;
-  --btn-secondary-color: #fff;
-  
-  --btn-secondary-bg-hover: #fff;
-  --btn-secondary-border-hover: #fff;
-  --btn-secondary-color-hover: #2D3135;
-} */
+#shopify-section-{{ section.id }} .button.button--secondary {
+  --btn-bg: var(--btn-secondary-bg);
+  --btn-border: var(--btn-secondary-border);
+  --btn-color: var(--btn-secondary-color);
+  --btn-hover-bg: var(--btn-secondary-bg-hover);
+  --btn-hover-border: var(--btn-secondary-border-hover);
+  --btn-hover-color: var(--btn-secondary-color-hover);
+}
 
 {% endstyle %}
 
