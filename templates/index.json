@@ -233,38 +233,47 @@
         "image_64U3Pa": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
         },
-        "image_LJRUH8": {
+        "image_Un9eVf": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
-            "image_two": "shopify://shop_images/hero-tailgate.jpg",
+            "image_two": "shopify://shop_images/image-56217.jpg",
             "image_two_caption": ""
           }
         },
-        "image_3egAxC": {
+        "image_FJdmEK": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/image-56217.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_4iEL3N": {
+          "type": "image",
+          "settings": {
+            "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
         },
-        "image_DYamVL": {
+        "image_7CAf9R": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/hero-ocean.jpg",
             "image_one_caption": "",
-            "image_two": "shopify://shop_images/hero-tailgate.jpg",
             "image_two_caption": ""
           }
         }
@@ -272,17 +281,19 @@
       "block_order": [
         "content_tng9Wc",
         "image_64U3Pa",
-        "image_LJRUH8",
-        "image_3egAxC",
-        "image_DYamVL"
+        "image_Un9eVf",
+        "image_FJdmEK",
+        "image_4iEL3N",
+        "image_7CAf9R"
       ],
       "name": "Media gallery - grid",
       "settings": {
         "full_width": false,
         "content_width": 40,
-        "tile_width": 25,
-        "tile_height": 595,
-        "mobile_tile_height": 365,
+        "tile_width": 360,
+        "row_height": 280,
+        "tile_width_mobile": 180,
+        "row_height_mobile": 150,
         "gap": 16,
         "padding_top": 80,
         "padding_bottom": 80,
