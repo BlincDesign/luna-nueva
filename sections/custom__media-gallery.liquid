@@ -1,34 +1,3 @@
-{%- comment -%}
-  Layout model, reverse-engineered from design.html's actual .wall (section
-  7, "the uneven grid") and .ev/.ev-grid (section 8, "community & events")
-  rather than from a hand-written spec:
-
-  Content + media (from .ev, plus .sec-head's "content above the wall")
-    content_position picks the arrangement: "before" is .ev's real
-    two-column split (content_width controls the content column, media
-    takes the rest, stacks to one column at <=900px); "above" stacks
-    content full width above the gallery, unconditionally, matching how
-    sections 7/9 put their heading above the wall instead of beside it.
-
-  The gallery wall (from .wall)
-    CSS Grid, grid-auto-flow: column, exactly 2 fixed-height rows,
-    fixed-width auto-columns. A normal image block is 1 column x 1 row.
-    `tall` is grid-row: span 2 — same width, full wall height, not wider.
-    Overflow scrolls horizontally and drags (see layout.drag-scroller);
-    on mobile (<=680px, .wall's own breakpoint) it stays the same 2-row
-    wall, just with smaller tiles — it never collapses to one column.
-
-  Two images in one block (Shopify-only; design.html tiles are always a
-  single image) follow the shape the tile already has: a normal
-  (half-height) tile is short and wide, so two images sit side by side;
-  a tall (full-height) tile is narrow and tall, so two images stack.
-
-  CSS below is split in two: {% stylesheet %} holds every rule that never
-  depends on a setting — it's plain CSS, safe to lift into custom.css
-  wholesale whenever that migration happens. {% style %}, scoped to this
-  section's id, holds only the handful of rules that read a setting value.
-{%- endcomment -%}
-
 {%- liquid
   assign content_block = nil
   for block in section.blocks
