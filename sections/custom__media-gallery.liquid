@@ -20,7 +20,7 @@
   assign m_min_contribution = m_slope | times: 320
   assign m_intercept = section.settings.tile_width_mobile_min | minus: m_min_contribution | round: 3
 -%}
-
+{% comment %} 
 {% stylesheet %}
   .media-gallery__inner {
     display: flex;
@@ -115,7 +115,7 @@
       max-width: 100%;
     }
   }
-{% endstylesheet %}
+{% endstylesheet %} {% endcomment %}
 
 {% style %}
   #shopify-section-{{ section.id }} .media-gallery__inner {
