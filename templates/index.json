@@ -119,12 +119,20 @@
             "enlarge_text": false,
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>"
           }
+        },
+        "button_aURi3T": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "See what's coming up →"
+          }
         }
       },
       "block_order": [
         "eyebrow_CeK6D3",
         "heading_hmw6Hn",
-        "text_9tiTLk"
+        "text_9tiTLk",
+        "button_aURi3T"
       ],
       "name": "Custom Multi Column",
       "settings": {
