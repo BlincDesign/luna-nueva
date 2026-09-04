@@ -197,6 +197,28 @@
         "divider": false
       }
     },
+    "text_and_image_TpP37W": {
+      "type": "text-and-image",
+      "name": "t:sections.text-and-image.presets.image_with_text.name",
+      "settings": {
+        "image": "shopify://shop_images/story-pinas.jpg",
+        "image_mask": "rounded-top",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
     "custom_product_details_JbJXVn": {
       "type": "custom__product-details",
       "name": "Product Detail List",
@@ -401,6 +423,7 @@
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
+    "text_and_image_TpP37W",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
     "rich-text",
