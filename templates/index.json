@@ -327,6 +327,117 @@
         "background_color": ""
       }
     },
+    "custom_photo_wall_MUUqGC": {
+      "type": "custom__photo-wall",
+      "blocks": {
+        "photo_LxgKtV": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-sign.jpg",
+            "caption": "The sign, 11:01 PM",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        },
+        "photo_anhfPi": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-bottles.jpg",
+            "caption": "Round two",
+            "alt": "",
+            "size": "normal",
+            "align": "up"
+          }
+        },
+        "photo_LdeHqQ": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-bar.jpg",
+            "caption": "Behind the bar",
+            "alt": "",
+            "size": "wide",
+            "align": "dn"
+          }
+        },
+        "photo_PCAq9i": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-two.jpg",
+            "caption": "Still here",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_TX3xj3": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-station.jpg",
+            "caption": "The station",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_PwgPKP": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-group.jpg",
+            "caption": "The whole room",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        },
+        "photo_VCcPDN": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-late.jpg",
+            "caption": "Round two",
+            "alt": "",
+            "size": "normal",
+            "align": "up"
+          }
+        },
+        "photo_9xD6R7": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/night-glasses.jpg",
+            "caption": "Behind the bar",
+            "alt": "",
+            "size": "wide",
+            "align": "dn"
+          }
+        }
+      },
+      "block_order": [
+        "photo_LxgKtV",
+        "photo_anhfPi",
+        "photo_LdeHqQ",
+        "photo_PCAq9i",
+        "photo_TX3xj3",
+        "photo_PwgPKP",
+        "photo_VCcPDN",
+        "photo_9xD6R7"
+      ],
+      "name": "Photo Wall",
+      "settings": {
+        "eyebrow": "Shot on a Disposable",
+        "heading": "Nobody photographs the good nights properly.",
+        "description": "Flash, grain, and whatever the camera caught. Shot the way the nights actually looked.",
+        "show_drag_hint": true,
+        "drag_hint_text": "Drag",
+        "color_text": "#4193DF",
+        "section_background": "#2D3135",
+        "card_background": "#F7F4EE",
+        "card_text": "#2D3135",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -426,6 +537,7 @@
     "text_and_image_TpP37W",
     "custom_product_details_JbJXVn",
     "custom_media_gallery_9bgdN4",
+    "custom_photo_wall_MUUqGC",
     "rich-text",
     "newsletter"
   ]
