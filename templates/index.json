@@ -282,7 +282,7 @@
         "content_width": 40,
         "tile_width": 25,
         "tile_height": 595,
-        "mobile_tile_height": 450,
+        "mobile_tile_height": 365,
         "gap": 16,
         "padding_top": 80,
         "padding_bottom": 80,
