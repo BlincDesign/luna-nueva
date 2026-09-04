@@ -1,23 +1,26 @@
 {%- comment -%}
-  Tile sizing model (all driven by section settings, see schema below):
+  Layout model, reverse-engineered from design.html's actual .wall (section
+  7, "the uneven grid") and .ev/.ev-grid (section 8, "community & events")
+  rather than from a hand-written spec:
 
-  Desktop (>= 750px)
-    tall OFF -> tile is `tile_width` wide, `tile_height` tall. The two
-      images stack (column) and split that height 50/50.
-    tall ON  -> tile is two tile-widths + one gap wide, `tile_height`
-      tall. The two images sit side by side (row) and split that width
-      50/50, each filling the full height.
+  Content + media (from .ev)
+    A real two-column split — content_width controls the content column,
+    media takes the rest — that stacks to one column at <=900px (.ev's own
+    breakpoint). Which block renders first (content vs the first image
+    block) decides left/top vs right/bottom; there's no separate setting.
 
-  Mobile (< 750px) — the axis flips relative to desktop
-    tall OFF -> tile is full width, `mobile_tile_height` tall. The two
-      images sit side by side (row) and split that width 50/50.
-    tall ON  -> tile is full width, auto height. The two images stack
-      (column), each explicitly `mobile_tile_height` tall.
+  The gallery wall (from .wall)
+    CSS Grid, grid-auto-flow: column, exactly 2 fixed-height rows,
+    fixed-width auto-columns. A normal image block is 1 column x 1 row.
+    `tall` is grid-row: span 2 — same width, full wall height, not wider.
+    Overflow scrolls horizontally and drags (see layout.drag-scroller);
+    on mobile (<=680px, .wall's own breakpoint) it stays the same 2-row
+    wall, just with smaller tiles — it never collapses to one column.
 
-  A block with only image_one set always renders that image alone at
-  100% of whatever box the tile resolves to above.
-
-  Scrolling/dragging is intentionally not implemented yet.
+  Two images in one block (Shopify-only; design.html tiles are always a
+  single image) follow the shape the tile already has: a normal
+  (half-height) tile is short and wide, so two images sit side by side;
+  a tall (full-height) tile is narrow and tall, so two images stack.
 {%- endcomment -%}
 
 {%- liquid
@@ -45,14 +48,14 @@
   endif
 
   assign image_blocks = section.blocks | where: 'type', 'image'
-  assign half_gap = section.settings.gap | divided_by: 2.0
 -%}
 
 {% style %}
   #shopify-section-{{ section.id }} .media-gallery__inner {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(32px, 5vw, 96px);
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
@@ -64,8 +67,14 @@
   }
 
   #shopify-section-{{ section.id }} .media-gallery__content {
-    width: 100%;
+    flex: 0 0 {{ section.settings.content_width }}%;
     max-width: {{ section.settings.content_width }}%;
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__media {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   #shopify-section-{{ section.id }} .media-gallery__eyebrow {
@@ -83,19 +92,42 @@
     margin: 0 0 24px;
   }
 
-  /* Tiles: the tile itself is the flex row/column; tile-media is the
-     per-image sizing slot; image is the cropped visual box. */
-  #shopify-section-{{ section.id }} .media-gallery__tile-media {
+  /* The wall — CSS Grid, not flex: grid-auto-flow: column lets normal
+     tiles pack two-per-column automatically, and a tall tile just spans
+     both rows of its own column. That auto-placement is what a flex
+     track can't give us for free. */
+  #shopify-section-{{ section.id }} .media-gallery__grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
+    grid-auto-columns: {{ section.settings.tile_width }}px;
+    gap: {{ section.settings.gap }}px;
+    padding-bottom: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__tile {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: {{ section.settings.gap }}px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    scroll-snap-align: start;
+  }
+
+  #shopify-section-{{ section.id }} .media-gallery__tile--tall {
+    grid-row: span 2;
+    flex-direction: column;
   }
 
   #shopify-section-{{ section.id }} .media-gallery__image {
     position: relative;
-    width: 100%;
-    height: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
     overflow: hidden;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.05);
   }
 
   #shopify-section-{{ section.id }} .media-gallery__image image-element,
@@ -116,99 +148,34 @@
     padding: 6px 12px;
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
-    font-size: 13px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     border-radius: 999px;
   }
 
-  /* Gallery wrap — flexbox, not grid: a "tall" tile's width is just
-     2 tile-widths + 1 gap, which flex-basis/calc() expresses directly.
-     The grid equivalent would need column spans to line up with a
-     percentage track size, which is far more fragile. */
-  #shopify-section-{{ section.id }} .media-gallery__grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: {{ section.settings.gap }}px;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__tile {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 {{ section.settings.tile_width }}%;
-    max-width: {{ section.settings.tile_width }}%;
-    height: {{ section.settings.tile_height }}px;
-    gap: {{ section.settings.gap }}px;
-  }
-
-  /* tall, desktop: double-wide, row of two, each full tile height */
-  #shopify-section-{{ section.id }} .media-gallery__tile--wide {
-    flex-direction: row;
-    flex-basis: calc({{ section.settings.tile_width }}% * 2 + {{ section.settings.gap }}px);
-    max-width: calc({{ section.settings.tile_width }}% * 2 + {{ section.settings.gap }}px);
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media {
-    flex: 0 0 calc(50% - {{ half_gap }}px);
-    width: calc(50% - {{ half_gap }}px);
-    height: 100%;
-  }
-
-  #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media:only-child {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-
-  /* not tall, desktop: normal width, column of two, splitting the height */
-  #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media {
-    flex: 1 1 0;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 749px) {
+  @media screen and (max-width: 900px) {
     #shopify-section-{{ section.id }} .media-gallery__inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 32px;
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
 
     #shopify-section-{{ section.id }} .media-gallery__content {
-      max-width: 100%;
-    }
-
-    /* One tile per row on mobile regardless of tall */
-    #shopify-section-{{ section.id }} .media-gallery__tile {
       flex-basis: 100%;
       max-width: 100%;
     }
+  }
 
-    /* not tall, mobile: row of two sharing the mobile tile height */
-    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) {
-      flex-direction: row;
-      height: {{ section.settings.mobile_tile_height }}px;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media {
-      flex: 0 0 calc(50% - {{ half_gap }}px);
-      width: calc(50% - {{ half_gap }}px);
-      height: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__tile:not(.media-gallery__tile--wide) .media-gallery__tile-media:only-child {
-      flex: 1 1 100%;
-      width: 100%;
-    }
-
-    /* tall, mobile: column of two, each image explicitly sized —
-       the tile itself is auto height, not the mobile tile height */
-    #shopify-section-{{ section.id }} .media-gallery__tile--wide {
-      flex-direction: column;
-      height: auto;
-      max-width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__tile--wide .media-gallery__tile-media {
-      flex: 0 0 {{ section.settings.mobile_tile_height }}px;
-      width: 100%;
-      height: {{ section.settings.mobile_tile_height }}px;
+  /* The wall itself only steps down at its own (narrower) breakpoint —
+     it stays a 2-row scroller here, just with smaller tiles. */
+  @media screen and (max-width: 680px) {
+    #shopify-section-{{ section.id }} .media-gallery__grid {
+      grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
+      grid-auto-columns: {{ section.settings.tile_width_mobile }}px;
     }
   }
 {% endstyle %}
@@ -236,10 +203,19 @@
 
 {% capture media_markup %}
   {% if image_blocks.size > 0 %}
-    <div class="media-gallery__grid">
-      {% for block in image_blocks %}
-        {% render 'media-gallery-tile', block: block, tile_width: section.settings.tile_width %}
-      {% endfor %}
+    <div class="media-gallery__media">
+      {% capture track %}
+        <div class="media-gallery__grid">
+          {% for block in image_blocks %}
+            {% render 'media-gallery-tile',
+              block: block,
+              tile_width: section.settings.tile_width,
+              tile_width_mobile: section.settings.tile_width_mobile
+            %}
+          {% endfor %}
+        </div>
+      {% endcapture %}
+      {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
     </div>
   {% endif %}
 {% endcapture %}
@@ -280,40 +256,61 @@
       "type": "range",
       "id": "content_width",
       "label": "Content width",
-      "info": "Only applies when a Content block has been added.",
+      "info": "Only applies when a Content block has been added. Content and gallery stack below 900px.",
       "min": 20,
       "max": 60,
       "step": 5,
       "unit": "%",
-      "default": 40
+      "default": 35
     },
     {
       "type": "header",
       "content": "Gallery"
     },
     {
+      "type": "paragraph",
+      "content": "The gallery is a 2-row wall that scrolls and drags sideways once tiles overflow the container."
+    },
+    {
       "type": "range",
       "id": "tile_width",
       "label": "Tile width (desktop)",
-      "info": "A wide tile (see Image block) is 2 tile-widths plus one gap.",
-      "min": 10,
-      "max": 50,
-      "step": 5,
-      "unit": "%",
-      "default": 20
+      "min": 160,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "default": 300
     },
     {
-    "type": "number",
-    "id": "tile_height",
-    "label": "Tile height (desktop)",
-    "default": 595
+      "type": "range",
+      "id": "row_height",
+      "label": "Row height (desktop)",
+      "info": "A normal tile is one row tall. A wide tile spans both rows.",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 220
     },
     {
-    "type": "number",
-    "id": "mobile_tile_height",
-    "label": "Tile height (mobile)",
-    "info": "For a wide tile this is the height of each image, since they stack on mobile.",
-    "default": 450
+      "type": "range",
+      "id": "tile_width_mobile",
+      "label": "Tile width (mobile)",
+      "min": 100,
+      "max": 280,
+      "step": 10,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "row_height_mobile",
+      "label": "Row height (mobile)",
+      "min": 100,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 150
     },
     {
       "type": "range",
@@ -323,7 +320,7 @@
       "max": 48,
       "step": 2,
       "unit": "px",
-      "default": 20
+      "default": 16
     },
     {
       "type": "header",
@@ -423,7 +420,8 @@
         {
           "type": "checkbox",
           "id": "tall",
-          "label": "Make this block wide — two images side by side",
+          "label": "Full height (spans both rows)",
+          "info": "Off: a half-height tile — two images (if both are set) sit side by side. On: a full-height tile — two images stack instead.",
           "default": false
         },
         {
@@ -454,9 +452,10 @@
       "name": "Media gallery",
       "blocks": [
         { "type": "content" },
-        { "type": "image" },
-        { "type": "image" },
         { "type": "image", "settings": { "tall": true } },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
         { "type": "image" }
       ]
     },
@@ -466,6 +465,9 @@
         { "type": "image", "settings": { "tall": true } },
         { "type": "image" },
         { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image", "settings": { "tall": true } },
         { "type": "image" },
         { "type": "image" }
       ]
