@@ -17,7 +17,7 @@
   }
 {% endstyle %}
 
-<div class="rich-text" {% if section.settings.enable_background_image %} background-image{% endif %}>
+<div class="rich-text {% if section.settings.enable_background_image %} background-image{% endif %}">
   {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
   <div class="text-{{ section.settings.align_text }} page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
