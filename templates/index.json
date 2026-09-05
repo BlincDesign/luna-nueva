@@ -283,27 +283,19 @@
             "position": "left"
           }
         },
-        "text_LLrkkX": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers.</p>",
-            "position": "right"
-          }
-        },
         "button_bCtMDn": {
           "type": "button",
           "settings": {
             "link": "",
             "link_text": "SEE WHAT'S COMING UP →",
-            "button_type": "secondary",
+            "button_type": "primary",
             "position": "right",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
+            "button_primary_bg": "rgba(0,0,0,0)",
+            "button_primary_border": "#FFFFFF",
             "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
+            "button_primary_bg_hover": "#FFFFFF",
+            "button_primary_border_hover": "#FFFFFF",
+            "button_primary_text_hover": "#2D3135",
             "button_secondary_bg": "#ffffff",
             "button_secondary_border": "#1c1d1d",
             "button_secondary_text": "#1c1d1d",
@@ -318,19 +310,20 @@
       "block_order": [
         "preheading_DXAxHU",
         "heading_7FY4NB",
-        "text_LLrkkX",
         "button_bCtMDn"
       ],
       "name": "Rich text columns",
       "settings": {
-        "background_color": "#2d3135",
+        "section_background": "#2d3135",
         "text_color": "#f9f6f1",
-        "align_text": "left",
-        "align_vertical": "flex-end",
         "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
         "right_column_width": 50,
-        "padding_top": 120,
-        "padding_bottom": 120,
+        "right_text_align": "right",
+        "right_vertical_align": "flex-end",
+        "padding_top": 80,
+        "padding_bottom": 60,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
       }
@@ -423,12 +416,14 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "background_color": "#d5995a",
+        "section_background": "#2d3135",
         "text_color": "#1a1e33",
-        "align_text": "left",
-        "align_vertical": "flex-end",
         "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
         "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
         "padding_top": 120,
         "padding_bottom": 120,
         "mobile_padding_top": 80,
@@ -612,8 +607,8 @@
         "row_height_mobile": 260,
         "gap": 16,
         "section_background": "#2d3135",
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
