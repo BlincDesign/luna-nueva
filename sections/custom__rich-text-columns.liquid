@@ -19,85 +19,58 @@
     }
 
     .theme-block__button--{{ block.id }} .button.button--link {
-        --btn-link-color: {{ settings.button_link_text | default: "#1c1d1d" }};
-        --btn-link-color-hover: {{ settings.button_link_text_hover | default: "#7a7a7a" }};
+      --btn-link-color: {{ block.settings.button_link_text | default: "#1c1d1d" }};
+      --btn-link-color-hover: {{ block.settings.button_link_text_hover | default: "#7a7a7a" }};
     }
   {% endfor %}
 
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.section_background }};
+    color: {{ section.settings.text_color }};
+  }
 
+  #shopify-section-{{ section.id }} .rich-text__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+  }
 
-    #shopify-section-{{ section.id }}.background-image {
-      position: relative;
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-      background-color: {{ section.settings.background_color }};
-    }
+  #shopify-section-{{ section.id }} .rich-text__column {
+    display: flex;
+    flex-direction: column;
+  }
 
-    #shopify-section-{{ section.id }}.background-image::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
+  #shopify-section-{{ section.id }} .rich-text__column--left {
+    flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+    justify-content: {{ section.settings.left_vertical_align }};
+  }
 
-      background-image:
-        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-1.svg?v=1788383468),
-        url(https://cdn.shopify.com/s/files/1/0737/8619/6244/files/background-2.svg?v=1788383468);
+  #shopify-section-{{ section.id }} .rich-text__column--right {
+    flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+    justify-content: {{ section.settings.right_vertical_align }};
+  }
 
-      background-repeat: repeat;
-      opacity: 0.42;
-      mix-blend-mode: soft-light;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__content {
-      position: relative;
-      z-index: 1;
+  @media screen and (max-width: 589px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
 
     #shopify-section-{{ section.id }} .rich-text__main {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: {{ section.settings.align_vertical }};
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    #shopify-section-{{ section.id }} .rich-text__column {
-      display: flex;
       flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
     }
 
-    #shopify-section-{{ section.id }} .rich-text__column.rich-text__column--left {
-        flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+    #shopify-section-{{ section.id }} .rich-text__column--left,
+    #shopify-section-{{ section.id }} .rich-text__column--right {
+      flex: 1 1 100%;
     }
-
-    #shopify-section-{{ section.id }} .rich-text__column.rich-text__column--right {
-        flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
-    }
-
-    #shopify-section-{{ section.id }} h2 {
-      color: {{ section.settings.text_color }};
-      margin: 0;
-    }
-
-    @media screen and (max-width: 589px) {
-      #shopify-section-{{ section.id }}.background-image {
-        padding-top: {{ section.settings.mobile_padding_top }}px;
-        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
-      }
-
-      .rich-text__main {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .rich-text__column--left,
-      .rich-text__column--right {
-        width: 100%;
-        max-width: none;
-      }
-    }
+  }
 {% endstyle %}
 
 <div class="rich-text__content page-width">
@@ -106,7 +79,7 @@
       LEFT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--left text-{{ section.settings.align_text }}">
+    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }}">
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'left' -%}
           {%- case block.type -%}
@@ -121,7 +94,7 @@
 
             {%- when 'heading' -%}
               <div
-                class="theme-block has--highlight appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                 data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
@@ -131,7 +104,7 @@
               </div>
 
             {%- when 'text' -%}
-              <div class="theme-block has--highlight" {{ block.shopify_attributes }}>
+              <div class="theme-block" {{ block.shopify_attributes }}>
                 <div
                   class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                   data-block-id="{{ block.id }}"
@@ -188,7 +161,7 @@
       RIGHT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--right text-{{ section.settings.align_text }}">
+    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }}">
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'right' -%}
           {%- case block.type -%}
@@ -276,8 +249,8 @@
   "settings": [
     {
       "type": "color",
-      "id": "background_color",
-      "label": "Background color",
+      "id": "section_background",
+      "label": "Section background",
       "default": "#2d3135"
     },
     {
@@ -287,15 +260,29 @@
       "default": "#f9f6f1"
     },
     {
+      "type": "header",
+      "content": "Left column"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
       "type": "text_alignment",
-      "id": "align_text",
-      "label": "t:sections.rich-text.settings.align_text.label",
+      "id": "left_text_align",
+      "label": "Horizontal alignment",
       "default": "left"
     },
     {
       "type": "select",
-      "id": "align_vertical",
-      "label": "Vertical align",
+      "id": "left_vertical_align",
+      "label": "Vertical alignment",
       "default": "flex-end",
       "options": [
         {
@@ -314,27 +301,43 @@
     },
     {
       "type": "header",
-      "content": "Column Width"
-    },
-    {
-      "type": "range",
-      "id": "left_column_width",
-      "label": "Left column width",
-      "min": 20,
-      "max": 80,
-      "step": 1,
-      "unit": "%",
-      "default": 50
+      "content": "Right column"
     },
     {
       "type": "range",
       "id": "right_column_width",
-      "label": "Right column width",
+      "label": "Width",
       "min": 20,
       "max": 80,
       "step": 1,
       "unit": "%",
       "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "right_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ]
     },
     {
       "type": "header",
