@@ -360,6 +360,192 @@
         "padding_bottom_mb": 40
       }
     },
+    "custom_rich_text_columns_fapdXh": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_A6UfkX": {
+          "type": "preheading",
+          "settings": {
+            "title": "What's In It, What Isn't",
+            "position": "left"
+          }
+        },
+        "text_j9B88a": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
+            "position": "left"
+          }
+        },
+        "heading_KpLY3N": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_YrMjYV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
+            "position": "right"
+          }
+        },
+        "button_XRaQDg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_A6UfkX",
+        "text_j9B88a",
+        "heading_KpLY3N",
+        "text_YrMjYV",
+        "button_XRaQDg"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "background_color": "#d5995a",
+        "text_color": "#1a1e33",
+        "align_text": "left",
+        "align_vertical": "flex-end",
+        "left_column_width": 80,
+        "right_column_width": 20,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 80
+      }
+    },
+    "custom_additives_table_H9ebp3": {
+      "type": "custom__additives-table",
+      "blocks": {
+        "additive_eWPhyC": {
+          "type": "additive",
+          "settings": {
+            "icon": "droplet",
+            "name": "Glycerin",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_ATxL34": {
+          "type": "additive",
+          "settings": {
+            "icon": "leaf",
+            "name": "Oak extract",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_7a9iFk": {
+          "type": "additive",
+          "settings": {
+            "icon": "cube",
+            "name": "Sugar-based sweetener",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_PKrikM": {
+          "type": "additive",
+          "settings": {
+            "icon": "half-circle",
+            "name": "Caramel coloring",
+            "percentage": "0.00%"
+          }
+        }
+      },
+      "block_order": [
+        "additive_eWPhyC",
+        "additive_ATxL34",
+        "additive_7a9iFk",
+        "additive_PKrikM"
+      ],
+      "name": "Additives table",
+      "settings": {
+        "background_color": "#d5995a",
+        "text_color": "#1a1e33",
+        "heading_additive": "ADDITIVE",
+        "heading_product": "LUNA NUEVA",
+        "heading_permitted": "PERMITTED UP TO 1%",
+        "heading_bottle": "IN THIS BOTTLE",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "text_with_icons_W6xt7F": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_QUfVKF": {
+          "type": "text_block",
+          "settings": {
+            "icon": "asterik",
+            "title": "100% Blue Weber Agave",
+            "text": "<p>Grown across highland and lowland terrain, each plant taking years to reach its moment. Nothing else ferments into this bottle.</p>"
+          }
+        },
+        "text_block_AWVWKL": {
+          "type": "text_block",
+          "settings": {
+            "icon": "asterik-2",
+            "title": "NOM 1414 · Vivanco",
+            "text": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep.</p>"
+          }
+        },
+        "text_block_7epdRy": {
+          "type": "text_block",
+          "settings": {
+            "icon": "asterik-3",
+            "title": "Built for the Table",
+            "text": "<p>Clean enough to drink neat, honest enough to build on. Made for the room, not the trophy shelf.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_QUfVKF",
+        "text_block_AWVWKL",
+        "text_block_7epdRy"
+      ],
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "background_color": "#d5995a",
+        "text_color": "#1a1e33",
+        "title": "",
+        "align_text": "left",
+        "desktop_columns_per_row": 3,
+        "icon_color": "#1a1e33",
+        "button_label": "",
+        "button_link": "",
+        "divider": false,
+        "padding_top": 0,
+        "padding_bottom": 124,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 80
+      }
+    },
     "custom_media_gallery_9bgdN4": {
       "type": "custom__media-gallery",
       "blocks": {
@@ -605,6 +791,9 @@
     "custom_story_teaser_grtbFU",
     "custom_rich_text_columns_TwtQDb",
     "custom_product_details_JbJXVn",
+    "custom_rich_text_columns_fapdXh",
+    "custom_additives_table_H9ebp3",
+    "text_with_icons_W6xt7F",
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
     "rich-text",
