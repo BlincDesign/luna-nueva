@@ -77,6 +77,40 @@
         "mobile_padding_bottom": 0
       }
     },
+    "rich_text_VDFB8d": {
+      "type": "rich-text",
+      "blocks": {
+        "divider_fqn9Xz": {
+          "type": "divider",
+          "settings": {
+            "show_icon": true
+          }
+        },
+        "heading_dhcXp3": {
+          "type": "heading",
+          "settings": {
+            "title": "When you drink less, what you drink should mean more."
+          }
+        }
+      },
+      "block_order": [
+        "divider_fqn9Xz",
+        "heading_dhcXp3"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "divider": false,
+        "text_color": "#FFFFFF",
+        "enable_background_image": true,
+        "section_background": "#35373A",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "scrolling_text_PacCqL": {
       "type": "scrolling-text",
       "blocks": {
@@ -417,11 +451,11 @@
             "button_type": "primary",
             "position": "right",
             "button_primary_bg": "rgba(0,0,0,0)",
-            "button_primary_border": "#FFFFFF",
+            "button_primary_border": "#ffffff",
             "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#FFFFFF",
-            "button_primary_border_hover": "#FFFFFF",
-            "button_primary_text_hover": "#2D3135",
+            "button_primary_bg_hover": "#ffffff",
+            "button_primary_border_hover": "#ffffff",
+            "button_primary_text_hover": "#2d3135",
             "button_secondary_bg": "#ffffff",
             "button_secondary_border": "#1c1d1d",
             "button_secondary_text": "#1c1d1d",
@@ -633,7 +667,14 @@
       "settings": {
         "align_text": "center",
         "narrow_column": true,
-        "divider": false
+        "divider": false,
+        "text_color": "",
+        "enable_background_image": false,
+        "section_background": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "newsletter": {
@@ -693,6 +734,7 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
+    "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
