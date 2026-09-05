@@ -202,7 +202,6 @@
           "type": "subheading",
           "settings": {
             "text": "Our Story",
-            "color": "",
             "margin_bottom": 18
           }
         },
@@ -210,22 +209,19 @@
           "type": "heading",
           "settings": {
             "text": "The liquid is authentic to Mexico.",
-            "color": "",
             "margin_bottom": 0
           }
         },
         "heading_rhmfJC": {
           "type": "heading",
           "settings": {
-            "text": "The culture is California.",
-            "color": "#d39655",
+            "text": "<em><strong>The culture is California.</strong></em>",
             "margin_bottom": 18
           }
         },
         "divider_8JXCFj": {
           "type": "divider",
           "settings": {
-            "color": "",
             "margin_bottom": 30
           }
         },
@@ -233,7 +229,6 @@
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
-            "color": "",
             "margin_bottom": 24
           }
         },
@@ -263,7 +258,7 @@
         "lazyload_images": true,
         "image_position": "left",
         "full_width": false,
-        "background_color": "#2d3135",
+        "section_background": "#2d3135",
         "text_color": "#f9f6f1",
         "padding_top": 96,
         "padding_bottom": 96,
