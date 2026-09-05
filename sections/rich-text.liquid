@@ -1,47 +1,84 @@
-{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+{% stylesheet %}
+  
+{% endstylesheet %}
 
-<div class="text-{{ section.settings.align_text }} page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
-  {%- for block in section.blocks -%}
-    <div class="theme-block" {{ block.shopify_attributes }}>
-      {%- case block.type -%}
-        {%- when 'heading' -%}
-          <h2>{{ block.settings.title | escape }}</h2>
-        {%- when 'page' -%}
-          <div class="rte">
-            {%- if block.settings.page_text != blank -%}
-              {{ pages[block.settings.page_text].content }}
-            {%- else -%}
-              {{ 'home_page.onboarding.no_content' | t }}
-            {%- endif -%}
-          </div>
-        {%- when 'text' -%}
-          <div class="rte">
-            {%- if block.settings.text != blank -%}
-              {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
-              {{ block.settings.text }}
-              {%- if block.settings.enlarge_text %}</div>{% endif -%}
-            {%- else -%}
-              {{ 'home_page.onboarding.no_content' | t }}
-            {%- endif -%}
-          </div>
-        {%- when 'button' -%}
-          <div class="rte">
-            <a href="{{ block.settings.link }}" class="btn">
-              {{ block.settings.link_text }}
-            </a>
-          </div>
-      {%- endcase -%}
-    </div>
-  {%- endfor -%}
+{% style %}
+
+  #shopify-section-{{ section.id }} .rich-text{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
+
+      {%- if section.settings.text_color != blank %}
+        color: {{ section.settings.text_color }};
+      {%- endif %}
+  }
+
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }} .rich-text{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="rich-text" {% if section.settings.enable_background_image %} background-image{% endif %}>
+  {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+  <div class="text-{{ section.settings.align_text }} page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+    {%- for block in section.blocks -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2>{{ block.settings.title | escape }}</h2>
+          {%- when 'page' -%}
+            <div class="rte">
+              {%- if block.settings.page_text != blank -%}
+                {{ pages[block.settings.page_text].content }}
+              {%- else -%}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'text' -%}
+            <div class="rte">
+              {%- if block.settings.text != blank -%}
+                {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
+                {{ block.settings.text }}
+                {%- if block.settings.enlarge_text %}</div>{% endif -%}
+              {%- else -%}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'button' -%}
+            <div class="rte">
+              <a href="{{ block.settings.link }}" class="btn">
+                {{ block.settings.link_text }}
+              </a>
+            </div>
+          {%- when 'divider' -%}
+            <div class="rich-text__divider-wrap{% if block.settings.show_icon %} rich-text__divider-wrap--icon{% endif %}">
+              <hr class="rich-text__divider">
+              {%- if block.settings.show_icon -%}
+                <div class="datum" aria-hidden="true"><span class="moon"></span></div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if section.settings.divider -%}</div>{%- endif -%}
 </div>
-
-{%- if section.settings.divider -%}</div>{%- endif -%}
 
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "index-section",
+  "class": "section-rich-text",
   "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
     {
       "type": "select",
       "id": "align_text",
@@ -73,6 +110,75 @@
       "id": "divider",
       "label": "t:sections.rich-text.settings.divider.label",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_background_image",
+      "label": "Enable background image",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
     }
   ],
   "blocks": [
@@ -131,6 +237,19 @@
           "id": "page_text",
           "type": "page",
           "label": "t:sections.rich-text.blocks.page.settings.page_text.label"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show icon",
+          "info": "Displays a moon icon at the center of the divider line.",
+          "default": false
         }
       ]
     }
