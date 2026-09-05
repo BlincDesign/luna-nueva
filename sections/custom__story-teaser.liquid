@@ -151,7 +151,7 @@
               data-block-id="{{ block.id }}"
               {{ block.shopify_attributes }}
             >
-              {{- block.settings.text | escape -}}
+              {{- block.settings.text -}}
             </h2>
           {%- when 'divider' -%}
             <hr class="story-teaser__divider" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
