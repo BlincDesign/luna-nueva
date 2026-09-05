@@ -1,59 +1,52 @@
-{% style %}
-  #shopify-section-{{ section.id }} .story-teaser {
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
-  }
-
-  #shopify-section-{{ section.id }} .story-teaser__inner {
+{% stylesheet %}
+  .story-teaser__inner {
     display: flex;
     align-items: center;
     gap: clamp(32px, 5vw, 88px);
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__inner--right {
+  .story-teaser__inner--right {
     flex-direction: row-reverse;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__media,
-  #shopify-section-{{ section.id }} .story-teaser__content {
+  .story-teaser__media,
+  .story-teaser__content {
     flex: 1 1 0;
     min-width: 0;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap {
+  .story-teaser__image-wrap {
     position: relative;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap--arch {
+  .story-teaser__image-wrap--arch {
     aspect-ratio: 1 / 1.321;
     border-radius: 50% 50% 0 0 / 37.85% 37.85% 0 0;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap--rounded-top {
+  .story-teaser__image-wrap--rounded-top {
     aspect-ratio: 3 / 4;
     border-radius: 16px 16px 0 0;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap--rounded {
+  .story-teaser__image-wrap--rounded {
     aspect-ratio: 3 / 4;
     border-radius: 16px;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap--square {
+  .story-teaser__image-wrap--square {
     aspect-ratio: 1 / 1;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap--none {
+  .story-teaser__image-wrap--none {
     aspect-ratio: 3 / 4;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap image-element,
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap .image-element,
-  #shopify-section-{{ section.id }} .story-teaser__image-wrap .placeholder-svg {
+  .story-teaser__image-wrap image-element,
+  .story-teaser__image-wrap .image-element,
+  .story-teaser__image-wrap .placeholder-svg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -61,7 +54,7 @@
     object-fit: cover;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__caption {
+  .story-teaser__caption {
     margin: 16px 0 0;
     font-family: var(--typeBasePrimary), var(--typeBaseFallback);
     font-size: 12px;
@@ -70,26 +63,40 @@
     opacity: 0.7;
   }
 
-  #shopify-section-{{ section.id }} .story-teaser__divider {
+  .story-teaser__divider {
     border: 0;
     border-top: 1px solid currentColor;
     opacity: 0.35;
   }
 
+  @media screen and (max-width: 900px) {
+    .story-teaser__inner,
+    .story-teaser__inner--right {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+{% endstylesheet %}
+
+{% style %}
+  #shopify-section-{{ section.id }} .story-teaser {
+    background-color: {{ section.settings.section_background }};
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .story-teaser__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
   {% for block in section.blocks %}
     #shopify-section-{{ section.id }} [data-block-id="{{ block.id }}"] {
       margin-bottom: {{ block.settings.margin_bottom }}px;
-      {% if block.settings.color != blank %}
-        color: {{ block.settings.color }};
-      {% endif %}
     }
   {% endfor %}
 
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .story-teaser__inner,
-    #shopify-section-{{ section.id }} .story-teaser__inner--right {
-      flex-direction: column;
-      align-items: stretch;
+    #shopify-section-{{ section.id }} .story-teaser__inner {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
@@ -154,7 +161,12 @@
                 data-block-id="{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
-                {%- render 'button', label: block.settings.label, url: block.settings.link, type: block.settings.style, arrow: true -%}
+                {%- render 'button',
+                  label: block.settings.label,
+                  url: block.settings.link,
+                  type: block.settings.style,
+                  arrow: true
+                -%}
               </div>
             {%- endif -%}
         {%- endcase -%}
@@ -230,7 +242,7 @@
     {
       "type": "color",
       "id": "section_background",
-      "label": "Background color",
+      "label": "Section background",
       "default": "#2D3135"
     },
     {
@@ -318,12 +330,6 @@
           "default": "Heading"
         },
         {
-          "type": "color",
-          "id": "color",
-          "label": "Text color",
-          "info": "Leave blank to use the section's text color."
-        },
-        {
           "type": "range",
           "id": "margin_bottom",
           "label": "Bottom spacing",
@@ -339,12 +345,6 @@
       "type": "divider",
       "name": "Divider",
       "settings": [
-        {
-          "type": "color",
-          "id": "color",
-          "label": "Line color",
-          "info": "Leave blank to use the section's text color."
-        },
         {
           "type": "range",
           "id": "margin_bottom",
@@ -366,12 +366,6 @@
           "id": "text",
           "label": "Text",
           "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
-        },
-        {
-          "type": "color",
-          "id": "color",
-          "label": "Text color",
-          "info": "Leave blank to use the section's text color."
         },
         {
           "type": "range",
@@ -430,7 +424,7 @@
       "blocks": [
         { "type": "subheading" },
         { "type": "heading", "settings": { "text": "The liquid is authentic to Mexico." } },
-        { "type": "heading", "settings": { "text": "The culture is California.", "color": "#D39655", "margin_bottom": 18 } },
+        { "type": "heading", "settings": { "text": "The culture is California.", "margin_bottom": 18 } },
         { "type": "divider" },
         {
           "type": "text",
