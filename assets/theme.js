@@ -1671,7 +1671,8 @@ if (console && console.log) {
       this.noteInput = form.querySelector(selectors.cartNote);
   
       this.cartItemsUpdated = false;
-  
+      this.buildCartRequestId = 0;
+
       if (this.termsCheckbox) {
         config.requiresTerms = true;
       }
@@ -1754,7 +1755,16 @@ if (console && console.log) {
       },
   
       buildCart: function() {
-        theme.cart.getCartProductMarkup().then(this.cartMarkup.bind(this));
+        var requestId = ++this.buildCartRequestId;
+
+        theme.cart.getCartProductMarkup().then(function(text) {
+          // Ignore responses to stale requests superseded by a more recent cart change
+          if (requestId !== this.buildCartRequestId) {
+            return;
+          }
+
+          this.cartMarkup(text);
+        }.bind(this));
       },
   
       cartMarkup: function(text) {
