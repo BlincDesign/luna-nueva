@@ -31,15 +31,24 @@
     pointer-events: none;
   }
 
-  /* Background of the bar */
+  /* Background of the bar. Uses a pseudo-element for the track fill so its
+     0.6 opacity doesn't get overridden by the show/hide opacity toggled via
+     JS on the .drag-scroller__bar element itself. */
   .drag-scroller__bar {
     position: relative;
     height: 1px;
     margin-top: 12px;
-    background: rgba(249, 246, 241, 0.22);
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.3s ease;
+  }
+
+  .drag-scroller__bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    opacity: 0.6;
   }
 
   /* color of the bar */
@@ -47,7 +56,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: rgb(249, 246, 241);
+    background: currentColor;
     transform-origin: left center;
     transform: scaleX(1);
     will-change: transform;
