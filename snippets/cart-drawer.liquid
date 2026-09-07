@@ -22,12 +22,12 @@
               <span>Close</span>
             </button>
           </div>
-          {% if settings.drawer_message != blank %}
-            <div class="drawer__message">
-              <p>{{ settings.drawer_message }}</p>
-            </div>
-          {% endif %}
         </div>
+        {% if settings.drawer_message != blank %}
+          <div class="drawer__message">
+            <p>{{ settings.drawer_message }}</p>
+          </div>
+        {% endif %}
       </div>
 
       <div class="drawer__inner">
