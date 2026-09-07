@@ -17,7 +17,7 @@
        --btn-secondary-color-hover: {{ section.settings.button_secondary_text_hover | default: "#ffffff" }};
      }
 
-     .theme-block__button--{{ section.id }} .button.button--link {
+     .theme-__button--{{ section.id }} .button.button--link {
        --btn-link-color: {{ section.settings.button_link_text | default: "#1c1d1d" }};
        --btn-link-color-hover: {{ section.settings.button_link_text_hover | default: "#7a7a7a" }};
      }
@@ -196,22 +196,6 @@
       ]
     },
     {
-      "type": "select",
-      "id": "position",
-      "label": "Position",
-      "default": "right",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ]
-    },
-    {
       "type": "header",
       "content": "Primary",
       "visible_if": "{{ section.settings.button_type == 'primary' }}"
@@ -268,61 +252,61 @@
       "id": "button_secondary_bg",
       "label": "Background",
       "default": "#ffffff",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "color",
       "id": "button_secondary_border",
       "label": "Border",
       "default": "#1c1d1d",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "color",
       "id": "button_secondary_text",
       "label": "Text",
       "default": "#1c1d1d",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "color",
       "id": "button_secondary_bg_hover",
       "label": "Background (hover)",
       "default": "#1c1d1d",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "color",
       "id": "button_secondary_border_hover",
       "label": "Border (hover)",
       "default": "#1c1d1d",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "color",
       "id": "button_secondary_text_hover",
       "label": "Text (hover)",
       "default": "#ffffff",
-      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
     },
     {
       "type": "header",
       "content": "Link",
-      "visible_if": "{{ block.settings.button_type == 'link' }}"
+      "visible_if": "{{ section.settings.button_type == 'link' }}"
     },
     {
       "type": "color",
       "id": "button_link_text",
       "label": "Text",
       "default": "#1c1d1d",
-      "visible_if": "{{ block.settings.button_type == 'link' }}"
+      "visible_if": "{{ section.settings.button_type == 'link' }}"
     },
     {
       "type": "color",
       "id": "button_link_text_hover",
       "label": "Text (hover)",
       "default": "#7a7a7a",
-      "visible_if": "{{ block.settings.button_type == 'link' }}"
+      "visible_if": "{{ section.settings.button_type == 'link' }}"
     },
     {
       "type": "checkbox",
