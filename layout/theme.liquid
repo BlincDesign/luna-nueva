@@ -32,8 +32,6 @@
   {%- render 'css-variables' -%}
   
   {{ 'custom.css' | asset_url | stylesheet_tag }}
-  {{ 'custom__cart-drawer.css' | asset_url | stylesheet_tag }}
-  
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
