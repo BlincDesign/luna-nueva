@@ -157,6 +157,33 @@
             "text": "<p><strong>Tequila Añejo · 13 Months · 40% Alc/Vol</strong></p>",
             "position": "left"
           }
+        },
+        "detail_row_q4LxNb": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<p>A bold spirit with a velvety body.</p>",
+            "icon": "droplet"
+          }
+        },
+        "detail_row_tpf6Qx": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<p>A bold spirit with a velvety body.</p>",
+            "icon": "droplet"
+          }
+        },
+        "detail_row_Perrig": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<p>A bold spirit with a velvety body.</p>",
+            "icon": "droplet"
+          }
         }
       },
       "block_order": [
@@ -164,7 +191,10 @@
         "preheading_mUdpfK",
         "text_dVNijU",
         "divider_YyYDQe",
-        "text_HFHKk6"
+        "text_HFHKk6",
+        "detail_row_q4LxNb",
+        "detail_row_tpf6Qx",
+        "detail_row_Perrig"
       ],
       "name": "Rich text columns",
       "settings": {
@@ -172,10 +202,11 @@
         "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
-        "left_vertical_align": "flex-end",
+        "left_vertical_align": "flex-start",
         "right_column_width": 50,
         "right_text_align": "left",
-        "right_vertical_align": "flex-end",
+        "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
         "padding_top": 120,
         "padding_bottom": 120,
         "mobile_padding_top": 80,
