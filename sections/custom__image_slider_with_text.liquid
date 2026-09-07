@@ -173,15 +173,16 @@
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__slides {
-      order: -1;
+      flex: 0 0 100%;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__grid {
-      grid-template-columns: 1fr;
+      flex-direction: row-reverse;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__content {
       max-width: 100%;
+      flex: 0 0 100%;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__heading {
