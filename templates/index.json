@@ -748,6 +748,72 @@
         "divider": false
       }
     },
+    "custom_image_columns_WKgQjK": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "service_WBNM3L": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-margarita.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_tJGatp": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-paloma.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_xzRJne": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-horchata.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_9GaDAh": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-oldfashioned.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        }
+      },
+      "block_order": [
+        "service_WBNM3L",
+        "service_tJGatp",
+        "service_xzRJne",
+        "service_9GaDAh"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "section_background": "#aebfb4",
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 4,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_services_Q69BKT": {
       "type": "custom__services",
       "blocks": {
@@ -882,6 +948,7 @@
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
     "rich-text",
+    "custom_image_columns_WKgQjK",
     "custom_services_Q69BKT",
     "newsletter"
   ]
