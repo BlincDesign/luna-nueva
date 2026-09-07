@@ -9,76 +9,76 @@
 -%}
 
 {%- style -%}
- #shopify-section-{{ section.id }}{
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-      background-color: {{ section.settings.section_background }};
-  }
+  #shopify-section-{{ section.id }}{
+       padding-top: {{ section.settings.padding_top }}px;
+       padding-bottom: {{ section.settings.padding_bottom }}px;
+       background-color: {{ section.settings.section_background }};
+   }
 
-  @media only screen and (max-width:589px){
-    #shopify-section-{{ section.id }}{
-        padding-top: {{ section.settings.padding_top_mb }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-    }
-  }
+   @media only screen and (max-width:589px){
+     #shopify-section-{{ section.id }}{
+         padding-top: {{ section.settings.padding_top_mb }}px;
+         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+     }
+   }
 
-  #shopify-section-{{ section.id }} .image-columns__step-number {
-    color: {{ section.settings.number_color }};
-  }
+   #shopify-section-{{ section.id }} .image-columns__step-number {
+     color: {{ section.settings.number_color }};
+   }
 
-  #shopify-section-{{ section.id }} .image-columns__menu {
-    background-color: {{ section.settings.card_background }};
-    color: {{ section.settings.card_text_color }};
-  }
+   #shopify-section-{{ section.id }} .image-columns__menu {
+     background-color: {{ section.settings.card_background }};
+     color: {{ section.settings.card_text_color }};
+   }
 
-  #shopify-section-{{ section.id }} .image-columns__service-number,
-  #shopify-section-{{ section.id }} .image-columns__note {
-    color: {{ section.settings.accent_color }};
-  }
+   #shopify-section-{{ section.id }} .image-columns__service-number,
+   #shopify-section-{{ section.id }} .image-columns__note {
+     color: {{ section.settings.accent_color }};
+   }
 
-  #shopify-section-{{ section.id }} .drag-scroller__bar {
-    background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
-  }
+   #shopify-section-{{ section.id }} .drag-scroller__bar {
+     background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
+   }
 
-  #shopify-section-{{ section.id }} .drag-scroller__bar i {
-    background-color: {{ section.settings.track_color }};
-  }
+   #shopify-section-{{ section.id }} .drag-scroller__bar i {
+     background-color: {{ section.settings.track_color }};
+   }
 
-  #shopify-section-{{ section.id }} .image-columns__grid {
-    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
-  }
+   #shopify-section-{{ section.id }} .image-columns__grid {
+     grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+   }
 
-  #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
-    flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
-  }
+   #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+     flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
+   }
 
-  @media screen and (min-width: 901px) {
-    #shopify-section-{{ section.id }} .image-columns__inner drag-scroller {
-      --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
-      margin-right: calc(0px - var(--image-columns-bleed));
-      padding-right: var(--image-columns-bleed);
-    }
-  }
+   @media screen and (min-width: 901px) {
+     #shopify-section-{{ section.id }} .image-columns__inner drag-scroller {
+       --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+       margin-right: calc(0px - var(--image-columns-bleed));
+       padding-right: var(--image-columns-bleed);
+     }
+   }
 
-  @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .image-columns__grid {
-      grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
-    }
+   @media screen and (max-width: 900px) {
+     #shopify-section-{{ section.id }} .image-columns__grid {
+       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
+     }
 
-    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
-      flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
-    }
-  }
+     #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+       flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
+     }
+   }
 
-  @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .image-columns__grid {
-      grid-template-columns: 1fr;
-    }
+   @media screen and (max-width: 589px) {
+     #shopify-section-{{ section.id }} .image-columns__grid {
+       grid-template-columns: 1fr;
+     }
 
-    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
-      flex-basis: min(78vw, 352px);
-    }
-  }
+     #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+       flex-basis: min(78vw, 352px);
+     }
+   }
 {%- endstyle -%}
 
 {%- capture blocks_markup -%}
@@ -335,23 +335,65 @@
       "label": "Section background",
       "default": "#aebfb4"
     },
-    { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
-    { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
-    { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
-    { "type": "color", "id": "accent_color", "label": "Service accent color", "default": "#9b3a15" },
-    { "type": "color", "id": "track_color", "label": "Slider scroll indicator color", "default": "#2d3135" },
-    { "type": "header", "content": "Layout" },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Step number color",
+      "default": "#9b3a15"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Service card background",
+      "default": "#f9f6f1"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Service card text color",
+      "default": "#2d3135"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Service accent color",
+      "default": "#9b3a15"
+    },
+    {
+      "type": "color",
+      "id": "track_color",
+      "label": "Slider scroll indicator color",
+      "default": "#2d3135"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
     {
       "type": "select",
       "id": "layout_type",
       "label": "Layout type",
       "default": "grid",
       "options": [
-        { "value": "grid", "label": "Grid" },
-        { "value": "slider", "label": "Slider" }
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
       ]
     },
-    { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Number of columns",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
     {
       "type": "header",
       "content": "Desktop spacing"
@@ -406,9 +448,23 @@
       "type": "step",
       "name": "Step",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "number", "label": "Number", "default": "01" },
-        { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The land decides" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "The land decides"
+        },
         {
           "type": "richtext",
           "id": "text",
@@ -421,9 +477,23 @@
       "type": "service",
       "name": "Service",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "number", "label": "Number", "default": "01" },
-        { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Watermelon Margarita" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Watermelon Margarita"
+        },
         {
           "type": "richtext",
           "id": "ingredients",
@@ -444,7 +514,9 @@
     {
       "name": "Image columns",
       "blocks": [
-        { "type": "step" },
+        {
+          "type": "step"
+        },
         {
           "type": "step",
           "settings": {
@@ -464,6 +536,12 @@
       ]
     }
   ],
-  "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
+  "disabled_on": {
+    "groups": [
+      "footer",
+      "header",
+      "custom.popups"
+    ]
+  }
 }
 {% endschema %}
