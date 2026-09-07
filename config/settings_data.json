@@ -65,6 +65,7 @@
     "quick_shop_enable": true,
     "enable_swatches": true,
     "cart_icon": "bag",
+    "drawer_message": "Sample contents. Live products and pricing come from Shopify.",
     "cart_note": "Shipping and tax calculated at checkout. 21+ signature required on delivery.",
     "social_facebook_link": "",
     "social_twitter_link": "",
