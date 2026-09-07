@@ -21,6 +21,11 @@
             </button>
           </div>
         </div>
+        {% if settings.drawer_message != blank %}
+          <div class="drawer__message">
+            {{ settings.drawer_message }}
+          </div>
+        {% endif %}
       </div>
 
       <div class="drawer__inner">
@@ -56,21 +61,19 @@
 
           <div class="cart__item-row cart__savings text-center hide" data-savings></div>
 
-          {% if settings.show_cart_note %}
-            <div class="cart__item-row text-center ajaxcart__note">
-              {% if settings.cart_note != blank %}
-                <small>
-                  {{ settings.cart_note -}}
-                  <br />
-                </small>
-              {% else %}
-                <small>
-                  {{ 'cart.general.shipping_at_checkout' | t -}}
-                  <br />
-                </small>
-              {% endif %}
-            </div>
-          {% endif %}
+          <div class="cart__item-row text-center ajaxcart__note">
+            {% if settings.cart_note != blank %}
+              <small>
+                {{ settings.cart_note -}}
+                <br />
+              </small>
+            {% else %}
+              <small>
+                {{ 'cart.general.shipping_at_checkout' | t -}}
+                <br />
+              </small>
+            {% endif %}
+          </div>
 
           {% if settings.cart_terms_conditions_enable %}
             <div class="cart__item-row cart__terms">
