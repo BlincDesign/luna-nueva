@@ -25,12 +25,13 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__grid {
-    display: grid;
-    grid-template-columns: 38.77fr 61.23fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__content {
+    flex: 0 0 40%;
     max-width: {{ section.settings.content_width }}px;
     padding: 55px 70px;
   }
@@ -107,6 +108,7 @@
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
+    flex: 0 0 60%;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
