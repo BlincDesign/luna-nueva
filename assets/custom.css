@@ -646,3 +646,16 @@ a.pdl__right {
 #CartDrawer .drawer__scrollable {
   padding-top: 0;
 }
+
+.cart__checkout-wrapper .button {
+    justify-content: center;
+}
+
+.cart__checkout-wrapper .button.button--primary {
+   --btn-bg: transparent;
+   --btn-border: transparent;
+   --btn-color: #fff;
+   --btn-hover-bg: #2D3135;
+   --btn-hover-border: #2D3135;
+   --btn-hover-color: #fff;
+}
