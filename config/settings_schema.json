@@ -63,6 +63,12 @@
         "default": "#ffffff"
       },
       {
+        "type": "color",
+        "id": "highlight_color",
+        "label": "Highlight Color",
+        "default": "#D39655"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header_header"
       },
@@ -219,6 +225,135 @@
         "id": "color_large_image_bg",
         "label": "t:settings_schema.colors.settings.color_large_image_bg.label",
         "default": "#1c1d1d"
+      }
+    ]
+  },
+  {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "range",
+        "id": "button_border_radius",
+        "label": "Border radius",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "button_font_size",
+        "label": "Font size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 12
+      },
+      {
+        "type": "paragraph",
+        "content": "Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
+      },
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg",
+        "label": "Background",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border_hover",
+        "label": "Border (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border_hover",
+        "label": "Border (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Link"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text_hover",
+        "label": "Text (hover)",
+        "default": "#7a7a7a"
       }
     ]
   },
@@ -761,6 +896,16 @@
             "label": "t:settings_schema.cart.settings.cart_icon.options.cart.label"
           }
         ]
+      },
+      {
+        "type": "text",
+        "id": "drawer_message",
+        "label": "Drawer message"
+      },
+      {
+        "type": "text",
+        "id": "cart_note",
+        "label": "Cart note"
       },
       {
         "type": "checkbox",
