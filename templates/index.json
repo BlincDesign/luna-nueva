@@ -157,6 +157,77 @@
         "padding_bottom": 15
       }
     },
+    "custom_rich_text_columns_86WmPz": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_Gc84Dm": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_QBJTAb": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_taCkkw": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
+            "position": "right"
+          }
+        },
+        "button_fWYw7n": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP →",
+            "button_type": "secondary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_Gc84Dm",
+        "heading_QBJTAb",
+        "text_taCkkw",
+        "button_fWYw7n"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#2d3135",
+        "text_color": "#f9f6f1",
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
+    },
     "slideshow_Gj6CyA": {
       "type": "slideshow",
       "blocks": {
@@ -374,9 +445,14 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "section_background": "#2d3135",
         "text_color": "#1a1e33",
         "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
         "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
         "padding_top": 120,
         "padding_bottom": 120,
         "mobile_padding_top": 80,
@@ -792,6 +868,7 @@
     "custom_image_slider_with_text_fFfUKJ",
     "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
+    "custom_rich_text_columns_86WmPz",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
     "custom_story_teaser_grtbFU",
