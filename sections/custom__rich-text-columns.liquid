@@ -23,12 +23,21 @@
       --btn-link-color-hover: {{ block.settings.button_link_text_hover | default: "#7a7a7a" }};
     }
 
+    #block-{{ block.id }} .rich-text__divider-wrapper {
+      display: flex;
+      {%- if block.settings.position == 'left' -%}
+        justify-content: {{ section.settings.left_text_align }}
+      {%endif %}
+      {%- if block.settings.position == 'right' -%}
+        justify-content: {{ section.settings.right_text_align }}
+      {%endif %}
+    }
+
     #block-{{ block.id }} .rich-text__divider {
       position: relative;
       width: {{block.settings.divider_width}}%;
       height: {{ block.settings.divider_height }}px;
       background: {{ block.settings.divider_bg }};
-      margin-inline: auto;
     }
 
     {% if block.settings.enable_divider %}
