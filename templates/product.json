@@ -200,10 +200,10 @@
       "settings": {
         "section_background": "#2d3135",
         "text_color": "#f9f6f1",
-        "left_column_width": 50,
+        "left_column_width": 20,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
-        "right_column_width": 50,
+        "right_column_width": 80,
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
