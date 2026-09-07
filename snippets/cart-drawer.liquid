@@ -10,24 +10,21 @@
     >
       <div class="drawer__fixed-header">
         <div class="drawer__header appear-animation appear-delay-1">
-          <div class="drawer__title">Your Bag</div>
-          <div class="drawer__close">
-            <button type="button" class="drawer__close-button js-drawer-close">
-              {% comment %}
-                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64">
-                  <title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/>
-                </svg>
-                <span class="cart-drawer__close-label">{{ 'cart.general.close_cart' | t }}</span>
-              {% endcomment %}
-              <span>Close</span>
-            </button>
+          <div class="drawer__controls">
+            <div class="drawer__title">Your Bag</div>
+            <div class="drawer__close">
+              <button type="button" class="drawer__close-button js-drawer-close">
+                <span>Close</span>
+              </button>
+            </div>
           </div>
+          
+          {% if settings.drawer_message != blank %}
+            <div class="drawer__top-message">
+              <p>{{ settings.drawer_message }}</p>
+            </div>
+          {% endif %}
         </div>
-        {% comment %} {% if settings.drawer_message != blank %}
-          <div class="drawer__message">
-            <p>{{ settings.drawer_message }}</p>
-          </div>
-        {% endif %} {% endcomment %}
       </div>
 
       <div class="drawer__inner">
@@ -63,7 +60,7 @@
 
           <div class="cart__item-row cart__savings text-center hide" data-savings></div>
 
-          <div class="cart__item-row text-center ajaxcart__note">
+          <div class="cart__item-row ajaxcart__note">
             {% if settings.cart_note != blank %}
               <small>
                 {{ settings.cart_note -}}
@@ -91,15 +88,35 @@
           {% endif %}
 
           <div class="cart__checkout-wrapper">
-            <button
-              type="submit"
-              name="checkout"
-              data-terms-required="{{ settings.cart_terms_conditions_enable }}"
-              class="btn cart__checkout"
-            >
-              <span>{{ 'cart.general.checkout' | t }}</span>
-              <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
-            </button>
+            {% comment %}
+              <button
+                type="submit"
+                name="checkout"
+                data-terms-required="{{ settings.cart_terms_conditions_enable }}"
+                class="btn cart__checkout"
+              >
+                <span>{{ 'cart.general.checkout' | t }}</span>
+                <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            {% endcomment %}
+
+            {%- liquid
+              assign checkout_label = 'cart.general.checkout' | t
+
+              capture checkout_attributes
+                echo 'data-terms-required="'
+                echo settings.cart_terms_conditions_enable
+                echo '" name="checkout"'
+              endcapture
+            -%}
+
+            {%- render 'button',
+              label: checkout_label,
+              as: 'button',
+              type: 'primary',
+              class: 'cart__checkout',
+              attributes: checkout_attributes
+            -%}
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
               <div class="additional-checkout-buttons additional-checkout-buttons--vertical">

@@ -34,19 +34,21 @@
     min-width: 0;
   }
 
+  .media-gallery__grid .spacer {
+      max-width: 50px;
+  }
+
+
   @media screen and (min-width: 901px) {
     .media-gallery__inner--flush-right {
       --media-gallery-right-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
     }
 
     .media-gallery__inner--flush-right .media-gallery__media {
-      /* Extend from the container's right edge to the viewport edge while
-         preserving the page-width container's left alignment. */
       margin-right: calc(0px - var(--media-gallery-right-bleed));
     }
 
     .media-gallery__inner--flush-right .drag-scroller__bar {
-      /* Keep the progress bar aligned to the original container column. */
       width: calc(100% - var(--media-gallery-right-bleed));
     }
   }
@@ -229,6 +231,7 @@
               tile_width_mobile: section.settings.tile_width_mobile_max
             %}
           {% endfor %}
+          <div class="spacer"></div>
         </div>
       {% endcapture %}
       {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
