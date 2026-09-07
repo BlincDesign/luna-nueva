@@ -606,3 +606,68 @@ a.pdl__right {
 
 
 /* Cart drawer start */
+
+#CartDrawer .drawer__fixed-header {
+  padding-top: 30px;
+  background: var(--colorDrawers);
+  z-index: 20;
+  height: unset;
+}
+
+.drawer__top-message p {
+  margin: 10px 0 0;
+  font-size: 10px;
+}
+
+#CartDrawer.drawer {
+  --colorDrawerBorder: rgba(249, 246, 241, 0.22);
+}
+
+#CartDrawer .cart__item--image {
+  align-self: start;
+  background: rgba(249, 246, 241, 0.05);
+  border-radius: 2px;
+  padding: 8px;
+}
+
+#CartDrawer .cart__item--image .image-wrap {
+  background: transparent;
+}
+
+#CartDrawer .cart__item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--colorDrawerBorder);
+}
+
+#CartDrawer .js-qty__num {
+  border-radius: 30px;
+}
+
+#CartDrawer .js-qty__num:hover {
+  background: none;
+}
+
+#CartDrawer .cart__item:nth-last-child(1) {
+  border: none;
+}
+
+#CartDrawer.drawer__inner .drawer__scrollable {
+  padding-top: 0;
+}
+
+#CartDrawer .drawer__scrollable {
+  padding-top: 0;
+}
+
+.cart__checkout-wrapper .button {
+  justify-content: center;
+}
+
+.cart__checkout-wrapper .button.button--primary {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-color: #fff;
+  --btn-hover-bg: #1e2226;
+  --btn-hover-border: #1e2226;
+  --btn-hover-color: #fff;
+}
