@@ -90,7 +90,7 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__text h5 {
-    font-size: {{ section.settings.text_size }}px;
+    font-size: 20px;
     line-height: 1.6;
   }
 
@@ -189,7 +189,7 @@
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__text {
-      font-size: {{ section.settings.mobile_text_size }}px;
+      font-size: 16px;
     }
   }
 {% endstyle %}
@@ -467,20 +467,6 @@
     },
     {
       "type": "header",
-      "content": "Font size"
-    },
-    {
-      "type": "range",
-      "id": "text_size",
-      "label": "Text size",
-      "min": 10,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "header",
       "content": "Text color"
     },
     {
@@ -500,20 +486,6 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#000000"
-    },
-    {
-      "type": "header",
-      "content": "Mobile font size"
-    },
-    {
-      "type": "range",
-      "id": "mobile_text_size",
-      "label": "Mobile text size",
-      "min": 10,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "default": 15
     },
     {
       "type": "header",
