@@ -606,11 +606,40 @@ a.pdl__right {
 
 
 /* Cart drawer start */
-.drawer .js-qty__num {
-    border-radius: 30px;
+
+#CartDrawer.drawer {
+    --colorDrawerBorder: rgba(249,246,241,.22);
+}
+
+#CartDrawer .cart__item--image {
+  align-self: start;
+  background: rgba(249, 246, 241, 0.05);
+  border-radius: 2px;
+  padding: 8px;
 }
 
 #CartDrawer .cart__item--image .image-wrap {
   background: transparent;
 }
 
+
+#CartDrawer.drawer .cart__item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--colorDrawerBorder);
+}
+
+#CartDrawer.drawer .js-qty__num {
+    border-radius: 30px;
+}
+
+#CartDrawer.drawer .cart__item:nth-last-child(1) {
+    border: none;
+}
+
+#CartDrawer.drawer__inner .drawer__scrollable {
+    padding-top: 0;
+}
+
+#CartDrawer .drawer__scrollable {
+    padding-top: 0;
+}
