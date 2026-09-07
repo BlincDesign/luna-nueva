@@ -16,6 +16,7 @@
               <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64">
                 <title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/>
               </svg>
+              <span class="cart-drawer__close-label">{{ 'cart.general.close_cart' | t }}</span>
               <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
             </button>
           </div>
@@ -91,7 +92,8 @@
               data-terms-required="{{ settings.cart_terms_conditions_enable }}"
               class="btn cart__checkout"
             >
-              {{ 'cart.general.checkout' | t }}
+              <span>{{ 'cart.general.checkout' | t }}</span>
+              <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
             </button>
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
