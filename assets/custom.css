@@ -630,7 +630,10 @@ a.pdl__right {
 
 #CartDrawer.drawer .js-qty__num {
     border-radius: 30px;
-    overflow: hidden;
+}
+
+#CartDrawer.drawer .js-qty__num:hover {
+    background: none;
 }
 
 #CartDrawer.drawer .cart__item:nth-last-child(1) {
