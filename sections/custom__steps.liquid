@@ -1,3 +1,13 @@
+{%- liquid
+  assign layout_type = section.settings.layout_type | default: 'grid'
+  assign columns = section.settings.columns | default: 3
+  assign tablet_columns = columns
+  if tablet_columns > 2
+    assign tablet_columns = 2
+  endif
+  assign image_size_vw = 100 | divided_by: columns
+-%}
+
 {%- style -%}
   #shopify-section-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
@@ -8,70 +18,178 @@
     color: {{ section.settings.text_color }};
   }
 
-  #shopify-section-{{ section.id }} .steps-section__inner {
+  #shopify-section-{{ section.id }} .image-columns__inner {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .steps-section__number {
+  #shopify-section-{{ section.id }} .image-columns__step-number {
     color: {{ section.settings.number_color }};
   }
 
+  #shopify-section-{{ section.id }} .image-columns__menu {
+    background-color: {{ section.settings.card_background }};
+    color: {{ section.settings.card_text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__service-number,
+  #shopify-section-{{ section.id }} .image-columns__note {
+    color: {{ section.settings.accent_color }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar {
+    background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar i {
+    background-color: {{ section.settings.track_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__grid {
+    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+    flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
+  }
+
+  @media screen and (min-width: 901px) {
+    #shopify-section-{{ section.id }} .image-columns__inner drag-scroller {
+      --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      margin-right: calc(0px - var(--image-columns-bleed));
+      padding-right: var(--image-columns-bleed);
+    }
+  }
+
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .steps-section__inner {
+    #shopify-section-{{ section.id }} .image-columns__inner {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .image-columns__grid {
+      grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
+    }
+
+    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+      flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
+    }
+  }
+
+  @media screen and (max-width: 589px) {
+    #shopify-section-{{ section.id }} .image-columns__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+      flex-basis: min(78vw, 352px);
     }
   }
 {%- endstyle -%}
 
-<div class="steps-section">
-  <div class="page-width steps-section__inner">
-    {%- if section.blocks.size > 0 -%}
-      <div class="steps">
-        {%- for block in section.blocks -%}
-          <article class="step steps-section__item" {{ block.shopify_attributes }}>
-            <figure class="steps-section__image-wrap">
-              {%- if block.settings.image != blank -%}
-                {%- render 'image-element',
-                  img: block.settings.image,
-                  widths: '360, 540, 720, 900, 1080',
-                  sizeVariable: '33vw',
-                  fallback: '100vw',
-                  loading: 'lazy',
-                  classes: 'steps-section__image'
-                -%}
-              {%- else -%}
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+{%- capture blocks_markup -%}
+  {%- for block in section.blocks -%}
+    <article class="image-columns__item" {{ block.shopify_attributes }}>
+      <figure class="image-columns__image-wrap">
+        {%- if block.settings.image != blank -%}
+          {%- render 'image-element',
+            img: block.settings.image,
+            widths: '360, 540, 720, 900, 1080',
+            sizeVariable: image_size_vw | append: 'vw',
+            fallback: '100vw',
+            loading: 'lazy',
+            classes: 'image-columns__image'
+          -%}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </figure>
+
+      {%- case block.type -%}
+        {%- when 'step' -%}
+          {%- if block.settings.number != blank -%}
+            <h2 class="image-columns__step-number">{{ block.settings.number }}</h2>
+          {%- endif -%}
+
+          {%- if block.settings.heading != blank -%}
+            <h3 class="image-columns__step-heading">{{ block.settings.heading }}</h3>
+          {%- endif -%}
+
+          {%- if block.settings.text != blank -%}
+            <div class="image-columns__step-text rte">{{ block.settings.text }}</div>
+          {%- endif -%}
+
+        {%- when 'service' -%}
+          <div class="image-columns__menu">
+            <div class="image-columns__menu-header">
+              {%- if block.settings.title != blank -%}
+                <h3 class="image-columns__service-title">{{ block.settings.title }}</h3>
               {%- endif -%}
-            </figure>
 
-            {%- if block.settings.number != blank -%}
-              <h2 class="steps-section__number">{{ block.settings.number }}</h2>
+              {%- if block.settings.number != blank -%}
+                <span class="image-columns__service-number">{{ block.settings.number }}</span>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.ingredients != blank -%}
+              <div class="image-columns__ingredients rte">{{ block.settings.ingredients }}</div>
             {%- endif -%}
 
-            {%- if block.settings.heading != blank -%}
-              <h3 class="steps-section__step-heading">{{ block.settings.heading }}</h3>
+            {%- if block.settings.note != blank -%}
+              <div class="image-columns__note rte">{{ block.settings.note }}</div>
             {%- endif -%}
+          </div>
+      {%- endcase -%}
+    </article>
+  {%- endfor -%}
+{%- endcapture -%}
 
-            {%- if block.settings.text != blank -%}
-              <div class="steps-section__step-text rte">{{ block.settings.text }}</div>
-            {%- endif -%}
-          </article>
-        {%- endfor -%}
-      </div>
+<div class="image-columns">
+  <div class="page-width image-columns__inner">
+    {%- if section.blocks.size > 0 -%}
+      {%- if layout_type == 'slider' -%}
+        {%- capture rail_markup -%}<div class="image-columns__rail">{{ blocks_markup }}</div>{%- endcapture -%}
+        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
+      {%- else -%}
+        <div class="image-columns__grid">
+          {{ blocks_markup }}
+        </div>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </div>
 
 {% stylesheet %}
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(24px, 3.4vw, 52px);
+  .image-columns {
+    --image-columns-gap-grid: clamp(24px, 3.4vw, 52px);
+    --image-columns-gap-rail: clamp(16px, 1.9vw, 28px);
   }
 
-  .steps-section__image-wrap {
+  .image-columns__grid {
+    display: grid;
+    gap: var(--image-columns-gap-grid);
+  }
+
+  .image-columns__rail {
+    display: flex;
+    gap: var(--image-columns-gap-rail);
+    width: max-content;
+    min-width: 100%;
+    padding: 0 20px 19px 0;
+  }
+
+  .image-columns__rail .image-columns__item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .image-columns__item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .image-columns__image-wrap {
     position: relative;
     aspect-ratio: 1 / 1.25;
     margin: 0 0 26px;
@@ -80,9 +198,9 @@
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  .steps-section__image-wrap image-element,
-  .steps-section__image-wrap .image-element,
-  .steps-section__image-wrap .placeholder-svg {
+  .image-columns__image-wrap image-element,
+  .image-columns__image-wrap .image-element,
+  .image-columns__image-wrap .placeholder-svg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -90,50 +208,234 @@
     object-fit: cover;
   }
 
-  .steps-section__number {
+  .image-columns__step-number {
     margin-bottom: 19px;
     font-family: var(--typeBasePrimary);
     font-weight: 700;
   }
 
-  .steps-section__step-heading {
+  .image-columns__step-heading {
     margin: 0 0 11px;
     font-size: 24px;
   }
 
-  @media screen and (max-width: 900px) {
-    .steps {
-      grid-template-columns: 1fr;
-    }
+  .image-columns__step-text {
+    margin: 0;
+  }
 
-    .steps {
+  .image-columns__menu {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 160px;
+    margin-top: 26px;
+    padding: 16px 17px 14px;
+    border: 1px solid rgba(45, 49, 53, 0.18);
+  }
+
+  .image-columns__menu-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(45, 49, 53, 0.32);
+  }
+
+  .image-columns__service-title {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.14;
+  }
+
+  .image-columns__service-number {
+    flex: none;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+
+  .image-columns__ingredients {
+    padding: 4px 0 2px;
+  }
+
+  .image-columns__ingredients p {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin: 0;
+    padding: 8px 0;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .image-columns__ingredients p::before {
+    order: 1;
+    flex: 1 1 auto;
+    border-bottom: 1px dotted rgba(45, 49, 53, 0.38);
+    content: '';
+    transform: translateY(-0.2em);
+  }
+
+  .image-columns__ingredients strong {
+    order: 2;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .image-columns__note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(45, 49, 53, 0.32);
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  .image-columns__note p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    .image-columns__grid {
       gap: 45px;
     }
   }
 
   @media screen and (max-width: 589px) {
-    .steps-section__image-wrap {
+    .image-columns__image-wrap {
       margin-bottom: 22px;
+    }
+
+    .image-columns__rail {
+      gap: 16px;
+    }
+
+    .image-columns__service-title {
+      font-size: 21px;
+    }
+
+    .image-columns__menu {
+      padding: 14px;
     }
   }
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "Steps",
+  "name": "Image columns",
   "tag": "section",
-  "class": "section-steps background-image",
+  "class": "section-image-columns background-image",
   "settings": [
     { "type": "header", "content": "Colors and background" },
     { "type": "color", "id": "background_color", "label": "Background color", "default": "#aebfb4" },
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background image position",
+      "default": "center center",
+      "options": [
+        { "value": "left top", "label": "Top left" },
+        { "value": "center top", "label": "Top center" },
+        { "value": "right top", "label": "Top right" },
+        { "value": "left center", "label": "Center left" },
+        { "value": "center center", "label": "Center" },
+        { "value": "right center", "label": "Center right" },
+        { "value": "left bottom", "label": "Bottom left" },
+        { "value": "center bottom", "label": "Bottom center" },
+        { "value": "right bottom", "label": "Bottom right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background image size",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" },
+        { "value": "auto", "label": "Original size" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_repeat",
+      "label": "Background image repeat",
+      "default": "no-repeat",
+      "options": [
+        { "value": "no-repeat", "label": "Don't repeat" },
+        { "value": "repeat", "label": "Repeat" }
+      ]
+    },
     { "type": "color", "id": "text_color", "label": "Text color", "default": "#2d3135" },
     { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
+    { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
+    { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
+    { "type": "color", "id": "accent_color", "label": "Service accent color", "default": "#9b3a15" },
+    { "type": "color", "id": "track_color", "label": "Slider scroll indicator color", "default": "#2d3135" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout type",
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "slider", "label": "Slider" }
+      ]
+    },
+    { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
     { "type": "header", "content": "Desktop spacing" },
-    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 120 },
-    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 120 },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
     { "type": "header", "content": "Mobile spacing" },
-    { "type": "range", "id": "mobile_padding_top", "label": "Padding top", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 72 },
-    { "type": "range", "id": "mobile_padding_bottom", "label": "Padding bottom", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 72 }
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
   ],
   "blocks": [
     {
@@ -143,17 +445,58 @@
         { "type": "image_picker", "id": "image", "label": "Image" },
         { "type": "text", "id": "number", "label": "Number", "default": "01" },
         { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The land decides" },
-        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>" }
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+        }
+      ]
+    },
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Watermelon Margarita" },
+        {
+          "type": "richtext",
+          "id": "ingredients",
+          "label": "Ingredients",
+          "info": "Use one paragraph per ingredient and bold the quantity, for example: Luna Nueva Silver <strong>2 oz</strong>.",
+          "default": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>"
+        },
+        {
+          "type": "richtext",
+          "id": "note",
+          "label": "Serve note",
+          "default": "<p>Lime wheel or a watermelon wedge</p>"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Steps",
+      "name": "Image columns",
       "blocks": [
         { "type": "step" },
-        { "type": "step", "settings": { "number": "02", "heading": "Then it waits", "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>" } },
-        { "type": "step", "settings": { "number": "03", "heading": "The table it was made for", "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>" } }
+        {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+          }
+        }
       ]
     }
   ],
