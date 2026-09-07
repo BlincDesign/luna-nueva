@@ -39,26 +39,14 @@
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
     margin-bottom: 20px;
     font-size: 12px;
-    {% if section.settings.custom_preheading_font != blank %}
-      font-family: '{{ section.settings.custom_preheading_font }}', sans-serif;
-    {% else %}
-      font-family: {{ section.settings.preheading_font.family }}, {{ section.settings.preheading_font.fallback_families }};
-    {% endif %}
     font-weight: 700;
     line-height: 1.2;
-    color: {{ section.settings.preheading_color }};
     letter-spacing: .2em; 
     opacity: 0.84;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading {
     margin-bottom: 40px;
-    {% if section.settings.custom_heading_font != blank %}
-      font-family: '{{ section.settings.custom_heading_font }}', sans-serif;
-    {% else %}
-      font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
-    {% endif %}
-    color: {{ section.settings.heading_color }};
     border-bottom: 1px solid rgba(45, 49, 53, .24);
     padding-bottom: 44px;
   }
@@ -78,13 +66,7 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin-bottom: 35px;
-    {% if section.settings.custom_text_font != blank %}
-    font-family: '{{ section.settings.custom_text_font }}', sans-serif;
-  {% else %}
-    font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }};
-  {% endif %}
     font-weight: normal;
-    color: {{ section.settings.text_color }};
     opacity: 0.84;
     max-width: 400px;
   }
@@ -438,69 +420,6 @@
         { "value": "secondary", "label": "Secondary" },
         { "value": "link", "label": "Link" }
       ]
-    },
-
-    {
-      "type": "header",
-      "content": "Font family"
-    },
-    {
-      "type": "text",
-      "id": "custom_preheading_font",
-      "label": "Custom preheading font",
-      "info": "Enter the font file name. This overrides the preheading font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "preheading_font",
-      "label": "Preheading font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "text",
-      "id": "custom_heading_font",
-      "label": "Custom heading font",
-      "info": "Enter the font file name. This overrides the heading font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "heading_font",
-      "label": "Heading font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "text",
-      "id": "custom_text_font",
-      "label": "Custom text font",
-      "info": "Enter the font file name. This overrides the text font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "text_font",
-      "label": "Text font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "header",
-      "content": "Text color"
-    },
-    {
-      "type": "color",
-      "id": "preheading_color",
-      "label": "Preheading color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#000000"
     },
     {
       "type": "header",
