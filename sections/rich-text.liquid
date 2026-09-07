@@ -112,7 +112,7 @@
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
         {%- when 'heading' -%}
-          <h2>{{ block.settings.title | escape }}</h2>
+          <h2>{{ block.settings.title }}</h2>
         {%- when 'page' -%}
           <div class="rte">
             {%- if block.settings.page_text != blank -%}
