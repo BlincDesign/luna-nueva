@@ -898,10 +898,9 @@
         ]
       },
       {
-        "type": "checkbox",
-        "id": "show_cart_note",
-        "label": "Show cart note",
-        "default": true
+        "type": "text",
+        "id": "drawer_message",
+        "label": "Drawer message"
       },
       {
         "type": "text",
