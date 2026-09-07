@@ -235,6 +235,7 @@
       ],
       "name": "Image columns",
       "settings": {
+        "section_background": "#aebfb4",
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
@@ -801,6 +802,7 @@
       ],
       "name": "Image columns",
       "settings": {
+        "section_background": "#D5995A",
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
