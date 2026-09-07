@@ -141,7 +141,6 @@ strong:has(em) {
 .site-nav .site-nav__icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.1rem;
 }
 
 .header-layout--center-split .site-nav.site-nav--icons .site-nav__icons {
