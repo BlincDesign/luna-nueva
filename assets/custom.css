@@ -621,6 +621,7 @@ a.pdl__right {
 
 #CartDrawer.drawer {
   --colorDrawerBorder: rgba(249, 246, 241, 0.22);
+  max-width: 100%;
 }
 
 #CartDrawer .cart__item--image {
