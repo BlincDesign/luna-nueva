@@ -655,7 +655,7 @@ a.pdl__right {
    --btn-bg: transparent;
    --btn-border: transparent;
    --btn-color: #fff;
-   --btn-hover-bg: #2D3135;
+   --btn-hover-bg: #000;
    --btn-hover-border: #2D3135;
    --btn-hover-color: #fff;
 }
