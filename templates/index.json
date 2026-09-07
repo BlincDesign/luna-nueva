@@ -374,7 +374,7 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#D5995A",
+        "section_background": "#d5995a",
         "text_color": "#1a1e33",
         "left_column_width": 80,
         "left_text_align": "left",
@@ -450,7 +450,7 @@
         "text_block_QUfVKF": {
           "type": "text_block",
           "settings": {
-            "icon": "asterik",
+            "icon": "agave",
             "title": "100% Blue Weber Agave",
             "text": "<p>Grown across highland and lowland terrain, each plant taking years to reach its moment. Nothing else ferments into this bottle.</p>"
           }
@@ -458,7 +458,7 @@
         "text_block_AWVWKL": {
           "type": "text_block",
           "settings": {
-            "icon": "asterik-2",
+            "icon": "certification",
             "title": "NOM 1414 · Vivanco",
             "text": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep.</p>"
           }
@@ -466,7 +466,7 @@
         "text_block_7epdRy": {
           "type": "text_block",
           "settings": {
-            "icon": "asterik-3",
+            "icon": "table",
             "title": "Built for the Table",
             "text": "<p>Clean enough to drink neat, honest enough to build on. Made for the room, not the trophy shelf.</p>"
           }
