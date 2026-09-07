@@ -154,7 +154,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>Tequila Añejo · 13 Months · 40% Alc/Vol</strong></p>",
+            "text": "<p><strong>Tequila Añejo · </strong></p><p><strong>13 Months · 40% </strong></p><p><strong>Alc/Vol</strong></p>",
             "position": "left"
           }
         },
