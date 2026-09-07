@@ -121,16 +121,6 @@
     border-radius: 50px;
   }
 
-  @media screen and (min-width: 901px) {
-    .media-gallery__inner.media-gallery__inner--flush-right {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding-left: max(40px, calc((100vw - 1560px) / 2));
-      padding-right: 0;
-    }
-  }
-
   @media screen and (max-width: 900px) {
     .media-gallery__inner {
       flex-direction: column;
@@ -159,12 +149,6 @@
     max-width: {{ section.settings.content_width }}%;
     min-width: 0;
   }
-
-  {% if section.settings.flow_right %}
-    #shopify-section-{{ section.id }} .media-gallery__inner {
-      flex-direction: row-reverse;
-    }
-  {% endif %}
 
   #shopify-section-{{ section.id }} .media-gallery__grid {
     grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
