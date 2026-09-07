@@ -192,7 +192,7 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "padding_top": 120,
-        "padding_bottom": 120,
+        "padding_bottom": 0,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
       }
@@ -253,6 +253,53 @@
         "per_row": 3,
         "view_all": false,
         "divider": false
+      }
+    },
+    "custom_steps_fD9yCr": {
+      "type": "custom__steps",
+      "blocks": {
+        "step_6y93aE": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-fields.jpg",
+            "number": "01",
+            "heading": "The land decides",
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+          }
+        },
+        "step_iUa8FH": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-table.jpg",
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+          }
+        },
+        "step_GWDjpg": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/ev-ice.jpg",
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_6y93aE",
+        "step_iUa8FH",
+        "step_GWDjpg"
+      ],
+      "name": "Steps",
+      "settings": {
+        "background_color": "#aebfb4",
+        "text_color": "#2d3135",
+        "number_color": "#9b3a15",
+        "padding_top": 88,
+        "padding_bottom": 120,
+        "mobile_padding_top": 88,
+        "mobile_padding_bottom": 72
       }
     },
     "custom_story_teaser_grtbFU": {
@@ -324,56 +371,6 @@
         "padding_bottom": 96,
         "mobile_padding_top": 48,
         "mobile_padding_bottom": 48
-      }
-    },
-    "custom_steps_fD9yCr": {
-      "type": "custom__steps",
-      "blocks": {
-        "step_6y93aE": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/step-fields.jpg",
-            "number": "01",
-            "heading": "The land decides",
-            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
-          }
-        },
-        "step_iUa8FH": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/step-table.jpg",
-            "number": "02",
-            "heading": "Then it waits",
-            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
-          }
-        },
-        "step_GWDjpg": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/ev-ice.jpg",
-            "number": "03",
-            "heading": "The table it was made for",
-            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "step_6y93aE",
-        "step_iUa8FH",
-        "step_GWDjpg"
-      ],
-      "name": "Steps",
-      "settings": {
-        "background_color": "#aebfb4",
-        "background_position": "center center",
-        "background_size": "cover",
-        "background_repeat": "no-repeat",
-        "text_color": "#2d3135",
-        "number_color": "#9b3a15",
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "mobile_padding_top": 72,
-        "mobile_padding_bottom": 72
       }
     },
     "custom_product_details_JbJXVn": {
@@ -890,8 +887,8 @@
     "custom_rich_text_columns_n6Ddd9",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
-    "custom_story_teaser_grtbFU",
     "custom_steps_fD9yCr",
+    "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
     "custom_rich_text_columns_fapdXh",
     "custom_additives_table_H9ebp3",
