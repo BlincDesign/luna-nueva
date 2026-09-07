@@ -138,101 +138,103 @@
 
     <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }}">
       {%- for block in section.blocks -%}
-        {%- if block.settings.position == 'left' -%}
-          {%- case block.type -%}
-            {% when 'divider' %}
-              {% if block.settings.enable_divider %}
-                <div class="rich-text__divider-wrapper">
-                  <div class="rich-text__divider">
-              {% endif %}
-              {% if block.settings.enable_icon %}
-                <div class="rich-text__divider--icon">
-                  {% if block.settings.custom_icon != blank %}
-                    {{
-                      block.settings.custom_icon
-                      | image_url: width: 80
-                      | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
-                    }}
-                  {% elsif block.settings.icon != blank %}
-                    {% render 'icon', name: block.settings.icon %}
-                  {% endif %}
-                </div>
-              {% endif %}
-              {% if block.settings.enable_divider %}
-                </div>
-                </div>
-              {% endif %}
-            {%- when 'preheading' -%}
-              <div
-                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                {{ block.settings.title }}
-              </div>
-
-            {%- when 'heading' -%}
-              <div
-                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                <h2>
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-
-            {%- when 'text' -%}
-              <div class="theme-block" {{ block.shopify_attributes }}>
-                <div
-                  class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                  data-block-id="{{ block.id }}"
-                >
-                  {%- if block.settings.text != blank -%}
-                    {%- if block.settings.enlarge_text -%}
-                      <div class="enlarge-text">
-                    {%- endif -%}
-
-                    {{ block.settings.text }}
-
-                    {%- if block.settings.enlarge_text -%}
-                      </div>
-                    {%- endif -%}
-
-                  {%- else -%}
-                    {{ 'home_page.onboarding.no_content' | t }}
-                  {%- endif -%}
-                </div>
-              </div>
-
-            {%- when 'button' -%}
-              <div
-                class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                {% render 'button',
-                  label: block.settings.link_text,
-                  url: block.settings.link,
-                  type: block.settings.button_type,
-                  arrow: true
-                %}
-              </div>
-
-            {%- when 'page' -%}
-              {%- if block.settings.page_text != blank -%}
+        <div id="block-{{ block.id }}">
+          {%- if block.settings.position == 'left' -%}
+            {%- case block.type -%}
+              {% when 'divider' %}
+                {% if block.settings.enable_divider %}
+                  <div class="rich-text__divider-wrapper">
+                    <div class="rich-text__divider">
+                {% endif %}
+                {% if block.settings.enable_icon %}
+                  <div class="rich-text__divider--icon">
+                    {% if block.settings.custom_icon != blank %}
+                      {{
+                        block.settings.custom_icon
+                        | image_url: width: 80
+                        | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
+                      }}
+                    {% elsif block.settings.icon != blank %}
+                      {% render 'icon', name: block.settings.icon %}
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.enable_divider %}
+                  </div>
+                  </div>
+                {% endif %}
+              {%- when 'preheading' -%}
                 <div
                   class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                   data-block-id="{{ block.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <div class="rte">
-                    {{ block.settings.page_text.content }}
+                  {{ block.settings.title }}
+                </div>
+
+              {%- when 'heading' -%}
+                <div
+                  class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <h2>
+                    {{ block.settings.title }}
+                  </h2>
+                </div>
+
+              {%- when 'text' -%}
+                <div class="theme-block" {{ block.shopify_attributes }}>
+                  <div
+                    class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    data-block-id="{{ block.id }}"
+                  >
+                    {%- if block.settings.text != blank -%}
+                      {%- if block.settings.enlarge_text -%}
+                        <div class="enlarge-text">
+                      {%- endif -%}
+
+                      {{ block.settings.text }}
+
+                      {%- if block.settings.enlarge_text -%}
+                        </div>
+                      {%- endif -%}
+
+                    {%- else -%}
+                      {{ 'home_page.onboarding.no_content' | t }}
+                    {%- endif -%}
                   </div>
                 </div>
-              {%- endif -%}
-          {%- endcase -%}
-        {%- endif -%}
+
+              {%- when 'button' -%}
+                <div
+                  class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {% render 'button',
+                    label: block.settings.link_text,
+                    url: block.settings.link,
+                    type: block.settings.button_type,
+                    arrow: true
+                  %}
+                </div>
+
+              {%- when 'page' -%}
+                {%- if block.settings.page_text != blank -%}
+                  <div
+                    class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    data-block-id="{{ block.id }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="rte">
+                      {{ block.settings.page_text.content }}
+                    </div>
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
 
@@ -242,101 +244,103 @@
 
     <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }}">
       {%- for block in section.blocks -%}
-        {%- if block.settings.position == 'right' -%}
-          {%- case block.type -%}
-            {% when 'divider' %}
-              {% if block.settings.enable_divider %}
-                <div class="rich-text__divider-wrapper">
-                  <div class="rich-text__divider">
-              {% endif %}
-              {% if block.settings.enable_icon %}
-                <div class="rich-text__divider--icon">
-                  {% if block.settings.custom_icon != blank %}
-                    {{
-                      block.settings.custom_icon
-                      | image_url: width: 80
-                      | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
-                    }}
-                  {% elsif block.settings.icon != blank %}
-                    {% render 'icon', name: block.settings.icon %}
-                  {% endif %}
-                </div>
-              {% endif %}
-              {% if block.settings.enable_divider %}
-                </div>
-                </div>
-              {% endif %}
-            {%- when 'preheading' -%}
-              <div
-                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                {{ block.settings.title }}
-              </div>
-
-            {%- when 'heading' -%}
-              <div
-                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                <h2>
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-
-            {%- when 'text' -%}
-              <div class="theme-block" {{ block.shopify_attributes }}>
-                <div
-                  class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                  data-block-id="{{ block.id }}"
-                >
-                  {%- if block.settings.text != blank -%}
-                    {%- if block.settings.enlarge_text -%}
-                      <div class="enlarge-text">
-                    {%- endif -%}
-
-                    {{ block.settings.text }}
-
-                    {%- if block.settings.enlarge_text -%}
-                      </div>
-                    {%- endif -%}
-
-                  {%- else -%}
-                    {{ 'home_page.onboarding.no_content' | t }}
-                  {%- endif -%}
-                </div>
-              </div>
-
-            {%- when 'button' -%}
-              <div
-                class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-                data-block-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
-              >
-                {% render 'button',
-                  label: block.settings.link_text,
-                  url: block.settings.link,
-                  type: block.settings.button_type,
-                  arrow: true
-                %}
-              </div>
-
-            {%- when 'page' -%}
-              {%- if block.settings.page_text != blank -%}
+        <div id="block-{{ block.id }}">
+          {%- if block.settings.position == 'right' -%}
+            {%- case block.type -%}
+              {% when 'divider' %}
+                {% if block.settings.enable_divider %}
+                  <div class="rich-text__divider-wrapper">
+                    <div class="rich-text__divider">
+                {% endif %}
+                {% if block.settings.enable_icon %}
+                  <div class="rich-text__divider--icon">
+                    {% if block.settings.custom_icon != blank %}
+                      {{
+                        block.settings.custom_icon
+                        | image_url: width: 80
+                        | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
+                      }}
+                    {% elsif block.settings.icon != blank %}
+                      {% render 'icon', name: block.settings.icon %}
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.enable_divider %}
+                  </div>
+                  </div>
+                {% endif %}
+              {%- when 'preheading' -%}
                 <div
                   class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                   data-block-id="{{ block.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <div class="rte">
-                    {{ block.settings.page_text.content }}
+                  {{ block.settings.title }}
+                </div>
+
+              {%- when 'heading' -%}
+                <div
+                  class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <h2>
+                    {{ block.settings.title }}
+                  </h2>
+                </div>
+
+              {%- when 'text' -%}
+                <div class="theme-block" {{ block.shopify_attributes }}>
+                  <div
+                    class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    data-block-id="{{ block.id }}"
+                  >
+                    {%- if block.settings.text != blank -%}
+                      {%- if block.settings.enlarge_text -%}
+                        <div class="enlarge-text">
+                      {%- endif -%}
+
+                      {{ block.settings.text }}
+
+                      {%- if block.settings.enlarge_text -%}
+                        </div>
+                      {%- endif -%}
+
+                    {%- else -%}
+                      {{ 'home_page.onboarding.no_content' | t }}
+                    {%- endif -%}
                   </div>
                 </div>
-              {%- endif -%}
-          {%- endcase -%}
-        {%- endif -%}
+
+              {%- when 'button' -%}
+                <div
+                  class="theme-block theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                  data-block-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {% render 'button',
+                    label: block.settings.link_text,
+                    url: block.settings.link,
+                    type: block.settings.button_type,
+                    arrow: true
+                  %}
+                </div>
+
+              {%- when 'page' -%}
+                {%- if block.settings.page_text != blank -%}
+                  <div
+                    class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    data-block-id="{{ block.id }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="rte">
+                      {{ block.settings.page_text.content }}
+                    </div>
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
   </div>
