@@ -642,6 +642,7 @@ a.pdl__right {
 
 #CartDrawer .js-qty__num {
   border-radius: 30px;
+  font-size: 11px;
 }
 
 #CartDrawer .js-qty__num:hover {
