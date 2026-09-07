@@ -101,6 +101,7 @@
     min-height: 0;
     overflow: hidden;
     border-radius: 18px;
+    pointer-events: none;
   }
 
   .media-gallery__image image-element,
@@ -113,9 +114,6 @@
     object-fit: cover;
   }
 
-  /* element.video's own wrapper levels (is-land, .element-video) have no
-     size of their own — video-media fills them via its [data-background]
-     rule, so these just need to fill the tile the same way an image does. */
   .media-gallery__image--video is-land,
   .media-gallery__image--video .element-video {
     display: block;
