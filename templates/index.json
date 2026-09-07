@@ -185,10 +185,10 @@
       "settings": {
         "section_background": "#aebfb4",
         "text_color": "#35373a",
-        "left_column_width": 30,
+        "left_column_width": 35,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
-        "right_column_width": 70,
+        "right_column_width": 65,
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "padding_top": 120,
