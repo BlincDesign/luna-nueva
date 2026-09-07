@@ -1,0 +1,286 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    background-image: {%- if section.settings.background_image != blank -%}url('{{ section.settings.background_image | image_url: width: 2400 }}'){%- else -%}none{%- endif -%};
+    background-position: {{ section.settings.background_position }};
+    background-repeat: {{ section.settings.background_repeat }};
+    background-size: {{ section.settings.background_size }};
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .serves__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .serves__menu {
+    background-color: {{ section.settings.card_background }};
+    color: {{ section.settings.card_text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .serves__number,
+  #shopify-section-{{ section.id }} .serves__note {
+    color: {{ section.settings.accent_color }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar {
+    background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar i {
+    background-color: {{ section.settings.track_color }};
+  }
+
+  @media screen and (max-width: 589px) {
+    #shopify-section-{{ section.id }} .serves__inner {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- capture serves_track -%}
+  <div class="serves__rail">
+    {%- for block in section.blocks -%}
+      <article class="serves__card" {{ block.shopify_attributes }}>
+        <figure class="serves__image-wrap">
+          {%- if block.settings.image != blank -%}
+            {%- render 'image-element',
+              img: block.settings.image,
+              widths: '360, 540, 720, 900',
+              sizeVariable: '26vw',
+              fallback: '78vw',
+              loading: 'lazy',
+              classes: 'serves__image'
+            -%}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </figure>
+
+        <div class="serves__menu">
+          <div class="serves__menu-header">
+            {%- if block.settings.title != blank -%}
+              <h3 class="serves__title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.number != blank -%}
+              <span class="serves__number">{{ block.settings.number }}</span>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.ingredients != blank -%}
+            <div class="serves__ingredients rte">{{ block.settings.ingredients }}</div>
+          {%- endif -%}
+
+          {%- if block.settings.note != blank -%}
+            <div class="serves__note rte">{{ block.settings.note }}</div>
+          {%- endif -%}
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+{%- endcapture -%}
+
+<div class="serves">
+  <div class="page-width serves__inner">
+    {%- if section.blocks.size > 0 -%}
+      {%- render 'layout.drag-scroller', slot: serves_track, label: 'Cocktail recipes, scroll horizontally' -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .serves__rail {
+    display: flex;
+    gap: clamp(16px, 1.9vw, 28px);
+    width: max-content;
+    min-width: 100%;
+    padding: 0 20px 19px 0;
+  }
+
+  .serves__card {
+    display: flex;
+    flex: 0 0 clamp(258px, 26vw, 352px);
+    flex-direction: column;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  .serves__image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1.321;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 50% 50% 0 0 / 37.85% 37.85% 0 0;
+    background: rgba(45, 49, 53, 0.1);
+  }
+
+  .serves__image-wrap image-element,
+  .serves__image-wrap .image-element,
+  .serves__image-wrap .placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .serves__menu {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 160px;
+    padding: 16px 17px 14px;
+    border: 1px solid rgba(45, 49, 53, 0.18);
+    border-top: 0;
+  }
+
+  .serves__menu-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(45, 49, 53, 0.32);
+  }
+
+  .serves__title {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.14;
+  }
+
+  .serves__number {
+    flex: none;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+
+  .serves__ingredients {
+    padding: 4px 0 2px;
+  }
+
+  .serves__ingredients p {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin: 0;
+    padding: 8px 0;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .serves__ingredients p::before {
+    order: 1;
+    flex: 1 1 auto;
+    border-bottom: 1px dotted rgba(45, 49, 53, 0.38);
+    content: '';
+    transform: translateY(-0.2em);
+  }
+
+  .serves__ingredients strong {
+    order: 2;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .serves__note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(45, 49, 53, 0.32);
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  .serves__note p {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 901px) {
+    .serves__inner drag-scroller {
+      --serves-right-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      margin-right: calc(0px - var(--serves-right-bleed));
+      padding-right: var(--serves-right-bleed);
+    }
+  }
+
+  @media screen and (max-width: 589px) {
+    .serves__rail {
+      gap: 16px;
+    }
+
+    .serves__card {
+      flex-basis: min(78vw, 352px);
+    }
+
+    .serves__menu {
+      padding: 14px;
+    }
+
+    .serves__title {
+      font-size: 21px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Serves rail",
+  "tag": "section",
+  "class": "section-serves background-image",
+  "settings": [
+    { "type": "header", "content": "Colors and background" },
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#d5995a" },
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    { "type": "select", "id": "background_position", "label": "Background image position", "default": "center center", "options": [{ "value": "left top", "label": "Top left" }, { "value": "center top", "label": "Top center" }, { "value": "right top", "label": "Top right" }, { "value": "left center", "label": "Center left" }, { "value": "center center", "label": "Center" }, { "value": "right center", "label": "Center right" }, { "value": "left bottom", "label": "Bottom left" }, { "value": "center bottom", "label": "Bottom center" }, { "value": "right bottom", "label": "Bottom right" }] },
+    { "type": "select", "id": "background_size", "label": "Background image size", "default": "cover", "options": [{ "value": "cover", "label": "Cover" }, { "value": "contain", "label": "Contain" }, { "value": "auto", "label": "Original size" }] },
+    { "type": "select", "id": "background_repeat", "label": "Background image repeat", "default": "no-repeat", "options": [{ "value": "no-repeat", "label": "Don't repeat" }, { "value": "repeat", "label": "Repeat" }] },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#2d3135" },
+    { "type": "color", "id": "card_background", "label": "Card background", "default": "#f9f6f1" },
+    { "type": "color", "id": "card_text_color", "label": "Card text color", "default": "#2d3135" },
+    { "type": "color", "id": "accent_color", "label": "Accent color", "default": "#9b3a15" },
+    { "type": "color", "id": "track_color", "label": "Scroll indicator color", "default": "#2d3135" },
+    { "type": "header", "content": "Desktop spacing" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 96 },
+    { "type": "header", "content": "Mobile spacing" },
+    { "type": "range", "id": "mobile_padding_top", "label": "Padding top", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "mobile_padding_bottom", "label": "Padding bottom", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "serve",
+      "name": "Serve",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Watermelon Margarita" },
+        { "type": "richtext", "id": "ingredients", "label": "Ingredients", "info": "Use one paragraph per ingredient and bold the quantity, for example: Luna Nueva Silver <strong>2 oz</strong>.", "default": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>" },
+        { "type": "richtext", "id": "note", "label": "Serve note", "default": "<p>Lime wheel or a watermelon wedge</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Serves rail",
+      "blocks": [
+        { "type": "serve" },
+        { "type": "serve", "settings": { "number": "02", "title": "Hibiscus Paloma", "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Hibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Cointreau · simple syrup <strong>.25 oz each</strong></p>", "note": "<p>Dried hibiscus flower or lime wheel</p>" } },
+        { "type": "serve", "settings": { "number": "03", "title": "Horchata Swirl", "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Almond milk <strong>3 oz</strong></p><p>Orgeat syrup <strong>1 oz</strong></p><p>Ground cinnamon <strong>A dash</strong></p>", "note": "<p>Cinnamon on top, swirl before sipping</p>" } },
+        { "type": "serve", "settings": { "number": "04", "title": "Tequila Old Fashioned", "ingredients": "<p>Luna Nueva Añejo <strong>2 oz</strong></p><p>Demerara syrup <strong>1 bar spoon</strong></p><p>Angostura bitters <strong>12 dashes</strong></p>", "note": "<p>Orange twist, over one large cube</p>" } }
+      ]
+    }
+  ],
+  "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
+}
+{% endschema %}
