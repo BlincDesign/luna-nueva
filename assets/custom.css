@@ -671,3 +671,16 @@ a.pdl__right {
   --btn-hover-border: #1e2226;
   --btn-hover-color: #fff;
 }
+
+
+.cart__item {
+    display: flex;
+}
+
+.cart__item .cart__item--image {
+    flex: 1 0 80px;
+}
+
+.cart__item--details {
+    flex: auto;
+}
