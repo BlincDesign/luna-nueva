@@ -1091,12 +1091,24 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
         <!-- Base circle (Light Brown/Tan) -->
         <circle cx="100" cy="100" r="100" fill="#d09c5a" />
-        
+
         <!-- Crescent overlay (Dark Gray) -->
-        <path d="M 100,0 
-                A 100,100 0 0,1 100,200 
-                A 40,100 0 0,0 100,0 Z" 
+        <path d="M 100,0
+                A 100,100 0 0,1 100,200
+                A 40,100 0 0,0 100,0 Z"
               fill="#2f3136" />
+      </svg>
+    {% when 'texture' %}
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5"></circle><path d="M4.2 14.2a8.5 8.5 0 0 0 15.6 0z" fill="currentColor" stroke="none"></path>
+      </svg>
+    {% when 'aroma' %}
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5"></circle><path d="M6.6 10.2q1.8-1.6 3.6 0t3.6 0 3.6 0"></path><path d="M6.6 14.6q1.8-1.6 3.6 0t3.6 0 3.6 0"></path>
+      </svg>
+    {% when 'palate' %}
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17M3.5 12h17"></path>
       </svg>
     {% else %}
       <p>?</p>
