@@ -34,6 +34,14 @@
     min-width: 0;
   }
 
+  @media screen and (min-width: 901px) {
+    .media-gallery__inner--flush-right .media-gallery__media {
+      /* Extend from the container's right edge to the viewport edge while
+         preserving the page-width container's left alignment. */
+      margin-right: calc(50% - 50vw);
+    }
+  }
+
   .media-gallery__eyebrow {
     margin: 0 0 12px;
     font-size: 13px;
@@ -262,7 +270,7 @@
       "type": "checkbox",
       "id": "flow_right",
       "label": "Flow to right",
-      "info": "Moves the content to the right side of the gallery instead of the left.",
+      "info": "Extends the gallery to the right edge of the viewport.",
       "default": false
     },
     {
