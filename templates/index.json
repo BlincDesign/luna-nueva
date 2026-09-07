@@ -270,7 +270,7 @@
         "step_iUa8FH": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/step-table.jpg",
+            "image": "shopify://shop_images/step-barrels.jpg",
             "number": "02",
             "heading": "Then it waits",
             "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
@@ -279,7 +279,7 @@
         "step_GWDjpg": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ev-ice.jpg",
+            "image": "shopify://shop_images/step-table.jpg",
             "number": "03",
             "heading": "The table it was made for",
             "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
