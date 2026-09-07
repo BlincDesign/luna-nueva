@@ -162,9 +162,6 @@
     background-color: #F9F6F1;
 }
 
-@media screen and (max-width: 1200px) {
-
-}
 
   @media screen and (max-width: 1200px) {
     #shopify-section-{{ section.id }} {
@@ -195,6 +192,15 @@
       font-size: 16px;
     }
   }
+
+  @media screen and (max-width: 76x) {
+    #shopify-section-{{ section.id }} .image-slider-text__heading h2 {
+      font-size: 44px;
+      line-height: 1.06;
+    }
+  }
+
+
 {% endstyle %}
 
 <div class="image-slider-text__grid">
