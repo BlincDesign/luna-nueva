@@ -91,7 +91,7 @@
           {% endif %}
 
           <div class="cart__checkout-wrapper">
-            <button
+            {% comment %} <button
               type="submit"
               name="checkout"
               data-terms-required="{{ settings.cart_terms_conditions_enable }}"
@@ -99,7 +99,14 @@
             >
               <span>{{ 'cart.general.checkout' | t }}</span>
               <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
-            </button>
+            </button> {% endcomment %}
+
+
+            {%- capture checkout_attributes -%}
+              data-terms-required="{{ settings.cart_terms_conditions_enable }}"
+            {%- endcapture -%}
+
+            {%- render 'button', label: 'cart.general.checkout' | t, as: 'button', type: 'primary cart__checkout', attributes: checkout_attributes -%}
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
               <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
