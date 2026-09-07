@@ -607,7 +607,7 @@ a.pdl__right {
 
 /* Cart drawer start */
 
-#CartDrawer.drawer .drawer__header {
+#CartDrawer .drawer__header {
     padding-top: 30px;
 }
 
@@ -626,20 +626,20 @@ a.pdl__right {
   background: transparent;
 }
 
-#CartDrawer.drawer .cart__item {
+#CartDrawer .cart__item {
   padding: 20px 0;
   border-bottom: 1px solid var(--colorDrawerBorder);
 }
 
-#CartDrawer.drawer .js-qty__num {
+#CartDrawer .js-qty__num {
   border-radius: 30px;
 }
 
-#CartDrawer.drawer .js-qty__num:hover {
+#CartDrawer .js-qty__num:hover {
   background: none;
 }
 
-#CartDrawer.drawer .cart__item:nth-last-child(1) {
+#CartDrawer .cart__item:nth-last-child(1) {
   border: none;
 }
 
