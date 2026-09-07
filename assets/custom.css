@@ -22,13 +22,13 @@
 
 
 
-.has--highlight em:has(strong) {
+em:has(strong) {
     color: var(--highlight-color);
     font-weight: normal;
     font-style: normal;
 }
 
-.has--highlight strong:has(em) {
+strong:has(em) {
     color: var(--highlight-color);
     font-weight: normal;
     font-style: normal;
@@ -69,12 +69,9 @@
     background-color: var(--btn-hover-bg, var(--btn-bg, transparent));
     border-color: var(--btn-hover-border, var(--btn-border, transparent));
     color: var(--btn-hover-color, var(--btn-color, inherit));
-}
-
-[data-animate_buttons="true"] .btn--primary:hover,
-[data-animate_buttons="true"] .btn--secondary:hover {
     transform: translateY(-2px);
 }
+
 
 .button--primary {
     --btn-bg: var(--btn-primary-bg);
@@ -109,11 +106,6 @@
     margin-left: 0.5em;
     transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
-
-[data-animate_buttons="true"] .button:hover .button__arrow {
-    transform: translateX(4px);
-}
-
 
 /* End global button system */
 
