@@ -743,6 +743,69 @@
         "divider": false
       }
     },
+    "custom_services_Q69BKT": {
+      "type": "custom__services",
+      "blocks": {
+        "serve_b7hKpT": {
+          "type": "serve",
+          "settings": {
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "serve_AM4zi6": {
+          "type": "serve",
+          "settings": {
+            "number": "02",
+            "title": "Hibiscus Paloma",
+            "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Hibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Cointreau · simple syrup <strong>.25 oz each</strong></p>",
+            "note": "<p>Dried hibiscus flower or lime wheel</p>"
+          }
+        },
+        "serve_UdphTb": {
+          "type": "serve",
+          "settings": {
+            "number": "03",
+            "title": "Horchata Swirl",
+            "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Almond milk <strong>3 oz</strong></p><p>Orgeat syrup <strong>1 oz</strong></p><p>Ground cinnamon <strong>A dash</strong></p>",
+            "note": "<p>Cinnamon on top, swirl before sipping</p>"
+          }
+        },
+        "serve_yyY9AR": {
+          "type": "serve",
+          "settings": {
+            "number": "04",
+            "title": "Tequila Old Fashioned",
+            "ingredients": "<p>Luna Nueva Añejo <strong>2 oz</strong></p><p>Demerara syrup <strong>1 bar spoon</strong></p><p>Angostura bitters <strong>12 dashes</strong></p>",
+            "note": "<p>Orange twist, over one large cube</p>"
+          }
+        }
+      },
+      "block_order": [
+        "serve_b7hKpT",
+        "serve_AM4zi6",
+        "serve_UdphTb",
+        "serve_yyY9AR"
+      ],
+      "name": "Serves rail",
+      "settings": {
+        "background_color": "#d5995a",
+        "background_position": "center center",
+        "background_size": "cover",
+        "background_repeat": "no-repeat",
+        "text_color": "#2d3135",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "mobile_padding_top": 48,
+        "mobile_padding_bottom": 48
+      }
+    },
     "newsletter": {
       "type": "newsletter",
       "blocks": {
@@ -814,6 +877,7 @@
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
     "rich-text",
+    "custom_services_Q69BKT",
     "newsletter"
   ]
 }
