@@ -38,7 +38,7 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
     margin-bottom: 20px;
-    font-size: {{ section.settings.preheading_size }}px;
+    font-size: 12px;
     {% if section.settings.custom_preheading_font != blank %}
       font-family: '{{ section.settings.custom_preheading_font }}', sans-serif;
     {% else %}
@@ -182,10 +182,6 @@
 
     #shopify-section-{{ section.id }} .image-slider-text__content {
       max-width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .image-slider-text__preheading {
-      font-size: {{ section.settings.mobile_preheading_size }}px;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__heading {
@@ -475,16 +471,6 @@
     },
     {
       "type": "range",
-      "id": "preheading_size",
-      "label": "Preheading size",
-      "min": 10,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
       "id": "heading_size",
       "label": "Heading size",
       "min": 20,
@@ -528,16 +514,6 @@
     {
       "type": "header",
       "content": "Mobile font size"
-    },
-    {
-      "type": "range",
-      "id": "mobile_preheading_size",
-      "label": "Mobile preheading size",
-      "min": 10,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 13
     },
     {
       "type": "range",
