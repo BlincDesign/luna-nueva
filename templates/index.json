@@ -327,21 +327,6 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
-    },
-    "age_verification_popup_3Wx7XH": {
-      "type": "age-verification-popup",
-      "name": "Age confirmation",
-      "settings": {
-        "heading": "Are you 21 or older?",
-        "text": "<p>By entering, you confirm you are of legal drinking age. Please enjoy responsibly.</p>",
-        "yes_button_label": "Yes",
-        "yes_button_type": "secondary",
-        "no_button_label": "No",
-        "no_button_type": "link",
-        "error_message": "Sorry, you must be of legal drinking age to enter this site.",
-        "background_color": "#1c1d1d",
-        "text_color": "#ffffff"
-      }
     }
   },
   "order": [
@@ -351,7 +336,6 @@
     "featured-collection-switcher",
     "custom_product_details_JbJXVn",
     "rich-text",
-    "newsletter",
-    "age_verification_popup_3Wx7XH"
+    "newsletter"
   ]
 }
