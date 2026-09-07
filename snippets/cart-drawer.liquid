@@ -55,20 +55,22 @@
 
           <div class="cart__item-row cart__savings text-center hide" data-savings></div>
 
-          <div class="cart__item-row text-center ajaxcart__note">
-            {% if settings.cart__note != blank %}
-              <small>
-                {{ settings.cart__note -}}
-                <br />
-              </small>
-            {% else %}
-              <small>
-                {{ 'cart.general.shipping_at_checkout' | t -}}
-                <br />
-              </small>
-            {% endif %}
-          </div>
-
+          {% if settings.show_cart_note %}
+            <div class="cart__item-row text-center ajaxcart__note">
+              {% if settings.cart__note != blank %}
+                <small>
+                  {{ settings.cart__note -}}
+                  <br />
+                </small>
+              {% else %}
+                <small>
+                  {{ 'cart.general.shipping_at_checkout' | t -}}
+                  <br />
+                </small>
+              {% endif %}
+            </div>
+          {% endif %}
+          
           {% if settings.cart_terms_conditions_enable %}
             <div class="cart__item-row cart__terms">
               <input type="checkbox" id="CartTermsDrawer" class="cart__terms-checkbox">
