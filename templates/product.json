@@ -163,26 +163,29 @@
           "settings": {
             "position": "right",
             "label": "Character & texture",
-            "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "texture"
+            "description": "<h5>A bold spirit with a velvety body.</h5>",
+            "icon": "texture",
+            "icon_size": 30
           }
         },
         "detail_row_tpf6Qx": {
           "type": "detail_row",
           "settings": {
             "position": "right",
-            "label": "Character & texture",
-            "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "aroma"
+            "label": "Aroma",
+            "description": "<h5>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</h5>",
+            "icon": "aroma",
+            "icon_size": 30
           }
         },
         "detail_row_Perrig": {
           "type": "detail_row",
           "settings": {
             "position": "right",
-            "label": "Character & texture",
-            "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "palate"
+            "label": "Palate",
+            "description": "<h5>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</h5>",
+            "icon": "palate",
+            "icon_size": 30
           }
         }
       },
