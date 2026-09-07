@@ -57,9 +57,9 @@
 
           {% if settings.show_cart_note %}
             <div class="cart__item-row text-center ajaxcart__note">
-              {% if settings.cart__note != blank %}
+              {% if settings.cart_note != blank %}
                 <small>
-                  {{ settings.cart__note -}}
+                  {{ settings.cart_note -}}
                   <br />
                 </small>
               {% else %}
@@ -70,7 +70,7 @@
               {% endif %}
             </div>
           {% endif %}
-          
+
           {% if settings.cart_terms_conditions_enable %}
             <div class="cart__item-row cart__terms">
               <input type="checkbox" id="CartTermsDrawer" class="cart__terms-checkbox">
