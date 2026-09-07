@@ -164,7 +164,7 @@
             "position": "right",
             "label": "Character & texture",
             "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "droplet"
+            "icon": "texture"
           }
         },
         "detail_row_tpf6Qx": {
@@ -173,7 +173,7 @@
             "position": "right",
             "label": "Character & texture",
             "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "droplet"
+            "icon": "aroma"
           }
         },
         "detail_row_Perrig": {
@@ -182,7 +182,7 @@
             "position": "right",
             "label": "Character & texture",
             "description": "<p>A bold spirit with a velvety body.</p>",
-            "icon": "droplet"
+            "icon": "palate"
           }
         }
       },
