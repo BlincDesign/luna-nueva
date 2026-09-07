@@ -686,3 +686,8 @@ a.pdl__right {
 .cart__item--details {
     flex: auto;
 }
+
+.cart__item--variants {
+    opacity: 0.6;
+    font-size: 11px;
+}
