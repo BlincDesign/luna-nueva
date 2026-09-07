@@ -9,18 +9,17 @@
 -%}
 
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    background-color: {{ section.settings.background_color }};
-    background-image: {%- if section.settings.background_image != blank -%}url('{{ section.settings.background_image | image_url: width: 2400 }}'){%- else -%}none{%- endif -%};
-    background-position: {{ section.settings.background_position }};
-    background-repeat: {{ section.settings.background_repeat }};
-    background-size: {{ section.settings.background_size }};
-    color: {{ section.settings.text_color }};
+ #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
   }
 
-  #shopify-section-{{ section.id }} .image-columns__inner {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
   }
 
   #shopify-section-{{ section.id }} .image-columns__step-number {
@@ -62,11 +61,6 @@
   }
 
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .image-columns__inner {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
-    }
-
     #shopify-section-{{ section.id }} .image-columns__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
     }
@@ -335,48 +329,6 @@
   "tag": "section",
   "class": "section-image-columns background-image",
   "settings": [
-    { "type": "header", "content": "Colors and background" },
-    { "type": "color", "id": "background_color", "label": "Background color", "default": "#aebfb4" },
-    { "type": "image_picker", "id": "background_image", "label": "Background image" },
-    {
-      "type": "select",
-      "id": "background_position",
-      "label": "Background image position",
-      "default": "center center",
-      "options": [
-        { "value": "left top", "label": "Top left" },
-        { "value": "center top", "label": "Top center" },
-        { "value": "right top", "label": "Top right" },
-        { "value": "left center", "label": "Center left" },
-        { "value": "center center", "label": "Center" },
-        { "value": "right center", "label": "Center right" },
-        { "value": "left bottom", "label": "Bottom left" },
-        { "value": "center bottom", "label": "Bottom center" },
-        { "value": "right bottom", "label": "Bottom right" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "background_size",
-      "label": "Background image size",
-      "default": "cover",
-      "options": [
-        { "value": "cover", "label": "Cover" },
-        { "value": "contain", "label": "Contain" },
-        { "value": "auto", "label": "Original size" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "background_repeat",
-      "label": "Background image repeat",
-      "default": "no-repeat",
-      "options": [
-        { "value": "no-repeat", "label": "Don't repeat" },
-        { "value": "repeat", "label": "Repeat" }
-      ]
-    },
-    { "type": "color", "id": "text_color", "label": "Text color", "default": "#2d3135" },
     { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
     { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
     { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
@@ -394,47 +346,53 @@
       ]
     },
     { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
-    { "type": "header", "content": "Desktop spacing" },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
     {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 200,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 120
+      "default": 40
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 200,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 120
+      "default": 40
     },
-    { "type": "header", "content": "Mobile spacing" },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
     {
       "type": "range",
-      "id": "mobile_padding_top",
+      "id": "padding_top_mb",
       "label": "Padding top",
       "min": 0,
-      "max": 140,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 72
+      "default": 40
     },
     {
       "type": "range",
-      "id": "mobile_padding_bottom",
+      "id": "padding_bottom_mb",
       "label": "Padding bottom",
       "min": 0,
-      "max": 140,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 72
+      "default": 40
     }
   ],
   "blocks": [
