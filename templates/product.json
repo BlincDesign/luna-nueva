@@ -107,13 +107,13 @@
           "type": "divider",
           "settings": {
             "position": "left",
-            "enable_divider": true,
+            "enable_divider": false,
             "divider_bg": "#000",
             "divider_width": 50,
             "divider_height": 2,
             "enable_icon": true,
             "icon_color": "#f9f6f1",
-            "icon": "chat",
+            "icon": "crescent-moon",
             "icon_size": 30,
             "margin_top": 30,
             "margin_bottom": 30
