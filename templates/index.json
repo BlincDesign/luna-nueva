@@ -77,26 +77,6 @@
         "mobile_padding_bottom": 0
       }
     },
-    "rich_text_VDFB8d": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_dhcXp3": {
-          "type": "heading",
-          "settings": {
-            "title": "When you drink less, what you drink should mean more."
-          }
-        }
-      },
-      "block_order": [
-        "heading_dhcXp3"
-      ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
-      "settings": {
-        "align_text": "center",
-        "narrow_column": false,
-        "divider": false
-      }
-    },
     "scrolling_text_PacCqL": {
       "type": "scrolling-text",
       "blocks": {
@@ -157,102 +137,44 @@
         "padding_bottom": 15
       }
     },
-    "slideshow_Gj6CyA": {
-      "type": "slideshow",
-      "blocks": {
-        "image_zBkPgJ": {
-          "type": "image",
-          "settings": {
-            "title": "Endless\npossibilities.",
-            "title_size": 80,
-            "subheading": "Bring your brand to life",
-            "link": "",
-            "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        },
-        "image_fBf9p9": {
-          "type": "image",
-          "settings": {
-            "title": "Two line\nslide titles.",
-            "title_size": 80,
-            "subheading": "And big, beautiful imagery",
-            "link": "",
-            "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_zBkPgJ",
-        "image_fBf9p9"
-      ],
-      "disabled": true,
-      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
-      "settings": {
-        "section_height": "650px",
-        "mobile_height": "auto",
-        "parallax": true,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "lazyload_images": true
-      }
-    },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "disabled": true,
-      "settings": {
-        "title": "Our Products",
-        "collection1": "blanco",
-        "collection2": "",
-        "per_row": 3,
-        "view_all": false,
-        "divider": false
-      }
-    },
-    "custom_story_teaser_grtbFU": {
+    "custom_story_teaser_B6xGNF": {
       "type": "custom__story-teaser",
       "blocks": {
-        "subheading_UVChCG": {
+        "subheading_twyKjt": {
           "type": "subheading",
           "settings": {
             "text": "Our Story",
             "margin_bottom": 18
           }
         },
-        "heading_KYbVq8": {
+        "heading_gzgT3R": {
           "type": "heading",
           "settings": {
             "text": "The liquid is authentic to Mexico.",
             "margin_bottom": 0
           }
         },
-        "heading_rhmfJC": {
+        "heading_ictDRm": {
           "type": "heading",
           "settings": {
-            "text": "<em><strong>The culture is California.</strong></em>",
+            "text": "The culture is California.",
             "margin_bottom": 18
           }
         },
-        "divider_8JXCFj": {
+        "divider_4dFhxJ": {
           "type": "divider",
           "settings": {
             "margin_bottom": 30
           }
         },
-        "text_RcfkhV": {
+        "text_tMQdDk": {
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
             "margin_bottom": 24
           }
         },
-        "button_hnpTJJ": {
+        "button_RbnAPH": {
           "type": "button",
           "settings": {
             "label": "Read our story",
@@ -263,27 +185,37 @@
         }
       },
       "block_order": [
-        "subheading_UVChCG",
-        "heading_KYbVq8",
-        "heading_rhmfJC",
-        "divider_8JXCFj",
-        "text_RcfkhV",
-        "button_hnpTJJ"
+        "subheading_twyKjt",
+        "heading_gzgT3R",
+        "heading_ictDRm",
+        "divider_4dFhxJ",
+        "text_tMQdDk",
+        "button_RbnAPH"
       ],
       "name": "Story teaser",
       "settings": {
-        "image": "shopify://shop_images/story-pinas.jpg",
-        "image_caption": "Agave piñas · Highlands of Jalisco",
+        "image_caption": "",
         "image_shape": "arch",
         "lazyload_images": true,
         "image_position": "left",
         "full_width": false,
-        "section_background": "#2d3135",
-        "text_color": "#f9f6f1",
+        "section_background": "#2D3135",
+        "text_color": "#F9F6F1",
         "padding_top": 96,
         "padding_bottom": 96,
         "mobile_padding_top": 48,
         "mobile_padding_bottom": 48
+      }
+    },
+    "featured-collection-switcher": {
+      "type": "featured-collection-switcher",
+      "settings": {
+        "title": "Our Products",
+        "collection1": "blanco",
+        "collection2": "",
+        "per_row": 3,
+        "view_all": false,
+        "divider": false
       }
     },
     "custom_product_details_JbJXVn": {
@@ -302,402 +234,6 @@
         "section_background": "#aebfb4",
         "padding_top": 60,
         "padding_bottom": 60,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
-    "custom_rich_text_columns_fapdXh": {
-      "type": "custom__rich-text-columns",
-      "blocks": {
-        "preheading_A6UfkX": {
-          "type": "preheading",
-          "settings": {
-            "title": "What's In It, What Isn't",
-            "position": "left"
-          }
-        },
-        "text_j9B88a": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
-            "position": "left"
-          }
-        },
-        "heading_KpLY3N": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "title": "Where it actually gets poured.",
-            "position": "left"
-          }
-        },
-        "text_YrMjYV": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
-            "position": "right"
-          }
-        },
-        "button_XRaQDg": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "link": "",
-            "link_text": "SEE WHAT'S COMING UP",
-            "button_type": "primary",
-            "position": "right",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
-          }
-        }
-      },
-      "block_order": [
-        "preheading_A6UfkX",
-        "text_j9B88a",
-        "heading_KpLY3N",
-        "text_YrMjYV",
-        "button_XRaQDg"
-      ],
-      "name": "Rich text columns",
-      "settings": {
-        "section_background": "#d5995a",
-        "text_color": "#1a1e33",
-        "left_column_width": 80,
-        "left_text_align": "left",
-        "left_vertical_align": "flex-end",
-        "right_column_width": 20,
-        "right_text_align": "left",
-        "right_vertical_align": "flex-end",
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 80
-      }
-    },
-    "custom_additives_table_H9ebp3": {
-      "type": "custom__additives-table",
-      "blocks": {
-        "additive_eWPhyC": {
-          "type": "additive",
-          "settings": {
-            "icon": "droplet",
-            "name": "Glycerin",
-            "percentage": "0.00%"
-          }
-        },
-        "additive_ATxL34": {
-          "type": "additive",
-          "settings": {
-            "icon": "leaf",
-            "name": "Oak extract",
-            "percentage": "0.00%"
-          }
-        },
-        "additive_7a9iFk": {
-          "type": "additive",
-          "settings": {
-            "icon": "cube",
-            "name": "Sugar-based sweetener",
-            "percentage": "0.00%"
-          }
-        },
-        "additive_PKrikM": {
-          "type": "additive",
-          "settings": {
-            "icon": "half-circle",
-            "name": "Caramel coloring",
-            "percentage": "0.00%"
-          }
-        }
-      },
-      "block_order": [
-        "additive_eWPhyC",
-        "additive_ATxL34",
-        "additive_7a9iFk",
-        "additive_PKrikM"
-      ],
-      "name": "Additives table",
-      "settings": {
-        "background_color": "#d5995a",
-        "text_color": "#1a1e33",
-        "heading_additive": "ADDITIVE",
-        "heading_product": "LUNA NUEVA",
-        "heading_permitted": "PERMITTED UP TO 1%",
-        "heading_bottle": "IN THIS BOTTLE",
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 40
-      }
-    },
-    "text_with_icons_W6xt7F": {
-      "type": "text-with-icons",
-      "blocks": {
-        "text_block_QUfVKF": {
-          "type": "text_block",
-          "settings": {
-            "icon": "agave",
-            "title": "100% Blue Weber Agave",
-            "text": "<p>Grown across highland and lowland terrain, each plant taking years to reach its moment. Nothing else ferments into this bottle.</p>"
-          }
-        },
-        "text_block_AWVWKL": {
-          "type": "text_block",
-          "settings": {
-            "icon": "certification",
-            "title": "NOM 1414 · Vivanco",
-            "text": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep.</p>"
-          }
-        },
-        "text_block_7epdRy": {
-          "type": "text_block",
-          "settings": {
-            "icon": "table",
-            "title": "Built for the Table",
-            "text": "<p>Clean enough to drink neat, honest enough to build on. Made for the room, not the trophy shelf.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_QUfVKF",
-        "text_block_AWVWKL",
-        "text_block_7epdRy"
-      ],
-      "name": "t:common.text_with_icons.presets.text_with_icons.name",
-      "settings": {
-        "background_color": "#d5995a",
-        "text_color": "#1a1e33",
-        "title": "",
-        "align_text": "left",
-        "desktop_columns_per_row": 3,
-        "icon_color": "#1a1e33",
-        "button_label": "",
-        "button_link": "",
-        "divider": false,
-        "padding_top": 0,
-        "padding_bottom": 124,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 80
-      }
-    },
-    "custom_rich_text_columns_TwtQDb": {
-      "type": "custom__rich-text-columns",
-      "blocks": {
-        "preheading_DXAxHU": {
-          "type": "preheading",
-          "settings": {
-            "title": "IN THE WILD",
-            "position": "left"
-          }
-        },
-        "heading_7FY4NB": {
-          "type": "heading",
-          "settings": {
-            "title": "Where it <em><strong>actually gets poured.</strong></em>",
-            "position": "left"
-          }
-        },
-        "button_bCtMDn": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "SEE WHAT'S COMING UP",
-            "button_type": "primary",
-            "position": "right",
-            "button_primary_bg": "rgba(0,0,0,0)",
-            "button_primary_border": "#ffffff",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#ffffff",
-            "button_primary_border_hover": "#ffffff",
-            "button_primary_text_hover": "#2d3135",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
-          }
-        }
-      },
-      "block_order": [
-        "preheading_DXAxHU",
-        "heading_7FY4NB",
-        "button_bCtMDn"
-      ],
-      "name": "Rich text columns",
-      "settings": {
-        "section_background": "#2d3135",
-        "text_color": "#f9f6f1",
-        "left_column_width": 50,
-        "left_text_align": "left",
-        "left_vertical_align": "flex-end",
-        "right_column_width": 50,
-        "right_text_align": "right",
-        "right_vertical_align": "flex-end",
-        "padding_top": 80,
-        "padding_bottom": 60,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
-      }
-    },
-    "custom_media_gallery_9bgdN4": {
-      "type": "custom__media-gallery",
-      "blocks": {
-        "image_64U3Pa": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
-            "image_one_caption": "Pacific Coast Highway",
-            "image_two_caption": ""
-          }
-        },
-        "image_Un9eVf": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/hero-ocean.jpg",
-            "image_one_caption": "Bring the party",
-            "image_two": "shopify://shop_images/wild-tailgate.jpg",
-            "image_two_caption": "The tailgate, Malibu"
-          }
-        },
-        "image_FJdmEK": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/wild-yellow-table.jpg",
-            "image_one_caption": "Silver · served long",
-            "image_two": "shopify://shop_images/wild-pch.jpg",
-            "image_two_caption": ""
-          }
-        },
-        "image_4iEL3N": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
-            "image_one_caption": "Make the table longer",
-            "image_two_caption": ""
-          }
-        },
-        "image_7CAf9R": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/wild-coupe.jpg",
-            "image_one_caption": "Late afternoon",
-            "image_two_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_64U3Pa",
-        "image_Un9eVf",
-        "image_FJdmEK",
-        "image_4iEL3N",
-        "image_7CAf9R"
-      ],
-      "name": "Media gallery - grid",
-      "settings": {
-        "full_width": false,
-        "content_width": 30,
-        "flow_right": true,
-        "tile_width_min": 360,
-        "tile_width_max": 360,
-        "row_height": 360,
-        "tile_width_mobile_min": 150,
-        "tile_width_mobile_max": 280,
-        "row_height_mobile": 260,
-        "gap": 16,
-        "section_background": "#2d3135",
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
-    "custom_media_gallery_JxCFTk": {
-      "type": "custom__media-gallery",
-      "blocks": {
-        "content_PqQkbn": {
-          "type": "content",
-          "settings": {
-            "eyebrow": "Bring the Party",
-            "heading": "The bottle you grab before the night starts.",
-            "show_divider": true,
-            "body": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.</p>",
-            "button_label": "See what's coming up",
-            "button_url": ""
-          }
-        },
-        "image_8McHDm": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "video_one": "shopify://files/videos/dispo.mp4",
-            "image_one_caption": "On the night",
-            "image_two_caption": ""
-          }
-        },
-        "image_tNqcUt": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/ev-toast_f8bdfeb1-fa11-485d-a7fb-019a6f5e7398.jpg",
-            "image_one_caption": "",
-            "image_two": "shopify://shop_images/ev-ice.jpg",
-            "image_two_caption": ""
-          }
-        },
-        "image_U8VtKq": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/ev-pour.jpg",
-            "image_one_caption": "",
-            "image_two": "shopify://shop_images/ev-bartender.jpg",
-            "image_two_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_PqQkbn",
-        "image_8McHDm",
-        "image_tNqcUt",
-        "image_U8VtKq"
-      ],
-      "name": "Media gallery - grid",
-      "settings": {
-        "full_width": false,
-        "content_width": 30,
-        "flow_right": true,
-        "tile_width_min": 360,
-        "tile_width_max": 360,
-        "row_height": 360,
-        "tile_width_mobile_min": 150,
-        "tile_width_mobile_max": 280,
-        "row_height_mobile": 260,
-        "gap": 16,
-        "section_background": "#aebfb4",
-        "padding_top": 80,
-        "padding_bottom": 80,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
@@ -795,17 +331,10 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
-    "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
+    "custom_story_teaser_B6xGNF",
     "featured-collection-switcher",
-    "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
-    "custom_rich_text_columns_fapdXh",
-    "custom_additives_table_H9ebp3",
-    "text_with_icons_W6xt7F",
-    "custom_rich_text_columns_TwtQDb",
-    "custom_media_gallery_9bgdN4",
-    "custom_media_gallery_JxCFTk",
     "rich-text",
     "newsletter"
   ]
