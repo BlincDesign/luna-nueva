@@ -119,6 +119,88 @@
         "mobile_padding_bottom": 8
       }
     },
+    "custom_rich_text_columns_ybajUw": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_YTtf6H": {
+          "type": "preheading",
+          "settings": {
+            "title": "What's In It, What Isn't",
+            "position": "left"
+          }
+        },
+        "text_eDrReX": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
+            "position": "left"
+          }
+        },
+        "heading_yf87MY": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_CayGfN": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
+            "position": "right"
+          }
+        },
+        "button_7Pynhq": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_YTtf6H",
+        "text_eDrReX",
+        "heading_yf87MY",
+        "text_CayGfN",
+        "button_7Pynhq"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#d5995a",
+        "text_color": "#1a1e33",
+        "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 80
+      }
+    },
     "scrolling_text_PacCqL": {
       "type": "scrolling-text",
       "blocks": {
@@ -839,6 +921,7 @@
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
     "rich_text_VDFB8d",
+    "custom_rich_text_columns_ybajUw",
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
