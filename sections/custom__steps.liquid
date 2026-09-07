@@ -47,7 +47,7 @@
             </figure>
 
             {%- if block.settings.number != blank -%}
-              <span class="steps-section__number">{{ block.settings.number }}</span>
+              <h2 class="steps-section__number">{{ block.settings.number }}</h2>
             {%- endif -%}
 
             {%- if block.settings.heading != blank -%}
@@ -65,18 +65,10 @@
 </div>
 
 {% stylesheet %}
-  /* .steps-section__step-text p {
-    margin: 0;
-  }
-
   .steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(24px, 3.4vw, 52px);
-  }
-
-  .steps-section__item {
-    min-width: 0;
   }
 
   .steps-section__image-wrap {
@@ -99,25 +91,14 @@
   }
 
   .steps-section__number {
-    display: block;
     margin-bottom: 19px;
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-    font-size: clamp(42px, 4.6vw, 64px);
+    font-family: var(--typeBasePrimary);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1;
   }
 
   .steps-section__step-heading {
     margin: 0 0 11px;
-    font-size: clamp(24px, 2vw, 32px);
-    font-weight: 400;
-    line-height: 1.2;
-  }
-
-  .steps-section__step-text {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 24px;
   }
 
   @media screen and (max-width: 900px) {
@@ -134,7 +115,7 @@
     .steps-section__image-wrap {
       margin-bottom: 22px;
     }
-  } */
+  }
 {% endstylesheet %}
 
 {% schema %}
