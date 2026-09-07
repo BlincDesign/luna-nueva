@@ -900,7 +900,7 @@
       {
         "type": "text",
         "id": "drawer_message",
-        "label": "Drawer message"
+        "label": "Drawer top message"
       },
       {
         "type": "text",
