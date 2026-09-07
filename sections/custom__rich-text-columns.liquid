@@ -61,7 +61,7 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
       color: {{ block.settings.icon_color }};
-      background: {{ block.settings.section_background | color_modify: 'alpha', 0.5  }};
+      background: {{ section.settings.section_background | color_modify: 'alpha', 0.5  }};
     }
   {% endfor %}
 
