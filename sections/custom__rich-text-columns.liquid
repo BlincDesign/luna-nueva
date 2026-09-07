@@ -78,10 +78,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: {{ block.settings.icon_size }}px;
-      height: {{ block.settings.icon_size }}px;
       flex-shrink: 0;
       color: {{ section.settings.detail_accent_color }};
+    }
+
+    #block-{{ block.id }} .rich-text__detail-icon .icon, 
+    #block-{{ block.id }} .rich-text__detail-icon img {
+      width: {{ block.settings.icon_size }}px;
+      height: {{ block.settings.icon_size }}px;
     }
   {% endfor %}
 
