@@ -44,10 +44,10 @@
         "heading": "<h2>Every great night <br/>||begins with||<br/>a new moon.</h2>",
         "heading_highlight_color": "#9b3a15",
         "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
-        "button_1_label": "Shop now",
-        "button_1_link": "",
-        "button_2_label": "Learn more",
-        "button_2_link": "",
+        "button_1_label": "Shop the Collection",
+        "button_1_type": "primary",
+        "button_2_label": "Find a Bottle",
+        "button_2_type": "secondary",
         "custom_preheading_font": "",
         "preheading_font": "space_mono_n7",
         "custom_heading_font": "AveriaSerifLibre-Regular",
@@ -57,18 +57,12 @@
         "preheading_size": 11,
         "heading_size": 72,
         "text_size": 20,
-        "button_font_size": 14,
         "preheading_color": "#2d3135",
         "heading_color": "#2d3135",
         "text_color": "#2d3135",
         "mobile_preheading_size": 13,
         "mobile_heading_size": 34,
         "mobile_text_size": 15,
-        "button_1_background": "#000000",
-        "button_1_text_color": "#ffffff",
-        "button_2_background": "rgba(0,0,0,0)",
-        "button_2_text_color": "#000000",
-        "button_2_border_color": "#000000",
         "background_color": "#aebfb4",
         "content_width": 800,
         "padding_top": 0,
@@ -179,102 +173,44 @@
         "padding_bottom": 15
       }
     },
-    "slideshow_Gj6CyA": {
-      "type": "slideshow",
-      "blocks": {
-        "image_zBkPgJ": {
-          "type": "image",
-          "settings": {
-            "title": "Endless\npossibilities.",
-            "title_size": 80,
-            "subheading": "Bring your brand to life",
-            "link": "",
-            "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        },
-        "image_fBf9p9": {
-          "type": "image",
-          "settings": {
-            "title": "Two line\nslide titles.",
-            "title_size": 80,
-            "subheading": "And big, beautiful imagery",
-            "link": "",
-            "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_zBkPgJ",
-        "image_fBf9p9"
-      ],
-      "disabled": true,
-      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
-      "settings": {
-        "section_height": "650px",
-        "mobile_height": "auto",
-        "parallax": true,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "lazyload_images": true
-      }
-    },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "disabled": true,
-      "settings": {
-        "title": "Our Products",
-        "collection1": "blanco",
-        "collection2": "",
-        "per_row": 3,
-        "view_all": false,
-        "divider": false
-      }
-    },
-    "custom_story_teaser_grtbFU": {
+    "custom_story_teaser_B6xGNF": {
       "type": "custom__story-teaser",
       "blocks": {
-        "subheading_UVChCG": {
+        "subheading_twyKjt": {
           "type": "subheading",
           "settings": {
             "text": "Our Story",
             "margin_bottom": 18
           }
         },
-        "heading_KYbVq8": {
+        "heading_gzgT3R": {
           "type": "heading",
           "settings": {
             "text": "The liquid is authentic to Mexico.",
             "margin_bottom": 0
           }
         },
-        "heading_rhmfJC": {
+        "heading_ictDRm": {
           "type": "heading",
           "settings": {
-            "text": "<em><strong>The culture is California.</strong></em>",
+            "text": "The culture is California.",
             "margin_bottom": 18
           }
         },
-        "divider_8JXCFj": {
+        "divider_4dFhxJ": {
           "type": "divider",
           "settings": {
             "margin_bottom": 30
           }
         },
-        "text_RcfkhV": {
+        "text_tMQdDk": {
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
             "margin_bottom": 24
           }
         },
-        "button_hnpTJJ": {
+        "button_RbnAPH": {
           "type": "button",
           "settings": {
             "label": "Read our story",
@@ -285,17 +221,16 @@
         }
       },
       "block_order": [
-        "subheading_UVChCG",
-        "heading_KYbVq8",
-        "heading_rhmfJC",
-        "divider_8JXCFj",
-        "text_RcfkhV",
-        "button_hnpTJJ"
+        "subheading_twyKjt",
+        "heading_gzgT3R",
+        "heading_ictDRm",
+        "divider_4dFhxJ",
+        "text_tMQdDk",
+        "button_RbnAPH"
       ],
       "name": "Story teaser",
       "settings": {
-        "image": "shopify://shop_images/story-pinas.jpg",
-        "image_caption": "Agave piñas · Highlands of Jalisco",
+        "image_caption": "",
         "image_shape": "arch",
         "lazyload_images": true,
         "image_position": "left",
@@ -306,6 +241,17 @@
         "padding_bottom": 96,
         "mobile_padding_top": 48,
         "mobile_padding_bottom": 48
+      }
+    },
+    "featured-collection-switcher": {
+      "type": "featured-collection-switcher",
+      "settings": {
+        "title": "Our Products",
+        "collection1": "blanco",
+        "collection2": "",
+        "per_row": 3,
+        "view_all": false,
+        "divider": false
       }
     },
     "custom_product_details_JbJXVn": {
@@ -855,18 +801,10 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
-    "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
-    "slideshow_Gj6CyA",
+    "custom_story_teaser_B6xGNF",
     "featured-collection-switcher",
-    "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
-    "custom_rich_text_columns_fapdXh",
-    "custom_additives_table_H9ebp3",
-    "text_with_icons_W6xt7F",
-    "custom_rich_text_columns_TwtQDb",
-    "custom_media_gallery_9bgdN4",
-    "custom_media_gallery_JxCFTk",
     "rich-text",
     "newsletter"
   ]

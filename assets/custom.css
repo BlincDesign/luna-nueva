@@ -20,8 +20,6 @@
     mix-blend-mode: soft-light;
 }
 
-
-
 em:has(strong) {
     color: var(--highlight-color);
     font-weight: normal;
@@ -33,6 +31,7 @@ strong:has(em) {
     font-weight: normal;
     font-style: normal;
 }
+
 
 /* GLOBAL CSS*/
 
@@ -153,6 +152,9 @@ strong:has(em) {
 }
 
 @media only screen and (max-width:900px) {
+    .main-content .shopify-section:nth-child(1) {
+        margin-top: 93px;
+    }
     .medium-down--hide {
         display: none !important;
     }
@@ -604,7 +606,6 @@ a.pdl__right {
 /* End age verification popup */
 
 
-
 /* Cart drawer start */
 
 .drawer .js-qty__num {
@@ -614,4 +615,3 @@ a.pdl__right {
 .cart__item--details {
     align-items: start;
 }
-

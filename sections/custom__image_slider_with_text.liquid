@@ -5,46 +5,53 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  #shopify-section-{{ section.id }} .button.button--primary {
+    --btn-bg: #2D3135;
+    --btn-border: #2D3135;
+    --btn-color: #fff;
+    --btn-hover-bg: #2D3135;
+    --btn-hover-border: #2D3135;
+    --btn-hover-color: #fff;
+  }
+
+
+  #shopify-section-{{ section.id }} .button.button--secondary {
+    --btn-bg: transparent;
+    --btn-border: #2D3135;
+    --btn-color: #2D3135;
+    --btn-hover-bg: #2D3135;
+    --btn-hover-border: #2D3135;
+    --btn-hover-color: #fff;
+  }
+
   #shopify-section-{{ section.id }} .image-slider-text__grid {
-    display: grid;
-    grid-template-columns: 38.77fr 61.23fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__content {
+    flex: 0 0 40%;
     max-width: {{ section.settings.content_width }}px;
     padding: 55px 70px;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
     margin-bottom: 20px;
-    font-size: {{ section.settings.preheading_size }}px;
-    {% if section.settings.custom_preheading_font != blank %}
-      font-family: '{{ section.settings.custom_preheading_font }}', sans-serif;
-    {% else %}
-      font-family: {{ section.settings.preheading_font.family }}, {{ section.settings.preheading_font.fallback_families }};
-    {% endif %}
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.2;
-    color: {{ section.settings.preheading_color }};
     letter-spacing: .2em; 
-    opacity: 0.84;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading {
     margin-bottom: 40px;
-    {% if section.settings.custom_heading_font != blank %}
-      font-family: '{{ section.settings.custom_heading_font }}', sans-serif;
-    {% else %}
-      font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
-    {% endif %}
-    color: {{ section.settings.heading_color }};
     border-bottom: 1px solid rgba(45, 49, 53, .24);
     padding-bottom: 44px;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading h2 {
-    font-size: {{ section.settings.heading_size }}px;
+    font-size: 70px;
     line-height: 1.06;
   }
 
@@ -58,19 +65,11 @@
 
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin-bottom: 35px;
-    {% if section.settings.custom_text_font != blank %}
-    font-family: '{{ section.settings.custom_text_font }}', sans-serif;
-  {% else %}
-    font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }};
-  {% endif %}
-    font-weight: normal;
-    color: {{ section.settings.text_color }};
-    opacity: 0.84;
     max-width: 400px;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__text h5 {
-    font-size: {{ section.settings.text_size }}px;
+    font-size: 20px;
     line-height: 1.6;
   }
 
@@ -85,34 +84,10 @@
     gap: 20px;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 10px;
-    font-size: {{ section.settings.button_font_size }}px;
-    font-style: {{ section.settings.button_font.style }};
-    font-weight: {{ section.settings.button_font.weight }};
-    line-height: 1;
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__button--primary {
-    background-color: {{ section.settings.button_1_background }};
-    color: {{ section.settings.button_1_text_color }};
-    border: 1px solid {{ section.settings.button_1_background }};
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__button--secondary {
-    background-color: {{ section.settings.button_2_background }};
-    color: {{ section.settings.button_2_text_color }};
-    border: 1px solid {{ section.settings.button_2_border_color }};
-  }
-
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
+    flex: 0 0 60%;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
@@ -166,9 +141,6 @@
     background-color: #F9F6F1;
 }
 
-@media screen and (max-width: 1200px) {
-
-}
 
   @media screen and (max-width: 1200px) {
     #shopify-section-{{ section.id }} {
@@ -176,30 +148,48 @@
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
 
+    #shopify-section-{{ section.id }} .image-slider-text__slide {
+    height: 70vh;
+  }
+
     #shopify-section-{{ section.id }} .image-slider-text__slides {
-      order: -1;
+      flex: 0 0 100%;
+      width: 100%;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__grid {
-      grid-template-columns: 1fr;
+      flex-direction: column-reverse;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__content {
+      width: 100%;
       max-width: 100%;
-    }
-
-    #shopify-section-{{ section.id }} .image-slider-text__preheading {
-      font-size: {{ section.settings.mobile_preheading_size }}px;
+      flex: 0 0 100%;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__heading {
-      font-size: {{ section.settings.mobile_heading_size }}px;
+      font-size: 40px;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__text {
-      font-size: {{ section.settings.mobile_text_size }}px;
+      font-size: 16px;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .image-slider-text__heading h2 {
+      font-size: 44px;
+      line-height: 1.06;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    #shopify-section-{{ section.id }} .image-slider-text__content {
+        padding: 55px 20px;
+    }
+  }
+
+
 {% endstyle %}
 
 <div class="image-slider-text__grid">
@@ -230,7 +220,7 @@
       </div>
     {% endif %}
 
-    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+    {% comment %} {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
         {% if section.settings.button_1_label != blank %}
           <a
@@ -250,7 +240,32 @@
           </a>
         {% endif %}
       </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
+
+
+    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+    <div class="image-slider-text__buttons">
+      {% if section.settings.button_1_label != blank %}
+        {% render 'button',
+          label: section.settings.button_1_label,
+          type: section.settings.button_1_type,
+          as: 'button',
+          arrow: true
+        %}
+      {% endif %}
+
+      {% if section.settings.button_2_label != blank %}
+        {% render 'button',
+          label: section.settings.button_2_label,
+          type: section.settings.button_2_type,
+          as: 'button',
+          arrow: false
+        %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+
   </div>
 
   <div class="image-slider-text__slides">
@@ -368,202 +383,44 @@
       "default": "<p>Add your description here.</p>"
     },
     {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Button 1 label",
-      "default": "Shop now"
+      "type": "header",
+      "content": "Button 1"
     },
     {
-      "type": "url",
-      "id": "button_1_link",
-      "label": "Button 1 link"
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Button label"
+    },
+    {
+      "type": "select",
+      "id": "button_1_type",
+      "label": "Button style",
+      "default": "secondary",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Button 2"
     },
     {
       "type": "text",
       "id": "button_2_label",
-      "label": "Button 2 label",
-      "default": "Learn more"
+      "label": "Button label"
     },
     {
-      "type": "url",
-      "id": "button_2_link",
-      "label": "Button 2 link"
-    },
-
-    {
-      "type": "header",
-      "content": "Font family"
-    },
-    {
-      "type": "text",
-      "id": "custom_preheading_font",
-      "label": "Custom preheading font",
-      "info": "Enter the font file name. This overrides the preheading font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "preheading_font",
-      "label": "Preheading font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "text",
-      "id": "custom_heading_font",
-      "label": "Custom heading font",
-      "info": "Enter the font file name. This overrides the heading font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "heading_font",
-      "label": "Heading font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "text",
-      "id": "custom_text_font",
-      "label": "Custom text font",
-      "info": "Enter the font file name. This overrides the text font selectors."
-    },
-    {
-      "type": "font_picker",
-      "id": "text_font",
-      "label": "Text font",
-      "default": "assistant_n4"
-    },
-    {
-      "type": "header",
-      "content": "Font size"
-    },
-    {
-      "type": "range",
-      "id": "preheading_size",
-      "label": "Preheading size",
-      "min": 10,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Heading size",
-      "min": 20,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "text_size",
-      "label": "Text size",
-      "min": 10,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_font_size",
-      "label": "Button font size",
-      "min": 10,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "header",
-      "content": "Text color"
-    },
-    {
-      "type": "color",
-      "id": "preheading_color",
-      "label": "Preheading color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#000000"
-    },
-    {
-      "type": "header",
-      "content": "Mobile font size"
-    },
-    {
-      "type": "range",
-      "id": "mobile_preheading_size",
-      "label": "Mobile preheading size",
-      "min": 10,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "mobile_heading_size",
-      "label": "Mobile heading size",
-      "min": 18,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 34
-    },
-    {
-      "type": "range",
-      "id": "mobile_text_size",
-      "label": "Mobile text size",
-      "min": 10,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "default": 15
-    },
-
-    {
-      "type": "header",
-      "content": "Buttons"
-    },
-    {
-      "type": "color",
-      "id": "button_1_background",
-      "label": "Button 1 background",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_1_text_color",
-      "label": "Button 1 text color",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "button_2_background",
-      "label": "Button 2 background",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "color",
-      "id": "button_2_text_color",
-      "label": "Button 2 text color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_2_border_color",
-      "label": "Button 2 border color",
-      "default": "#000000"
+      "type": "select",
+      "id": "button_2_type",
+      "label": "Button style",
+      "default": "link",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
     },
     {
       "type": "header",
@@ -592,43 +449,44 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Desktop top spacing",
+      "label": "Padding top",
       "min": 0,
-      "max": 200,
-      "step": 5,
+      "max": 160,
+      "step": 4,
       "unit": "px",
-      "default": 80
+      "default": 96
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Desktop bottom spacing",
+      "label": "Padding bottom",
       "min": 0,
-      "max": 200,
-      "step": 5,
+      "max": 160,
+      "step": 4,
       "unit": "px",
-      "default": 80
+      "default": 96
     },
     {
       "type": "range",
       "id": "mobile_padding_top",
-      "label": "Mobile top spacing",
+      "label": "Padding top (mobile)",
       "min": 0,
       "max": 120,
-      "step": 5,
+      "step": 4,
       "unit": "px",
-      "default": 50
+      "default": 48
     },
     {
       "type": "range",
       "id": "mobile_padding_bottom",
-      "label": "Mobile bottom spacing",
+      "label": "Padding bottom (mobile)",
       "min": 0,
       "max": 120,
-      "step": 5,
+      "step": 4,
       "unit": "px",
-      "default": 50
+      "default": 48
     }
+
   ],
 
   "blocks": [
