@@ -23,11 +23,13 @@
             </button>
           </div>
         </div>
-        {% comment %} {% if settings.drawer_message != blank %}
-          <div class="drawer__message">
+
+        
+        {% if settings.drawer_message != blank %}
+          <div class="drawer__top-message">
             <p>{{ settings.drawer_message }}</p>
           </div>
-        {% endif %} {% endcomment %}
+        {% endif %}
       </div>
 
       <div class="drawer__inner">
@@ -91,32 +93,33 @@
           {% endif %}
 
           <div class="cart__checkout-wrapper">
-            {% comment %} <button
-              type="submit"
-              name="checkout"
-              data-terms-required="{{ settings.cart_terms_conditions_enable }}"
-              class="btn cart__checkout"
-            >
-              <span>{{ 'cart.general.checkout' | t }}</span>
-              <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
-            </button> {% endcomment %}
+            {% comment %}
+              <button
+                type="submit"
+                name="checkout"
+                data-terms-required="{{ settings.cart_terms_conditions_enable }}"
+                class="btn cart__checkout"
+              >
+                <span>{{ 'cart.general.checkout' | t }}</span>
+                <span class="cart-drawer__checkout-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            {% endcomment %}
 
+            {%- liquid
+              assign checkout_label = 'cart.general.checkout' | t
 
-           {%- liquid
-            assign checkout_label = 'cart.general.checkout' | t
-
-            capture checkout_attributes
-              echo 'data-terms-required="'
-              echo settings.cart_terms_conditions_enable
-              echo '" name="checkout"'
-            endcapture
-          -%}
+              capture checkout_attributes
+                echo 'data-terms-required="'
+                echo settings.cart_terms_conditions_enable
+                echo '" name="checkout"'
+              endcapture
+            -%}
 
             {%- render 'button',
               label: checkout_label,
               as: 'button',
               type: 'primary',
-              class: 'cart__checkout', 
+              class: 'cart__checkout',
               attributes: checkout_attributes
             -%}
 
