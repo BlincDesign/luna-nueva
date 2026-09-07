@@ -232,14 +232,9 @@
 
     {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
-        {% if section.settings.button_1_label != blank %}
-          <a
-            href="{{ section.settings.button_1_link }}"
-            class="image-slider-text__button image-slider-text__button--primary"
-          >
-            {{ section.settings.button_1_label }}
-          </a>
-        {% endif %}
+        <div class="media-gallery__actions">
+          {% render 'button', label: content_block.settings.button_label, url: content_block.settings.button_url, type: 'primary', arrow: true %}
+        </div>
 
         {% if section.settings.button_2_label != blank %}
           <a
