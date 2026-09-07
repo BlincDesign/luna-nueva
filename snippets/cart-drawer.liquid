@@ -102,15 +102,15 @@
             </button> {% endcomment %}
 
 
-            {%- liquid
-              assign checkout_label = 'cart.general.checkout' | t
-              capture checkout_attributes
-                echo 'data-terms-required="'
-                echo settings.cart_terms_conditions_enable
-                echo ' name: "checkout"' 
-                echo '"'
-              endcapture
-            -%}
+           {%- liquid
+            assign checkout_label = 'cart.general.checkout' | t
+
+            capture checkout_attributes
+              echo 'data-terms-required="'
+              echo settings.cart_terms_conditions_enable
+              echo '" name="checkout"'
+            endcapture
+          -%}
 
             {%- render 'button',
               label: checkout_label,
