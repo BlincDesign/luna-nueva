@@ -167,6 +167,7 @@
     grid-template-rows: repeat(2, {{ section.settings.row_height }}px);
     grid-auto-columns: clamp({{ section.settings.tile_width_min }}px, calc({{ d_intercept }}px + {{ d_coefficient }}vw), {{ section.settings.tile_width_max }}px);
     gap: {{ section.settings.gap }}px;
+    padding-right: {% if section.settings.flow_right and section.settings.full_width == false %}var(--media-gallery-right-bleed, {{ section.settings.gap }}px){% else %}{{ section.settings.gap }}px{% endif %};
   }
 
   #shopify-section-{{ section.id }} .media-gallery__tile {
@@ -177,6 +178,7 @@
     #shopify-section-{{ section.id }} .media-gallery__grid {
       grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
       grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
+      padding-right: {{ section.settings.gap }}px;
     }
   }
   
