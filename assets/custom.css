@@ -607,6 +607,10 @@ a.pdl__right {
 
 /* Cart drawer start */
 
+#CartDrawer.drawer .drawer__header {
+    padding-top: 30px;
+}
+
 #CartDrawer.drawer {
   --colorDrawerBorder: rgba(249, 246, 241, 0.22);
 }
