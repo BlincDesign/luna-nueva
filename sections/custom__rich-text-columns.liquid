@@ -87,6 +87,12 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
     }
+
+    @media screen and (max-width: 589px) {
+      #block-{{ block.id }} .rich-text__divider {
+        width: 100%;
+      }
+    }
   {% endfor %}
 
   #shopify-section-{{ section.id }} {
