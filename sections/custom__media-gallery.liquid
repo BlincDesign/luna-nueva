@@ -36,15 +36,22 @@
 
   @media screen and (min-width: 901px) {
     .media-gallery__inner--flush-right {
-      --media-gallery-right-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      /* Cancels out .page-width's own right padding/margin so the gallery bleeds flush to the true viewport edge */
+      --media-gallery-edge-offset: max(40px, calc((100vw - 1560px) / 2 + 40px));
+      /* Reserved whitespace after the last tile, revealed once scrolled all the way to the end */
+      --media-gallery-end-gap: 68px;
     }
 
     .media-gallery__inner--flush-right .media-gallery__media {
-      margin-right: calc(0px - var(--media-gallery-right-bleed));
+      margin-right: calc(0px - var(--media-gallery-edge-offset));
+    }
+
+    .media-gallery__inner--flush-right .media-gallery__grid {
+      padding-right: var(--media-gallery-end-gap);
     }
 
     .media-gallery__inner--flush-right .drag-scroller__bar {
-      width: calc(100% - var(--media-gallery-right-bleed));
+      width: calc(100% - var(--media-gallery-end-gap));
     }
   }
 
