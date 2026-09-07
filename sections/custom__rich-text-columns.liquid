@@ -215,10 +215,6 @@
       {%- assign left_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'left' -%}
-          {%- comment -%}
-            Same-type grouping: consecutive "detail_row" blocks share a single
-            wrapping container instead of each getting its own top-level div.
-          {%- endcomment -%}
           {%- assign left_next_block = section.blocks[forloop.index] -%}
           {%- assign left_groups_with_next = false -%}
           {%- if left_next_block and block.type == 'detail_row' and left_next_block.type == 'detail_row' and left_next_block.settings.position == 'left' -%}
@@ -364,10 +360,6 @@
       {%- assign right_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'right' -%}
-          {%- comment -%}
-            Same-type grouping: consecutive "detail_row" blocks share a single
-            wrapping container instead of each getting its own top-level div.
-          {%- endcomment -%}
           {%- assign right_next_block = section.blocks[forloop.index] -%}
           {%- assign right_groups_with_next = false -%}
           {%- if right_next_block and block.type == 'detail_row' and right_next_block.type == 'detail_row' and right_next_block.settings.position == 'right' -%}
