@@ -152,6 +152,9 @@ strong:has(em) {
 }
 
 @media only screen and (max-width:900px) {
+    .main-content .shopify-section:nth-child(1) {
+        margin-top: 93px;
+    }
     .medium-down--hide {
         display: none !important;
     }
