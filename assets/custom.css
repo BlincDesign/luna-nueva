@@ -145,7 +145,7 @@ strong:has(em) {
 }
 
 .header-layout--center-split .site-nav.site-nav--icons .site-nav__icons {
-    gap: 1.1rem;
+    gap: 0;
 }
 
 .header-layout--center-split .site-nav.site-nav--icons {
