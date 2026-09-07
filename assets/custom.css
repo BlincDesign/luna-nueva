@@ -611,6 +611,11 @@ a.pdl__right {
     padding-top: 30px;
 }
 
+.drawer__top-message p {
+    margin: 10px 0 0;
+    font-size: 10px;
+}
+
 #CartDrawer.drawer {
   --colorDrawerBorder: rgba(249, 246, 241, 0.22);
 }
