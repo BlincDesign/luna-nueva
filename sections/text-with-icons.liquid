@@ -1,36 +1,59 @@
 {% style %}
-   #shopify-section-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.background_color }};
-  }
+    .theme-block__button--{{ section.id }} .button.button--primary {
+      --btn-primary-bg: {{ section.settings.button_primary_bg | default: "#1c1d1d" }};
+       --btn-primary-border: {{ section.settings.button_primary_border | default: "#1c1d1d" }};
+       --btn-primary-color: {{ section.settings.button_primary_text | default: "#ffffff" }};
+       --btn-primary-bg-hover: {{ section.settings.button_primary_bg_hover | default: "#3a3a3a" }};
+       --btn-primary-border-hover: {{ section.settings.button_primary_border_hover | default: "#3a3a3a" }};
+       --btn-primary-color-hover: {{ section.settings.button_primary_text_hover | default: "#ffffff" }};
+     }
 
-  #shopify-section-{{ section.id }} .text-with-icons__block {
-    color: {{section.settings.text_color }};
-  }
+     .theme-block__button--{{ section.id }} .button.button--secondary {
+       --btn-secondary-bg: {{ section.settings.button_secondary_bg | default: "#ffffff" }};
+       --btn-secondary-border: {{ section.settings.button_secondary_border | default: "#1c1d1d" }};
+       --btn-secondary-color: {{ section.settings.button_secondary_text | default: "#1c1d1d" }};
+       --btn-secondary-bg-hover: {{ section.settings.button_secondary_bg_hover | default: "#1c1d1d" }};
+       --btn-secondary-border-hover: {{ section.settings.button_secondary_border_hover | default: "#1c1d1d" }};
+       --btn-secondary-color-hover: {{ section.settings.button_secondary_text_hover | default: "#ffffff" }};
+     }
 
-  #shopify-section-{{ section.id }} .icon {
-    color: {{ section.settings.icon_color }};
-  }
-
-  #shopify-section-{{ section.id }} .icon path,
-  #shopify-section-{{ section.id }} .icon polygon,
-  #shopify-section-{{ section.id }} .icon rect,
-  #shopify-section-{{ section.id }} .icon circle,
-  #shopify-section-{{ section.id }} .icon ellipse,
-  #shopify-section-{{ section.id }} .icon line,
-  #shopify-section-{{ section.id }} .icon polyline,
-  #shopify-section-{{ section.id }} .icon g {
-    stroke-width: {{ settings.icon_weight | replace: 'px', '' | minus: 1 }}px;
-  }
-
-  @media screen and (max-width: 589px) {
+     .theme-block__button--{{ section.id }} .button.button--link {
+       --btn-link-color: {{ section.settings.button_link_text | default: "#1c1d1d" }};
+       --btn-link-color-hover: {{ section.settings.button_link_text_hover | default: "#7a7a7a" }};
+     }
 
     #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
-    }
-  }
+     padding-top: {{ section.settings.padding_top }}px;
+     padding-bottom: {{ section.settings.padding_bottom }}px;
+     background-color: {{ section.settings.background_color }};
+   }
+
+   #shopify-section-{{ section.id }} .text-with-icons__block {
+     color: {{section.settings.text_color }};
+   }
+
+   #shopify-section-{{ section.id }} .icon {
+     color: {{ section.settings.icon_color }};
+   }
+
+   #shopify-section-{{ section.id }} .icon path,
+   #shopify-section-{{ section.id }} .icon polygon,
+   #shopify-section-{{ section.id }} .icon rect,
+   #shopify-section-{{ section.id }} .icon circle,
+   #shopify-section-{{ section.id }} .icon ellipse,
+   #shopify-section-{{ section.id }} .icon line,
+   #shopify-section-{{ section.id }} .icon polyline,
+   #shopify-section-{{ section.id }} .icon g {
+     stroke-width: {{ settings.icon_weight | replace: 'px', '' | minus: 1 }}px;
+   }
+
+   @media screen and (max-width: 589px) {
+
+     #shopify-section-{{ section.id }} {
+       padding-top: {{ section.settings.mobile_padding_top }}px;
+       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+     }
+   }
 {% endstyle %}
 
 {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
@@ -75,9 +98,12 @@
 
     {%- if section.settings.button_label != blank -%}
       <div class="text-with-icons__button">
-        <a href="{{ section.settings.button_link }}" class="btn btn--secondary">
-          {{ section.settings.button_label }}
-        </a>
+        {% render 'button',
+          label: section.settings.link_text,
+          url: section.settings.link,
+          type: section.settings.button_type,
+          arrow: true
+        %}
       </div>
     {%- endif -%}
   </div>
@@ -139,14 +165,164 @@
       "default": "#000"
     },
     {
-      "type": "text",
-      "id": "button_label",
-      "label": "t:common.text_with_icons.settings.button_label.label"
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
     },
     {
-      "type": "url",
-      "id": "button_link",
-      "label": "t:common.text_with_icons.settings.button_link.label"
+      "type": "text",
+      "id": "link_text",
+      "label": "Button text",
+      "default": "SEE WHAT'S COMING UP →"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "Button style",
+      "default": "secondary",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Primary",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_bg",
+      "label": "Background",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_text",
+      "label": "Text",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_border_hover",
+      "label": "Border (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_type == 'primary' }}"
+    },
+    {
+      "type": "header",
+      "content": "Secondary",
+      "visible_if": "{{ section.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_bg",
+      "label": "Background",
+      "default": "#ffffff",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_border_hover",
+      "label": "Border (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ block.settings.button_type == 'secondary' }}"
+    },
+    {
+      "type": "header",
+      "content": "Link",
+      "visible_if": "{{ block.settings.button_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_link_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ block.settings.button_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_link_text_hover",
+      "label": "Text (hover)",
+      "default": "#7a7a7a",
+      "visible_if": "{{ block.settings.button_type == 'link' }}"
     },
     {
       "type": "checkbox",
