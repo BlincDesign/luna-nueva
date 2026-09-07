@@ -233,7 +233,7 @@
       {% if section.settings.button_1_label != blank %}
         {% render 'button',
           label: section.settings.button_1_label,
-          type: section.settings.yes_button_type,
+          type: section.settings.button_1_type,
           as: 'button',
           arrow: false
         %}
@@ -242,7 +242,7 @@
       {% if section.settings.button_2_label != blank %}
         {% render 'button',
           label: section.settings.button_2_label,
-          type: section.settings.no_button_type,
+          type: section.settings.button_2_type,
           as: 'button',
           arrow: false
         %}
@@ -378,7 +378,7 @@
     },
     {
       "type": "select",
-      "id": "yes_button_type",
+      "id": "button_1_type",
       "label": "Button style",
       "default": "secondary",
       "options": [
@@ -398,7 +398,7 @@
     },
     {
       "type": "select",
-      "id": "no_button_type",
+      "id": "button_2_type",
       "label": "Button style",
       "default": "link",
       "options": [
