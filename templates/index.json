@@ -163,7 +163,7 @@
         "text_kbMVRP": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
+            "enlarge_text": true,
             "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
             "position": "left"
           }
