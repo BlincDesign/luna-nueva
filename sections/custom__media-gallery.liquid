@@ -223,7 +223,6 @@
           {% endfor %}
         </div>
       {% endcapture %}
-      {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
     </div>
   {% endif %}
 {% endcapture %}
@@ -232,6 +231,8 @@
   <div class="media-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}{% if section.settings.flow_right and section.settings.full_width == false %} media-gallery__inner--flush-right{% endif %}">
     {{ content_markup }}
     {{ media_markup }}
+      {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
+
   </div>
 </div>
 
