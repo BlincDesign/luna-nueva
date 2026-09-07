@@ -69,6 +69,7 @@ strong:has(em) {
     background-color: var(--btn-hover-bg, var(--btn-bg, transparent));
     border-color: var(--btn-hover-border, var(--btn-border, transparent));
     color: var(--btn-hover-color, var(--btn-color, inherit));
+    transform: translateY(-2px);
 }
 
 [data-animate_buttons="true"] .btn--primary:hover,
