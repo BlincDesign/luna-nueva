@@ -25,26 +25,26 @@
 
     #block-{{ block.id }} .rich-text__divider {
       position: relative;
-      width: {{section.settings.divider_width}}%;
-      height: {{ section.settings.divider_height }}px;
-      background: {{ section.settings.divider_bg }};
+      width: {{block.settings.divider_width}}%;
+      height: {{ block.settings.divider_height }}px;
+      background: {{ block.settings.divider_bg }};
       margin-inline: auto;
     }
 
-    {% if section.settings.enable_divider %}
+    {% if block.settings.enable_divider %}
       #block-{{ block.id }} .rich-text__divider {
-        margin-block-start: {{ section.settings.margin_top }}px;
-        margin-block-end: {{ section.settings.margin_bottom }}px;
+        margin-block-start: {{ block.settings.margin_top }}px;
+        margin-block-end: {{ block.settings.margin_bottom }}px;
       }
     {% else %}
       #block-{{ block.id }} .rich-text__divider--icon {
-        margin-block-start: {{ section.settings.margin_top | divided_by: 2 }}px;
-        margin-block-end: {{ section.settings.margin_bottom | divided_by: 2 }}px;
+        margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+        margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
       }
     {% endif %}
 
     #block-{{ block.id }} .rich-text__divider--icon {
-      {% if section.settings.enable_divider %}
+      {% if block.settings.enable_divider %}
         position: absolute;
         top: 50%;
         left: 50%;
@@ -58,10 +58,10 @@
     #block-{{ block.id }} .rich-text__divider--icon img {
       display: block;
       margin-inline: auto;
-      width: {{ section.settings.icon_size }}px;
-      height: {{ section.settings.icon_size }}px;
-      color: {{ section.settings.icon_color }};
-      background: {{ section.settings.background_color | color_modify: 'alpha', 0.5  }};
+      width: {{ block.settings.icon_size }}px;
+      height: {{ block.settings.icon_size }}px;
+      color: {{ block.settings.icon_color }};
+      background: {{ block.settings.background_color | color_modify: 'alpha', 0.5  }};
     }
   {% endfor %}
 
