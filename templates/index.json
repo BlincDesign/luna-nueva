@@ -80,6 +80,21 @@
     "rich_text_VDFB8d": {
       "type": "rich-text",
       "blocks": {
+        "divider_gUNLzh": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 100,
+            "divider_height": 2,
+            "enable_icon": true,
+            "icon_color": "#f9f6f1",
+            "icon": "crescent-moon",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        },
         "heading_dhcXp3": {
           "type": "heading",
           "settings": {
@@ -88,6 +103,7 @@
         }
       },
       "block_order": [
+        "divider_gUNLzh",
         "heading_dhcXp3"
       ],
       "name": "t:sections.rich-text.presets.rich_text.name",
@@ -97,16 +113,6 @@
         "text_color": "#f9f6f1",
         "align_text": "center",
         "narrow_column": false,
-        "enable_divider": true,
-        "divider_bg": "#606264",
-        "divider_width": 100,
-        "divider_height": 2,
-        "enable_icon": true,
-        "icon_color": "#f9f6f1",
-        "icon": "crescent-moon",
-        "icon_size": 30,
-        "margin_top": 30,
-        "margin_bottom": 30,
         "padding_top": 120,
         "padding_bottom": 120,
         "mobile_padding_top": 80,
@@ -769,16 +775,6 @@
         "text_color": "#f9f6f1",
         "align_text": "center",
         "narrow_column": true,
-        "enable_divider": false,
-        "divider_bg": "#000000",
-        "divider_width": 50,
-        "divider_height": 2,
-        "enable_icon": false,
-        "icon_color": "#f9f6f1",
-        "icon": "chat",
-        "icon_size": 30,
-        "margin_top": 30,
-        "margin_bottom": 30,
         "padding_top": 120,
         "padding_bottom": 120,
         "mobile_padding_top": 80,
