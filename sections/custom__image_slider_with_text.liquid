@@ -174,9 +174,11 @@
 
     #shopify-section-{{ section.id }} .image-slider-text__slides {
       flex: 0 0 100%;
-      order: -1;
     }
 
+    #shopify-section-{{ section.id }} .image-slider-text__grid {
+      flex-direction: column-reverse;
+    }
 
     #shopify-section-{{ section.id }} .image-slider-text__content {
       max-width: 100%;
