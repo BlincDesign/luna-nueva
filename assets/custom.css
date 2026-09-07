@@ -278,7 +278,7 @@ strong:has(em) {
     justify-content: center;
 }
 
-.site-nav__link--icon.site-nav_icon--hover:hover {
+.site-nav__icons .site-nav__link--icon.js-drawer-open-cart:hover {
     background: rgba(45, 49, 53, .08);
 }
 
