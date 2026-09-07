@@ -268,7 +268,7 @@ strong:has(em) {
     flex: 0 0 auto;
 }
 
-.site-nav__link--icon.site-nav_icon--hover {
+..site-nav__icons .site-nav__link--icon.js-drawer-open-cart {
     transition: background .24s cubic-bezier(.2, .7, .3, 1);
     border-radius: 50%;
     height: 40px;
