@@ -611,7 +611,7 @@ a.pdl__right {
   padding-top: 30px;
   background: var(--colorDrawers);
   z-index: 20;
-  height: unset;
+  min-height: unset;
 }
 
 .drawer__top-message p {
