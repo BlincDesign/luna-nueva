@@ -646,10 +646,6 @@ a.pdl__right {
   font-size: 11px;
 }
 
-#CartDrawer .js-qty__num:hover {
-  background: none;
-}
-
 #CartDrawer .cart__item:nth-last-child(1) {
   border: none;
 }
