@@ -606,4 +606,11 @@ a.pdl__right {
 
 
 /* Cart drawer start */
+.drawer .js-qty__num {
+    border-radius: 30px;
+}
+
+#CartDrawer .cart__item--image .image-wrap {
+  background: transparent;
+}
 
