@@ -85,31 +85,6 @@
     gap: 20px;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 10px;
-    font-size: {{ section.settings.button_font_size }}px;
-    font-style: {{ section.settings.button_font.style }};
-    font-weight: {{ section.settings.button_font.weight }};
-    line-height: 1;
-    text-decoration: none;
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__button--primary {
-    background-color: {{ section.settings.button_1_background }};
-    color: {{ section.settings.button_1_text_color }};
-    border: 1px solid {{ section.settings.button_1_background }};
-  }
-
-  #shopify-section-{{ section.id }} .image-slider-text__button--secondary {
-    background-color: {{ section.settings.button_2_background }};
-    color: {{ section.settings.button_2_text_color }};
-    border: 1px solid {{ section.settings.button_2_border_color }};
-  }
-
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
@@ -230,7 +205,7 @@
       </div>
     {% endif %}
 
-    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+    {% comment %} {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
         {% if section.settings.button_1_label != blank %}
           <a
@@ -250,7 +225,34 @@
           </a>
         {% endif %}
       </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
+
+
+    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+    <div class="age-confirmation__actions">
+      {% if section.settings.button_1_label != blank %}
+        {% render 'button',
+          label: section.settings.button_1_label,
+          type: section.settings.yes_button_type,
+          as: 'button',
+          attributes: 'data-age-confirmation-yes',
+          arrow: false
+        %}
+      {% endif %}
+
+      {% if section.settings.button_2_label != blank %}
+        {% render 'button',
+          label: section.settings.button_2_label,
+          type: section.settings.no_button_type,
+          as: 'button',
+          attributes: 'data-age-confirmation-no',
+          arrow: false
+        %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+
   </div>
 
   <div class="image-slider-text__slides">
@@ -368,26 +370,42 @@
       "default": "<p>Add your description here.</p>"
     },
     {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Button 1 label",
-      "default": "Shop now"
+      "type": "header",
+      "content": "Buttons"
     },
     {
-      "type": "url",
-      "id": "button_1_link",
-      "label": "Button 1 link"
+      "type": "text",
+      "id": "button_1_label",
+      "label": "\"Yes\" button label",
+      "default": "Yes"
+    },
+    {
+      "type": "select",
+      "id": "yes_button_type",
+      "label": "\"Yes\" button style",
+      "default": "secondary",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
     },
     {
       "type": "text",
       "id": "button_2_label",
-      "label": "Button 2 label",
-      "default": "Learn more"
+      "label": "\"No\" button label",
+      "default": "No"
     },
     {
-      "type": "url",
-      "id": "button_2_link",
-      "label": "Button 2 link"
+      "type": "select",
+      "id": "no_button_type",
+      "label": "\"No\" button style",
+      "default": "link",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ]
     },
 
     {
