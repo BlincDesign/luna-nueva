@@ -102,11 +102,23 @@
             </button> {% endcomment %}
 
 
-            {%- capture checkout_attributes -%}
-              data-terms-required="{{ settings.cart_terms_conditions_enable }}"
-            {%- endcapture -%}
+            {%- liquid
+              assign checkout_label = 'cart.general.checkout' | t
+              capture checkout_attributes
+                echo 'data-terms-required="'
+                echo settings.cart_terms_conditions_enable
+                echo ' name: "checkout"' 
+                echo '"'
+              endcapture
+            -%}
 
-            {%- render 'button', label: 'cart.general.checkout' | t, as: 'button', type: 'primary cart__checkout', attributes: checkout_attributes -%}
+            {%- render 'button',
+              label: checkout_label,
+              as: 'button',
+              type: 'primary',
+              class: 'cart__checkout', 
+              attributes: checkout_attributes
+            -%}
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
               <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
