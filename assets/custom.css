@@ -607,11 +607,3 @@ a.pdl__right {
 
 /* Cart drawer start */
 
-.drawer .js-qty__num {
-    border-radius: 30px;
-}
-
-.cart__item--details {
-    align-items: start;
-}
-
