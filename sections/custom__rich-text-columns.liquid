@@ -72,6 +72,17 @@
       color: {{ block.settings.icon_color }};
       background: {{ section.settings.section_background }};
     }
+
+    
+    #block-{{ block.id }} .rich-text__detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: {{ block.settings.icon_size }}px;
+      height: {{ block.settings.icon_size }}px;
+      flex-shrink: 0;
+      color: {{ section.settings.detail_accent_color }};
+    }
   {% endfor %}
 
   #shopify-section-{{ section.id }} {
@@ -141,24 +152,6 @@
     align-items: center;
     gap: 12px;
     flex: 0 0 220px;
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__detail-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 1px solid {{ section.settings.detail_accent_color }};
-    color: {{ section.settings.detail_accent_color }};
-  }
-
-  #shopify-section-{{ section.id }} .rich-text__detail-icon .icon,
-  #shopify-section-{{ section.id }} .rich-text__detail-icon img {
-    width: 16px;
-    height: 16px;
   }
 
   #shopify-section-{{ section.id }} .rich-text__detail-label-text {
@@ -1323,6 +1316,16 @@
           "id": "custom_icon",
           "label": "Custom icon",
           "info": "Image takes priority over icon selector"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "min": 30,
+          "max": 100,
+          "label": "Size",
+          "unit": "px",
+          "step": 2,
+          "default": 30
         }
       ]
     },
