@@ -80,12 +80,6 @@
     "rich_text_VDFB8d": {
       "type": "rich-text",
       "blocks": {
-        "divider_fqn9Xz": {
-          "type": "divider",
-          "settings": {
-            "show_icon": true
-          }
-        },
         "heading_dhcXp3": {
           "type": "heading",
           "settings": {
@@ -94,21 +88,13 @@
         }
       },
       "block_order": [
-        "divider_fqn9Xz",
         "heading_dhcXp3"
       ],
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "align_text": "center",
         "narrow_column": false,
-        "divider": false,
-        "text_color": "#ffffff",
-        "enable_background_image": true,
-        "section_background": "#35373a",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "divider": false
       }
     },
     "scrolling_text_PacCqL": {
@@ -447,7 +433,7 @@
           "type": "button",
           "settings": {
             "link": "",
-            "link_text": "SEE WHAT'S COMING UP →",
+            "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
             "position": "right",
             "button_primary_bg": "rgba(0,0,0,0)",
@@ -667,14 +653,7 @@
       "settings": {
         "align_text": "center",
         "narrow_column": true,
-        "divider": false,
-        "text_color": "",
-        "enable_background_image": false,
-        "section_background": "#ffffff",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "divider": false
       }
     },
     "newsletter": {
