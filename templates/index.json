@@ -41,28 +41,13 @@
         "slider_autoplay_enabled": true,
         "slider_autoplay": 3000,
         "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
-        "heading": "<h2>Every great night <br/>||begins with||<br/>a new moon.</h2>",
+        "heading": "<h1>Born in the Mountains.<br/>|| Made for the Sea. ||<br/>Guided by the Moon.</h1>",
         "heading_highlight_color": "#9b3a15",
         "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
-        "button_1_label": "Shop the Collection",
-        "button_1_type": "primary",
-        "button_2_label": "Find a Bottle",
-        "button_2_type": "secondary",
-        "custom_preheading_font": "",
-        "preheading_font": "space_mono_n7",
-        "custom_heading_font": "AveriaSerifLibre-Regular",
-        "heading_font": "assistant_n4",
-        "custom_text_font": "AveriaSerifLibre-Regular",
-        "text_font": "assistant_n4",
-        "preheading_size": 11,
-        "heading_size": 72,
-        "text_size": 20,
-        "preheading_color": "#2d3135",
-        "heading_color": "#2d3135",
-        "text_color": "#2d3135",
-        "mobile_preheading_size": 13,
-        "mobile_heading_size": 34,
-        "mobile_text_size": 15,
+        "button_1_label": "Shop now",
+        "button_1_type": "secondary",
+        "button_2_label": "Learn more",
+        "button_2_type": "link",
         "background_color": "#aebfb4",
         "content_width": 800,
         "padding_top": 0,
@@ -173,100 +158,6 @@
         "padding_bottom": 15
       }
     },
-    "custom_rich_text_columns_n6Ddd9": {
-      "type": "custom__rich-text-columns",
-      "blocks": {
-        "text_kbMVRP": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
-            "position": "left"
-          }
-        },
-        "text_DLDMxC": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
-            "position": "right"
-          }
-        }
-      },
-      "block_order": [
-        "text_kbMVRP",
-        "text_DLDMxC"
-      ],
-      "name": "Rich text columns",
-      "settings": {
-        "section_background": "#aebfb4",
-        "text_color": "#35373a",
-        "left_column_width": 38,
-        "left_text_align": "left",
-        "left_vertical_align": "flex-start",
-        "right_column_width": 62,
-        "right_text_align": "left",
-        "right_vertical_align": "flex-start",
-        "padding_top": 80,
-        "padding_bottom": 48,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
-      }
-    },
-    "custom_image_columns_GdzTt9": {
-      "type": "custom__image_columns",
-      "blocks": {
-        "step_thEjBm": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/step-fields.jpg",
-            "number": "01",
-            "heading": "The land decides",
-            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
-          }
-        },
-        "step_PtK4hm": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/step-barrels.jpg",
-            "number": "02",
-            "heading": "Then it waits",
-            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
-          }
-        },
-        "step_4EQaK9": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/step-table.jpg",
-            "number": "03",
-            "heading": "The table it was made for",
-            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "step_thEjBm",
-        "step_PtK4hm",
-        "step_4EQaK9"
-      ],
-      "name": "Image columns",
-      "settings": {
-        "section_background": "#aebfb4",
-        "number_color": "#9b3a15",
-        "card_background": "#f9f6f1",
-        "card_text_color": "#2d3135",
-        "accent_color": "#9b3a15",
-        "track_color": "#2d3135",
-        "layout_type": "grid",
-        "columns": 3,
-        "gap": 52,
-        "gap_mb": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
     "slideshow_Gj6CyA": {
       "type": "slideshow",
       "blocks": {
@@ -328,41 +219,41 @@
     "custom_story_teaser_grtbFU": {
       "type": "custom__story-teaser",
       "blocks": {
-        "subheading_twyKjt": {
+        "subheading_UVChCG": {
           "type": "subheading",
           "settings": {
             "text": "Our Story",
             "margin_bottom": 18
           }
         },
-        "heading_gzgT3R": {
+        "heading_KYbVq8": {
           "type": "heading",
           "settings": {
             "text": "The liquid is authentic to Mexico.",
             "margin_bottom": 0
           }
         },
-        "heading_ictDRm": {
+        "heading_rhmfJC": {
           "type": "heading",
           "settings": {
-            "text": "The culture is California.",
+            "text": "<em><strong>The culture is California.</strong></em>",
             "margin_bottom": 18
           }
         },
-        "divider_4dFhxJ": {
+        "divider_8JXCFj": {
           "type": "divider",
           "settings": {
             "margin_bottom": 30
           }
         },
-        "text_tMQdDk": {
+        "text_RcfkhV": {
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
             "margin_bottom": 24
           }
         },
-        "button_RbnAPH": {
+        "button_hnpTJJ": {
           "type": "button",
           "settings": {
             "label": "Read our story",
@@ -373,16 +264,17 @@
         }
       },
       "block_order": [
-        "subheading_twyKjt",
-        "heading_gzgT3R",
-        "heading_ictDRm",
-        "divider_4dFhxJ",
-        "text_tMQdDk",
-        "button_RbnAPH"
+        "subheading_UVChCG",
+        "heading_KYbVq8",
+        "heading_rhmfJC",
+        "divider_8JXCFj",
+        "text_RcfkhV",
+        "button_hnpTJJ"
       ],
       "name": "Story teaser",
       "settings": {
-        "image_caption": "",
+        "image": "shopify://shop_images/story-pinas.jpg",
+        "image_caption": "Agave piñas · Highlands of Jalisco",
         "image_shape": "arch",
         "lazyload_images": true,
         "image_position": "left",
@@ -393,17 +285,6 @@
         "padding_bottom": 96,
         "mobile_padding_top": 48,
         "mobile_padding_bottom": 48
-      }
-    },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "settings": {
-        "title": "Our Products",
-        "collection1": "blanco",
-        "collection2": "",
-        "per_row": 3,
-        "view_all": false,
-        "divider": false
       }
     },
     "custom_product_details_JbJXVn": {
@@ -424,6 +305,89 @@
         "padding_bottom": 60,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_fapdXh": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_A6UfkX": {
+          "type": "preheading",
+          "settings": {
+            "title": "What's In It, What Isn't",
+            "position": "left"
+          }
+        },
+        "text_j9B88a": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
+            "position": "left"
+          }
+        },
+        "heading_KpLY3N": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_YrMjYV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
+            "position": "right"
+          }
+        },
+        "button_XRaQDg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_A6UfkX",
+        "text_j9B88a",
+        "heading_KpLY3N",
+        "text_YrMjYV",
+        "button_XRaQDg"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#d5995a",
+        "text_color": "#1a1e33",
+        "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 80
       }
     },
     "custom_additives_table_H9ebp3": {
@@ -807,75 +771,10 @@
         "text_color": "#f9f6f1",
         "align_text": "center",
         "narrow_column": true,
-        "divider": false
-      }
-    },
-    "custom_image_columns_WKgQjK": {
-      "type": "custom__image_columns",
-      "blocks": {
-        "service_WBNM3L": {
-          "type": "service",
-          "settings": {
-            "image": "shopify://shop_images/recipe-margarita.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
-          }
-        },
-        "service_tJGatp": {
-          "type": "service",
-          "settings": {
-            "image": "shopify://shop_images/recipe-paloma.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
-          }
-        },
-        "service_xzRJne": {
-          "type": "service",
-          "settings": {
-            "image": "shopify://shop_images/recipe-horchata.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
-          }
-        },
-        "service_9GaDAh": {
-          "type": "service",
-          "settings": {
-            "image": "shopify://shop_images/recipe-oldfashioned.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
-          }
-        }
-      },
-      "block_order": [
-        "service_WBNM3L",
-        "service_tJGatp",
-        "service_xzRJne",
-        "service_9GaDAh"
-      ],
-      "name": "Image columns",
-      "settings": {
-        "section_background": "#D5995A",
-        "number_color": "#9b3a15",
-        "card_background": "#f9f6f1",
-        "card_text_color": "#2d3135",
-        "accent_color": "#9b3a15",
-        "track_color": "#2d3135",
-        "layout_type": "grid",
-        "columns": 4,
-        "gap": 28,
-        "gap_mb": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
       }
     },
     "newsletter": {
@@ -935,19 +834,19 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
+    "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
-    "custom_rich_text_columns_n6Ddd9",
-    "custom_image_columns_GdzTt9",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
+    "custom_story_teaser_grtbFU",
     "custom_product_details_JbJXVn",
+    "custom_rich_text_columns_fapdXh",
     "custom_additives_table_H9ebp3",
     "text_with_icons_W6xt7F",
     "custom_rich_text_columns_TwtQDb",
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
     "rich-text",
-    "custom_image_columns_WKgQjK",
     "newsletter"
   ]
 }
