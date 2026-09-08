@@ -49,10 +49,10 @@
       "settings": {
         "section_background": "#2d3135",
         "text_color": "#f9f6f1",
-        "left_column_width": 50,
+        "left_column_width": 60,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 28,
+        "right_column_width": 35,
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
