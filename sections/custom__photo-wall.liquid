@@ -1,0 +1,240 @@
+{% style %}
+  #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
+      overflow-x: hidden;
+  }
+
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .pw-bleed{
+    margin-right: calc(50% - 50vw);
+    padding-right: clamp(20px, 4.4vw, 68px);
+  }
+
+  #shopify-section-{{ section.id }} .pw-grid{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    grid-auto-columns: clamp(224px, 23.6vw, 340px);
+    gap: clamp(14px, 1.7vw, 26px);
+    align-items: center;
+    padding: 1.15rem 0 3.2rem;
+  }
+
+  #shopify-section-{{ section.id }} .pw-pol{
+    background: {{ section.settings.card_background }};
+    padding: 9px 9px 34px;
+    box-shadow: 0 16px 34px rgba(0,0,0,.3);
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  #shopify-section-{{ section.id }} .pw-pol img{
+    width: 100%;
+    aspect-ratio: 1 / 1.06;
+    object-fit: cover;
+    display: block;
+  }
+  #shopify-section-{{ section.id }} .pw-pol figcaption{
+    font-family: var(--font-mono, "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace);
+    font-size: .62rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: {{ section.settings.card_text }};
+    padding-top: 9px;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} .pw-pol.pw-tall{ grid-row: span 2; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-tall img{ aspect-ratio: 1 / 1.46; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-wide img{ aspect-ratio: 1 / .82; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-up{ align-self: start; }
+  #shopify-section-{{ section.id }} .pw-pol.pw-dn{ align-self: end; }
+{% endstyle %}
+
+{% if section.blocks.size > 0 %}
+  {% capture photo_grid %}
+    <div class="pw-grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign size_class = block.settings.size
+          assign align_class = block.settings.align
+        %}
+        <figure
+          class="pw-pol {% if size_class contains 'tall' %}pw-tall{% endif %} {% if size_class contains 'wide' %}pw-wide{% endif %} {% if align_class != blank %}pw-{{ align_class }}{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.image %}
+            {{ block.settings.image | image_url: width: 900 | image_tag:
+              loading: 'lazy',
+              widths: '225, 340, 450, 680, 900',
+              sizes: '(min-width: 990px) 340px, 45vw',
+              alt: block.settings.alt | default: block.settings.caption,
+              class: 'pw-img',
+              draggable: false
+            }}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'pw-img placeholder' }}
+          {% endif %}
+          {% if block.settings.caption != blank %}
+            <figcaption>{{ block.settings.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  {% endcapture %}
+
+  <div class="page-width">
+    <div class="pw-bleed">
+      {% render 'layout.drag-scroller', slot: photo_grid, label: section.settings.gallery_label %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Photo Wall",
+  "class": "photo_wall_section background-image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "gallery_label",
+      "label": "Gallery label (screen readers)",
+      "default": "Event photos, scroll horizontally"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#2D3135"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Photo card background",
+      "default": "#F7F4EE"
+    },
+    {
+      "type": "color",
+      "id": "card_text",
+      "label": "Photo caption color",
+      "default": "#2D3135"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Caption"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "info": "Optional. Falls back to the caption."
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "tall", "label": "Tall (spans two rows)" },
+            { "value": "wide", "label": "Wide" },
+            { "value": "tall wide", "label": "Tall + Wide" }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Row alignment",
+          "info": "Shift the card off-centre for the asymmetric wall effect",
+          "options": [
+            { "value": "", "label": "Center" },
+            { "value": "up", "label": "Shift up" },
+            { "value": "dn", "label": "Shift down" }
+          ],
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Photo Wall",
+      "blocks": [
+        { "type": "photo", "settings": { "caption": "The sign, 11:01 PM", "size": "tall" } },
+        { "type": "photo", "settings": { "caption": "Round two", "align": "up" } },
+        { "type": "photo", "settings": { "caption": "Behind the bar", "size": "wide", "align": "dn" } },
+        { "type": "photo", "settings": { "caption": "Still here" } },
+        { "type": "photo", "settings": { "caption": "The station" } },
+        { "type": "photo", "settings": { "caption": "The whole room", "size": "tall" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
