@@ -183,7 +183,7 @@
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "padding_top": 92,
-        "padding_bottom": 0,
+        "padding_bottom": 20,
         "mobile_padding_top": 52,
         "mobile_padding_bottom": 0
       }
@@ -307,7 +307,7 @@
         "row_height_mobile": 280,
         "gap": 16,
         "section_background": "#2D3135",
-        "padding_top": 50,
+        "padding_top": 0,
         "padding_bottom": 40,
         "padding_top_mb": 36,
         "padding_bottom_mb": 52
