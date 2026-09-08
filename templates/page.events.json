@@ -13,48 +13,9 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
-    },
-    "custom_multi_column_8qjdCX": {
-      "type": "custom_multi_column",
-      "blocks": {
-        "eyebrow_yLJ3wA": {
-          "type": "eyebrow",
-          "settings": {
-            "title": "BRING THE PARTY"
-          }
-        },
-        "heading_BzfxHf": {
-          "type": "heading",
-          "settings": {
-            "title": "For the nights that turn into something nobody planned."
-          }
-        },
-        "text_YdgHnj": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops to bring together a like-minded community over exceptional tequila.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "eyebrow_yLJ3wA",
-        "heading_BzfxHf",
-        "text_YdgHnj"
-      ],
-      "name": "Custom multi column rich text",
-      "settings": {
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
-        "padding_top": 116,
-        "padding_bottom": 116,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
-      }
     }
   },
   "order": [
-    "main",
-    "custom_multi_column_8qjdCX"
+    "main"
   ]
 }
