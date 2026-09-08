@@ -312,6 +312,45 @@
         "padding_top_mb": 36,
         "padding_bottom_mb": 52
       }
+    },
+    "custom_rich_text_columns_c87Lyd": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_aeJrYd": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_qrQ8Pg": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_aeJrYd",
+        "heading_qrQ8Pg"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#D39655",
+        "text_color": "#2D3135",
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
     }
   },
   "order": [
@@ -319,6 +358,7 @@
     "custom_rich_text_columns_47QNRH",
     "custom_media_gallery_Bci3L9",
     "custom_rich_text_columns_bNhhLk",
-    "custom_media_gallery_VgzndN"
+    "custom_media_gallery_VgzndN",
+    "custom_rich_text_columns_c87Lyd"
   ]
 }
