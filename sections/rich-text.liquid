@@ -44,7 +44,7 @@
   {% endfor %}
 
   
-  #shopify-section-{{ section.id }} {
+  #Rich-text-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
@@ -54,14 +54,14 @@
   }
 
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }}.background-image {
+    #Rich-text-{{ section.id }} {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
   }
 {% endstyle %}
 
-<div class="text-{{ section.settings.align_text }} gradient color-{{ section.settings.color_scheme }}">
+<div id="Rich-text-{{ section.id }}" class="text-{{ section.settings.align_text }} background-image gradient color-{{ section.settings.color_scheme }}">
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
@@ -124,7 +124,7 @@
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "background-image section--scheme-secondary",
+  "class": "section--scheme-secondary",
   "settings": [
     {
       "type": "checkbox",
