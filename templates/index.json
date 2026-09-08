@@ -514,17 +514,18 @@
     "rich_text_T7ntjy": {
       "type": "rich-text",
       "blocks": {
-        "heading_B88Crr": {
-          "type": "heading",
+        "text_8tMixn": {
+          "type": "text",
           "settings": {
-            "title": "Rich text"
+            "enlarge_text": false,
+            "text": "<p>The Making</p>"
           }
         },
         "text_MhzT48": {
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "text": "<h2>From the Highlands to your table.</h2>"
           }
         },
         "divider_tkEFq8": {
@@ -544,7 +545,7 @@
         }
       },
       "block_order": [
-        "heading_B88Crr",
+        "text_8tMixn",
         "text_MhzT48",
         "divider_tkEFq8"
       ],
@@ -596,10 +597,10 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
-        "padding_top": 80,
+        "padding_top": 0,
         "padding_bottom": 48,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 48
       }
     },
     "custom_image_columns_GdzTt9": {
