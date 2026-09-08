@@ -82,7 +82,7 @@
         "settings": {
           "background": "rgba(0,0,0,0)",
           "background_gradient": "",
-          "text": "#1c1d1d",
+          "text": "#FFFFFF",
           "button": "#1c1d1d",
           "button_label": "#ffffff",
           "button_border": "#1c1d1d",
@@ -99,8 +99,8 @@
           "link_hover": "#a26b25",
           "border": "#d9d9d9",
           "accent": "#a26b25",
-          "overlay": "#000000",
-          "shadow": "#000000"
+          "overlay": "rgba(0,0,0,0)",
+          "shadow": "rgba(0,0,0,0)"
         }
       },
       "scheme-2": {
