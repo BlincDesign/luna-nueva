@@ -52,13 +52,6 @@
                       margin: 0 auto;
                       margin-bottom : {{ block.settings.margin_bottom }}px;
                     }
-
-                    @media only screen and (max-width: 589px) {
-                    .theme-block--{{ block.id }} .h1{
-                      font-size: 38px;
-                    }
-                  }
-
                   {% endstyle %}
 
                 {%- if block.settings.title != blank -%}
@@ -74,20 +67,9 @@
                       opacity: .66;
                     }
 
-                    .theme-block--{{ block.id }} .enlarge-text h5{
-                      font-size: 28px;
-                    }
-
                     .theme-block--{{ block.id }} .enlarge-text * {
                         margin: 0;
                     }
-
-                    @media only screen and (max-width: 589px) {
-                    .theme-block--{{ block.id }} .enlarge-text h5{
-                      font-size: 22px;
-                    }
-                  }
-
                   {% endstyle %}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">
