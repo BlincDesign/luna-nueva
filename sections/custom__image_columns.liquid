@@ -1,0 +1,473 @@
+{%- liquid
+  assign layout_type = section.settings.layout_type | default: 'grid'
+  assign columns = section.settings.columns | default: 3
+  assign tablet_columns = columns
+  if tablet_columns > 2
+    assign tablet_columns = 2
+  endif
+  assign image_size_vw = 100 | divided_by: columns
+-%}
+
+{%- style -%}
+ #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_background }};
+  }
+
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__step-number {
+    color: {{ section.settings.number_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__menu {
+    background-color: {{ section.settings.card_background }};
+    color: {{ section.settings.card_text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__service-number,
+  #shopify-section-{{ section.id }} .image-columns__note {
+    color: {{ section.settings.accent_color }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar {
+    background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
+  }
+
+  #shopify-section-{{ section.id }} .drag-scroller__bar i {
+    background-color: {{ section.settings.track_color }};
+  }
+
+  #shopify-section-{{ section.id }} .image-columns {
+    --image-columns-gap-grid: {{ section.settings.gap }}px;
+    --image-columns-gap-rail: {{ section.settings.gap }}px;
+  }
+
+  @media only screen and (max-width:589px){
+    #shopify-section-{{ section.id }} .image-columns {
+      --image-columns-gap-grid: {{ section.settings.gap_mb }}px;
+      --image-columns-gap-rail: {{ section.settings.gap_mb }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__grid {
+    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+  }
+
+  #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+    flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
+  }
+
+  @media screen and (min-width: 901px) {
+    #shopify-section-{{ section.id }} .image-columns__inner drag-scroller {
+      --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      margin-right: calc(0px - var(--image-columns-bleed));
+      padding-right: var(--image-columns-bleed);
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    #shopify-section-{{ section.id }} .image-columns__grid {
+      grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
+    }
+
+    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+      flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
+    }
+  }
+
+  @media screen and (max-width: 589px) {
+    #shopify-section-{{ section.id }} .image-columns__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+      flex-basis: min(78vw, 352px);
+    }
+  }
+{%- endstyle -%}
+
+{%- capture blocks_markup -%}
+  {%- for block in section.blocks -%}
+    <article class="image-columns__item" {{ block.shopify_attributes }}>
+      <figure class="image-columns__image-wrap">
+        {%- if block.settings.image != blank -%}
+          {%- render 'image-element',
+            img: block.settings.image,
+            widths: '360, 540, 720, 900, 1080',
+            sizeVariable: image_size_vw | append: 'vw',
+            fallback: '100vw',
+            loading: 'lazy',
+            classes: 'image-columns__image'
+          -%}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </figure>
+
+      {%- case block.type -%}
+        {%- when 'step' -%}
+          {%- if block.settings.number != blank -%}
+            <h2 class="image-columns__step-number">{{ block.settings.number }}</h2>
+          {%- endif -%}
+
+          {%- if block.settings.heading != blank -%}
+            <h3 class="image-columns__step-heading">{{ block.settings.heading }}</h3>
+          {%- endif -%}
+
+          {%- if block.settings.text != blank -%}
+            <div class="image-columns__step-text rte">{{ block.settings.text }}</div>
+          {%- endif -%}
+
+        {%- when 'service' -%}
+          <div class="image-columns__menu">
+            <div class="image-columns__menu-header">
+              {%- if block.settings.title != blank -%}
+                <h3 class="image-columns__service-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.number != blank -%}
+                <span class="image-columns__service-number">{{ block.settings.number }}</span>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.ingredients != blank -%}
+              <div class="image-columns__ingredients rte">{{ block.settings.ingredients }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.note != blank -%}
+              <div class="image-columns__note rte">{{ block.settings.note }}</div>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    </article>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="image-columns">
+  <div class="page-width image-columns__inner">
+    {%- if section.blocks.size > 0 -%}
+      {%- if layout_type == 'slider' -%}
+        {%- capture rail_markup -%}<div class="image-columns__rail">{{ blocks_markup }}</div>{%- endcapture -%}
+        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
+      {%- else -%}
+        <div class="image-columns__grid">
+          {{ blocks_markup }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+.image-columns__grid {
+  display: grid;
+  gap: var(--image-columns-gap-grid);
+}
+
+.image-columns__rail {
+  display: flex;
+  gap: var(--image-columns-gap-rail);
+  width: max-content;
+  min-width: 100%;
+  padding: 0 20px 19px 0;
+}
+
+.image-columns__rail .image-columns__item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.image-columns__image-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1.25;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.image-columns__image-wrap image-element,
+.image-columns__image-wrap .image-element,
+.image-columns__image-wrap .placeholder-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-columns__step-number {
+  margin: 25px 0 19px;
+  font-family: var(--typeBasePrimary);
+  font-weight: 700;
+}
+
+.image-columns__step-heading {
+  margin: 0 0 11px;
+  font-size: 24px;
+}
+
+.image-columns__step-text {
+  margin: 0;
+}
+
+.image-columns__menu {
+  padding: 16px 17px 14px;
+}
+
+.image-columns__menu-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(45, 49, 53, 0.32);
+}
+
+.image-columns__service-title {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.14;
+}
+
+.image-columns__service-number {
+  flex: none;
+  font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.image-columns__ingredients {
+  padding: 4px 0 2px;
+}
+
+.image-columns__ingredients p {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0;
+  padding: 8px 0;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.image-columns__ingredients p::before {
+  order: 1;
+  flex: 1 1 auto;
+  border-bottom: 1px dotted rgba(45, 49, 53, 0.38);
+  content: '';
+  transform: translateY(-0.2em);
+}
+
+.image-columns__ingredients strong {
+  order: 2;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.image-columns__note {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(45, 49, 53, 0.32);
+  text-transform: uppercase;
+  margin: 0 !important;
+}
+
+.image-columns__note p {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 589px) {
+  .image-columns__image-wrap {
+    margin-bottom: 22px;
+  }
+
+  .image-columns__rail {
+    gap: 16px;
+  }
+
+  .image-columns__service-title {
+    font-size: 21px;
+  }
+
+  .image-columns__menu {
+    padding: 14px;
+  }
+}
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image columns",
+  "tag": "section",
+  "class": "section-image-columns background-image",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#AEBFB4"
+    },
+    { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
+    { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
+    { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
+    { "type": "color", "id": "accent_color", "label": "Service accent color", "default": "#9b3a15" },
+    { "type": "color", "id": "track_color", "label": "Slider scroll indicator color", "default": "#2d3135" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout type",
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "slider", "label": "Slider" }
+      ]
+    },
+    { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between items",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "gap_mb",
+      "label": "Gap between items (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The land decides" },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+        }
+      ]
+    },
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Watermelon Margarita" },
+        {
+          "type": "richtext",
+          "id": "ingredients",
+          "label": "Ingredients",
+          "info": "Use one paragraph per ingredient and bold the quantity, for example: Luna Nueva Silver <strong>2 oz</strong>.",
+          "default": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>"
+        },
+        {
+          "type": "richtext",
+          "id": "note",
+          "label": "Serve note",
+          "default": "<p>Lime wheel or a watermelon wedge</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image columns",
+      "blocks": [
+        { "type": "step" },
+        {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
+}
+{% endschema %}
