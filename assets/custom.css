@@ -1,5 +1,44 @@
 /* GLOBAL CSS*/
 
+/* CENTRALIZED TYPOGRAPHY SYSTEM */
+/* All sizes below are controlled from Theme Settings > Typography > Desktop/Mobile Typography. */
+/* Desktop/mobile switching happens automatically via the CSS variables set in snippets/css-variables.liquid. */
+/* Do not hardcode font sizes elsewhere in this file — use these variables/classes instead. */
+
+.h1, h1 {
+    font-size: var(--type-h1-size);
+}
+
+.h2, h2 {
+    font-size: var(--type-h2-size);
+}
+
+.h3, h3 {
+    font-size: var(--type-h3-size);
+}
+
+.h4, h4,
+.h5, h5,
+.h6, h6 {
+    font-size: var(--type-h4-size);
+}
+
+.text-body-large {
+    font-size: var(--type-body-lg-size);
+}
+
+.text-body {
+    font-size: var(--type-body-size);
+}
+
+.text-body-small {
+    font-size: var(--type-body-sm-size);
+}
+
+.text-caption {
+    font-size: var(--type-caption-size);
+}
+
 .main-content .shopify-section:nth-child(1) {
     margin-top: 98px;
 }
@@ -290,7 +329,7 @@ strong:has(em) {
 }
 
 .mobile-nav .mobile-nav__item .mobile-nav__link--sub {
-    font-size: 14px;
+    font-size: var(--type-body-sm-size);
     padding-bottom: 0;
     opacity: 0.66;
     text-transform: uppercase;
@@ -298,7 +337,7 @@ strong:has(em) {
 }
 
 .mobile-nav__link.mobile-nav__link--heading {
-    font-size: 30px !important;
+    font-size: var(--type-h4-size);
     position: relative;
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
 }
@@ -446,7 +485,7 @@ a.pdl__right {
 }
 
 .pdc__title {
-    font-size: 48px;
+    font-size: var(--type-h2-size);
     margin-bottom: 10px;
 }
 
@@ -462,7 +501,7 @@ a.pdl__right {
     gap: 16px;
     padding: 9px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.12);
-    font-size: 11px;
+    font-size: var(--type-caption-size);
     text-transform: uppercase;
 }
 
@@ -481,7 +520,7 @@ a.pdl__right {
 
 .pdl__empty {
     color: #7a7a7a;
-    font-size: 14px;
+    font-size: var(--type-body-sm-size);
 }
 
 .pdc__explore {
@@ -556,7 +595,7 @@ a.pdl__right {
 }
 
 .age-confirmation__heading {
-    font-size: 43px;
+    font-size: var(--type-h2-size);
     color: var(--age-confirmation-color);
     margin-bottom: 32px;
 }
@@ -576,7 +615,7 @@ a.pdl__right {
     border: 1px solid currentColor;
     border-radius: 999px;
     background: none;
-    font-size: 14px;
+    font-size: var(--type-button-size);
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -617,7 +656,7 @@ a.pdl__right {
 
 .drawer__top-message p {
     margin: 10px 0 0;
-    font-size: 11px;
+    font-size: var(--type-caption-size);
     opacity: 0.6;
 }
 
@@ -644,7 +683,7 @@ a.pdl__right {
 
 #CartDrawer .js-qty__num {
     border-radius: 30px;
-    font-size: 11px;
+    font-size: var(--type-caption-size);
 }
 
 #CartDrawer .js-qty__num:hover {
@@ -690,10 +729,10 @@ a.pdl__right {
 
 .cart__item--variants {
     opacity: 0.6;
-    font-size: 11px;
+    font-size: var(--type-caption-size);
 }
 
 .cart__item-sub {
     font-weight: 600;
-    font-size: 12px;
+    font-size: var(--type-caption-size);
 }

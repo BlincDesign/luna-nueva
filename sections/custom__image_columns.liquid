@@ -211,7 +211,6 @@
 
 .image-columns__step-heading {
   margin: 0 0 11px;
-  font-size: 24px;
 }
 
 .image-columns__step-text {
@@ -233,7 +232,6 @@
 
 .image-columns__service-title {
   margin: 0;
-  font-size: 23px;
   font-weight: 400;
   line-height: 1.14;
 }
@@ -241,7 +239,7 @@
 .image-columns__service-number {
   flex: none;
   font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-  font-size: 10px;
+  font-size: var(--type-caption-size);
   font-weight: 700;
   letter-spacing: 0.2em;
   line-height: 1;
@@ -257,7 +255,7 @@
   gap: 7px;
   margin: 0;
   padding: 8px 0;
-  font-size: 10px;
+  font-size: var(--type-caption-size);
   text-transform: uppercase;
 }
 
@@ -284,7 +282,7 @@
 }
 
 .image-columns__note p {
-  font-size: 12px;
+  font-size: var(--type-caption-size);
 }
 
 @media screen and (max-width: 589px) {
@@ -294,10 +292,6 @@
 
   .image-columns__rail {
     gap: 16px;
-  }
-
-  .image-columns__service-title {
-    font-size: 21px;
   }
 
   .image-columns__menu {

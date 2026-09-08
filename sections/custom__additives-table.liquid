@@ -2,7 +2,7 @@
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.background_color }};
+    background-color: {{ section.settings.section_background }};
   }
 
   .additives {
@@ -33,7 +33,7 @@
   }
 
   .additives__header-title {
-    font-size: 11px;
+    font-size: var(--type-caption-size);
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.18em;
@@ -140,7 +140,7 @@
 
     border: 1px solid #2D3135;
     border-radius: 50%;
-    background: {{ section.settings.background_color }};
+    background: {{ section.settings.section_background }};
 
     transform: translate(-50%, -50%);
   }
@@ -167,15 +167,15 @@
     width: 108px;
 
     font-weight: 700;
-    font-size: 1.06rem;
+    font-size: var(--type-body-lg-size);
     white-space: nowrap;
   }
 
   @media screen and (max-width: 589px) {
 
     #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
 
     .additives__header-luna {
@@ -331,8 +331,8 @@
   "settings": [
     {
       "type": "color",
-      "id": "background_color",
-      "label": "Background color",
+      "id": "section_background",
+      "label": "Section background",
       "default": "#2d3135"
     },
     {
@@ -372,52 +372,51 @@
 
     {
       "type": "header",
-      "content": "Padding"
+      "content": "Desktop spacing"
     },
     {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 200,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 120
+      "default": 40
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 200,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 120
+      "default": 40
     },
-
     {
       "type": "header",
-      "content": "Mobile padding"
+      "content": "Mobile spacing"
     },
     {
       "type": "range",
-      "id": "mobile_padding_top",
+      "id": "padding_top_mb",
       "label": "Padding top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 80
+      "default": 40
     },
     {
       "type": "range",
-      "id": "mobile_padding_bottom",
+      "id": "padding_bottom_mb",
       "label": "Padding bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 8
+      "default": 40
     }
   ],
 

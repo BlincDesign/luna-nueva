@@ -36,21 +36,12 @@
     
     .site-nav__link,
     .site-nav__dropdown-link {
-      font-size: {{ settings.type_navigation_size }}px;
+      font-size: var(--type-body-sm-size);
       text-transform: uppercase;
       padding: 12px 0;
       letter-spacing: 1.7px;
       font-weight: 600;
     }
-
-    {% comment %}
-      {%- if settings.type_navigation_size < 18 -%}
-        .site-nav__link {
-          padding-left: 8px;
-          padding-right: 8px;
-        }
-      {%- endif -%}
-    {% endcomment %}
 
     {%- if settings.color_header == settings.color_body_bg or settings.color_body_bg contains settings.color_header -%}
       .site-header {

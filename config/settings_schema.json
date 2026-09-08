@@ -246,18 +246,8 @@
         "default": 60
       },
       {
-        "type": "range",
-        "id": "button_font_size",
-        "label": "Font size",
-        "min": 10,
-        "max": 20,
-        "step": 1,
-        "unit": "px",
-        "default": 12
-      },
-      {
         "type": "paragraph",
-        "content": "Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
+        "content": "Button text size is controlled in Theme settings > Typography > Desktop/Mobile Typography > Buttons. Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
       },
       {
         "type": "header",
@@ -362,85 +352,59 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header_headings"
+        "content": "Fonts"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font_family",
+        "label": "Heading font",
+        "default": "chivo_n4"
       },
       {
         "type": "text",
         "id": "custom_header_font_filename",
         "label": "Custom heading font file name",
-        "info": "Enter the font file name. This overrides the heading and body font selectors."
+        "info": "Enter the font file name to override the heading font selected above."
       },
       {
         "type": "font_picker",
-        "id": "type_header_font_family",
-        "label": "t:settings_schema.typography.settings.type_header_font_family.label",
+        "id": "type_base_font_family",
+        "label": "Body font",
         "default": "chivo_n4"
+      },
+      {
+        "type": "text",
+        "id": "custom_base_font_filename",
+        "label": "Custom body font file name",
+        "info": "Enter the font file name to override the body font selected above."
+      },
+      {
+        "type": "header",
+        "content": "Heading style"
       },
       {
         "type": "select",
         "id": "type_header_spacing",
-        "label": "t:settings_schema.typography.settings.type_header_spacing.label",
+        "label": "Letter spacing",
         "default": "25",
         "options": [
-          {
-            "value": "-75",
-            "label": "-75"
-          },
-          {
-            "value": "-50",
-            "label": "-50"
-          },
-          {
-            "value": "-25",
-            "label": "-25"
-          },
-          {
-            "value": "0",
-            "label": "0"
-          },
-          {
-            "value": "25",
-            "label": "25"
-          },
-          {
-            "value": "50",
-            "label": "50"
-          },
-          {
-            "value": "75",
-            "label": "75"
-          },
-          {
-            "value": "100",
-            "label": "100"
-          },
-          {
-            "value": "150",
-            "label": "150"
-          },
-          {
-            "value": "200",
-            "label": "200"
-          },
-          {
-            "value": "250",
-            "label": "250"
-          }
+          { "value": "-75", "label": "-75" },
+          { "value": "-50", "label": "-50" },
+          { "value": "-25", "label": "-25" },
+          { "value": "0", "label": "0" },
+          { "value": "25", "label": "25" },
+          { "value": "50", "label": "50" },
+          { "value": "75", "label": "75" },
+          { "value": "100", "label": "100" },
+          { "value": "150", "label": "150" },
+          { "value": "200", "label": "200" },
+          { "value": "250", "label": "250" }
         ]
       },
       {
         "type": "range",
-        "id": "type_header_base_size",
-        "label": "t:settings_schema.typography.settings.type_header_base_size.label",
-        "default": 32,
-        "min": 22,
-        "max": 70,
-        "unit": "px"
-      },
-      {
-        "type": "range",
         "id": "type_header_line_height",
-        "label": "t:settings_schema.typography.settings.type_header_line_height.label",
+        "label": "Line height",
         "default": 1.4,
         "min": 0.8,
         "max": 2,
@@ -449,100 +413,46 @@
       {
         "type": "checkbox",
         "id": "type_header_capitalize",
-        "label": "t:settings_schema.typography.settings.type_header_capitalize.label"
+        "label": "Capitalize headings"
       },
       {
         "type": "checkbox",
         "id": "type_header_accent_transform",
-        "label": "t:settings_schema.typography.settings.type_header_accent_transform.label"
+        "label": "Capitalize labels and footer titles"
       },
       {
         "type": "checkbox",
         "id": "type_headers_align_text",
-        "label": "t:settings_schema.typography.settings.type_headers_align_text.label",
+        "label": "Center page and section titles",
         "default": true
       },
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header_body_text"
-      },
-      {
-        "type": "text",
-        "id": "custom_base_font_filename",
-        "label": "Custom body font file name",
-        "info": "Enter the font file name. This overrides the heading and body font selectors."
-      },
-      {
-        "type": "font_picker",
-        "id": "type_base_font_family",
-        "label": "t:settings_schema.typography.settings.type_base_font_family.label",
-        "default": "chivo_n4"
+        "content": "Body style"
       },
       {
         "type": "select",
         "id": "type_base_spacing",
-        "label": "t:settings_schema.typography.settings.type_base_spacing.label",
+        "label": "Letter spacing",
         "default": "50",
         "options": [
-          {
-            "value": "-75",
-            "label": "-75"
-          },
-          {
-            "value": "-50",
-            "label": "-50"
-          },
-          {
-            "value": "-25",
-            "label": "-25"
-          },
-          {
-            "value": "0",
-            "label": "0"
-          },
-          {
-            "value": "25",
-            "label": "25"
-          },
-          {
-            "value": "50",
-            "label": "50"
-          },
-          {
-            "value": "75",
-            "label": "75"
-          },
-          {
-            "value": "100",
-            "label": "100"
-          },
-          {
-            "value": "150",
-            "label": "150"
-          },
-          {
-            "value": "200",
-            "label": "200"
-          },
-          {
-            "value": "250",
-            "label": "250"
-          }
+          { "value": "-75", "label": "-75" },
+          { "value": "-50", "label": "-50" },
+          { "value": "-25", "label": "-25" },
+          { "value": "0", "label": "0" },
+          { "value": "25", "label": "25" },
+          { "value": "50", "label": "50" },
+          { "value": "75", "label": "75" },
+          { "value": "100", "label": "100" },
+          { "value": "150", "label": "150" },
+          { "value": "200", "label": "200" },
+          { "value": "250", "label": "250" }
         ]
       },
       {
         "type": "range",
-        "id": "type_base_size",
-        "label": "t:settings_schema.typography.settings.type_base_size.label",
-        "default": 16,
-        "min": 12,
-        "max": 20,
-        "unit": "px"
-      },
-      {
-        "type": "range",
         "id": "type_base_line_height",
-        "label": "t:settings_schema.typography.settings.type_base_line_height.label",
+        "label": "Line height",
         "default": 1.6,
         "min": 1,
         "max": 2,
@@ -551,25 +461,231 @@
       {
         "type": "checkbox",
         "id": "type_base_accent_transform",
-        "label": "t:settings_schema.typography.settings.type_base_accent_transform.label"
+        "label": "Capitalize hero subtitle, sale tags, vendor"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header_navigation"
-      },
-      {
-        "type": "range",
-        "id": "type_navigation_size",
-        "label": "t:settings_schema.typography.settings.type_navigation_size.label",
-        "default": 18,
-        "min": 12,
-        "max": 40,
-        "unit": "px"
+        "content": "Navigation style"
       },
       {
         "type": "checkbox",
         "id": "type_navigation_style",
-        "label": "t:settings_schema.typography.settings.type_navigation_style.label"
+        "label": "Use heading font for navigation",
+        "info": "Navigation text size follows the Body small setting below."
+      },
+      {
+        "type": "header",
+        "content": "Desktop Typography"
+      },
+      {
+        "type": "paragraph",
+        "content": "Font sizes used on screens 769px and wider. These sizes apply automatically across every section of the theme."
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h1_desktop",
+        "label": "Heading 1",
+        "info": "Main page titles",
+        "default": 48,
+        "min": 24,
+        "max": 96,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h2_desktop",
+        "label": "Heading 2",
+        "info": "Section titles",
+        "default": 36,
+        "min": 20,
+        "max": 72,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h3_desktop",
+        "label": "Heading 3",
+        "info": "Sub-section titles",
+        "default": 28,
+        "min": 16,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h4_desktop",
+        "label": "Heading 4",
+        "info": "Minor headings",
+        "default": 22,
+        "min": 14,
+        "max": 48,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_lg_desktop",
+        "label": "Body large",
+        "info": "Intro text and emphasized paragraphs",
+        "default": 18,
+        "min": 12,
+        "max": 28,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_desktop",
+        "label": "Body",
+        "info": "Default paragraph and product description text",
+        "default": 16,
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_sm_desktop",
+        "label": "Body small",
+        "info": "Secondary text and the navigation menu",
+        "default": 14,
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_button_desktop",
+        "label": "Buttons",
+        "info": "Text inside buttons and add-to-cart controls",
+        "default": 14,
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_caption_desktop",
+        "label": "Captions & labels",
+        "info": "Badges, tags, and small helper text",
+        "default": 12,
+        "min": 8,
+        "max": 18,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Typography"
+      },
+      {
+        "type": "paragraph",
+        "content": "Font sizes used on screens narrower than 769px. These sizes apply automatically across every section of the theme."
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h1_mobile",
+        "label": "Heading 1",
+        "info": "Main page titles",
+        "default": 32,
+        "min": 20,
+        "max": 72,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h2_mobile",
+        "label": "Heading 2",
+        "info": "Section titles",
+        "default": 26,
+        "min": 18,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h3_mobile",
+        "label": "Heading 3",
+        "info": "Sub-section titles",
+        "default": 22,
+        "min": 16,
+        "max": 48,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h4_mobile",
+        "label": "Heading 4",
+        "info": "Minor headings",
+        "default": 18,
+        "min": 14,
+        "max": 40,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_lg_mobile",
+        "label": "Body large",
+        "info": "Intro text and emphasized paragraphs",
+        "default": 17,
+        "min": 12,
+        "max": 26,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_mobile",
+        "label": "Body",
+        "info": "Default paragraph and product description text",
+        "default": 15,
+        "min": 10,
+        "max": 22,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_body_sm_mobile",
+        "label": "Body small",
+        "info": "Secondary text and the navigation menu",
+        "default": 13,
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_button_mobile",
+        "label": "Buttons",
+        "info": "Text inside buttons and add-to-cart controls",
+        "default": 13,
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_caption_mobile",
+        "label": "Captions & labels",
+        "info": "Badges, tags, and small helper text",
+        "default": 11,
+        "min": 8,
+        "max": 16,
+        "step": 1,
+        "unit": "px"
       }
     ]
   },
