@@ -9,6 +9,19 @@
  */
 {
   "current": {
+    "color_schemes": {
+      "color-scheme-1": {
+        "settings": {
+          "background": "#FFFFFF",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#FFFFFF",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      }
+    },
     "color_body_bg": "#FFFFFF",
     "color_body_text": "#1a1e33",
     "color_borders": "#e8e8e1",
