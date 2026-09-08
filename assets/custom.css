@@ -1,5 +1,26 @@
 /* GLOBAL CSS*/
 
+/* CUSTOM TEXT STYLES */
+/* Sizes are controlled from Theme Settings > Typography > Custom text styles. */
+/* Desktop/mobile switch happens automatically via the CSS variables set in layout/theme.liquid. */
+
+.h1, h1,
+.h2, h2 {
+    font-size: var(--custom-heading-size);
+}
+
+.h3, h3 {
+    font-size: var(--custom-heading-small-size);
+}
+
+.text-body {
+    font-size: var(--custom-body-size);
+}
+
+.text-body-small {
+    font-size: var(--custom-body-small-size);
+}
+
 .main-content .shopify-section:nth-child(1) {
     margin-top: 98px;
 }

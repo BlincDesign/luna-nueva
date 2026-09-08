@@ -157,6 +157,13 @@
       /* Heading Line Heights */
       --element-text-line-height--heading: {{ settings.type_header_line_height | default: 1.4 }};
 
+      /* Custom Text Styles (desktop) */
+      /* ========================= */
+      --custom-heading-size: {{ settings.custom_heading_desktop_size | default: 67 | append: 'px' }};
+      --custom-heading-small-size: {{ settings.custom_heading_small_desktop_size | default: 48 | append: 'px' }};
+      --custom-body-size: {{ settings.custom_body_desktop_size | default: 12 | append: 'px' }};
+      --custom-body-small-size: {{ settings.custom_body_small_desktop_size | default: 10 | append: 'px' }};
+
       /* Buttons */
       /* ========================= */
       {% if settings.button_style == 'round-slight' %}
@@ -244,6 +251,12 @@
         --element-text-font-size--heading-md: calc({{ settings.type_header_base_size | minus: 8 | default: '20' | append: 'px' }} * 0.8);
         --element-text-font-size--heading-sm: calc({{ settings.type_header_base_size | minus: 14 | default: '18' | append: 'px' }} * 0.8);
         --element-text-font-size--heading-xs: calc({{ settings.type_header_base_size | minus: 16 | default: '16' | append: 'px' }} * 0.8);
+
+        /* Custom Text Styles (mobile) */
+        --custom-heading-size: {{ settings.custom_heading_mobile_size | default: 41 | append: 'px' }};
+        --custom-heading-small-size: {{ settings.custom_heading_small_mobile_size | default: 30 | append: 'px' }};
+        --custom-body-size: {{ settings.custom_body_mobile_size | default: 12 | append: 'px' }};
+        --custom-body-small-size: {{ settings.custom_body_small_mobile_size | default: 9 | append: 'px' }};
       }
     }
   {% endstyle %}

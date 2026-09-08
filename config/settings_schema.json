@@ -570,6 +570,86 @@
         "type": "checkbox",
         "id": "type_navigation_style",
         "label": "t:settings_schema.typography.settings.type_navigation_style.label"
+      },
+      {
+        "type": "header",
+        "content": "Custom text styles"
+      },
+      {
+        "type": "paragraph",
+        "content": "Sizes for Heading (h1, h2), Heading small (h3), Body text and Body small. Applied directly, independent of the settings above."
+      },
+      {
+        "type": "range",
+        "id": "custom_heading_desktop_size",
+        "label": "Heading size (desktop)",
+        "default": 67,
+        "min": 20,
+        "max": 100,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_heading_mobile_size",
+        "label": "Heading size (mobile)",
+        "default": 41,
+        "min": 16,
+        "max": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_heading_small_desktop_size",
+        "label": "Heading small size (desktop)",
+        "default": 48,
+        "min": 16,
+        "max": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_heading_small_mobile_size",
+        "label": "Heading small size (mobile)",
+        "default": 30,
+        "min": 14,
+        "max": 60,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_body_desktop_size",
+        "label": "Body text size (desktop)",
+        "default": 12,
+        "min": 8,
+        "max": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_body_mobile_size",
+        "label": "Body text size (mobile)",
+        "default": 12,
+        "min": 8,
+        "max": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_body_small_desktop_size",
+        "label": "Body small size (desktop)",
+        "default": 10,
+        "min": 6,
+        "max": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "custom_body_small_mobile_size",
+        "label": "Body small size (mobile)",
+        "default": 9,
+        "min": 6,
+        "max": 20,
+        "unit": "px"
       }
     ]
   },
