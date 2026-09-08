@@ -84,6 +84,84 @@
         "mobile_padding_bottom": 0
       }
     },
+    "custom_photo_wall_pD7cEK": {
+      "type": "custom__photo-wall",
+      "blocks": {
+        "photo_8DfJ9d": {
+          "type": "photo",
+          "settings": {
+            "caption": "The sign, 11:01 PM",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        },
+        "photo_qgJVP3": {
+          "type": "photo",
+          "settings": {
+            "caption": "Round two",
+            "alt": "",
+            "size": "normal",
+            "align": "up"
+          }
+        },
+        "photo_YPktJ4": {
+          "type": "photo",
+          "settings": {
+            "caption": "Behind the bar",
+            "alt": "",
+            "size": "wide",
+            "align": "dn"
+          }
+        },
+        "photo_tk6PMd": {
+          "type": "photo",
+          "settings": {
+            "caption": "Still here",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_ThcYJL": {
+          "type": "photo",
+          "settings": {
+            "caption": "The station",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_mtfALg": {
+          "type": "photo",
+          "settings": {
+            "caption": "The whole room",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        }
+      },
+      "block_order": [
+        "photo_8DfJ9d",
+        "photo_qgJVP3",
+        "photo_YPktJ4",
+        "photo_tk6PMd",
+        "photo_ThcYJL",
+        "photo_mtfALg"
+      ],
+      "name": "Photo Wall",
+      "settings": {
+        "gallery_label": "Event photos, scroll horizontally",
+        "section_background": "#2D3135",
+        "card_background": "#F7F4EE",
+        "card_text": "#2D3135",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "rich_text_VDFB8d": {
       "type": "rich-text",
       "blocks": {
@@ -113,21 +191,10 @@
           "settings": {
             "link": "",
             "link_text": "Button",
-            "button_type": "secondary",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "Button",
+            "button_type_2": "secondary"
           }
         }
       },
@@ -139,8 +206,7 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "stylized_bg": true,
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
+        "color_scheme": "",
         "align_text": "center",
         "narrow_column": false,
         "padding_top": 120,
@@ -603,8 +669,7 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "stylized_bg": true,
-        "background_color": "#aebfb4",
-        "text_color": "#35373a",
+        "color_scheme": "",
         "align_text": "left",
         "narrow_column": false,
         "padding_top": 120,
@@ -1092,20 +1157,9 @@
             "link": "",
             "link_text": "Button",
             "button_type": "secondary",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
+            "link_2": "",
+            "link_text_2": "Button",
+            "button_type_2": "secondary"
           }
         }
       },
@@ -1117,8 +1171,7 @@
       "disabled": true,
       "settings": {
         "stylized_bg": false,
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
+        "color_scheme": "",
         "align_text": "center",
         "narrow_column": true,
         "padding_top": 120,
@@ -1184,6 +1237,7 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
+    "custom_photo_wall_pD7cEK",
     "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",
