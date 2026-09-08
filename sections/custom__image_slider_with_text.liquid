@@ -1,27 +1,59 @@
 {% style %}
+  /* Button 1 */
+  .theme-block__button--{{ section.id }} .button--button-1.button--primary {
+    --btn-primary-bg: {{ section.settings.button_1_primary_bg | default: '#1c1d1d' }};
+    --btn-primary-border: {{ section.settings.button_1_primary_border | default: '#1c1d1d' }};
+    --btn-primary-color: {{ section.settings.button_1_primary_text | default: '#ffffff' }};
+    --btn-primary-bg-hover: {{ section.settings.button_1_primary_bg_hover | default: '#3a3a3a' }};
+    --btn-primary-border-hover: {{ section.settings.button_1_primary_border_hover | default: '#3a3a3a' }};
+    --btn-primary-color-hover: {{ section.settings.button_1_primary_text_hover | default: '#ffffff' }};
+  }
+
+  .theme-block__button--{{ section.id }} .button--button-1.button--secondary {
+    --btn-secondary-bg: {{ section.settings.button_1_secondary_bg | default: '#ffffff' }};
+    --btn-secondary-border: {{ section.settings.button_1_secondary_border | default: '#1c1d1d' }};
+    --btn-secondary-color: {{ section.settings.button_1_secondary_text | default: '#1c1d1d' }};
+    --btn-secondary-bg-hover: {{ section.settings.button_1_secondary_bg_hover | default: '#1c1d1d' }};
+    --btn-secondary-border-hover: {{ section.settings.button_1_secondary_border_hover | default: '#1c1d1d' }};
+    --btn-secondary-color-hover: {{ section.settings.button_1_secondary_text_hover | default: '#ffffff' }};
+  }
+
+  .theme-block__button--{{ section.id }} .button--button-1.button--link {
+    --btn-link-color: {{ section.settings.button_1_link_text | default: '#1c1d1d' }};
+    --btn-link-color-hover: {{ section.settings.button_1_link_text_hover | default: '#7a7a7a' }};
+  }
+
+
+  /* Button 2 */
+  .theme-block__button--{{ section.id }} .button--button-2.button--primary {
+    --btn-primary-bg: {{ section.settings.button_2_primary_bg | default: '#1c1d1d' }};
+    --btn-primary-border: {{ section.settings.button_2_primary_border | default: '#1c1d1d' }};
+    --btn-primary-color: {{ section.settings.button_2_primary_text | default: '#ffffff' }};
+    --btn-primary-bg-hover: {{ section.settings.button_2_primary_bg_hover | default: '#3a3a3a' }};
+    --btn-primary-border-hover: {{ section.settings.button_2_primary_border_hover | default: '#3a3a3a' }};
+    --btn-primary-color-hover: {{ section.settings.button_2_primary_text_hover | default: '#ffffff' }};
+  }
+
+  .theme-block__button--{{ section.id }} .button--button-2.button--secondary {
+    --btn-secondary-bg: {{ section.settings.button_2_secondary_bg | default: '#ffffff' }};
+    --btn-secondary-border: {{ section.settings.button_2_secondary_border | default: '#1c1d1d' }};
+    --btn-secondary-color: {{ section.settings.button_2_secondary_text | default: '#1c1d1d' }};
+    --btn-secondary-bg-hover: {{ section.settings.button_2_secondary_bg_hover | default: '#1c1d1d' }};
+    --btn-secondary-border-hover: {{ section.settings.button_2_secondary_border_hover | default: '#1c1d1d' }};
+    --btn-secondary-color-hover: {{ section.settings.button_2_secondary_text_hover | default: '#ffffff' }};
+  }
+
+  .theme-block__button--{{ section.id }} .button--button-2.button--link {
+    --btn-link-color: {{ section.settings.button_2_link_text | default: '#1c1d1d' }};
+    --btn-link-color-hover: {{ section.settings.button_2_link_text_hover | default: '#7a7a7a' }};
+  }
+
+
+
   #shopify-section-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  #shopify-section-{{ section.id }} .button.button--primary {
-    --btn-bg: #2D3135;
-    --btn-border: #2D3135;
-    --btn-color: #fff;
-    --btn-hover-bg: #2D3135;
-    --btn-hover-border: #2D3135;
-    --btn-hover-color: #fff;
-  }
-
-
-  #shopify-section-{{ section.id }} .button.button--secondary {
-    --btn-bg: transparent;
-    --btn-border: #2D3135;
-    --btn-color: #2D3135;
-    --btn-hover-bg: #2D3135;
-    --btn-hover-border: #2D3135;
-    --btn-hover-color: #fff;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__grid {
@@ -41,7 +73,7 @@
     font-size: 12px;
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: .2em; 
+    letter-spacing: .2em;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading {
@@ -110,19 +142,19 @@
   }
 
   .image-slider-text__slides .flickity-page-dots {
-      bottom: 18px;
-      left: 0;
-      right: 0;
-      width: max-content;
-      margin-inline: auto;
-      display: flex;
-      gap: .55rem;
-      justify-content: center;
-      z-index: 3;
-      padding: 17px 10px;
-      border-radius: 50px;
-      background: rgba(45, 49, 53, .42);
-      backdrop-filter: blur(5px);
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    width: max-content;
+    margin-inline: auto;
+    display: flex;
+    gap: .55rem;
+    justify-content: center;
+    z-index: 3;
+    padding: 17px 10px;
+    border-radius: 50px;
+    background: rgba(45, 49, 53, .42);
+    backdrop-filter: blur(5px);
   }
 
   .image-slider-text__slides .flickity-page-dots .dot {
@@ -135,11 +167,11 @@
     transition: background .3s;
     border: 0;
     border-radius: 0;
-}
+  }
 
-.image-slider-text__slides .flickity-page-dots .dot.is-selected {
+  .image-slider-text__slides .flickity-page-dots .dot.is-selected {
     background-color: #F9F6F1;
-}
+  }
 
 
   @media screen and (max-width: 1200px) {
@@ -149,8 +181,8 @@
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__slide {
-    height: 70vh;
-  }
+      height: 70vh;
+    }
 
     #shopify-section-{{ section.id }} .image-slider-text__slides {
       flex: 0 0 100%;
@@ -188,8 +220,6 @@
         padding: 55px 20px;
     }
   }
-
-
 {% endstyle %}
 
 <div class="image-slider-text__grid">
@@ -220,52 +250,27 @@
       </div>
     {% endif %}
 
-    {% comment %} {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
+    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
         {% if section.settings.button_1_label != blank %}
-          <a
-            href="{{ section.settings.button_1_link }}"
-            class="image-slider-text__button image-slider-text__button--primary"
-          >
-            {{ section.settings.button_1_label }}
-          </a>
+          {% render 'button',
+            label: section.settings.button_1_label,
+            type: section.settings.button_1_type,
+            as: 'button',
+            arrow: true
+          %}
         {% endif %}
 
         {% if section.settings.button_2_label != blank %}
-          <a
-            href="{{ section.settings.button_2_link }}"
-            class="image-slider-text__button image-slider-text__button--secondary"
-          >
-            {{ section.settings.button_2_label }}
-          </a>
+          {% render 'button',
+            label: section.settings.button_2_label,
+            type: section.settings.button_2_type,
+            as: 'button',
+            arrow: false
+          %}
         {% endif %}
       </div>
-    {% endif %} {% endcomment %}
-
-
-    {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
-    <div class="image-slider-text__buttons">
-      {% if section.settings.button_1_label != blank %}
-        {% render 'button',
-          label: section.settings.button_1_label,
-          type: section.settings.button_1_type,
-          as: 'button',
-          arrow: true
-        %}
-      {% endif %}
-
-      {% if section.settings.button_2_label != blank %}
-        {% render 'button',
-          label: section.settings.button_2_label,
-          type: section.settings.button_2_type,
-          as: 'button',
-          arrow: false
-        %}
-      {% endif %}
-    </div>
-  {% endif %}
-
-
+    {% endif %}
   </div>
 
   <div class="image-slider-text__slides">
@@ -277,7 +282,7 @@
         {% if block.settings.image != blank %}
           {% liquid
             assign img_loading = 'lazy'
-            assign img_fetchpriority = nil
+            assign img_fetchpriority = null
             if forloop.first
               assign img_loading = 'eager'
               assign img_fetchpriority = 'high'
@@ -328,8 +333,6 @@
     });
   });
 </script>
-
-
 
 {% schema %}
 {
@@ -402,6 +405,123 @@
         { "value": "link", "label": "Link" }
       ]
     },
+
+    {
+      "type": "header",
+      "content": "Primary",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_bg",
+      "label": "Background",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_text",
+      "label": "Text",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_border_hover",
+      "label": "Border (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_primary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Secondary",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_bg",
+      "label": "Background",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_border_hover",
+      "label": "Border (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_secondary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Link",
+      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_link_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_1_link_text_hover",
+      "label": "Text (hover)",
+      "default": "#7a7a7a",
+      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
+    },
+
     {
       "type": "header",
       "content": "Button 2"
@@ -422,6 +542,123 @@
         { "value": "link", "label": "Link" }
       ]
     },
+
+    {
+      "type": "header",
+      "content": "Primary",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_bg",
+      "label": "Background",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_text",
+      "label": "Text",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_border_hover",
+      "label": "Border (hover)",
+      "default": "#3a3a3a",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_primary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Secondary",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_bg",
+      "label": "Background",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_border",
+      "label": "Border",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_bg_hover",
+      "label": "Background (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_border_hover",
+      "label": "Border (hover)",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_secondary_text_hover",
+      "label": "Text (hover)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Link",
+      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_link_text",
+      "label": "Text",
+      "default": "#1c1d1d",
+      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
+    },
+    {
+      "type": "color",
+      "id": "button_2_link_text_hover",
+      "label": "Text (hover)",
+      "default": "#7a7a7a",
+      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
+    },
+
     {
       "type": "header",
       "content": "Layout"
@@ -486,7 +723,6 @@
       "unit": "px",
       "default": 48
     }
-
   ],
 
   "blocks": [
