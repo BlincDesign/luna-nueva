@@ -511,6 +511,56 @@
         "mobile_padding_bottom": 48
       }
     },
+    "rich_text_T7ntjy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_B88Crr": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text"
+          }
+        },
+        "text_MhzT48": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "divider_tkEFq8": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_B88Crr",
+        "text_MhzT48",
+        "divider_tkEFq8"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "stylized_bg": true,
+        "background_color": "#AEBFB4",
+        "text_color": "#35373A",
+        "align_text": "left",
+        "narrow_column": false,
+        "padding_top": 120,
+        "padding_bottom": 40,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 40
+      }
+    },
     "custom_rich_text_columns_n6Ddd9": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -545,6 +595,7 @@
         "right_column_width": 62,
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
         "padding_top": 80,
         "padding_bottom": 48,
         "mobile_padding_top": 80,
@@ -937,6 +988,7 @@
     "custom_additives_table_H9ebp3",
     "text_with_icons_W6xt7F",
     "custom_story_teaser_grtbFU",
+    "rich_text_T7ntjy",
     "custom_rich_text_columns_n6Ddd9",
     "custom_image_columns_GdzTt9",
     "custom_rich_text_columns_TwtQDb",
