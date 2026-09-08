@@ -51,10 +51,6 @@
     .media-gallery__inner--flush-right .drag-scroller__bar {
       width: calc(100% - var(--media-gallery-right-bleed));
     }
-
-    .media-gallery__grid .spacer {
-      max-width: 0;
-    }
   }
 
   .media-gallery__eyebrow {
@@ -148,6 +144,10 @@
       flex-direction: column;
       align-items: stretch;
       gap: 32px;
+    }
+
+    .media-gallery__grid .spacer {
+      max-width: 0;
     }
   }
 {% endstylesheet %}
