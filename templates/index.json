@@ -100,6 +100,7 @@
         "photo_qgJVP3": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/ev-icebucket.jpg",
             "caption": "Round two",
             "alt": "",
             "size": "normal",
@@ -109,6 +110,7 @@
         "photo_YPktJ4": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/ev-pair.jpg",
             "caption": "Behind the bar",
             "alt": "",
             "size": "wide",
@@ -118,6 +120,7 @@
         "photo_tk6PMd": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/ev-truck.jpg",
             "caption": "Still here",
             "alt": "",
             "size": "normal",
@@ -127,6 +130,7 @@
         "photo_ThcYJL": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/ev-raise.jpg",
             "caption": "The station",
             "alt": "",
             "size": "normal",
