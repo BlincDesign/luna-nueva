@@ -12,6 +12,29 @@
     "custom_rich_text_RgfqhN": {
       "type": "custom_rich_text",
       "blocks": {
+        "button_MLqCtB": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP →",
+            "button_type": "secondary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        },
         "preheading_UgTXtz": {
           "type": "preheading",
           "settings": {
@@ -28,14 +51,13 @@
         }
       },
       "block_order": [
+        "button_MLqCtB",
         "preheading_UgTXtz",
         "heading_WKeeDM"
       ],
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-1",
-        "section_background": "rgba(0,0,0,0)",
-        "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -230,8 +252,6 @@
       "name": "t:sections.rich-text.presets.cus_rich_text.name",
       "settings": {
         "color_scheme": "",
-        "section_background": "#2d3135",
-        "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
