@@ -148,11 +148,51 @@
         "padding_top_mb": 52,
         "padding_bottom_mb": 52
       }
+    },
+    "custom_rich_text_columns_bNhhLk": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_Anymyk": {
+          "type": "preheading",
+          "settings": {
+            "title": "<strong>PAST NIGHTS</strong>",
+            "position": "left"
+          }
+        },
+        "heading_UUDFVN": {
+          "type": "heading",
+          "settings": {
+            "title": "Everything that already happened.",
+            "position": "left"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_Anymyk",
+        "heading_UUDFVN"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#2d3135",
+        "text_color": "#f9f6f1",
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "padding_top": 92,
+        "padding_bottom": 0,
+        "mobile_padding_top": 52,
+        "mobile_padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "custom_rich_text_columns_47QNRH",
-    "custom_media_gallery_Bci3L9"
+    "custom_media_gallery_Bci3L9",
+    "custom_rich_text_columns_bNhhLk"
   ]
 }
