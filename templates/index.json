@@ -511,6 +511,100 @@
         "mobile_padding_bottom": 48
       }
     },
+    "custom_rich_text_columns_n6Ddd9": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_kbMVRP": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
+            "position": "left"
+          }
+        },
+        "text_DLDMxC": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_kbMVRP",
+        "text_DLDMxC"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#aebfb4",
+        "text_color": "#35373a",
+        "left_column_width": 38,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 62,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-start",
+        "padding_top": 80,
+        "padding_bottom": 48,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
+    },
+    "custom_image_columns_GdzTt9": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "step_thEjBm": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-fields.jpg",
+            "number": "01",
+            "heading": "The land decides",
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+          }
+        },
+        "step_PtK4hm": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-barrels.jpg",
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+          }
+        },
+        "step_4EQaK9": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-table.jpg",
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_thEjBm",
+        "step_PtK4hm",
+        "step_4EQaK9"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "section_background": "#aebfb4",
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 3,
+        "gap": 52,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_rich_text_columns_TwtQDb": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -843,6 +937,8 @@
     "custom_additives_table_H9ebp3",
     "text_with_icons_W6xt7F",
     "custom_story_teaser_grtbFU",
+    "custom_rich_text_columns_n6Ddd9",
+    "custom_image_columns_GdzTt9",
     "custom_rich_text_columns_TwtQDb",
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
