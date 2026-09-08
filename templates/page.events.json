@@ -58,8 +58,8 @@
         "detail_accent_color": "#c9a063",
         "padding_top": 116,
         "padding_bottom": 116,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
+        "mobile_padding_top": 52,
+        "mobile_padding_bottom": 52
       }
     }
   },
