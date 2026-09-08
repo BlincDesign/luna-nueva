@@ -866,6 +866,90 @@
         "padding_bottom_mb": 40
       }
     },
+    "custom_rich_text_columns_EeJbUR": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_hNYxWA": {
+          "type": "preheading",
+          "settings": {
+            "title": "Four Ways to Pour It",
+            "position": "left"
+          }
+        },
+        "text_wjTinT": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Clean enough to </h2><h2>drink neat. Honest </h2><h2>enough to build on.</h2><p></p>",
+            "position": "left"
+          }
+        },
+        "heading_NkHTUf": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_kg7Aj7": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "enlarge_text": false,
+            "text": "",
+            "position": "right"
+          }
+        },
+        "button_gjNy4H": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_hNYxWA",
+        "text_wjTinT",
+        "heading_NkHTUf",
+        "text_kg7Aj7",
+        "button_gjNy4H"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#d5995a",
+        "text_color": "#1a1e33",
+        "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "padding_top": 120,
+        "padding_bottom": 40,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 40
+      }
+    },
     "custom_image_columns_WKgQjK": {
       "type": "custom__image_columns",
       "blocks": {
@@ -1064,6 +1148,7 @@
     "custom_rich_text_columns_TwtQDb",
     "custom_media_gallery_9bgdN4",
     "custom_media_gallery_JxCFTk",
+    "custom_rich_text_columns_EeJbUR",
     "custom_image_columns_WKgQjK",
     "rich-text",
     "newsletter"
