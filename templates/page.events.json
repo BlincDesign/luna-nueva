@@ -13,9 +13,58 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "custom_rich_text_columns_47QNRH": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_ERRjqa": {
+          "type": "preheading",
+          "settings": {
+            "title": "BRING THE PARTY",
+            "position": "left"
+          }
+        },
+        "heading_kG7HtX": {
+          "type": "heading",
+          "settings": {
+            "title": "For the nights that turn into something nobody planned.",
+            "position": "left"
+          }
+        },
+        "text_89txeh": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops to bring together a like-minded community over exceptional tequila.</p>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_ERRjqa",
+        "heading_kG7HtX",
+        "text_89txeh"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "section_background": "#2d3135",
+        "text_color": "#f9f6f1",
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 28,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "padding_top": 116,
+        "padding_bottom": 116,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_rich_text_columns_47QNRH"
   ]
 }
