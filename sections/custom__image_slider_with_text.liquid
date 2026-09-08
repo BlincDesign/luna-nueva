@@ -307,32 +307,84 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var sliderEl = document.querySelector('#shopify-section-{{ section.id }} .image-slider-text__slides');
+  (function () {
+    var sectionId = 'shopify-section-{{ section.id }}';
+    var sliderSelector = '#' + sectionId + ' .image-slider-text__slides';
+    var flkty = null;
 
-    if (!sliderEl) return;
+    function initSlider() {
+      var sliderEl = document.querySelector(sliderSelector);
 
-    var flkty = new Flickity(sliderEl, {
-      cellAlign: 'left',
-      contain: true,
-      wrapAround: true,
-      autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
-      prevNextButtons: false,
-      pageDots: true,
-      fade: true,
-      pauseAutoPlayOnHover: true
-    });
+      if (!sliderEl) return;
 
-    var images = sliderEl.querySelectorAll('.image-slider-text__image');
-    images.forEach(function (img) {
-      if (!img.complete) {
-        img.addEventListener('load', function () {
-          flkty.resize();
-        });
+      // Destroy existing Flickity instance before re-initializing
+      if (flkty) {
+        flkty.destroy();
+        flkty = null;
+      }
+
+      flkty = new Flickity(sliderEl, {
+        cellAlign: 'left',
+        contain: true,
+        wrapAround: true,
+        autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
+        prevNextButtons: false,
+        pageDots: true,
+        fade: true,
+        pauseAutoPlayOnHover: true
+      });
+
+      // Resize Flickity after images have loaded
+      var images = sliderEl.querySelectorAll('.image-slider-text__image');
+
+      images.forEach(function (img) {
+        if (!img.complete) {
+          img.addEventListener('load', function () {
+            if (flkty) {
+              flkty.resize();
+            }
+          });
+        }
+      });
+    }
+
+    function destroySlider() {
+      if (flkty) {
+        flkty.destroy();
+        flkty = null;
+      }
+    }
+
+    // Initial page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSlider);
+    } else {
+      initSlider();
+    }
+
+    // Shopify Theme Editor: section re-rendered
+    document.addEventListener('shopify:section:load', function (event) {
+      if (event.detail.sectionId === '{{ section.id }}') {
+        initSlider();
       }
     });
-  });
+
+    // Shopify Theme Editor: section being removed
+    document.addEventListener('shopify:section:unload', function (event) {
+      if (event.detail.sectionId === '{{ section.id }}') {
+        destroySlider();
+      }
+    });
+
+    // Shopify Theme Editor: section selected
+    document.addEventListener('shopify:section:select', function (event) {
+      if (event.detail.sectionId === '{{ section.id }}' && flkty) {
+        flkty.resize();
+      }
+    });
+  })();
 </script>
+
 
 {% schema %}
 {
