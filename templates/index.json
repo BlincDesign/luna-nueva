@@ -1157,6 +1157,84 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "custom_photo_wall_Q3bWGg": {
+      "type": "custom__photo-wall",
+      "blocks": {
+        "photo_ekkbaj": {
+          "type": "photo",
+          "settings": {
+            "caption": "The sign, 11:01 PM",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        },
+        "photo_wEgWRA": {
+          "type": "photo",
+          "settings": {
+            "caption": "Round two",
+            "alt": "",
+            "size": "normal",
+            "align": "up"
+          }
+        },
+        "photo_cLDPPq": {
+          "type": "photo",
+          "settings": {
+            "caption": "Behind the bar",
+            "alt": "",
+            "size": "wide",
+            "align": "dn"
+          }
+        },
+        "photo_pheVcC": {
+          "type": "photo",
+          "settings": {
+            "caption": "Still here",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_j3E7Bm": {
+          "type": "photo",
+          "settings": {
+            "caption": "The station",
+            "alt": "",
+            "size": "normal",
+            "align": ""
+          }
+        },
+        "photo_zFEzfq": {
+          "type": "photo",
+          "settings": {
+            "caption": "The whole room",
+            "alt": "",
+            "size": "tall",
+            "align": ""
+          }
+        }
+      },
+      "block_order": [
+        "photo_ekkbaj",
+        "photo_wEgWRA",
+        "photo_cLDPPq",
+        "photo_pheVcC",
+        "photo_j3E7Bm",
+        "photo_zFEzfq"
+      ],
+      "name": "Photo Wall",
+      "settings": {
+        "gallery_label": "Event photos, scroll horizontally",
+        "section_background": "#2D3135",
+        "card_background": "#F7F4EE",
+        "card_text": "#2D3135",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
@@ -1179,6 +1257,7 @@
     "custom_rich_text_columns_EeJbUR",
     "custom_image_columns_WKgQjK",
     "rich-text",
-    "newsletter"
+    "newsletter",
+    "custom_photo_wall_Q3bWGg"
   ]
 }
