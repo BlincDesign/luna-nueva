@@ -319,14 +319,14 @@
         "preheading_aeJrYd": {
           "type": "preheading",
           "settings": {
-            "title": "IN THE WILD",
+            "title": "<strong>BEFORE DARK</strong>",
             "position": "left"
           }
         },
         "heading_qrQ8Pg": {
           "type": "heading",
           "settings": {
-            "title": "Where it actually gets poured.",
+            "title": "Long tables, tailgates and the drive out.",
             "position": "left"
           }
         }
@@ -346,10 +346,135 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
-        "padding_top": 0,
+        "padding_top": 92,
         "padding_bottom": 0,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
+      }
+    },
+    "custom_media_gallery_7RqYDk": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_j4A8ne": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-fruitbar.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_Qdx9Lq": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-longtable.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_RNnkN3": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-faces.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_AaadJA": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-truck.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_kUm747": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-toast_f8bdfeb1-fa11-485d-a7fb-019a6f5e7398.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_aKjkqc": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-pour.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_CRejb4": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-airstream.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_rEAbbG": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-icebucket.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_CPd6Kr": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-ice.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_zLM9PW": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-raise.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_j4A8ne",
+        "image_Qdx9Lq",
+        "image_RNnkN3",
+        "image_AaadJA",
+        "image_kUm747",
+        "image_aKjkqc",
+        "image_CRejb4",
+        "image_rEAbbG",
+        "image_CPd6Kr",
+        "image_zLM9PW"
+      ],
+      "name": "Media gallery - media only",
+      "settings": {
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 320,
+        "tile_width_max": 320,
+        "row_height": 280,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 280,
+        "gap": 16,
+        "section_background": "#D39655",
+        "padding_top": 0,
+        "padding_bottom": 92,
+        "padding_top_mb": 36,
+        "padding_bottom_mb": 52
       }
     }
   },
@@ -359,6 +484,7 @@
     "custom_media_gallery_Bci3L9",
     "custom_rich_text_columns_bNhhLk",
     "custom_media_gallery_VgzndN",
-    "custom_rich_text_columns_c87Lyd"
+    "custom_rich_text_columns_c87Lyd",
+    "custom_media_gallery_7RqYDk"
   ]
 }
