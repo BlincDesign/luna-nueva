@@ -1,27 +1,5 @@
 {% style %}
   {% for block in section.blocks %}
-    .theme-block__button--{{ block.id }} .button.button--primary {
-     --btn-primary-bg: {{ block.settings.button_primary_bg | default: "#1c1d1d" }};
-      --btn-primary-border: {{ block.settings.button_primary_border | default: "#1c1d1d" }};
-      --btn-primary-color: {{ block.settings.button_primary_text | default: "#ffffff" }};
-      --btn-primary-bg-hover: {{ block.settings.button_primary_bg_hover | default: "#3a3a3a" }};
-      --btn-primary-border-hover: {{ block.settings.button_primary_border_hover | default: "#3a3a3a" }};
-      --btn-primary-color-hover: {{ block.settings.button_primary_text_hover | default: "#ffffff" }};
-    }
-
-    .theme-block__button--{{ block.id }} .button.button--secondary {
-      --btn-secondary-bg: {{ block.settings.button_secondary_bg | default: "#ffffff" }};
-      --btn-secondary-border: {{ block.settings.button_secondary_border | default: "#1c1d1d" }};
-      --btn-secondary-color: {{ block.settings.button_secondary_text | default: "#1c1d1d" }};
-      --btn-secondary-bg-hover: {{ block.settings.button_secondary_bg_hover | default: "#1c1d1d" }};
-      --btn-secondary-border-hover: {{ block.settings.button_secondary_border_hover | default: "#1c1d1d" }};
-      --btn-secondary-color-hover: {{ block.settings.button_secondary_text_hover | default: "#ffffff" }};
-    }
-
-    .theme-block__button--{{ block.id }} .button.button--link {
-      --btn-link-color: {{ settings.button_link_text | default: "#1c1d1d" }};
-      --btn-link-color-hover: {{ settings.button_link_text_hover | default: "#7a7a7a" }};
-    }
 
     #block-{{ block.id }} .rich-text__divider {
       position: relative;
@@ -69,8 +47,6 @@
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
   }
 
   #shopify-section-{{ section.id }}::before {
@@ -85,7 +61,7 @@
   }
 {% endstyle %}
 
-<div class="text-{{ section.settings.align_text }}">
+<div class="text-{{ section.settings.align_text }} gradient color-{{ section.settings.color_scheme }}">
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
@@ -157,16 +133,10 @@
       "default": false
     },
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#2d3135"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#f9f6f1"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "select",
