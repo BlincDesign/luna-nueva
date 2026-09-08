@@ -61,10 +61,98 @@
         "mobile_padding_top": 52,
         "mobile_padding_bottom": 52
       }
+    },
+    "custom_media_gallery_Bci3L9": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_aHTAFy": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "",
+            "heading": "We’ve poured at Venice Fest and the LA Times Food Bowl, and we show up at the table, not just on the shelf.",
+            "show_divider": true,
+            "body": "<p>These gatherings are more than just tastings — they’re immersive experiences that introduce new customers to the craft and culture behind Luna Nueva. Whether you’re discovering us for the first time or already part of the family, each one is a chance to connect, celebrate, and raise a glass to good tequila.</p>",
+            "button_label": "Get invited to the next one",
+            "button_url": ""
+          }
+        },
+        "image_XPT4HD": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "video_one": "shopify://files/videos/dispo.mp4",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_rn8gqk": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-market.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_qY9KPQ": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-pool.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_n74VqN": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-red.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_UwQXar": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-cups.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_aHTAFy",
+        "image_XPT4HD",
+        "image_rn8gqk",
+        "image_qY9KPQ",
+        "image_n74VqN",
+        "image_UwQXar"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "section_background": "#AEBFB4",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
-    "custom_rich_text_columns_47QNRH"
+    "custom_rich_text_columns_47QNRH",
+    "custom_media_gallery_Bci3L9"
   ]
 }
