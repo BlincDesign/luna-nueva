@@ -62,24 +62,15 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
       color: {{ block.settings.icon_color }};
-      {%- if section_scheme %}
-        background: rgb({{ section_scheme.settings.background.rgb }});
-      {%- else %}
-        background: {{ section.settings.background_color }};
-      {%- endif %}
+      background: rgb({{ section_scheme.settings.background.rgb }});
     }
   {% endfor %}
 
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    {%- if section_scheme %}
-      background-color: rgb({{ section_scheme.settings.background.rgb }});
-      color: rgb({{ section_scheme.settings.text.rgb }});
-    {%- else %}
-      background-color: {{ section.settings.background_color }};
-      color: {{ section.settings.text_color }};
-    {%- endif %}
+    background-color: rgb({{ section_scheme.settings.background.rgb }});
+    color: rgb({{ section_scheme.settings.text.rgb }});
   }
 
   #shopify-section-{{ section.id }}::before {
@@ -166,26 +157,10 @@
       "default": false
     },
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#2d3135"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#f9f6f1"
-    },
-    {
-      "type": "header",
-      "content": "Color scheme"
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "info": "Overrides the background and text color settings above when set."
+      "default": "scheme-2"
     },
     {
       "type": "select",

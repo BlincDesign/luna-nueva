@@ -113,8 +113,6 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "stylized_bg": true,
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
         "color_scheme": "scheme-2",
         "align_text": "center",
         "narrow_column": false,
@@ -431,13 +429,10 @@
       ],
       "name": "t:common.text_with_icons.presets.text_with_icons.name",
       "settings": {
-        "background_color": "#d5995a",
-        "text_color": "#1a1e33",
         "color_scheme": "scheme-4",
         "title": "",
         "align_text": "left",
         "desktop_columns_per_row": 3,
-        "icon_color": "#1a1e33",
         "link": "",
         "link_text": "",
         "button_type": "primary",
@@ -572,8 +567,7 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "stylized_bg": true,
-        "background_color": "#aebfb4",
-        "text_color": "#35373a",
+        "color_scheme": "scheme-5",
         "align_text": "left",
         "narrow_column": false,
         "padding_top": 100,
@@ -1080,8 +1074,7 @@
       "disabled": true,
       "settings": {
         "stylized_bg": false,
-        "background_color": "#2d3135",
-        "text_color": "#f9f6f1",
+        "color_scheme": "scheme-2",
         "align_text": "center",
         "narrow_column": true,
         "padding_top": 100,

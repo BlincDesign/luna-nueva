@@ -27,27 +27,15 @@
     #shopify-section-{{ section.id }} {
      padding-top: {{ section.settings.padding_top }}px;
      padding-bottom: {{ section.settings.padding_bottom }}px;
-     {%- if section_scheme %}
-       background-color: rgb({{ section_scheme.settings.background.rgb }});
-     {%- else %}
-       background-color: {{ section.settings.background_color }};
-     {%- endif %}
+     background-color: rgb({{ section_scheme.settings.background.rgb }});
    }
 
    #shopify-section-{{ section.id }} .text-with-icons__block {
-     {%- if section_scheme %}
-       color: rgb({{ section_scheme.settings.text.rgb }});
-     {%- else %}
-       color: {{section.settings.text_color }};
-     {%- endif %}
+     color: rgb({{ section_scheme.settings.text.rgb }});
    }
 
    #shopify-section-{{ section.id }} .icon {
-     {%- if section_scheme %}
-       color: rgb({{ section_scheme.settings.text.rgb }});
-     {%- else %}
-       color: {{ section.settings.icon_color }};
-     {%- endif %}
+     color: rgb({{ section_scheme.settings.text.rgb }});
    }
 
    #shopify-section-{{ section.id }} .icon path,
@@ -131,26 +119,10 @@
   "class": "background-image section--scheme-secondary",
   "settings": [
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#2d3135"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#f9f6f1"
-    },
-    {
-      "type": "header",
-      "content": "Color scheme"
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "info": "Overrides the background, text, and icon color settings above when set."
+      "default": "scheme-4"
     },
     {
       "type": "text",
@@ -181,12 +153,6 @@
       "min": 2,
       "max": 4,
       "step": 1
-    },
-    {
-      "type": "color",
-      "id": "icon_color",
-      "label": "t:common.text_with_icons.settings.icon_color.label",
-      "default": "#000"
     },
     {
       "type": "url",
