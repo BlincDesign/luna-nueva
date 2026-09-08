@@ -45,15 +45,12 @@
         "heading_highlight_color": "#9b3a15",
         "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
         "button_1_label": "Shop now",
-        "button_1_type": "secondary",
+        "button_1_type": "primary",
         "button_2_label": "Learn more",
         "button_2_type": "link",
-        "background_color": "#aebfb4",
         "content_width": 800,
         "padding_top": 0,
-        "padding_bottom": 0,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 0
+        "padding_bottom": 0
       }
     },
     "rich_text_VDFB8d": {
@@ -92,8 +89,8 @@
         "text_color": "#f9f6f1",
         "align_text": "center",
         "narrow_column": false,
-        "padding_top": 120,
-        "padding_bottom": 120,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
       }
@@ -313,10 +310,8 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
-        "padding_top": 120,
-        "padding_bottom": 40,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 40
+        "padding_top": 100,
+        "padding_bottom": 40
       }
     },
     "custom_additives_table_H9ebp3": {
@@ -363,16 +358,13 @@
       ],
       "name": "Additives table",
       "settings": {
-        "background_color": "#d5995a",
         "text_color": "#1a1e33",
         "heading_additive": "ADDITIVE",
         "heading_product": "LUNA NUEVA",
         "heading_permitted": "PERMITTED UP TO 1%",
         "heading_bottle": "IN THIS BOTTLE",
         "padding_top": 0,
-        "padding_bottom": 40,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 40
+        "padding_bottom": 40
       }
     },
     "text_with_icons_W6xt7F": {
@@ -435,7 +427,7 @@
         "button_link_text_hover": "#7a7a7a",
         "divider": false,
         "padding_top": 0,
-        "padding_bottom": 124,
+        "padding_bottom": 100,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 80
       }
@@ -506,9 +498,7 @@
         "section_background": "#2d3135",
         "text_color": "#f9f6f1",
         "padding_top": 96,
-        "padding_bottom": 96,
-        "mobile_padding_top": 48,
-        "mobile_padding_bottom": 48
+        "padding_bottom": 96
       }
     },
     "rich_text_T7ntjy": {
@@ -556,7 +546,7 @@
         "text_color": "#35373a",
         "align_text": "left",
         "narrow_column": false,
-        "padding_top": 120,
+        "padding_top": 100,
         "padding_bottom": 40,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 40
@@ -598,9 +588,7 @@
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
         "padding_top": 0,
-        "padding_bottom": 48,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 48
+        "padding_bottom": 48
       }
     },
     "custom_image_columns_GdzTt9": {
@@ -715,9 +703,7 @@
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "padding_top": 80,
-        "padding_bottom": 60,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
+        "padding_bottom": 60
       }
     },
     "custom_media_gallery_9bgdN4": {
@@ -944,10 +930,8 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
-        "padding_top": 120,
-        "padding_bottom": 40,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 40
+        "padding_top": 100,
+        "padding_bottom": 40
       }
     },
     "custom_image_columns_WKgQjK": {
@@ -1070,8 +1054,8 @@
         "text_color": "#f9f6f1",
         "align_text": "center",
         "narrow_column": true,
-        "padding_top": 120,
-        "padding_bottom": 120,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "mobile_padding_top": 80,
         "mobile_padding_bottom": 8
       }
@@ -1124,8 +1108,8 @@
         "image_position": "right",
         "color_background": "#2d3135",
         "color_text": "#ffffff",
-        "padding_top": 140,
-        "padding_bottom": 140,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
