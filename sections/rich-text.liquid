@@ -122,7 +122,7 @@
             {%- endif -%}
           </div>
         {%- when 'text' -%}
-          <div class="rte page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+          <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {%- if block.settings.text != blank -%}
               {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
               {{ block.settings.text }}
