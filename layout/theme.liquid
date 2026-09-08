@@ -125,13 +125,13 @@
       --element-text-letter-spacing--body: {{ settings.type_base_spacing | default: '50' | divided_by: 1000.00 | append: 'em' }};
       --element-text-text-transform--body: none;
 
-      /* Body Font Sizes */
+      /* Body Font Sizes — driven by the centralized Typography scale (see snippets/css-variables.liquid) */
       --element-text-font-size--body: initial;
-      --element-text-font-size--body-xs: {{ settings.type_base_size | minus: 4 | default: 12 | append: 'px' }};
-      --element-text-font-size--body-sm: {{ settings.type_base_size | minus: 2 | default: 14 | append: 'px' }};
-      --element-text-font-size--body-md: {{ settings.type_base_size | default: 16 | append: 'px' }};
-      --element-text-font-size--body-lg: {{ settings.type_base_size | plus: 2 | default: 18 | append: 'px' }};
-      
+      --element-text-font-size--body-xs: var(--type-caption-size);
+      --element-text-font-size--body-sm: var(--type-body-sm-size);
+      --element-text-font-size--body-md: var(--type-body-size);
+      --element-text-font-size--body-lg: var(--type-body-lg-size);
+
       /* Body Line Heights */
       --element-text-line-height--body: {{ settings.type_base_line_height | default: 1.4 }};
 
@@ -146,23 +146,16 @@
       {% endif %} 
       
       
-      /* Heading Font Sizes */
-      --element-text-font-size--heading-2xl: {{ settings.type_header_base_size | plus: 16 | default: '48' | append: 'px' }};
-      --element-text-font-size--heading-xl: {{ settings.type_header_base_size | default: '32' | append: 'px' }};
-      --element-text-font-size--heading-lg: {{ settings.type_header_base_size | minus: 6 | default: '24' | append: 'px' }};
-      --element-text-font-size--heading-md: {{ settings.type_header_base_size | minus: 8 | default: '20' | append: 'px' }};
-      --element-text-font-size--heading-sm: {{ settings.type_header_base_size | minus: 14 | default: '18' | append: 'px' }};
-      --element-text-font-size--heading-xs: {{ settings.type_header_base_size | minus: 16 | default: '16' | append: 'px' }};
-      
+      /* Heading Font Sizes — driven by the centralized Typography scale (see snippets/css-variables.liquid) */
+      --element-text-font-size--heading-2xl: var(--type-h1-size);
+      --element-text-font-size--heading-xl: var(--type-h2-size);
+      --element-text-font-size--heading-lg: var(--type-h3-size);
+      --element-text-font-size--heading-md: var(--type-h4-size);
+      --element-text-font-size--heading-sm: var(--type-h4-size);
+      --element-text-font-size--heading-xs: var(--type-h4-size);
+
       /* Heading Line Heights */
       --element-text-line-height--heading: {{ settings.type_header_line_height | default: 1.4 }};
-
-      /* Custom Text Styles (desktop) */
-      /* ========================= */
-      --custom-heading-size: {{ settings.custom_heading_desktop_size | default: 67 | append: 'px' }};
-      --custom-heading-small-size: {{ settings.custom_heading_small_desktop_size | default: 48 | append: 'px' }};
-      --custom-body-size: {{ settings.custom_body_desktop_size | default: 12 | append: 'px' }};
-      --custom-body-small-size: {{ settings.custom_body_small_desktop_size | default: 10 | append: 'px' }};
 
       /* Buttons */
       /* ========================= */
@@ -178,10 +171,12 @@
       --element-button-font-family-fallback: {{ settings.type_header_font_family.fallback_families }};
       --element-button-font-weight: {{ settings.type_header_font_family.weight }};
       --element-button-letter-spacing: {{ settings.type_header_spacing | default: '25' | divided_by: 1000.00 | append: 'em' }};
+      --element-button-font-size: var(--type-button-size);
+      --element-badge-font-size: var(--type-caption-size);
 
       {% if settings.type_header_capitalize %}
       --element-button-text-transform: uppercase;
-      {% endif %} 
+      {% endif %}
 
       /* Base Color Variables */
       --element-button-color-primary: {{ settings.color_button }};
@@ -242,23 +237,6 @@
       box-shadow: inset 0 0 0 1px {{ settings.color_body_text }};
     }
 
-    @media (max-width: 768px) {
-      :root {
-        /* Heading Font Sizes */
-        --element-text-font-size--heading-2xl: calc({{ settings.type_header_base_size | plus: 16 | default: '48' | append: 'px' }} * 0.8);
-        --element-text-font-size--heading-xl: calc({{ settings.type_header_base_size | default: '32' | append: 'px' }} * 0.8);
-        --element-text-font-size--heading-lg: calc({{ settings.type_header_base_size | minus: 6 | default: '24' | append: 'px' }} * 0.8);
-        --element-text-font-size--heading-md: calc({{ settings.type_header_base_size | minus: 8 | default: '20' | append: 'px' }} * 0.8);
-        --element-text-font-size--heading-sm: calc({{ settings.type_header_base_size | minus: 14 | default: '18' | append: 'px' }} * 0.8);
-        --element-text-font-size--heading-xs: calc({{ settings.type_header_base_size | minus: 16 | default: '16' | append: 'px' }} * 0.8);
-
-        /* Custom Text Styles (mobile) */
-        --custom-heading-size: {{ settings.custom_heading_mobile_size | default: 41 | append: 'px' }};
-        --custom-heading-small-size: {{ settings.custom_heading_small_mobile_size | default: 30 | append: 'px' }};
-        --custom-body-size: {{ settings.custom_body_mobile_size | default: 12 | append: 'px' }};
-        --custom-body-small-size: {{ settings.custom_body_small_mobile_size | default: 9 | append: 'px' }};
-      }
-    }
   {% endstyle %}
 </head>
 
