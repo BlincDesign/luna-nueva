@@ -104,6 +104,11 @@
     {% endif %}
 
     {% style %}
+    .gradient {
+      background: rgb(var(--color-background));
+      background: var(--gradient-background);
+      background-attachment: fixed;
+    }
     /* Color Schemes */
     /* ========================= */
     {% for scheme in settings.color_schemes %}
