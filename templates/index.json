@@ -113,7 +113,7 @@
             "image": "shopify://shop_images/ev-pair.jpg",
             "caption": "Behind the bar",
             "alt": "",
-            "size": "wide",
+            "size": "normal",
             "align": "dn"
           }
         },
