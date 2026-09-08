@@ -152,7 +152,7 @@
 
             .color-{{ scheme.id }} {
               /* Background */
-              --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+              {% if scheme.settings.background == 'rgba(0,0,0,0)' or scheme.settings.background == 'transparent' %} --color-background: transparent; {% else %} --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }}; {% endif %}
 
               {% if scheme.settings.background_gradient != empty %}
                 --gradient-background: {{ scheme.settings.background_gradient }};
