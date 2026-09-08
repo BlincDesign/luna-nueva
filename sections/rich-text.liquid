@@ -85,7 +85,7 @@
   }
 {% endstyle %}
 
-<div class="text-{{ section.settings.align_text }} color-{{ scheme.id }}">
+<div class="text-{{ section.settings.align_text }} color-{{ section.settings.color_scheme }}">
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
