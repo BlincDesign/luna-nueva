@@ -81,7 +81,7 @@
       "scheme-1": {
         "settings": {
           "background": "rgba(0,0,0,0)",
-          "background_gradient": "transparent",
+          "background_gradient": "",
           "text": "#ffffff",
           "button": "#1c1d1d",
           "button_label": "#ffffff",
