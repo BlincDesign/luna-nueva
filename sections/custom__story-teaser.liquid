@@ -57,7 +57,7 @@
   .story-teaser__caption {
     margin: 16px 0 0;
     font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-    font-size: 12px;
+    font-size: var(--type-caption-size);
     letter-spacing: 0.13em;
     text-transform: uppercase;
     opacity: 0.7;
@@ -97,8 +97,8 @@
 
   @media screen and (max-width: 900px) {
     #shopify-section-{{ section.id }} .story-teaser__inner {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
  
@@ -262,47 +262,51 @@
     },
     {
       "type": "header",
-      "content": "Spacing"
+      "content": "Desktop spacing"
     },
     {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 160,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 96
+      "default": 40
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 160,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 96
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
     },
     {
       "type": "range",
-      "id": "mobile_padding_top",
-      "label": "Padding top (mobile)",
+      "id": "padding_top_mb",
+      "label": "Padding top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 48
+      "default": 40
     },
     {
       "type": "range",
-      "id": "mobile_padding_bottom",
-      "label": "Padding bottom (mobile)",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
       "unit": "px",
-      "default": 48
+      "default": 40
     }
   ],
   "blocks": [
