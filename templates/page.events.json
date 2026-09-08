@@ -187,12 +187,138 @@
         "mobile_padding_top": 52,
         "mobile_padding_bottom": 0
       }
+    },
+    "custom_media_gallery_VgzndN": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_gKy94H": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-crowd.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_krADpD": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-table.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_NcH6m4": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-market.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_9rMhPp": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-red.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_WeyjG8": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-pool.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_V6VCwB": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-cups.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_qYLKUQ": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-shaker.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_EPWH4C": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-tray.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_73B9ix": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/ev-pair.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_EnQNMc": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-mingle.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_gKy94H",
+        "image_krADpD",
+        "image_NcH6m4",
+        "image_9rMhPp",
+        "image_WeyjG8",
+        "image_V6VCwB",
+        "image_qYLKUQ",
+        "image_EPWH4C",
+        "image_73B9ix",
+        "image_EnQNMc"
+      ],
+      "name": "Media gallery - media only",
+      "settings": {
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "section_background": "#2D3135",
+        "padding_top": 50,
+        "padding_bottom": 40,
+        "padding_top_mb": 36,
+        "padding_bottom_mb": 52
+      }
     }
   },
   "order": [
     "main",
     "custom_rich_text_columns_47QNRH",
     "custom_media_gallery_Bci3L9",
-    "custom_rich_text_columns_bNhhLk"
+    "custom_rich_text_columns_bNhhLk",
+    "custom_media_gallery_VgzndN"
   ]
 }
