@@ -15,10 +15,6 @@
         "id": "color_schemes",
         "definition": [
           {
-            "type": "header",
-            "content": "Background"
-          },
-          {
             "type": "color",
             "id": "background",
             "label": "Background",
@@ -28,10 +24,6 @@
             "type": "color_background",
             "id": "background_gradient",
             "label": "Background gradient"
-          },
-          {
-            "type": "header",
-            "content": "Text"
           },
           {
             "type": "color",
