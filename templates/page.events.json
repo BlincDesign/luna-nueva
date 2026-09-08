@@ -143,10 +143,10 @@
         "row_height_mobile": 260,
         "gap": 16,
         "section_background": "#AEBFB4",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
       }
     }
   },
