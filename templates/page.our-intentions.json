@@ -61,10 +61,93 @@
         "mobile_padding_top": 52,
         "mobile_padding_bottom": 52
       }
+    },
+    "custom_media_gallery_kJketQ": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_GeqKNN": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Bring the Party",
+            "heading": "The bottle you grab before the night starts.",
+            "show_divider": false,
+            "body": "<p>Add your description here.</p>",
+            "button_label": "See what's coming up",
+            "button_url": ""
+          }
+        },
+        "image_riqx8w": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_eNiGyY": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_TBrjGA": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_NahJFk": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_hz4QCy": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_GeqKNN",
+        "image_riqx8w",
+        "image_eNiGyY",
+        "image_TBrjGA",
+        "image_NahJFk",
+        "image_hz4QCy"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": true,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "section_background": "#2D3135",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
-    "custom_rich_text_columns_aNWGnm"
+    "custom_rich_text_columns_aNWGnm",
+    "custom_media_gallery_kJketQ"
   ]
 }
