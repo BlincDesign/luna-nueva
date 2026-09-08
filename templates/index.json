@@ -90,6 +90,7 @@
         "photo_8DfJ9d": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/ev-airstream.jpg",
             "caption": "The sign, 11:01 PM",
             "alt": "",
             "size": "tall wide",
