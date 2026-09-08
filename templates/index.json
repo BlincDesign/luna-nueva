@@ -107,11 +107,34 @@
           "settings": {
             "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>."
           }
+        },
+        "button_rTcWX6": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button",
+            "button_type": "secondary",
+            "button_primary_bg": "#1c1d1d",
+            "button_primary_border": "#1c1d1d",
+            "button_primary_text": "#ffffff",
+            "button_primary_bg_hover": "#3a3a3a",
+            "button_primary_border_hover": "#3a3a3a",
+            "button_primary_text_hover": "#ffffff",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_border": "#1c1d1d",
+            "button_secondary_text": "#1c1d1d",
+            "button_secondary_bg_hover": "#1c1d1d",
+            "button_secondary_border_hover": "#1c1d1d",
+            "button_secondary_text_hover": "#ffffff",
+            "button_link_text": "#1c1d1d",
+            "button_link_text_hover": "#7a7a7a"
+          }
         }
       },
       "block_order": [
         "divider_gUNLzh",
-        "heading_dhcXp3"
+        "heading_dhcXp3",
+        "button_rTcWX6"
       ],
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
