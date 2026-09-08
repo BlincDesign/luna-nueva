@@ -93,7 +93,7 @@
             "image": "shopify://shop_images/ev-airstream.jpg",
             "caption": "The sign, 11:01 PM",
             "alt": "",
-            "size": "tall",
+            "size": "tall wide",
             "align": ""
           }
         },
@@ -113,7 +113,7 @@
             "image": "shopify://shop_images/ev-pair.jpg",
             "caption": "Behind the bar",
             "alt": "",
-            "size": "normal",
+            "size": "wide",
             "align": "dn"
           }
         },
