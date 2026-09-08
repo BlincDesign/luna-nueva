@@ -476,6 +476,23 @@
         "padding_top_mb": 36,
         "padding_bottom_mb": 52
       }
+    },
+    "background_image_text_pkAKVM": {
+      "type": "background-image-text",
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/ev-ice.jpg",
+        "layout": "left",
+        "height": 450,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
     }
   },
   "order": [
@@ -485,6 +502,7 @@
     "custom_rich_text_columns_bNhhLk",
     "custom_media_gallery_VgzndN",
     "custom_rich_text_columns_c87Lyd",
-    "custom_media_gallery_7RqYDk"
+    "custom_media_gallery_7RqYDk",
+    "background_image_text_pkAKVM"
   ]
 }
