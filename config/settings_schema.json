@@ -11,349 +11,178 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_general"
-      },
-      {
-        "type": "color",
-        "id": "color_body_bg",
-        "label": "t:settings_schema.colors.settings.color_body_bg.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "t:settings_schema.colors.settings.color_body_text.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_borders",
-        "label": "t:settings_schema.colors.settings.color_borders.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_button",
-        "label": "t:settings_schema.colors.settings.color_button.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_button_text",
-        "label": "t:settings_schema.colors.settings.color_button_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_sale_price",
-        "label": "t:settings_schema.colors.settings.color_sale_price.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_sale_tag",
-        "label": "t:settings_schema.colors.settings.color_sale_tag.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_sale_tag_text",
-        "label": "t:settings_schema.colors.settings.color_sale_tag_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "highlight_color",
-        "label": "Highlight Color",
-        "default": "#D39655"
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_header"
-      },
-      {
-        "type": "color",
-        "id": "color_header",
-        "label": "t:settings_schema.colors.settings.color_header.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_header_secondary",
-        "label": "Background Secondary",
-        "default": "#2D3135"
-      },
-      {
-        "type": "color",
-        "id": "color_header_text",
-        "label": "t:settings_schema.colors.settings.color_header_text.label",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "color_header_text_secondary",
-        "label": "Text Secondary",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_announcement",
-        "label": "t:settings_schema.colors.settings.color_announcement.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_announcement_text",
-        "label": "t:settings_schema.colors.settings.color_announcement_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_footer"
-      },
-      {
-        "type": "color",
-        "id": "color_footer",
-        "label": "t:settings_schema.colors.settings.color_footer.label",
-        "default": "#111"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_text",
-        "label": "t:settings_schema.colors.settings.color_footer_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_menu_and_cart_drawers"
-      },
-      {
-        "type": "color",
-        "id": "color_drawer_background",
-        "label": "t:settings_schema.colors.settings.color_drawer_background.label",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "color_drawer_text",
-        "label": "t:settings_schema.colors.settings.color_drawer_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_drawer_border",
-        "label": "t:settings_schema.colors.settings.color_drawer_border.label",
-        "default": "#343535"
-      },
-      {
-        "type": "color",
-        "id": "color_drawer_button",
-        "label": "t:settings_schema.colors.settings.color_drawer_button.label",
-        "default": "#a26b25"
-      },
-      {
-        "type": "color",
-        "id": "color_drawer_button_text",
-        "label": "t:settings_schema.colors.settings.color_drawer_button_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_modal_overlays",
-        "label": "t:settings_schema.colors.settings.color_modal_overlays.label",
-        "default": "#000000"
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_image_overlays"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:settings_schema.colors.settings.content"
-      },
-      {
-        "type": "color",
-        "id": "color_image_text",
-        "label": "t:settings_schema.colors.settings.color_image_text.label",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_image_2",
-        "label": "t:settings_schema.colors.settings.color_image_2.label",
-        "default": "#fffed9"
-      },
-      {
-        "type": "range",
-        "id": "color_image_2_opacity",
-        "label": "t:settings_schema.colors.settings.color_image_2_opacity.label",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "%"
-      },
-      {
-        "type": "color",
-        "id": "color_image_1",
-        "label": "t:settings_schema.colors.settings.color_image_1.label",
-        "default": "#000000"
-      },
-      {
-        "type": "range",
-        "id": "color_image_1_opacity",
-        "label": "t:settings_schema.colors.settings.color_image_1_opacity.label",
-        "default": 50,
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "%"
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header_animations"
-      },
-      {
-        "type": "color",
-        "id": "color_small_image_bg",
-        "label": "t:settings_schema.colors.settings.color_small_image_bg.label",
-        "default": "#eee"
-      },
-      {
-        "type": "color",
-        "id": "color_large_image_bg",
-        "label": "t:settings_schema.colors.settings.color_large_image_bg.label",
-        "default": "#1c1d1d"
-      }
-    ]
-  },
-  {
-    "name": "Buttons",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Style"
-      },
-      {
-        "type": "range",
-        "id": "button_border_radius",
-        "label": "Border radius",
-        "min": 0,
-        "max": 60,
-        "step": 1,
-        "unit": "px",
-        "default": 60
-      },
-      {
-        "type": "range",
-        "id": "button_font_size",
-        "label": "Font size",
-        "min": 10,
-        "max": 20,
-        "step": 1,
-        "unit": "px",
-        "default": 12
-      },
-      {
-        "type": "paragraph",
-        "content": "Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
-      },
-      {
-        "type": "header",
-        "content": "Primary"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_bg",
-        "label": "Background",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_border",
-        "label": "Border",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_text",
-        "label": "Text",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_bg_hover",
-        "label": "Background (hover)",
-        "default": "#3a3a3a"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_border_hover",
-        "label": "Border (hover)",
-        "default": "#3a3a3a"
-      },
-      {
-        "type": "color",
-        "id": "button_primary_text_hover",
-        "label": "Text (hover)",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "Secondary"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_bg",
-        "label": "Background",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_border",
-        "label": "Border",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_text",
-        "label": "Text",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_bg_hover",
-        "label": "Background (hover)",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_border_hover",
-        "label": "Border (hover)",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_secondary_text_hover",
-        "label": "Text (hover)",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "Link"
-      },
-      {
-        "type": "color",
-        "id": "button_link_text",
-        "label": "Text",
-        "default": "#1c1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_link_text_hover",
-        "label": "Text (hover)",
-        "default": "#7a7a7a"
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color_background",
+            "id": "background_gradient",
+            "label": "Background gradient"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "Text",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "header",
+            "content": "Primary button"
+          },
+          {
+            "type": "color",
+            "id": "button",
+            "label": "Background",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "button_label",
+            "label": "Text",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "button_border",
+            "label": "Border",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "button_hover",
+            "label": "Background (hover)",
+            "default": "#3a3a3a"
+          },
+          {
+            "type": "color",
+            "id": "button_label_hover",
+            "label": "Text (hover)",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "button_border_hover",
+            "label": "Border (hover)",
+            "default": "#3a3a3a"
+          },
+          {
+            "type": "header",
+            "content": "Secondary button"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button",
+            "label": "Background",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_label",
+            "label": "Text",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "Border",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_hover",
+            "label": "Background (hover)",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_label_hover",
+            "label": "Text (hover)",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border_hover",
+            "label": "Border (hover)",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "header",
+            "content": "Links"
+          },
+          {
+            "type": "color",
+            "id": "link",
+            "label": "Text",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "color",
+            "id": "link_hover",
+            "label": "Text (hover)",
+            "default": "#7a7a7a"
+          },
+          {
+            "type": "header",
+            "content": "Lines & borders"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "Lines and borders",
+            "default": "#1c1d1d"
+          },
+          {
+            "type": "header",
+            "content": "Accent"
+          },
+          {
+            "type": "color",
+            "id": "accent",
+            "label": "Accent",
+            "default": "#a26b25"
+          },
+          {
+            "type": "header",
+            "content": "Overlay"
+          },
+          {
+            "type": "color",
+            "id": "overlay",
+            "label": "Overlay",
+            "default": "#000000"
+          },
+          {
+            "type": "header",
+            "content": "Shadow"
+          },
+          {
+            "type": "color",
+            "id": "shadow",
+            "label": "Shadow",
+            "default": "#000000"
+          }
+        ],
+        "role": {
+          "background": {
+            "solid": "background",
+            "gradient": "background_gradient"
+          },
+          "text": "text",
+          "links": "link",
+          "icons": "text",
+          "primary_button": "button",
+          "on_primary_button": "button_label",
+          "primary_button_border": "button_border",
+          "secondary_button": "secondary_button",
+          "on_secondary_button": "secondary_button_label",
+          "secondary_button_border": "secondary_button_border"
+        }
       }
     ]
   },
