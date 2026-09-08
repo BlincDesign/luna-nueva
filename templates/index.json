@@ -33,7 +33,8 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#2d3135",
+        "color_scheme": "scheme-1",
+        "section_background": "rgba(0,0,0,0)",
         "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
@@ -228,6 +229,7 @@
       ],
       "name": "t:sections.rich-text.presets.cus_rich_text.name",
       "settings": {
+        "color_scheme": "",
         "section_background": "#2d3135",
         "text_color": "#f9f6f1",
         "left_column_width": 50,
