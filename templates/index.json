@@ -76,7 +76,6 @@
         "button_2_secondary_text_hover": "#ffffff",
         "button_2_link_text": "#1c1d1d",
         "button_2_link_text_hover": "#7a7a7a",
-        "background_color": "#aebfb4",
         "content_width": 800,
         "padding_top": 0,
         "padding_bottom": 0
@@ -1135,7 +1134,6 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "color_background": "#2d3135",
         "color_text": "#ffffff",
         "padding_top": 100,
         "padding_bottom": 100,
