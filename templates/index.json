@@ -115,6 +115,7 @@
         "stylized_bg": true,
         "background_color": "#2d3135",
         "text_color": "#f9f6f1",
+        "color_scheme": "scheme-2",
         "align_text": "center",
         "narrow_column": false,
         "padding_top": 100,
@@ -432,6 +433,7 @@
       "settings": {
         "background_color": "#d5995a",
         "text_color": "#1a1e33",
+        "color_scheme": "scheme-4",
         "title": "",
         "align_text": "left",
         "desktop_columns_per_row": 3,

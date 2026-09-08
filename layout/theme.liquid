@@ -30,7 +30,8 @@
   {%- render 'font-face' -%}
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {%- render 'css-variables' -%}
-  
+  {%- render 'color-schemes' -%}
+
   {{ 'custom.css' | asset_url | stylesheet_tag }}
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

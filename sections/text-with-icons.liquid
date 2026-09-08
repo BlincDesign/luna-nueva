@@ -22,18 +22,32 @@
        --btn-link-color-hover: {{ section.settings.button_link_text_hover | default: "#7a7a7a" }};
      }
 
+    {%- assign section_scheme = settings.color_schemes[section.settings.color_scheme] -%}
+
     #shopify-section-{{ section.id }} {
      padding-top: {{ section.settings.padding_top }}px;
      padding-bottom: {{ section.settings.padding_bottom }}px;
-     background-color: {{ section.settings.background_color }};
+     {%- if section_scheme %}
+       background-color: rgb({{ section_scheme.settings.background.rgb }});
+     {%- else %}
+       background-color: {{ section.settings.background_color }};
+     {%- endif %}
    }
 
    #shopify-section-{{ section.id }} .text-with-icons__block {
-     color: {{section.settings.text_color }};
+     {%- if section_scheme %}
+       color: rgb({{ section_scheme.settings.text.rgb }});
+     {%- else %}
+       color: {{section.settings.text_color }};
+     {%- endif %}
    }
 
    #shopify-section-{{ section.id }} .icon {
-     color: {{ section.settings.icon_color }};
+     {%- if section_scheme %}
+       color: rgb({{ section_scheme.settings.text.rgb }});
+     {%- else %}
+       color: {{ section.settings.icon_color }};
+     {%- endif %}
    }
 
    #shopify-section-{{ section.id }} .icon path,
@@ -127,6 +141,16 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#f9f6f1"
+    },
+    {
+      "type": "header",
+      "content": "Color scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "info": "Overrides the background, text, and icon color settings above when set."
     },
     {
       "type": "text",

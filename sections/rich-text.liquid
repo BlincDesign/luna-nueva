@@ -1,4 +1,5 @@
 {% style %}
+  {%- assign section_scheme = settings.color_schemes[section.settings.color_scheme] -%}
   {% for block in section.blocks %}
     .theme-block__button--{{ block.id }} .button.button--primary {
      --btn-primary-bg: {{ block.settings.button_primary_bg | default: "#1c1d1d" }};
@@ -61,16 +62,24 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
       color: {{ block.settings.icon_color }};
-      background: {{ section.settings.background_color }};
+      {%- if section_scheme %}
+        background: rgb({{ section_scheme.settings.background.rgb }});
+      {%- else %}
+        background: {{ section.settings.background_color }};
+      {%- endif %}
     }
   {% endfor %}
 
-  
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.background_color }};
-    color: {{ section.settings.text_color }};
+    {%- if section_scheme %}
+      background-color: rgb({{ section_scheme.settings.background.rgb }});
+      color: rgb({{ section_scheme.settings.text.rgb }});
+    {%- else %}
+      background-color: {{ section.settings.background_color }};
+      color: {{ section.settings.text_color }};
+    {%- endif %}
   }
 
   #shopify-section-{{ section.id }}::before {
@@ -167,6 +176,16 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#f9f6f1"
+    },
+    {
+      "type": "header",
+      "content": "Color scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "info": "Overrides the background and text color settings above when set."
     },
     {
       "type": "select",
