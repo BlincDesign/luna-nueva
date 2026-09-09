@@ -58,7 +58,7 @@
 
 <div
   id="rich-text-{{ section.id }}"
-  class="text-{{ section.settings.align_text }} gradient color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"
+  class="text-{{ section.settings.align_text }} gradient color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
@@ -138,7 +138,7 @@
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "rich-text",
+  "class": "rich-text background-image section--scheme-secondary",
   "settings": [
     {
       "type": "checkbox",
