@@ -105,7 +105,7 @@
           "button_hover": "#e0a768",
           "button_label_hover": "#2d3135",
           "button_border_hover": "#e0a768",
-          "secondary_button": "#00000000",
+          "secondary_button": "rgba(0,0,0,0)",
           "secondary_button_label": "#f9f6f1",
           "secondary_button_border": "#f9f6f1",
           "secondary_button_hover": "#f2f2f2",
