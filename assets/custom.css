@@ -115,18 +115,18 @@ strong:has(em) em {
 }
 
 .button--primary {
-    --btn-bg: rgb(var(--color-button));
+    --btn-bg: rgba(var(--color-button));
     --btn-border: rgb(var(--color-button-border));
-    --btn-color: rgb(var(--color-button-text));
+    --btn-color: rgba(var(--color-button-text));
     --btn-hover-bg: rgb(var(--color-button-hover));
     --btn-hover-border: rgb(var(--color-button-border-hover));
     --btn-hover-color: rgb(var(--color-button-text-hover));
 }
 
 .button--secondary {
-    --btn-bg: rgb(var(--color-secondary-button));
+    --btn-bg: rgba(var(--color-secondary-button));
     --btn-border: rgb(var(--color-secondary-button-border));
-    --btn-color: rgb(var(--color-secondary-button-text));
+    --btn-color: rgba(var(--color-secondary-button-text));
     --btn-hover-bg: rgb(var(--color-secondary-button-hover));
     --btn-hover-border: rgb(var(--color-secondary-button-border-hover));
     --btn-hover-color: rgb(var(--color-secondary-button-text-hover));
