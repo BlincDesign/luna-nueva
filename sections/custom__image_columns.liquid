@@ -23,13 +23,13 @@
     }
   }
 
-  #custom__image_columns-{{ section.id }} .image-columns {
+  #custom__image_columns-{{ section.id }}.image-columns {
     --image-columns-gap-grid: {{ section.settings.gap }}px;
     --image-columns-gap-rail: {{ section.settings.gap }}px;
   }
 
   @media only screen and (max-width: 589px) {
-    #custom__image_columns-{{ section.id }} .image-columns {
+    #custom__image_columns-{{ section.id }}.image-columns {
       --image-columns-gap-grid: {{ section.settings.gap_mb }}px;
       --image-columns-gap-rail: {{ section.settings.gap_mb }}px;
     }
