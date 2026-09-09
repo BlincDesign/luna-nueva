@@ -41,7 +41,6 @@
     },
     "age-verification-popup": {
       "type": "age-verification-popup",
-      "disabled": true,
       "settings": {
         "logo": "shopify://shop_images/logo-green.png",
         "heading": "Are you 21 or older?",
@@ -50,9 +49,7 @@
         "yes_button_type": "primary",
         "no_button_label": "No",
         "no_button_type": "secondary",
-        "error_message": "Sorry, you must be of legal drinking age to enter this site.",
-        "background_color": "#2d3135",
-        "text_color": "#ffffff"
+        "error_message": "Sorry, you must be of legal drinking age to enter this site."
       }
     }
   },
