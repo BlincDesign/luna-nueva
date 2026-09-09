@@ -1,4 +1,5 @@
 <div class="page-width page-content text-{{ section.settings.text_alignment }}">
+  {% if section.blocks.size > 0 %}<div class="wrapper__404">{% endif %}
   <header class="section-header section-header--404">
     <h1 class="section-header__title">{{ 'general.404.title' | t }}</h1>
     <div class="rte text-spacing">
@@ -6,16 +7,16 @@
     </div>
   </header>
   {% if section.blocks.size > 0 %}
-    <div class="error__blocks">
+    <div class="blocks__404">
       {% for block in section.blocks %}
         {% liquid
           assign menu = linklists[block.settings.linklist]
         %}
         {% case block.type %}
           {% when 'menu-list' %}
-            <ul class="error__block-linklist">
+            <ul class="block__404--linklist">
               {% for link in menu.links %}
-                <li class="site-nav__item error-linklist__item">
+                <li class="site-nav__item linklist__404--item">
                   <a href="{{ link.url }}">
                     <h2>{{ link.title }}</h2>
                   </a>
@@ -26,6 +27,7 @@
       {% endfor %}
     </div>
   {% endif %}
+  {% if section.blocks.size > 0 %}</div>{% endif %}
 </div>
 
 {% schema %}
