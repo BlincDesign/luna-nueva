@@ -44,83 +44,7 @@
         "slider_autoplay_enabled": true,
         "slider_autoplay": 3000,
         "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
-        "heading": "<h1>Born in the Mountains.<br/><em><strong>Made for the Sea.</strong></em><br/>Guided by the Moon.</h1>",
-        "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
-        "button_1_label": "Shop now",
-        "button_1_type": "primary",
-        "button_1_primary_bg": "#1c1d1d",
-        "button_1_primary_border": "#1c1d1d",
-        "button_1_primary_text": "#ffffff",
-        "button_1_primary_bg_hover": "#3a3a3a",
-        "button_1_primary_border_hover": "#3a3a3a",
-        "button_1_primary_text_hover": "#ffffff",
-        "button_1_secondary_bg": "#ffffff",
-        "button_1_secondary_border": "#1c1d1d",
-        "button_1_secondary_text": "#1c1d1d",
-        "button_1_secondary_bg_hover": "#1c1d1d",
-        "button_1_secondary_border_hover": "#1c1d1d",
-        "button_1_secondary_text_hover": "#ffffff",
-        "button_1_link_text": "#1c1d1d",
-        "button_1_link_text_hover": "#7a7a7a",
-        "button_2_label": "Learn more",
-        "button_2_type": "link",
-        "button_2_primary_bg": "#1c1d1d",
-        "button_2_primary_border": "#1c1d1d",
-        "button_2_primary_text": "#ffffff",
-        "button_2_primary_bg_hover": "#3a3a3a",
-        "button_2_primary_border_hover": "#3a3a3a",
-        "button_2_primary_text_hover": "#ffffff",
-        "button_2_secondary_bg": "#ffffff",
-        "button_2_secondary_border": "#1c1d1d",
-        "button_2_secondary_text": "#1c1d1d",
-        "button_2_secondary_bg_hover": "#1c1d1d",
-        "button_2_secondary_border_hover": "#1c1d1d",
-        "button_2_secondary_text_hover": "#ffffff",
-        "button_2_link_text": "#1c1d1d",
-        "button_2_link_text_hover": "#7a7a7a",
-        "content_width": 800,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
-    "custom_image_slider_with_text_QYq6QH": {
-      "type": "custom__image_slider_with_text",
-      "blocks": {
-        "image_34XLhz": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg"
-          }
-        },
-        "image_3c4X9k": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hero-ocean.jpg"
-          }
-        },
-        "image_wRjQXj": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hero-tailgate.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "image_34XLhz",
-        "image_3c4X9k",
-        "image_wRjQXj"
-      ],
-      "name": "Image slider with text",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "header_secondary": false,
-        "stylized_bg": false,
-        "slider_autoplay_enabled": true,
-        "slider_autoplay": 3000,
-        "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
-        "heading": "<h1>Born in the Mountains.<br/>Made for the Sea.<br/>Guided by the Moon.</h1>",
+        "heading": "<h1>Born in the Mountains. Made for the Sea.<br/>Guided by the Moon.</h1>",
         "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
         "button_1_label": "Shop now",
         "button_1_type": "primary",
@@ -1183,7 +1107,6 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
-    "custom_image_slider_with_text_QYq6QH",
     "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
     "slideshow_Gj6CyA",

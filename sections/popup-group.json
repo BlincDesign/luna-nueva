@@ -41,10 +41,9 @@
     },
     "age-verification-popup": {
       "type": "age-verification-popup",
-      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-4",
-        "stylized_bg": false,
+        "color_scheme": "scheme-1",
+        "stylized_bg": true,
         "logo": "shopify://shop_images/logo-green.png",
         "heading": "Are you 21 or older?",
         "text": "<p>By entering, you confirm you are of legal drinking age. Please enjoy responsibly.</p>",
