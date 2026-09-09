@@ -107,7 +107,10 @@
   }
 {% endstyle %}
 
-<div id="custom__story-teaser-{{ section.id }}" class="color-{{ section.settings.color_scheme }} story-teaser">
+<div
+  id="custom__story-teaser-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} story-teaser{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
   <div class="story-teaser__inner story-teaser__inner--{{ section.settings.image_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
     <div class="story-teaser__media" data-aos>
       <div class="story-teaser__image-wrap story-teaser__image-wrap--{{ section.settings.image_shape }}">
@@ -190,6 +193,19 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
     },
     {
       "type": "header",

@@ -167,7 +167,12 @@
   endif
 -%}
 
-<footer id="footer-{{ section.id }}" class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer">
+<footer
+  id="footer-{{ section.id }}"
+  class="site-footer{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="footer"
+>
   <div class="page-width">
 
     <div class="grid footer-column">
@@ -345,6 +350,19 @@
   "name": "t:sections.footer.name",
   "max_blocks": 12,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
     {
       "type": "header",
       "content": "t:sections.footer.settings.header_language_selector",

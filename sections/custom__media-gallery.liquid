@@ -242,7 +242,10 @@
   {% endif %}
 {% endcapture %}
 
-<div id="custom__media-gallery-{{ section.id }}" class="color-{{ section.settings.color_scheme }} media-gallery">
+<div
+  id="custom__media-gallery-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} media-gallery{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
   <div class="media-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}{% if section.settings.flow_right and section.settings.full_width == false %} media-gallery__inner--flush-right{% endif %}">
     {{ content_markup }}
     {{ media_markup }}
@@ -260,6 +263,19 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
     },
     {
       "type": "header",

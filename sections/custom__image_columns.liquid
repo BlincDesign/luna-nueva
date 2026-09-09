@@ -149,7 +149,10 @@
   {%- endfor -%}
 {%- endcapture -%}
 
-<div id="custom__image_columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }} image-columns">
+<div
+  id="custom__image_columns-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} image-columns{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
   <div class="page-width image-columns__inner">
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
@@ -307,6 +310,19 @@
   "class": "section-image-columns",
   "settings": [
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
     { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
     { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
     { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
