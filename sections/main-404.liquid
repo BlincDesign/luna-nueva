@@ -16,6 +16,13 @@
     margin: 0;
   }
 
+  .linklist__404--item p {
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+
   #section-404-{{ section.id }} .section-header--404 .button-block {
     justify-content: {{ section.settings.left_text_align }};
   }
@@ -74,7 +81,7 @@
               {% for link in menu.links %}
                 <li class="site-nav__item linklist__404--item">
                   <a href="{{ link.url }}">
-                    <h2>{{ link.title }}</h2>
+                    <p>{{ link.title }}</p>
                   </a>
                 </li>
               {% endfor %}
