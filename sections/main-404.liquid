@@ -1,7 +1,17 @@
-{%style %}
+{% style %}
   #section-404-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #section-404-{{ section.id }} .wrapper__404 {
+    flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+    justify-content: {{ section.settings.left_vertical_align }};
+  }
+
+  #section-404-{{ section.id }} .blocks__404 {
+    flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+    justify-content: {{ section.settings.right_vertical_align }};
   }
 
   @media screen and (max-width: 589px) {
@@ -12,16 +22,16 @@
   }
 {% endstyle %}
 
-<div id="section-404-{{ section.id }}" class="page-width page-content text-{{ section.settings.text_alignment }}">
+<div id="section-404-{{ section.id }}" class="page-width page-content">
   {% if section.blocks.size > 0 %}<div class="wrapper__404">{% endif %}
-  <header class="section-header section-header--404">
+  <header class="section-header section-header--404 text-{{ section.settings.left_text_align }}">
     <h1 class="section-header__title">{{ 'general.404.title' | t }}</h1>
     <div class="rte text-spacing">
       {{ 'general.404.subtext_html' | t: url: routes.root_url }}
     </div>
   </header>
   {% if section.blocks.size > 0 %}
-    <div class="blocks__404">
+    <div class="blocks__404 text-{{ section.settings.right_text_align }}">
       {% for block in section.blocks %}
         {% liquid
           assign menu = linklists[block.settings.linklist]
@@ -53,6 +63,82 @@
       "id": "text_alignment",
       "label": "Text alignment",
       "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "left_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "left_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Right column"
+    },
+    {
+      "type": "range",
+      "id": "right_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "right_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ]
     },
     {
       "type": "header",
