@@ -591,8 +591,7 @@ a.pdl__right {
     margin-bottom: 38px;
 }
 
-.age-confirmation__heading {
-    font-size: var(--type-h2-size);
+.age-confirmation__heading {;
     margin-bottom: 32px;
 }
 
@@ -603,21 +602,6 @@ a.pdl__right {
     gap: 16px;
     margin-bottom: 32px;
 }
-
-.age-confirmation__button {
-    display: inline-block;
-    min-width: 140px;
-    padding: 14px 32px;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    background: none;
-    font-size: var(--type-button-size);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
 
 .age-confirmation__error {
     margin: 22px 0;
