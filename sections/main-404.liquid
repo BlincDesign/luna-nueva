@@ -16,6 +16,10 @@
     margin: 0;
   }
 
+  #section-404-{{ section.id }} .section-header--404 .button-block {
+    justify-content: {{ section.settings.left_text_align }};
+  }
+
   #section-404-{{ section.id }} .section-header--404 {
     flex: 0 1 calc({{ section.settings.left_column_width }}% - 15px);
     justify-content: {{ section.settings.left_vertical_align }};
