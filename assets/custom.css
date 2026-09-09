@@ -565,8 +565,6 @@ a.pdl__right {
 
 .age-confirmation {
     display: flex !important;
-    background-color: var(--age-confirmation-bg);
-    color: var(--age-confirmation-color);
     height: 100vh;
     z-index: 9999;
 }
