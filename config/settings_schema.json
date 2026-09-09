@@ -242,7 +242,8 @@
             "type": "color",
             "id": "background",
             "label": "Background",
-            "default": "#ffffff"
+            "default": "#ffffff",
+            "alpha": true
           },
           {
             "type": "color_background",
@@ -253,7 +254,8 @@
             "type": "color",
             "id": "text",
             "label": "Text",
-            "default": "#1c1d1d"
+            "default": "#1c1d1d",
+            "alpha": true
           },
           {
             "type": "header",
@@ -263,13 +265,15 @@
             "type": "color",
             "id": "button",
             "label": "Background",
-            "default": "#1c1d1d"
+            "default": "#1c1d1d",
+            "alpha": true
           },
           {
             "type": "color",
             "id": "button_label",
             "label": "Text",
-            "default": "#ffffff"
+            "default": "#ffffff",
+            "alpha": true
           },
           {
             "type": "color",
@@ -303,13 +307,15 @@
             "type": "color",
             "id": "secondary_button",
             "label": "Background",
-            "default": "#ffffff"
+            "default": "#ffffff",
+            "alpha": true
           },
           {
             "type": "color",
             "id": "secondary_button_label",
             "label": "Text",
-            "default": "#1c1d1d"
+            "default": "#1c1d1d",
+            "alpha": true
           },
           {
             "type": "color",
@@ -343,13 +349,15 @@
             "type": "color",
             "id": "link",
             "label": "Text",
-            "default": "#1c1d1d"
+            "default": "#1c1d1d",
+            "alpha": true
           },
           {
             "type": "color",
             "id": "link_hover",
             "label": "Text (hover)",
-            "default": "#7a7a7a"
+            "default": "#7a7a7a",
+            "alpha": true
           },
           {
             "type": "header",
@@ -359,7 +367,8 @@
             "type": "color",
             "id": "border",
             "label": "Lines and borders",
-            "default": "#1c1d1d"
+            "default": "#1c1d1d",
+            "alpha": true
           },
           {
             "type": "header",
@@ -369,7 +378,8 @@
             "type": "color",
             "id": "accent",
             "label": "Accent",
-            "default": "#a26b25"
+            "default": "#a26b25",
+            "alpha": true
           },
           {
             "type": "header",
@@ -379,7 +389,8 @@
             "type": "color",
             "id": "overlay",
             "label": "Overlay",
-            "default": "#000000"
+            "default": "#000000",
+            "alpha": true
           },
           {
             "type": "header",
@@ -389,7 +400,8 @@
             "type": "color",
             "id": "shadow",
             "label": "Shadow",
-            "default": "#000000"
+            "default": "#000000",
+            "alpha": true
           }
         ],
         "role": {
@@ -429,7 +441,103 @@
       },
       {
         "type": "paragraph",
-        "content": "Button colors follow the color scheme applied to each section. Button text size is controlled in Theme settings > Typography > Desktop/Mobile Typography > Buttons. Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
+        "content": "Button text size is controlled in Theme settings > Typography > Desktop/Mobile Typography > Buttons. Hover animation follows the \"Animate buttons\" setting in Theme settings > Animations."
+      },
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg",
+        "label": "Background",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_border_hover",
+        "label": "Border (hover)",
+        "default": "#3a3a3a"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border",
+        "label": "Border",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_bg_hover",
+        "label": "Background (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_border_hover",
+        "label": "Border (hover)",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text_hover",
+        "label": "Text (hover)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Link"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "button_link_text_hover",
+        "label": "Text (hover)",
+        "default": "#7a7a7a"
       }
     ]
   },
