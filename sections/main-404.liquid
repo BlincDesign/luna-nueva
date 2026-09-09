@@ -8,10 +8,13 @@
   {% if section.blocks.size > 0 %}
     <div class="404__blocks">
       {% for block in section.blocks %}
+        {% liquid
+          assign menu = linklists[block.settings.link_list]
+        %}
         {% case block.type %}
           {% when 'menu-list' %}
             <ul class="404__block-linklist">
-              {% for link in block.settings.link_list.links %}
+              {% for link in menu.links %}
                 <li>
                   <a href="{{ link.url }}">
                     <h2>{{ link.title }}</h2>
