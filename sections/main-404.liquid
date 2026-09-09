@@ -5,10 +5,42 @@
       {{ 'general.404.subtext_html' | t: url: routes.root_url }}
     </div>
   </header>
+  {% if section.blocks.size > 0 %}
+    <div class="404__blocks">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'menu-list' %}
+            <ul class="404__block-linklist">
+              {% for link in block.settings.link_list %}
+                <li>
+                  <a href="{{ link.url }}">
+                    <h2>{{ link.title }}</h2>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.main-404.name"
+  "name": "t:sections.main-404.name",
+  "blocks": [
+    {
+      "type": "menu-list",
+      "name": "Menu list",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
