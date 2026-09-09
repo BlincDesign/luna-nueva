@@ -1,28 +1,5 @@
 {% style %}
-  {%- assign section_scheme = settings.color_schemes[section.settings.color_scheme] -%}
   {% for block in section.blocks %}
-    .theme-block__button--{{ block.id }} .button.button--primary {
-     --btn-primary-bg: {{ block.settings.button_primary_bg | default: "#1c1d1d" }};
-      --btn-primary-border: {{ block.settings.button_primary_border | default: "#1c1d1d" }};
-      --btn-primary-color: {{ block.settings.button_primary_text | default: "#ffffff" }};
-      --btn-primary-bg-hover: {{ block.settings.button_primary_bg_hover | default: "#3a3a3a" }};
-      --btn-primary-border-hover: {{ block.settings.button_primary_border_hover | default: "#3a3a3a" }};
-      --btn-primary-color-hover: {{ block.settings.button_primary_text_hover | default: "#ffffff" }};
-    }
-
-    .theme-block__button--{{ block.id }} .button.button--secondary {
-      --btn-secondary-bg: {{ block.settings.button_secondary_bg | default: "#ffffff" }};
-      --btn-secondary-border: {{ block.settings.button_secondary_border | default: "#1c1d1d" }};
-      --btn-secondary-color: {{ block.settings.button_secondary_text | default: "#1c1d1d" }};
-      --btn-secondary-bg-hover: {{ block.settings.button_secondary_bg_hover | default: "#1c1d1d" }};
-      --btn-secondary-border-hover: {{ block.settings.button_secondary_border_hover | default: "#1c1d1d" }};
-      --btn-secondary-color-hover: {{ block.settings.button_secondary_text_hover | default: "#ffffff" }};
-    }
-
-    .theme-block__button--{{ block.id }} .button.button--link {
-      --btn-link-color: {{ settings.button_link_text | default: "#1c1d1d" }};
-      --btn-link-color-hover: {{ settings.button_link_text_hover | default: "#7a7a7a" }};
-    }
 
     #block-{{ block.id }} .rich-text__divider {
       position: relative;
@@ -62,19 +39,22 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
       color: {{ block.settings.icon_color }};
-      background: rgb({{ section_scheme.settings.background.rgb }});
+      background: {{ section.settings.background_color }};
     }
   {% endfor %}
 
-  #shopify-section--{{ section.id }} {
+
+  #Rich-text-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: rgb({{ section_scheme.settings.background.rgb }});
-    color: rgb({{ section_scheme.settings.text.rgb }});
+  }
+
+  #shopify-section-{{ section.id }}::before {
+    display: {% if section.settings.stylized_bg %}block{% else %}none{% endif %};
   }
 
   @media screen and (max-width: 589px) {
-    #shopify-section--{{ section.id }} {
+    #Rich-text-{{ section.id }} {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
@@ -82,8 +62,8 @@
 {% endstyle %}
 
 <div
-  id="shopify-section--{{ section.id }}"
-  class="text-{{ section.settings.align_text }} color-{{ section.settings.color_scheme }}{% if section.settings.show_bg_image %} background-image{% endif %} "
+  id="Rich-text-{{ section.id }}"
+  class="text-{{ section.settings.align_text }} background-image gradient color-{{ section.settings.color_scheme }}"
 >
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
@@ -133,13 +113,27 @@
             {%- endif -%}
           </div>
         {%- when 'button' -%}
-          <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
-            {% render 'button',
-              label: block.settings.link_text,
-              url: block.settings.link,
-              type: block.settings.button_type,
-              arrow: true
-            %}
+          <div class="button-block page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+            {% if block.settings.link_text != blank %}
+              <div class="button-1">
+                {% render 'button',
+                  label: block.settings.link_text,
+                  url: block.settings.link,
+                  type: block.settings.button_type,
+                  arrow: true
+                %}
+              </div>
+            {% endif %}
+            {% if block.settings.link_text_2 != blank %}
+              <div class="button-2">
+                {% render 'button',
+                  label: block.settings.link_text_2,
+                  url: block.settings.link_2,
+                  type: block.settings.button_type_2,
+                  arrow: true
+                %}
+              </div>
+            {% endif %}
           </div>
       {%- endcase -%}
     </div>
@@ -149,11 +143,11 @@
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "background-image section--scheme-secondary",
+  "class": "section--scheme-secondary",
   "settings": [
     {
       "type": "checkbox",
-      "id": "show_bg_image",
+      "id": "stylized_bg",
       "label": "Enable stylized background",
       "default": false
     },
@@ -161,7 +155,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "default": "scheme-2"
+      "default": "scheme-1"
     },
     {
       "type": "select",
@@ -611,6 +605,10 @@
       "name": "t:sections.rich-text.blocks.button.name",
       "settings": [
         {
+          "type": "header",
+          "content": "Button 1"
+        },
+        {
           "type": "url",
           "id": "link",
           "label": "t:sections.rich-text.blocks.button.settings.link.label"
@@ -625,7 +623,7 @@
           "type": "select",
           "id": "button_type",
           "label": "Button style",
-          "default": "secondary",
+          "default": "primary",
           "options": [
             {
               "value": "primary",
@@ -643,116 +641,38 @@
         },
         {
           "type": "header",
-          "content": "Primary",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+          "content": "Button 2"
         },
         {
-          "type": "color",
-          "id": "button_primary_bg",
-          "label": "Background",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+          "type": "url",
+          "id": "link_2",
+          "label": "t:sections.rich-text.blocks.button.settings.link.label"
         },
         {
-          "type": "color",
-          "id": "button_primary_border",
-          "label": "Border",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+          "type": "text",
+          "id": "link_text_2",
+          "label": "t:sections.rich-text.blocks.button.settings.link_text.label",
+          "default": "Button"
         },
         {
-          "type": "color",
-          "id": "button_primary_text",
-          "label": "Text",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_primary_bg_hover",
-          "label": "Background (hover)",
-          "default": "#3a3a3a",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_primary_border_hover",
-          "label": "Border (hover)",
-          "default": "#3a3a3a",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_primary_text_hover",
-          "label": "Text (hover)",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
-        },
-        {
-          "type": "header",
-          "content": "Secondary",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_bg",
-          "label": "Background",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_border",
-          "label": "Border",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_text",
-          "label": "Text",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_bg_hover",
-          "label": "Background (hover)",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_border_hover",
-          "label": "Border (hover)",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_secondary_text_hover",
-          "label": "Text (hover)",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_type == 'secondary' }}"
-        },
-        {
-          "type": "header",
-          "content": "Link",
-          "visible_if": "{{ block.settings.button_type == 'link' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_link_text",
-          "label": "Text",
-          "default": "#1c1d1d",
-          "visible_if": "{{ block.settings.button_type == 'link' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_link_text_hover",
-          "label": "Text (hover)",
-          "default": "#7a7a7a",
-          "visible_if": "{{ block.settings.button_type == 'link' }}"
+          "type": "select",
+          "id": "button_type_2",
+          "label": "Button style",
+          "default": "secondary",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ]
         }
       ]
     },
