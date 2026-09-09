@@ -59,7 +59,7 @@
 
 <div
   id="rich-text-{{ section.id }}"
-  class="text-{{ section.settings.align_text }} background-image gradient color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"
+  class="text-{{ section.settings.align_text }} gradient color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"
 >
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
