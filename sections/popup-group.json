@@ -41,9 +41,8 @@
     },
     "age-verification-popup": {
       "type": "age-verification-popup",
-      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "scheme-5",
         "header_secondary": false,
         "stylized_bg": false,
         "logo": "shopify://shop_images/logo-green.png",

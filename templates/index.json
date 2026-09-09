@@ -38,7 +38,7 @@
       ],
       "name": "Image slider with text",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "header_secondary": false,
         "stylized_bg": false,
         "slider_autoplay_enabled": true,
@@ -250,7 +250,7 @@
       "type": "custom__product-details",
       "name": "Product Detail List",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": false,
         "heading": "Three Expressions",
@@ -501,7 +501,7 @@
       ],
       "name": "Story teaser",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": false,
         "image": "shopify://shop_images/story-pinas.jpg",
