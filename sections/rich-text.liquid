@@ -66,26 +66,25 @@
     }
   {% endfor %}
 
-  #shopify-section-{{ section.id }} {
+  #shopify-section--{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
     background-color: rgb({{ section_scheme.settings.background.rgb }});
     color: rgb({{ section_scheme.settings.text.rgb }});
   }
 
-  #shopify-section-{{ section.id }}::before {
-    display: {% if section.settings.stylized_bg %}block{% else %}none{% endif %};
-  }
-
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }}.background-image {
+    #shopify-section--{{ section.id }} {
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
   }
 {% endstyle %}
 
-<div class="text-{{ section.settings.align_text }} color-{{ section.settings.color_scheme }}">
+<div
+  id="shopify-section--{{ section.id }}"
+  class="text-{{ section.settings.align_text }} color-{{ section.settings.color_scheme }}{% if section.settings.show_bg_image %} background-image{% endif %} "
+>
   {%- for block in section.blocks -%}
     <div id="block-{{ block.id }}" class="theme-block" {{ block.shopify_attributes }}>
       {%- case block.type -%}
@@ -112,7 +111,9 @@
             </div>
           {% endif %}
         {%- when 'heading' -%}
-          <h2 class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">{{ block.settings.title }}</h2>
+          <h2 class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+            {{ block.settings.title }}
+          </h2>
         {%- when 'page' -%}
           <div class="rte page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {%- if block.settings.page_text != blank -%}
@@ -152,7 +153,7 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "stylized_bg",
+      "id": "show_bg_image",
       "label": "Enable stylized background",
       "default": false
     },
