@@ -42,7 +42,7 @@
     "age-verification-popup": {
       "type": "age-verification-popup",
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "scheme-4",
         "header_secondary": false,
         "stylized_bg": false,
         "logo": "shopify://shop_images/logo-green.png",
