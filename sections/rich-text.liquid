@@ -50,8 +50,8 @@
 
   @media screen and (max-width: 589px) {
     #rich-text-{{ section.id }} {
-      padding-top: {{ section.settings.mobile_padding_top }}px;
-      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
 {% endstyle %}
@@ -138,7 +138,7 @@
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "rich-text background-image section--scheme-secondary",
+  "class": "rich-text",
   "settings": [
     {
       "type": "checkbox",
@@ -216,7 +216,7 @@
     },
     {
       "type": "range",
-      "id": "mobile_padding_top",
+      "id": "padding_top_mb",
       "label": "Padding top",
       "min": 0,
       "max": 120,
@@ -226,7 +226,7 @@
     },
     {
       "type": "range",
-      "id": "mobile_padding_bottom",
+      "id": "padding_bottom_mb",
       "label": "Padding bottom",
       "min": 0,
       "max": 120,

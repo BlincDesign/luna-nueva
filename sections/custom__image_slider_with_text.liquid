@@ -50,8 +50,7 @@
 
 
 
-  #shopify-section-{{ section.id }} {
-    background-color: {{ section.settings.section_background }};
+  #custom__image_slider_with_text-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
@@ -169,7 +168,7 @@
 
 
   @media screen and (max-width: 1200px) {
-    #shopify-section-{{ section.id }} {
+    #custom__image_slider_with_text-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
@@ -201,7 +200,7 @@
   }
 {% endstyle %}
 
-<div class="image-slider-text__grid">
+<div id="custom__image_slider_with_text-{{ section.id }}" class="color-{{ section.settings.color_scheme }} image-slider-text__grid">
   <div class="image-slider-text__content">
     {% if section.settings.preheading != blank %}
       <div class="image-slider-text__preheading">
@@ -369,8 +368,14 @@
 {
   "name": "Image slider with text",
   "tag": "section",
-  "class": "section-image-slider-text background-image",
+  "class": "section-image-slider-text",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-5"
+    },
     {
       "type": "checkbox",
       "id": "slider_autoplay_enabled",
@@ -693,12 +698,6 @@
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#FFFFFF"
     },
     {
       "type": "range",

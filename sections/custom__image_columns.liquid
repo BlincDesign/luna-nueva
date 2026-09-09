@@ -9,63 +9,62 @@
 -%}
 
 {%- style -%}
- #shopify-section-{{ section.id }}{
+ #custom__image_columns-{{ section.id }}{
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
-      background-color: {{ section.settings.section_background }};
   }
 
   @media only screen and (max-width:589px){
-    #shopify-section-{{ section.id }}{
+    #custom__image_columns-{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mb }}px;
         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
 
-  #shopify-section-{{ section.id }} .image-columns__step-number {
+  #custom__image_columns-{{ section.id }} .image-columns__step-number {
     color: {{ section.settings.number_color }};
   }
 
-  #shopify-section-{{ section.id }} .image-columns__menu {
+  #custom__image_columns-{{ section.id }} .image-columns__menu {
     background-color: {{ section.settings.card_background }};
     color: {{ section.settings.card_text_color }};
   }
 
-  #shopify-section-{{ section.id }} .image-columns__service-number,
-  #shopify-section-{{ section.id }} .image-columns__note {
+  #custom__image_columns-{{ section.id }} .image-columns__service-number,
+  #custom__image_columns-{{ section.id }} .image-columns__note {
     color: {{ section.settings.accent_color }};
   }
 
-  #shopify-section-{{ section.id }} .drag-scroller__bar {
+  #custom__image_columns-{{ section.id }} .drag-scroller__bar {
     background-color: {{ section.settings.track_color | color_modify: 'alpha', 0.25 }};
   }
 
-  #shopify-section-{{ section.id }} .drag-scroller__bar i {
+  #custom__image_columns-{{ section.id }} .drag-scroller__bar i {
     background-color: {{ section.settings.track_color }};
   }
 
-  #shopify-section-{{ section.id }} .image-columns {
+  #custom__image_columns-{{ section.id }} .image-columns {
     --image-columns-gap-grid: {{ section.settings.gap }}px;
     --image-columns-gap-rail: {{ section.settings.gap }}px;
   }
 
   @media only screen and (max-width:589px){
-    #shopify-section-{{ section.id }} .image-columns {
+    #custom__image_columns-{{ section.id }} .image-columns {
       --image-columns-gap-grid: {{ section.settings.gap_mb }}px;
       --image-columns-gap-rail: {{ section.settings.gap_mb }}px;
     }
   }
 
-  #shopify-section-{{ section.id }} .image-columns__grid {
+  #custom__image_columns-{{ section.id }} .image-columns__grid {
     grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
   }
 
-  #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+  #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
     flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
   }
 
   @media screen and (min-width: 901px) {
-    #shopify-section-{{ section.id }} .image-columns__inner drag-scroller {
+    #custom__image_columns-{{ section.id }} .image-columns__inner drag-scroller {
       --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
       margin-right: calc(0px - var(--image-columns-bleed));
       padding-right: var(--image-columns-bleed);
@@ -73,21 +72,21 @@
   }
 
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .image-columns__grid {
+    #custom__image_columns-{{ section.id }} .image-columns__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
     }
 
-    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+    #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
       flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
     }
   }
 
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .image-columns__grid {
+    #custom__image_columns-{{ section.id }} .image-columns__grid {
       grid-template-columns: 1fr;
     }
 
-    #shopify-section-{{ section.id }} .image-columns__rail .image-columns__item {
+    #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
       flex-basis: min(78vw, 352px);
     }
   }
@@ -150,7 +149,7 @@
   {%- endfor -%}
 {%- endcapture -%}
 
-<div class="image-columns">
+<div id="custom__image_columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }} image-columns">
   <div class="page-width image-columns__inner">
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
@@ -305,14 +304,9 @@
 {
   "name": "Image columns",
   "tag": "section",
-  "class": "section-image-columns background-image",
+  "class": "section-image-columns",
   "settings": [
-    {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#AEBFB4"
-    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
     { "type": "color", "id": "number_color", "label": "Step number color", "default": "#9b3a15" },
     { "type": "color", "id": "card_background", "label": "Service card background", "default": "#f9f6f1" },
     { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },

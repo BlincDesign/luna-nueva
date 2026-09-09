@@ -1,13 +1,7 @@
 {%- style -%}
     .newsletter-{{ section.id }} {
-      background-color: {{ section.settings.section_background }};
-      color: {{ section.settings.color_text }};
       padding-top: {{ section.settings.padding_top }}px !important;
       padding-bottom: {{ section.settings.padding_bottom }}px !important;
-    }
-
-    .newsletter-{{ section.id }} .input-group-btn {
-      background-color: {{ section.settings.section_background }};
     }
 
     .newsletter-{{ section.id }} .newsletter-section {
@@ -72,7 +66,6 @@
 {% schema %}
 {
   "name": "t:sections.newsletter.name",
-  "class": "background-image",
   "max_blocks": 6,
   "blocks": [
     {
@@ -219,6 +212,12 @@
   ],
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-5"
+    },
+    {
       "type": "paragraph",
       "content": "t:sections.newsletter.settings.content"
     },
@@ -343,18 +342,6 @@
           "label": "t:sections.newsletter.settings.image_position.options.right.label"
         }
       ]
-    },
-    {
-      "type": "color",
-      "id": "section_background",
-      "label": "t:sections.newsletter.settings.color_background.label",
-      "default": "#f9f9f9"
-    },
-    {
-      "type": "color",
-      "id": "color_text",
-      "label": "t:sections.newsletter.settings.color_text.label",
-      "default": "#1c1d1d"
     },
     {
       "type": "header",

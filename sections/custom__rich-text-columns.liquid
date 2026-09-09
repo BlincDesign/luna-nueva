@@ -70,7 +70,7 @@
       width: {{ block.settings.icon_size }}px;
       height: {{ block.settings.icon_size }}px;
       color: {{ block.settings.icon_color }};
-      background: {{ section.settings.section_background }};
+      background: {{ section.settings.icon_backdrop_color }};
     }
 
     
@@ -95,14 +95,12 @@
     }
   {% endfor %}
 
-  #shopify-section-{{ section.id }} {
+  #custom__rich-text-columns-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.section_background }};
-    color: {{ section.settings.text_color }};
   }
 
-  #shopify-section-{{ section.id }} .rich-text__main {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__main {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -110,17 +108,17 @@
     gap: 20px;
   }
 
-  #shopify-section-{{ section.id }} .rich-text__column {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__column {
     display: flex;
     flex-direction: column;
   }
 
-  #shopify-section-{{ section.id }} .rich-text__column--left {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__column--left {
     flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
     justify-content: {{ section.settings.left_vertical_align }};
   }
 
-  #shopify-section-{{ section.id }} .rich-text__column--right {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
     flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
     justify-content: {{ section.settings.right_vertical_align }};
   }
@@ -146,7 +144,7 @@
   }
 
   /* Detail row block (icon + label + description, tasting-note style) */
-  #shopify-section-{{ section.id }} .rich-text__detail-list {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-list {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -156,23 +154,23 @@
     margin: 0;
   }
 
-  #shopify-section-{{ section.id }} .rich-text__detail-row {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px 40px;
     padding: 28px 0;
-    border-top: 1px solid color-mix(in srgb, {{ section.settings.text_color }} 15%, transparent);
+    border-top: 1px solid color-mix(in srgb, {{ section.settings.detail_divider_color }} 15%, transparent);
   }
 
-  #shopify-section-{{ section.id }} .rich-text__detail-label {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
     display: flex;
     align-items: center;
     gap: 12px;
     flex: 0 0 220px;
   }
 
-  #shopify-section-{{ section.id }} .rich-text__detail-label-text {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label-text {
     font-size: var(--type-caption-size);
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -180,51 +178,51 @@
     color: {{ section.settings.detail_accent_color }};
   }
 
-  #shopify-section-{{ section.id }} .rich-text__detail-description {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description {
     flex: 1;
   }
 
-  #shopify-section-{{ section.id }} .rich-text__detail-description p {
+  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description p {
     margin: 0;
   }
 
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} {
+    #custom__rich-text-columns-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
 
-    #shopify-section-{{ section.id }} .rich-text__detail-row {
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
       align-items: flex-start;
     }
 
-    #shopify-section-{{ section.id }} .rich-text__main {
+    #custom__rich-text-columns-{{ section.id }} .rich-text__main {
       flex-direction: column;
       align-items: flex-start; 
       gap: 16px;
     }
     
 
-    #shopify-section-{{ section.id }} .rich-text__column--left,
-    #shopify-section-{{ section.id }} .rich-text__column--right {
+    #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
+    #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
       width: 100%;
       flex: unset;
       display: block;
     }
 
-    #shopify-section-{{ section.id }} .rich-text__detail-row {
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
       flex-direction: column;
       gap: 12px;
       padding: 20px 0;
     }
 
-    #shopify-section-{{ section.id }} .rich-text__detail-label {
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
       flex: 0 0 auto;
     }
   }
 {% endstyle %}
 
-<div class="rich-text__content page-width">
+<div id="custom__rich-text-columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }} rich-text__content page-width">
   <div class="rich-text__main">
     {%- comment -%}
       LEFT COLUMN
@@ -521,20 +519,14 @@
 {% schema %}
 {
   "name": "Rich text columns",
-  "class": "background-image section--scheme-secondary",
+  "class": "",
 
   "settings": [
     {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#2d3135"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#f9f6f1"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "header",
@@ -626,6 +618,20 @@
       "label": "Accent color",
       "info": "Used for the icon outline and label color on Detail row blocks.",
       "default": "#c9a063"
+    },
+    {
+      "type": "color",
+      "id": "icon_backdrop_color",
+      "label": "Divider icon backdrop",
+      "info": "Background behind the divider icon.",
+      "default": "#2d3135"
+    },
+    {
+      "type": "color",
+      "id": "detail_divider_color",
+      "label": "Detail row divider color",
+      "info": "Color used for the line between Detail row blocks.",
+      "default": "#f9f6f1"
     },
     {
       "type": "header",

@@ -79,12 +79,7 @@
 {% endstylesheet %}
 
 {% style %}
-  #shopify-section-{{ section.id }} .story-teaser {
-    background-color: {{ section.settings.section_background }};
-    color: {{ section.settings.text_color }};
-  }
-
-  #shopify-section-{{ section.id }} .story-teaser__inner {
+  #custom__story-teaser-{{ section.id }} .story-teaser__inner {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
@@ -96,7 +91,7 @@
   {% endfor %}
 
   @media screen and (max-width: 900px) {
-    #shopify-section-{{ section.id }} .story-teaser__inner {
+    #custom__story-teaser-{{ section.id }} .story-teaser__inner {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
@@ -112,7 +107,7 @@
   }
 {% endstyle %}
 
-<div class="story-teaser">
+<div id="custom__story-teaser-{{ section.id }}" class="color-{{ section.settings.color_scheme }} story-teaser">
   <div class="story-teaser__inner story-teaser__inner--{{ section.settings.image_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
     <div class="story-teaser__media" data-aos>
       <div class="story-teaser__image-wrap story-teaser__image-wrap--{{ section.settings.image_shape }}">
@@ -188,8 +183,14 @@
 {
   "name": "Story teaser",
   "tag": "section",
-  "class": "section-story-teaser background-image",
+  "class": "section-story-teaser",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
     {
       "type": "header",
       "content": "Image"
@@ -243,22 +244,6 @@
       "id": "full_width",
       "label": "Full width",
       "default": false
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#2D3135"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#F9F6F1"
     },
     {
       "type": "header",

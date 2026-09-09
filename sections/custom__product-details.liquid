@@ -1,12 +1,11 @@
 {% style %}
-  #shopify-section-{{ section.id }}{
+  #custom__product-details-{{ section.id }}{
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
-      background-color: {{ section.settings.section_background }};
   }
 
   @media only screen and (max-width:589px){
-    #shopify-section-{{ section.id }}{
+    #custom__product-details-{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mb }}px;
         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
@@ -14,7 +13,8 @@
 {% endstyle %}
 
 <div
-  class="page-width"
+  id="custom__product-details-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} page-width"
 >
   <div class="pdl__header">
     <div class="pdl__heading-group">
@@ -154,8 +154,14 @@
 {% schema %}
 {
   "name": "Product Detail List",
-  "class": "product-details__list section--scheme-secondary",
+  "class": "product-details__list",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-6"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -183,12 +189,6 @@
       "id": "products",
       "label": "Products",
       "limit": 12
-    },
-    {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#FFFFFF"
     },
     {
       "type": "header",

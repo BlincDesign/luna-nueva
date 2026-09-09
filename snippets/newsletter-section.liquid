@@ -9,9 +9,9 @@
   {% endif %}
 {% endstyle %}
 
-<div class="index-section newsletter-container newsletter-{{ section.id }} color-scheme-{{ section.settings.color_scheme }}">
+<div class="index-section newsletter-container newsletter-{{ section.id }} color-{{ section.settings.color_scheme }}">
   {%- if section.settings.color_scheme and section.settings.color_scheme != 'none' -%}
-    {%- render 'color-scheme-texture', color_scheme: section.settings.color_scheme -%}
+    {%- render 'utility.color-scheme-texture', color_scheme: section.settings.color_scheme -%}
   {%- endif -%}
 
   <div class="page-width text-{{ section.settings.align_text }}">

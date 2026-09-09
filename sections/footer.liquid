@@ -1,13 +1,13 @@
 {%- style -%}
 
-  #shopify-section-{{ section.id }} .site-footer {
+  #footer-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
     border-top: 1px solid rgba(249, 246, 241, .22);
   }
 
 @media only screen and (max-width:589px){
-  #shopify-section-{{ section.id }} .site-footer{
+  #footer-{{ section.id }}{
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
   }
@@ -167,7 +167,7 @@
   endif
 -%}
 
-<footer class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer">
+<footer id="footer-{{ section.id }}" class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer">
   <div class="page-width">
 
     <div class="grid footer-column">
@@ -343,7 +343,6 @@
 {% schema %}
 {
   "name": "t:sections.footer.name",
-  "class": "background-image",
   "max_blocks": 12,
   "settings": [
     {

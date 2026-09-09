@@ -1,8 +1,7 @@
 {% style %}
-  #shopify-section-{{ section.id }} {
+  #custom__additives-table-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    background-color: {{ section.settings.section_background }};
   }
 
   .additives {
@@ -140,7 +139,7 @@
 
     border: 1px solid #2D3135;
     border-radius: 50%;
-    background: {{ section.settings.section_background }};
+    background: {{ section.settings.marker_bg }};
 
     transform: translate(-50%, -50%);
   }
@@ -173,7 +172,7 @@
 
   @media screen and (max-width: 589px) {
 
-    #shopify-section-{{ section.id }} {
+    #custom__additives-table-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
@@ -230,7 +229,7 @@
   }
 {% endstyle %}
 
-<div class="page-width">
+<div id="custom__additives-table-{{ section.id }}" class="color-{{ section.settings.color_scheme }} page-width">
   <div class="additives">
     <div class="additives__header">
       <div class="additives__header-left">
@@ -327,19 +326,19 @@
 {% schema %}
 {
   "name": "Additives table",
-  "class": "background-image section--scheme-secondary",
   "settings": [
     {
-      "type": "color",
-      "id": "section_background",
-      "label": "Section background",
-      "default": "#2d3135"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#f9f6f1"
+      "id": "marker_bg",
+      "label": "Progress marker fill",
+      "info": "Should match the section's background color so the marker reads as a hollow ring.",
+      "default": "#2d3135"
     },
     {
       "type": "header",
