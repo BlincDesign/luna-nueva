@@ -116,8 +116,8 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "header_secondary": false,
-        "stylized_bg": false,
-        "color_scheme": "scheme-2",
+        "stylized_bg": true,
+        "color_scheme": "scheme-1",
         "align_text": "center",
         "narrow_column": false,
         "padding_top": 100,
