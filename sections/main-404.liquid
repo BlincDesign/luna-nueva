@@ -4,7 +4,19 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #section-404-{{ section.id }} .wrapper__404 {
+  .wrapper__404 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .block__404--linklist {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #section-404-{{ section.id }} .section-header--404 {
     flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
     justify-content: {{ section.settings.left_vertical_align }};
   }
