@@ -594,7 +594,6 @@ a.pdl__right {
 
 .age-confirmation__heading {
     font-size: var(--type-h2-size);
-    color: var(--age-confirmation-color);
     margin-bottom: 32px;
 }
 
@@ -626,7 +625,6 @@ a.pdl__right {
 }
 
 .age-confirmation__text {
-    color: var(--age-confirmation-color);
     opacity: 0.7;
 }
 
