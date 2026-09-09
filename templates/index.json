@@ -38,6 +38,9 @@
       ],
       "name": "Image slider with text",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "slider_autoplay_enabled": true,
         "slider_autoplay": 3000,
         "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
@@ -121,8 +124,6 @@
         "narrow_column": false,
         "padding_top": 100,
         "padding_bottom": 100,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
@@ -249,6 +250,9 @@
       "type": "custom__product-details",
       "name": "Product Detail List",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "heading": "Three Expressions",
         "preheading": "THE COLLECTION",
         "right_text": "750ml · Additive-Free · Jalisco",
@@ -305,21 +309,7 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "right",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
+            "position": "right"
           }
         }
       },
@@ -332,7 +322,8 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "scheme-7",
+        "section_background": "#d5995a",
+        "text_color": "#1a1e33",
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -390,6 +381,10 @@
       ],
       "name": "Additives table",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "marker_bg": "#2d3135",
         "heading_additive": "ADDITIVE",
         "heading_product": "LUNA NUEVA",
         "heading_permitted": "PERMITTED UP TO 1%",
@@ -442,20 +437,6 @@
         "link": "",
         "link_text": "",
         "button_type": "primary",
-        "button_primary_bg": "#1c1d1d",
-        "button_primary_border": "#1c1d1d",
-        "button_primary_text": "#ffffff",
-        "button_primary_bg_hover": "#3a3a3a",
-        "button_primary_border_hover": "#3a3a3a",
-        "button_primary_text_hover": "#ffffff",
-        "button_secondary_bg": "#ffffff",
-        "button_secondary_border": "#1c1d1d",
-        "button_secondary_text": "#1c1d1d",
-        "button_secondary_bg_hover": "#1c1d1d",
-        "button_secondary_border_hover": "#1c1d1d",
-        "button_secondary_text_hover": "#ffffff",
-        "button_link_text": "#1c1d1d",
-        "button_link_text_hover": "#7a7a7a",
         "divider": false,
         "padding_top": 0,
         "padding_bottom": 100,
@@ -520,6 +501,9 @@
       ],
       "name": "Story teaser",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "image": "shopify://shop_images/story-pinas.jpg",
         "image_caption": "Agave piñas · Highlands of Jalisco",
         "image_shape": "arch",
@@ -580,7 +564,7 @@
         "padding_top": 100,
         "padding_bottom": 40,
         "padding_top_mb": 80,
-        "padding_bottom_mb": 40
+        "padding_bottom_mb": 8
       }
     },
     "custom_rich_text_columns_n6Ddd9": {
@@ -597,7 +581,7 @@
         "text_DLDMxC": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
+            "enlarge_text": false,
             "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
             "position": "right"
           }
@@ -609,7 +593,8 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "scheme-6",
+        "section_background": "#aebfb4",
+        "text_color": "#35373a",
         "left_column_width": 38,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
@@ -617,7 +602,7 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
-        "padding_top": 0,
+        "padding_top": 52,
         "padding_bottom": 48,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
@@ -661,6 +646,9 @@
       ],
       "name": "Image columns",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
@@ -699,21 +687,7 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "right",
-            "button_primary_bg": "rgba(0,0,0,0)",
-            "button_primary_border": "#ffffff",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#ffffff",
-            "button_primary_border_hover": "#ffffff",
-            "button_primary_text_hover": "#2d3135",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
+            "position": "right"
           }
         }
       },
@@ -724,6 +698,8 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "section_background": "#2d3135",
+        "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -797,6 +773,9 @@
       ],
       "name": "Media gallery - grid",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "full_width": false,
         "content_width": 30,
         "flow_right": true,
@@ -865,6 +844,9 @@
       ],
       "name": "Media gallery - grid",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "full_width": false,
         "content_width": 30,
         "flow_right": true,
@@ -875,7 +857,6 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "color_scheme": "scheme-6",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mb": 40,
@@ -924,21 +905,7 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "right",
-            "button_primary_bg": "#1c1d1d",
-            "button_primary_border": "#1c1d1d",
-            "button_primary_text": "#ffffff",
-            "button_primary_bg_hover": "#3a3a3a",
-            "button_primary_border_hover": "#3a3a3a",
-            "button_primary_text_hover": "#ffffff",
-            "button_secondary_bg": "#ffffff",
-            "button_secondary_border": "#1c1d1d",
-            "button_secondary_text": "#1c1d1d",
-            "button_secondary_bg_hover": "#1c1d1d",
-            "button_secondary_border_hover": "#1c1d1d",
-            "button_secondary_text_hover": "#ffffff",
-            "button_link_text": "#1c1d1d",
-            "button_link_text_hover": "#7a7a7a"
+            "position": "right"
           }
         }
       },
@@ -951,7 +918,8 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "scheme-7",
+        "section_background": "#d5995a",
+        "text_color": "#1a1e33",
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -1017,7 +985,9 @@
       ],
       "name": "Image columns",
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
@@ -1078,8 +1048,6 @@
         "padding_bottom": 100,
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
       }
     },
     "newsletter": {
@@ -1124,6 +1092,9 @@
         "form"
       ],
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "align_text": "center",
         "image_width": "33",
         "image_mask": "none",
