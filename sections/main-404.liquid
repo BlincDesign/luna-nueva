@@ -6,16 +6,16 @@
     </div>
   </header>
   {% if section.blocks.size > 0 %}
-    <div class="404__blocks">
+    <div class="error__blocks">
       {% for block in section.blocks %}
         {% liquid
           assign menu = linklists[block.settings.linklist]
         %}
         {% case block.type %}
           {% when 'menu-list' %}
-            <ul class="404__block-linklist">
+            <ul class="error__block-linklist">
               {% for link in menu.links %}
-                <li class="site-nav__item 404-linklist__item">
+                <li class="site-nav__item error-linklist__item">
                   <a href="{{ link.url }}">
                     <h2>{{ link.title }}</h2>
                   </a>
