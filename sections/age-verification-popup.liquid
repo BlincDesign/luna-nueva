@@ -1,33 +1,6 @@
-{% style %}
-#shopify-section-{{ section.id }} {
-  --age-confirmation-bg: {{ section.settings.background_color }};
-  --age-confirmation-color: {{ section.settings.text_color }};
-}
-
-#shopify-section-{{ section.id }} .button.button--primary {
-  --btn-bg: #D39655;
-  --btn-border: #D39655;
-  --btn-color: #fff;
-  --btn-hover-bg: #E0A768;
-  --btn-hover-border: #D39655;
-  --btn-hover-color: #fff;
-}
-
-
-#shopify-section-{{ section.id }} .button.button--secondary {
-  --btn-bg: transparent;
-  --btn-border: #fff;
-  --btn-color: #fff;
-  --btn-hover-bg: #fff;
-  --btn-hover-border: #fff;
-  --btn-hover-color: #2D3135;
-}
-
-{% endstyle %}
-
 <div
   id="AgeConfirmation-{{ section.id }}"
-  class="age-confirmation modal modal--square modal--mobile-friendly background-image"
+  class="age-confirmation modal modal--square modal--mobile-friendly color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
   role="dialog"
   aria-modal="true"
   {% if section.settings.heading != blank %}
@@ -169,6 +142,25 @@
   "class": "age-confirmation-section",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
+    {
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
@@ -232,22 +224,6 @@
       "id": "error_message",
       "label": "Message shown when a visitor selects \"No\"",
       "default": "Sorry, you must be of legal drinking age to enter this site."
-    },
-    {
-      "type": "header",
-      "content": "Colors"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#1c1d1d"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
     }
   ],
   "presets": [
