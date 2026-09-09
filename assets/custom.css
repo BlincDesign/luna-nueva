@@ -59,13 +59,13 @@
     mix-blend-mode: soft-light;
 }
 
-em:has(strong) {
+em:has(strong) strong {
     color: var(--color-accent);
     font-weight: normal;
     font-style: normal;
 }
 
-strong:has(em) {
+strong:has(em) em {
     color: var(--color-accent);
     font-weight: normal;
     font-style: normal;
