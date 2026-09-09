@@ -59,19 +59,6 @@
     mix-blend-mode: soft-light;
 }
 
-em:has(strong) {
-    color: var(--highlight-color);
-    font-weight: normal;
-    font-style: normal;
-}
-
-strong:has(em) {
-    color: var(--highlight-color);
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 /* GLOBAL CSS*/
 
 
