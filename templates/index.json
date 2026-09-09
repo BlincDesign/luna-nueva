@@ -114,13 +114,15 @@
       ],
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "color_scheme": "scheme-1",
         "align_text": "center",
         "narrow_column": false,
         "padding_top": 100,
         "padding_bottom": 100,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
@@ -1074,6 +1076,8 @@
         "narrow_column": true,
         "padding_top": 100,
         "padding_bottom": 100,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
