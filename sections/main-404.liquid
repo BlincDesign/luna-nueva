@@ -14,9 +14,33 @@
     display: flex;
     flex-direction: column;
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
-  .linklist__404--item p {
+  .linklist__404--item {
+    border-top: 1px solid rgba(var(--color-foreground), 0.2);
+    padding-block: 30px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .linklist__404--item:last-child {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .linklist__404--item a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    text-decoration: none;
+  }
+
+  .linklist__404--title {
     font-weight: 400;
     font-size: clamp(1.35rem, 2.1vw, 1.85rem);
     line-height: 1.15;
@@ -24,13 +48,12 @@
     margin: 0;
   }
 
-  .linklist__404--item {
-    border-top: 1px solid red;
-    padding-block: 30px;
-  }
-
-  .linklist__404--item:last-child {
-      border-bottom: 1px solid red;
+  .linklist__404--subtext {
+    font-size: 1.1rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    opacity: .6;
+    white-space: nowrap;
   }
 
   #section-404-{{ section.id }} .section-header--404 .button-block {
@@ -70,7 +93,6 @@
       <div class="button-1">
         <a href="{{ routes.root_url }}" class="button button--primary js-no-transition">
           {{- 'general.404.continue_shopping' | t -}}
-
           <span class="button__arrow">→</span>
         </a>
       </div>
@@ -79,24 +101,47 @@
       </div>
     </div>
   </header>
+
   {% if section.blocks.size > 0 %}
     <div class="blocks__404 text-{{ section.settings.right_text_align }}">
+      {% liquid
+        assign previous_type = blank
+      %}
       {% for block in section.blocks %}
-        {% liquid
-          assign menu = linklists[block.settings.linklist]
-        %}
-        {% case block.type %}
-          {% when 'menu-list' %}
-            <ul class="block__404--linklist">
-              {% for link in menu.links %}
-                <li class="site-nav__item linklist__404--item">
-                  <a href="{{ link.url }}">
-                    <p>{{ link.title }}</p>
-                  </a>
-                </li>
-              {% endfor %}
+        {% if block.type != previous_type %}
+          {% unless previous_type == blank %}
             </ul>
+          {% endunless %}
+          <ul class="block__404--linklist block__404--{{ block.type | handle }}">
+        {% endif %}
+
+        {% case block.type %}
+          {% when 'link_text' %}
+            <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.link | default: '#' }}">
+                <span class="linklist__404--title">{{ block.settings.title }}</span>
+                {% if block.settings.subtext != blank %}
+                  <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                {% endif %}
+              </a>
+            </li>
+
+          {% when 'menu-list' %}
+            {% assign menu = linklists[block.settings.linklist] %}
+            {% for link in menu.links %}
+              <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+                <a href="{{ link.url }}">
+                  <span class="linklist__404--title">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
         {% endcase %}
+
+        {% assign previous_type = block.type %}
+
+        {% if forloop.last %}
+          </ul>
+        {% endif %}
       {% endfor %}
     </div>
   {% endif %}
@@ -135,24 +180,12 @@
       "label": "Vertical alignment",
       "default": "flex-end",
       "options": [
-        {
-          "value": "flex-start",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "flex-end",
-          "label": "Bottom"
-        }
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
       ]
     },
-    {
-      "type": "header",
-      "content": "Right column"
-    },
+    { "type": "header", "content": "Right column" },
     {
       "type": "range",
       "id": "right_column_width",
@@ -175,24 +208,12 @@
       "label": "Vertical alignment",
       "default": "flex-end",
       "options": [
-        {
-          "value": "flex-start",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "flex-end",
-          "label": "Bottom"
-        }
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
       ]
     },
-    {
-      "type": "header",
-      "content": "Padding"
-    },
+    { "type": "header", "content": "Padding" },
     {
       "type": "range",
       "id": "padding_top",
@@ -213,11 +234,7 @@
       "unit": "px",
       "default": 120
     },
-
-    {
-      "type": "header",
-      "content": "Mobile padding"
-    },
+    { "type": "header", "content": "Mobile padding" },
     {
       "type": "range",
       "id": "mobile_padding_top",
@@ -240,6 +257,29 @@
     }
   ],
   "blocks": [
+    {
+      "type": "link_text",
+      "name": "Link with text",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Link title"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Description"
+        }
+      ]
+    },
     {
       "type": "menu-list",
       "name": "Menu list",
