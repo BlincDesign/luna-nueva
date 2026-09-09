@@ -11,7 +11,7 @@
         {% case block.type %}
           {% when 'menu-list' %}
             <ul class="404__block-linklist">
-              {% for link in block.settings.link_list %}
+              {% for link in block.settings.link_list.links %}
                 <li>
                   <a href="{{ link.url }}">
                     <h2>{{ link.title }}</h2>
