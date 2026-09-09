@@ -139,8 +139,14 @@
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
-  "class": "section--scheme-secondary",
+  "class": "rich-text",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Change header color on interaction",
+      "default": false
+    },
     {
       "type": "checkbox",
       "id": "stylized_bg",
