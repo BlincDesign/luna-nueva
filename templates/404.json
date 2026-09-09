@@ -12,14 +12,60 @@
     "main": {
       "type": "main-404",
       "blocks": {
+        "link_text_zafEUW": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Shop Luna Nueva",
+            "subtext": "Three expressions"
+          }
+        },
+        "link_text_qkkGif": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Our Story",
+            "subtext": "Jalisco to California"
+          }
+        },
+        "link_text_hXVUxk": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Events",
+            "subtext": "What’s coming up"
+          }
+        },
+        "link_text_M8Qmy7": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Serves & Recipes",
+            "subtext": "Eight ways to pour it"
+          }
+        },
+        "link_text_hXcmgW": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Store Locator",
+            "subtext": "104 accounts"
+          }
+        },
         "menu_list_HwkFqb": {
           "type": "menu-list",
+          "disabled": true,
           "settings": {
             "linklist": "header-menu-development"
           }
         }
       },
       "block_order": [
+        "link_text_zafEUW",
+        "link_text_qkkGif",
+        "link_text_hXVUxk",
+        "link_text_M8Qmy7",
+        "link_text_hXcmgW",
         "menu_list_HwkFqb"
       ],
       "settings": {
