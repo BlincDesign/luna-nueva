@@ -43,16 +43,18 @@
   <header class="section-header section-header--404 text-{{ section.settings.left_text_align }}">
     <h1 class="section-header__title">{{ 'general.404.title' | t }}</h1>
     <div class="rte text-spacing">
-      <div class="button-block page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
-        <div class="button-1">
-          <a href="{{ routes.root_url }}" class="button button--primary js-no-transition">
-            {{- 'general.404.subtext_html' | t: url: routes.root_url -}}
-            <span class="button__arrow">→</span></a
-          >
-        </div>
-        <div class="button-2">
-          <a href="{{ routes.collections_url }}" class="button button--secondary js-no-transition">Find a Bottle</a>
-        </div>
+      {{- 'general.404.subtext_html' | t -}}
+    </div>
+    <div class="button-block page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+      <div class="button-1">
+        <a href="{{ routes.root_url }}" class="button button--primary js-no-transition">
+          {{- 'general.404.continue_shopping' | t -}}
+
+          <span class="button__arrow">→</span>
+        </a>
+      </div>
+      <div class="button-2">
+        <a href="{{ routes.collections_url }}" class="button button--secondary js-no-transition">Find a Bottle</a>
       </div>
     </div>
   </header>

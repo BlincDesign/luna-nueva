@@ -11,7 +11,8 @@
   "general": {
     "404": {
       "title": "404 Page Not Found",
-      "subtext_html": "<p>The page you were looking for does not exist.</p><p><a href='{{ url }}'>Continue shopping</a></p>"
+      "subtext_html": "<p>The page you were looking for does not exist.</p>",
+      "continue_shopping": "<p><a href='{{ url }}'>Continue shopping</a></p>"
     },
     "accessibility": {
       "skip_to_content": "Skip to content",
