@@ -82,7 +82,7 @@
   }
 {% endstyle %}
 
-<div id="section-404-{{ section.id }}" class="page-width page-content">
+<div id="section-404-{{ section.id }}" class="page-width page-content gradient color-{{ section.settings.color_scheme }}">
   {% if section.blocks.size > 0 %}<div class="wrapper__404">{% endif %}
   <header class="section-header section-header--404 text-{{ section.settings.left_text_align }}">
     <h1 class="section-header__title">{{ 'general.404.title' | t }}</h1>
@@ -153,10 +153,10 @@
   "name": "t:sections.main-404.name",
   "settings": [
     {
-      "type": "text_alignment",
-      "id": "text_alignment",
-      "label": "Text alignment",
-      "default": "left"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "range",
