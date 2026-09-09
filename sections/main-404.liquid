@@ -9,7 +9,7 @@
     <div class="404__blocks">
       {% for block in section.blocks %}
         {% liquid
-          assign menu = linklists[block.settings.link_list]
+          assign menu = linklists[block.settings.linklist]
         %}
         {% case block.type %}
           {% when 'menu-list' %}
