@@ -1,24 +1,49 @@
+```liquid
 {%- liquid
   assign layout_type = section.settings.layout_type | default: 'grid'
   assign columns = section.settings.columns | default: 3
   assign tablet_columns = columns
+
   if tablet_columns > 2
     assign tablet_columns = 2
   endif
+
   assign image_size_vw = 100 | divided_by: columns
 -%}
 
 {%- style -%}
- #custom__image_columns-{{ section.id }}{
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  #custom__image_columns-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  @media only screen and (max-width:589px){
-    #custom__image_columns-{{ section.id }}{
-        padding-top: {{ section.settings.padding_top_mb }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  @media only screen and (max-width: 589px) {
+    #custom__image_columns-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
+  }
+
+  #custom__image_columns-{{ section.id }} .image-columns {
+    --image-columns-gap-grid: {{ section.settings.gap }}px;
+    --image-columns-gap-rail: {{ section.settings.gap }}px;
+  }
+
+  @media only screen and (max-width: 589px) {
+    #custom__image_columns-{{ section.id }} .image-columns {
+      --image-columns-gap-grid: {{ section.settings.gap_mb }}px;
+      --image-columns-gap-rail: {{ section.settings.gap_mb }}px;
+    }
+  }
+
+  #custom__image_columns-{{ section.id }} .image-columns__grid {
+    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+  }
+
+  #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
+    flex-basis: calc(
+      (100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }}
+    );
   }
 
   #custom__image_columns-{{ section.id }} .image-columns__step-number {
@@ -43,41 +68,15 @@
     background-color: {{ section.settings.track_color }};
   }
 
-  #custom__image_columns-{{ section.id }}.image-columns {
-    --image-columns-gap-grid: {{ section.settings.gap }}px;
-    --image-columns-gap-rail: {{ section.settings.gap }}px;
-  }
-
-  @media only screen and (max-width:589px){
-    #custom__image_columns-{{ section.id }}.image-columns {
-      --image-columns-gap-grid: {{ section.settings.gap_mb }}px;
-      --image-columns-gap-rail: {{ section.settings.gap_mb }}px;
-    }
-  }
-
-  #custom__image_columns-{{ section.id }} .image-columns__grid {
-    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
-  }
-
-  #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
-    flex-basis: calc((100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }});
-  }
-
-  @media screen and (min-width: 901px) {
-    #custom__image_columns-{{ section.id }} .image-columns__inner drag-scroller {
-      --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
-      margin-right: calc(0px - var(--image-columns-bleed));
-      padding-right: var(--image-columns-bleed);
-    }
-  }
-
   @media screen and (max-width: 900px) {
     #custom__image_columns-{{ section.id }} .image-columns__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
     }
 
     #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
-      flex-basis: calc((100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }});
+      flex-basis: calc(
+        (100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }}
+      );
     }
   }
 
@@ -113,35 +112,49 @@
       {%- case block.type -%}
         {%- when 'step' -%}
           {%- if block.settings.number != blank -%}
-            <h2 class="image-columns__step-number">{{ block.settings.number }}</h2>
+            <h2 class="image-columns__step-number">
+              {{ block.settings.number }}
+            </h2>
           {%- endif -%}
 
           {%- if block.settings.heading != blank -%}
-            <h3 class="image-columns__step-heading">{{ block.settings.heading }}</h3>
+            <h3 class="image-columns__step-heading">
+              {{ block.settings.heading }}
+            </h3>
           {%- endif -%}
 
           {%- if block.settings.text != blank -%}
-            <div class="image-columns__step-text rte">{{ block.settings.text }}</div>
+            <div class="image-columns__step-text rte">
+              {{ block.settings.text }}
+            </div>
           {%- endif -%}
 
         {%- when 'service' -%}
           <div class="image-columns__menu">
             <div class="image-columns__menu-header">
               {%- if block.settings.title != blank -%}
-                <h3 class="image-columns__service-title">{{ block.settings.title }}</h3>
+                <h3 class="image-columns__service-title">
+                  {{ block.settings.title }}
+                </h3>
               {%- endif -%}
 
               {%- if block.settings.number != blank -%}
-                <span class="image-columns__service-number">{{ block.settings.number }}</span>
+                <span class="image-columns__service-number">
+                  {{ block.settings.number }}
+                </span>
               {%- endif -%}
             </div>
 
             {%- if block.settings.ingredients != blank -%}
-              <div class="image-columns__ingredients rte">{{ block.settings.ingredients }}</div>
+              <div class="image-columns__ingredients rte">
+                {{ block.settings.ingredients }}
+              </div>
             {%- endif -%}
 
             {%- if block.settings.note != blank -%}
-              <div class="image-columns__note rte">{{ block.settings.note }}</div>
+              <div class="image-columns__note rte">
+                {{ block.settings.note }}
+              </div>
             {%- endif -%}
           </div>
       {%- endcase -%}
@@ -156,8 +169,16 @@
   <div class="page-width image-columns__inner">
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
-        {%- capture rail_markup -%}<div class="image-columns__rail">{{ blocks_markup }}</div>{%- endcapture -%}
-        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
+        {%- capture rail_markup -%}
+          <div class="image-columns__rail">
+            {{ blocks_markup }}
+          </div>
+        {%- endcapture -%}
+
+        {%- render 'layout.drag-scroller',
+          slot: rail_markup,
+          label: 'Image columns, scroll horizontally'
+        -%}
       {%- else -%}
         <div class="image-columns__grid">
           {{ blocks_markup }}
@@ -168,139 +189,148 @@
 </div>
 
 {% stylesheet %}
-.image-columns__grid {
-  display: grid;
-  gap: var(--image-columns-gap-grid);
-}
-
-.image-columns__rail {
-  display: flex;
-  gap: var(--image-columns-gap-rail);
-  width: max-content;
-  min-width: 100%;
-  padding: 0 20px 19px 0;
-}
-
-.image-columns__rail .image-columns__item {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
-
-.image-columns__image-wrap {
-  position: relative;
-  aspect-ratio: 1 / 1.25;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.image-columns__image-wrap image-element,
-.image-columns__image-wrap .image-element,
-.image-columns__image-wrap .placeholder-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-columns__step-number {
-  margin: 25px 0 19px;
-  font-family: var(--typeBasePrimary);
-  font-weight: 700;
-}
-
-.image-columns__step-heading {
-  margin: 0 0 11px;
-}
-
-.image-columns__step-text {
-  margin: 0;
-}
-
-.image-columns__menu {
-  padding: 16px 17px 14px;
-}
-
-.image-columns__menu-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 14px;
-  padding-bottom: 11px;
-  border-bottom: 1px solid rgba(45, 49, 53, 0.32);
-}
-
-.image-columns__service-title {
-  margin: 0;
-  font-weight: 400;
-  line-height: 1.14;
-}
-
-.image-columns__service-number {
-  flex: none;
-  font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-  font-size: var(--type-caption-size);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  line-height: 1;
-}
-
-.image-columns__ingredients {
-  padding: 4px 0 2px;
-}
-
-.image-columns__ingredients p {
-  display: flex;
-  align-items: baseline;
-  gap: 7px;
-  margin: 0;
-  padding: 8px 0;
-  font-size: var(--type-caption-size);
-  text-transform: uppercase;
-}
-
-.image-columns__ingredients p::before {
-  order: 1;
-  flex: 1 1 auto;
-  border-bottom: 1px dotted rgba(45, 49, 53, 0.38);
-  content: '';
-  transform: translateY(-0.2em);
-}
-
-.image-columns__ingredients strong {
-  order: 2;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.image-columns__note {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(45, 49, 53, 0.32);
-  text-transform: uppercase;
-  margin: 0 !important;
-}
-
-.image-columns__note p {
-  font-size: var(--type-caption-size);
-}
-
-@media screen and (max-width: 589px) {
-  .image-columns__image-wrap {
-    margin-bottom: 22px;
+  .image-columns__grid {
+    display: grid;
+    gap: var(--image-columns-gap-grid);
   }
 
   .image-columns__rail {
-    gap: 16px;
+    display: flex;
+    gap: var(--image-columns-gap-rail);
+    width: max-content;
+    min-width: 100%;
+    padding: 0 20px 19px 0;
+  }
+
+  .image-columns__rail .image-columns__item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .image-columns__image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1.25;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .image-columns__image-wrap image-element,
+  .image-columns__image-wrap .image-element,
+  .image-columns__image-wrap .placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-columns__step-number {
+    margin: 25px 0 19px;
+    font-family: var(--typeBasePrimary);
+    font-weight: 700;
+  }
+
+  .image-columns__step-heading {
+    margin: 0 0 11px;
+  }
+
+  .image-columns__step-text {
+    margin: 0;
   }
 
   .image-columns__menu {
-    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px 17px 14px;
   }
-}
 
+  .image-columns__menu-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(45, 49, 53, 0.32);
+  }
+
+  .image-columns__service-title {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.14;
+  }
+
+  .image-columns__service-number {
+    flex: none;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: var(--type-caption-size);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+
+  .image-columns__ingredients {
+    padding: 4px 0 2px;
+  }
+
+  .image-columns__ingredients p {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin: 0;
+    padding: 8px 0;
+    font-size: var(--type-caption-size);
+    text-transform: uppercase;
+  }
+
+  .image-columns__ingredients p::before {
+    order: 1;
+    flex: 1 1 auto;
+    border-bottom: 1px dotted rgba(45, 49, 53, 0.38);
+    content: '';
+    transform: translateY(-0.2em);
+  }
+
+  .image-columns__ingredients strong {
+    order: 2;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .image-columns__note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(45, 49, 53, 0.32);
+    text-transform: uppercase;
+  }
+
+  .image-columns__note p {
+    font-size: var(--type-caption-size);
+  }
+
+  @media screen and (max-width: 589px) {
+    .image-columns__image-wrap {
+      margin-bottom: 22px;
+    }
+
+    .image-columns__menu {
+      padding: 14px;
+    }
+  }
+
+  @media screen and (min-width: 901px) {
+    .image-columns__inner drag-scroller {
+      --image-columns-bleed: max(
+        68px,
+        calc((100vw - 1560px) / 2 + 68px)
+      );
+
+      margin-right: calc(0px - var(--image-columns-bleed));
+      padding-right: var(--image-columns-bleed);
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
