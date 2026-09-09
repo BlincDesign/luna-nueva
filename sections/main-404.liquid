@@ -19,11 +19,15 @@
   #section-404-{{ section.id }} .section-header--404 {
     flex: 0 1 calc({{ section.settings.left_column_width }}% - 15px);
     justify-content: {{ section.settings.left_vertical_align }};
+    display: flex;
+    flex-direction: column;
   }
 
   #section-404-{{ section.id }} .blocks__404 {
     flex: 0 1 calc({{ section.settings.right_column_width }}% - 15px);
     justify-content: {{ section.settings.right_vertical_align }};
+    display: flex;
+    flex-direction: column;
   }
 
   @media screen and (max-width: 589px) {
