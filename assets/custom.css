@@ -60,13 +60,13 @@
 }
 
 em:has(strong) {
-    color: var(--color-background);
+    color: var(--color-accent);
     font-weight: normal;
     font-style: normal;
 }
 
 strong:has(em) {
-    color: var( --color-accent);
+    color: var(--color-accent);
     font-weight: normal;
     font-style: normal;
 }
