@@ -1094,30 +1094,30 @@
           "type": "service",
           "settings": {
             "image": "shopify://shop_images/recipe-paloma.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
+            "number": "02",
+            "title": "Hibiscus Paloma",
+            "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>bibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>cointreau . simple syrup <strong>.25 02  each</strong></p>",
+            "note": "<p>dried hibiscub flower or lime wheel</p>"
           }
         },
         "service_xzRJne": {
           "type": "service",
           "settings": {
             "image": "shopify://shop_images/recipe-horchata.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
+            "number": "03",
+            "title": "Horchata Swirl",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Almond Milk <strong>3 oz</strong></p><p>Orgeat Syrup <strong>1 oz</strong></p><p>Ground Cinnamon <strong>A Dash</strong></p>",
+            "note": "<p>Cinnamon on top, swirl before sipping</p>"
           }
         },
         "service_9GaDAh": {
           "type": "service",
           "settings": {
             "image": "shopify://shop_images/recipe-oldfashioned.jpg",
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
+            "number": "04",
+            "title": "Tequila Old Fashioned",
+            "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
+            "note": "<p>orange twist, Over one large cube</p>"
           }
         }
       },
