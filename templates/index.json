@@ -516,7 +516,7 @@
             "enable_divider": true,
             "divider_bg": "#2D3135",
             "divider_width": 100,
-            "divider_height": 2,
+            "divider_height": 1,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
             "icon": "chat",
