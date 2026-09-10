@@ -1235,11 +1235,10 @@
         "text",
         "form"
       ],
-      "disabled": true,
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "align_text": "center",
         "image_width": "33",
         "image_mask": "none",
