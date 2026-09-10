@@ -638,8 +638,8 @@
         "columns": 3,
         "gap": 52,
         "gap_mb": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 0,
+        "padding_bottom": 100,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
