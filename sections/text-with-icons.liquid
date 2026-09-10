@@ -4,36 +4,25 @@
        --btn-link-color-hover: {{ section.settings.button_link_text_hover | default: "#7a7a7a" }};
      }
 
-    {%- assign section_scheme = settings.color_schemes[section.settings.color_scheme] -%}
-
-    #shopify-section-{{ section.id }} {
+    #Text-with-icons-{{ section.id }} {
      padding-top: {{ section.settings.padding_top }}px;
      padding-bottom: {{ section.settings.padding_bottom }}px;
-     background-color: rgb({{ section_scheme.settings.background.rgb }});
    }
 
-   #shopify-section-{{ section.id }} .text-with-icons__block {
-     color: rgb({{ section_scheme.settings.text.rgb }});
-   }
-
-   #shopify-section-{{ section.id }} .icon {
-     color: rgb({{ section_scheme.settings.text.rgb }});
-   }
-
-   #shopify-section-{{ section.id }} .icon path,
-   #shopify-section-{{ section.id }} .icon polygon,
-   #shopify-section-{{ section.id }} .icon rect,
-   #shopify-section-{{ section.id }} .icon circle,
-   #shopify-section-{{ section.id }} .icon ellipse,
-   #shopify-section-{{ section.id }} .icon line,
-   #shopify-section-{{ section.id }} .icon polyline,
-   #shopify-section-{{ section.id }} .icon g {
+   #Text-with-icons-{{ section.id }} .icon path,
+   #Text-with-icons-{{ section.id }} .icon polygon,
+   #Text-with-icons-{{ section.id }} .icon rect,
+   #Text-with-icons-{{ section.id }} .icon circle,
+   #Text-with-icons-{{ section.id }} .icon ellipse,
+   #Text-with-icons-{{ section.id }} .icon line,
+   #Text-with-icons-{{ section.id }} .icon polyline,
+   #Text-with-icons-{{ section.id }} .icon g {
      stroke-width: {{ settings.icon_weight | replace: 'px', '' | minus: 1 }}px;
    }
 
    @media screen and (max-width: 589px) {
 
-     #shopify-section-{{ section.id }} {
+     #Text-with-icons-{{ section.id }} {
        padding-top: {{ section.settings.mobile_padding_top }}px;
        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
      }
@@ -43,7 +32,8 @@
 {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
 <div
-  class="text-with-icons"
+  id="Text-with-icons-{{ section.id }}"
+  class="text-with-icons color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="text-with-icons"
 >
@@ -98,13 +88,26 @@
 {% schema %}
 {
   "name": "Text columns with icons",
-  "class": "background-image section--scheme-secondary",
+  "class": "text-columns-with-images-section",
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-4"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
     },
     {
       "type": "text",

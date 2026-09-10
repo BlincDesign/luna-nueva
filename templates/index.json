@@ -321,8 +321,6 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#d5995a",
-        "text_color": "#1a1e33",
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -592,8 +590,6 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#aebfb4",
-        "text_color": "#35373a",
         "left_column_width": 38,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
@@ -697,8 +693,6 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#2d3135",
-        "text_color": "#f9f6f1",
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -917,8 +911,6 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "section_background": "#d5995a",
-        "text_color": "#1a1e33",
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",

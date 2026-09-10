@@ -231,97 +231,98 @@
 
 <div
   id="custom__additives-table-{{ section.id }}"
-  class="color-{{ section.settings.color_scheme }} page-width{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  class="color-{{ section.settings.color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
-  <div class="additives">
-    <div class="additives__header">
-      <div class="additives__header-left">
-        <div class="additives__header-title">
-          {{ section.settings.heading_additive }}
+  <div class="page-width">
+    <div class="additives">
+      <div class="additives__header">
+        <div class="additives__header-left">
+          <div class="additives__header-title">
+            {{ section.settings.heading_additive }}
+          </div>
+        </div>
+
+        <div class="additives__header-right">
+          <div class="additives__header-title additives__header-luna">
+            {{ section.settings.heading_product }}
+          </div>
+
+          <div style="display: flex;">
+            <div class="additives__header-title additives__header-permitted">
+              {{ section.settings.heading_permitted }}
+            </div>
+
+            <div class="additives__header-title additives__header-bottle">
+              {{ section.settings.heading_bottle }}
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="additives__header-right">
-        <div class="additives__header-title additives__header-luna">
-          {{ section.settings.heading_product }}
-        </div>
+      <div class="additives__body">
+        {% for block in section.blocks %}
+          {% liquid
+            assign percentage_value = block.settings.percentage | strip_html | strip | remove: '%' | replace: ',', '.' | plus: 0.0
+            assign progress_width = percentage_value | times: 100
+          %}
 
-        <div style="display: flex;">
-          <div class="additives__header-title additives__header-permitted">
-            {{ section.settings.heading_permitted }}
-          </div>
+          <div
+            class="additives__row"
+            {{ block.shopify_attributes }}
+          >
+            <div class="additives__additive">
+              <div class="additives__icon">
+                {% if block.settings.custom_icon_image != blank %}
+                  {{
+                    block.settings.custom_icon_image
+                    | image_url: width: 80
+                    | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
+                  }}
 
-          <div class="additives__header-title additives__header-bottle">
-            {{ section.settings.heading_bottle }}
+                {% elsif block.settings.icon != blank %}
+                  {% render 'icon', name: block.settings.icon %}
+
+                {% else %}
+                  {% liquid
+                    assign fallback_icons = 'droplet,leaf,cube,half-circle' | split: ','
+                    assign fallback_index = forloop.index0 | modulo: fallback_icons.size
+                    assign fallback_icon = fallback_icons[fallback_index]
+                  %}
+
+                  {% render 'icon', name: fallback_icon %}
+                {% endif %}
+              </div>
+
+              <div class="additives__name">
+                {{ block.settings.name }}
+              </div>
+            </div>
+
+            <div class="additives__progress">
+              <div
+                class="additives__progress-bar"
+                role="progressbar"
+                aria-valuenow="{{ percentage_value }}"
+                aria-valuemin="0"
+                aria-valuemax="{{ section.settings.maximum_percentage }}"
+                style="--progress-width: {{ progress_width }}%;"
+              >
+                <span class="additives__progress-track"></span>
+
+                <span class="additives__progress-fill"></span>
+
+                <span class="additives__progress-marker"></span>
+
+                <span class="additives__progress-marker-100"></span>
+              </div>
+            </div>
+
+            <div class="additives__percentage">
+              {{ block.settings.percentage }}
+            </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
-    </div>
-
-    <div class="additives__body">
-      {% for block in section.blocks %}
-        {% liquid
-          assign percentage_value = block.settings.percentage | strip_html | strip | remove: '%' | replace: ',', '.' | plus: 0.0
-          assign progress_width = percentage_value | times: 100
-        %}
-
-        <div
-          class="additives__row"
-          {{ block.shopify_attributes }}
-        >
-
-          <div class="additives__additive">
-            <div class="additives__icon">
-              {% if block.settings.custom_icon_image != blank %}
-                {{
-                  block.settings.custom_icon_image
-                  | image_url: width: 80
-                  | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
-                }}
-
-              {% elsif block.settings.icon != blank %}
-                {% render 'icon', name: block.settings.icon %}
-
-              {% else %}
-                {% liquid
-                  assign fallback_icons = 'droplet,leaf,cube,half-circle' | split: ','
-                  assign fallback_index = forloop.index0 | modulo: fallback_icons.size
-                  assign fallback_icon = fallback_icons[fallback_index]
-                %}
-
-                {% render 'icon', name: fallback_icon %}
-              {% endif %}
-            </div>
-
-            <div class="additives__name">
-              {{ block.settings.name }}
-            </div>
-          </div>
-
-          <div class="additives__progress">
-            <div
-              class="additives__progress-bar"
-              role="progressbar"
-              aria-valuenow="{{ percentage_value }}"
-              aria-valuemin="0"
-              aria-valuemax="{{ section.settings.maximum_percentage }}"
-              style="--progress-width: {{ progress_width }}%;"
-            >
-              <span class="additives__progress-track"></span>
-
-              <span class="additives__progress-fill"></span>
-
-              <span class="additives__progress-marker"></span>
-
-              <span class="additives__progress-marker-100"></span>
-            </div>
-          </div>
-
-          <div class="additives__percentage">
-            {{ block.settings.percentage }}
-          </div>
-        </div>
-      {% endfor %}
     </div>
   </div>
 </div>
