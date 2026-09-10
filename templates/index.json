@@ -691,7 +691,7 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "padding_top": 138,
-        "padding_bottom": 0,
+        "padding_bottom": 66,
         "padding_top_mb": 72,
         "padding_bottom_mb": 0
       }
@@ -769,7 +769,7 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "padding_top": 66,
+        "padding_top": 0,
         "padding_bottom": 138,
         "padding_top_mb": 38,
         "padding_bottom_mb": 72
