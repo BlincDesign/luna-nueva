@@ -840,10 +840,10 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
-        "padding_top": 0,
-        "padding_bottom": 100,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
       }
     },
     "custom_rich_text_columns_EeJbUR": {
