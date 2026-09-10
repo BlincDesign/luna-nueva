@@ -14,16 +14,17 @@
         margin-block-start: {{ block.settings.margin_top }}px;
         margin-block-end: {{ block.settings.margin_bottom }}px;
       }
-      @media screen and (max-width: 749px) {
-    #block-{{ block.id }} .rich-text__divider {
-      margin-block-start: {{ block.settings.mobile_margin_top }}px;
-      margin-block-end: {{ block.settings.mobile_margin_bottom }}px;
-    }
     {% else %}
       #block-{{ block.id }} .rich-text__divider--icon {
         margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
         margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
       }
+      
+      @media screen and (max-width: 749px) {
+    #block-{{ block.id }} .rich-text__divider {
+      margin-block-start: {{ block.settings.mobile_margin_top }}px;
+      margin-block-end: {{ block.settings.mobile_margin_bottom }}px;
+    }
     {% endif %}
 
     #block-{{ block.id }} .rich-text__divider--icon {
