@@ -154,8 +154,31 @@
         "padding_bottom": 15
       }
     },
+    "custom_product_details_kxMqC9": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver",
+          "luna-nueva-reposado",
+          "luna-nueva-silver-1"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "featured_collection_FjLrkD": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "",
@@ -168,6 +191,7 @@
     },
     "featured_collection_aeKpQw": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "",
@@ -183,6 +207,7 @@
     "main-collection",
     "custom_rich_text_columns_h8hPax",
     "scrolling_text_jPUBXx",
+    "custom_product_details_kxMqC9",
     "featured_collection_FjLrkD",
     "featured_collection_aeKpQw"
   ]
