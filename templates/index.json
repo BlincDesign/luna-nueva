@@ -657,7 +657,7 @@
         "heading_7FY4NB": {
           "type": "heading",
           "settings": {
-            "title": "Where it <em><strong>actually gets poured.</strong></em>",
+            "title": "Where it actually gets poured.",
             "position": "left"
           }
         },
@@ -666,7 +666,7 @@
           "settings": {
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
-            "button_type": "primary",
+            "button_type": "secondary",
             "position": "right"
           }
         }
@@ -680,7 +680,7 @@
       "settings": {
         "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -758,7 +758,7 @@
       "settings": {
         "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "full_width": false,
         "content_width": 30,
         "flow_right": true,
