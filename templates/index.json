@@ -1142,6 +1142,113 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "custom_media_gallery_VeX9PR": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_XzBemz": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/night-sign.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_N8gyBN": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-bottles.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_n4N6MY": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-bar.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_HtqxPK": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-two.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_6NiHxf": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-station.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_WnWFUV": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/night-group.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_4xUNab": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-late.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_PjXAYj": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one": "shopify://shop_images/night-glasses.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_XzBemz",
+        "image_N8gyBN",
+        "image_n4N6MY",
+        "image_HtqxPK",
+        "image_6NiHxf",
+        "image_WnWFUV",
+        "image_4xUNab",
+        "image_PjXAYj"
+      ],
+      "name": "Media gallery - media only",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 66,
+        "padding_bottom": 138,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
@@ -1165,6 +1272,7 @@
     "custom_image_columns_WKgQjK",
     "rich-text",
     "newsletter",
-    "custom_rich_text_columns_pFkTeQ"
+    "custom_rich_text_columns_pFkTeQ",
+    "custom_media_gallery_VeX9PR"
   ]
 }
