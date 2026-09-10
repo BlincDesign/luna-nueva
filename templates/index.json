@@ -1138,9 +1138,9 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "padding_top": 138,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_bottom": 66,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 38
       }
     },
     "custom_media_gallery_VeX9PR": {
@@ -1246,8 +1246,8 @@
         "gap": 16,
         "padding_top": 66,
         "padding_bottom": 138,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 72
       }
     }
   },
