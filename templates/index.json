@@ -40,91 +40,22 @@
       "settings": {
         "color_scheme": "scheme-6",
         "header_secondary": false,
-        "stylized_bg": true,
-        "slider_autoplay_enabled": true,
+        "stylized_bg": false,
+        "slider_autoplay_enabled": false,
         "slider_autoplay": 3000,
         "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
         "heading": "<h1>Every great night<br/><em><strong>begins with</strong></em><br/>a new moon.</h1>",
-        "text": "<h5>Additive-free tequila from the Highlands and Lowlands of Jalisco.</h5>",
+        "enlarge_text": true,
+        "text": "<p>Additive-free tequila from the Highlands and Lowlands of Jalisco.</p>",
         "button_1_label": "Shop the Collection",
         "button_1_type": "primary",
-        "button_1_primary_bg": "#1c1d1d",
-        "button_1_primary_border": "#1c1d1d",
-        "button_1_primary_text": "#ffffff",
-        "button_1_primary_bg_hover": "#3a3a3a",
-        "button_1_primary_border_hover": "#3a3a3a",
-        "button_1_primary_text_hover": "#ffffff",
-        "button_1_secondary_bg": "#ffffff",
-        "button_1_secondary_border": "#1c1d1d",
-        "button_1_secondary_text": "#1c1d1d",
-        "button_1_secondary_bg_hover": "#1c1d1d",
-        "button_1_secondary_border_hover": "#1c1d1d",
-        "button_1_secondary_text_hover": "#ffffff",
-        "button_1_link_text": "#1c1d1d",
-        "button_1_link_text_hover": "#7a7a7a",
         "button_2_label": "Find a Bottle",
         "button_2_type": "secondary",
-        "button_2_primary_bg": "#1c1d1d",
-        "button_2_primary_border": "#1c1d1d",
-        "button_2_primary_text": "#ffffff",
-        "button_2_primary_bg_hover": "#3a3a3a",
-        "button_2_primary_border_hover": "#3a3a3a",
-        "button_2_primary_text_hover": "#ffffff",
-        "button_2_secondary_bg": "#ffffff",
-        "button_2_secondary_border": "#1c1d1d",
-        "button_2_secondary_text": "#1c1d1d",
-        "button_2_secondary_bg_hover": "#1c1d1d",
-        "button_2_secondary_border_hover": "#1c1d1d",
-        "button_2_secondary_text_hover": "#ffffff",
-        "button_2_link_text": "#1c1d1d",
-        "button_2_link_text_hover": "#7a7a7a",
         "content_width": 800,
         "padding_top": 0,
         "padding_bottom": 0,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
-    "rich_text_VDFB8d": {
-      "type": "rich-text",
-      "blocks": {
-        "divider_gUNLzh": {
-          "type": "divider",
-          "settings": {
-            "enable_divider": true,
-            "divider_bg": "#606264",
-            "divider_width": 100,
-            "divider_height": 2,
-            "enable_icon": true,
-            "icon_color": "#f9f6f1",
-            "icon": "crescent-moon",
-            "icon_size": 30,
-            "margin_top": 30,
-            "margin_bottom": 30
-          }
-        },
-        "heading_dhcXp3": {
-          "type": "heading",
-          "settings": {
-            "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>."
-          }
-        }
-      },
-      "block_order": [
-        "divider_gUNLzh",
-        "heading_dhcXp3"
-      ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
-      "settings": {
-        "header_secondary": true,
-        "stylized_bg": true,
-        "color_scheme": "scheme-1",
-        "align_text": "center",
-        "narrow_column": false,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
       }
     },
     "scrolling_text_PacCqL": {
@@ -185,6 +116,48 @@
         "color_text": "#2d3135",
         "padding_top": 15,
         "padding_bottom": 15
+      }
+    },
+    "rich_text_VDFB8d": {
+      "type": "rich-text",
+      "blocks": {
+        "divider_gUNLzh": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 100,
+            "divider_height": 2,
+            "enable_icon": true,
+            "icon_color": "#f9f6f1",
+            "icon": "crescent-moon",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 86
+          }
+        },
+        "heading_dhcXp3": {
+          "type": "heading",
+          "settings": {
+            "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>."
+          }
+        }
+      },
+      "block_order": [
+        "divider_gUNLzh",
+        "heading_dhcXp3"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": true,
+        "stylized_bg": true,
+        "color_scheme": "scheme-1",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 152,
+        "padding_bottom": 152,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
       }
     },
     "slideshow_Gj6CyA": {
@@ -249,7 +222,7 @@
       "type": "custom__product-details",
       "name": "Product Detail List",
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": false,
         "heading": "Three Expressions",
@@ -296,7 +269,7 @@
         "text_YrMjYV": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
+            "enlarge_text": true,
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
             "position": "right"
           }
@@ -321,6 +294,9 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -328,6 +304,8 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
         "padding_top": 100,
         "padding_bottom": 40,
         "padding_top_mb": 40,
@@ -378,9 +356,9 @@
       ],
       "name": "Additives table",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-7",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "marker_bg": "#2d3135",
         "heading_additive": "ADDITIVE",
         "heading_product": "LUNA NUEVA",
@@ -427,7 +405,9 @@
       ],
       "name": "t:common.text_with_icons.presets.text_with_icons.name",
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-7",
+        "header_secondary": true,
+        "stylized_bg": true,
         "title": "",
         "align_text": "left",
         "desktop_columns_per_row": 3,
@@ -498,7 +478,7 @@
       ],
       "name": "Story teaser",
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "scheme-1",
         "header_secondary": false,
         "stylized_bg": false,
         "image": "shopify://shop_images/story-pinas.jpg",
@@ -526,8 +506,8 @@
         "text_MhzT48": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
-            "text": "<h2>From the Highlands to your table.</h2>"
+            "enlarge_text": false,
+            "text": "<h2>From the Highlands </h2><h2>to your table.</h2>"
           }
         },
         "divider_tkEFq8": {
@@ -555,7 +535,7 @@
       "settings": {
         "header_secondary": false,
         "stylized_bg": true,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-6",
         "align_text": "left",
         "narrow_column": false,
         "padding_top": 100,
@@ -590,6 +570,9 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
         "left_column_width": 38,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
@@ -597,6 +580,8 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
         "padding_top": 52,
         "padding_bottom": 48,
         "padding_top_mb": 40,
@@ -643,7 +628,7 @@
       "settings": {
         "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
@@ -693,6 +678,9 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -700,6 +688,8 @@
         "right_text_align": "right",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
         "padding_top": 80,
         "padding_bottom": 60,
         "padding_top_mb": 40,
@@ -911,6 +901,9 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -918,6 +911,8 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
         "padding_top": 100,
         "padding_bottom": 40,
         "padding_top_mb": 40,
@@ -976,9 +971,9 @@
       ],
       "name": "Image columns",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-7",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
@@ -1082,6 +1077,7 @@
         "text",
         "form"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "header_secondary": false,
@@ -1099,8 +1095,8 @@
   },
   "order": [
     "custom_image_slider_with_text_fFfUKJ",
-    "rich_text_VDFB8d",
     "scrolling_text_PacCqL",
+    "rich_text_VDFB8d",
     "slideshow_Gj6CyA",
     "featured-collection-switcher",
     "custom_product_details_JbJXVn",
