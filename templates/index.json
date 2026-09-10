@@ -1128,7 +1128,7 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
-        "left_column_width": 80,
+        "left_column_width": 60,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 20,
