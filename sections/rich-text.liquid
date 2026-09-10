@@ -14,6 +14,11 @@
         margin-block-start: {{ block.settings.margin_top }}px;
         margin-block-end: {{ block.settings.margin_bottom }}px;
       }
+      @media screen and (max-width: 749px) {
+    #block-{{ block.id }} .rich-text__divider {
+      margin-block-start: {{ block.settings.mobile_margin_top }}px;
+      margin-block-end: {{ block.settings.mobile_margin_bottom }}px;
+    }
     {% else %}
       #block-{{ block.id }} .rich-text__divider--icon {
         margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
@@ -569,7 +574,31 @@
           "step": 1,
           "unit": "px",
           "default": 30
-        }
+        },
+        {
+          "type": "header",
+          "content": "Mobile spacing"
+        },
+        {
+  "type": "range",
+  "id": "mobile_margin_top",
+  "label": "Mobile margin top",
+  "min": 0,
+  "max": 100,
+  "step": 4,
+  "unit": "px",
+  "default": 24
+},
+{
+  "type": "range",
+  "id": "mobile_margin_bottom",
+  "label": "Mobile margin bottom",
+  "min": 0,
+  "max": 100,
+  "step": 4,
+  "unit": "px",
+  "default": 24
+}
       ]
     },
     {
