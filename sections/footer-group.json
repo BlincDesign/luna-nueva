@@ -72,6 +72,8 @@
         "menu_xLwfUU"
       ],
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
         "show_locale_selector": false,
         "show_currency_selector": false,
         "show_currency_flags": false,
