@@ -129,6 +129,7 @@
     #shopify-section-{{ section.id }} .image-slider-text__slides {
       flex: 0 0 100%;
       width: 100%;
+      aspect-ratio: 4 / 5;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__grid {
@@ -174,11 +175,14 @@
       </div>
     {% endif %}
 
-    {% if section.settings.text != blank %}
-      <div class="image-slider-text__text rte">
-        {{ section.settings.text }}
-      </div>
-    {% endif %}
+   {% if section.settings.text != blank %}
+
+  <div class="image-slider-text__text rte{% if section.settings.enlarge_text %} enlarge-text{% endif %}">
+
+    {{ section.settings.text }}
+
+  </div>
+{% endif %}
 
     {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
@@ -374,6 +378,12 @@
       "default": "<p>Image slider with text</p>"
     },
     {
+      "type": "checkbox",
+      "id": "enlarge_text",
+      "label": "Enlarge text",
+      "default": false
+    },
+    {
       "type": "richtext",
       "id": "text",
       "label": "Text",
@@ -402,122 +412,6 @@
 
     {
       "type": "header",
-      "content": "Primary",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_bg",
-      "label": "Background",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_border",
-      "label": "Border",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_text",
-      "label": "Text",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_bg_hover",
-      "label": "Background (hover)",
-      "default": "#3a3a3a",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_border_hover",
-      "label": "Border (hover)",
-      "default": "#3a3a3a",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_primary_text_hover",
-      "label": "Text (hover)",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_1_type == 'primary' }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Secondary",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_bg",
-      "label": "Background",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_border",
-      "label": "Border",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_text",
-      "label": "Text",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_bg_hover",
-      "label": "Background (hover)",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_border_hover",
-      "label": "Border (hover)",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_secondary_text_hover",
-      "label": "Text (hover)",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_1_type == 'secondary' }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Link",
-      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_link_text",
-      "label": "Text",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_1_link_text_hover",
-      "label": "Text (hover)",
-      "default": "#7a7a7a",
-      "visible_if": "{{ section.settings.button_1_type == 'link' }}"
-    },
-
-    {
-      "type": "header",
       "content": "Button 2"
     },
     {
@@ -536,123 +430,6 @@
         { "value": "link", "label": "Link" }
       ]
     },
-
-    {
-      "type": "header",
-      "content": "Primary",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_bg",
-      "label": "Background",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_border",
-      "label": "Border",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_text",
-      "label": "Text",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_bg_hover",
-      "label": "Background (hover)",
-      "default": "#3a3a3a",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_border_hover",
-      "label": "Border (hover)",
-      "default": "#3a3a3a",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_primary_text_hover",
-      "label": "Text (hover)",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_2_type == 'primary' }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Secondary",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_bg",
-      "label": "Background",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_border",
-      "label": "Border",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_text",
-      "label": "Text",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_bg_hover",
-      "label": "Background (hover)",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_border_hover",
-      "label": "Border (hover)",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_secondary_text_hover",
-      "label": "Text (hover)",
-      "default": "#ffffff",
-      "visible_if": "{{ section.settings.button_2_type == 'secondary' }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Link",
-      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_link_text",
-      "label": "Text",
-      "default": "#1c1d1d",
-      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
-    },
-    {
-      "type": "color",
-      "id": "button_2_link_text_hover",
-      "label": "Text (hover)",
-      "default": "#7a7a7a",
-      "visible_if": "{{ section.settings.button_2_type == 'link' }}"
-    },
-
     {
       "type": "header",
       "content": "Layout"
