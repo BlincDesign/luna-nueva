@@ -1,1 +1,1118 @@
-{"sections":{"custom_image_slider_with_text_fFfUKJ":{"type":"custom__image_slider_with_text","blocks":{"image_bzwiJi":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg"}},"image_JyBeaM":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hero-ocean.jpg"}},"image_xpFnMR":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hero-tailgate.jpg"}}},"block_order":["image_bzwiJi","image_JyBeaM","image_xpFnMR"],"name":"Image slider with text","settings":{"color_scheme":"scheme-6","header_secondary":false,"stylized_bg":false,"slider_autoplay_enabled":false,"slider_autoplay":3000,"preheading":"100% BLUE WEBER AGAVE · ADDITIVE-FREE","heading":"<h1>Every great night<br\/><em><strong>begins with<\/strong><\/em><br\/>a new moon.<\/h1>","enlarge_text":true,"text":"<p>Additive-free tequila from the Highlands and Lowlands of Jalisco.<\/p>","button_1_label":"Shop the Collection","button_1_type":"primary","button_2_label":"Find a Bottle","button_2_type":"secondary","content_width":800,"padding_top":0,"padding_bottom":0,"padding_top_mb":0,"padding_bottom_mb":0}},"scrolling_text_PacCqL":{"type":"scrolling-text","blocks":{"text_qMKaix":{"type":"text","settings":{"text":"Additive-Free","link":""}},"text_g9xiaM":{"type":"text","settings":{"text":"NOM 1414 · Vivanco Family Distillery","link":""}},"text_3XjJqt":{"type":"text","settings":{"text":"Highlands & Lowlands of Jalisco","link":""}},"text_KXmmmN":{"type":"text","settings":{"text":"100% Blue Weber Agave","link":""}},"text_AqEe9j":{"type":"text","settings":{"text":"Poured Across California","link":""}}},"block_order":["text_qMKaix","text_g9xiaM","text_3XjJqt","text_KXmmmN","text_AqEe9j"],"name":"t:sections.marquee.presets.scrolling_text.name","settings":{"plus_icon":"shopify:\/\/shop_images\/sparkle-icon.svg","plus_icon_size":13,"text_size":11,"text_spacing":true,"direction":"left","speed":100,"color_background":"#d39655","color_text":"#2d3135","padding_top":15,"padding_bottom":15}},"rich_text_VDFB8d":{"type":"rich-text","blocks":{"divider_gUNLzh":{"type":"divider","settings":{"enable_divider":true,"divider_bg":"#606264","divider_width":100,"divider_height":2,"enable_icon":true,"icon_color":"#f9f6f1","icon":"crescent-moon","icon_size":30,"margin_top":30,"margin_bottom":86}},"heading_dhcXp3":{"type":"heading","settings":{"title":"When you drink less, what you drink should <em><strong>mean more<\/strong><\/em>."}}},"block_order":["divider_gUNLzh","heading_dhcXp3"],"name":"t:sections.rich-text.presets.rich_text.name","settings":{"header_secondary":true,"stylized_bg":true,"color_scheme":"scheme-1","align_text":"center","narrow_column":true,"padding_top":152,"padding_bottom":152,"padding_top_mb":80,"padding_bottom_mb":80}},"slideshow_Gj6CyA":{"type":"slideshow","blocks":{"image_zBkPgJ":{"type":"image","settings":{"title":"Endless\npossibilities.","title_size":80,"subheading":"Bring your brand to life","link":"","link_text":"Optional button","text_align":"vertical-bottom horizontal-left","parallax_direction":"top","overlay_opacity":0}},"image_fBf9p9":{"type":"image","settings":{"title":"Two line\nslide titles.","title_size":80,"subheading":"And big, beautiful imagery","link":"","link_text":"Optional button","text_align":"vertical-bottom horizontal-left","parallax_direction":"top","overlay_opacity":0}}},"block_order":["image_zBkPgJ","image_fBf9p9"],"disabled":true,"name":"t:sections.slideshow.presets.hero_optional_slideshow.name","settings":{"section_height":"650px","mobile_height":"auto","parallax":true,"style":"arrows","autoplay":true,"autoplay_speed":5,"lazyload_images":true}},"featured-collection-switcher":{"type":"featured-collection-switcher","disabled":true,"settings":{"title":"Our Products","collection1":"blanco","collection2":"","per_row":3,"view_all":false,"divider":false}},"custom_product_details_JbJXVn":{"type":"custom__product-details","name":"Product Detail List","settings":{"color_scheme":"scheme-6","header_secondary":false,"stylized_bg":false,"heading":"Three Expressions","preheading":"THE COLLECTION","right_text":"750ml · Additive-Free · Jalisco","right_link":"","products":["luna-nueva-silver","luna-nueva-reposado","luna-nueva-silver-1"],"padding_top":60,"padding_bottom":60,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_rich_text_columns_fapdXh":{"type":"custom__rich-text-columns","blocks":{"preheading_A6UfkX":{"type":"preheading","settings":{"title":"What's In It, What Isn't","position":"left"}},"text_j9B88a":{"type":"text","settings":{"enlarge_text":false,"text":"<h2>Nothing added. <\/h2><h2>Nothing to hide.<\/h2>","position":"left"}},"heading_KpLY3N":{"type":"heading","disabled":true,"settings":{"title":"Where it actually gets poured.","position":"left"}},"text_YrMjYV":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.<\/p>","position":"right"}},"button_XRaQDg":{"type":"button","disabled":true,"settings":{"link":"","link_text":"SEE WHAT'S COMING UP","button_type":"primary","position":"right"}}},"block_order":["preheading_A6UfkX","text_j9B88a","heading_KpLY3N","text_YrMjYV","button_XRaQDg"],"name":"Rich text columns","settings":{"color_scheme":"scheme-7","header_secondary":false,"stylized_bg":true,"left_column_width":80,"left_text_align":"left","left_vertical_align":"flex-end","right_column_width":20,"right_text_align":"left","right_vertical_align":"flex-end","detail_accent_color":"#c9a063","icon_backdrop_color":"#2d3135","detail_divider_color":"#f9f6f1","padding_top":100,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_additives_table_H9ebp3":{"type":"custom__additives-table","blocks":{"additive_eWPhyC":{"type":"additive","settings":{"icon":"droplet","name":"Glycerin","percentage":"0.00%"}},"additive_ATxL34":{"type":"additive","settings":{"icon":"leaf","name":"Oak extract","percentage":"0.00%"}},"additive_7a9iFk":{"type":"additive","settings":{"icon":"cube","name":"Sugar-based sweetener","percentage":"0.00%"}},"additive_PKrikM":{"type":"additive","settings":{"icon":"half-circle","name":"Caramel coloring","percentage":"0.00%"}}},"block_order":["additive_eWPhyC","additive_ATxL34","additive_7a9iFk","additive_PKrikM"],"name":"Additives table","settings":{"color_scheme":"scheme-7","header_secondary":false,"stylized_bg":true,"marker_bg":"#2d3135","heading_additive":"ADDITIVE","heading_product":"LUNA NUEVA","heading_permitted":"PERMITTED UP TO 1%","heading_bottle":"IN THIS BOTTLE","padding_top":0,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"text_with_icons_W6xt7F":{"type":"text-with-icons","blocks":{"text_block_QUfVKF":{"type":"text_block","settings":{"icon":"agave","title":"100% Blue Weber Agave","text":"<p>Grown across highland and lowland terrain, each plant taking years to reach its moment. Nothing else ferments into this bottle.<\/p>"}},"text_block_AWVWKL":{"type":"text_block","settings":{"icon":"certification","title":"NOM 1414 · Vivanco","text":"<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep.<\/p>"}},"text_block_7epdRy":{"type":"text_block","settings":{"icon":"table","title":"Built for the Table","text":"<p>Clean enough to drink neat, honest enough to build on. Made for the room, not the trophy shelf.<\/p>"}}},"block_order":["text_block_QUfVKF","text_block_AWVWKL","text_block_7epdRy"],"name":"t:common.text_with_icons.presets.text_with_icons.name","settings":{"color_scheme":"scheme-7","header_secondary":true,"stylized_bg":true,"title":"","align_text":"left","desktop_columns_per_row":3,"link":"","link_text":"","button_type":"primary","divider":false,"padding_top":0,"padding_bottom":100,"mobile_padding_top":0,"mobile_padding_bottom":80}},"custom_story_teaser_grtbFU":{"type":"custom__story-teaser","blocks":{"subheading_UVChCG":{"type":"subheading","settings":{"text":"Our Story","margin_bottom":18}},"heading_KYbVq8":{"type":"heading","settings":{"text":"The liquid is authentic to Mexico.","margin_bottom":0}},"heading_rhmfJC":{"type":"heading","settings":{"text":"<em><strong>The culture is California.<\/strong><\/em>","margin_bottom":18}},"divider_8JXCFj":{"type":"divider","settings":{"margin_bottom":30}},"text_RcfkhV":{"type":"text","settings":{"text":"<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.<\/p>","margin_bottom":24}},"button_hnpTJJ":{"type":"button","settings":{"label":"Read our story","link":"","style":"primary","margin_bottom":0}}},"block_order":["subheading_UVChCG","heading_KYbVq8","heading_rhmfJC","divider_8JXCFj","text_RcfkhV","button_hnpTJJ"],"name":"Story teaser","settings":{"color_scheme":"scheme-1","header_secondary":false,"stylized_bg":false,"image":"shopify:\/\/shop_images\/story-pinas.jpg","image_caption":"Agave piñas · Highlands of Jalisco","image_shape":"arch","lazyload_images":true,"image_position":"left","full_width":false,"padding_top":96,"padding_bottom":96,"padding_top_mb":40,"padding_bottom_mb":40}},"rich_text_T7ntjy":{"type":"rich-text","blocks":{"text_8tMixn":{"type":"text","settings":{"enlarge_text":false,"text":"<p>The Making<\/p>"}},"text_MhzT48":{"type":"text","settings":{"enlarge_text":false,"text":"<h2>From the Highlands <\/h2><h2>to your table.<\/h2>"}},"divider_tkEFq8":{"type":"divider","settings":{"enable_divider":true,"divider_bg":"#606264","divider_width":100,"divider_height":1,"enable_icon":false,"icon_color":"#f9f6f1","icon":"chat","icon_size":30,"margin_top":30,"margin_bottom":0}}},"block_order":["text_8tMixn","text_MhzT48","divider_tkEFq8"],"name":"t:sections.rich-text.presets.rich_text.name","settings":{"header_secondary":false,"stylized_bg":true,"color_scheme":"scheme-6","align_text":"left","narrow_column":false,"padding_top":100,"padding_bottom":40,"padding_top_mb":80,"padding_bottom_mb":8}},"custom_rich_text_columns_n6Ddd9":{"type":"custom__rich-text-columns","blocks":{"text_kbMVRP":{"type":"text","settings":{"enlarge_text":true,"text":"<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.<\/strong><\/p>","position":"left"}},"text_DLDMxC":{"type":"text","settings":{"enlarge_text":false,"text":"<ul><li><strong>Highland and lowland agave.<\/strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.<\/li><\/ul><p><\/p><ul><li><strong>The Vivanco family, NOM 1414.<\/strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.<\/li><\/ul><p><\/p><ul><li><strong>Additive-free, in full.<\/strong> No additives, no shortcuts, no compromise.<\/li><\/ul><p><\/p><ul><li><strong>Rested, not rushed.<\/strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.<\/li><\/ul>","position":"right"}}},"block_order":["text_kbMVRP","text_DLDMxC"],"name":"Rich text columns","settings":{"color_scheme":"scheme-6","header_secondary":false,"stylized_bg":true,"left_column_width":38,"left_text_align":"left","left_vertical_align":"flex-start","right_column_width":62,"right_text_align":"left","right_vertical_align":"flex-start","detail_accent_color":"#c9a063","icon_backdrop_color":"#2d3135","detail_divider_color":"#f9f6f1","padding_top":52,"padding_bottom":48,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_image_columns_GdzTt9":{"type":"custom__image_columns","blocks":{"step_thEjBm":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/step-fields.jpg","number":"01","heading":"The land decides","text":"<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.<\/p>"}},"step_PtK4hm":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/step-barrels.jpg","number":"02","heading":"Then it waits","text":"<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.<\/p>"}},"step_4EQaK9":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/step-table.jpg","number":"03","heading":"The table it was made for","text":"<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.<\/p>"}}},"block_order":["step_thEjBm","step_PtK4hm","step_4EQaK9"],"name":"Image columns","settings":{"color_scheme":"","header_secondary":false,"stylized_bg":true,"number_color":"#9b3a15","card_background":"#f9f6f1","card_text_color":"#2d3135","accent_color":"#9b3a15","track_color":"#2d3135","layout_type":"grid","columns":3,"gap":52,"gap_mb":16,"padding_top":40,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_rich_text_columns_TwtQDb":{"type":"custom__rich-text-columns","blocks":{"preheading_DXAxHU":{"type":"preheading","settings":{"title":"IN THE WILD","position":"left"}},"heading_7FY4NB":{"type":"heading","settings":{"title":"Where it <em><strong>actually gets poured.<\/strong><\/em>","position":"left"}},"button_bCtMDn":{"type":"button","settings":{"link":"","link_text":"SEE WHAT'S COMING UP","button_type":"primary","position":"right"}}},"block_order":["preheading_DXAxHU","heading_7FY4NB","button_bCtMDn"],"name":"Rich text columns","settings":{"color_scheme":"","header_secondary":false,"stylized_bg":false,"left_column_width":50,"left_text_align":"left","left_vertical_align":"flex-end","right_column_width":50,"right_text_align":"right","right_vertical_align":"flex-end","detail_accent_color":"#c9a063","icon_backdrop_color":"#2d3135","detail_divider_color":"#f9f6f1","padding_top":80,"padding_bottom":60,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_media_gallery_9bgdN4":{"type":"custom__media-gallery","blocks":{"image_64U3Pa":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg","image_one_caption":"Pacific Coast Highway","image_two_caption":""}},"image_Un9eVf":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/hero-ocean.jpg","image_one_caption":"Bring the party","image_two":"shopify:\/\/shop_images\/wild-tailgate.jpg","image_two_caption":"The tailgate, Malibu"}},"image_FJdmEK":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/wild-yellow-table.jpg","image_one_caption":"Silver · served long","image_two":"shopify:\/\/shop_images\/wild-pch.jpg","image_two_caption":""}},"image_4iEL3N":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg","image_one_caption":"Make the table longer","image_two_caption":""}},"image_7CAf9R":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/wild-coupe.jpg","image_one_caption":"Late afternoon","image_two_caption":""}}},"block_order":["image_64U3Pa","image_Un9eVf","image_FJdmEK","image_4iEL3N","image_7CAf9R"],"name":"Media gallery - grid","settings":{"color_scheme":"","header_secondary":false,"stylized_bg":false,"full_width":false,"content_width":30,"flow_right":true,"tile_width_min":360,"tile_width_max":360,"row_height":360,"tile_width_mobile_min":150,"tile_width_mobile_max":280,"row_height_mobile":260,"gap":16,"padding_top":0,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_media_gallery_JxCFTk":{"type":"custom__media-gallery","blocks":{"content_PqQkbn":{"type":"content","settings":{"eyebrow":"Bring the Party","heading":"The bottle you grab before the night starts.","show_divider":true,"body":"<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.<\/p>","button_label":"See what's coming up","button_url":""}},"image_8McHDm":{"type":"image","settings":{"tall":true,"video_one":"shopify:\/\/files\/videos\/dispo.mp4","image_one_caption":"On the night","image_two_caption":""}},"image_tNqcUt":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/ev-toast_f8bdfeb1-fa11-485d-a7fb-019a6f5e7398.jpg","image_one_caption":"","image_two":"shopify:\/\/shop_images\/ev-ice.jpg","image_two_caption":""}},"image_U8VtKq":{"type":"image","settings":{"tall":true,"image_one":"shopify:\/\/shop_images\/ev-pour.jpg","image_one_caption":"","image_two":"shopify:\/\/shop_images\/ev-bartender.jpg","image_two_caption":""}}},"block_order":["content_PqQkbn","image_8McHDm","image_tNqcUt","image_U8VtKq"],"name":"Media gallery - grid","settings":{"color_scheme":"","header_secondary":false,"stylized_bg":false,"full_width":false,"content_width":30,"flow_right":true,"tile_width_min":360,"tile_width_max":360,"row_height":360,"tile_width_mobile_min":150,"tile_width_mobile_max":280,"row_height_mobile":260,"gap":16,"padding_top":80,"padding_bottom":80,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_rich_text_columns_EeJbUR":{"type":"custom__rich-text-columns","blocks":{"preheading_hNYxWA":{"type":"preheading","settings":{"title":"Four Ways to Pour It","position":"left"}},"text_wjTinT":{"type":"text","settings":{"enlarge_text":false,"text":"<h2>Clean enough to <\/h2><h2>drink neat. Honest <\/h2><h2>enough to build on.<\/h2><p><\/p>","position":"left"}},"heading_NkHTUf":{"type":"heading","disabled":true,"settings":{"title":"Where it actually gets poured.","position":"left"}},"text_kg7Aj7":{"type":"text","disabled":true,"settings":{"enlarge_text":false,"text":"","position":"right"}},"button_gjNy4H":{"type":"button","disabled":true,"settings":{"link":"","link_text":"SEE WHAT'S COMING UP","button_type":"primary","position":"right"}}},"block_order":["preheading_hNYxWA","text_wjTinT","heading_NkHTUf","text_kg7Aj7","button_gjNy4H"],"name":"Rich text columns","settings":{"color_scheme":"scheme-7","header_secondary":false,"stylized_bg":true,"left_column_width":80,"left_text_align":"left","left_vertical_align":"flex-end","right_column_width":20,"right_text_align":"left","right_vertical_align":"flex-end","detail_accent_color":"#c9a063","icon_backdrop_color":"#2d3135","detail_divider_color":"#f9f6f1","padding_top":100,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"custom_image_columns_WKgQjK":{"type":"custom__image_columns","blocks":{"service_WBNM3L":{"type":"service","settings":{"image":"shopify:\/\/shop_images\/recipe-margarita.jpg","number":"01","title":"Watermelon Margarita","ingredients":"<p>Luna Nueva Silver <strong>2 oz<\/strong><\/p><p>Watermelon juice <strong>.75 oz<\/strong><\/p><p>Lime juice <strong>.75 oz<\/strong><\/p><p>Agave <strong>.5 oz<\/strong><\/p>","note":"<p>Lime wheel or a watermelon wedge<\/p>"}},"service_tJGatp":{"type":"service","settings":{"image":"shopify:\/\/shop_images\/recipe-paloma.jpg","number":"01","title":"Watermelon Margarita","ingredients":"<p>Luna Nueva Silver <strong>2 oz<\/strong><\/p><p>Watermelon juice <strong>.75 oz<\/strong><\/p><p>Lime juice <strong>.75 oz<\/strong><\/p><p>Agave <strong>.5 oz<\/strong><\/p>","note":"<p>Lime wheel or a watermelon wedge<\/p>"}},"service_xzRJne":{"type":"service","settings":{"image":"shopify:\/\/shop_images\/recipe-horchata.jpg","number":"01","title":"Watermelon Margarita","ingredients":"<p>Luna Nueva Silver <strong>2 oz<\/strong><\/p><p>Watermelon juice <strong>.75 oz<\/strong><\/p><p>Lime juice <strong>.75 oz<\/strong><\/p><p>Agave <strong>.5 oz<\/strong><\/p>","note":"<p>Lime wheel or a watermelon wedge<\/p>"}},"service_9GaDAh":{"type":"service","settings":{"image":"shopify:\/\/shop_images\/recipe-oldfashioned.jpg","number":"01","title":"Watermelon Margarita","ingredients":"<p>Luna Nueva Silver <strong>2 oz<\/strong><\/p><p>Watermelon juice <strong>.75 oz<\/strong><\/p><p>Lime juice <strong>.75 oz<\/strong><\/p><p>Agave <strong>.5 oz<\/strong><\/p>","note":"<p>Lime wheel or a watermelon wedge<\/p>"}}},"block_order":["service_WBNM3L","service_tJGatp","service_xzRJne","service_9GaDAh"],"name":"Image columns","settings":{"color_scheme":"scheme-7","header_secondary":false,"stylized_bg":true,"number_color":"#9b3a15","card_background":"#f9f6f1","card_text_color":"#2d3135","accent_color":"#9b3a15","track_color":"#2d3135","layout_type":"grid","columns":4,"gap":28,"gap_mb":16,"padding_top":40,"padding_bottom":40,"padding_top_mb":40,"padding_bottom_mb":40}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","disabled":true,"settings":{"title":"Rich text"}},"text":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.<\/p>"}},"button_c7KAPk":{"type":"button","settings":{"link":"","link_text":"Button","button_type":"secondary","link_2":"","link_text_2":"Button","button_type_2":"secondary"}}},"block_order":["heading","text","button_c7KAPk"],"disabled":true,"settings":{"header_secondary":false,"stylized_bg":false,"color_scheme":"scheme-2","align_text":"center","narrow_column":true,"padding_top":100,"padding_bottom":100,"padding_top_mb":80,"padding_bottom_mb":8}},"newsletter":{"type":"newsletter","blocks":{"icon_dcxAif":{"type":"icon","settings":{"icon_size":26,"icon_color":"#d39655","icon_box_shadow":"inset -8px -2px 0 0 #2D3135","margin_bottom":38}},"title":{"type":"title","settings":{"title":"Get invited to the next one.","heading_size":"h1","text_width":480,"margin_bottom":17}},"text":{"type":"text","settings":{"text":"<h5>Events, new releases, and the occasional recipe worth making.<\/h5>","text_color":"#f9f6f1","text_width":660,"margin_bottom":36}},"form":{"type":"form","settings":{}}},"block_order":["icon_dcxAif","title","text","form"],"disabled":true,"settings":{"color_scheme":"","header_secondary":false,"stylized_bg":false,"align_text":"center","image_width":"33","image_mask":"none","image_position":"right","padding_top":100,"padding_bottom":100,"padding_top_mb":40,"padding_bottom_mb":40}}},"order":["custom_image_slider_with_text_fFfUKJ","scrolling_text_PacCqL","rich_text_VDFB8d","slideshow_Gj6CyA","featured-collection-switcher","custom_product_details_JbJXVn","custom_rich_text_columns_fapdXh","custom_additives_table_H9ebp3","text_with_icons_W6xt7F","custom_story_teaser_grtbFU","rich_text_T7ntjy","custom_rich_text_columns_n6Ddd9","custom_image_columns_GdzTt9","custom_rich_text_columns_TwtQDb","custom_media_gallery_9bgdN4","custom_media_gallery_JxCFTk","custom_rich_text_columns_EeJbUR","custom_image_columns_WKgQjK","rich-text","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_image_slider_with_text_fFfUKJ": {
+      "type": "custom__image_slider_with_text",
+      "blocks": {
+        "image_bzwiJi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-raised_d82211bf-b3d4-4485-bc33-676b6807bf11.jpg"
+          }
+        },
+        "image_JyBeaM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-ocean.jpg"
+          }
+        },
+        "image_xpFnMR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-tailgate.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_bzwiJi",
+        "image_JyBeaM",
+        "image_xpFnMR"
+      ],
+      "name": "Image slider with text",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "slider_autoplay_enabled": false,
+        "slider_autoplay": 3000,
+        "preheading": "100% BLUE WEBER AGAVE · ADDITIVE-FREE",
+        "heading": "<h1>Every great night<br/><em><strong>begins with</strong></em><br/>a new moon.</h1>",
+        "enlarge_text": true,
+        "text": "<p>Additive-free tequila from the Highlands and Lowlands of Jalisco.</p>",
+        "button_1_label": "Shop the Collection",
+        "button_1_type": "primary",
+        "button_2_label": "Find a Bottle",
+        "button_2_type": "secondary",
+        "content_width": 800,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "scrolling_text_PacCqL": {
+      "type": "scrolling-text",
+      "blocks": {
+        "text_qMKaix": {
+          "type": "text",
+          "settings": {
+            "text": "Additive-Free",
+            "link": ""
+          }
+        },
+        "text_g9xiaM": {
+          "type": "text",
+          "settings": {
+            "text": "NOM 1414 · Vivanco Family Distillery",
+            "link": ""
+          }
+        },
+        "text_3XjJqt": {
+          "type": "text",
+          "settings": {
+            "text": "Highlands & Lowlands of Jalisco",
+            "link": ""
+          }
+        },
+        "text_KXmmmN": {
+          "type": "text",
+          "settings": {
+            "text": "100% Blue Weber Agave",
+            "link": ""
+          }
+        },
+        "text_AqEe9j": {
+          "type": "text",
+          "settings": {
+            "text": "Poured Across California",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_qMKaix",
+        "text_g9xiaM",
+        "text_3XjJqt",
+        "text_KXmmmN",
+        "text_AqEe9j"
+      ],
+      "name": "t:sections.marquee.presets.scrolling_text.name",
+      "settings": {
+        "plus_icon": "shopify://shop_images/sparkle-icon.svg",
+        "plus_icon_size": 13,
+        "text_size": 11,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 100,
+        "color_background": "#d39655",
+        "color_text": "#2d3135",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "rich_text_VDFB8d": {
+      "type": "rich-text",
+      "blocks": {
+        "divider_gUNLzh": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 100,
+            "divider_height": 2,
+            "enable_icon": true,
+            "icon_color": "#f9f6f1",
+            "icon": "crescent-moon",
+            "icon_size": 30,
+            "margin_top": 0,
+            "margin_bottom": 86
+          }
+        },
+        "heading_dhcXp3": {
+          "type": "heading",
+          "settings": {
+            "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>."
+          }
+        }
+      },
+      "block_order": [
+        "divider_gUNLzh",
+        "heading_dhcXp3"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": true,
+        "stylized_bg": true,
+        "color_scheme": "scheme-1",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 152,
+        "padding_bottom": 152,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "slideshow_Gj6CyA": {
+      "type": "slideshow",
+      "blocks": {
+        "image_zBkPgJ": {
+          "type": "image",
+          "settings": {
+            "title": "Endless\npossibilities.",
+            "title_size": 80,
+            "subheading": "Bring your brand to life",
+            "link": "",
+            "link_text": "Optional button",
+            "text_align": "vertical-bottom horizontal-left",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_fBf9p9": {
+          "type": "image",
+          "settings": {
+            "title": "Two line\nslide titles.",
+            "title_size": 80,
+            "subheading": "And big, beautiful imagery",
+            "link": "",
+            "link_text": "Optional button",
+            "text_align": "vertical-bottom horizontal-left",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_zBkPgJ",
+        "image_fBf9p9"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "featured-collection-switcher": {
+      "type": "featured-collection-switcher",
+      "disabled": true,
+      "settings": {
+        "title": "Our Products",
+        "collection1": "blanco",
+        "collection2": "",
+        "per_row": 3,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "custom_product_details_JbJXVn": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver",
+          "luna-nueva-reposado",
+          "luna-nueva-silver-1"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_fapdXh": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_A6UfkX": {
+          "type": "preheading",
+          "settings": {
+            "title": "What's In It, What Isn't",
+            "position": "left"
+          }
+        },
+        "text_j9B88a": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
+            "position": "left"
+          }
+        },
+        "heading_KpLY3N": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_YrMjYV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
+            "position": "right"
+          }
+        },
+        "button_XRaQDg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_A6UfkX",
+        "text_j9B88a",
+        "heading_KpLY3N",
+        "text_YrMjYV",
+        "button_XRaQDg"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_additives_table_H9ebp3": {
+      "type": "custom__additives-table",
+      "blocks": {
+        "additive_eWPhyC": {
+          "type": "additive",
+          "settings": {
+            "icon": "droplet",
+            "name": "Glycerin",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_ATxL34": {
+          "type": "additive",
+          "settings": {
+            "icon": "leaf",
+            "name": "Oak extract",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_7a9iFk": {
+          "type": "additive",
+          "settings": {
+            "icon": "cube",
+            "name": "Sugar-based sweetener",
+            "percentage": "0.00%"
+          }
+        },
+        "additive_PKrikM": {
+          "type": "additive",
+          "settings": {
+            "icon": "half-circle",
+            "name": "Caramel coloring",
+            "percentage": "0.00%"
+          }
+        }
+      },
+      "block_order": [
+        "additive_eWPhyC",
+        "additive_ATxL34",
+        "additive_7a9iFk",
+        "additive_PKrikM"
+      ],
+      "name": "Additives table",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "marker_bg": "#2d3135",
+        "heading_additive": "ADDITIVE",
+        "heading_product": "LUNA NUEVA",
+        "heading_permitted": "PERMITTED UP TO 1%",
+        "heading_bottle": "IN THIS BOTTLE",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "text_with_icons_W6xt7F": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_QUfVKF": {
+          "type": "text_block",
+          "settings": {
+            "icon": "agave",
+            "title": "100% Blue Weber Agave",
+            "text": "<p>Grown across highland and lowland terrain, each plant taking years to reach its moment. Nothing else ferments into this bottle.</p>"
+          }
+        },
+        "text_block_AWVWKL": {
+          "type": "text_block",
+          "settings": {
+            "icon": "certification",
+            "title": "NOM 1414 · Vivanco",
+            "text": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep.</p>"
+          }
+        },
+        "text_block_7epdRy": {
+          "type": "text_block",
+          "settings": {
+            "icon": "table",
+            "title": "Built for the Table",
+            "text": "<p>Clean enough to drink neat, honest enough to build on. Made for the room, not the trophy shelf.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_QUfVKF",
+        "text_block_AWVWKL",
+        "text_block_7epdRy"
+      ],
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "title": "",
+        "align_text": "left",
+        "desktop_columns_per_row": 3,
+        "link": "",
+        "link_text": "",
+        "button_type": "primary",
+        "divider": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 80
+      }
+    },
+    "custom_story_teaser_grtbFU": {
+      "type": "custom__story-teaser",
+      "blocks": {
+        "subheading_UVChCG": {
+          "type": "subheading",
+          "settings": {
+            "text": "Our Story",
+            "margin_bottom": 18
+          }
+        },
+        "heading_KYbVq8": {
+          "type": "heading",
+          "settings": {
+            "text": "The liquid is authentic to Mexico.",
+            "margin_bottom": 0
+          }
+        },
+        "heading_rhmfJC": {
+          "type": "heading",
+          "settings": {
+            "text": "<em><strong>The culture is California.</strong></em>",
+            "margin_bottom": 18
+          }
+        },
+        "divider_8JXCFj": {
+          "type": "divider",
+          "settings": {
+            "margin_bottom": 30
+          }
+        },
+        "text_RcfkhV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
+            "margin_bottom": 24
+          }
+        },
+        "button_hnpTJJ": {
+          "type": "button",
+          "settings": {
+            "label": "Read our story",
+            "link": "",
+            "style": "primary",
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "subheading_UVChCG",
+        "heading_KYbVq8",
+        "heading_rhmfJC",
+        "divider_8JXCFj",
+        "text_RcfkhV",
+        "button_hnpTJJ"
+      ],
+      "name": "Story teaser",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "image": "shopify://shop_images/story-pinas.jpg",
+        "image_caption": "Agave piñas · Highlands of Jalisco",
+        "image_shape": "arch",
+        "lazyload_images": true,
+        "image_position": "left",
+        "full_width": false,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "rich_text_T7ntjy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_8tMixn": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>The Making</p>"
+          }
+        },
+        "text_MhzT48": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>From the Highlands </h2><h2>to your table.</h2>"
+          }
+        },
+        "divider_tkEFq8": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_8tMixn",
+        "text_MhzT48",
+        "divider_tkEFq8"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "left",
+        "narrow_column": false,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
+      }
+    },
+    "custom_rich_text_columns_n6Ddd9": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_kbMVRP": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
+            "position": "left"
+          }
+        },
+        "text_DLDMxC": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_kbMVRP",
+        "text_DLDMxC"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "left_column_width": 38,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 62,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 52,
+        "padding_bottom": 48,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_image_columns_GdzTt9": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "step_thEjBm": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-fields.jpg",
+            "number": "01",
+            "heading": "The land decides",
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+          }
+        },
+        "step_PtK4hm": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-barrels.jpg",
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+          }
+        },
+        "step_4EQaK9": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-table.jpg",
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_thEjBm",
+        "step_PtK4hm",
+        "step_4EQaK9"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 3,
+        "gap": 52,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_TwtQDb": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_DXAxHU": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_7FY4NB": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it <em><strong>actually gets poured.</strong></em>",
+            "position": "left"
+          }
+        },
+        "button_bCtMDn": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_DXAxHU",
+        "heading_7FY4NB",
+        "button_bCtMDn"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "right",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 80,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_media_gallery_9bgdN4": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_64U3Pa": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/hero-tailgate_b6ed19e4-d728-4ede-a1cd-f534600b5e08.jpg",
+            "image_one_caption": "Pacific Coast Highway",
+            "image_two_caption": ""
+          }
+        },
+        "image_Un9eVf": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/hero-ocean.jpg",
+            "image_one_caption": "Bring the party",
+            "image_two": "shopify://shop_images/wild-tailgate.jpg",
+            "image_two_caption": "The tailgate, Malibu"
+          }
+        },
+        "image_FJdmEK": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-yellow-table.jpg",
+            "image_one_caption": "Silver · served long",
+            "image_two": "shopify://shop_images/wild-pch.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_4iEL3N": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-longtable_db621d66-0600-4316-ba90-b04cac4ba9f0.jpg",
+            "image_one_caption": "Make the table longer",
+            "image_two_caption": ""
+          }
+        },
+        "image_7CAf9R": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/wild-coupe.jpg",
+            "image_one_caption": "Late afternoon",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_64U3Pa",
+        "image_Un9eVf",
+        "image_FJdmEK",
+        "image_4iEL3N",
+        "image_7CAf9R"
+      ],
+      "name": "Media gallery - grid",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 30,
+        "flow_right": true,
+        "tile_width_min": 360,
+        "tile_width_max": 360,
+        "row_height": 360,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 260,
+        "gap": 16,
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_media_gallery_JxCFTk": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_PqQkbn": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Bring the Party",
+            "heading": "The bottle you grab before the night starts.",
+            "show_divider": true,
+            "body": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.</p>",
+            "button_label": "See what's coming up",
+            "button_url": ""
+          }
+        },
+        "image_8McHDm": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "video_one": "shopify://files/videos/dispo.mp4",
+            "image_one_caption": "On the night",
+            "image_two_caption": ""
+          }
+        },
+        "image_tNqcUt": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-toast_f8bdfeb1-fa11-485d-a7fb-019a6f5e7398.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-ice.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_U8VtKq": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-pour.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-bartender.jpg",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_PqQkbn",
+        "image_8McHDm",
+        "image_tNqcUt",
+        "image_U8VtKq"
+      ],
+      "name": "Media gallery - grid",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 30,
+        "flow_right": true,
+        "tile_width_min": 360,
+        "tile_width_max": 360,
+        "row_height": 360,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 260,
+        "gap": 16,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_EeJbUR": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_hNYxWA": {
+          "type": "preheading",
+          "settings": {
+            "title": "Four Ways to Pour It",
+            "position": "left"
+          }
+        },
+        "text_wjTinT": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2>Clean enough to </h2><h2>drink neat. Honest </h2><h2>enough to build on.</h2><p></p>",
+            "position": "left"
+          }
+        },
+        "heading_NkHTUf": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "text_kg7Aj7": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "enlarge_text": false,
+            "text": "",
+            "position": "right"
+          }
+        },
+        "button_gjNy4H": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_hNYxWA",
+        "text_wjTinT",
+        "heading_NkHTUf",
+        "text_kg7Aj7",
+        "button_gjNy4H"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "left_column_width": 80,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_image_columns_WKgQjK": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "service_WBNM3L": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-margarita.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_tJGatp": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-paloma.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_xzRJne": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-horchata.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        },
+        "service_9GaDAh": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/recipe-oldfashioned.jpg",
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        }
+      },
+      "block_order": [
+        "service_WBNM3L",
+        "service_tJGatp",
+        "service_xzRJne",
+        "service_9GaDAh"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 4,
+        "gap": 28,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Rich text"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>"
+          }
+        },
+        "button_c7KAPk": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button",
+            "button_type": "secondary",
+            "link_2": "",
+            "link_text_2": "Button",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button_c7KAPk"
+      ],
+      "disabled": true,
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
+        "color_scheme": "scheme-2",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_dcxAif": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "Get invited to the next one.",
+            "heading_size": "h1",
+            "text_width": 480,
+            "margin_bottom": 17
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Events, new releases, and the occasional recipe worth making.</h5>",
+            "text_color": "#f9f6f1",
+            "text_width": 660,
+            "margin_bottom": 36
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_dcxAif",
+        "title",
+        "text",
+        "form"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    }
+  },
+  "order": [
+    "custom_image_slider_with_text_fFfUKJ",
+    "scrolling_text_PacCqL",
+    "rich_text_VDFB8d",
+    "slideshow_Gj6CyA",
+    "featured-collection-switcher",
+    "custom_product_details_JbJXVn",
+    "custom_rich_text_columns_fapdXh",
+    "custom_additives_table_H9ebp3",
+    "text_with_icons_W6xt7F",
+    "custom_story_teaser_grtbFU",
+    "rich_text_T7ntjy",
+    "custom_rich_text_columns_n6Ddd9",
+    "custom_image_columns_GdzTt9",
+    "custom_rich_text_columns_TwtQDb",
+    "custom_media_gallery_9bgdN4",
+    "custom_media_gallery_JxCFTk",
+    "custom_rich_text_columns_EeJbUR",
+    "custom_image_columns_WKgQjK",
+    "rich-text",
+    "newsletter"
+  ]
+}
