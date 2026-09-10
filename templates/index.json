@@ -1233,7 +1233,7 @@
       "settings": {
         "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "full_width": false,
         "content_width": 35,
         "flow_right": false,
