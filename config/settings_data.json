@@ -114,7 +114,7 @@
           "link": "#f9f6f1",
           "link_hover": "#f9f6f1",
           "border": "#d9d9d9",
-          "accent": "#D39655",
+          "accent": "#d39655",
           "overlay": "rgba(0,0,0,0)",
           "shadow": "rgba(0,0,0,0)"
         }
@@ -248,7 +248,7 @@
         "settings": {
           "background": "#d5995a",
           "background_gradient": "",
-          "text": "#2d3135",
+          "text": "#2D3135",
           "button": "#1a1e33",
           "button_label": "#ffffff",
           "button_border": "#1a1e33",
