@@ -272,13 +272,13 @@
                     </div>
                   {% endif %}
                 {%- when 'preheading' -%}
-                  <div
+                  <p
                     class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.title }}
-                  </div>
+                  </p>
 
                 {%- when 'heading' -%}
                   <div
