@@ -41,6 +41,7 @@
     },
     "age-verification-popup": {
       "type": "age-verification-popup",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "stylized_bg": true,
