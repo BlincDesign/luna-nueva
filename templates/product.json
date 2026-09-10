@@ -91,9 +91,9 @@
       ],
       "settings": {
         "sku_enable": false,
-        "image_size": "large",
+        "image_size": "medium",
         "product_zoom_enable": true,
-        "thumbnail_position": "beside",
+        "thumbnail_position": "below",
         "thumbnail_height": "flexible",
         "thumbnail_arrows": false,
         "enable_video_looping": true,
@@ -201,6 +201,9 @@
       ],
       "name": "Rich text columns",
       "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
         "left_column_width": 40,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
@@ -208,8 +211,12 @@
         "right_text_align": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
         "padding_top": 100,
-        "padding_bottom": 100
+        "padding_bottom": 100,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "sub": {
