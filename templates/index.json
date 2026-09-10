@@ -487,8 +487,8 @@
         "lazyload_images": true,
         "image_position": "left",
         "full_width": false,
-        "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_top": 138,
+        "padding_bottom": 138,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
