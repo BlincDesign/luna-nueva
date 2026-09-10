@@ -154,8 +154,89 @@
         "padding_bottom": 15
       }
     },
+    "custom_product_details_kxMqC9": {
+      "type": "custom__product-details",
+      "name": "Product Detail List",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "heading": "Three Expressions",
+        "preheading": "THE COLLECTION",
+        "right_text": "750ml · Additive-Free · Jalisco",
+        "right_link": "",
+        "products": [
+          "luna-nueva-silver",
+          "luna-nueva-reposado",
+          "luna-nueva-silver-1"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "background_image_text_kqUrBm": {
+      "type": "background-image-text",
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/hero-tailgate_59b4500a-ab5e-486c-a152-45065ece3eb4.jpg",
+        "layout": "left",
+        "height": 550,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
+    "text_columns_LtEcyT": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_YKpAUF": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/srv-watermelon.jpg",
+            "image_mask": "landscape",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>ONCE IT'S OPEN</p>",
+            "button_label": "EIght ways to pour it",
+            "button_link": ""
+          }
+        },
+        "text_block_YrFMXG": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/loc-shelf.jpg",
+            "image_mask": "landscape",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>NEARBY</p>",
+            "button_label": "Find a bottle",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_YKpAUF",
+        "text_block_YrFMXG"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false
+      }
+    },
     "featured_collection_FjLrkD": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "",
@@ -168,6 +249,7 @@
     },
     "featured_collection_aeKpQw": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "",
@@ -183,6 +265,9 @@
     "main-collection",
     "custom_rich_text_columns_h8hPax",
     "scrolling_text_jPUBXx",
+    "custom_product_details_kxMqC9",
+    "background_image_text_kqUrBm",
+    "text_columns_LtEcyT",
     "featured_collection_FjLrkD",
     "featured_collection_aeKpQw"
   ]
