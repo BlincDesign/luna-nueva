@@ -442,7 +442,7 @@
           "type": "heading",
           "settings": {
             "text": "<em><strong>The culture is California.</strong></em>",
-            "margin_bottom": 18
+            "margin_bottom": 26
           }
         },
         "divider_8JXCFj": {
@@ -455,7 +455,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>",
-            "margin_bottom": 24
+            "margin_bottom": 20
           }
         },
         "button_hnpTJJ": {
