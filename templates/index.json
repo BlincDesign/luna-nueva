@@ -514,7 +514,7 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#2D3135",
+            "divider_bg": "#2d3135",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -693,7 +693,7 @@
         "padding_top": 138,
         "padding_bottom": 0,
         "padding_top_mb": 72,
-        "padding_bottom_mb": 72
+        "padding_bottom_mb": 0
       }
     },
     "custom_media_gallery_9bgdN4": {
@@ -770,9 +770,9 @@
         "row_height_mobile": 260,
         "gap": 16,
         "padding_top": 0,
-        "padding_bottom": 100,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_bottom": 138,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 72
       }
     },
     "custom_media_gallery_JxCFTk": {
