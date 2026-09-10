@@ -269,7 +269,7 @@
         "text_YrMjYV": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
+            "enlarge_text": false,
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
             "position": "right"
           }
@@ -307,7 +307,7 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "padding_top": 138,
-        "padding_bottom": 0,
+        "padding_bottom": 66,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
