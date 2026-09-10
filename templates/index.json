@@ -514,8 +514,8 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#606264",
-            "divider_width": 90,
+            "divider_bg": "#2D3135",
+            "divider_width": 100,
             "divider_height": 2,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
