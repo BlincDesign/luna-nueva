@@ -200,11 +200,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image_mask": "none",
+            "image": "shopify://shop_images/srv-watermelon.jpg",
+            "image_mask": "landscape",
             "image_width": 650,
-            "title": "Example title",
-            "text": "",
-            "button_label": "",
+            "title": "",
+            "text": "<p>ONCE IT'S OPEN</p>",
+            "button_label": "EIght ways to pour it",
             "button_link": ""
           }
         },
@@ -212,11 +213,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image_mask": "none",
+            "image": "shopify://shop_images/loc-shelf.jpg",
+            "image_mask": "landscape",
             "image_width": 650,
-            "title": "Example title",
-            "text": "",
-            "button_label": "",
+            "title": "",
+            "text": "<p>NEARBY</p>",
+            "button_label": "Find a bottle",
             "button_link": ""
           }
         }
