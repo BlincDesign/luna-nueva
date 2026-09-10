@@ -480,7 +480,7 @@
       "settings": {
         "color_scheme": "scheme-1",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "image": "shopify://shop_images/story-pinas.jpg",
         "image_caption": "Agave piñas · Highlands of Jalisco",
         "image_shape": "arch",
