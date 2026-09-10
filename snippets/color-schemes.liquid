@@ -1,0 +1,94 @@
+{% comment %}
+  Renders the CSS custom properties for every scheme defined in
+  settings_schema.json > Colors > Color schemes (settings.color_schemes).
+
+  The first scheme doubles as the site-wide :root default. Any section (or
+  other element) can opt into a scheme by adding a `color-{{ scheme.id }}`
+  class, e.g. `color-scheme-2`.
+
+  Usage:
+  {% render 'color-schemes' %}
+{% endcomment %}
+
+{%- style -%}
+  .gradient {
+    background: rgb(var(--color-background));
+    background: var(--gradient-background);
+    background-attachment: fixed;
+  }
+
+  /* Color Schemes */
+  /* ========================= */
+  {%- for scheme in settings.color_schemes -%}
+    {%- assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id -%}
+
+    {%- if forloop.index == 1 -%}
+      :root,
+    {%- endif -%}
+
+    .color-{{ scheme.id }} {
+      /* Background */
+      {%- if scheme.settings.background == 'rgba(0,0,0,0)' or scheme.settings.background == 'transparent' -%}
+        --color-background: transparent;
+      {%- else -%}
+        --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }},{{ scheme.settings.background.alpha }};
+      {%- endif %}
+
+      {%- if scheme.settings.background_gradient != empty %}
+        --gradient-background: {{ scheme.settings.background_gradient }};
+      {%- else %}
+        --gradient-background: {{ scheme.settings.background }};
+      {%- endif %}
+
+      /* Text */
+      --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+
+      /* Shadow */
+      --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
+
+      /* Primary button */
+      --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }},{{ scheme.settings.button.alpha }};
+      --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
+      --color-button-border: {{ scheme.settings.button_border.red }},{{ scheme.settings.button_border.green }},{{ scheme.settings.button_border.blue }};
+
+      --color-button-hover: {{ scheme.settings.button_hover.red }},{{ scheme.settings.button_hover.green }},{{ scheme.settings.button_hover.blue }};
+      --color-button-text-hover: {{ scheme.settings.button_label_hover.red }},{{ scheme.settings.button_label_hover.green }},{{ scheme.settings.button_label_hover.blue }};
+      --color-button-border-hover: {{ scheme.settings.button_border_hover.red }},{{ scheme.settings.button_border_hover.green }},{{ scheme.settings.button_border_hover.blue }};
+
+      /* Secondary button */
+      --color-secondary-button: {{ scheme.settings.secondary_button.red }},{{ scheme.settings.secondary_button.green }},{{ scheme.settings.secondary_button.blue }} ,{{ scheme.settings.secondary_button.alpha }};
+      --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
+      --color-secondary-button-border: {{ scheme.settings.secondary_button_border.red }},{{ scheme.settings.secondary_button_border.green }},{{ scheme.settings.secondary_button_border.blue }};
+
+      --color-secondary-button-hover: {{ scheme.settings.secondary_button_hover.red }},{{ scheme.settings.secondary_button_hover.green }},{{ scheme.settings.secondary_button_hover.blue }};
+      --color-secondary-button-text-hover: {{ scheme.settings.secondary_button_label_hover.red }},{{ scheme.settings.secondary_button_label_hover.green }},{{ scheme.settings.secondary_button_label_hover.blue }};
+      --color-secondary-button-border-hover: {{ scheme.settings.secondary_button_border_hover.red }},{{ scheme.settings.secondary_button_border_hover.green }},{{ scheme.settings.secondary_button_border_hover.blue }};
+
+      /* Links */
+      --color-link: {{ scheme.settings.link.red }},{{ scheme.settings.link.green }},{{ scheme.settings.link.blue }};
+      --color-link-hover: {{ scheme.settings.link_hover.red }},{{ scheme.settings.link_hover.green }},{{ scheme.settings.link_hover.blue }},{{ scheme.settings.link_hover.alpha }};
+
+      /* Borders */
+      --color-border: {{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }};
+
+      /* Accent */
+      --color-accent: {{ scheme.settings.accent.red }},{{ scheme.settings.accent.green }},{{ scheme.settings.accent.blue }};
+
+      /* Overlay */
+      --color-overlay: {{ scheme.settings.overlay.red }},{{ scheme.settings.overlay.green }},{{ scheme.settings.overlay.blue }};
+
+      /* Badges */
+      --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+      --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+      --color-badge-border: {{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }};
+
+      /* Payment terms */
+      --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
+    }
+  {%- endfor -%}
+
+  {{ scheme_classes | prepend: 'body' }} {
+    color: rgb(var(--color-foreground));
+    background-color: rgba(var(--color-background));
+  }
+{%- endstyle -%}

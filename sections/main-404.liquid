@@ -1,0 +1,269 @@
+{% style %}
+  #section-404-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #section-404-{{ section.id }} .section-header--404 .button-block {
+    justify-content: {{ section.settings.left_text_align }};
+  }
+
+  #section-404-{{ section.id }} .section-header--404 {
+    flex: 0 1 calc({{ section.settings.left_column_width }}% - 15px);
+    justify-content: {{ section.settings.left_vertical_align }};
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #section-404-{{ section.id }} .blocks__404 {
+    flex: 0 1 calc({{ section.settings.right_column_width }}% - 15px);
+    justify-content: {{ section.settings.right_vertical_align }};
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 589px) {
+    #section-404-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  id="section-404-{{ section.id }}"
+  class=" gradient color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
+  <div
+    class="page-width page-content"
+  >
+    {% if section.blocks.size > 0 %}<div class="wrapper__404">{% endif %}
+    <header class="section-header section-header--404 text-{{ section.settings.left_text_align }}">
+      <span>{{ 'general.404.title' | t }}</span>
+      <h1 class="section-header__title">{{ 'general.404.text' | t }}</h1>
+      <div class="rte text-spacing">
+        {{- 'general.404.subtext_html' | t: class: 'enlarge-text' -}}
+      </div>
+      <div class="button-block">
+        <div class="button-1">
+          <a href="{{ routes.root_url }}" class="button button--primary js-no-transition">
+            {{- 'general.404.continue_shopping' | t -}}
+            <span class="button__arrow">→</span>
+          </a>
+        </div>
+        <div class="button-2">
+          <a href="{{ routes.all_products_collection_url }}" class="button button--secondary js-no-transition"
+            >Find a Bottle</a
+          >
+        </div>
+      </div>
+    </header>
+
+    {% if section.blocks.size > 0 %}
+      <div class="blocks__404 text-{{ section.settings.right_text_align }}">
+        {% liquid
+          assign previous_type = blank
+        %}
+        {% for block in section.blocks %}
+          {% if block.type != previous_type %}
+            {% unless previous_type == blank %}
+              </ul>
+            {% endunless %}
+            <ul class="block__404--linklist block__404--{{ block.type | handle }}">
+          {% endif %}
+
+          {% case block.type %}
+            {% when 'link_text' %}
+              <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+                <a href="{{ block.settings.link | default: '#' }}">
+                  <span class="linklist__404--title">{{ block.settings.title }}</span>
+                  {% if block.settings.subtext != blank %}
+                    <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                  {% endif %}
+                </a>
+              </li>
+
+            {% when 'menu-list' %}
+              {% assign menu = linklists[block.settings.linklist] %}
+              {% for link in menu.links %}
+                <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+                  <a href="{{ link.url }}">
+                    <span class="linklist__404--title">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+          {% endcase %}
+
+          {% assign previous_type = block.type %}
+
+          {% if forloop.last %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if section.blocks.size > 0 %}</div>{% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-404.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Chnges header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "left_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "left_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
+      ]
+    },
+    { "type": "header", "content": "Right column" },
+    {
+      "type": "range",
+      "id": "right_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "right_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
+      ]
+    },
+    { "type": "header", "content": "Padding" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    { "type": "header", "content": "Mobile padding" },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_text",
+      "name": "Link with text",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Link title"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Description"
+        }
+      ]
+    },
+    {
+      "type": "menu-list",
+      "name": "Menu list",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,38 @@
+{%- liquid
+  assign header_font = settings.type_header_font_family
+  assign base_font = settings.type_base_font_family
+  assign base_font_bold = base_font | font_modify: 'weight', '+200'
+  assign base_font_italic = base_font | font_modify: 'style', 'italic'
+  assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
+  assign custom_header_font_filename = settings.custom_header_font_filename | strip
+  assign custom_base_font_filename = settings.custom_base_font_filename | strip
+-%}
+
+{%- style -%}
+  {{ header_font | font_face: font_display: 'swap' }}
+  {{ base_font | font_face: font_display: 'swap' }}
+
+  {{ base_font_bold | font_face: font_display: 'swap' }}
+  {{ base_font_italic | font_face: font_display: 'swap' }}
+  {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+
+  {% if custom_header_font_filename != blank %}
+    @font-face {
+      font-family: '{{ custom_header_font_filename }}';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('{{ custom_header_font_filename | append: '.woff2' | file_url }}') format('woff2');
+    }
+  {% endif %}
+
+  {% if custom_base_font_filename != blank %}
+    @font-face {
+      font-family: '{{ custom_base_font_filename }}';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('{{ custom_base_font_filename | append: '.woff2' | file_url }}') format('woff2');
+    }
+  {% endif %}
+{%- endstyle -%}

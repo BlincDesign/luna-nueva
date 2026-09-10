@@ -1,0 +1,457 @@
+{% stylesheet %}
+  .story-teaser__inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(32px, 5vw, 88px);
+  }
+
+  .story-teaser__inner--right {
+    flex-direction: row-reverse;
+  }
+
+  .story-teaser__media,
+  .story-teaser__content {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .story-teaser__image-wrap {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .story-teaser__image-wrap--arch {
+    aspect-ratio: 1 / 1.321;
+    border-radius: 50% 50% 0 0 / 37.85% 37.85% 0 0;
+  }
+
+  .story-teaser__image-wrap--rounded-top {
+    aspect-ratio: 3 / 4;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .story-teaser__image-wrap--rounded {
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+  }
+
+  .story-teaser__image-wrap--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .story-teaser__image-wrap--none {
+    aspect-ratio: 3 / 4;
+  }
+
+  .story-teaser__image-wrap image-element,
+  .story-teaser__image-wrap .image-element,
+  .story-teaser__image-wrap .placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-teaser__caption {
+    margin: 16px 0 0;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: var(--type-caption-size);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .story-teaser__divider {
+    border: 0;
+    border-top: 1px solid currentColor;
+    opacity: 0.35;
+  }
+
+  @media screen and (max-width: 900px) {
+    .story-teaser__inner,
+    .story-teaser__inner--right {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+{% endstylesheet %}
+
+{% style %}
+  #custom__story-teaser-{{ section.id }} .story-teaser__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% for block in section.blocks %}
+    #shopify-section-{{ section.id }} [data-block-id="{{ block.id }}"] {
+      margin-bottom: {{ block.settings.margin_bottom }}px;
+    }
+  {% endfor %}
+
+  @media screen and (max-width: 900px) {
+    #custom__story-teaser-{{ section.id }} .story-teaser__inner {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+ 
+  #shopify-section-{{ section.id }} .button.button--primary {
+    --btn-bg: #D39655;
+    --btn-border: #D39655;
+    --btn-color: #000;
+    --btn-hover-bg: #E0A768;
+    --btn-hover-border: #D39655;
+    --btn-hover-color: #000;
+  }
+{% endstyle %}
+
+<div
+  id="custom__story-teaser-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} story-teaser{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
+  <div class="story-teaser__inner story-teaser__inner--{{ section.settings.image_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="story-teaser__media" data-aos>
+      <div class="story-teaser__image-wrap story-teaser__image-wrap--{{ section.settings.image_shape }}">
+        {%- if section.settings.image != blank -%}
+          {%- render 'image-element',
+            img: section.settings.image,
+            widths: '360, 540, 750, 900, 1080, 1440',
+            sizeVariable: '50vw',
+            fallback: '100vw',
+            loading: section.settings.lazyload_images,
+            classes: 'story-teaser__image'
+          -%}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      {%- if section.settings.image_caption != blank -%}
+        <p class="story-teaser__caption">{{ section.settings.image_caption }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="story-teaser__content">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'subheading' -%}
+            <p
+              class="story-teaser__subheading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </p>
+          {%- when 'heading' -%}
+            <h2
+              class="story-teaser__heading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </h2>
+          {%- when 'divider' -%}
+            <hr class="story-teaser__divider" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+          {%- when 'text' -%}
+            <div
+              class="rte story-teaser__text appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              data-block-id="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </div>
+          {%- when 'button' -%}
+            {%- if block.settings.label != blank -%}
+              <div
+                class="story-teaser__button appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- render 'button',
+                  label: block.settings.label,
+                  url: block.settings.link,
+                  type: block.settings.style,
+                  arrow: true
+                -%}
+              </div>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Story teaser",
+  "tag": "section",
+  "class": "section-story-teaser",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Image shape",
+      "default": "arch",
+      "options": [
+        { "value": "arch", "label": "Arch" },
+        { "value": "rounded-top", "label": "Rounded top" },
+        { "value": "rounded", "label": "Rounded" },
+        { "value": "square", "label": "Square" },
+        { "value": "none", "label": "None" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload_images",
+      "label": "Lazyload image",
+      "info": "Turn off if this section appears near the top of the page.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Our Story"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 18
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Heading"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 24
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Read our story"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "default": "primary",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "link", "label": "Link" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Bottom spacing",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Story teaser",
+      "blocks": [
+        { "type": "subheading" },
+        { "type": "heading", "settings": { "text": "The liquid is authentic to Mexico." } },
+        { "type": "heading", "settings": { "text": "The culture is California.", "margin_bottom": 18 } },
+        { "type": "divider" },
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery — one of the most respected producers in Mexico, where the craft of tequila runs generations deep. The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise.</p>"
+          }
+        },
+        { "type": "button", "settings": { "label": "Read our story" } }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

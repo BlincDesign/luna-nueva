@@ -1,0 +1,68 @@
+{%- liquid
+  assign animation_row = 2
+  assign drawer_position = 'right'
+  if logo_alignment == 'center'
+    assign drawer_position = 'left'
+  endif
+-%}
+
+<div id="NavDrawer" class="drawer drawer--top">
+  <div class="drawer__contents">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header appear-animation appear-delay-{{ animation_row }}">
+        <div class="drawer__title"></div>
+        <div class="drawer__close">
+          <button type="button" class="drawer__close-button js-drawer-close">
+            {% comment %} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg> 
+            <span class="icon__fallback-text">{{ 'general.drawers.close_menu' | t }}</span>{% endcomment %}
+            <span>Close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__scrollable">
+      <ul class="mobile-nav mobile-nav--flat" role="navigation" aria-label="Primary">
+        {%- for link in main_menu.links -%}
+          {%- liquid
+            assign animation_row = animation_row | plus: 1
+            assign has_dropdown = false
+            if link.links != blank
+              assign has_dropdown = true
+            endif
+          -%}
+
+          <li class="mobile-nav__item mobile-nav__item--parent{% unless template == 'index' %}{% if link.active %} mobile-nav__item--active{% endif %}{% endunless %} appear-animation appear-delay-{{ animation_row }}">
+            <a href="{{ link.url }}" class="mobile-nav__link mobile-nav__link--heading">{{ link.title }}</a>
+
+            {%- if has_dropdown -%}
+              <ul class="mobile-nav__sublist mobile-nav__sublist--flat">
+                {%- for childlink in link.links -%}
+                  <li class="mobile-nav__item{% unless template == 'index' %}{% if childlink.active %} mobile-nav__item--active{% endif %}{% endunless %}">
+                    <a href="{{ childlink.url }}" class="mobile-nav__link mobile-nav__link--sub">
+                      {{ childlink.title | escape }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+        {% comment %} {%- if shop.customer_accounts_enabled -%}
+          {%- assign animation_row = animation_row | plus: 1 -%}
+          {%- if customer -%}
+            <li class="mobile-nav__item mobile-nav__item--parent appear-animation appear-delay-{{ animation_row }}">
+              <a href="{{ routes.account_url }}" class="mobile-nav__link mobile-nav__link--heading">{{ 'layout.customer.account' | t }}</a>
+            </li>
+          {%- else -%}
+            <li class="mobile-nav__item mobile-nav__item--parent appear-animation appear-delay-{{ animation_row }}">
+              <a href="{{ routes.account_login_url }}" class="mobile-nav__link mobile-nav__link--heading">{{ 'layout.customer.log_in' | t }}</a>
+            </li>
+          {%- endif -%}
+        {%- endif -%} {% endcomment %}
+
+        <li class="mobile-nav__spacer"></li>
+      </ul>
+    </div>
+  </div>
+</div>

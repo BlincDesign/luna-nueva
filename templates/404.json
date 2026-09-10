@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "blocks": {
+        "link_text_zafEUW": {
+          "type": "link_text",
+          "settings": {
+            "link": "shopify://collections/all",
+            "title": "Shop Luna Nueva",
+            "subtext": "Three expressions"
+          }
+        },
+        "link_text_qkkGif": {
+          "type": "link_text",
+          "settings": {
+            "link": "shopify://pages/our-story",
+            "title": "Our Story",
+            "subtext": "Jalisco to California"
+          }
+        },
+        "link_text_hXVUxk": {
+          "type": "link_text",
+          "settings": {
+            "link": "shopify://pages/events",
+            "title": "Events",
+            "subtext": "What’s coming up"
+          }
+        },
+        "link_text_M8Qmy7": {
+          "type": "link_text",
+          "settings": {
+            "link": "shopify://pages/serves-recipes",
+            "title": "Serves & Recipes",
+            "subtext": "Eight ways to pour it"
+          }
+        },
+        "link_text_hXcmgW": {
+          "type": "link_text",
+          "settings": {
+            "link": "shopify://pages/stor-locator",
+            "title": "Store Locator",
+            "subtext": "104 accounts"
+          }
+        },
+        "menu_list_HwkFqb": {
+          "type": "menu-list",
+          "disabled": true,
+          "settings": {
+            "linklist": "header-menu-development"
+          }
+        }
+      },
+      "block_order": [
+        "link_text_zafEUW",
+        "link_text_qkkGif",
+        "link_text_hXVUxk",
+        "link_text_M8Qmy7",
+        "link_text_hXcmgW",
+        "menu_list_HwkFqb"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "left_column_width": 60,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 40,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 80
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Popular picks",
+        "home_featured_products": "frontpage",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured-collection"
+  ]
+}
