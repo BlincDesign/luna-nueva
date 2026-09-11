@@ -782,3 +782,18 @@ a.pdl__right {
     }
 
 /* 404 page end */
+
+
+
+/* Product page */
+
+.product-block .product__price {
+    display: inline-block;
+    font-size: 30px;
+    margin-right: 16px;
+}
+
+.product-block .product__price-note {
+    font-weight: 600;
+    opacity: 0.6;
+}
