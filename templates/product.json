@@ -59,9 +59,16 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
+            "show_quantity": true,
             "show_dynamic_checkout": false,
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
+            "margin_bottom": 10
+          }
+        },
+        "tasting_notes_w9FFAp": {
+          "type": "tasting_notes",
+          "settings": {
             "margin_bottom": 10
           }
         }
@@ -73,7 +80,8 @@
         "price_mEWtYa",
         "separator_wEjmRV",
         "variant_picker",
-        "buy_buttons"
+        "buy_buttons",
+        "tasting_notes_w9FFAp"
       ],
       "settings": {
         "color_scheme": "",
