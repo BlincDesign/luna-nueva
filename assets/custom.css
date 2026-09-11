@@ -800,4 +800,36 @@ a.pdl__right {
     opacity: 0.6;
 }
 
+.sibling-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
+.sibling-switcher__option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    border: 1px solid rgba(var(--color-foreground), 0.3);
+    border-radius: 999px;
+    color: rgba(var(--color-foreground));
+    font-weight: 600;
+    letter-spacing:1.6px;
+}
+
+.sibling-switcher__option.is-active {
+    pointer-events: none;
+    border: 1px solid rgba(var(--color-foreground));
+    background: rgba(var(--color-foreground), 0.1);
+}
+
+.sibling-switcher__dot {
+    flex: none;
+    width: 13px;
+    height: 16px;
+    border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 0 0 1px rgba(var(--color-foreground), 0.2);
+}
