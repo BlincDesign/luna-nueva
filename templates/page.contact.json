@@ -122,7 +122,7 @@
           "settings": {
             "title": "",
             "title_size": 80,
-            "subheading": "",
+            "subheading": "Nothing added. Nothing hidden.",
             "link": "",
             "link_text": "",
             "text_align": "vertical-bottom horizontal-left",
@@ -143,7 +143,8 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "content_color_scheme": ""
       }
     },
     "rich_text_kTFHaV": {
@@ -429,11 +430,11 @@
         "image_qwdH6T": {
           "type": "image",
           "settings": {
-            "title": "dgdfg",
+            "title": "",
             "title_size": 80,
-            "subheading": "dfgdfgdf",
-            "link": "#",
-            "link_text": "dfgfdgf",
+            "subheading": "Coastal. Local. Free.",
+            "link": "",
+            "link_text": "",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/hero-coast.jpg",
             "parallax_direction": "top",
@@ -452,7 +453,8 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "content_color_scheme": ""
       }
     }
   },
