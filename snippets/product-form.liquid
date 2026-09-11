@@ -11,6 +11,8 @@
         assign enable_dynamic_buttons = true
       endunless
     endif
+
+    assign show_quantity = block.settings.show_quantity
   -%}
 
   {%- if gift_card_recipient_feature_active -%}
