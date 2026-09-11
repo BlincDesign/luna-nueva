@@ -192,6 +192,7 @@
         "step_xtF7w7": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/ev-longtable_b76b3703-9ff7-4ecd-8268-e0c5cda3a4e7.jpg",
             "number": "03",
             "heading": "Taste it first",
             "text": "<p>Samples and a staff tasting before you commit to a listing, and an invitation to the next event near you.</p>"
