@@ -835,5 +835,5 @@ a.pdl__right {
 }
 
 .product-block hr {
-    border-top-color: rgba(var(--color-foreground), 0.5);
+    border-top-color: rgba(var(--color-foreground),.2);
 }
