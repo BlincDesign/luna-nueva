@@ -357,6 +357,23 @@
         "padding_top_mb": 0,
         "padding_bottom_mb": 48
       }
+    },
+    "background_image_text_tMxjV4": {
+      "type": "background-image-text",
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/hero-coast.jpg",
+        "layout": "left",
+        "height": 550,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
     }
   },
   "order": [
@@ -367,6 +384,7 @@
     "custom_rich_text_columns_RcFzWx",
     "custom_image_columns_4cRtE3",
     "form",
-    "rich_text_NVjGhb"
+    "rich_text_NVjGhb",
+    "background_image_text_tMxjV4"
   ]
 }
