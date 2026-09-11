@@ -1,0 +1,58 @@
+<div class="pdc__table">
+  {%- if category_label != blank or origin != blank -%}
+    <div class="pdc__row pdc__row--lead">
+      <span class="pdc__label">Tequila {{ category_label }}</span>
+      {%- if origin != blank -%}
+        <span class="pdc__value">ORIGIN · {{ origin }}</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if agave != blank -%}
+    <div class="pdc__row">
+      <span class="pdc__label">Agave</span>
+      <span class="pdc__value">{{ agave }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if additives != blank -%}
+    <div class="pdc__row">
+      <span class="pdc__label">Additives</span>
+      <span class="pdc__value">{{ additives }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if rested != blank -%}
+    <div class="pdc__row">
+      <span class="pdc__label">Rested</span>
+      <span class="pdc__value">{{ rested }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if body_field != blank -%}
+    <div class="pdc__row">
+      <span class="pdc__label">Body</span>
+      <span class="pdc__value">{{ body_field }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if nom != blank -%}
+    <div class="pdc__row">
+      <span class="pdc__label">NOM</span>
+      <span class="pdc__value">{{ nom }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if abv != blank or proof != blank or net_content != blank -%}
+    <div class="pdc__row pdc__row--foot">
+      <span class="pdc__foot">
+        {%- if abv != blank -%}{{ abv }}% ALC/VOL{%- endif -%}
+        {%- if abv != blank and proof != blank -%}·{%- endif -%}
+        {%- if proof != blank -%}{{ proof }} PROOF{%- endif -%}
+      </span>
+      {%- if net_content != blank -%}
+        <span class="pdc__foot">CONT NET {{ net_content }}</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
