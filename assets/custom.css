@@ -837,3 +837,8 @@ a.pdl__right {
 .product-block hr {
     border-top-color: rgba(var(--color-foreground),.2);
 }
+
+.add-to-cart.button--primary.add-to-cart {
+    justify-content: space-between;
+    font-weight: 700;
+}
