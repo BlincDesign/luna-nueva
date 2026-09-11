@@ -831,7 +831,7 @@
         "header_secondary": false,
         "stylized_bg": false,
         "full_width": false,
-        "content_width": 30,
+        "content_width": 35,
         "flow_right": true,
         "tile_width_min": 360,
         "tile_width_max": 360,
