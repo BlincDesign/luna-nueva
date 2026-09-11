@@ -56,22 +56,6 @@
             "margin_bottom": 10
           }
         },
-        "sales_point": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "globe",
-            "text": "Free worldwide shipping",
-            "margin_bottom": 10
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "inventory_threshold": 10,
-            "inventory_transfers_enable": true,
-            "margin_bottom": 10
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -119,8 +103,6 @@
         "price_mEWtYa",
         "separator_wEjmRV",
         "variant_picker",
-        "sales_point",
-        "inventory_status",
         "buy_buttons",
         "description",
         "tab",
