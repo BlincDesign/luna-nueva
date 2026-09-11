@@ -15,16 +15,21 @@
         "text_4zfUb6": {
           "type": "text",
           "settings": {
-            "text": "The Collection · 750ml · Additive-Free"
+            "text": "The Collection · 750ml · Additive-Free",
+            "margin_bottom": 10
           }
         },
         "title_bcgBPy": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "margin_bottom": 10
+          }
         },
         "separator": {
           "type": "separator",
-          "settings": {}
+          "settings": {
+            "margin_bottom": 10
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -33,41 +38,47 @@
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
-            "color_swatches": true
+            "color_swatches": true,
+            "margin_bottom": 10
           }
         },
         "sales_point": {
           "type": "sales_point",
           "settings": {
             "icon": "globe",
-            "text": "Free worldwide shipping"
+            "text": "Free worldwide shipping",
+            "margin_bottom": 10
           }
         },
         "inventory_status": {
           "type": "inventory_status",
           "settings": {
             "inventory_threshold": 10,
-            "inventory_transfers_enable": true
+            "inventory_transfers_enable": true,
+            "margin_bottom": 10
           }
         },
         "character_texture_kbtB9k": {
           "type": "character-texture",
           "settings": {
-            "label": "Character & Texture"
+            "label": "Character & Texture",
+            "margin_bottom": 10
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "margin_bottom": 10
           }
         },
         "description": {
           "type": "description",
           "settings": {
-            "is_tab": false
+            "is_tab": false,
+            "margin_bottom": 10
           }
         },
         "tab": {
@@ -75,19 +86,23 @@
           "settings": {
             "title": "Size guide",
             "content": "",
-            "page": ""
+            "page": "",
+            "margin_bottom": 10
           }
         },
         "contact": {
           "type": "contact",
           "settings": {
             "title": "Ask a question",
-            "phone": false
+            "phone": false,
+            "margin_bottom": 10
           }
         },
         "share": {
           "type": "share",
-          "settings": {}
+          "settings": {
+            "margin_bottom": 10
+          }
         }
       },
       "block_order": [
