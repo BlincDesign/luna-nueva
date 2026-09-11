@@ -67,6 +67,8 @@
               <p class="pdc__desc">{{ character-texture }}</p>
             {%- endif -%}
 
+            {% render 'product-details-table', product: product %}
+            
             <div class="pdc__explore--wrapper">
               <a href="{{ product.url }}" class="pdc__explore"
                 >Explore <span class="pdc__arrow" aria-hidden="true">→</span></a
