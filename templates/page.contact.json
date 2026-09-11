@@ -124,10 +124,10 @@
         "parallax": true,
         "parallax_direction": "top",
         "lazyload_images": true,
-        "subtitle": "fddfgdf",
-        "title": "dfgdfgdfg",
-        "text": "<p>dfgdfgdfg</p>",
-        "button_label": "dfgdfgdfg",
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
         "button_link": ""
       }
     },
