@@ -568,6 +568,244 @@ a.pdl__right {
 /* End product details list */
 
 
+/* Product gallery */
+
+/* Local design tokens for the gallery card + thumbnail rail. Centralizing the
+   shape here means it can be re-tuned from two rules instead of hunting
+   through every selector below. [data-product-images] is the existing
+   wrapper rendered by snippets/product-images.liquid. */
+[data-product-images] {
+    --gallery-radius: 10px;
+    --gallery-thumb-radius: 8px 8px 2px 2px;
+}
+
+@media only screen and (min-width: 590px) {
+    [data-product-images] {
+        --gallery-radius: 16px;
+        --gallery-thumb-radius: 12px 12px 3px 3px;
+    }
+}
+
+/* Main stage card. An image, a video and a 3D model all render into a
+   .image-wrap (or .product__video-wrapper) inside .product-image-main, so one
+   rule covers every media type. */
+.product-image-main .image-wrap,
+.product-image-main .product__video-wrapper {
+    border-radius: var(--gallery-radius);
+}
+
+/* Subtle hover lift on the main photo, reinforcing the click-to-zoom cursor
+   .product__photo-zoom already sets on desktop. */
+.product-image-main .image-wrap img:not([role="presentation"]) {
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.product-image-main:hover .image-wrap img:not([role="presentation"]) {
+    transform: scale(1.035);
+}
+
+/* Thumbnail rail: crop every thumbnail to one consistent shape instead of
+   whatever aspect ratio its own source image happens to be, so the rail reads
+   as a single tidy set rather than a mix of portrait and landscape boxes. The
+   !important pair is unavoidable here: product-images.liquid sets each
+   thumbnail's own aspect ratio as an inline style, which otherwise always
+   beats an external stylesheet regardless of selector weight. */
+.product__thumb .image-wrap__thumbnail {
+    height: 0 !important;
+    padding-bottom: 114% !important;
+}
+
+.product__thumb .image-wrap__thumbnail img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product__thumb-item .image-wrap__thumbnail {
+    border-radius: var(--gallery-thumb-radius);
+}
+
+.product__thumb-item a.is-active:before,
+.product__thumb-item a:focus:before {
+    border-radius: var(--gallery-thumb-radius);
+}
+
+.product__thumb-item a {
+    opacity: 0.55;
+    transition: opacity 0.25s ease;
+}
+
+.product__thumb-item a:hover,
+.product__thumb-item a:focus {
+    opacity: 0.85;
+}
+
+.product__thumb-item a.is-active {
+    opacity: 1;
+}
+
+/* Thumbnail scroll arrows: a chromeless mark instead of a filled chip, so the
+   control reads as part of the photography rather than a widget sitting on
+   top of it. */
+.product__thumb-arrow {
+    background: transparent;
+    transition: transform 0.2s ease;
+}
+
+.product__thumb-arrow:hover {
+    transform: scale(1.1);
+}
+
+.product__thumb-arrow .icon {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-image-main .image-wrap img:not([role="presentation"]),
+    .product__thumb-item a,
+    .product__thumb-arrow {
+        transition: none;
+    }
+}
+
+/* End product gallery */
+
+
+/* Product buy box (sibling switcher, quantity selector, add to cart) */
+
+/* Sibling switcher. Used by the variant_picker block's "Siblings" display
+   mode to link between related products (e.g. Silver / Reposado / Añejo)
+   instead of switching this product's own variants. */
+.sibling-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.sibling-switcher__option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.05rem;
+    border: 1px solid var(--colorBorder);
+    border-radius: 999px;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-weight: 700;
+    font-size: calc(var(--typeBaseSize) * 0.8);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--colorTextBody);
+    text-decoration: none;
+    background-color: transparent;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+a.sibling-switcher__option:hover {
+    border-color: var(--colorTextBody);
+}
+
+.sibling-switcher__option.is-active {
+    border-color: var(--colorTextBody);
+    background-color: rgba(var(--color-foreground), 0.06);
+    cursor: default;
+}
+
+/* A small preview of the sibling's own color scheme, matching the "ground"
+   its product page switches to. Neutral (this section's own scheme) when a
+   sibling has no color_scheme metafield set, since .sibling-switcher__dot
+   only opts into a specific color-{scheme} class when one is available. */
+.sibling-switcher__dot {
+    flex: none;
+    width: 13px;
+    height: 16px;
+    border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 0 0 1px rgba(var(--color-foreground), 0.2);
+}
+
+/* Quantity selector, scoped to the PDP so the cart drawer's own stepper
+   (styled separately above) is untouched. */
+.product__quantity .js-qty__wrapper {
+    display: inline-block;
+    width: 132px;
+    max-width: 100%;
+    height: 46px;
+    background-color: transparent;
+    border: 1px solid var(--colorBorder);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.product__quantity .js-qty__num {
+    height: 46px;
+    line-height: 46px;
+    padding: 0 44px;
+    background: transparent;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-weight: 700;
+    font-size: var(--typeBaseSize);
+}
+
+.product__quantity .js-qty__adjust {
+    width: 44px;
+    color: var(--colorTextBody);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.product__quantity .js-qty__adjust:hover,
+.product__quantity .js-qty__adjust:focus-visible {
+    opacity: 1;
+}
+
+/* Add to cart: adopts the same pill shape, uppercase micro-label typography
+   and hover lift as .button--primary (see Global button system, above)
+   without touching the .btn/.add-to-cart markup or its JS hooks. */
+.add-to-cart {
+    border-radius: var(--btn-radius, 60px);
+    padding: 16px 28px;
+    font-size: calc(var(--typeBaseSize) * 0.8);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
+        border-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
+        transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.add-to-cart:hover:not([disabled]) {
+    transform: translateY(-2px);
+}
+
+.add-to-cart:active:not([disabled]) {
+    transform: translateY(0) scale(0.98);
+}
+
+@media only screen and (max-width: 589px) {
+    .add-to-cart {
+        padding: 14px 22px;
+    }
+}
+
+/* The dynamic-checkout layout gives Add to cart a bordered "secondary" look
+   with its own sharp-cornered rule (see .payment-buttons .add-to-cart--secondary,
+   above); only the corner radius is unified here so the two CTA states still
+   read as one system. */
+.payment-buttons .add-to-cart--secondary {
+    border-radius: var(--btn-radius, 60px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sibling-switcher__option,
+    .product__quantity .js-qty__adjust,
+    .add-to-cart {
+        transition: none;
+    }
+}
+
+/* End product buy box */
+
+
 /* Age verification popup */
 
 .age-confirmation {
