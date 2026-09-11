@@ -286,13 +286,12 @@ id="contact-form-{{ section.id }}">
                     {{ block.settings.label }}
                   </label>
 
-                  <button
-                    type="submit"
-                    id="contact-form-submit-{{ section.id }}"
-                    class="btn"
-                  >
-                    {{ block.settings.label }}
-                  </button>
+                  {%- render 'button',
+                  label: block.settings.label,
+                  url: block.settings.link,
+                  type: block.settings.style,
+                  arrow: true
+                -%}
 
                   {%- if block.settings.info != blank -%}
                   <div class="button-info">
