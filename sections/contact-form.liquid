@@ -63,7 +63,7 @@
 {% endstyle %}
 
 <div
-  class="contact-form color-{{ section.settings.color_scheme }}"
+  class="contact-form background-image color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
   id="contact-form-{{ section.id }}"
 >
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
@@ -321,13 +321,26 @@
 {% schema %}
 {
   "name": "t:sections.contact-form.name",
-  "class": "background-image",
+  "class": "contact-form-section",
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-5"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
     },
     {
       "type": "paragraph",
