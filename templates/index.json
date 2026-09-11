@@ -1136,7 +1136,7 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
-        "layout_type": "slider",
+        "layout_type": "grid",
         "columns": 4,
         "gap": 28,
         "gap_mb": 16,
