@@ -30,6 +30,8 @@
 
 {%- liquid
   assign connect_to_sizechart = false
+  assign show_quantity_with_atc = false
+  assign has_standalone_quantity_block = false
 
   for block in section.blocks
     if block.type == 'size_chart'
@@ -48,10 +50,18 @@
         endfor
       endif
 
-    elsif block.type
+    elsif block.type == 'variant_picker'
+      assign show_quantity_with_atc = block.settings.show_quantity
+
+    elsif block.type == 'quantity_selector'
+      assign has_standalone_quantity_block = true
 
     endif
   endfor
+
+  if has_standalone_quantity_block
+    assign show_quantity_with_atc = false
+  endif
 -%}
 
 <div
@@ -357,7 +367,8 @@
                             product: product,
                             show_dynamic_checkout: block.settings.show_dynamic_checkout,
                             current_variant: current_variant,
-                            block: block
+                            block: block,
+                            show_quantity: show_quantity_with_atc
                           -%}
                         </div>
                       {%- endunless -%}
