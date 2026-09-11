@@ -184,9 +184,108 @@
         "align_text": "left",
         "narrow_column": false,
         "padding_top": 92,
-        "padding_bottom": 0,
+        "padding_bottom": 10,
         "padding_top_mb": 52,
         "padding_bottom_mb": 8
+      }
+    },
+    "custom_media_gallery_hxtBJd": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_zrmkNh": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_4zXzcf": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_UDKKm7": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_VNnzej": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_hzMWAX": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_BGdfKh": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_bjJ46g": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_hYmhJh": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zrmkNh",
+        "image_4zXzcf",
+        "image_UDKKm7",
+        "image_VNnzej",
+        "image_hzMWAX",
+        "image_BGdfKh",
+        "image_bjJ46g",
+        "image_hYmhJh"
+      ],
+      "name": "Media gallery - media only",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 10,
+        "padding_bottom": 92,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     }
   },
@@ -194,6 +293,7 @@
     "main",
     "custom_rich_text_columns_7BfVVt",
     "custom_media_gallery_YzDhtb",
-    "rich_text_CLRjJW"
+    "rich_text_CLRjJW",
+    "custom_media_gallery_hxtBJd"
   ]
 }
