@@ -92,6 +92,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-market.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -100,6 +101,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-pool.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -108,6 +110,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-red.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -116,6 +119,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-cups.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
