@@ -168,6 +168,59 @@
         "padding_bottom_mb": 40
       }
     },
+    "custom_image_columns_4cRtE3": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "step_XF9JqA": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "heading": "Tell us where you are",
+            "text": "<p>City, the kind of place it is, and who currently delivers your spirits. Two minutes.</p>"
+          }
+        },
+        "step_3DUAa6": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "heading": "We route you correctly",
+            "text": "<p>California goes to our distributor partner. Everywhere else, we come back with the options that exist in your state.</p>"
+          }
+        },
+        "step_xtF7w7": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "heading": "Taste it first",
+            "text": "<p>Samples and a staff tasting before you commit to a listing, and an invitation to the next event near you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_XF9JqA",
+        "step_3DUAa6",
+        "step_xtF7w7"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 3,
+        "gap": 32,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "form": {
       "type": "contact-form",
       "blocks": {
@@ -309,6 +362,7 @@
     "background_image_text_Kgi3P9",
     "rich_text_kTFHaV",
     "custom_rich_text_columns_RcFzWx",
+    "custom_image_columns_4cRtE3",
     "form",
     "rich_text_NVjGhb"
   ]
