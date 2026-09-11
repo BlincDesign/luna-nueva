@@ -1,3 +1,23 @@
+{% style %}
+  .heading-with-mail {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-bottom: 40px;
+    }
+
+    .heading-with-mail .section-header {
+        flex: 0 0 60%;
+        margin: 0;
+    }
+
+    .heading-with-mail .email-wrapper {
+        flex: 0 0 40%;
+        text-align: right;
+    }
+
+{% endstyle %}
+
 <div class="index-section">
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
     <div class="heading-with-mail">
