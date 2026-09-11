@@ -23,60 +23,65 @@
               {%- when '@app' -%}
                 {% render block %}
 
-                {%- when 'icon' -%}
-                  {% style %}
-                    #shopify-section-{{ section.id }} .newsletter-icon {
-                      display: block;
-                      width: {{ block.settings.icon_size }}px;
-                      height: {{ block.settings.icon_size }}px;
-                      margin: 0 auto;
-                      border-radius: 50%;
-                      background-color: {{ block.settings.icon_color }};
+              {%- when 'icon' -%}
+                {% style %}
+                  #shopify-section-{{ section.id }} .newsletter-icon {
+                    display: block;
+                    width: {{ block.settings.icon_size }}px;
+                    height: {{ block.settings.icon_size }}px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    background-color: {{ block.settings.icon_color }};
 
-                      {% if block.settings.icon_box_shadow != blank %}
-                        box-shadow: {{ block.settings.icon_box_shadow }};
-                      {% endif %}
-                    }
-                    
-                    .theme-block--{{ block.id }} {
-                      margin-bottom : {{ block.settings.margin_bottom }}px;
-                    }
+                    {% if block.settings.icon_box_shadow != blank %}
+                      box-shadow: {{ block.settings.icon_box_shadow }};
+                    {% endif %}
+                  }
 
-                  {% endstyle %}
-                  <div class="newsletter-icon"></div>
+                  .theme-block--{{ block.id }} {
+                    margin-bottom : {{ block.settings.margin_bottom }}px;
+                  }
+                {% endstyle %}
+                <div class="newsletter-icon"></div>
 
               {%- when 'title' -%}
                 {% style %}
-                    .theme-block--{{ block.id }}{
-                      max-width: {{ block.settings.text_width }}px;
-                      margin: 0 auto;
-                      margin-bottom : {{ block.settings.margin_bottom }}px;
-                    }
-                  {% endstyle %}
+                  .theme-block--{{ block.id }}{
+                    max-width: {{ block.settings.text_width }}px;
+                    margin: 0 auto;
+                    margin-bottom : {{ block.settings.margin_bottom }}px;
+                  }
+                {% endstyle %}
 
                 {%- if block.settings.title != blank -%}
-                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}</p>
+                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">
+                    {{ block.settings.title | escape }}
+                  </p>
                 {%- endif -%}
               {%- when 'text' -%}
                 {% style %}
-                    .theme-block--{{ block.id }}{
-                      max-width: {{ block.settings.text_width }}px;
-                      margin: 0 auto;
-                      margin-bottom : {{ block.settings.margin_bottom }}px;
-                      color: {{ block.settings.text_color }};
-                      opacity: .66;
-                    }
+                  .theme-block--{{ block.id }}{
+                    max-width: {{ block.settings.text_width }}px;
+                    margin: 0 auto;
+                    margin-bottom : {{ block.settings.margin_bottom }}px;
+                    color: {{ block.settings.text_color }};
+                    opacity: .66;
+                  }
 
-                    .theme-block--{{ block.id }} .enlarge-text * {
-                        margin: 0;
-                    }
-                  {% endstyle %}
+                  .theme-block--{{ block.id }} .enlarge-text * {
+                      margin: 0;
+                  }
+                {% endstyle %}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">
-                    <div class="enlarge-text">
-                      {{ block.settings.text }}
+                  {% if block.settings.enlarge_text %}
+                    <div class="rte">
+                      <div class="enlarge-text">
+                  {% endif %}
+                  {{ block.settings.text }}
+                  {% if block.settings.enlarge_text %}
                     </div>
-                  </div>
+                    </div>
+                  {% endif %}
                 {%- endif -%}
               {%- when 'form' -%}
                 {%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
@@ -95,7 +100,7 @@
             {%- render 'image-element',
               img: section.settings.image,
               sizeVariable: section.settings.image_width,
-              widths: '360, 540, 720, 1020',
+              widths: '360, 540, 720, 1020'
             -%}
           </div>
         </div>
@@ -105,5 +110,3 @@
 </div>
 
 {%- if section.settings.divider -%}</div>{%- endif -%}
-
-
