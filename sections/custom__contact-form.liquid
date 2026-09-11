@@ -44,7 +44,7 @@
 
             {%- case block.type -%}
 
-              {%- when 'name' -%}
+              {%- when 'text' -%}
 
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
@@ -255,8 +255,8 @@
 
   "blocks": [
     {
-      "type": "name",
-      "name": "Name",
+      "type": "text",
+      "name": "Text",
       "settings": [
         {
           "type": "text",
@@ -501,7 +501,7 @@
       "name": "Contact form",
       "blocks": [
         {
-          "type": "name"
+          "type": "text"
         },
         {
           "type": "email"
