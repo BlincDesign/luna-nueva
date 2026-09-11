@@ -1,150 +1,3 @@
-{%- style -%}
-    #shopify-section-{{ section.id }} .site-footer {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-      border-top: 1px solid rgba(249, 246, 241, .22);
-    }
-
-  @media only screen and (max-width:589px){
-    #shopify-section-{{ section.id }} .site-footer{
-        padding-top: {{ section.settings.padding_top_mb }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-    }
-  }
-
-
-  .footer__title-wrap {
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1.7px;
-      color: rgba(249, 246, 241, .66);
-  }
-
-  .footer-bottom-text {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      row-gap: 1rem;
-  }
-
-  .footer-bottom-text .site-footer__linklist {
-      display: flex;
-      flex-wrap: wrap;
-      column-gap: 10px;
-  }
-
-  .footer-bottom-text .short-text p {
-      margin: 0;
-      font-weight: 700;
-      color: #F9F6F1;
-      letter-spacing: .09em;
-      font-size: 11.84px;
-  }
-
-  .footer-bottom-text .footer__copyright {
-      margin: 0;
-      padding-bottom: 0;
-      color: rgba(249, 246, 241, .66);
-      font-size: 11.84px;
-      letter-spacing: .06em;
-  }
-
-  .footer-bottom-text .site-footer__linklist li {
-      margin-bottom: 0;
-  }
-
-  .footer-bottom-text .site-footer__linklist li a {
-      padding: 0;
-      color: rgba(249, 246, 241, .66);
-      font-size: 11.84px;
-      letter-spacing: .06em;
-  }
-
-  .site-footer .site-footer__bottom {
-      border-top: 1px solid rgba(249,246,241,.22);
-      padding-top: 30px;
-      margin-top: 80px;
-  }
-
-  .footer__logo-social {
-      display: block;
-  }
-
-  .footer__logo-social .info p {
-      margin: 0;
-      font-size: 12px;
-      color: rgba(249, 246, 241, .66);
-      line-height: 1.9;
-  }
-
-  .site-footer .site-footer__linklist a {
-      font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-      font-size: 14px;
-      color: rgba(249, 246, 241, .88);
-      padding: 6px 0;
-  }
-
-  .collapsible-content__inner .footer__collapsible {
-      padding-bottom: 0;
-  }
-
-  .footer__logo-social .footer__logo {
-      margin-bottom: 24px;
-  }
-
-  .footer-bottom-text .footer__copyright>span {
-      padding: 0;
-  }
-
-    .site-footer .grid__item:after {
-      content: unset;
-  }
-
-  @media only screen and (max-width:1080px){
-
-    .footer-column .footer-logo {
-        grid-column: 1 / -1;
-    }
-
-    .footer__logo-social .info p {
-        margin: 0;
-    }
-
-    .footer-column {
-        display: grid;
-        gap: clamp(28px, 3.4vw, 54px);
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .footer-column .grid__item {
-        width: 100%;
-    }
-
-  }
-
-  @media only screen and (max-width:680px){
-    .footer-column {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-column:after {
-        content: unset;
-    }
-  }
-
-  @media only screen and (max-width:589px){
-    .footer-column .footer-logo .footer__logo-social {
-        padding: 0;
-    }
-    .site-footer .site-footer__bottom {
-        margin-top: 56px;
-    }
-  }
-{%- endstyle -%}
-
 {%- liquid
   assign show_selectors = false
   assign currency_selector = false
@@ -163,69 +16,254 @@
   endif
 -%}
 
-<footer class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer">
+{%- style -%}
+  #shopify-section-{{ section.id }} .site-footer {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    border-top: 1px solid rgba(249, 246, 241, 0.22);
+  }
+
+  #shopify-section-{{ section.id }} .footer__title-wrap {
+    margin-bottom: 20px;
+    color: rgba(249, 246, 241, 0.66);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .site-footer__linklist {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .short-text p {
+    margin: 0;
+    color: #f9f6f1;
+    font-size: 11.84px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .footer__copyright {
+    margin: 0;
+    padding-bottom: 0;
+    color: rgba(249, 246, 241, 0.66);
+    font-size: 11.84px;
+    letter-spacing: 0.06em;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .site-footer__linklist li {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .site-footer__linklist li a {
+    padding: 0;
+    color: rgba(249, 246, 241, 0.66);
+    font-size: 11.84px;
+    letter-spacing: 0.06em;
+  }
+
+  #shopify-section-{{ section.id }} .site-footer__bottom {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(249, 246, 241, 0.22);
+  }
+
+  #shopify-section-{{ section.id }} .footer__logo-social {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .footer__logo-social .info p {
+    margin: 0;
+    color: rgba(249, 246, 241, 0.66);
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  #shopify-section-{{ section.id }} .site-footer .site-footer__linklist a {
+    padding: 6px 0;
+    color: rgba(249, 246, 241, 0.88);
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .collapsible-content__inner .footer__collapsible {
+    padding-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .footer__logo-social .footer__logo {
+    margin-bottom: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .footer-bottom-text .footer__copyright > span {
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .site-footer .grid__item::after {
+    content: none;
+  }
+
+  @media only screen and (min-width: 769px) {
+    #shopify-section-{{ section.id }} .footer__item {
+      width: var(--footer-item-width);
+    }
+  }
+
+  @media only screen and (max-width: 1080px) {
+    #shopify-section-{{ section.id }} .footer-column {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(28px, 3.4vw, 54px);
+    }
+
+    #shopify-section-{{ section.id }} .footer-column .footer-logo {
+      grid-column: 1 / -1;
+    }
+
+    #shopify-section-{{ section.id }} .footer-column .grid__item {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .footer__logo-social .info p {
+      margin: 0;
+    }
+  }
+
+  @media only screen and (max-width: 680px) {
+    #shopify-section-{{ section.id }} .footer-column {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #shopify-section-{{ section.id }} .footer-column::after {
+      content: none;
+    }
+  }
+
+  @media only screen and (max-width: 589px) {
+    #shopify-section-{{ section.id }} .site-footer {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+
+    #shopify-section-{{ section.id }} .footer-column .footer-logo .footer__logo-social {
+      padding: 0;
+    }
+
+    #shopify-section-{{ section.id }} .site-footer__bottom {
+      margin-top: 56px;
+    }
+  }
+{%- endstyle -%}
+
+{%- capture footer_blocks -%}
+  {%- assign row_width = 0 -%}
+
+  {%- for block in section.blocks -%}
+    {%- assign row_width = row_width | plus: block.settings.container_width -%}
+
+    {%- if row_width > 100 -%}
+      <div class="footer__clear small--hide"></div>
+      {%- assign row_width = row_width | minus: 100 -%}
+    {%- endif -%}
+
+    {%- case block.type -%}
+      {%- when 'logo_social' -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="grid__item footer-logo footer__item footer__item--{{ block.id }}"
+          style="--footer-item-width: {{ block.settings.container_width }}%;"
+        >
+          {%- render 'footer-logo-social', block: block -%}
+        </div>
+
+      {%- when 'custom' -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="grid__item footer__item footer__item--{{ block.id }}"
+          style="--footer-item-width: {{ block.settings.container_width }}%;"
+        >
+          {%- render 'footer-custom-text', block: block -%}
+        </div>
+
+      {%- when 'newsletter' -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="grid__item grid-newsletter footer__item footer__item--{{ block.id }}"
+          style="--footer-item-width: {{ block.settings.container_width }}%;"
+        >
+          {%- render 'footer-newsletter', block: block -%}
+        </div>
+
+      {%- when 'menu' -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="grid__item footer__item footer__item--{{ block.id }}"
+          style="--footer-item-width: {{ block.settings.container_width }}%;"
+        >
+          {%- render 'footer-menu', block: block -%}
+        </div>
+
+      {%- when 'follow_shop_cta' -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="grid__item footer__item footer__item--{{ block.id }}"
+          style="--footer-item-width: {{ block.settings.container_width }}%;"
+        >
+          {%- render 'follow-shop-cta', block: block -%}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<footer
+  class="site-footer"
+  data-section-id="{{ section.id }}"
+  data-section-type="footer"
+>
   <div class="page-width">
     <div class="grid footer-column">
-      {%- assign row_width = 0 -%}
-      {%- for block in section.blocks -%}
-        {%- assign row_width = row_width | plus: block.settings.container_width -%}
-        {%- style -%}
-          @media only screen and (min-width: 769px) {
-            .footer__item--{{ block.id }} {
-              width: {{ block.settings.container_width }}%;
-            }
-          }
-        {%- endstyle -%}
-
-        {%- if row_width > 100 -%}
-          <div class="footer__clear small--hide"></div>
-          {%- assign row_width = row_width | minus: 100 -%}
-        {%- endif -%}
-
-        {%- case block.type -%}
-          {%- when 'logo_social' -%}
-            <div {{ block.shopify_attributes }} class="grid__item footer-logo footer__item--{{ block.id }}">
-              {%- render 'footer-logo-social', block: block -%}
-            </div>
-          {%- when 'custom' -%}
-            <div {{ block.shopify_attributes }} class="grid__item footer__item--{{ block.id }}">
-              {%- render 'footer-custom-text', block: block -%}
-            </div>
-          {%- when 'newsletter' -%}
-            <div {{ block.shopify_attributes }} class="grid__item grid-newsletter footer__item--{{ block.id }}">
-              {%- render 'footer-newsletter', block: block -%}
-            </div>
-          {%- when 'menu' -%}
-            <div {{ block.shopify_attributes }} class="grid__item footer__item--{{ block.id }}">
-              {%- render 'footer-menu', block: block -%}
-            </div>
-          {%- when 'follow_shop_cta' -%}
-            <div {{ block.shopify_attributes }} class="grid__item footer__item--{{ block.id }}">
-              {%- render 'follow-shop-cta', block: block -%}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
+      {{ footer_blocks }}
     </div>
 
     <div class="site-footer__bottom">
       {%- if show_selectors -%}
-        {%- form 'localization', class: 'multi-selectors site-footer__bottom-block', data-disclosure-form: '' -%}
+        {%- form 'localization',
+          class: 'multi-selectors site-footer__bottom-block',
+          data-disclosure-form: ''
+        -%}
           {%- if locale_selector -%}
             <div class="multi-selectors__item">
-              <h2 class="visually-hidden" id="LangHeading">
+              <h2
+                class="visually-hidden"
+                id="FooterLangHeading-{{ section.id }}"
+              >
                 {{ 'general.language.dropdown_label' | t }}
               </h2>
 
-              <div id="FooterLocale" class="disclosure">
+              <div
+                id="FooterLocale-{{ section.id }}"
+                class="disclosure"
+              >
                 <button
                   type="button"
                   class="faux-select disclosure__toggle"
                   aria-expanded="false"
-                  aria-controls="LangList"
-                  aria-describedby="LangHeading"
+                  aria-controls="FooterLangList-{{ section.id }}"
+                  aria-describedby="FooterLangHeading-{{ section.id }}"
                   data-disclosure-toggle
                 >
                   {{ form.current_locale.endonym_name | capitalize }}
+
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -233,12 +271,22 @@
                     class="icon icon--wide icon-chevron-down"
                     viewBox="0 0 28 16"
                   >
-                    <path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/>
+                    <path
+                      d="m1.57 1.59 12.76 12.77L27.1 1.59"
+                      stroke-width="2"
+                      stroke="#000"
+                      fill="none"
+                    />
                   </svg>
                 </button>
-                <ul id="LangList" class="disclosure-list" data-disclosure-list>
+
+                <ul
+                  id="FooterLangList-{{ section.id }}"
+                  class="disclosure-list"
+                  data-disclosure-list
+                >
                   {%- for locale in form.available_locales -%}
-                    <li class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}">
+                    <li class="disclosure-list__item{% if locale.iso_code == form.current_locale.iso_code %} disclosure-list__item--current{% endif %}">
                       <a
                         class="disclosure-list__option"
                         href="#"
@@ -254,30 +302,36 @@
                     </li>
                   {%- endfor -%}
                 </ul>
+
                 <input
                   type="hidden"
                   name="locale_code"
-                  id="LocaleSelector"
                   value="{{ form.current_locale.iso_code }}"
                   data-disclosure-input
-                />
+                >
               </div>
             </div>
           {%- endif -%}
 
           {%- if currency_selector -%}
             <div class="multi-selectors__item">
-              <h2 class="visually-hidden" id="CurrencyHeading">
+              <h2
+                class="visually-hidden"
+                id="FooterCurrencyHeading-{{ section.id }}"
+              >
                 {{ 'general.currency.dropdown_label' | t }}
               </h2>
 
-              <div id="FooterCurrency" class="disclosure">
+              <div
+                id="FooterCurrency-{{ section.id }}"
+                class="disclosure"
+              >
                 <button
                   type="button"
                   class="faux-select disclosure__toggle"
                   aria-expanded="false"
-                  aria-controls="CurrencyList"
-                  aria-describedby="CurrencyHeading"
+                  aria-controls="FooterCurrencyList-{{ section.id }}"
+                  aria-describedby="FooterCurrencyHeading-{{ section.id }}"
                   data-disclosure-toggle
                 >
                   {%- if section.settings.show_currency_flags -%}
@@ -287,10 +341,13 @@
                       aria-hidden="true"
                     ></span>
                   {%- endif -%}
+
                   <span class="currency-options__label currency-options__label--inline">
-                    {{ localization.country.name }} ({{ localization.country.currency.iso_code }}
+                    {{ localization.country.name }}
+                    ({{ localization.country.currency.iso_code }}
                     {{ localization.country.currency.symbol }})
                   </span>
+
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -298,12 +355,22 @@
                     class="icon icon--wide icon-chevron-down"
                     viewBox="0 0 28 16"
                   >
-                    <path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/>
+                    <path
+                      d="m1.57 1.59 12.76 12.77L27.1 1.59"
+                      stroke-width="2"
+                      stroke="#000"
+                      fill="none"
+                    />
                   </svg>
                 </button>
-                <ul id="CurrencyList" class="disclosure-list" data-disclosure-list>
+
+                <ul
+                  id="FooterCurrencyList-{{ section.id }}"
+                  class="disclosure-list"
+                  data-disclosure-list
+                >
                   {%- for country in localization.available_countries -%}
-                    <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                    <li class="disclosure-list__item{% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
                       <a
                         class="disclosure-list__option"
                         href="#"
@@ -320,14 +387,17 @@
                             aria-hidden="true"
                           ></span>
                         {%- endif -%}
+
                         <span class="currency-options__label currency-options__label--inline">
-                          {{ country.name }} ({{ country.currency.iso_code }}
+                          {{ country.name }}
+                          ({{ country.currency.iso_code }}
                           {{ country.currency.symbol }})
                         </span>
                       </a>
                     </li>
                   {%- endfor -%}
                 </ul>
+
                 <input
                   type="hidden"
                   name="country_code"
@@ -360,20 +430,21 @@
         {%- endif -%}
 
         {%- if section.settings.menu != blank -%}
-          <div class="footer_bottom_linklist">
-            {% assign footer_menu = linklists[section.settings.menu] %}
-            {% if footer_menu.links.size > 0 %}
+          {%- assign footer_menu = linklists[section.settings.menu] -%}
+
+          {%- if footer_menu.links.size > 0 -%}
+            <div class="footer_bottom_linklist">
               <ul class="no-bullets site-footer__linklist">
-                {% for link in footer_menu.links %}
+                {%- for link in footer_menu.links -%}
                   <li>
                     <a href="{{ link.url }}">
                       {{ link.title }}
                     </a>
                   </li>
-                {% endfor %}
+                {%- endfor -%}
               </ul>
-            {% endif %}
-          </div>
+            </div>
+          {%- endif -%}
         {%- endif -%}
 
         <div class="footer__copyright site-footer__bottom-block">
@@ -386,7 +457,10 @@
               {%- endif -%}
             </span>
           {%- endif -%}
-          <span class="footer__powered_by">{{ powered_by_link }}</span>
+
+          <span class="footer__powered_by">
+            {{ powered_by_link }}
+          </span>
         </div>
       </div>
     </div>
