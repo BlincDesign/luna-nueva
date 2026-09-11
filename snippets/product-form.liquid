@@ -47,7 +47,7 @@
     {% endunless %}
   >
     <span class="add-to-cart--price">
-      {{ product.selected_variant.price | money_without_trailing_zeros }}
+      {{ current_variant.price | money_without_trailing_zeros }}
     </span>
     <span data-add-to-cart-text data-default-text="{{ default_text }}">
       {{ button_text }}
