@@ -501,13 +501,13 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "section_height": "650px",
+        "section_height": "750px",
         "mobile_height": "300px",
-        "parallax": true,
+        "parallax": false,
         "style": "arrows",
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": false
       }
     }
   },
