@@ -41,6 +41,16 @@
             "required": true
           }
         },
+        "dropdown_riWikX": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Subject",
+            "field_name": "Subject",
+            "placeholder": "Select an option",
+            "options": "General Inquiry\nProduct Question\nOrder Question\nOther",
+            "required": false
+          }
+        },
         "message_8dMiPW": {
           "type": "message",
           "settings": {
@@ -59,6 +69,7 @@
       "block_order": [
         "name_XrHUCE",
         "email_rXGTWn",
+        "dropdown_riWikX",
         "message_8dMiPW",
         "submit_R79h4R"
       ],
