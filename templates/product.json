@@ -29,6 +29,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
+            "display_mode": "siblings",
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
@@ -51,7 +52,9 @@
         },
         "character_texture_kbtB9k": {
           "type": "character-texture",
-          "settings": {}
+          "settings": {
+            "label": "Character & Texture"
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -102,6 +105,8 @@
         "share"
       ],
       "settings": {
+        "color_scheme": "",
+        "stylized_bg": false,
         "sku_enable": false,
         "image_size": "medium",
         "product_zoom_enable": true,
