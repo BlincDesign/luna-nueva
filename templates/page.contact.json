@@ -31,6 +31,8 @@
           "type": "name",
           "settings": {
             "label": "Venue or business",
+            "placeholder": "Enter your name",
+            "width": "half",
             "required": true
           }
         },
@@ -38,6 +40,8 @@
           "type": "email",
           "settings": {
             "label": "Email",
+            "placeholder": "Enter your email",
+            "width": "half",
             "required": true
           }
         },
@@ -45,9 +49,10 @@
           "type": "dropdown",
           "settings": {
             "label": "Subject",
-            "field_name": "Subject",
             "placeholder": "Select an option",
+            "field_name": "Subject",
             "options": "General Inquiry\nProduct Question\nOrder Question\nOther",
+            "width": "full",
             "required": false
           }
         },
@@ -55,6 +60,8 @@
           "type": "message",
           "settings": {
             "label": "Message",
+            "placeholder": "Enter your message",
+            "width": "full",
             "rows": 5,
             "required": true
           }
