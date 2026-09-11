@@ -140,7 +140,7 @@
         "stylized_bg": false,
         "full_width": false,
         "content_width": 35,
-        "flow_right": false,
+        "flow_right": true,
         "tile_width_min": 240,
         "tile_width_max": 360,
         "row_height": 220,
