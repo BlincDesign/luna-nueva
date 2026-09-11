@@ -1,1 +1,118 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"title":"Get in touch"}}},"block_order":["heading"],"settings":{"align_text":"center","narrow_column":true}},"form":{"type":"contact-form","settings":{"title":"Contact us","text":"","show_phone":false,"narrow_column":true}}},"order":["main","rich-text","form"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "text_Pjcgeg": {
+          "type": "text",
+          "settings": {
+            "label": "Venue or business",
+            "placeholder": "The name over the door",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_RiQ8rM": {
+          "type": "text",
+          "settings": {
+            "label": "City",
+            "placeholder": "Santa Monica",
+            "width": "half",
+            "required": false
+          }
+        },
+        "name_LA9LMG": {
+          "type": "name",
+          "settings": {
+            "label": "Your name",
+            "placeholder": "First and last",
+            "width": "half",
+            "required": true
+          }
+        },
+        "email_rB4gp8": {
+          "type": "email",
+          "settings": {
+            "label": "Email",
+            "placeholder": "you@venue.com",
+            "width": "half",
+            "required": true
+          }
+        },
+        "dropdown_VUKUVr": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Kind of account",
+            "placeholder": "Select an option",
+            "options": "General Inquiry\nProduct Question\nOrder Question\nOther",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_mxirFY": {
+          "type": "text",
+          "settings": {
+            "label": "Current distributor (optional)",
+            "placeholder": "Who delivers your spirits",
+            "width": "half",
+            "required": false
+          }
+        },
+        "message_DeM8LR": {
+          "type": "message",
+          "settings": {
+            "label": "Anything we should know (optional)",
+            "placeholder": "Volume, timing, an event you have coming up",
+            "width": "full",
+            "rows": 5,
+            "required": true
+          }
+        },
+        "submit_7mikpi": {
+          "type": "submit",
+          "settings": {
+            "label": "SEND ENQUIRY",
+            "info": "<p>Trade enquiries only. You must be 21 or<br/>older. We reply to everything, usually<br/>within two working days.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Pjcgeg",
+        "text_RiQ8rM",
+        "name_LA9LMG",
+        "email_rB4gp8",
+        "dropdown_VUKUVr",
+        "text_mxirFY",
+        "message_DeM8LR",
+        "submit_7mikpi"
+      ],
+      "settings": {
+        "pre_title": "Stock Luna Nueva",
+        "title": "Where should we send it?",
+        "text": "",
+        "email_heading": "Email us",
+        "email": "hello@lunanuevatequila.com",
+        "narrow_column": false,
+        "show_hCaptcha_text": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form"
+  ]
+}
