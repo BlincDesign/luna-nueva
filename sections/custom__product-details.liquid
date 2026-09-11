@@ -40,7 +40,7 @@
           assign bg_color = product.metafields.custom.grid_background.value
           assign image = product.metafields.custom.grid_image
 
-          assign character-texture = product.metafields.custom.character-texture
+          assign character_texture = product.metafields.custom.character_texture
         -%}
 
         <div class="pdc" style="--pdc-bg: {{ bg_color }};">
@@ -63,8 +63,8 @@
           <div class="pdc__body mb-text-center">
             <h3 class="pdc__title">{{ product.title | default: product.title }}</h3>
 
-            {%- if character-texture != blank -%}
-              <p class="pdc__desc">{{ character-texture }}</p>
+            {%- if character_texture != blank -%}
+              <p class="pdc__desc">{{ character_texture }}</p>
             {%- endif -%}
 
             {% render 'product-details-table', product: product %}
