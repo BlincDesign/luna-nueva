@@ -114,21 +114,36 @@
         "mobile_padding_bottom": 8
       }
     },
-    "background_image_text_Kgi3P9": {
-      "type": "background-image-text",
-      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+    "slideshow_xJWHir": {
+      "type": "slideshow",
+      "blocks": {
+        "image_khrPqj": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_khrPqj"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
-        "layout": "left",
-        "height": 580,
+        "section_height": "650px",
+        "mobile_height": "auto",
         "parallax": true,
-        "parallax_direction": "top",
-        "lazyload_images": true,
-        "subtitle": "",
-        "title": "",
-        "text": "",
-        "button_label": "",
-        "button_link": ""
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
       }
     },
     "rich_text_kTFHaV": {
@@ -408,21 +423,36 @@
         "padding_bottom_mb": 48
       }
     },
-    "background_image_text_tMxjV4": {
-      "type": "background-image-text",
-      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+    "slideshow_RPk6bm": {
+      "type": "slideshow",
+      "blocks": {
+        "image_qwdH6T": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/hero-coast.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_qwdH6T"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "image": "shopify://shop_images/hero-coast.jpg",
-        "layout": "left",
-        "height": 580,
+        "section_height": "650px",
+        "mobile_height": "auto",
         "parallax": true,
-        "parallax_direction": "top",
-        "lazyload_images": true,
-        "subtitle": "",
-        "title": "",
-        "text": "",
-        "button_label": "",
-        "button_link": ""
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
       }
     }
   },
@@ -430,12 +460,12 @@
     "main",
     "custom_rich_text_columns_mLjXw9",
     "custom_stats_nEGdxw",
-    "background_image_text_Kgi3P9",
+    "slideshow_xJWHir",
     "rich_text_kTFHaV",
     "custom_rich_text_columns_RcFzWx",
     "custom_image_columns_4cRtE3",
     "form",
     "rich_text_NVjGhb",
-    "background_image_text_tMxjV4"
+    "slideshow_RPk6bm"
   ]
 }
