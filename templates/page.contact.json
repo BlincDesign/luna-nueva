@@ -14,6 +14,57 @@
       "disabled": true,
       "settings": {}
     },
+    "custom_rich_text_columns_mLjXw9": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_eryWVW": {
+          "type": "preheading",
+          "settings": {
+            "title": "TRADE & WHOLESALE",
+            "position": "left"
+          }
+        },
+        "heading_gz8wex": {
+          "type": "heading",
+          "settings": {
+            "title": "Carry Luna Nueva.",
+            "position": "left"
+          }
+        },
+        "text_wr4amG": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Additive-free tequila from Jalisco, already poured in 104 verified accounts across California. If your room is the kind of room it belongs in, tell us where you are.</p>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_eryWVW",
+        "heading_gz8wex",
+        "text_wr4amG"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "left_column_width": 60,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 30,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "form": {
       "type": "contact-form",
       "blocks": {
@@ -151,6 +202,7 @@
   },
   "order": [
     "main",
+    "custom_rich_text_columns_mLjXw9",
     "form",
     "rich_text_NVjGhb"
   ]
