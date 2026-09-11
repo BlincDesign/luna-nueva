@@ -88,6 +88,18 @@
       flex-basis: min(78vw, 352px);
     }
   }
+
+  .image-columns .image-columns__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-columns .image-columns__item .image-columns__menu,
+  .image-columns .image-columns__item .image-columns__menu .image-columns__ingredients {
+    flex: 1;
+  }
+
+
 {%- endstyle -%}
 
 {%- capture blocks_markup -%}
