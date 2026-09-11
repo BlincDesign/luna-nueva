@@ -14,6 +14,37 @@
       "disabled": true,
       "settings": {}
     },
+    "advanced_content_TYUUi4": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_wRTDXK": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_6yBQWW": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_wRTDXK",
+        "liquid_6yBQWW"
+      ],
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
     "custom_rich_text_columns_mLjXw9": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -460,6 +491,7 @@
   },
   "order": [
     "main",
+    "advanced_content_TYUUi4",
     "custom_rich_text_columns_mLjXw9",
     "custom_stats_nEGdxw",
     "slideshow_xJWHir",
