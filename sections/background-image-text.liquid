@@ -1,6 +1,66 @@
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    --background-media-text-height: {{ section.settings.height }}px;
+    .background-media-text {
+    position: relative;
+  }
+
+  .background-media-text__container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .background-media-text__bottom-text {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 22px 80px;
+    background: rgba(45, 49, 53, 0.95);
+    color: #f9f6f1;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: 589px) {
+    .background-media-text {
+      position: relative;
+    }
+
+    .background-media-text__inner {
+      position: relative;
+    }
+
+    .background-media-text__container,
+    .background-media-text__video {
+      height: 240px;
+      position: relative;
+    }
+
+    .background-media-text__aligner {
+      margin: -11px -11px 11px;
+    }
+
+    .background-media-text__text {
+      margin: 0 20px;
+      padding: 30px;
+      width: auto;
+    }
+
+    .background-media-text__bottom-text {
+      padding: 16px 20px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    .background-media-text.loading:after,
+    .background-media-text.loading:before {
+      top: 117px;
+    }
   }
 
   @media only screen and (min-width: 590px) {
@@ -8,7 +68,7 @@
     #shopify-section-{{ section.id }} .background-media-text__image,
     #shopify-section-{{ section.id }} .background-media-text__video,
     #shopify-section-{{ section.id }} .background-media-text__spacer {
-      min-height: var(--background-media-text-height);
+      min-height: {{ section.settings.height }}px;
     }
   }
 {%- endstyle -%}
@@ -18,31 +78,45 @@
   data-section-type="background-image"
   class="background-media-text background-media-text--{{ section.id }} background-media-text--{{ section.settings.height }} loaded"
   data-aos="background-media-text__animation"
-  {% if section.settings.parallax %}data-parallax="true"{% endif %}>
-
+  {% if section.settings.parallax %}
+    data-parallax="true"
+  {% endif %}
+>
   <div class="background-media-text__container">
     {%- if section.settings.parallax -%}
       <parallax-image class="parallax-container">
-        <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ section.settings.parallax_direction }}">
+        <div
+          class="parallax-image"
+          data-movement="15%"
+          data-parallax-image
+          data-angle="{{ section.settings.parallax_direction }}"
+        >
     {%- endif -%}
 
-      {%- if section.settings.image != blank -%}
-
-        {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
-        {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
-        {%- render 'image-element',
-          img: section.settings.image,
-          img_width: 2400,
-          loading: section.settings.lazyload_images,
-          classes: classes,
-        -%}
-      {%- else -%}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      {%- endif -%}
+    {%- if section.settings.image != blank -%}
+      {% assign classes = 'image-fit background-media-text__image background-media-text__image--'
+        | append: section.id
+      %}
+      {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+      {%- render 'image-element',
+        img: section.settings.image,
+        img_width: 2400,
+        loading: section.settings.lazyload_images,
+        classes: classes
+      -%}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
 
     {%- if section.settings.parallax -%}
-        </div>
+      </div>
       </parallax-image>
+    {%- endif -%}
+
+    {%- if section.settings.bottom_text != blank -%}
+      <div class="background-media-text__bottom-text">
+        {{ section.settings.bottom_text | escape }}
+      </div>
     {%- endif -%}
   </div>
 
@@ -81,6 +155,12 @@
   "name": "t:sections.background-image-text.name",
   "class": "index-section--flush",
   "settings": [
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom text",
+      "default": "NOTHING ADDED. NOTHING HIDDEN."
+    },
     {
       "type": "image_picker",
       "id": "image",
