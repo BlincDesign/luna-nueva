@@ -82,37 +82,89 @@
         "lazyload_images": true
       }
     },
-    "custom_rich_text_columns_HPXzNC": {
-      "type": "custom__rich-text-columns",
+    "rich_text_kTFHaV": {
+      "type": "rich-text",
       "blocks": {
-        "heading_9Prkte": {
+        "heading_RRaqPB": {
           "type": "heading",
           "settings": {
-            "title": "A bottle your guests already want to be seen with.",
-            "position": "left"
+            "title": "A bottle your guests already want to be seen with."
+          }
+        },
+        "divider_7KBFxr": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#000",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
           }
         }
       },
       "block_order": [
-        "heading_9Prkte"
+        "heading_RRaqPB",
+        "divider_7KBFxr"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "left",
+        "narrow_column": false,
+        "padding_top": 120,
+        "padding_bottom": 10,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 12
+      }
+    },
+    "custom_rich_text_columns_RcFzWx": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_dHFEkD": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Nothing added. Nothing hidden.</strong></p>",
+            "position": "left"
+          }
+        },
+        "text_Jj8UTM": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<ul><li><strong>Additive-free, in full.</strong> 100% Blue Weber agave, made at the Vivanco family distillery in Los Altos de Jalisco.</li><li><strong>Three expressions, one list.</strong> Silver unaged, Reposado at seven months, Añejo at thirteen. 750ml, 40% Alc/Vol.</li><li><strong>We show up.</strong> Monthly events at top restaurants, bars and shops across Southern California. Stocking accounts are where those nights happen.</li><li><strong>A generation that doesn’t settle.</strong> Clean, additive-free, and made with the same integrity they bring to every other choice.</li></ul>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_dHFEkD",
+        "text_Jj8UTM"
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
-        "left_column_width": 50,
+        "left_column_width": 30,
         "left_text_align": "left",
-        "left_vertical_align": "flex-end",
-        "right_column_width": 30,
+        "left_vertical_align": "flex-start",
+        "right_column_width": 60,
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40,
-        "padding_top_mb": 40,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 40
       }
     },
@@ -255,7 +307,8 @@
     "main",
     "custom_rich_text_columns_mLjXw9",
     "background_image_text_Kgi3P9",
-    "custom_rich_text_columns_HPXzNC",
+    "rich_text_kTFHaV",
+    "custom_rich_text_columns_RcFzWx",
     "form",
     "rich_text_NVjGhb"
   ]
