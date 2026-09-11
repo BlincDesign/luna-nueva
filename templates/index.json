@@ -38,7 +38,7 @@
       ],
       "name": "Image slider with text",
       "settings": {
-        "color_scheme": "scheme-6",
+        "color_scheme": "scheme-2",
         "header_secondary": false,
         "stylized_bg": false,
         "slider_autoplay_enabled": true,

@@ -1,4 +1,17 @@
 {% style %}
+
+  #contact-form-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #contact-form-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+
   .heading-with-mail {
         display: flex;
         flex-wrap: wrap;
@@ -52,7 +65,8 @@
 
 {% endstyle %}
 
-<div class="index-section color-{{ section.settings.color_scheme }}">
+<div class="index-section color-{{ section.settings.color_scheme }}"
+id="contact-form-{{ section.id }}">
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
     <div class="heading-with-mail">
       {%- if section.settings.title != blank
@@ -363,6 +377,54 @@
       "id": "show_hCaptcha_text",
       "label": "Show hCaptcha text",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
     }
   ],
 
