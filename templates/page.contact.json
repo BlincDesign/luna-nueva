@@ -101,13 +101,18 @@
         "submit_7mikpi"
       ],
       "settings": {
+        "color_scheme": "scheme-1",
         "pre_title": "Stock Luna Nueva",
         "title": "Where should we send it?",
         "text": "",
         "email_heading": "Email us",
         "email": "hello@lunanuevatequila.com",
         "narrow_column": false,
-        "show_hCaptcha_text": false
+        "show_hCaptcha_text": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     }
   },
