@@ -313,6 +313,7 @@
       "next_product": "Next: {{ title }}",
       "sale_price": "Sale price",
       "regular_price": "Regular price",
+      "sibling_switcher_label": "Choose expression",
       "from_text_html": "from {{ price }}",
       "reviews": "Reviews"
     },

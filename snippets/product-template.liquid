@@ -56,7 +56,7 @@
 
 <div
   id="ProductSection-{{ section_id }}"
-  class="product-section color-{{ product.metafields.color_scheme }} background-image"
+  class="product-section{% if product.metafields.custom.color_scheme.value != blank %} color-{{ product.metafields.custom.color_scheme.value }}{% else %} color-{{ section.settings.color_scheme }}{% endif %}{% if section.settings.stylized_bg %} background-image{% endif %}"
   data-section-id="{{ section_id }}"
   data-product-id="{{ product.id }}"
   data-section-type="product"
@@ -153,12 +153,18 @@
                     </div>
 
                   {%- when 'character-texture' -%}
-                    <div class="character-texture">
-                      <p class="label">Character & Texture</p>
-                      <p>
-                        {{ product.metafields.custom.character_texture }}
-                      </p>
-                    </div>
+                    {%- assign character_texture = product.metafields.custom.character_texture.value -%}
+                    {%- if character_texture != blank -%}
+                      <div class="product-block" {{ block.shopify_attributes }}>
+                        <p class="label">{{ block.settings.label }}</p>
+                        <div class="rte">{{ character_texture }}</div>
+                      </div>
+                    {%- elsif request.design_mode -%}
+                      <div class="product-block" {{ block.shopify_attributes }}>
+                        <p class="label">{{ block.settings.label }}</p>
+                        <div class="rte">Add a value to this product's "Character & texture" metafield (custom.character_texture) to show text here.</div>
+                      </div>
+                    {%- endif -%}
                   {%- when 'tab' -%}
                     <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
                       {% assign tab_id = block.id | append: product.id %}
@@ -287,54 +293,58 @@
                   {%- when 'variant_picker' -%}
                     <div
                       class="product-block"
-                      {% if block.settings.product_dynamic_variants_enable %}
+                      {% if block.settings.display_mode == 'variants' and block.settings.product_dynamic_variants_enable %}
                         data-dynamic-variants-enabled
                       {% endif %}
                       {{ block.shopify_attributes }}
                     >
-                      {% unless product.has_only_default_variant %}
-                        {%- for option in product.options_with_values -%}
-                          {%- liquid
-                            if block.settings.color_swatches
-                              assign is_color = false
-                              assign color_option_index = 0
-                              assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase
-                              assign color_option_index = forloop.index0
-                              assign downcased_option = option.name | downcase
-                              if downcased_option contains swatch_trigger
-                                assign is_color = true
-                              elsif swatch_trigger == 'color' and downcased_option contains 'colour'
-                                assign is_color = true
+                      {%- if block.settings.display_mode == 'siblings' -%}
+                        {%- render 'sibling-switcher', product: product -%}
+                      {%- else -%}
+                        {% unless product.has_only_default_variant %}
+                          {%- for option in product.options_with_values -%}
+                            {%- liquid
+                              if block.settings.color_swatches
+                                assign is_color = false
+                                assign color_option_index = 0
+                                assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase
+                                assign color_option_index = forloop.index0
+                                assign downcased_option = option.name | downcase
+                                if downcased_option contains swatch_trigger
+                                  assign is_color = true
+                                elsif swatch_trigger == 'color' and downcased_option contains 'colour'
+                                  assign is_color = true
+                                endif
                               endif
-                            endif
-                          -%}
+                            -%}
 
-                          {% if block.settings.picker_type == 'button' %}
-                            {%- render 'variant-button',
-                              block: block,
-                              product: product,
-                              form_id: form_id,
-                              section_id: section_id,
-                              option: option,
-                              forloop: forloop,
-                              variant_labels: block.settings.variant_labels,
-                              is_color: is_color,
-                              color_option_index: color_option_index,
-                              connect_to_sizechart: connect_to_sizechart,
-                              sizechart_index: sizechart_index
-                            -%}
-                          {% else %}
-                            {%- render 'variant-dropdown',
-                              product: product,
-                              form_id: form_id,
-                              section_id: section_id,
-                              option: option,
-                              forloop: forloop,
-                              variant_labels: block.settings.variant_labels
-                            -%}
-                          {% endif %}
-                        {%- endfor -%}
-                      {% endunless %}
+                            {% if block.settings.picker_type == 'button' %}
+                              {%- render 'variant-button',
+                                block: block,
+                                product: product,
+                                form_id: form_id,
+                                section_id: section_id,
+                                option: option,
+                                forloop: forloop,
+                                variant_labels: block.settings.variant_labels,
+                                is_color: is_color,
+                                color_option_index: color_option_index,
+                                connect_to_sizechart: connect_to_sizechart,
+                                sizechart_index: sizechart_index
+                              -%}
+                            {% else %}
+                              {%- render 'variant-dropdown',
+                                product: product,
+                                form_id: form_id,
+                                section_id: section_id,
+                                option: option,
+                                forloop: forloop,
+                                variant_labels: block.settings.variant_labels
+                              -%}
+                            {% endif %}
+                          {%- endfor -%}
+                        {% endunless %}
+                      {%- endif -%}
                     </div>
                   {%- when 'buy_buttons' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
