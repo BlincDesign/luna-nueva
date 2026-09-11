@@ -16,7 +16,6 @@
     },
     "form": {
       "type": "contact-form",
-      "disabled": true,
       "settings": {
         "title": "Contact us",
         "text": "",
@@ -114,6 +113,8 @@
         "pre_title": "Stock Luna Nueva",
         "title": "Where should we send it?",
         "text": "",
+        "email_heading": "Email us",
+        "email": "hello@lunanuevatequila.com",
         "narrow_column": false
       }
     }
