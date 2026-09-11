@@ -73,6 +73,7 @@
           "settings": {
             "eyebrow": "Bring the Party",
             "heading": "The bottle you grab before the night starts.",
+            "heading_size": "h5",
             "show_divider": false,
             "body": "<p>Add your description here.</p>",
             "button_label": "See what's coming up",

@@ -203,7 +203,11 @@
         <p class="media-gallery__eyebrow">{{ content_block.settings.eyebrow }}</p>
       {% endif %}
       {% if content_block.settings.heading != blank %}
-        <h2 class="media-gallery__heading">{{ content_block.settings.heading }}</h2>
+        {% assign heading_tag = content_block.settings.heading_size %}
+
+<{{ heading_tag }} class="media-gallery__heading">
+  {{ content_block.settings.heading }}
+</{{ heading_tag }}>
       {% endif %}
 
       {%- if content_block.settings.show_divider -%}
