@@ -26,9 +26,9 @@
           "settings": {
             "logo": "shopify://shop_images/logo-green.png",
             "desktop_logo_height": 72,
+            "container_width": 20,
             "info": "<p>Born in the Mountains.<br/>Made for the Sea.<br/>Guided by the Moon.</p><p>NOM 1414 · Vivanco Family Distillery<br/>Los Altos de Jalisco, Mexico</p>",
-            "show_social_icons": true,
-            "container_width": 43
+            "show_social_icons": true
           }
         },
         "menu-1": {
