@@ -13,9 +13,26 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "hero_video_g7Yadw": {
+      "type": "hero-video",
+      "name": "t:sections.hero-video.presets.video_hero.name",
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/6531ae64e7744adcaaeb8187daec8227.mp4",
+        "overlay_opacity": 0,
+        "section_height": "650px",
+        "mobile_height": "auto"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_video_g7Yadw"
   ]
 }
