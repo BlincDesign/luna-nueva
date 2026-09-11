@@ -27,31 +27,66 @@
     "custom_contact_form_Br8bLH": {
       "type": "custom__contact-form",
       "blocks": {
+        "text_8GVUpq": {
+          "type": "text",
+          "settings": {
+            "label": "Venue or business",
+            "placeholder": "The name over the door",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_pDaQ6G": {
+          "type": "text",
+          "settings": {
+            "label": "City",
+            "placeholder": "Santa Monica",
+            "width": "half",
+            "required": false
+          }
+        },
+        "name_DeTJjf": {
+          "type": "name",
+          "settings": {
+            "label": "Your name",
+            "placeholder": "First and last",
+            "width": "half",
+            "required": true
+          }
+        },
         "email_rXGTWn": {
           "type": "email",
           "settings": {
             "label": "Email",
-            "placeholder": "Enter your email",
-            "width": "full",
+            "placeholder": "you@venue.com",
+            "width": "half",
             "required": true
           }
         },
         "dropdown_riWikX": {
           "type": "dropdown",
           "settings": {
-            "label": "Subject",
+            "label": "Kind of account",
             "placeholder": "Select an option",
-            "field_name": "Subject",
             "options": "General Inquiry\nProduct Question\nOrder Question\nOther",
-            "width": "full",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_gURCe6": {
+          "type": "text",
+          "settings": {
+            "label": "Current distributor (optional)",
+            "placeholder": "Who delivers your spirits",
+            "width": "half",
             "required": false
           }
         },
         "message_8dMiPW": {
           "type": "message",
           "settings": {
-            "label": "Message",
-            "placeholder": "Enter your message",
+            "label": "Anything we should know (optional)",
+            "placeholder": "Volume, timing, an event you have coming up",
             "width": "full",
             "rows": 5,
             "required": true
@@ -65,8 +100,12 @@
         }
       },
       "block_order": [
+        "text_8GVUpq",
+        "text_pDaQ6G",
+        "name_DeTJjf",
         "email_rXGTWn",
         "dropdown_riWikX",
+        "text_gURCe6",
         "message_8dMiPW",
         "submit_R79h4R"
       ],
