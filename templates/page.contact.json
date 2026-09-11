@@ -120,11 +120,58 @@
         "narrow_column": false,
         "show_hCaptcha_text": false
       }
+    },
+    "custom_stats_tA7t4Y": {
+      "type": "custom__stats",
+      "blocks": {
+        "stat_C8EnL6": {
+          "type": "stat",
+          "settings": {
+            "heading": "100+",
+            "text": "<p>Happy Customers</p>"
+          }
+        },
+        "stat_43FkWQ": {
+          "type": "stat",
+          "settings": {
+            "heading": "100+",
+            "text": "<p>Happy Customers</p>"
+          }
+        },
+        "stat_idm7D8": {
+          "type": "stat",
+          "settings": {
+            "heading": "100+",
+            "text": "<p>Happy Customers</p>"
+          }
+        },
+        "stat_fUF6aA": {
+          "type": "stat",
+          "settings": {
+            "heading": "100+",
+            "text": "<p>Happy Customers</p>"
+          }
+        }
+      },
+      "block_order": [
+        "stat_C8EnL6",
+        "stat_43FkWQ",
+        "stat_idm7D8",
+        "stat_fUF6aA"
+      ],
+      "name": "Stats",
+      "settings": {
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
+      }
     }
   },
   "order": [
     "main",
     "form",
-    "custom_contact_form_Br8bLH"
+    "custom_contact_form_Br8bLH",
+    "custom_stats_tA7t4Y"
   ]
 }
