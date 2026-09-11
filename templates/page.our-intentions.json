@@ -193,22 +193,6 @@
     "custom_rich_text_columns_WrjTQ8": {
       "type": "custom__rich-text-columns",
       "blocks": {
-        "divider_HhCft4": {
-          "type": "divider",
-          "settings": {
-            "position": "left",
-            "enable_divider": true,
-            "divider_bg": "#E0A768",
-            "divider_width": 100,
-            "divider_height": 1,
-            "enable_icon": false,
-            "icon_color": "#f9f6f1",
-            "icon": "chat",
-            "icon_size": 30,
-            "margin_top": 30,
-            "margin_bottom": 30
-          }
-        },
         "text_9njbG9": {
           "type": "text",
           "settings": {
@@ -219,7 +203,6 @@
         }
       },
       "block_order": [
-        "divider_HhCft4",
         "text_9njbG9"
       ],
       "name": "Rich text columns",
