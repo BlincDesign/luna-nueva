@@ -454,7 +454,7 @@
         "autoplay": true,
         "autoplay_speed": 5,
         "lazyload_images": true,
-        "content_color_scheme": ""
+        "content_color_scheme": "scheme-6"
       }
     }
   },
