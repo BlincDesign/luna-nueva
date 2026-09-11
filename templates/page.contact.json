@@ -116,10 +116,42 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "rich_text_NVjGhb": {
+      "type": "rich-text",
+      "blocks": {
+        "button_GegnPJ": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://collections/all",
+            "link_text": "SHOP luna nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_GegnPJ"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 0,
+        "padding_bottom": 48,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 48
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "rich_text_NVjGhb"
   ]
 }
