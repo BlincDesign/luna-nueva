@@ -27,10 +27,10 @@
     "custom_contact_form_Br8bLH": {
       "type": "custom__contact-form",
       "blocks": {
-        "name_XrHUCE": {
-          "type": "name",
+        "text_MwCBUp": {
+          "type": "text",
           "settings": {
-            "label": "Venue or business",
+            "label": "Name",
             "placeholder": "Enter your name",
             "width": "half",
             "required": true
@@ -74,7 +74,7 @@
         }
       },
       "block_order": [
-        "name_XrHUCE",
+        "text_MwCBUp",
         "email_rXGTWn",
         "dropdown_riWikX",
         "message_8dMiPW",
