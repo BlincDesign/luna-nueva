@@ -83,6 +83,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "video_one": "shopify://files/videos/dispo_b52ca513-a3f7-4c91-9b1e-3db24db0de36.mp4",
             "image_one_caption": "",
             "image_two_caption": ""
           }
