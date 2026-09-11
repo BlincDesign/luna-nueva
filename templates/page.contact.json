@@ -84,7 +84,7 @@
       "settings": {
         "title": "Where should we send it?",
         "text": "",
-        "narrow_column": true
+        "narrow_column": false
       }
     }
   },
