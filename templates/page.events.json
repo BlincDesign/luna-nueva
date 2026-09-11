@@ -491,6 +491,7 @@
             "link_text": "",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/ev-ice_96cb0382-0469-4175-a186-e4007821e11c.jpg",
+            "image_mobile": "shopify://shop_images/ev-ice_194e87c3-32e3-468b-82e8-6b87fff6b937.jpg",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
