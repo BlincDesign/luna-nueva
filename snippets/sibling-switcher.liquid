@@ -1,0 +1,41 @@
+{% comment %}
+  Renders a row linking to a product's "sibling" products (e.g. other
+  expressions/finishes of the same item), used by the variant_picker block
+  when its "Display as" setting is set to Siblings.
+
+  Reads product.metafields.custom.sibling_products, a product-list metafield,
+  and links to each entry by product title. A sibling can carry its own
+  custom.color_scheme metafield (the ID of a theme color scheme, e.g.
+  "scheme-2") to preview that product's colors on its option.
+
+  Accepts:
+  - product {Object}
+{% endcomment %}
+
+{%- liquid
+  assign siblings = product.metafields.custom.sibling_products.value
+-%}
+
+{%- if siblings != blank -%}
+  <div class="sibling-switcher" role="group" aria-label="{{ 'products.general.sibling_switcher_label' | t }}">
+    {%- for sibling in siblings -%}
+      {%- assign sibling_scheme = sibling.metafields.custom.color_scheme.value -%}
+
+      {%- if sibling.id == product.id -%}
+        <span class="sibling-switcher__option is-active" aria-current="page">
+          {%- if sibling_scheme != blank -%}
+            <span class="sibling-switcher__dot color-{{ sibling_scheme }}" aria-hidden="true"></span>
+          {%- endif -%}
+          {{ sibling.title }}
+        </span>
+      {%- else -%}
+        <a href="{{ sibling.url }}" class="sibling-switcher__option">
+          {%- if sibling_scheme != blank -%}
+            <span class="sibling-switcher__dot color-{{ sibling_scheme }}" aria-hidden="true"></span>
+          {%- endif -%}
+          {{ sibling.title }}
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
