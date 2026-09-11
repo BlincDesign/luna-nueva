@@ -64,36 +64,6 @@
             "show_gift_card_recipient": false,
             "margin_bottom": 10
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "is_tab": false,
-            "margin_bottom": 10
-          }
-        },
-        "tab": {
-          "type": "tab",
-          "settings": {
-            "title": "Size guide",
-            "content": "",
-            "page": "",
-            "margin_bottom": 10
-          }
-        },
-        "contact": {
-          "type": "contact",
-          "settings": {
-            "title": "Ask a question",
-            "phone": false,
-            "margin_bottom": 10
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "margin_bottom": 10
-          }
         }
       },
       "block_order": [
@@ -103,11 +73,7 @@
         "price_mEWtYa",
         "separator_wEjmRV",
         "variant_picker",
-        "buy_buttons",
-        "description",
-        "tab",
-        "contact",
-        "share"
+        "buy_buttons"
       ],
       "settings": {
         "color_scheme": "",
