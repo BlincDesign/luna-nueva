@@ -154,11 +154,47 @@
         "padding_top_mb": 52,
         "padding_bottom_mb": 52
       }
+    },
+    "custom_rich_text_columns_K6qJhy": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_jEgCRD": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h5>Connection is at the core of Luna Nueva, for a generation drinking to honor a moment. Their moment. Choosing what goes in the glass is how they take care of themselves and each other. Clean, additive-free, and made without compromise, because we believe what you bring to the table should be as good as everyone sitting around it.</h5>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_jEgCRD"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 70,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
     "custom_rich_text_columns_Lwn8bC",
-    "custom_media_gallery_m7dD7V"
+    "custom_media_gallery_m7dD7V",
+    "custom_rich_text_columns_K6qJhy"
   ]
 }
