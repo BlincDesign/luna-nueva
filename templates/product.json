@@ -121,7 +121,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "stylized_bg": false,
+        "stylized_bg": true,
         "sku_enable": false,
         "image_size": "medium",
         "product_zoom_enable": true,
