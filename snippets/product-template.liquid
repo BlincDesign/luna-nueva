@@ -160,7 +160,8 @@
                         <div class="rte enlarge-text">
                           <span>
                             {{ character_texture }}
-                          </div>
+                          </span>
+                        </div>
                       </div>
                     {%- endif -%}
                   {%- when 'tab' -%}
@@ -291,7 +292,9 @@
                   {%- when 'variant_picker' -%}
                     <div
                       class="product-block"
-                      {% if block.settings.display_mode == 'variants' and block.settings.product_dynamic_variants_enable %}
+                      {% if block.settings.display_mode == 'variants'
+                        and block.settings.product_dynamic_variants_enable
+                      %}
                         data-dynamic-variants-enabled
                       {% endif %}
                       {{ block.shopify_attributes }}
