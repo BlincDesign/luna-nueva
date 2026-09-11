@@ -477,6 +477,38 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "slideshow_m7Cqia": {
+      "type": "slideshow",
+      "blocks": {
+        "image_KEn99F": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/ev-ice_96cb0382-0469-4175-a186-e4007821e11c.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_KEn99F"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
     }
   },
   "order": [
@@ -486,6 +518,7 @@
     "rich_text_CLRjJW",
     "custom_media_gallery_hxtBJd",
     "rich_text_VVnapw",
-    "custom_media_gallery_EmpQyy"
+    "custom_media_gallery_EmpQyy",
+    "slideshow_m7Cqia"
   ]
 }
