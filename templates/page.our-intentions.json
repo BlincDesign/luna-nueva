@@ -228,6 +228,15 @@
     "newsletter_bWQygA": {
       "type": "newsletter",
       "blocks": {
+        "icon_y6hL73": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 24
+          }
+        },
         "title_T3xejM": {
           "type": "title",
           "settings": {
@@ -253,6 +262,7 @@
         }
       },
       "block_order": [
+        "icon_y6hL73",
         "title_T3xejM",
         "text_LVNkFk",
         "form_FBcXjw"
