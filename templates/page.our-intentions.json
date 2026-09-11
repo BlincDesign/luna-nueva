@@ -64,10 +64,95 @@
         "padding_top_mb": 56,
         "padding_bottom_mb": 26
       }
+    },
+    "custom_media_gallery_m7dD7V": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_K93THW": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Bring the Party",
+            "heading": "The bottle you grab before the night starts.",
+            "show_divider": false,
+            "body": "<p>Add your description here.</p>",
+            "button_label": "See what's coming up",
+            "button_url": ""
+          }
+        },
+        "image_93CRGK": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_aRLfH9": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_t38c3z": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_r9DgNr": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_zCYx7K": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_K93THW",
+        "image_93CRGK",
+        "image_aRLfH9",
+        "image_t38c3z",
+        "image_r9DgNr",
+        "image_zCYx7K"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
-    "custom_rich_text_columns_Lwn8bC"
+    "custom_rich_text_columns_Lwn8bC",
+    "custom_media_gallery_m7dD7V"
   ]
 }
