@@ -526,6 +526,7 @@
       "block_order": [
         "image_jLKMPd"
       ],
+      "custom_css": [],
       "name": "t:sections.fading-images.presets.fading_image_hero.name",
       "settings": {
         "title_lines": "2",
@@ -540,7 +541,7 @@
         "color_overlay_opacity": 30,
         "desktop_height": "650px",
         "mobile_height": "100vh",
-        "lazyload_images": true
+        "lazyload_images": false
       }
     }
   },
