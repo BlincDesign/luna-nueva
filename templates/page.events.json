@@ -499,6 +499,7 @@
       "block_order": [
         "image_KEn99F"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "section_height": "650px",
@@ -507,6 +508,38 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "fading_images_U9GxTR": {
+      "type": "fading-images",
+      "blocks": {
+        "image_jLKMPd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ev-ice_96cb0382-0469-4175-a186-e4007821e11c.jpg",
+            "slide_title1": "",
+            "slide_title2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_jLKMPd"
+      ],
+      "name": "t:sections.fading-images.presets.fading_image_hero.name",
+      "settings": {
+        "title_lines": "2",
+        "title_font": "body",
+        "title_size": 45,
+        "title_color": "#ffffff",
+        "title_bg_color": "rgba(0,0,0,0)",
+        "text_align": "vertical-center horizontal-center",
+        "link": "",
+        "slide_speed": 5,
+        "color_overlay": "#00000000",
+        "color_overlay_opacity": 30,
+        "desktop_height": "650px",
+        "mobile_height": "100vh",
         "lazyload_images": true
       }
     }
@@ -519,6 +552,7 @@
     "custom_media_gallery_hxtBJd",
     "rich_text_VVnapw",
     "custom_media_gallery_EmpQyy",
-    "slideshow_m7Cqia"
+    "slideshow_m7Cqia",
+    "fading_images_U9GxTR"
   ]
 }
