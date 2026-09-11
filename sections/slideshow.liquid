@@ -1,8 +1,10 @@
 <div
   data-section-id="{{ section.id }}"
   data-section-type="slideshow-section"
-  {% if section.settings.parallax %}data-parallax="true"{% endif %}>
-
+  {% if section.settings.parallax %}
+    data-parallax="true"
+  {% endif %}
+>
   {%- if section.blocks.size > 0 -%}
     <div class="slideshow-wrapper">
       {%- if section.settings.autoplay and section.blocks.size > 1 -%}
@@ -15,11 +17,21 @@
 
         <button type="button" class="visually-hidden slideshow__pause" aria-live="polite">
           <span class="slideshow__pause-stop">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause" viewBox="0 0 10 13"><path d="M0 0h3v13H0zm7 0h3v13H7z" fill-rule="evenodd"/></svg>
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause" viewBox="0 0 10 13">
+              <path d="M0 0h3v13H0zm7 0h3v13H7z" fill-rule="evenodd"/>
+            </svg>
             <span class="icon__fallback-text">{{ 'sections.slideshow.pause_slideshow' | t }}</span>
           </span>
           <span class="slideshow__pause-play">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="18.24 17.35 24.52 28.3"><path fill="#323232" d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/></svg>
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+              class="icon icon-play"
+              viewBox="18.24 17.35 24.52 28.3"
+            >
+              <path fill="#323232" d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/>
+            </svg>
             <span class="icon__fallback-text">{{ 'sections.slideshow.play_slideshow' | t }}</span>
           </span>
         </button>
@@ -69,7 +81,8 @@
       {%- endif -%}
 
       <div class="{% if natural_height %}hero-natural--{{ section.id }}{% endif %}{% if natural_mobile_height %} hero-natural-mobile--{{ section.id }}{% endif %}">
-        <div id="Slideshow-{{ section.id }}"
+        <div
+          id="Slideshow-{{ section.id }}"
           class="hero hero--{{ section.settings.section_height }} hero--{{ section.id }} hero--mobile--{{ section.settings.mobile_height }} loading loading--delayed"
           {% if natural_height %}
             data-natural="true"
@@ -83,14 +96,15 @@
           {% if section.settings.style == 'dots' %}
             data-dots="true"
           {% endif %}
-          data-slide-count="{{ section.blocks.size }}">
+          data-slide-count="{{ section.blocks.size }}"
+        >
           {%- for block in section.blocks -%}
             <div
               {{ block.shopify_attributes }}
               class="slideshow__slide slideshow__slide--{{ block.id }}"
               data-index="{{ forloop.index0 }}"
-              data-id="{{ block.id }}">
-
+              data-id="{{ block.id }}"
+            >
               {%- style -%}
                 .slideshow__slide--{{ block.id }} .hero__title {
                   font-size: {{ block.settings.title_size | times: 0.5 }}px;
@@ -133,63 +147,65 @@
 
               {%- if section.settings.parallax -%}
                 <parallax-image class="parallax-container">
-                  <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ block.settings.parallax_direction }}">
+                  <div
+                    class="parallax-image"
+                    data-movement="15%"
+                    data-parallax-image
+                    data-angle="{{ block.settings.parallax_direction }}"
+                  >
               {%- endif -%}
 
-                <div class="hero__image-wrapper{% unless hero_text %} hero__image-wrapper--no-overlay{% endunless %}">
+              <div class="hero__image-wrapper{% unless hero_text %} hero__image-wrapper--no-overlay{% endunless %}">
+                {%- if block.settings.image != blank -%}
+                  {% comment %} Full width images so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+                  {%- liquid
+                    if forloop.index == 1
+                      assign loading = section.settings.lazyload_images
+                    else
+                      assign loading = true
+                    endif
+                  -%}
 
-                  {%- if block.settings.image != blank -%}
+                  {% if has_mobile_image %}
+                    {% assign desktop_classes = 'small--hide hero__image hero__image--' | append: block.id %}
+                  {% else %}
+                    {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
+                  {% endif %}
 
-                    {% comment %} Full width images so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
-                    {%- liquid
-                      if forloop.index == 1
-                        assign loading = section.settings.lazyload_images
-                      else
-                        assign loading = true
-                      endif
-                    -%}
-
-                    {% if has_mobile_image %}
-                      {% assign desktop_classes = 'small--hide hero__image hero__image--' | append: block.id %}
-                    {% else %}
-                      {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
-                    {% endif %}
+                  {%- render 'image-element',
+                    img: block.settings.image,
+                    img_width: 2400,
+                    loading: loading,
+                    classes: desktop_classes
+                  -%}
+                  {%- if has_mobile_image -%}
+                    {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
 
                     {%- render 'image-element',
-                      img: block.settings.image,
-                      img_width: 2400,
+                      img: block.settings.image_mobile,
+                      img_width: 1200,
                       loading: loading,
-                      classes: desktop_classes,
+                      classes: mobile_classes
                     -%}
-                    {%- if has_mobile_image -%}
-                      {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
-
-                      {%- render 'image-element',
-                        img: block.settings.image_mobile,
-                        img_width: 1200,
-                        loading: loading,
-                        classes: mobile_classes,
-                      -%}
-                    {%- endif -%}
-                  {%- else -%}
-                    {%- if template == 'password' -%}
-                      {%- assign password_image = 'password-page-background.jpg' -%}
-                      {%- render 'image-element',
-                        asset: password_image,
-                        loading: section.settings.lazyload_images,
-                        host: 'theme',
-                        type: 'asset',
-                        classes: 'hero__image',
-                      -%}
-                    {%- else -%}
-                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                    {%- endif -%}
                   {%- endif -%}
-
-                </div>
+                {%- else -%}
+                  {%- if template == 'password' -%}
+                    {%- assign password_image = 'password-page-background.jpg' -%}
+                    {%- render 'image-element',
+                      asset: password_image,
+                      loading: section.settings.lazyload_images,
+                      host: 'theme',
+                      type: 'asset',
+                      classes: 'hero__image'
+                    -%}
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
 
               {%- if section.settings.parallax -%}
-                  </div>
+                </div>
                 </parallax-image>
               {%- endif -%}
 
@@ -198,36 +214,42 @@
               {%- endif -%}
 
               {%- if hero_text -%}
-                <div class="hero__text-wrap color-{{ section.settings.content_color_scheme }}">
-                  <div class="page-width">
-                    <div class="hero__text-content {{ block.settings.text_align }}">
-
-                      {%- unless block.settings.title == blank -%}
-                        <h2 class="h1 hero__title">
-                          <div class="animation-cropper"><div class="animation-contents">
-                          {{ block.settings.title | newline_to_br }}
-                          </div></div>
-                        </h2>
-                      {%- endunless -%}
-                      {%- if block.settings.subheading or block.settings.link -%}
-                        {%- unless block.settings.subheading == blank -%}
-                          <div class="hero__subtitle">
-                            <div class="animation-cropper"><div class="animation-contents">
-                              {{ block.settings.subheading | escape }}
-                            </div></div>
-                          </div>
+                <div class="hero__text-wrap" style="display: flex; align-items: flex-end;">
+                  <div style="flex: 1; height: fit-content;" class="color-{{ section.settings.content_color_scheme }}">
+                    <div class="page-width">
+                      <div class="hero__text-content {{ block.settings.text_align }}">
+                        {%- unless block.settings.title == blank -%}
+                          <h2 class="h1 hero__title">
+                            <div class="animation-cropper">
+                              <div class="animation-contents">
+                                {{ block.settings.title | newline_to_br }}
+                              </div>
+                            </div>
+                          </h2>
                         {%- endunless -%}
-                        {%- if block.settings.link_text != blank -%}
-                          <div class="hero__link">
-                            <div class="animation-cropper"><div class="animation-contents">
-                              <a href="{{ block.settings.link }}" class="btn btn--inverse">
-                                {{ block.settings.link_text }}
-                              </a>
-                            </div></div>
-                          </div>
+                        {%- if block.settings.subheading or block.settings.link -%}
+                          {%- unless block.settings.subheading == blank -%}
+                            <div class="hero__subtitle">
+                              <div class="animation-cropper">
+                                <div class="animation-contents">
+                                  {{ block.settings.subheading | escape }}
+                                </div>
+                              </div>
+                            </div>
+                          {%- endunless -%}
+                          {%- if block.settings.link_text != blank -%}
+                            <div class="hero__link">
+                              <div class="animation-cropper">
+                                <div class="animation-contents">
+                                  <a href="{{ block.settings.link }}" class="btn btn--inverse">
+                                    {{ block.settings.link_text }}
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          {%- endif -%}
                         {%- endif -%}
-                      {%- endif -%}
-
+                      </div>
                     </div>
                   </div>
                 </div>
