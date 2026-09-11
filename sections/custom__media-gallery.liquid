@@ -187,7 +187,7 @@
       grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
     }
   }
-  
+
   @media screen and (max-width: 900px) {
      #shopify-section-{{ section.id }} .media-gallery__content {
       flex-basis: 100%;
@@ -426,6 +426,30 @@
           "id": "heading",
           "label": "Heading",
           "default": "The bottle you grab before the night starts."
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ],
+          "default": "h2"
         },
         {
           "type": "checkbox",
