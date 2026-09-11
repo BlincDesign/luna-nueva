@@ -157,7 +157,10 @@
                     {%- if character_texture != blank -%}
                       <div class="product-block block-character-texture" {{ block.shopify_attributes }}>
                         <p class="label">{{ block.settings.label }}</p>
-                        <div class="rte enlarge-text">{{ character_texture }}</div>
+                        <div class="rte enlarge-text">
+                          <span>
+                            {{ character_texture }}
+                          </div>
                       </div>
                     {%- endif -%}
                   {%- when 'tab' -%}
