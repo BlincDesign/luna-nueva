@@ -65,6 +65,22 @@
         "padding_bottom_mb": 40
       }
     },
+    "background_image_text_Kgi3P9": {
+      "type": "background-image-text",
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 550,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
     "form": {
       "type": "contact-form",
       "blocks": {
@@ -203,6 +219,7 @@
   "order": [
     "main",
     "custom_rich_text_columns_mLjXw9",
+    "background_image_text_Kgi3P9",
     "form",
     "rich_text_NVjGhb"
   ]
