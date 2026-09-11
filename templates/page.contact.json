@@ -429,11 +429,11 @@
         "image_qwdH6T": {
           "type": "image",
           "settings": {
-            "title": "",
+            "title": "dgdfg",
             "title_size": 80,
-            "subheading": "",
-            "link": "",
-            "link_text": "",
+            "subheading": "dfgdfgdf",
+            "link": "#",
+            "link_text": "dfgfdgf",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/hero-coast.jpg",
             "parallax_direction": "top",
