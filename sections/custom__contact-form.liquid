@@ -44,7 +44,7 @@
 
             {%- case block.type -%}
 
-              {%- when 'text' -%}
+              {%- when 'name' -%}
 
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
@@ -65,6 +65,27 @@
                     {% if block.settings.required %}required{% endif %}
                   >
                 </div>
+                
+                {%- when 'text' -%}
+
+                <div
+                    class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
+                    {{ block.shopify_attributes }}
+                >
+                    <label for="ContactFormText-{{ block.id }}">
+                    {{ block.settings.label }}
+                    </label>
+
+                    <input
+                    type="text"
+                    id="ContactFormText-{{ block.id }}"
+                    class="input-full"
+                    name="contact[{{ block.settings.field_name | handleize }}]"
+                    placeholder="{{ block.settings.placeholder | escape }}"
+                    {% if block.settings.required %}required{% endif %}
+                    >
+                </div>
+
 
 
               {%- when 'email' -%}
@@ -255,20 +276,20 @@
 
   "blocks": [
     {
-      "type": "text",
-      "name": "Text",
+      "type": "name",
+      "name": "Name",
       "settings": [
         {
           "type": "text",
           "id": "label",
           "label": "Label",
-          "default": "Label"
+          "default": "Name"
         },
         {
           "type": "text",
           "id": "placeholder",
           "label": "Placeholder",
-          "default": "Placeholder"
+          "default": "Enter your name"
         },
         {
           "type": "select",
@@ -293,6 +314,53 @@
           "default": true
         }
       ]
+    },
+    {
+    "type": "text",
+    "name": "Text",
+    "settings": [
+        {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Text"
+        },
+        {
+        "type": "text",
+        "id": "placeholder",
+        "label": "Placeholder",
+        "default": "Enter your text"
+        },
+        {
+        "type": "text",
+        "id": "field_name",
+        "label": "Field name",
+        "default": "Additional Information",
+        "info": "Used as the field name when submitting the form."
+        },
+        {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "half",
+        "options": [
+            {
+            "value": "half",
+            "label": "Half width"
+            },
+            {
+            "value": "full",
+            "label": "Full width"
+            }
+        ]
+        },
+        {
+        "type": "checkbox",
+        "id": "required",
+        "label": "Required",
+        "default": false
+        }
+    ]
     },
 
     {
@@ -500,6 +568,9 @@
     {
       "name": "Contact form",
       "blocks": [
+        {
+          "type": "name"
+        },
         {
           "type": "text"
         },
