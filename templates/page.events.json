@@ -196,6 +196,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "image_one": "shopify://shop_images/ev-crowd.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
