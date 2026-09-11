@@ -878,3 +878,94 @@ a.pdl__right {
 .product__quantity {
     flex: 0 0 100px;
 }
+
+
+
+
+
+.tasting-notes {
+  --tasting-notes-chip-bg: rgba(0, 0, 0, 0.06);
+  --tasting-notes-icon-size: 1rem;
+  --tasting-notes-chip-icon-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid rgba(45, 49, 53, 0.24);
+  background: rgba(249, 246, 241, 0.32);
+  border-radius: 15px;
+}
+
+.tasting-notes__group {
+  flex: 1;
+  padding: 14px 16px 16px;
+}
+
+.tasting-notes__group + .tasting-notes__group {
+  border-left: 1px solid rgba(45, 49, 53, 0.24);
+}
+
+.tasting-notes__heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tasting-notes__heading-icon {
+  flex: none;
+  align-self: baseline;
+  display: block;
+  width: var(--tasting-notes-icon-size);
+  height: var(--tasting-notes-icon-size);
+  line-height: 0;
+  color: currentColor;
+}
+
+.tasting-notes__heading-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tasting-notes__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+}
+
+.tasting-notes__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.42rem 0.58rem 0.42rem 0.46rem;
+  border-radius: 30px;
+  background: var(--tasting-notes-chip-bg);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.tasting-notes__chip-icon {
+  flex: none;
+  display: block;
+  width: var(--tasting-notes-chip-icon-size);
+  height: var(--tasting-notes-chip-icon-size);
+  opacity: 0.72;
+}
+
+.tasting-notes__chip-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: none;
+}
+
+@media screen and (max-width: 749px) {
+  .tasting-notes {
+    flex-direction: column;
+  }
+}
