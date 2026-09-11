@@ -124,29 +124,37 @@
     "custom_stats_tA7t4Y": {
       "type": "custom__stats",
       "blocks": {
+        "stat_LYiaft": {
+          "type": "stat",
+          "settings": {
+            "heading": "NOM 1414",
+            "text": "<p>Vivanco family distillery</p>"
+          }
+        },
         "stat_C8EnL6": {
           "type": "stat",
           "settings": {
-            "heading": "100+",
-            "text": "<p>Happy Customers</p>"
+            "heading": "100%",
+            "text": "<p>Blue Weber agave</p>"
           }
         },
         "stat_43FkWQ": {
           "type": "stat",
           "settings": {
-            "heading": "100+",
-            "text": "<p>Happy Customers</p>"
+            "heading": "3",
+            "text": "<p>Expressions · 750ml</p>"
           }
         },
         "stat_idm7D8": {
           "type": "stat",
           "settings": {
-            "heading": "100+",
-            "text": "<p>Happy Customers</p>"
+            "heading": "104",
+            "text": "<p>California accounts</p>"
           }
         }
       },
       "block_order": [
+        "stat_LYiaft",
         "stat_C8EnL6",
         "stat_43FkWQ",
         "stat_idm7D8"
