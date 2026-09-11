@@ -193,24 +193,16 @@
     "custom_rich_text_columns_WrjTQ8": {
       "type": "custom__rich-text-columns",
       "blocks": {
-        "heading_Rg6Qyw": {
-          "type": "heading",
-          "settings": {
-            "title": "Where it actually gets poured.",
-            "position": "left"
-          }
-        },
         "text_9njbG9": {
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Luna Nueva lives in the moment before — open, free, and completely alive. <em><strong>Like the new moon, the anticipation of a night that could go anywhere.</strong></em></p>",
+            "text": "<h4>Luna Nueva lives in the moment before — open, free, and completely alive. <em><strong>Like the new moon, the anticipation of a night that could go anywhere.</strong></em></h4>",
             "position": "right"
           }
         }
       },
       "block_order": [
-        "heading_Rg6Qyw",
         "text_9njbG9"
       ],
       "name": "Rich text columns",
@@ -221,7 +213,7 @@
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 50,
+        "right_column_width": 55,
         "right_text_align": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
