@@ -73,9 +73,9 @@
           "settings": {
             "eyebrow": "Bring the Party",
             "heading": "The bottle you grab before the night starts.",
-            "heading_size": "h5",
-            "show_divider": false,
-            "body": "<p>Add your description here.</p>",
+            "heading_size": "h3",
+            "show_divider": true,
+            "body": "<h6>The right people. The right room. The feeling that the night is already going somewhere before anyone has poured the first drink.</h6><p>This is a brand for people who love to gather. Who make the table longer, turn a quiet evening into something everyone talks about later, and understand that the best moments are rarely planned and never performed.</p>",
             "button_label": "See what's coming up",
             "button_url": ""
           }
