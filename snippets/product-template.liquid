@@ -552,6 +552,13 @@
                         </div>
                       </div>
                     </div>
+                    {%- when 'tasting_notes' -%}
+                      <div
+                        class="tasting-notes-block"
+                        {{ block.shopify_attributes }}
+                      >
+                        {%- render 'tasting-notes', product: product -%}
+                      </div>
                   {%- when 'custom' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       {{ block.settings.code }}
