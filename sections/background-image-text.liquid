@@ -1,3 +1,9 @@
+{% style %}
+  .background-media-text--{{ section.id }}.background-media-text--{{ section.settings.height }} {
+    height: {{ section.settings.height }}px;
+  } 
+{% endstyle %}
+
 <div
   data-section-id="{{ section.id }}"
   data-section-type="background-image"
