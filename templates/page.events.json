@@ -64,10 +64,95 @@
         "padding_top_mb": 52,
         "padding_bottom_mb": 52
       }
+    },
+    "custom_media_gallery_YzDhtb": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_yFwm4a": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "",
+            "heading": "We’ve poured at Venice Fest and the LA Times Food Bowl, and we show up at the table, not just on the shelf.",
+            "show_divider": true,
+            "body": "<p>These gatherings are more than just tastings — they’re immersive experiences that introduce new customers to the craft and culture behind Luna Nueva. Whether you’re discovering us for the first time or already part of the family, each one is a chance to connect, celebrate, and raise a glass to good tequila.</p>",
+            "button_label": "Get invited to the next one",
+            "button_url": ""
+          }
+        },
+        "image_X4d8cK": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_m9HtBA": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_BtTkwb": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_eyeYTa": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_DTqMtb": {
+          "type": "image",
+          "settings": {
+            "tall": false,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_yFwm4a",
+        "image_X4d8cK",
+        "image_m9HtBA",
+        "image_BtTkwb",
+        "image_eyeYTa",
+        "image_DTqMtb"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
+      }
     }
   },
   "order": [
     "main",
-    "custom_rich_text_columns_7BfVVt"
+    "custom_rich_text_columns_7BfVVt",
+    "custom_media_gallery_YzDhtb"
   ]
 }
