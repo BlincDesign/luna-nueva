@@ -95,7 +95,8 @@
         "submit_R79h4R": {
           "type": "submit",
           "settings": {
-            "label": "SEND ENQUIRY"
+            "label": "SEND ENQUIRY",
+            "info": "<p>Trade enquiries only. You must be 21 or<br/>older. We reply to everything, usually<br/>within two working days.</p>"
           }
         }
       },
