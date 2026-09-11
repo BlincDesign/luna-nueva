@@ -1,13 +1,13 @@
 {% style %}
   .background-media-text--{{ section.id }}.background-media-text--{{ section.settings.height }} {
-    height: {{ section.settings.height }}px;
+    min-height: {{ section.settings.height }}px;
   } 
 {% endstyle %}
 
 <div
   data-section-id="{{ section.id }}"
   data-section-type="background-image"
-  class="background-media-text background-media-text--{{ section.id }} background-media-text--{{ section.settings.height }} loaded"
+  class="background-media-text background-media-text--{{ section.id }} loaded"
   data-aos="background-media-text__animation"
   {% if section.settings.parallax %}data-parallax="true"{% endif %}>
 
