@@ -42,9 +42,22 @@
       <div class="tasting-notes__group">
         <h3 class="tasting-notes__heading">
           <span class="tasting-notes__heading-icon">
-            {%- render 'icon-tasting-sense', sense: 'aroma' -%}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="12" cy="12" r="8.5"></circle>
+              <path d="M6.6 10.2q1.8-1.6 3.6 0t3.6 0 3.6 0"></path>
+              <path d="M6.6 14.6q1.8-1.6 3.6 0t3.6 0 3.6 0"></path>
+            </svg>
           </span>
-          <span>{{ 'products.product.tasting_notes.aroma' | t }}</span>
+          <span>Aroma</span>
         </h3>
         <ul class="tasting-notes__list" role="list">
           {%- for note in aroma_notes -%}
@@ -65,9 +78,21 @@
       <div class="tasting-notes__group">
         <h3 class="tasting-notes__heading">
           <span class="tasting-notes__heading-icon">
-            {%- render 'icon-tasting-sense', sense: 'palate' -%}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="12" cy="12" r="8.5"></circle>
+              <path d="M12 3.5v17M3.5 12h17"></path>
+            </svg>
           </span>
-          <span>{{ 'products.product.tasting_notes.palate' | t }}</span>
+          <span>Palate</span>
         </h3>
         <ul class="tasting-notes__list" role="list">
           {%- for note in palate_notes -%}

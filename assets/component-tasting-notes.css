@@ -1,0 +1,115 @@
+/* ============================================================
+   Component: Tasting Notes (Aroma / Palate)
+   ------------------------------------------------------------
+   Custom properties are named locally and fall back to neutral
+   values so this drops into any template safely. Point them at
+   the theme's real color/border tokens once available — e.g.
+     --tasting-notes-border: var(--color-border);
+     --tasting-notes-fg-muted: rgb(var(--color-foreground) / 0.7);
+     --tasting-notes-chip-bg: rgb(var(--color-foreground) / 0.06);
+   ============================================================ */
+
+.tasting-notes {
+  --tasting-notes-border: rgba(0, 0, 0, 0.14);
+  --tasting-notes-border-soft: rgba(0, 0, 0, 0.09);
+  --tasting-notes-fg-muted: rgba(0, 0, 0, 0.7);
+  --tasting-notes-chip-bg: rgba(0, 0, 0, 0.06);
+  --tasting-notes-icon-size: 1rem;
+  --tasting-notes-chip-icon-size: 13px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--tasting-notes-border);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.tasting-notes__group {
+  min-width: 0;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.tasting-notes__group + .tasting-notes__group {
+  border-left: 1px solid var(--tasting-notes-border-soft);
+}
+
+.tasting-notes__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.42rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tasting-notes-fg-muted);
+}
+
+.tasting-notes__heading-icon {
+  flex: none;
+  align-self: baseline;
+  display: block;
+  width: var(--tasting-notes-icon-size);
+  height: var(--tasting-notes-icon-size);
+  line-height: 0;
+  color: currentColor;
+}
+
+.tasting-notes__heading-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tasting-notes__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tasting-notes__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.42rem 0.58rem 0.42rem 0.46rem;
+  border-radius: 999px;
+  background: var(--tasting-notes-chip-bg);
+  font-size: 0.845rem;
+  line-height: 1;
+}
+
+.tasting-notes__chip-icon {
+  flex: none;
+  display: block;
+  width: var(--tasting-notes-chip-icon-size);
+  height: var(--tasting-notes-chip-icon-size);
+  opacity: 0.72;
+}
+
+/* The metaobject's svg field is a raw <svg> string, so size and color
+   are enforced on the wrapper rather than trusted from the markup. */
+.tasting-notes__chip-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: none;
+}
+
+.tasting-notes__chip-label {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .tasting-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .tasting-notes__group + .tasting-notes__group {
+    border-left: 0;
+    border-top: 1px solid var(--tasting-notes-border-soft);
+  }
+}
