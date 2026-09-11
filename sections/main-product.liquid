@@ -18,7 +18,7 @@
   thumbnail_arrows: section.settings.thumbnail_arrows,
   video_looping: section.settings.enable_video_looping,
   video_style: section.settings.product_video_style,
-  context: 'main-product',
+  context: 'main-product'
 -%}
 {% schema %}
 {
@@ -715,6 +715,23 @@
           "id": "phone",
           "label": "t:product_block.contact_form.settings.phone.label"
         },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Margin bottom",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "type": "tasting_notes",
+      "name": "Tasting notes",
+      "limit": 1,
+      "settings": [
         {
           "type": "range",
           "id": "margin_bottom",
