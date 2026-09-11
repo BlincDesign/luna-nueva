@@ -5,9 +5,9 @@
   }
 
     .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(26px, 4vw, 68px);
         text-align: left;
   }
 
@@ -26,42 +26,44 @@
     }
 
     .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 1.4rem;
     }
+    
   }
-
 {% endstyle %}
 
-    <section class="stats-section color-{{ section.settings.color_scheme }} 
-        {% if section.settings.stylized_bg %} background-image{% endif %}
-        {% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
-        id="stats-{{ section.id }}">
-
-        <div class="page-width">
-            {% if section.blocks.size > 0 %}
-            <div class="stats-grid">
-                {% for block in section.blocks %}
-                <div class="stats-item" {{ block.shopify_attributes }}>
-                    
-                    {% if block.settings.heading != blank %}
-                    <h3 class="stats-heading">
-                        {{ block.settings.heading }}
-                    </h3>
-                    {% endif %}
-
-                    {% if block.settings.text != blank %}
-                    <div class="stats-text">
-                        {{ block.settings.text }}
-                    </div>
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
+<section
+  class="
+    stats-section color-{{ section.settings.color_scheme }}
+    {% if section.settings.stylized_bg %} background-image{% endif %}
+    {% if section.settings.header_secondary %} section--scheme-secondary{% endif %}
+  "
+  id="stats-{{ section.id }}"
+>
+  <div class="page-width">
+    {% if section.blocks.size > 0 %}
+      <div class="stats-grid">
+        {% for block in section.blocks %}
+          <div class="stats-item" {{ block.shopify_attributes }}>
+            {% if block.settings.heading != blank %}
+              <h3 class="stats-heading">
+                {{ block.settings.heading }}
+              </h3>
             {% endif %}
 
-        </div>
-    </section>
+            {% if block.settings.text != blank %}
+              <div class="stats-text">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
 
 {% schema %}
 {
@@ -73,7 +75,7 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-5"
-    },  
+    },
     {
       "type": "checkbox",
       "id": "header_secondary",
@@ -86,7 +88,7 @@
       "id": "stylized_bg",
       "label": "Enable stylized background",
       "default": false
-    }, 
+    },
     {
       "type": "header",
       "content": "Padding"
