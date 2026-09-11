@@ -308,7 +308,7 @@
         "row_height": 300,
         "tile_width_mobile_min": 150,
         "tile_width_mobile_max": 280,
-        "row_height_mobile": 150,
+        "row_height_mobile": 160,
         "gap": 16,
         "padding_top": 10,
         "padding_bottom": 92,
