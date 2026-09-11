@@ -52,7 +52,7 @@
 
 {% endstyle %}
 
-<div class="index-section">
+<div class="index-section color-{{ section.settings.color_scheme }}">
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
     <div class="heading-with-mail">
       {%- if section.settings.title != blank
@@ -309,8 +309,13 @@
 {
   "name": "t:sections.contact-form.name",
   "class": "index-section section-image-slider-text",
-
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-5"
+    },
     {
       "type": "paragraph",
       "content": "t:sections.contact-form.settings.content"
