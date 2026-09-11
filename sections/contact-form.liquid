@@ -4,17 +4,11 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  @media screen and (max-width: 1200px) {
-    #contact-form-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_mb }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-    }
-  }
-
   .heading-with-mail {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
+        row-gap: 1rem;
         margin-bottom: 40px;
     }
 
@@ -60,6 +54,22 @@
     .form-vertical .button-submit .btn {
         margin: 0 !important;
     }
+
+    
+  @media screen and (max-width: 589px) {
+    #contact-form-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+
+    .heading-with-mail {
+      flex-direction: column;
+    }
+
+    .heading-with-mail .email-wrapper {
+        text-align: left;
+    }
+  }
 {% endstyle %}
 
 <div
