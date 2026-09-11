@@ -1,35 +1,50 @@
 <div class="index-section">
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+    <div class="">
+      {%- if section.settings.title != blank
+        or section.settings.text != blank
+        or section.settings.pre_title != blank
+      -%}
+        <div class="section-header">
+          {%- if section.settings.pre_title != blank -%}
+            <p class="section-header__title">
+              {{ section.settings.pre_title }}
+            </p>
+          {%- endif -%}
 
-    {%- if section.settings.title != blank or section.settings.text != blank or section.settings.pre_title != blank -%}
-      <div class="section-header">
-        {%- if section.settings.pre_title != blank -%}
-          <p class="section-header__title">
-            {{ section.settings.pre_title }}
-          </p>
-        {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="section-header__title">
+              {{ section.settings.title }}
+            </h2>
+          {%- endif -%}
 
-        {%- if section.settings.title != blank -%}
-          <h2 class="section-header__title">
-            {{ section.settings.title }}
-          </h2>
-        {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="rte section-header__rte">
+              {{ section.settings.text }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
 
-        {%- if section.settings.text != blank -%}
-          <div class="rte section-header__rte">
-            {{ section.settings.text }}
+      <div class="email-wrapper">
+        {% if section.settings.email_heading != blank %}
+          <p>{{ section.settings.email_heading }}</p>
+        {% endif %}
+
+        {% if section.settings.email != blank %}
+          <div class="mail">
+            <a href="mailto:{{ section.settings.email }}">
+              {{ section.settings.email }}
+            </a>
           </div>
-        {%- endif -%}
-
+        {% endif %}
       </div>
-    {%- endif -%}
+    </div>
 
     <div class="form-vertical">
-
       {%- assign form_id = 'contact-' | append: section.id -%}
 
       {%- form 'contact', id: form_id -%}
-
         {%- if form.posted_successfully? -%}
           <p class="note note--success">
             {{ 'contact.form.post_success' | t }}
@@ -39,13 +54,9 @@
         {{ form.errors | default_errors }}
 
         <div class="grid grid--small">
-
           {%- for block in section.blocks -%}
-
             {%- case block.type -%}
-
               {%- when 'name' -%}
-
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
                   {{ block.shopify_attributes }}
@@ -62,34 +73,34 @@
                     autocapitalize="words"
                     placeholder="{{ block.settings.placeholder | escape }}"
                     value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                    {% if block.settings.required %}required{% endif %}
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
                   >
                 </div>
-                
-                {%- when 'text' -%}
 
+              {%- when 'text' -%}
                 <div
-                    class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
-                    {{ block.shopify_attributes }}
+                  class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
+                  {{ block.shopify_attributes }}
                 >
-                    <label for="ContactFormText-{{ block.id }}">
+                  <label for="ContactFormText-{{ block.id }}">
                     {{ block.settings.label }}
-                    </label>
+                  </label>
 
-                    <input
+                  <input
                     type="text"
                     id="ContactFormText-{{ block.id }}"
                     class="input-full"
                     name="contact[{{ block.settings.label | handleize }}]"
                     placeholder="{{ block.settings.placeholder | escape }}"
-                    {% if block.settings.required %}required{% endif %}
-                    >
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
+                  >
                 </div>
 
-
-
               {%- when 'email' -%}
-
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
                   {{ block.shopify_attributes }}
@@ -107,13 +118,13 @@
                     autocapitalize="off"
                     placeholder="{{ block.settings.placeholder | escape }}"
                     value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    {% if block.settings.required %}required{% endif %}
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
                   >
                 </div>
 
-
               {%- when 'phone' -%}
-
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
                   {{ block.shopify_attributes }}
@@ -131,13 +142,13 @@
                     autocapitalize="off"
                     placeholder="{{ block.settings.placeholder | escape }}"
                     value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                    {% if block.settings.required %}required{% endif %}
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
                   >
                 </div>
 
-
               {%- when 'message' -%}
-
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
                   {{ block.shopify_attributes }}
@@ -152,18 +163,17 @@
                     class="input-full"
                     name="contact[body]"
                     placeholder="{{ block.settings.placeholder | escape }}"
-                    {% if block.settings.required %}required{% endif %}
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
                   >{% if form.body %}{{ form.body }}{% endif %}</textarea>
                 </div>
 
-
               {%- when 'dropdown' -%}
-
                 <div
                   class="grid__item {% if block.settings.width == 'half' %}medium-up--one-half{% else %}one-whole{% endif %}"
                   {{ block.shopify_attributes }}
                 >
-
                   <label for="ContactFormDropdown-{{ block.id }}">
                     {{ block.settings.label }}
                   </label>
@@ -172,9 +182,10 @@
                     id="ContactFormDropdown-{{ block.id }}"
                     class="input-full"
                     name="contact[{{ block.settings.label | handleize }}]"
-                    {% if block.settings.required %}required{% endif %}
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
                   >
-
                     {%- if block.settings.placeholder != blank -%}
                       <option value="" disabled selected>
                         {{ block.settings.placeholder }}
@@ -192,14 +203,10 @@
                         </option>
                       {%- endif -%}
                     {%- endfor -%}
-
                   </select>
-
                 </div>
 
-
               {%- when 'submit' -%}
-
                 <div
                   class="grid__item one-whole"
                   {{ block.shopify_attributes }}
@@ -219,21 +226,15 @@
                     {{ block.settings.label }}
                   </button>
                 </div>
-
             {%- endcase -%}
-
           {%- endfor -%}
-
         </div>
 
         {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
-
       {%- endform -%}
-
     </div>
   </div>
 </div>
-
 
 {% schema %}
 {
@@ -260,6 +261,22 @@
       "type": "richtext",
       "id": "text",
       "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "email_heading",
+      "label": "Email heading",
+      "default": "Email us"
+    },
+    {
+      "type": "paragraph",
+      "content": "E mail"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email address",
+      "default": "hello@lunanuevatequila.com"
     },
     {
       "type": "checkbox",
@@ -311,44 +328,44 @@
       ]
     },
     {
-    "type": "text",
-    "name": "Text",
-    "settings": [
+      "type": "text",
+      "name": "Text",
+      "settings": [
         {
-        "type": "text",
-        "id": "label",
-        "label": "Label",
-        "default": "Text"
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Text"
         },
         {
-        "type": "text",
-        "id": "placeholder",
-        "label": "Placeholder",
-        "default": "Enter your text"
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Enter your text"
         },
         {
-        "type": "select",
-        "id": "width",
-        "label": "Width",
-        "default": "half",
-        "options": [
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "half",
+          "options": [
             {
-            "value": "half",
-            "label": "Half width"
+              "value": "half",
+              "label": "Half width"
             },
             {
-            "value": "full",
-            "label": "Full width"
+              "value": "full",
+              "label": "Full width"
             }
-        ]
+          ]
         },
         {
-        "type": "checkbox",
-        "id": "required",
-        "label": "Required",
-        "default": false
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
         }
-    ]
+      ]
     },
 
     {
@@ -570,11 +587,7 @@
   ],
 
   "disabled_on": {
-    "groups": [
-      "footer",
-      "header",
-      "custom.popups"
-    ]
+    "groups": ["footer", "header", "custom.popups"]
   }
 }
 {% endschema %}
