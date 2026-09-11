@@ -14,80 +14,84 @@
       "disabled": true,
       "settings": {}
     },
-    "rich_text_LYbrUx": {
-      "type": "rich-text",
+    "custom_rich_text_columns_Lwn8bC": {
+      "type": "custom__rich-text-columns",
       "blocks": {
-        "heading_BQEhcc": {
-          "type": "heading",
+        "preheading_GHArPE": {
+          "type": "preheading",
           "settings": {
-            "title": "Our Story"
+            "title": "IN THE WILD",
+            "position": "left"
           }
         },
-        "text_PTVm9N": {
-          "type": "text",
+        "heading_NVPU6T": {
+          "type": "heading",
           "settings": {
-            "enlarge_text": true,
-            "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. Luna Nueva invites you to create your own rituals and celebrate what matters most.<br/></p>"
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "detail_row_3wxdyz": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<p>A bold spirit with a velvety body.</p>",
+            "icon": "droplet",
+            "icon_size": 30
+          }
+        },
+        "detail_row_VHFNTP": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Aroma",
+            "description": "<p>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</p>",
+            "icon": "leaf",
+            "icon_size": 30
+          }
+        },
+        "detail_row_tfPaGQ": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Palate",
+            "description": "<p>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</p>",
+            "icon": "circle",
+            "icon_size": 30
           }
         }
       },
       "block_order": [
-        "heading_BQEhcc",
-        "text_PTVm9N"
+        "preheading_GHArPE",
+        "heading_NVPU6T",
+        "detail_row_3wxdyz",
+        "detail_row_VHFNTP",
+        "detail_row_tfPaGQ"
       ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.rich_text.name",
+      "name": "Rich text columns",
       "settings": {
-        "align_text": "center",
-        "narrow_column": true
-      }
-    },
-    "text_and_image_4AM8K8": {
-      "type": "text-and-image",
-      "disabled": true,
-      "name": "t:sections.text-and-image.presets.image_with_text.name",
-      "settings": {
-        "image": "shopify://shop_images/aging_b6bf8c6f-659c-47c9-a056-3689570100ac.png",
-        "image_mask": "none",
-        "image2": "shopify://shop_images/tequila_rising_right_276f0845-2143-43ba-9f0a-661b9e66450d.png",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Our Story",
-        "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. Luna Nueva invites you to create your own rituals and celebrate what matters most.<br/></p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "66",
-        "layout": "right",
-        "divider": false,
-        "top_padding": false,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
-    "background_image_text_JAqUcm": {
-      "type": "background-image-text",
-      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
-      "settings": {
-        "subtitle": "",
-        "title": "Our Story",
-        "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. </p>",
-        "button_label": "",
-        "button_link": "",
-        "image": "shopify://shop_images/tequila_rising_right_276f0845-2143-43ba-9f0a-661b9e66450d.png",
-        "layout": "left",
-        "height": 750,
-        "parallax": true,
-        "parallax_direction": "top",
-        "lazyload_images": true
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     }
   },
   "order": [
     "main",
-    "rich_text_LYbrUx",
-    "text_and_image_4AM8K8",
-    "background_image_text_JAqUcm"
+    "custom_rich_text_columns_Lwn8bC"
   ]
 }
