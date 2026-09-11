@@ -155,7 +155,7 @@
                   {%- when 'character-texture' -%}
                     {%- assign character_texture = product.metafields.custom.character_texture.value -%}
                     {%- if character_texture != blank -%}
-                      <div class="product-block" {{ block.shopify_attributes }}>
+                      <div class="product-block block-character-texture" {{ block.shopify_attributes }}>
                         <p class="label">{{ block.settings.label }}</p>
                         <div class="rte">{{ character_texture }}</div>
                       </div>
