@@ -678,7 +678,7 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "header_secondary": false,
         "stylized_bg": true,
         "left_column_width": 50,
@@ -1218,6 +1218,7 @@
           "type": "text",
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
             "text_color": "#f9f6f1",
             "text_width": 660,
             "margin_bottom": 36
