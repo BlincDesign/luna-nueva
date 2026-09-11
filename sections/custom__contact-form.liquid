@@ -80,7 +80,7 @@
                     type="text"
                     id="ContactFormText-{{ block.id }}"
                     class="input-full"
-                    name="contact[{{ block.settings.field_name | handleize }}]"
+                    name="contact[{{ block.settings.label | handleize }}]"
                     placeholder="{{ block.settings.placeholder | escape }}"
                     {% if block.settings.required %}required{% endif %}
                     >
@@ -171,7 +171,7 @@
                   <select
                     id="ContactFormDropdown-{{ block.id }}"
                     class="input-full"
-                    name="contact[{{ block.settings.field_name | handleize }}]"
+                    name="contact[{{ block.settings.label | handleize }}]"
                     {% if block.settings.required %}required{% endif %}
                   >
 
@@ -225,11 +225,6 @@
           {%- endfor -%}
 
         </div>
-
-        {% comment %}
-          Remove the following line if you want to remove
-          Shopify's reCAPTCHA disclaimer.
-        {% endcomment %}
 
         {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
 
@@ -330,13 +325,6 @@
         "id": "placeholder",
         "label": "Placeholder",
         "default": "Enter your text"
-        },
-        {
-        "type": "text",
-        "id": "field_name",
-        "label": "Field name",
-        "default": "Additional Information",
-        "info": "Used as the field name when submitting the form."
         },
         {
         "type": "select",
@@ -510,12 +498,6 @@
           "id": "placeholder",
           "label": "Placeholder",
           "default": "Select an option"
-        },
-        {
-          "type": "text",
-          "id": "field_name",
-          "label": "Field name",
-          "default": "Subject"
         },
         {
           "type": "textarea",
