@@ -37,7 +37,7 @@
     <div class="product-details__list pdl__grid">
       {%- for product in section.settings.products -%}
         {%- liquid
-          assign bg_color = product.metafields.custom.grid_background.value | default: '#D9C7A6'
+          assign bg_color = product.metafields.custom.grid_background.value
           assign image = product.metafields.custom.grid_image
 
           assign character-texture = product.metafields.custom.character-texture
@@ -68,7 +68,7 @@
             {%- endif -%}
 
             {% render 'product-details-table', product: product %}
-            
+
             <div class="pdc__explore--wrapper">
               <a href="{{ product.url }}" class="pdc__explore"
                 >Explore <span class="pdc__arrow" aria-hidden="true">→</span></a
