@@ -857,7 +857,6 @@ a.pdl__right {
 
 .js-qty__wrapper {
     background: transparent;
-    border: rgb(var(--color-foreground));
     color: rgb(var(--color-foreground));
     height: 100%;
     width: 100%;
@@ -873,6 +872,7 @@ a.pdl__right {
     border-radius: 100px;
     padding: 0 10px;
     font-weight: 600;
+    border: rgb(var(--color-foreground));
 }
 
 .product__quantity {
