@@ -26,6 +26,19 @@
   "name": "t:sections.main-product.name",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "info": "Overlays the decorative texture used elsewhere on the site. A product can override this by setting its own \"color_scheme\" metafield (custom.color_scheme).",
+      "default": false
+    },
+    {
       "type": "checkbox",
       "id": "sku_enable",
       "label": "t:sections.main-product.settings.sku_enable.label"
@@ -151,7 +164,18 @@
   "type": "character-texture",
   "name": "Character & Texture",
   "limit": 1,
-  "settings": []
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Displays the product's \"Character & texture\" metafield (custom.character_texture)."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Character & Texture"
+    }
+  ]
 },
 {
   "type": "quantity_selector",
@@ -247,10 +271,32 @@
   "limit": 1,
   "settings": [
     {
+      "type": "select",
+      "id": "display_mode",
+      "label": "Display as",
+      "options": [
+        {
+          "value": "variants",
+          "label": "Variants"
+        },
+        {
+          "value": "siblings",
+          "label": "Siblings"
+        }
+      ],
+      "default": "variants"
+    },
+    {
+      "type": "paragraph",
+      "content": "Siblings reads the product's \"sibling_products\" metafield (custom.sibling_products, a list of products) and links to each one by title. Give each sibling product its own \"color_scheme\" metafield (custom.color_scheme) with a theme color scheme ID (e.g. scheme-2) to preview that product's colors in the switcher.",
+      "visible_if": "{{ block.settings.display_mode == 'siblings' }}"
+    },
+    {
       "type": "checkbox",
       "id": "variant_labels",
       "label": "t:product_block.variant_picker.settings.variant_labels.label",
-      "default": true
+      "default": true,
+      "visible_if": "{{ block.settings.display_mode == 'variants' }}"
     },
     {
       "type": "select",
@@ -266,19 +312,22 @@
           "label": "t:product_block.variant_picker.settings.picker_type.options.dropdown.label"
         }
       ],
-      "default": "button"
+      "default": "button",
+      "visible_if": "{{ block.settings.display_mode == 'variants' }}"
     },
     {
       "type": "checkbox",
       "id": "product_dynamic_variants_enable",
       "label": "t:product_block.variant_picker.settings.product_dynamic_variants_enable.label",
-      "default": true
+      "default": true,
+      "visible_if": "{{ block.settings.display_mode == 'variants' }}"
     },
     {
       "type": "checkbox",
       "id": "color_swatches",
       "label": "Enable color swatches",
-      "info": "Requires type to be set to 'Buttons'. [Learn how to set up swatches](https://archetypethemes.co/blogs/impulse/how-do-i-set-up-color-swatches)"
+      "info": "Requires type to be set to 'Buttons'. [Learn how to set up swatches](https://archetypethemes.co/blogs/impulse/how-do-i-set-up-color-swatches)",
+      "visible_if": "{{ block.settings.display_mode == 'variants' }}"
     }
   ]
 },
