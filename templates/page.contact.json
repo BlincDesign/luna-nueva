@@ -85,17 +85,18 @@
     "rich_text_kTFHaV": {
       "type": "rich-text",
       "blocks": {
-        "heading_RRaqPB": {
-          "type": "heading",
+        "text_7qLkfi": {
+          "type": "text",
           "settings": {
-            "title": "A bottle your guests already want to be seen with."
+            "enlarge_text": false,
+            "text": "<h2>A bottle your </h2><h2>guests already want</h2><h2>to be seen with.</h2>"
           }
         },
         "divider_7KBFxr": {
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#8E8A8A",
+            "divider_bg": "#8e8a8a",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -108,7 +109,7 @@
         }
       },
       "block_order": [
-        "heading_RRaqPB",
+        "text_7qLkfi",
         "divider_7KBFxr"
       ],
       "name": "t:sections.rich-text.presets.rich_text.name",

@@ -86,9 +86,9 @@
             </div>
           {% endif %}
         {%- when 'heading' -%}
-          <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+          <h2 class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {{ block.settings.title }}
-          </div>
+          </h2>
         {%- when 'page' -%}
           <div class="rte page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {%- if block.settings.page_text != blank -%}
@@ -577,10 +577,10 @@
       "name": "t:sections.rich-text.blocks.heading.name",
       "settings": [
         {
-          "type": "richtext",
+          "type": "inline_richtext",
           "id": "title",
           "label": "t:sections.rich-text.blocks.heading.settings.title.label",
-          "default": "<p>Rich text</p>"
+          "default": "Rich text"
         }
       ]
     },
