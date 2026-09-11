@@ -18,32 +18,43 @@
   data-section-type="background-image"
   class="background-media-text background-media-text--{{ section.id }} background-media-text--{{ section.settings.height }} loaded"
   data-aos="background-media-text__animation"
-  {% if section.settings.parallax %}data-parallax="true"{% endif %}>
-
+  {% if section.settings.parallax %}
+    data-parallax="true"
+  {% endif %}
+>
   <div class="background-media-text__container">
     {%- if section.settings.parallax -%}
       <parallax-image class="parallax-container">
-        <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ section.settings.parallax_direction }}">
+        <div
+          class="parallax-image"
+          data-movement="15%"
+          data-parallax-image
+          data-angle="{{ section.settings.parallax_direction }}"
+        >
     {%- endif -%}
 
-      {%- if section.settings.image != blank -%}
-
-        {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
-        {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
-        {%- render 'image-element',
-          img: section.settings.image,
-          img_width: 2400,
-          loading: section.settings.lazyload_images,
-          classes: classes,
-        -%}
-      {%- else -%}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      {%- endif -%}
+    {%- if section.settings.image != blank -%}
+      {% assign classes = 'image-fit background-media-text__image background-media-text__image--'
+        | append: section.id
+      %}
+      {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+      {%- render 'image-element',
+        img: section.settings.image,
+        img_width: 2400,
+        loading: section.settings.lazyload_images,
+        classes: classes
+      -%}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
 
     {%- if section.settings.parallax -%}
-        </div>
+      </div>
       </parallax-image>
     {%- endif -%}
+  </div>
+  <div>
+    <p>{{ section.settings.text_below_image }}</p>
   </div>
 
   {%- if section.settings.subtitle != blank or section.settings.title != blank or section.settings.text != blank -%}
@@ -81,10 +92,6 @@
   "name": "t:sections.background-image-text.name",
   "class": "index-section--flush",
   "settings": [
-    {
-      "type": "header",
-      "content": "Image"
-    },
     {
       "type": "image_picker",
       "id": "image",
@@ -144,6 +151,12 @@
       "label": "t:common.lazyload_images.label",
       "info": "t:common.lazyload_images.info",
       "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text_below_image",
+      "label": "Text below image",
+      "default": "Text"
     },
     {
       "type": "header",
