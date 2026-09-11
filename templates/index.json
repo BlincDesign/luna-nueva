@@ -573,7 +573,7 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
-        "left_column_width": 38,
+        "left_column_width": 35,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 62,
