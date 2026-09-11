@@ -30,8 +30,17 @@
         "text_MwCBUp": {
           "type": "text",
           "settings": {
-            "label": "Name",
-            "placeholder": "Enter your name",
+            "label": "Venue or business",
+            "placeholder": "The name over the door",
+            "width": "half",
+            "required": true
+          }
+        },
+        "text_wMdVgp": {
+          "type": "text",
+          "settings": {
+            "label": "City",
+            "placeholder": "Santa Monica",
             "width": "half",
             "required": true
           }
@@ -41,7 +50,7 @@
           "settings": {
             "label": "Email",
             "placeholder": "Enter your email",
-            "width": "half",
+            "width": "full",
             "required": true
           }
         },
@@ -75,6 +84,7 @@
       },
       "block_order": [
         "text_MwCBUp",
+        "text_wMdVgp",
         "email_rXGTWn",
         "dropdown_riWikX",
         "message_8dMiPW",
