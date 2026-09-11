@@ -146,8 +146,8 @@
         "gap": 16,
         "padding_top": 92,
         "padding_bottom": 92,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
       }
     }
   },
