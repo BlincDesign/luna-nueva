@@ -833,3 +833,7 @@ a.pdl__right {
     background-color: rgb(var(--color-background));
     box-shadow: 0 0 0 1px rgba(var(--color-foreground), 0.2);
 }
+
+.product-block hr {
+    border-top-color: rgb(var(--color-foreground));
+}
