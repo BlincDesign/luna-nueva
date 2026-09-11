@@ -159,11 +159,6 @@
                         <p class="label">{{ block.settings.label }}</p>
                         <div class="rte">{{ character_texture }}</div>
                       </div>
-                    {%- elsif request.design_mode -%}
-                      <div class="product-block" {{ block.shopify_attributes }}>
-                        <p class="label">{{ block.settings.label }}</p>
-                        <div class="rte">Add a value to this product's "Character & texture" metafield (custom.character_texture) to show text here.</div>
-                      </div>
                     {%- endif -%}
                   {%- when 'tab' -%}
                     <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
