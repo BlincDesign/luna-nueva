@@ -1,0 +1,87 @@
+{%- comment -%}
+  Tasting Notes (Aroma / Palate)
+  ------------------------------------------------------------------
+  Renders two chip lists sourced from list.metaobject_reference product
+  metafields. Each referenced metaobject entry (type "aroma" / "palate")
+  carries its own icon, so adding, removing or reordering a note is a
+  merchant edit in the metaobject list — nothing here needs to change.
+
+  Expects:
+    product: {{ product }}   -- the product object
+
+  Reads:
+    product.metafields.custom.aroma_notes   (list.metaobject_reference)
+    product.metafields.custom.palate_notes  (list.metaobject_reference)
+
+  Each referenced metaobject exposes:
+    label  (single_line_text_field) -- the note name, e.g. "Cinnamon"
+    svg    (multi_line_text_field)  -- raw <svg>…</svg> markup for the note
+
+  Usage:
+    {% render 'tasting-notes', product: product %}
+
+  Empty states:
+    - A group with no entries is omitted entirely.
+    - If neither metafield has entries, nothing is rendered (no empty
+      shell, no stylesheet request).
+    - A note missing its svg field still renders as a text-only chip.
+{%- endcomment -%}
+
+{%- liquid
+  assign aroma_notes = product.metafields.custom.aroma_notes.value
+  assign palate_notes = product.metafields.custom.palate_notes.value
+  assign aroma_count = aroma_notes.size | default: 0
+  assign palate_count = palate_notes.size | default: 0
+-%}
+
+{%- if aroma_count > 0 or palate_count > 0 -%}
+  {{ 'component-tasting-notes.css' | asset_url | stylesheet_tag }}
+
+  <div class="tasting-notes">
+    {%- if aroma_count > 0 -%}
+      <div class="tasting-notes__group">
+        <h3 class="tasting-notes__heading">
+          <span class="tasting-notes__heading-icon">
+            {%- render 'icon-tasting-sense', sense: 'aroma' -%}
+          </span>
+          <span>{{ 'products.product.tasting_notes.aroma' | t }}</span>
+        </h3>
+        <ul class="tasting-notes__list" role="list">
+          {%- for note in aroma_notes -%}
+            {%- unless note.label == blank -%}
+              <li class="tasting-notes__chip">
+                {%- if note.svg != blank -%}
+                  <span class="tasting-notes__chip-icon" aria-hidden="true">{{ note.svg }}</span>
+                {%- endif -%}
+                <span class="tasting-notes__chip-label">{{ note.label }}</span>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+
+    {%- if palate_count > 0 -%}
+      <div class="tasting-notes__group">
+        <h3 class="tasting-notes__heading">
+          <span class="tasting-notes__heading-icon">
+            {%- render 'icon-tasting-sense', sense: 'palate' -%}
+          </span>
+          <span>{{ 'products.product.tasting_notes.palate' | t }}</span>
+        </h3>
+        <ul class="tasting-notes__list" role="list">
+          {%- for note in palate_notes -%}
+            {%- unless note.label == blank -%}
+              <li class="tasting-notes__chip">
+                {%- if note.svg != blank -%}
+                  <span class="tasting-notes__chip-icon" aria-hidden="true">{{ note.svg }}</span>
+                {%- endif -%}
+                <span class="tasting-notes__chip-label">{{ note.label }}</span>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
