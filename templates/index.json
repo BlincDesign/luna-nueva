@@ -9,6 +9,107 @@
  */
 {
   "sections": {
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "text_Pjcgeg": {
+          "type": "text",
+          "settings": {
+            "label": "Venue or business",
+            "placeholder": "The name over the door",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_RiQ8rM": {
+          "type": "text",
+          "settings": {
+            "label": "City",
+            "placeholder": "Santa Monica",
+            "width": "half",
+            "required": false
+          }
+        },
+        "name_LA9LMG": {
+          "type": "name",
+          "settings": {
+            "label": "Your name",
+            "placeholder": "First and last",
+            "width": "half",
+            "required": true
+          }
+        },
+        "email_rB4gp8": {
+          "type": "email",
+          "settings": {
+            "label": "Email",
+            "placeholder": "you@venue.com",
+            "width": "half",
+            "required": true
+          }
+        },
+        "dropdown_VUKUVr": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Kind of account",
+            "placeholder": "Select an option",
+            "options": "General Inquiry\nProduct Question\nOrder Question\nOther",
+            "width": "half",
+            "required": false
+          }
+        },
+        "text_mxirFY": {
+          "type": "text",
+          "settings": {
+            "label": "Current distributor (optional)",
+            "placeholder": "Who delivers your spirits",
+            "width": "half",
+            "required": false
+          }
+        },
+        "message_DeM8LR": {
+          "type": "message",
+          "settings": {
+            "label": "Anything we should know (optional)",
+            "placeholder": "Volume, timing, an event you have coming up",
+            "width": "full",
+            "rows": 5,
+            "required": true
+          }
+        },
+        "submit_7mikpi": {
+          "type": "submit",
+          "settings": {
+            "label": "SEND ENQUIRY",
+            "info": "<p>Trade enquiries only. You must be 21 or<br/>older. We reply to everything, usually<br/>within two working days.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Pjcgeg",
+        "text_RiQ8rM",
+        "name_LA9LMG",
+        "email_rB4gp8",
+        "dropdown_VUKUVr",
+        "text_mxirFY",
+        "message_DeM8LR",
+        "submit_7mikpi"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "pre_title": "Stock Luna Nueva",
+        "title": "Where should we send it?",
+        "text": "",
+        "email_heading": "Email us",
+        "email": "hello@lunanuevatequila.com",
+        "narrow_column": false,
+        "show_hCaptcha_text": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_image_slider_with_text_fFfUKJ": {
       "type": "custom__image_slider_with_text",
       "blocks": {
@@ -1241,6 +1342,7 @@
     }
   },
   "order": [
+    "form",
     "custom_image_slider_with_text_fFfUKJ",
     "custom_photo_wall_pD7cEK",
     "rich_text_VDFB8d",
