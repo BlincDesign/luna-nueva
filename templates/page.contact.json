@@ -117,7 +117,7 @@
         "email_heading": "Email us",
         "email": "hello@lunanuevatequila.com",
         "narrow_column": false,
-        "show_hCaptcha_text": true
+        "show_hCaptcha_text": false
       }
     }
   },
