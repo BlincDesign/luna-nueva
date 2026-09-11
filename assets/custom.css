@@ -799,3 +799,33 @@ a.pdl__right {
     font-weight: 600;
     opacity: 0.6;
 }
+
+
+.sibling-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sibling-switcher__option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.05rem;
+    border: 1px solid var(--colorBorder);
+    border-radius: 999px;
+    letter-spacing: 0.12em;
+}
+
+.sibling-switcher__option.is-active {
+    pointer-events: none;
+}
+
+.sibling-switcher__dot {
+    flex: none;
+    width: 13px;
+    height: 16px;
+    border-radius: 50% 50% 0 0 / 62% 62% 0 0;
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 0 0 1px rgba(var(--color-foreground), 0.2);
+}
