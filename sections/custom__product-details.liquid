@@ -37,8 +37,7 @@
     <div class="product-details__list pdl__grid">
       {%- for product in section.settings.products -%}
         {%- liquid
-          assign details = product.metafields.custom.product_details.value
-          assign bg_color = details.background.value | default: '#D9C7A6'
+          assign bg_color = product.metafields.custom.grid_background.value | default: '#D9C7A6'
 
           assign category_label = product.type
           assign origin = product.metafields.custom.origin.value
@@ -51,13 +50,16 @@
           assign abv = product.metafields.custom.abv.value
           assign proof = product.metafields.custom.proof.value
           assign net_content = product.metafields.custom.net_content.value
+          assign image = product.metafields.custom.grid_image
+
+          assign character-texture = product.metafields.custom.character-texture
         -%}
 
         <div class="pdc" style="--pdc-bg: {{ bg_color }};">
           <div class="pdc__arch">
-            {%- if details.image != blank -%}
+            {%- if image != blank -%}
               {{
-                details.image
+                image
                 | image_url: width: 800
                 | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: details.title
               }}
@@ -71,12 +73,71 @@
           </div>
 
           <div class="pdc__body mb-text-center">
-            <h3 class="pdc__title">{{ details.title | default: product.title }}</h3>
+            <h3 class="pdc__title">{{ product.title | default: product.title }}</h3>
 
-            {%- if details.description != blank -%}
-              <p class="pdc__desc">{{ details.description }}</p>
+            {%- if character-texture != blank -%}
+              <p class="pdc__desc">{{ character-texture }}</p>
             {%- endif -%}
-            
+
+            <div class="pdc__table">
+              {%- if category_label != blank or origin != blank -%}
+                <div class="pdc__row pdc__row--lead">
+                  <span class="pdc__label">Tequila {{ category_label }}</span>
+                  {%- if origin != blank -%}
+                    <span class="pdc__value">ORIGIN · {{ origin }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if agave != blank -%}
+                <div class="pdc__row">
+                  <span class="pdc__label">Agave</span>
+                  <span class="pdc__value">{{ agave }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if additives != blank -%}
+                <div class="pdc__row">
+                  <span class="pdc__label">Additives</span>
+                  <span class="pdc__value">{{ additives }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if rested != blank -%}
+                <div class="pdc__row">
+                  <span class="pdc__label">Rested</span>
+                  <span class="pdc__value">{{ rested }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if body_field != blank -%}
+                <div class="pdc__row">
+                  <span class="pdc__label">Body</span>
+                  <span class="pdc__value">{{ body_field }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if nom != blank -%}
+                <div class="pdc__row">
+                  <span class="pdc__label">NOM</span>
+                  <span class="pdc__value">{{ nom }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if abv != blank or proof != blank or net_content != blank -%}
+                <div class="pdc__row pdc__row--foot">
+                  <span class="pdc__foot">
+                    {%- if abv != blank -%}{{ abv }}% ALC/VOL{%- endif -%}
+                    {%- if abv != blank and proof != blank -%}·{%- endif -%}
+                    {%- if proof != blank -%}{{ proof }} PROOF{%- endif -%}
+                  </span>
+                  {%- if net_content != blank -%}
+                    <span class="pdc__foot">CONT NET {{ net_content }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
             <div class="pdc__explore--wrapper">
               <a href="{{ product.url }}" class="pdc__explore"
                 >Explore <span class="pdc__arrow" aria-hidden="true">→</span></a
