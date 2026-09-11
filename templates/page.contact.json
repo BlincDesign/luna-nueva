@@ -27,24 +27,6 @@
     "custom_contact_form_Br8bLH": {
       "type": "custom__contact-form",
       "blocks": {
-        "text_MwCBUp": {
-          "type": "text",
-          "settings": {
-            "label": "Venue or business",
-            "placeholder": "The name over the door",
-            "width": "half",
-            "required": true
-          }
-        },
-        "text_wMdVgp": {
-          "type": "text",
-          "settings": {
-            "label": "City",
-            "placeholder": "Santa Monica",
-            "width": "half",
-            "required": true
-          }
-        },
         "email_rXGTWn": {
           "type": "email",
           "settings": {
@@ -83,8 +65,6 @@
         }
       },
       "block_order": [
-        "text_MwCBUp",
-        "text_wMdVgp",
         "email_rXGTWn",
         "dropdown_riWikX",
         "message_8dMiPW",
