@@ -144,20 +144,12 @@
             "heading": "100+",
             "text": "<p>Happy Customers</p>"
           }
-        },
-        "stat_fUF6aA": {
-          "type": "stat",
-          "settings": {
-            "heading": "100+",
-            "text": "<p>Happy Customers</p>"
-          }
         }
       },
       "block_order": [
         "stat_C8EnL6",
         "stat_43FkWQ",
-        "stat_idm7D8",
-        "stat_fUF6aA"
+        "stat_idm7D8"
       ],
       "name": "Stats",
       "settings": {
