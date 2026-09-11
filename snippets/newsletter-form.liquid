@@ -13,7 +13,7 @@
   <input type="hidden" name="contact[context]" value="{{ snippet_context }}">
   <div class="input-group newsletter__input-group" {{ block.shopify_attributes }}>
     <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email-{{ section_id }}" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off" required>
-    <span class="input-group-btn">
+    <span class="input-group-btn button--primary">
       <button type="submit" id="newsletter-submit-{{ section_id }}" class="btn" name="commit">
         <span class="form__submit--large">{{ 'general.newsletter_form.submit' | t }}</span>
         <span class="form__submit--small">
