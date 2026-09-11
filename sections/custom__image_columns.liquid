@@ -77,20 +77,6 @@
     flex: 1;
   }
 
-  @media screen and (min-width: 901px) {
-    .media-gallery__inner--flush-right {
-      --media-gallery-right-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
-    }
-
-    .media-gallery__inner--flush-right .media-gallery__media {
-      margin-right: calc(0px - var(--media-gallery-right-bleed));
-    }
-
-    .media-gallery__inner--flush-right .drag-scroller__bar {
-      width: calc(100% - var(--media-gallery-right-bleed));
-    }
-  }
-
   @media screen and (max-width: 900px) {
     #custom__image_columns-{{ section.id }} .image-columns__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
@@ -112,6 +98,8 @@
       flex-basis: min(78vw, 352px);
     }
   }
+
+
 {%- endstyle -%}
 
 {%- capture blocks_markup -%}
@@ -189,7 +177,7 @@
   id="custom__image_columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} image-columns{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
-  <div class="{% unless section.settings.full_width %} page-width{% endunless %}{% if section.settings.flow_right and section.settings.full_width == false %} media-gallery__inner--flush-right{% endif %} image-columns__inner">
+  <div class="page-width image-columns__inner">
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
@@ -198,7 +186,10 @@
           </div>
         {%- endcapture -%}
 
-        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
+        {%- render 'layout.drag-scroller',
+          slot: rail_markup,
+          label: 'Image columns, scroll horizontally'
+        -%}
       {%- else -%}
         <div class="image-columns__grid">
           {{ blocks_markup }}
@@ -336,14 +327,19 @@
   }
 
   @media screen and (min-width: 901px) {
-    .image-columns__inner drag-scroller {
-      --image-columns-bleed: max(
-        68px,
-        calc((100vw - 1560px) / 2 + 68px)
-      );
+    .image-columns {
+      --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      
+    }
 
+    .image-columns .image-columns__inner {
       margin-right: calc(0px - var(--image-columns-bleed));
       padding-right: var(--image-columns-bleed);
+
+    } 
+
+    .image-columns .drag-scroller__bar {
+      width: calc(100% - var(--media-gallery-right-bleed));
     }
   }
 {% endstylesheet %}
@@ -383,19 +379,6 @@
         { "value": "grid", "label": "Grid" },
         { "value": "slider", "label": "Slider" }
       ]
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "Full width",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "flow_right",
-      "label": "Flow to right",
-      "info": "Extends the gallery to the right edge of the viewport.",
-      "default": false
     },
     { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
     {
