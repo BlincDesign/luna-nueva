@@ -84,6 +84,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "video_one": "shopify://files/videos/dispo_b52ca513-a3f7-4c91-9b1e-3db24db0de36.mp4",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -92,6 +93,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/night-group.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -100,6 +102,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-tray.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -108,6 +111,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/night-station.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -116,6 +120,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/night-late.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -136,7 +141,7 @@
         "stylized_bg": false,
         "full_width": false,
         "content_width": 35,
-        "flow_right": false,
+        "flow_right": true,
         "tile_width_min": 240,
         "tile_width_max": 360,
         "row_height": 220,
