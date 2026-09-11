@@ -33,6 +33,15 @@
     endunless
   -%}
 
+  {%- if show_quantity -%}
+    <div class="product-form__quantity-row">
+      <div class="product__quantity">
+        {%- assign atc_qty_id = section_id | append: product.id | append: '-atc' -%}
+        <label class="visually-hidden" for="Quantity-{{ atc_qty_id }}">{{ 'products.product.quantity' | t }}</label>
+        {%- render 'quantity-input', form_id: form_id, id: atc_qty_id, qty: 1, min: 1 -%}
+      </div>
+  {%- endif -%}
+
   <button
     {% if product.empty? %}
       type="button"
@@ -53,6 +62,10 @@
       {{ current_variant.price | money_without_trailing_zeros }}
     </span>
   </button>
+
+  {%- if show_quantity -%}
+    </div>
+  {%- endif -%}
 
   {% if enable_dynamic_buttons %}
     {{ form | payment_button }}
