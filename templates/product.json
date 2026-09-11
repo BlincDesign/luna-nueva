@@ -25,9 +25,17 @@
             "margin_bottom": 10
           }
         },
-        "separator": {
-          "type": "separator",
+        "character_texture_kbtB9k": {
+          "type": "character-texture",
           "settings": {
+            "label": "Character & Texture",
+            "margin_bottom": 10
+          }
+        },
+        "price_mEWtYa": {
+          "type": "price",
+          "settings": {
+            "additional_text": "750ml",
             "margin_bottom": 10
           }
         },
@@ -55,13 +63,6 @@
           "settings": {
             "inventory_threshold": 10,
             "inventory_transfers_enable": true,
-            "margin_bottom": 10
-          }
-        },
-        "character_texture_kbtB9k": {
-          "type": "character-texture",
-          "settings": {
-            "label": "Character & Texture",
             "margin_bottom": 10
           }
         },
@@ -108,11 +109,11 @@
       "block_order": [
         "text_4zfUb6",
         "title_bcgBPy",
-        "separator",
+        "character_texture_kbtB9k",
+        "price_mEWtYa",
         "variant_picker",
         "sales_point",
         "inventory_status",
-        "character_texture_kbtB9k",
         "buy_buttons",
         "description",
         "tab",
