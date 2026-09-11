@@ -1,0 +1,398 @@
+```liquid
+<div class="index-section">
+  <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+
+    {%- if section.settings.title != blank or section.settings.text != blank -%}
+      <div class="section-header">
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="section-header__title">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="rte section-header__rte">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+
+      </div>
+    {%- endif -%}
+
+    <div class="form-vertical">
+
+      {%- assign form_id = 'contact-' | append: section.id -%}
+
+      {%- form 'contact', id: form_id -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="note note--success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {%- endif -%}
+
+        {{ form.errors | default_errors }}
+
+        {%- for block in section.blocks -%}
+
+          {%- case block.type -%}
+
+            {%- when 'name' -%}
+
+              <div class="grid__item" {{ block.shopify_attributes }}>
+                <label for="ContactFormName-{{ section.id }}">
+                  {{ block.settings.label }}
+                </label>
+
+                <input
+                  type="text"
+                  id="ContactFormName-{{ section.id }}"
+                  class="input-full"
+                  name="contact[name]"
+                  autocapitalize="words"
+                  value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                  {% if block.settings.required %}required{% endif %}
+                >
+              </div>
+
+
+            {%- when 'email' -%}
+
+              <div class="grid__item" {{ block.shopify_attributes }}>
+                <label for="ContactFormEmail-{{ section.id }}">
+                  {{ block.settings.label }}
+                </label>
+
+                <input
+                  type="email"
+                  id="ContactFormEmail-{{ section.id }}"
+                  class="input-full"
+                  name="contact[email]"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  {% if block.settings.required %}required{% endif %}
+                >
+              </div>
+
+
+            {%- when 'phone' -%}
+
+              <div class="grid__item" {{ block.shopify_attributes }}>
+                <label for="ContactFormPhone-{{ section.id }}">
+                  {{ block.settings.label }}
+                </label>
+
+                <input
+                  type="tel"
+                  id="ContactFormPhone-{{ section.id }}"
+                  class="input-full"
+                  name="contact[phone]"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                  {% if block.settings.required %}required{% endif %}
+                >
+              </div>
+
+
+            {%- when 'message' -%}
+
+              <div class="grid__item" {{ block.shopify_attributes }}>
+                <label for="ContactFormMessage-{{ section.id }}">
+                  {{ block.settings.label }}
+                </label>
+
+                <textarea
+                  rows="{{ block.settings.rows }}"
+                  id="ContactFormMessage-{{ section.id }}"
+                  class="input-full"
+                  name="contact[body]"
+                  {% if block.settings.required %}required{% endif %}
+                >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+              </div>
+
+
+            {%- when 'dropdown' -%}
+
+              <div class="grid__item" {{ block.shopify_attributes }}>
+
+                <label for="ContactFormDropdown-{{ block.id }}">
+                  {{ block.settings.label }}
+                </label>
+
+                <select
+                  id="ContactFormDropdown-{{ block.id }}"
+                  class="input-full"
+                  name="contact[{{ block.settings.field_name | handleize }}]"
+                  {% if block.settings.required %}required{% endif %}
+                >
+
+                  {%- if block.settings.placeholder != blank -%}
+                    <option value="" disabled selected>
+                      {{ block.settings.placeholder }}
+                    </option>
+                  {%- endif -%}
+
+                  {%- assign dropdown_options = block.settings.options | newline_to_br | split: '<br />' -%}
+
+                  {%- for option in dropdown_options -%}
+                    {%- assign option_clean = option | strip -%}
+
+                    {%- if option_clean != blank -%}
+                      <option value="{{ option_clean | escape }}">
+                        {{ option_clean }}
+                      </option>
+                    {%- endif -%}
+                  {%- endfor -%}
+
+                </select>
+
+              </div>
+
+          {%- endcase -%}
+
+        {%- endfor -%}
+
+
+        {%- for block in section.blocks -%}
+
+          {%- if block.type == 'submit' -%}
+
+            <div class="grid__item" {{ block.shopify_attributes }}>
+
+              <label
+                for="contact-form-submit-{{ section.id }}"
+                class="hidden-label"
+              >
+                {{ block.settings.label }}
+              </label>
+
+              <button
+                type="submit"
+                id="contact-form-submit-{{ section.id }}"
+                class="btn"
+              >
+                {{ block.settings.label }}
+              </button>
+
+            </div>
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
+
+        {% comment %}
+          Remove the following line if you want to remove
+          Shopify's reCAPTCHA disclaimer.
+        {% endcomment %}
+
+        {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+
+      {%- endform -%}
+
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "class": "index-section",
+
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.contact-form.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Contact us"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "Narrow column",
+      "default": true
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "name",
+      "name": "Name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": true
+        }
+      ]
+    },
+
+    {
+      "type": "email",
+      "name": "Email",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Email"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": true
+        }
+      ]
+    },
+
+    {
+      "type": "phone",
+      "name": "Phone",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Phone"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Message"
+        },
+        {
+          "type": "range",
+          "id": "rows",
+          "label": "Rows",
+          "min": 3,
+          "max": 10,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": true
+        }
+      ]
+    },
+
+    {
+      "type": "dropdown",
+      "name": "Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Subject"
+        },
+        {
+          "type": "text",
+          "id": "field_name",
+          "label": "Field name",
+          "default": "Subject"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Select an option"
+        },
+        {
+          "type": "textarea",
+          "id": "options",
+          "label": "Options",
+          "default": "General Inquiry\nProduct Question\nOrder Question\nOther",
+          "info": "Add one option per line."
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+
+    {
+      "type": "submit",
+      "name": "Submit button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button label",
+          "default": "Send"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Contact form",
+      "blocks": [
+        {
+          "type": "name"
+        },
+        {
+          "type": "email"
+        },
+        {
+          "type": "message"
+        },
+        {
+          "type": "submit"
+        }
+      ]
+    }
+  ],
+
+  "disabled_on": {
+    "groups": [
+      "footer",
+      "header",
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}
+```
