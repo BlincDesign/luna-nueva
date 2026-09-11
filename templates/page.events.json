@@ -305,7 +305,7 @@
         "flow_right": false,
         "tile_width_min": 240,
         "tile_width_max": 360,
-        "row_height": 220,
+        "row_height": 260,
         "tile_width_mobile_min": 150,
         "tile_width_mobile_max": 280,
         "row_height_mobile": 150,
