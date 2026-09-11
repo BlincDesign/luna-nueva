@@ -14,31 +14,6 @@
       "disabled": true,
       "settings": {}
     },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Get in touch"
-          }
-        }
-      },
-      "block_order": [
-        "heading"
-      ],
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": false,
-        "color_scheme": "",
-        "align_text": "center",
-        "narrow_column": true,
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
-      }
-    },
     "form": {
       "type": "contact-form",
       "disabled": true,
@@ -97,7 +72,6 @@
   },
   "order": [
     "main",
-    "rich-text",
     "form",
     "custom_contact_form_Br8bLH"
   ]
