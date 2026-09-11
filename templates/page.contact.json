@@ -76,7 +76,7 @@
         "button_link": "",
         "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
         "layout": "left",
-        "height": 580,
+        "height": 550,
         "parallax": true,
         "parallax_direction": "top",
         "lazyload_images": true
@@ -370,7 +370,7 @@
         "button_link": "",
         "image": "shopify://shop_images/hero-coast.jpg",
         "layout": "left",
-        "height": 580,
+        "height": 550,
         "parallax": true,
         "parallax_direction": "top",
         "lazyload_images": true
