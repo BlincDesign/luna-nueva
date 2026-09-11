@@ -45,6 +45,7 @@
     "type_scale_h1_desktop": 70,
     "type_scale_h2_desktop": 67,
     "type_scale_h3_desktop": 40,
+    "type_scale_h4_desktop": 28,
     "type_scale_body_desktop": 12,
     "type_scale_body_sm_desktop": 10,
     "type_scale_button_desktop": 12,
@@ -248,7 +249,7 @@
         "settings": {
           "background": "#d5995a",
           "background_gradient": "",
-          "text": "#2D3135",
+          "text": "#2d3135",
           "button": "#1a1e33",
           "button_label": "#ffffff",
           "button_border": "#1a1e33",
