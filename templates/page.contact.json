@@ -82,6 +82,7 @@
       ],
       "name": "Custom contact form",
       "settings": {
+        "pre_title": "Stock Luna Nueva",
         "title": "Where should we send it?",
         "text": "",
         "narrow_column": false
