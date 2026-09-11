@@ -414,7 +414,7 @@
 
       {%- if section.settings.show_payment_icons -%}
         {%- unless shop.enabled_payment_types == empty -%}
-          <ul class="inline-list payment-icons site-footer__bottom-block{% unless section.settings.colorize_payment_icons %} payment-icons--greyscale{% endunless %} text-center">
+          <ul class="inline-list payment-icons site-footer__bottom-block{% unless section.settings.colorize_payment_icons %} payment-icons--greyscale{% endunless %} text-right mb-text-left">
             {%- for type in shop.enabled_payment_types -%}
               <li class="icon--payment">
                 {{ type | payment_type_svg_tag }}
