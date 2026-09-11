@@ -126,6 +126,26 @@
     }
   }
 
+  @media only screen and (max-width: 1080px) {
+    #shopify-section-{{ section.id }} .footer-column {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(28px, 3.4vw, 54px);
+    }
+
+    #shopify-section-{{ section.id }} .footer-column .footer-logo {
+      grid-column: 1 / -1;
+    }
+
+    #shopify-section-{{ section.id }} .footer-column .grid__item {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .footer__logo-social .info p {
+      margin: 0;
+    }
+  }
+
   @media only screen and (max-width: 680px) {
     #shopify-section-{{ section.id }} .footer-column {
       grid-template-columns: repeat(2, minmax(0, 1fr));
