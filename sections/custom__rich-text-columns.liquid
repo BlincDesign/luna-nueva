@@ -251,7 +251,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}" class="theme-block">
+            <div id="block-{{ block.id }}">
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
@@ -278,6 +278,7 @@
                 {%- when 'preheading' -%}
                   <div
                     class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
                     {{ block.shopify_attributes }}
                   >
@@ -396,7 +397,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}" class="theme-block">
+            <div id="block-{{ block.id }}">
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
@@ -423,6 +424,7 @@
                 {%- when 'preheading' -%}
                   <div
                     class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
                     {{ block.shopify_attributes }}
                   >
