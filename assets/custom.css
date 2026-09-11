@@ -842,3 +842,39 @@ a.pdl__right {
     justify-content: space-between;
     font-weight: 700;
 }
+
+
+.product-form__quantity-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-form__quantity-row .add-to-cart {
+    flex: 1;
+}
+
+
+.js-qty__wrapper {
+    background: transparent;
+    border: rgb(var(--color-foreground));
+    color: rgb(var(--color-foreground));
+    height: 100%;
+    width: 100%;
+    max-width: unset;
+}
+
+.js-qty__adjust .icon {
+    fill: currentColor; 
+}
+
+.js-qty__num {
+    height: 100%;
+    border-radius: 100px;
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+.product__quantity {
+    flex: 0 0 100px;
+}
