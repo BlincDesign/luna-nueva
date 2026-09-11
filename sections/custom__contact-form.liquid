@@ -1,8 +1,13 @@
 <div class="index-section">
   <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
 
-    {%- if section.settings.title != blank or section.settings.text != blank -%}
+    {%- if section.settings.title != blank or section.settings.text != blank or section.settings.pre_title != blank -%}
       <div class="section-header">
+        {%- if section.settings.pre_title != blank -%}
+          <p class="section-header__title">
+            {{ section.settings.pre_title }}
+          </p>
+        {%- endif -%}
 
         {%- if section.settings.title != blank -%}
           <h2 class="section-header__title">
@@ -223,6 +228,11 @@
     {
       "type": "paragraph",
       "content": "t:sections.contact-form.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "pre_title",
+      "label": "Pre peading"
     },
     {
       "type": "text",
