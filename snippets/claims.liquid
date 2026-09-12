@@ -1,12 +1,10 @@
 {%- if claim_blocks.size > 0 -%}
-  {{ 'component-product-claims.css' | asset_url | stylesheet_tag }}
-
-  <ul class="product-claims" aria-label="{{ 'products.product.claims.aria_label' | t }}">
+  <ul class="product-claims">
     {%- for block in claim_blocks -%}
       {%- unless block.settings.label == blank -%}
         <li class="product-claims__item" {{ block.shopify_attributes }}>
           <span class="product-claims__icon">
-            {%- render 'icon-claim', icon: block.settings.icon, custom_icon: block.settings.custom_icon -%}
+            {%- render 'icon', icon: block.settings.icon, custom_icon: block.settings.custom_icon -%}
           </span>
           <span class="product-claims__label">{{ block.settings.label }}</span>
         </li>
