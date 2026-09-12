@@ -972,8 +972,6 @@ a.pdl__right {
 
 
 
-/* Product claims block */
-
 .product-claims {
     display: flex;
     flex-wrap: wrap;
@@ -982,7 +980,7 @@ a.pdl__right {
     border: 1px solid rgb(var(--color-foreground), 0.2);
     border-left: none;
     border-right: none;
-    padding: 16px;
+    padding: 16px 0;
     gap: 10px;
     --icon-size: 27px;
 }
@@ -1001,3 +999,8 @@ a.pdl__right {
   font-size: var(--type-caption-size);
 }
 
+@media screen and (max-width: 768px) {
+ .product-claims .product-claims__item {
+   flex: 0 0 calc( 50% - 10px / 2 );
+ } 
+}
