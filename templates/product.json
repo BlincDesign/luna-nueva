@@ -69,7 +69,7 @@
         "claims_Tx3Abi": {
           "type": "claims",
           "settings": {
-            "claim_1_icon": "no_sweetener",
+            "claim_1_icon": "no_additives",
             "claim_1_custom_icon": "",
             "claim_1_label": "No Additives",
             "claim_2_icon": "no_sweetener",
