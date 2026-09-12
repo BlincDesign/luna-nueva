@@ -1,0 +1,32 @@
+{%- liquid
+  assign visible_count = 0
+  for i in (1..5)
+    assign label_key = 'claim_' | append: i | append: '_label'
+    if block.settings[label_key] != blank
+      assign visible_count = visible_count | plus: 1
+    endif
+  endfor
+-%}
+
+{%- if visible_count > 0 -%}
+  <ul class="product-claims" {{ block.shopify_attributes }}>
+    {%- for i in (1..5) -%}
+      {%- liquid
+        assign label_key = 'claim_' | append: i | append: '_label'
+        assign icon_key = 'claim_' | append: i | append: '_icon'
+        assign custom_key = 'claim_' | append: i | append: '_custom_icon'
+        assign label = block.settings[label_key]
+        assign icon = block.settings[icon_key]
+        assign custom_icon = block.settings[custom_key]
+      -%}
+      {%- unless label == blank -%}
+        <li class="product-claims__item">
+          <span class="product-claims__icon">
+            {%- render 'claim', icon: icon, custom_icon: custom_icon -%}
+          </span>
+          <span class="product-claims__label">{{ label }}</span>
+        </li>
+      {%- endunless -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
