@@ -890,7 +890,7 @@ a.pdl__right {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid rgba(45, 49, 53, 0.24);
-  background: rgba(249, 246, 241, 0.1);
+  background: rgba(249,246,241,.05);
   border-radius: 15px;
 }
 
@@ -900,7 +900,7 @@ a.pdl__right {
 }
 
 .tasting-notes__group + .tasting-notes__group {
-  border-left: 1px solid rgba(45, 49, 53, 0.24);
+  border-left: 1px solid rgba(var(--color-foreground), .24);
 }
 
 .tasting-notes__heading {
