@@ -550,7 +550,7 @@
                       {%- render 'tasting-notes', product: product -%}
                     </div>
 
-                    {%- when 'details-table' -%}
+                  {%- when 'details-table' -%}
                     <div
                       class="tasting-notes-block product-block"
                       {{ block.shopify_attributes }}
@@ -558,16 +558,13 @@
                       {%- render 'product-details-table', product: product -%}
                     </div>
 
-
-                      {%- when 'claims' -%}
+                  {%- when 'claims' -%}
                     <div
                       class="tasting-notes-block product-block"
                       {{ block.shopify_attributes }}
                     >
                       {%- render 'claims', block: block -%}
                     </div>
-
-                    
 
                   {%- when 'custom' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>

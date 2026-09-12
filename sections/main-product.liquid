@@ -227,6 +227,38 @@
       ]
     },
     {
+      "type": "claim",
+      "name": "Claim",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "no_additives", "label": "No additives" },
+            { "value": "no_sweetener", "label": "No sweetener" },
+            { "value": "no_coloring", "label": "No coloring" },
+            { "value": "agave", "label": "Agave" },
+            { "value": "custom", "label": "Custom SVG" }
+          ],
+          "default": "no_additives"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_icon",
+          "label": "Custom icon (SVG code)",
+          "info": "Only used when Icon is set to Custom SVG. Paste a full <svg>…</svg> tag, no fill, stroke set to currentColor.",
+          "visible_if": "{{ block.settings.icon == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "No Additives"
+        }
+      ]
+    },
+    {
       "type": "quantity_selector",
       "name": "t:product_block.quantity_selector.name",
       "limit": 1,
