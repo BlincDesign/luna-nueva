@@ -66,34 +66,30 @@
             "margin_bottom": 10
           }
         },
-        "claim_xNqFPL": {
-          "type": "claim",
+        "claims_Tx3Abi": {
+          "type": "claims",
           "settings": {
-            "icon": "no_additives",
-            "custom_icon": "",
-            "label": "No Additives"
-          }
-        },
-        "claim_wUd8gA": {
-          "type": "claim",
-          "settings": {
-            "icon": "no_additives",
-            "custom_icon": "",
-            "label": "No Additives"
+            "claim_1_icon": "no_additives",
+            "claim_1_custom_icon": "",
+            "claim_1_label": "No Additives",
+            "claim_2_icon": "no_sweetener",
+            "claim_2_custom_icon": "",
+            "claim_2_label": "No Sweetener",
+            "claim_3_icon": "no_coloring",
+            "claim_3_custom_icon": "",
+            "claim_3_label": "No Coloring",
+            "claim_4_icon": "agave",
+            "claim_4_custom_icon": "",
+            "claim_4_label": "100% Agave",
+            "claim_5_icon": "no_additives",
+            "claim_5_custom_icon": "",
+            "claim_5_label": ""
           }
         },
         "tasting_notes_w9FFAp": {
           "type": "tasting_notes",
           "settings": {
             "margin_bottom": 10
-          }
-        },
-        "claim_LQh6aC": {
-          "type": "claim",
-          "settings": {
-            "icon": "no_additives",
-            "custom_icon": "",
-            "label": "No Additives"
           }
         },
         "details_table_aqtr66": {
@@ -111,10 +107,8 @@
         "separator_wEjmRV",
         "variant_picker",
         "buy_buttons",
-        "claim_xNqFPL",
-        "claim_wUd8gA",
+        "claims_Tx3Abi",
         "tasting_notes_w9FFAp",
-        "claim_LQh6aC",
         "details_table_aqtr66"
       ],
       "settings": {
