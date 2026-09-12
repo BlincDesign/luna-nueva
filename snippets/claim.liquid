@@ -9,9 +9,8 @@
 -%}
 
 {%- if visible_count > 0 -%}
-  {{ 'component-product-claims.css' | asset_url | stylesheet_tag }}
 
-  <ul class="product-claims" aria-label="{{ 'products.product.claims.aria_label' | t }}" {{ block.shopify_attributes }}>
+  <ul class="product-claims" {{ block.shopify_attributes }}>
     {%- for i in (1..5) -%}
       {%- liquid
         assign label_key = 'claim_' | append: i | append: '_label'
@@ -24,7 +23,7 @@
       {%- unless label == blank -%}
         <li class="product-claims__item">
           <span class="product-claims__icon">
-            {%- render 'icon-claim', icon: icon, custom_icon: custom_icon -%}
+            {%- render 'claim', icon: icon, custom_icon: custom_icon -%}
           </span>
           <span class="product-claims__label">{{ label }}</span>
         </li>
