@@ -72,6 +72,14 @@
             "margin_bottom": 10
           }
         },
+        "claim_LQh6aC": {
+          "type": "claim",
+          "settings": {
+            "icon": "no_additives",
+            "custom_icon": "",
+            "label": "No Additives"
+          }
+        },
         "details_table_aqtr66": {
           "type": "details-table",
           "settings": {
@@ -88,6 +96,7 @@
         "variant_picker",
         "buy_buttons",
         "tasting_notes_w9FFAp",
+        "claim_LQh6aC",
         "details_table_aqtr66"
       ],
       "settings": {
