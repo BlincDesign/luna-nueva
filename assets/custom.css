@@ -890,7 +890,7 @@ a.pdl__right {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid rgba(45, 49, 53, 0.24);
-  background: rgba(249, 246, 241, 0.32);
+  background: rgba(249, 246, 241, 0.1);
   border-radius: 15px;
 }
 
