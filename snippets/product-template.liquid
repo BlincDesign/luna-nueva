@@ -126,6 +126,13 @@
             <div data-product-blocks>
               {%- capture form_id -%}AddToCartForm-{{ section_id }}-{{ product.id }}{%- endcapture -%}
               {%- for block in blocks -%}
+
+                {% style %}
+                  .product-block {
+                    margin-bottom: {{ block.settings.margin_bottom }}px; 
+                  }
+                {% endstyle %}
+
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
