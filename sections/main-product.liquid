@@ -227,14 +227,10 @@
       ]
     },
     {
-      "type": "claim",
+      "type": "claims",
       "name": "Claims",
       "limit": 1,
       "settings": [
-        {
-          "type": "paragraph",
-          "content": "Add up to 5 claims (e.g. \"No Additives\", \"100% Agave\"). Leave a label blank to skip that slot."
-        },
         { "type": "header", "content": "Claim 1" },
         {
           "type": "select",
@@ -372,6 +368,16 @@
           "type": "text",
           "id": "claim_5_label",
           "label": "Label"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Margin bottom",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 10
         }
       ]
     },
