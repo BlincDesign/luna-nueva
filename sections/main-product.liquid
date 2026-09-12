@@ -228,11 +228,17 @@
     },
     {
       "type": "claim",
-      "name": "Claim",
+      "name": "Claims",
+      "limit": 1,
       "settings": [
         {
+          "type": "paragraph",
+          "content": "Add up to 5 claims (e.g. \"No Additives\", \"100% Agave\"). Leave a label blank to skip that slot."
+        },
+        { "type": "header", "content": "Claim 1" },
+        {
           "type": "select",
-          "id": "icon",
+          "id": "claim_1_icon",
           "label": "Icon",
           "options": [
             { "value": "no_additives", "label": "No additives" },
@@ -245,16 +251,127 @@
         },
         {
           "type": "textarea",
-          "id": "custom_icon",
+          "id": "claim_1_custom_icon",
           "label": "Custom icon (SVG code)",
-          "info": "Only used when Icon is set to Custom SVG. Paste a full <svg>…</svg> tag, no fill, stroke set to currentColor.",
-          "visible_if": "{{ block.settings.icon == 'custom' }}"
+          "info": "Only used when Icon is set to Custom SVG.",
+          "visible_if": "{{ block.settings.claim_1_icon == 'custom' }}"
         },
         {
           "type": "text",
-          "id": "label",
+          "id": "claim_1_label",
           "label": "Label",
           "default": "No Additives"
+        },
+
+        { "type": "header", "content": "Claim 2" },
+        {
+          "type": "select",
+          "id": "claim_2_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "no_additives", "label": "No additives" },
+            { "value": "no_sweetener", "label": "No sweetener" },
+            { "value": "no_coloring", "label": "No coloring" },
+            { "value": "agave", "label": "Agave" },
+            { "value": "custom", "label": "Custom SVG" }
+          ],
+          "default": "no_sweetener"
+        },
+        {
+          "type": "textarea",
+          "id": "claim_2_custom_icon",
+          "label": "Custom icon (SVG code)",
+          "info": "Only used when Icon is set to Custom SVG.",
+          "visible_if": "{{ block.settings.claim_2_icon == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "claim_2_label",
+          "label": "Label",
+          "default": "No Sweetener"
+        },
+
+        { "type": "header", "content": "Claim 3" },
+        {
+          "type": "select",
+          "id": "claim_3_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "no_additives", "label": "No additives" },
+            { "value": "no_sweetener", "label": "No sweetener" },
+            { "value": "no_coloring", "label": "No coloring" },
+            { "value": "agave", "label": "Agave" },
+            { "value": "custom", "label": "Custom SVG" }
+          ],
+          "default": "no_coloring"
+        },
+        {
+          "type": "textarea",
+          "id": "claim_3_custom_icon",
+          "label": "Custom icon (SVG code)",
+          "info": "Only used when Icon is set to Custom SVG.",
+          "visible_if": "{{ block.settings.claim_3_icon == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "claim_3_label",
+          "label": "Label",
+          "default": "No Coloring"
+        },
+
+        { "type": "header", "content": "Claim 4" },
+        {
+          "type": "select",
+          "id": "claim_4_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "no_additives", "label": "No additives" },
+            { "value": "no_sweetener", "label": "No sweetener" },
+            { "value": "no_coloring", "label": "No coloring" },
+            { "value": "agave", "label": "Agave" },
+            { "value": "custom", "label": "Custom SVG" }
+          ],
+          "default": "agave"
+        },
+        {
+          "type": "textarea",
+          "id": "claim_4_custom_icon",
+          "label": "Custom icon (SVG code)",
+          "info": "Only used when Icon is set to Custom SVG.",
+          "visible_if": "{{ block.settings.claim_4_icon == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "claim_4_label",
+          "label": "Label",
+          "default": "100% Agave"
+        },
+
+        { "type": "header", "content": "Claim 5 (optional)" },
+        {
+          "type": "select",
+          "id": "claim_5_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "no_additives", "label": "No additives" },
+            { "value": "no_sweetener", "label": "No sweetener" },
+            { "value": "no_coloring", "label": "No coloring" },
+            { "value": "agave", "label": "Agave" },
+            { "value": "custom", "label": "Custom SVG" }
+          ],
+          "default": "no_additives"
+        },
+        {
+          "type": "textarea",
+          "id": "claim_5_custom_icon",
+          "label": "Custom icon (SVG code)",
+          "info": "Only used when Icon is set to Custom SVG.",
+          "visible_if": "{{ block.settings.claim_5_icon == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "claim_5_label",
+          "label": "Label"
         }
       ]
     },
