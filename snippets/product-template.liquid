@@ -558,8 +558,8 @@
                       {%- render 'product-details-table', product: product -%}
                     </div>
 
-                  {%- when 'claim' -%}
-                    {% render 'claim', section: section %}
+                  {%- when 'claims' -%}
+                    {% render 'claims', block: block %}
 
                   {%- when 'custom' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
