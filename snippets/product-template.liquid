@@ -559,7 +559,12 @@
                     </div>
 
                   {%- when 'claims' -%}
-                    {% render 'claims', block: block %}
+                    <div
+                      class="claims-block product-block"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% render 'claims', block: block %}
+                    </div>
 
                   {%- when 'custom' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
