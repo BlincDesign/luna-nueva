@@ -69,7 +69,7 @@
         "claims_Tx3Abi": {
           "type": "claims",
           "settings": {
-            "claim_1_icon": "no_additives",
+            "claim_1_icon": "no_sweetener",
             "claim_1_custom_icon": "",
             "claim_1_label": "No Additives",
             "claim_2_icon": "no_sweetener",
@@ -81,7 +81,7 @@
             "claim_4_icon": "agave",
             "claim_4_custom_icon": "",
             "claim_4_label": "100% Agave",
-            "claim_5_icon": "no_additives",
+            "claim_5_icon": "custom",
             "claim_5_custom_icon": "",
             "claim_5_label": ""
           }
