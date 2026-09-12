@@ -35,8 +35,6 @@
 -%}
 
 {%- if aroma_count > 0 or palate_count > 0 -%}
-  {{ 'component-tasting-notes.css' | asset_url | stylesheet_tag }}
-
   <div class="tasting-notes">
     {%- if aroma_count > 0 -%}
       <div class="tasting-notes__group">
