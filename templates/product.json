@@ -71,6 +71,12 @@
           "settings": {
             "margin_bottom": 10
           }
+        },
+        "details_table_aqtr66": {
+          "type": "details-table",
+          "settings": {
+            "margin_bottom": 10
+          }
         }
       },
       "block_order": [
@@ -81,7 +87,8 @@
         "separator_wEjmRV",
         "variant_picker",
         "buy_buttons",
-        "tasting_notes_w9FFAp"
+        "tasting_notes_w9FFAp",
+        "details_table_aqtr66"
       ],
       "settings": {
         "color_scheme": "",
