@@ -1110,6 +1110,67 @@
       <svg viewBox="0 0 24 24">
         <circle fill="none" stroke="currentColor" cx="12" cy="12" r="8.5"></circle><path stroke="currentColor" d="M12 3.5v17M3.5 12h17"></path>
       </svg>
+
+    {%- when 'no_additives' -%}
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M12 3.2c3.5 4.1 5.8 7 5.8 9.7a5.8 5.8 0 0 1-11.6 0c0-2.7 2.3-5.6 5.8-9.7Z"></path>
+        <line x1="4.2" y1="20" x2="19.8" y2="4.2"></line>
+      </svg>
+    {%- when 'no_sweetener' -%}
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <rect x="5.4" y="5.4" width="13.2" height="13.2" rx="2.4"></rect>
+        <path d="M9 9.4h1.4M13.6 14.6H15"></path>
+        <line x1="4.2" y1="20" x2="19.8" y2="4.2"></line>
+      </svg>
+    {%- when 'no_coloring' -%}
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M10 3.4v5L5.6 16.8A2 2 0 0 0 7.4 19.8h9.2a2 2 0 0 0 1.8-3L14 8.4v-5"></path>
+        <path d="M8.8 3.4h6.4"></path>
+        <line x1="4.2" y1="20" x2="19.8" y2="4.2"></line>
+      </svg>
+    {%- when 'agave' -%}
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M12 20.6V10"></path>
+        <path d="M12 14.4 6.2 6.6M12 14.4l5.8-7.8M12 18 4 12.6M12 18l8-5.4"></path>
+      </svg>
+    {%- when 'custom' -%}
+      {{ custom_icon }}
     {% else %}
       <p>?</p>
   {%- endcase -%}
