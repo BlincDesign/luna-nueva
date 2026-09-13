@@ -1164,6 +1164,7 @@ a.pdl__right {
    and paints on top, and overflow:hidden on the frame clips whatever isn't. */
 .pdp-gallery {
   --pdp-gallery-media-ar: 1 / 1.321;
+  --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
 }
 
 .secondary-slide .pdp-gallery__frame {
@@ -1171,6 +1172,7 @@ a.pdl__right {
   aspect-ratio: var(--pdp-gallery-media-ar);
   width: auto;
   box-sizing: border-box;
+  border-radius: var(--pdp-gallery-arch-r);
   overflow: hidden;
 }
 
@@ -1339,15 +1341,31 @@ a.pdl__right {
   height: 100%;
 }
 
-/* The hero/product slide has no forced crop ratio (left alone in the fix
-   above), so it's only given a height here — width follows from the image's
-   own intrinsic ratio inside that box, same as it already did. */
-.starting-slide .pdp-gallery__frame {
-  height: 100%;
-  width: auto;
+/* Slide frames (hero full-width, secondary narrowed by their fixed ratio)
+   are centered in the cell rather than sitting flush at the inline-start
+   edge. Flickity sets position:absolute on the cell inline (for its own
+   horizontal placement); display:flex here only affects how the cell centers
+   its own child and doesn't touch that. */
+.pdp-gallery__stage .product-main-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 900px) {
+/* The hero/product slide has no forced crop ratio (left alone in the fix
+   above) and, unlike the secondary frame, no aspect-ratio of its own for a
+   flex item to size a main-axis width from — so it's kept at the cell's
+   full width explicitly rather than left to shrink-to-fit, which the flex
+   row above would otherwise resolve against zero (the img that would
+   normally supply that intrinsic size is position:absolute, out of flow).
+   Width follows from the image's own intrinsic ratio inside that box, same
+   as it already did. */
+.starting-slide .pdp-gallery__frame {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 589px) {
   .pdp-gallery__stage {
     height: var(--gallery-height-mobile, 60vh);
   }
