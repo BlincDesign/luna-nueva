@@ -54,7 +54,13 @@
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
-            "margin_bottom": 15
+            "margin_bottom": 16
+          }
+        },
+        "tasting_notes_w9FFAp": {
+          "type": "tasting_notes",
+          "settings": {
+            "margin_bottom": 16
           }
         },
         "buy_buttons": {
@@ -88,12 +94,6 @@
             "margin_bottom": 10
           }
         },
-        "tasting_notes_w9FFAp": {
-          "type": "tasting_notes",
-          "settings": {
-            "margin_bottom": 10
-          }
-        },
         "details_table_aqtr66": {
           "type": "details-table",
           "settings": {
@@ -108,9 +108,9 @@
         "price_mEWtYa",
         "separator_wEjmRV",
         "variant_picker",
+        "tasting_notes_w9FFAp",
         "buy_buttons",
         "claims_Tx3Abi",
-        "tasting_notes_w9FFAp",
         "details_table_aqtr66"
       ],
       "settings": {
