@@ -70,7 +70,7 @@
             "show_dynamic_checkout": false,
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
-            "margin_bottom": 10
+            "margin_bottom": 12
           }
         },
         "claims_Tx3Abi": {
@@ -91,7 +91,7 @@
             "claim_5_icon": "custom",
             "claim_5_custom_icon": "",
             "claim_5_label": "",
-            "margin_bottom": 10
+            "margin_bottom": 16
           }
         },
         "details_table_aqtr66": {
