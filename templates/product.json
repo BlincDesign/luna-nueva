@@ -83,7 +83,8 @@
             "claim_4_label": "100% Agave",
             "claim_5_icon": "custom",
             "claim_5_custom_icon": "",
-            "claim_5_label": ""
+            "claim_5_label": "",
+            "margin_bottom": 10
           }
         },
         "tasting_notes_w9FFAp": {
@@ -121,7 +122,11 @@
         "thumbnail_height": "fixed",
         "thumbnail_arrows": false,
         "enable_video_looping": true,
-        "product_video_style": "muted"
+        "product_video_style": "muted",
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "custom_rich_text_columns_EnMEYm": {
