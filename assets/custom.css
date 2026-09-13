@@ -1107,8 +1107,11 @@ a.pdl__right {
   padding: clamp(14px, 2.4vw, 32px);
 }
 
-.pdp-gallery__frame::before,
-.pdp-gallery__frame::after {
+/* Lighting is the hero/product slide's own treatment, same as the reference's
+   .gal-slide--bottle vs. plain .gal-media — the other slides are real
+   photographs and get the fixed-ratio crop below instead, not a fake glow. */
+.starting-slide .pdp-gallery__frame::before,
+.starting-slide .pdp-gallery__frame::after {
   content: "";
   position: absolute;
   z-index: 0;
@@ -1117,7 +1120,7 @@ a.pdl__right {
 
 /* Soft key light upper-left, plus a faint ambient pool grounding the bottom
    of the stage so the product doesn't read as floating on a flat tint. */
-.pdp-gallery__frame::before {
+.starting-slide .pdp-gallery__frame::before {
   inset: 0;
   background:
     radial-gradient(60% 50% at 28% 18%, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 68%),
@@ -1125,7 +1128,7 @@ a.pdl__right {
 }
 
 /* Contact shadow the product sits on. */
-.pdp-gallery__frame::after {
+.starting-slide .pdp-gallery__frame::after {
   left: 50%;
   bottom: clamp(6px, 1.6vw, 16px);
   width: 60%;
@@ -1135,16 +1138,87 @@ a.pdl__right {
   filter: blur(2px);
 }
 
-.pdp-gallery__frame .image-wrap {
+.starting-slide .pdp-gallery__frame .image-wrap {
   position: relative;
   z-index: 1;
   overflow: visible;
 }
 
-.pdp-gallery__frame .image-wrap img {
+.starting-slide .pdp-gallery__frame .image-wrap img {
   filter:
     drop-shadow(0 16px 22px rgba(var(--color-shadow), .2))
     drop-shadow(0 4px 8px rgba(var(--color-shadow), .14));
+}
+
+/* ---------- Fix: fixed slide ratio + cover crop (matches .gal-media) ----------
+   Every non-hero slide renders at one identical aspect ratio so the Flickity
+   viewport (adaptiveHeight, sized off each cell's own offsetHeight) stops
+   resizing between slides. The obstacle is that .image-wrap's height comes
+   from an inline height:0/padding-bottom:N% pair set per-image in the Liquid
+   template — not overridable from a stylesheet without !important. Instead of
+   fighting that box, it's bypassed: .image-wrap is dropped out of the
+   positioning chain (position:static) so its <img> (position:absolute) skips
+   over it and sizes against .pdp-gallery__frame instead, which has no inline
+   styles and is free to carry the fixed ratio. .image-wrap's own native-ratio
+   box still exists in normal flow underneath, but the img now fully covers it
+   and paints on top, and overflow:hidden on the frame clips whatever isn't. */
+.pdp-gallery {
+  --pdp-gallery-media-ar: 1 / 1.321;
+}
+
+.secondary-slide .pdp-gallery__frame {
+  height: 100%;
+  aspect-ratio: var(--pdp-gallery-media-ar);
+  width: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.secondary-slide .pdp-gallery__frame .image-wrap {
+  position: static;
+}
+
+.secondary-slide .pdp-gallery__frame .image-wrap img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Fix: thumbnail aspect ratio (matches .gal-th) ----------
+   Same inline height:0/padding-bottom:N% obstacle as above, and the theme's
+   own .product__thumb>.image-wrap img{height:auto;position:static} rule (see
+   theme.css.liquid) already sidesteps it by letting the thumb image render at
+   its own intrinsic ratio — which is why thumbnails currently vary in height.
+   Restoring position:absolute + object-fit:cover on that same selector (it
+   loads after theme.css.liquid, so no !important is needed to win) crops it
+   against .product__thumb instead, which carries the fixed ratio. */
+/* .product__thumb-item (below layout) is display:inline-block with only a
+   max-width, shrink-to-fit off its content. That content used to be the
+   thumbnail <img> sized at its own intrinsic ratio; taking the img out of
+   flow below removes the one thing establishing that width, so the cap is
+   turned into a definite width here to keep the row from collapsing. */
+.product__thumbs--below .product__thumb-item {
+  width: 80px;
+}
+
+.product__thumb {
+  aspect-ratio: 1 / 1.14;
+  overflow: hidden;
+}
+
+.product__thumb > .image-wrap {
+  position: static;
+}
+
+.product__thumb > .image-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Progress counter ("01 / 05"), kept updated by JS off the slide Flickity

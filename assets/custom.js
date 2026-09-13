@@ -25,24 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
   checkOverlap();
 });
 
-
-// PDP gallery: hover-arrow click handling and the "01 / 05" progress count.
-// Drag, swipe and keyboard nav are already provided by the theme's own
-// Flickity slideshow; the arrows just call into that same instance via
-// Flickity.data(). The count is kept in sync by watching for the
-// .is-selected class Flickity's own Cell.select()/unselect() toggles on each
-// slide, rather than by binding to a specific Flickity instance directly —
-// image-set variant switches destroy and recreate that instance, but the
-// slide elements (and their class mutations) persist.
+// PDP gallery hover arrows: click handling only. Drag, swipe and keyboard nav
+// are already provided by the theme's own Flickity slideshow; this just wires
+// the new stage-overlay buttons to that same instance via Flickity.data().
 (() => {
-  const initGallery = () => {
+  const bindGalleryArrows = () => {
     document.querySelectorAll('[data-product-photos]').forEach((slider) => {
       const stage = slider.closest('.pdp-gallery__stage');
-      if (!stage || stage.dataset.pdpGalleryBound) return;
-      stage.dataset.pdpGalleryBound = 'true';
+      if (!stage || stage.dataset.pdpNavBound) return;
 
       const prevBtn = stage.querySelector('[data-pdp-nav="prev"]');
       const nextBtn = stage.querySelector('[data-pdp-nav="next"]');
+      if (!prevBtn && !nextBtn) return;
 
       const goTo = (direction) => {
         const flkty = window.Flickity && window.Flickity.data(slider);
@@ -64,28 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      const countEl = stage.querySelector('[data-pdp-count]');
-      const slides = slider.querySelectorAll('.product-main-slide');
-
-      if (countEl && slides.length > 1) {
-        const pad = (n) => String(n).padStart(2, '0');
-        const total = slides.length;
-
-        const updateCount = () => {
-          const activeIndex = Array.from(slides).findIndex((slide) => slide.classList.contains('is-selected'));
-          countEl.textContent = `${pad(activeIndex > -1 ? activeIndex + 1 : 1)} / ${pad(total)}`;
-        };
-
-        updateCount();
-
-        const observer = new MutationObserver(updateCount);
-        slides.forEach((slide) => {
-          observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
-        });
-      }
+      stage.dataset.pdpNavBound = 'true';
     });
   };
 
-  document.addEventListener('DOMContentLoaded', initGallery);
-  document.addEventListener('shopify:section:load', initGallery);
+  document.addEventListener('DOMContentLoaded', bindGalleryArrows);
+  document.addEventListener('shopify:section:load', bindGalleryArrows);
 })();
