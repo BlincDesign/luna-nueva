@@ -1013,3 +1013,17 @@ a.pdl__right {
 .product-section .product-single__meta {
     padding-top: 16px;
 }
+
+.custom-width--auto {
+    width: 45%;
+}
+
+.custom-width--auto:has(.product-single__meta) {
+    width: 55%;
+}
+
+ @media only screen and (max-width:900px){
+  .custom-width--auto {
+      width: 100%;
+  }        
+ }
