@@ -1093,23 +1093,24 @@ a.pdl__right {
     }
   }
 
-/* PDP gallery — lit stage, hover arrows */
-/* .product-single__sticky already ships position:sticky above 589px, so the
-   column staying in view while the buy box scrolls needs no extra CSS here.
 
-   The main slider is Flickity with adaptiveHeight: the viewport is sized off
-   each cell's own offsetHeight and clips anything drawn outside it. Padding on
-   the frame (rather than a negative inset on the glow/shadow layers) is what
-   keeps the light, the contact shadow and the image's drop-shadow inside that
-   measured box instead of being cut off. */
-.pdp-gallery__frame {
-  position: relative;
-  padding: clamp(14px, 2.4vw, 32px);
+
+
+
+.pdp-gallery {
+  --pdp-gallery-media-ar: 1 / 1.321;
+  --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
 }
 
-/* Lighting is on top of the shared fixed-ratio crop below, and is the hero
-   slide's own extra treatment — the other slides are real photographs and
-   don't get a fake glow, just the crop. */
+.starting-slide .pdp-gallery__frame {
+  height: 100%;
+  aspect-ratio: var(--pdp-gallery-media-ar);
+  width: auto;
+  box-sizing: border-box;
+  border-radius: var(--pdp-gallery-arch-r);
+  overflow: hidden;
+}
+
 .starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
   content: "";
@@ -1118,23 +1119,32 @@ a.pdl__right {
   pointer-events: none;
 }
 
-/* Soft key light upper-left, plus a faint ambient pool grounding the bottom
-   of the stage so the product doesn't read as floating on a flat tint. */
 .starting-slide .pdp-gallery__frame::before {
   inset: 0;
   background:
-    radial-gradient(60% 50% at 28% 18%, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 68%),
-    radial-gradient(85% 65% at 50% 100%, rgba(var(--color-shadow), .14), rgba(var(--color-shadow), 0) 65%);
+    radial-gradient(
+      60% 50% at 28% 18%,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0) 68%
+    ),
+    radial-gradient(
+      85% 65% at 50% 100%,
+      rgba(var(--color-shadow), 0.14),
+      rgba(var(--color-shadow), 0) 65%
+    );
 }
 
-/* Contact shadow the product sits on. */
 .starting-slide .pdp-gallery__frame::after {
   left: 50%;
   bottom: clamp(6px, 1.6vw, 16px);
   width: 60%;
   height: 14%;
   transform: translateX(-50%);
-  background: radial-gradient(50% 100% at 50% 50%, rgba(var(--color-shadow), .3), rgba(var(--color-shadow), 0) 72%);
+  background: radial-gradient(
+    50% 100% at 50% 50%,
+    rgba(var(--color-shadow), 0.3),
+    rgba(var(--color-shadow), 0) 72%
+  );
   filter: blur(2px);
 }
 
@@ -1146,30 +1156,11 @@ a.pdl__right {
 
 .starting-slide .pdp-gallery__frame .image-wrap img {
   filter:
-    drop-shadow(0 16px 22px rgba(var(--color-shadow), .2))
-    drop-shadow(0 4px 8px rgba(var(--color-shadow), .14));
+    drop-shadow(0 16px 22px rgba(var(--color-shadow), 0.2))
+    drop-shadow(0 4px 8px rgba(var(--color-shadow), 0.14));
 }
 
-/* ---------- Fix: fixed slide ratio + cover crop (matches .gal-media) ----------
-   Every slide, hero included, renders at one identical arch-shaped ratio so
-   the Flickity viewport (adaptiveHeight, sized off each cell's own
-   offsetHeight) stops resizing between slides. The obstacle is that
-   .image-wrap's height comes
-   from an inline height:0/padding-bottom:N% pair set per-image in the Liquid
-   template — not overridable from a stylesheet without !important. Instead of
-   fighting that box, it's bypassed: .image-wrap is dropped out of the
-   positioning chain (position:static) so its <img> (position:absolute) skips
-   over it and sizes against .pdp-gallery__frame instead, which has no inline
-   styles and is free to carry the fixed ratio. .image-wrap's own native-ratio
-   box still exists in normal flow underneath, but the img now fully covers it
-   and paints on top, and overflow:hidden on the frame clips whatever isn't. */
-.pdp-gallery {
-  --pdp-gallery-media-ar: 1 / 1.321;
-  --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
-}
-
-.secondary-slide .pdp-gallery__frame,
-.starting-slide .pdp-gallery__frame {
+.secondary-slide .pdp-gallery__frame {
   height: 100%;
   aspect-ratio: var(--pdp-gallery-media-ar);
   width: auto;
@@ -1193,19 +1184,6 @@ a.pdl__right {
   object-fit: cover;
 }
 
-/* ---------- Fix: thumbnail aspect ratio (matches .gal-th) ----------
-   Same inline height:0/padding-bottom:N% obstacle as above, and the theme's
-   own .product__thumb>.image-wrap img{height:auto;position:static} rule (see
-   theme.css.liquid) already sidesteps it by letting the thumb image render at
-   its own intrinsic ratio — which is why thumbnails currently vary in height.
-   Restoring position:absolute + object-fit:cover on that same selector (it
-   loads after theme.css.liquid, so no !important is needed to win) crops it
-   against .product__thumb instead, which carries the fixed ratio. */
-/* .product__thumb-item (below layout) is display:inline-block with only a
-   max-width, shrink-to-fit off its content. That content used to be the
-   thumbnail <img> sized at its own intrinsic ratio; taking the img out of
-   flow below removes the one thing establishing that width, so the cap is
-   turned into a definite width here to keep the row from collapsing. */
 .product__thumbs--below .product__thumb-item {
   width: 80px;
 }
@@ -1227,8 +1205,6 @@ a.pdl__right {
   object-fit: cover;
 }
 
-/* Progress counter ("01 / 05"), kept updated by JS off the slide Flickity
-   marks .is-selected — see custom.js. */
 .pdp-gallery__count {
   position: absolute;
   top: clamp(10px, 1.4vw, 18px);
@@ -1237,14 +1213,12 @@ a.pdl__right {
   font-family: var(--typeBasePrimary), var(--typeBaseFallback);
   font-weight: 700;
   font-size: var(--type-caption-size);
-  letter-spacing: .15em;
-  color: rgba(var(--color-foreground), .7);
+  letter-spacing: 0.15em;
+  color: rgba(var(--color-foreground), 0.7);
   font-variant-numeric: tabular-nums;
   pointer-events: none;
 }
 
-/* Prev/next chevrons, revealed by the stage on hover/focus, not by the arrow:
-   there is no hit area to hover before the parent draws it. */
 .pdp-gallery__nav {
   position: absolute;
   top: 50%;
@@ -1261,16 +1235,18 @@ a.pdl__right {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%);
-  transition: opacity .25s ease, transform .25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .pdp-gallery__nav--prev {
-  left: clamp(2px, .8vw, 10px);
+  left: clamp(2px, 0.8vw, 10px);
   transform: translateY(-50%) translateX(-6px);
 }
 
 .pdp-gallery__nav--next {
-  right: clamp(2px, .8vw, 10px);
+  right: clamp(2px, 0.8vw, 10px);
   transform: translateY(-50%) translateX(6px);
 }
 
@@ -1280,7 +1256,7 @@ a.pdl__right {
   aspect-ratio: 1;
   border-left: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
-  filter: drop-shadow(0 1px 3px rgba(var(--color-shadow), .45));
+  filter: drop-shadow(0 1px 3px rgba(var(--color-shadow), 0.45));
 }
 
 .pdp-gallery__nav--prev .pdp-gallery__chevron {
@@ -1293,7 +1269,7 @@ a.pdl__right {
 
 .pdp-gallery__stage:hover .pdp-gallery__nav,
 .pdp-gallery__stage:focus-within .pdp-gallery__nav {
-  opacity: .85;
+  opacity: 0.85;
   pointer-events: auto;
   transform: translateY(-50%) translateX(0);
 }
@@ -1310,30 +1286,6 @@ a.pdl__right {
   outline-offset: 2px;
 }
 
-/* No hover to reveal them and no second chance to find them on touch. */
-@media (hover: none) {
-  .pdp-gallery__nav {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pdp-gallery__nav {
-    transition: opacity .2s linear;
-  }
-}
-
-/* ---------- Merchant-configurable gallery height ----------
-   --gallery-height/--gallery-height-mobile come from the section settings,
-   written onto #ProductSection-{{ section_id }} in product-template.liquid.
-   The stage is given the explicit, definite height; height:100% then carries
-   it down through Flickity's own viewport/slider (both already height:100%
-   in the base stylesheet) to each cell, which is the missing link that lets
-   adaptiveHeight settle on that same fixed number instead of the cell's own
-   content height. Scoped to .pdp-gallery__stage so it never touches any other
-   Flickity carousel on the page (testimonials, complementary products, etc).
-   The secondary-slide crop fix already reads height:100% off the cell, so it
-   picks this up automatically without being edited. */
 .pdp-gallery__stage {
   height: var(--gallery-height, 70vh);
 }
@@ -1345,18 +1297,22 @@ a.pdl__right {
   height: 100%;
 }
 
-/* Every slide frame — hero included, now sharing the same fixed-ratio arch
-   crop as the secondary slides — is centered in the cell instead of sitting
-   flush at the inline-start edge. Flickity sets position:absolute on the
-   cell inline (for its own horizontal placement); display:flex here only
-   affects how the cell centers its own child and doesn't touch that. Both
-   frame rules already carry aspect-ratio + width:auto, so as flex items they
-   size from that ratio against the cell's definite height rather than
-   collapsing to min-content. */
 .pdp-gallery__stage .product-main-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (hover: none) {
+  .pdp-gallery__nav {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdp-gallery__nav {
+    transition: opacity 0.2s linear;
+  }
 }
 
 @media (max-width: 589px) {
