@@ -21,6 +21,11 @@
       assign product_image_width = 'medium-up--three-fifths'
       assign product_description_width = 'medium-up--two-fifths'
       assign product_image_size = '740x'
+
+    when 'auto'
+      assign product_image_width = 'auto'
+      assign product_description_width = 'auto'
+      assign product_image_size = '620x'
   endcase
 
   unless thumbnail_position
