@@ -99,24 +99,6 @@
           "settings": {
             "margin_bottom": 10
           }
-        },
-        "accordion_3LPdYg": {
-          "type": "accordion",
-          "settings": {
-            "title": "The Additive Question",
-            "content": "<p>Mexican regulation permits up to 1% glycerin, oak extract, sugar-based sweetener and caramel coloring without a word on the label. We use none of them.</p>",
-            "open_by_default": false,
-            "margin_bottom": 10
-          }
-        },
-        "accordion_qGXQJY": {
-          "type": "accordion",
-          "settings": {
-            "title": "Distillery & Provenance",
-            "content": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep. 100% Blue Weber agave, grown across highland and lowland terrain.</p>",
-            "open_by_default": false,
-            "margin_bottom": 10
-          }
         }
       },
       "block_order": [
@@ -129,9 +111,7 @@
         "tasting_notes_w9FFAp",
         "buy_buttons",
         "claims_Tx3Abi",
-        "details_table_aqtr66",
-        "accordion_3LPdYg",
-        "accordion_qGXQJY"
+        "details_table_aqtr66"
       ],
       "settings": {
         "color_scheme": "",
