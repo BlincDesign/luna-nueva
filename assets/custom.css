@@ -1316,3 +1316,39 @@ a.pdl__right {
     transition: opacity .2s linear;
   }
 }
+
+/* ---------- Merchant-configurable gallery height ----------
+   --gallery-height/--gallery-height-mobile come from the section settings,
+   written onto #ProductSection-{{ section_id }} in product-template.liquid.
+   The stage is given the explicit, definite height; height:100% then carries
+   it down through Flickity's own viewport/slider (both already height:100%
+   in the base stylesheet) to each cell, which is the missing link that lets
+   adaptiveHeight settle on that same fixed number instead of the cell's own
+   content height. Scoped to .pdp-gallery__stage so it never touches any other
+   Flickity carousel on the page (testimonials, complementary products, etc).
+   The secondary-slide crop fix already reads height:100% off the cell, so it
+   picks this up automatically without being edited. */
+.pdp-gallery__stage {
+  height: var(--gallery-height, 70vh);
+}
+
+.pdp-gallery__stage [data-product-photos],
+.pdp-gallery__stage .flickity-viewport,
+.pdp-gallery__stage .flickity-slider,
+.pdp-gallery__stage .product-main-slide {
+  height: 100%;
+}
+
+/* The hero/product slide has no forced crop ratio (left alone in the fix
+   above), so it's only given a height here — width follows from the image's
+   own intrinsic ratio inside that box, same as it already did. */
+.starting-slide .pdp-gallery__frame {
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .pdp-gallery__stage {
+    height: var(--gallery-height-mobile, 60vh);
+  }
+}
