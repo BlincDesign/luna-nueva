@@ -16,14 +16,14 @@
           "type": "text",
           "settings": {
             "text": "<strong>The Collection · 750ml · Additive-Free</strong>",
-            "uppeercase": true,
+            "uppercase": true,
             "margin_bottom": 10
           }
         },
         "title_bcgBPy": {
           "type": "title",
           "settings": {
-            "margin_bottom": 10
+            "margin_bottom": 13
           }
         },
         "character_texture_kbtB9k": {
@@ -43,7 +43,7 @@
         "separator_wEjmRV": {
           "type": "separator",
           "settings": {
-            "margin_bottom": 10
+            "margin_bottom": 15
           }
         },
         "variant_picker": {
@@ -54,7 +54,7 @@
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
-            "margin_bottom": 10
+            "margin_bottom": 15
           }
         },
         "buy_buttons": {
