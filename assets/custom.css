@@ -1300,12 +1300,6 @@ a.pdl__right {
   height: 100%;
 }
 
-.pdp-gallery__stage .product-main-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (hover: none) {
   .pdp-gallery__nav {
     display: none;
