@@ -139,6 +139,8 @@
         "sku_enable": false,
         "image_size": "auto",
         "product_zoom_enable": true,
+        "gallery_height": "60vh",
+        "gallery_height_mobile": "60vh",
         "thumbnail_position": "below",
         "thumbnail_height": "fixed",
         "thumbnail_arrows": false,
