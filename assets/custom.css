@@ -1172,7 +1172,6 @@ a.pdl__right {
   width: auto;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 50% 50% 0 0 / 62% 62% 0 0;
 }
 
 .secondary-slide .pdp-gallery__frame .image-wrap {
@@ -1338,9 +1337,6 @@ a.pdl__right {
 .pdp-gallery__stage .flickity-slider,
 .pdp-gallery__stage .product-main-slide {
   height: 100%;
-  display: flex;
-  justify-content: center;
-
 }
 
 /* The hero/product slide has no forced crop ratio (left alone in the fix
