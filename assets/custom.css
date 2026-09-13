@@ -1004,3 +1004,12 @@ a.pdl__right {
    flex: 0 0 calc( 50% - 10px / 2 );
  } 
 }
+
+
+.product-section .page-content, .product-section .page-width {
+    padding-top: 0;
+}
+
+.product-section .product-single__meta {
+    padding-top: 16px;
+}
