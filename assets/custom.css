@@ -1147,6 +1147,22 @@ a.pdl__right {
     drop-shadow(0 4px 8px rgba(var(--color-shadow), .14));
 }
 
+/* Progress counter ("01 / 05"), kept updated by JS off the slide Flickity
+   marks .is-selected — see custom.js. */
+.pdp-gallery__count {
+  position: absolute;
+  top: clamp(10px, 1.4vw, 18px);
+  right: clamp(10px, 1.4vw, 18px);
+  z-index: 3;
+  font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+  font-weight: 700;
+  font-size: var(--type-caption-size);
+  letter-spacing: .15em;
+  color: rgba(var(--color-foreground), .7);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
 /* Prev/next chevrons, revealed by the stage on hover/focus, not by the arrow:
    there is no hit area to hover before the parent draws it. */
 .pdp-gallery__nav {
