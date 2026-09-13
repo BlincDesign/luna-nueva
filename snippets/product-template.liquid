@@ -288,7 +288,7 @@
                       {%- endif -%}
                     </div>
                   {%- when 'quantity_selector' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       <div class="product__quantity">
                         {% assign qty_id = section_id | append: product.id %}
                         <label for="Quantity-{{ qty_id }}">{{ 'products.product.quantity' | t }}</label>
@@ -320,7 +320,7 @@
                     {% endif %}
                   {%- when 'variant_picker' -%}
                     <div
-                      class="product-block"
+                      class="product-block product-block--{{ block.id }}"
                       {% if block.settings.display_mode == 'variants'
                         and block.settings.product_dynamic_variants_enable
                       %}
@@ -377,7 +377,7 @@
                       {%- endif -%}
                     </div>
                   {%- when 'buy_buttons' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}
                         <div class="product-block">
                           {%- render 'product-form',
@@ -536,7 +536,7 @@
                   {%- when 'inventory_status' -%}
                     {%- render 'product-inventory', product: product, current_variant: current_variant, block: block -%}
                   {%- when 'share' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       {%- render 'social-sharing',
                         share_title: product.title,
                         share_permalink: product.url,
@@ -544,7 +544,7 @@
                       -%}
                     </div>
                   {%- when 'complementary_products' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       {%- render 'product-complementary',
                         block: block,
                         product: product,
@@ -553,7 +553,7 @@
                       -%}
                     </div>
                   {%- when 'trust_badge' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       <div
                         class="aos-animate"
                         style="max-width: {{ block.settings.trust_image.width }}px; margin: 0 auto;"
@@ -573,7 +573,7 @@
 
                   {%- when 'tasting_notes' -%}
                     <div
-                      class="tasting-notes-block product-block"
+                      class="tasting-notes-block product-block product-block--{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
                       {%- render 'tasting-notes', product: product -%}
@@ -581,7 +581,7 @@
 
                   {%- when 'details-table' -%}
                     <div
-                      class="tasting-notes-block product-block"
+                      class="tasting-notes-block product-block product-block--{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
                       {%- render 'product-details-table', product: product -%}
@@ -589,14 +589,14 @@
 
                   {%- when 'claims' -%}
                     <div
-                      class="claims-block product-block"
+                      class="claims-block product-block product-block--{{ block.id }}"
                       {{ block.shopify_attributes }}
                     >
                       {% render 'claims', block: block %}
                     </div>
 
                   {%- when 'custom' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }}" {{ block.shopify_attributes }}>
                       {{ block.settings.code }}
                     </div>
                 {%- endcase -%}
