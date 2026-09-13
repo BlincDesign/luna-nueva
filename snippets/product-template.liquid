@@ -145,10 +145,9 @@
             <div data-product-blocks>
               {%- capture form_id -%}AddToCartForm-{{ section_id }}-{{ product.id }}{%- endcapture -%}
               {%- for block in blocks -%}
-
                 {% style %}
                   .product-block {
-                    margin-bottom: {{ block.settings.margin_bottom }}px; 
+                    margin-bottom: {{ block.settings.margin_bottom }}px;
                   }
                 {% endstyle %}
 
@@ -175,7 +174,11 @@
                     <div class="product-block" {{ block.shopify_attributes }}><hr></div>
                   {%- when 'text' -%}
                     <div {{ block.shopify_attributes }} class="product-block text-block">
-                      {{ block.settings.text }}
+                      {% if block.settings.uppercase %}
+                        {{ block.settings.text | upcase }}
+                      {% else %}
+                        {{ block.settings.text}}
+                      {% endif %}
                     </div>
 
                   {%- when 'character-texture' -%}
