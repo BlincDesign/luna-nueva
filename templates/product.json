@@ -15,7 +15,8 @@
         "text_4zfUb6": {
           "type": "text",
           "settings": {
-            "text": "The Collection · 750ml · Additive-Free",
+            "text": "<strong>The Collection · 750ml · Additive-Free</strong>",
+            "uppeercase": true,
             "margin_bottom": 10
           }
         },
