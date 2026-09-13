@@ -1092,3 +1092,137 @@ a.pdl__right {
       transition: none;
     }
   }
+
+/* PDP gallery — lit stage, hover arrows */
+/* .product-single__sticky already ships position:sticky above 589px, so the
+   column staying in view while the buy box scrolls needs no extra CSS here.
+
+   The main slider is Flickity with adaptiveHeight: the viewport is sized off
+   each cell's own offsetHeight and clips anything drawn outside it. Padding on
+   the frame (rather than a negative inset on the glow/shadow layers) is what
+   keeps the light, the contact shadow and the image's drop-shadow inside that
+   measured box instead of being cut off. */
+.pdp-gallery__frame {
+  position: relative;
+  padding: clamp(14px, 2.4vw, 32px);
+}
+
+.pdp-gallery__frame::before,
+.pdp-gallery__frame::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Soft key light upper-left, plus a faint ambient pool grounding the bottom
+   of the stage so the product doesn't read as floating on a flat tint. */
+.pdp-gallery__frame::before {
+  inset: 0;
+  background:
+    radial-gradient(60% 50% at 28% 18%, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 68%),
+    radial-gradient(85% 65% at 50% 100%, rgba(var(--color-shadow), .14), rgba(var(--color-shadow), 0) 65%);
+}
+
+/* Contact shadow the product sits on. */
+.pdp-gallery__frame::after {
+  left: 50%;
+  bottom: clamp(6px, 1.6vw, 16px);
+  width: 60%;
+  height: 14%;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 100% at 50% 50%, rgba(var(--color-shadow), .3), rgba(var(--color-shadow), 0) 72%);
+  filter: blur(2px);
+}
+
+.pdp-gallery__frame .image-wrap {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.pdp-gallery__frame .image-wrap img {
+  filter:
+    drop-shadow(0 16px 22px rgba(var(--color-shadow), .2))
+    drop-shadow(0 4px 8px rgba(var(--color-shadow), .14));
+}
+
+/* Prev/next chevrons, revealed by the stage on hover/focus, not by the arrow:
+   there is no hit area to hover before the parent draws it. */
+.pdp-gallery__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: clamp(40px, 3.4vw, 52px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.pdp-gallery__nav--prev {
+  left: clamp(2px, .8vw, 10px);
+  transform: translateY(-50%) translateX(-6px);
+}
+
+.pdp-gallery__nav--next {
+  right: clamp(2px, .8vw, 10px);
+  transform: translateY(-50%) translateX(6px);
+}
+
+.pdp-gallery__chevron {
+  display: block;
+  width: 38%;
+  aspect-ratio: 1;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  filter: drop-shadow(0 1px 3px rgba(var(--color-shadow), .45));
+}
+
+.pdp-gallery__nav--prev .pdp-gallery__chevron {
+  transform: rotate(45deg);
+}
+
+.pdp-gallery__nav--next .pdp-gallery__chevron {
+  transform: rotate(-135deg);
+}
+
+.pdp-gallery__stage:hover .pdp-gallery__nav,
+.pdp-gallery__stage:focus-within .pdp-gallery__nav {
+  opacity: .85;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.pdp-gallery__nav:hover {
+  opacity: 1;
+}
+
+.pdp-gallery__nav:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+  outline: 2px solid rgb(var(--color-foreground));
+  outline-offset: 2px;
+}
+
+/* No hover to reveal them and no second chance to find them on touch. */
+@media (hover: none) {
+  .pdp-gallery__nav {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdp-gallery__nav {
+    transition: opacity .2s linear;
+  }
+}
