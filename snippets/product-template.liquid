@@ -118,7 +118,7 @@
         <div class="grid__item {{ product_description_width }}">
           <div class="product-single__meta">
             {%- if settings.vendor_enable or sku_enable -%}
-              <div class="product-block product-block--header">
+              <div class="product-block product-block--{{ block.id }} product-block--header">
                 {%- if settings.vendor_enable -%}
                   <div class="product-single__vendor">
                     {%- assign vendor_handle = product.vendor | handleize -%}
@@ -146,7 +146,7 @@
               {%- capture form_id -%}AddToCartForm-{{ section_id }}-{{ product.id }}{%- endcapture -%}
               {%- for block in blocks -%}
                 {% style %}
-                  .product-block {
+                  .product-block product-block--{{ block.id }} {
                     --margin-bottom: {{ block.settings.margin_bottom }}px;
                   }
                 {% endstyle %}
@@ -155,7 +155,7 @@
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'title' -%}
-                    <div class="product-block product-block--header" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }} product-block--header" {{ block.shopify_attributes }}>
                       {%- if isModal -%}
                         <p class="h2 product-single__title">
                           {{ product.title }}
@@ -173,7 +173,7 @@
                   {%- when 'separator' -%}
                     <div class="product-block" {{ block.shopify_attributes }}><hr></div>
                   {%- when 'text' -%}
-                    <div {{ block.shopify_attributes }} class="product-block text-block">
+                    <div {{ block.shopify_attributes }} class="product-block product-block--{{ block.id }} text-block">
                       {% if block.settings.uppercase %}
                         {{ block.settings.text | upcase }}
                       {% else %}
@@ -184,7 +184,7 @@
                   {%- when 'character-texture' -%}
                     {%- assign character_texture = product.metafields.custom.character_texture.value -%}
                     {%- if character_texture != blank -%}
-                      <div class="product-block block-character-texture" {{ block.shopify_attributes }}>
+                      <div class="product-block product-block--{{ block.id }} block-character-texture" {{ block.shopify_attributes }}>
                         <p class="label">{{ block.settings.label }}</p>
                         <div class="rte enlarge-text">
                           <span>
@@ -194,7 +194,7 @@
                       </div>
                     {%- endif -%}
                   {%- when 'tab' -%}
-                    <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }} product-block--tab" {{ block.shopify_attributes }}>
                       {% assign tab_id = block.id | append: product.id %}
                       {% capture tab_content %}
                         {{ block.settings.content }}
@@ -203,7 +203,7 @@
                       {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content -%}
                     </div>
                   {%- when 'contact' -%}
-                    <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }} product-block--tab" {{ block.shopify_attributes }}>
                       {% assign tab_id = block.id | append: product.id %}
                       {%- render 'tab-contact', id: tab_id, block: block -%}
                     </div>
@@ -216,7 +216,7 @@
                       {%- render 'product-description', id: id, product: product, is_tab: block.settings.is_tab -%}
                     </div>
                   {%- when 'price' -%}
-                    <div class="product-block product-block--price" {{ block.shopify_attributes }}>
+                    <div class="product-block product-block--{{ block.id }} product-block--price" {{ block.shopify_attributes }}>
                       {%- assign hide_sale_price = true -%}
                       {%- if product.compare_at_price_max > product.price -%}
                         {%- if current_variant.compare_at_price -%}
@@ -401,7 +401,7 @@
                     </div>
                   {%- when 'sales_point' -%}
                     {%- unless block.settings.text == blank -%}
-                      <div class="product-block product-block--sales-point" {{ block.shopify_attributes }}>
+                      <div class="product-block product-block--{{ block.id }} product-block--sales-point" {{ block.shopify_attributes }}>
                         <ul class="sales-points">
                           <li class="sales-point">
                             <span class="icon-and-text">
