@@ -21,9 +21,9 @@
     data-zoom="{{ product_zoom_enable }}"
     data-has-slideshow="{% if product.media.size > 1 %}true{% else %}false{% endif %}">
 
-    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }} pdp-gallery">
 
-      <div class="product__main-photos" data-aos data-product-single-media-group>
+      <div class="product__main-photos pdp-gallery__stage" data-aos data-product-single-media-group>
         <div
           data-product-photos
           data-zoom="{{ product_zoom_enable }}"
@@ -50,6 +50,15 @@
             -%}
           {%- endfor -%}
         </div>
+
+        {%- if product.media.size > 1 -%}
+          <button type="button" class="pdp-gallery__nav pdp-gallery__nav--prev" data-pdp-nav="prev" aria-label="Previous image">
+            <span class="pdp-gallery__chevron" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="pdp-gallery__nav pdp-gallery__nav--next" data-pdp-nav="next" aria-label="Next image">
+            <span class="pdp-gallery__chevron" aria-hidden="true"></span>
+          </button>
+        {%- endif -%}
 
         {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
 
