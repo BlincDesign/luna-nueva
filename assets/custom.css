@@ -1111,7 +1111,7 @@ a.pdl__right {
   overflow: hidden;
 }
 
-/* .starting-slide .pdp-gallery__frame::before,
+.starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
   content: "";
   position: absolute;
@@ -1146,7 +1146,7 @@ a.pdl__right {
     rgba(var(--color-shadow), 0) 72%
   );
   filter: blur(2px);
-} */
+}
 
 .starting-slide .pdp-gallery__frame .image-wrap {
   position: relative;
