@@ -964,7 +964,7 @@ a.pdl__right {
   stroke: none;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 900px) {
   .tasting-notes {
     flex-direction: column;
   }
@@ -999,7 +999,7 @@ a.pdl__right {
   font-size: var(--type-caption-size);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
  .product-claims .product-claims__item {
    flex: 0 0 calc( 50% - 10px / 2 );
  } 
