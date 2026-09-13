@@ -1290,6 +1290,7 @@ a.pdl__right {
 
 .pdp-gallery__stage {
   height: var(--gallery-height, 70vh);
+  min-height: 600px;
 }
 
 .pdp-gallery__stage [data-product-photos],
