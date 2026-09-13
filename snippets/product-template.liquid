@@ -63,6 +63,8 @@
   #ProductSection-{{ section_id }}{
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+      --gallery-height: {{ section.settings.gallery_height | default: '70vh' }};
+      --gallery-height-mobile: {{ section.settings.gallery_height_mobile | default: '60vh' }};
   }
 
   @media only screen and (max-width:900px){
