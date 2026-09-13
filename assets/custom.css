@@ -1187,8 +1187,8 @@ a.pdl__right {
   object-fit: cover;
 }
 
-.product__thumbs--below .product__thumb-item {
-  width: 80px;
+.starting-slide .pdp-gallery__frame .image-wrap img {
+    object-fit: contain;
 }
 
 .product__thumb {
@@ -1322,13 +1322,6 @@ a.pdl__right {
   .pdp-gallery__stage {
     height: var(--gallery-height-mobile, 60vh);
   }
-}
-
-
-.product__thumbs--below .product__thumb-item {
-    width: calc(100% / 5 - 12px);
-    margin-right: 12px;
-    max-width: unset;
 }
 
 
