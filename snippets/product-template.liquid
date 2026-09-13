@@ -619,7 +619,12 @@
                     </div>
 
                   {%- when 'accordion' -%}
-                    {%- render 'accordion-item', block: block -%}
+                    <div
+                      class="product-block product-block--{{ block.id }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {%- render 'accordion-item', block: block -%}
+                    </div>
                 {%- endcase -%}
               {%- else -%}
                 <div
