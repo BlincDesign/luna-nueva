@@ -1185,7 +1185,9 @@ a.pdl__right {
 }
 
 .product__thumbs--below .product__thumb-item {
-  width: 80px;
+    width: calc(100% / 5);
+    margin-right: 12px;
+    max-width: unset;
 }
 
 .product__thumb {
