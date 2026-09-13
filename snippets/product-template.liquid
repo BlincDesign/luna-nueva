@@ -146,7 +146,7 @@
               {%- capture form_id -%}AddToCartForm-{{ section_id }}-{{ product.id }}{%- endcapture -%}
               {%- for block in blocks -%}
                 {% style %}
-                  .product-block product-block--{{ block.id }} {
+                  .product-block--{{ block.id }} {
                     --margin-bottom: {{ block.settings.margin_bottom }}px;
                   }
                 {% endstyle %}

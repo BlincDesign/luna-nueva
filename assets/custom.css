@@ -1014,16 +1014,16 @@ a.pdl__right {
     padding-top: 16px;
 }
 
-.custom-width--auto {
+.product-section .custom-width--auto {
     width: 45%;
 }
 
-.custom-width--auto:has(.product-single__meta) {
+.product-section .custom-width--auto:has(.product-single__meta) {
     width: 55%;
 }
 
  @media only screen and (max-width:900px){
-  .custom-width--auto {
+  .product-section .custom-width--auto {
       width: 100%;
   }        
  }
@@ -1034,4 +1034,8 @@ a.pdl__right {
 
 .block-character-texture .rte {
     font-family: var(--typeHeaderPrimary),var(--typeHeaderFallback);
+}
+
+.product-section .product-block {
+ margin-bottom: var(--marin-bottom);
 }
