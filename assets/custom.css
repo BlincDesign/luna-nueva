@@ -1107,9 +1107,9 @@ a.pdl__right {
   padding: clamp(14px, 2.4vw, 32px);
 }
 
-/* Lighting is the hero/product slide's own treatment, same as the reference's
-   .gal-slide--bottle vs. plain .gal-media — the other slides are real
-   photographs and get the fixed-ratio crop below instead, not a fake glow. */
+/* Lighting is on top of the shared fixed-ratio crop below, and is the hero
+   slide's own extra treatment — the other slides are real photographs and
+   don't get a fake glow, just the crop. */
 .starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
   content: "";
@@ -1151,9 +1151,10 @@ a.pdl__right {
 }
 
 /* ---------- Fix: fixed slide ratio + cover crop (matches .gal-media) ----------
-   Every non-hero slide renders at one identical aspect ratio so the Flickity
-   viewport (adaptiveHeight, sized off each cell's own offsetHeight) stops
-   resizing between slides. The obstacle is that .image-wrap's height comes
+   Every slide, hero included, renders at one identical arch-shaped ratio so
+   the Flickity viewport (adaptiveHeight, sized off each cell's own
+   offsetHeight) stops resizing between slides. The obstacle is that
+   .image-wrap's height comes
    from an inline height:0/padding-bottom:N% pair set per-image in the Liquid
    template — not overridable from a stylesheet without !important. Instead of
    fighting that box, it's bypassed: .image-wrap is dropped out of the
@@ -1167,7 +1168,8 @@ a.pdl__right {
   --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
 }
 
-.secondary-slide .pdp-gallery__frame {
+.secondary-slide .pdp-gallery__frame,
+.starting-slide .pdp-gallery__frame {
   height: 100%;
   aspect-ratio: var(--pdp-gallery-media-ar);
   width: auto;
@@ -1176,11 +1178,13 @@ a.pdl__right {
   overflow: hidden;
 }
 
-.secondary-slide .pdp-gallery__frame .image-wrap {
+.secondary-slide .pdp-gallery__frame .image-wrap,
+.starting-slide .pdp-gallery__frame .image-wrap {
   position: static;
 }
 
-.secondary-slide .pdp-gallery__frame .image-wrap img {
+.secondary-slide .pdp-gallery__frame .image-wrap img,
+.starting-slide .pdp-gallery__frame .image-wrap img {
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1341,28 +1345,18 @@ a.pdl__right {
   height: 100%;
 }
 
-/* Slide frames (hero full-width, secondary narrowed by their fixed ratio)
-   are centered in the cell rather than sitting flush at the inline-start
-   edge. Flickity sets position:absolute on the cell inline (for its own
-   horizontal placement); display:flex here only affects how the cell centers
-   its own child and doesn't touch that. */
+/* Every slide frame — hero included, now sharing the same fixed-ratio arch
+   crop as the secondary slides — is centered in the cell instead of sitting
+   flush at the inline-start edge. Flickity sets position:absolute on the
+   cell inline (for its own horizontal placement); display:flex here only
+   affects how the cell centers its own child and doesn't touch that. Both
+   frame rules already carry aspect-ratio + width:auto, so as flex items they
+   size from that ratio against the cell's definite height rather than
+   collapsing to min-content. */
 .pdp-gallery__stage .product-main-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* The hero/product slide has no forced crop ratio (left alone in the fix
-   above) and, unlike the secondary frame, no aspect-ratio of its own for a
-   flex item to size a main-axis width from — so it's kept at the cell's
-   full width explicitly rather than left to shrink-to-fit, which the flex
-   row above would otherwise resolve against zero (the img that would
-   normally supply that intrinsic size is position:absolute, out of flow).
-   Width follows from the image's own intrinsic ratio inside that box, same
-   as it already did. */
-.starting-slide .pdp-gallery__frame {
-  height: 100%;
-  width: 100%;
 }
 
 @media (max-width: 589px) {
