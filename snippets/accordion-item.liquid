@@ -1,21 +1,3 @@
-{%- comment -%}
-  Accordion (e.g. "The Additive Question")
-  ------------------------------------------------------------------
-  Renders a single native <details>/<summary> disclosure from one
-  'accordion' block. No JS: the +/x glyph rotation is handled by the
-  existing .acc[open] .acc-x CSS rule keyed off the [open] attribute.
-
-  Expects:
-    block: the 'accordion' block object
-
-  Usage (inside the section's block loop):
-    {%- when 'accordion' -%}
-      {%- render 'accordion-item', block: block -%}
-
-  Empty state: a block with a blank title renders nothing, since a
-  summary with no label isn't something a shopper can act on.
-{%- endcomment -%}
-
 {%- unless block.settings.title == blank -%}
   <details class="acc" {{ block.shopify_attributes }} {% if block.settings.open_by_default %}open{% endif %}>
     <summary>
