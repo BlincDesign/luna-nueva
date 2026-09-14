@@ -1129,7 +1129,7 @@ a.pdl__right {
     background: radial-gradient( 60% 50% at 28% 18%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 68%), radial-gradient( 85% 65% at 50% 100%, rgba(var(--color-shadow), 0.14), rgba(var(--color-shadow), 0) 65%);
 }
 
-.starting-slide .pdp-gallery__frame::after {
+/* .starting-slide .pdp-gallery__frame::after {
     left: 50%;
     bottom: clamp(6px, 1.6vw, 16px);
     width: 60%;
@@ -1137,7 +1137,7 @@ a.pdl__right {
     transform: translateX(-50%);
     background: radial-gradient( 50% 100% at 50% 50%, rgba(var(--color-shadow), 0.3), rgba(var(--color-shadow), 0) 72%);
     filter: blur(2px);
-}
+} */
 
 .starting-slide .pdp-gallery__frame .image-wrap {
     position: relative;
