@@ -137,17 +137,21 @@
             "position": "left"
           }
         },
-        "preheading_gaUzMW": {
-          "type": "preheading",
+        "text_kepgX7": {
+          "type": "text",
           "settings": {
-            "title": "IN THE WILD",
+            "text": "<h3>Built from the ground up.</h3>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         },
-        "heading_fdTtiK": {
-          "type": "heading",
+        "text_367phy": {
+          "type": "text",
           "settings": {
-            "title": "Where it actually gets poured.",
+            "text": "<p>She spent the last several years building Luna Nueva from the ground up: learning the liquid, cultivating the relationship with the Vivanco family distillery in the Highlands of Jalisco, and creating a presence in Los Angeles through community, events, and genuine belonging.</p><p>Luna Nueva is the first expression of a larger vision — one that sits at the intersection of hospitality, food, craft, and gathering. The tequila is where it begins, but the life it belongs to is much larger than a bottle.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
             "position": "right"
           }
         },
@@ -164,8 +168,8 @@
         "text_gR3pDg",
         "text_dFcrhE",
         "media_TR33z4",
-        "preheading_gaUzMW",
-        "heading_fdTtiK",
+        "text_kepgX7",
+        "text_367phy",
         "media_qyfTHH"
       ],
       "name": "Rich text columns",
@@ -175,10 +179,10 @@
         "stylized_bg": false,
         "left_column_width": 50,
         "left_text_align": "left",
-        "left_vertical_align": "flex-end",
+        "left_vertical_align": "flex-start",
         "right_column_width": 50,
         "right_text_align": "left",
-        "right_vertical_align": "flex-end",
+        "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
