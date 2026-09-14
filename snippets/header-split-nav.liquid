@@ -4,6 +4,18 @@
     assign link_count = link_count | plus: 1
   endfor
   assign link_count_half = link_count | divided_by: 2
+
+  assign highlight_link = null
+  if section.settings.highlight_link_handle != blank
+    assign highlight_handle = section.settings.highlight_link_handle | handleize
+    for link in main_menu.links
+      assign link_handle = link.title | handleize
+      if link_handle == highlight_handle
+        assign highlight_link = link
+        break
+      endif
+    endfor
+  endif
 -%}
 
 <div class="header-item header-item--logo-split" role="navigation" aria-label="Primary">
@@ -14,6 +26,14 @@
     {%- render 'header-logo-block', section: section -%}
   </div>
   <div class="header-item header-item--split-right">
+    {%- if highlight_link -%}
+      <a
+        href="{{ highlight_link.url }}"
+        class="site-nav__link site-nav__link--highlight site-nav__link--highlight-mobile large-up--hide"
+      >
+        <span class="link-text">{{ highlight_link.title }}</span>
+      </a>
+    {%- endif -%}
     {%- render 'header-desktop-nav', main_menu: main_menu, offset: link_count_half, hover_menu: hover_menu, show_icons: true -%}
   </div>
 </div>
