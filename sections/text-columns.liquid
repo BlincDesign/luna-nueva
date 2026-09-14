@@ -21,7 +21,7 @@
   }
 {% endstyle %}
 
-<div id="Text-with-images-columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }}">
+<div id="Text-with-images-columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}">
   {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
   <div class="page-width">
@@ -122,6 +122,19 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
     },
     {
       "type": "header",
