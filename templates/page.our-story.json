@@ -93,6 +93,7 @@
     },
     "hero_video_g7Yadw": {
       "type": "hero-video",
+      "disabled": true,
       "name": "t:sections.hero-video.presets.video_hero.name",
       "settings": {
         "title": "",
@@ -105,6 +106,38 @@
         "overlay_opacity": 0,
         "section_height": "650px",
         "mobile_height": "auto"
+      }
+    },
+    "slideshow_VYRq3X": {
+      "type": "slideshow",
+      "blocks": {
+        "image_6PCajQ": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "NOM 1414 · Vivanco Family Distillery · Los Altos de Jalisco",
+            "link": "",
+            "link_text": "",
+            "video": "shopify://files/videos/jalisco.mp4",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_6PCajQ"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true,
+        "content_color_scheme": ""
       }
     },
     "custom_media_gallery_nUaQF9": {
@@ -296,6 +329,7 @@
     "main",
     "custom_rich_text_columns_MaNMBN",
     "hero_video_g7Yadw",
+    "slideshow_VYRq3X",
     "custom_media_gallery_nUaQF9",
     "rich_text_hqBVKz",
     "text_columns_zEEQiD",
