@@ -1299,5 +1299,6 @@ a.pdl__right {
 
   .product__thumbs--below .product__thumb-item {
     width: calc(100% / 4.25 - 8px);
+    margin-right: 8px;
   }
 }
