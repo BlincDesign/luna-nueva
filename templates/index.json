@@ -792,7 +792,7 @@
         "content_PqQkbn": {
           "type": "content",
           "settings": {
-            "eyebrow": "<strong>BRING THE PARTY</strong>",
+            "eyebrow": "BRING THE PARTY",
             "heading": "The bottle you grab before the night starts.",
             "heading_size": "h2",
             "show_divider": true,
