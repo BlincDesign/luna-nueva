@@ -823,7 +823,7 @@ a.pdl__right {
     gap: 20px;
 }
 
-.linklist__404--item:last-child, .theme-block--link_text:last-child {
+.linklist__404--item:last-child, .block-link_text:last-child {
     border-bottom: 1px solid rgba(var(--color-border), 0.2);
 }
 
