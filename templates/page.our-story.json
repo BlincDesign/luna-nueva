@@ -106,11 +106,70 @@
         "section_height": "650px",
         "mobile_height": "auto"
       }
+    },
+    "custom_media_gallery_nUaQF9": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_yi4PPW": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "The gap she saw",
+            "heading": "A category that had not caught up.",
+            "heading_size": "h2",
+            "show_divider": true,
+            "body": "<p>Co-Founder & CEO, Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap — something missing for her generation.</p><p>A generation of people who had already redefined how they eat, where they shop, what they put in their bodies, and a tequila category that had not caught up. They were still selling heritage and legacy to people who were asking a different question entirely: is it honest? Is it clean? Does it belong to my life?</p>",
+            "button_label": "",
+            "button_url": ""
+          }
+        },
+        "image_ryX8f4": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_VnE4mW": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_yi4PPW",
+        "image_ryX8f4",
+        "image_VnE4mW"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "full_width": false,
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
     "custom_rich_text_columns_MaNMBN",
-    "hero_video_g7Yadw"
+    "hero_video_g7Yadw",
+    "custom_media_gallery_nUaQF9"
   ]
 }
