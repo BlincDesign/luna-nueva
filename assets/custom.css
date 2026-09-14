@@ -1329,3 +1329,7 @@ a.pdl__right {
 .product__thumb-item a:focus::before {
     display: none;
 }
+
+.product__video {
+    object-fit: cover;
+}
