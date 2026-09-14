@@ -1271,8 +1271,14 @@ a.pdl__right {
   object-fit: cover;
 }
 
+.product__thumb-item a {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
 .product__thumb-item a.is-active,
 .product__thumb-item a:focus {
+  opacity: 1;
   border: 2px solid rgba(var(--color-foreground));
 }
 
