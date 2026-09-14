@@ -290,7 +290,7 @@
         "right_column_width": 50,
         "right_text_align": "left",
         "right_text-align_mb": "left",
-        "right_vertical_align": "flex-end",
+        "right_vertical_align": "center",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
