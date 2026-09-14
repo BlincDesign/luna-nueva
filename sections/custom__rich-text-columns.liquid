@@ -435,12 +435,20 @@
 
                 {% when 'link_text' %}
                   <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                    <a href="{{ block.settings.link | default: '#' }}">
-                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                      {% if block.settings.subtext != blank %}
-                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                      {% endif %}
-                    </a>
+                    {% if block.settings.link != blank %}
+                      <a href="{{ block.settings.link | default: '#' }}">
+                    {% else %}
+                      <div>
+                    {% endif %}
+                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                    {% if block.settings.subtext != blank %}
+                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                    {% endif %}
+                    {% if block.settings.link != blank %}
+                      </a>
+                    {% else %}
+                      </div>
+                    {% endif %}
                   </li>
               {%- endcase -%}
             </div>
@@ -634,12 +642,20 @@
 
                 {% when 'link_text' %}
                   <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                    <a href="{{ block.settings.link | default: '#' }}">
-                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                      {% if block.settings.subtext != blank %}
-                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                      {% endif %}
-                    </a>
+                    {% if block.settings.link != blank %}
+                      <a href="{{ block.settings.link | default: '#' }}">
+                    {% else %}
+                      <div>
+                    {% endif %}
+                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                    {% if block.settings.subtext != blank %}
+                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                    {% endif %}
+                    {% if block.settings.link != blank %}
+                      </a>
+                    {% else %}
+                      </div>
+                    {% endif %}
                   </li>
               {%- endcase -%}
             </div>
