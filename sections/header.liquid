@@ -23,9 +23,6 @@
   endif
 
   assign header_color_scheme = section.settings.color_scheme
-  if product.metafields.custom.color_scheme.value != blank
-    assign header_color_scheme = product.metafields.custom.color_scheme.value | replace: " section--scheme-secondary", ""
-  endif
 -%}
 
 {%- render 'custom-drawer-menu', section: section, main_menu: main_menu, logo_alignment: logo_alignment -%}
@@ -214,13 +211,6 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme_secondary",
-      "label": "Color scheme (on overlap)",
-      "info": "Applied automatically when the header overlaps a section with the class `.section--scheme-secondary`.",
-      "default": "scheme-2"
     },
     {
       "type": "header",
