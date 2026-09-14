@@ -485,7 +485,7 @@ strong:has(em) em {
 
 /* End header and Menu */
 
-.product--page .main-content .shopify-section:nth-child(1) {
+.product--page.main-content .shopify-section:nth-child(1) {
     margin-top: 0;
 }
 
