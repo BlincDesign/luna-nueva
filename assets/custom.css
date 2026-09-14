@@ -175,6 +175,27 @@ strong:has(em) em {
 }
 
 
+.site-header .site-nav__link.site-nav__link--highlight {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.02rem 1.9rem;
+    border: 1px solid rgb(var(--color-button-border));
+    border-radius: var(--btn-radius, 60px);
+    background-color: rgba(var(--color-button));
+    color: rgb(var(--color-button-text));
+    transition: background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), border-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.site-header .site-nav__link.site-nav__link--highlight:hover {
+    background-color: rgb(var(--color-button-hover));
+    border-color: rgb(var(--color-button-border-hover));
+    color: rgb(var(--color-button-text-hover));
+}
+
+.site-header .site-nav__link.site-nav__link--highlight .link-text::before {
+    display: none;
+}
+
 /* End global button system */
 
 
@@ -301,16 +322,13 @@ strong:has(em) em {
     padding: 5px 0 5px 40px;
 }
 
-.site-header.header_overlap--secondary {
-    background: var(--header-background-secondary);
+.site-header {
+    background-color: rgba(var(--color-background));
 }
 
-.site-header.header_overlap--secondary .site-nav__link {
-    color: var(--header-text-secondary);
-}
-
-.site-header.header_overlap--secondary .site-nav--has-dropdown>details[open]>summary {
-    color: var(--header-text-secondary) !important;
+.site-header .site-nav__link,
+.site-header .site-nav--has-dropdown>details[open]>summary {
+    color: rgb(var(--color-foreground));
 }
 
 .site-header.header_overlap--secondary .site-header__logo .logo--inverted {
@@ -321,9 +339,9 @@ strong:has(em) em {
     display: none;
 }
 
-.site-header.header_overlap--secondary .site-nav__link .link-text::before,
-.site-header.header_overlap--secondary .site-nav__dropdown-link .site-nav-item--1 .link-text::before {
-    background: var(--header-text-secondary);
+.site-header .site-nav__link .link-text::before,
+.site-header .site-nav__dropdown-link .site-nav-item--1 .link-text::before {
+    background: rgb(var(--color-foreground));
 }
 
 .header-item.header-item--left.header-item--navigation {
