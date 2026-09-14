@@ -87,6 +87,7 @@ strong:has(em) em {
 .svg-mask--rounded-corners {
     border-radius: 20px;
     padding-bottom: 56.25% !important;
+    overflow: hidden;
 }
 
 .hero__image-wrapper video {
