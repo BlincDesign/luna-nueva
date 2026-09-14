@@ -490,6 +490,15 @@ strong:has(em) em {
     .site-header {
         padding: 15px 0;
     }
+    
+
+    .header-layout--center-split .site-nav.site-nav--icons {
+        padding-left: 0.65rem;
+    }
+
+    .site-header .site-nav__link.site-nav__link--highlight {
+        padding: 13.6px 16px;
+    }
 }
 
 
