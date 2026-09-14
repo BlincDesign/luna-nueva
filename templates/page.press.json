@@ -612,7 +612,7 @@
         "detail_divider_color": "#f9f6f1",
         "padding_top": 50,
         "padding_bottom": 92,
-        "padding_top_mb": 0,
+        "padding_top_mb": 38,
         "padding_bottom_mb": 52
       }
     }
