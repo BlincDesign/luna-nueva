@@ -28,12 +28,6 @@
 
 {%- style -%}
 
-    :root {
-       --header-text-secondary: {{ settings.color_header_text_secondary }};
-       --header-background-secondary: {{ settings.color_header_secondary }};
-    }
-
-    
     .site-nav__link,
     .site-nav__dropdown-link {
       font-size: var(--type-body-sm-size);
@@ -55,9 +49,11 @@
   <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
     <header
       id="SiteHeader"
-      class="site-header{% if settings.type_navigation_style %} site-header--heading-style{% endif %} {% if section.settings.header_fixed %} header--fixed{% endif %}"
+      class="site-header color-{{ section.settings.color_scheme }}{% if settings.type_navigation_style %} site-header--heading-style{% endif %} {% if section.settings.header_fixed %} header--fixed{% endif %}"
       data-sticky="{{ sticky_header }}"
       data-overlay="{{ overlay_header }}"
+      data-scheme="color-{{ section.settings.color_scheme }}"
+      data-scheme-secondary="color-{{ section.settings.color_scheme_secondary }}"
     >
       <div class="page-width">
         <div
@@ -206,6 +202,23 @@
   "settings": [
     {
       "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_secondary",
+      "label": "Color scheme (on overlap)",
+      "info": "Applied automatically when the header overlaps a section with the class `.section--scheme-secondary`.",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
       "content": "t:sections.header.settings.header_logo"
     },
     {
@@ -251,6 +264,12 @@
       "id": "hover_menu",
       "label": "t:sections.header.settings.hover_menu.label",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "highlight_link_handle",
+      "label": "Highlight link",
+      "info": "Enter the exact title of a menu link (as it appears in the menu) to style it as a button."
     },
     {
       "type": "select",
