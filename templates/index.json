@@ -108,7 +108,6 @@
       "settings": {
         "plus_icon": "shopify://shop_images/sparkle-icon.svg",
         "plus_icon_size": 13,
-        "text_size": 11,
         "text_spacing": true,
         "direction": "left",
         "speed": 100,
@@ -252,8 +251,9 @@
         "text_j9B88a": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "left"
           }
         },
@@ -268,8 +268,9 @@
         "text_YrMjYV": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         },
@@ -296,6 +297,7 @@
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -358,7 +360,7 @@
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
-        "marker_bg": "#D5995A",
+        "marker_bg": "#d5995a",
         "heading_additive": "ADDITIVE",
         "heading_product": "LUNA NUEVA",
         "heading_permitted": "PERMITTED UP TO 1%",
@@ -549,16 +551,18 @@
         "text_kbMVRP": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
+            "enlarge_text": true,
+            "enable_italic": false,
             "position": "left"
           }
         },
         "text_DLDMxC": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         }
@@ -572,6 +576,7 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 30,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
@@ -680,6 +685,7 @@
         "color_scheme": "scheme-1",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -868,8 +874,9 @@
         "text_MRqmLa": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<p>Flash, grain, and whatever the camera caught. Shot the way the nights actually looked.<br/><br/></p>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         }
@@ -884,6 +891,7 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 60,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
@@ -1018,8 +1026,9 @@
         "text_wjTinT": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<h2>Clean enough to </h2><h2>drink neat. Honest </h2><h2>enough to build on.</h2><p></p>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "left"
           }
         },
@@ -1035,8 +1044,9 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "enlarge_text": false,
             "text": "",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         },
@@ -1063,6 +1073,7 @@
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 80,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
