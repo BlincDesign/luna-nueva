@@ -1291,6 +1291,12 @@ a.pdl__right {
   object-fit: cover;
 }
 
+.product__thumb-icon {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
 @media (max-width: 900px) {
   .pdp-gallery__stage {
     height: var(--gallery-height-mobile, 60vh);
