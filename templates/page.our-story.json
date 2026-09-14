@@ -51,7 +51,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>Born in the Mountains.</strong></p><p><strong>Made for the Sea.</strong></p><p><em><strong>Guided by the Moon.</strong></em></p>",
+            "text": "<h5><strong>Born in the Mountains.</strong></h5><h5><strong>Made for the Sea.</strong></h5><h5><em><strong>Guided by the Moon.</strong></em></h5>",
             "position": "left"
           }
         },
