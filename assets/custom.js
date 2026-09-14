@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!header || !sections.length) return;
 
+  const baseScheme = header.dataset.scheme;
+  const secondaryScheme = header.dataset.schemeSecondary;
+
   const checkOverlap = () => {
     const headerRect = header.getBoundingClientRect();
 
@@ -17,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     header.classList.toggle('header_overlap--secondary', overlapping);
+
+    if (baseScheme && secondaryScheme && baseScheme !== secondaryScheme) {
+      header.classList.toggle(secondaryScheme, overlapping);
+      header.classList.toggle(baseScheme, !overlapping);
+    }
   };
 
   window.addEventListener('scroll', checkOverlap, { passive: true });
@@ -26,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// PDP gallery hover arrows: click handling only. Drag, swipe and keyboard nav
+// are already provided by the theme's own Flickity slideshow; this just wires
+// the new stage-overlay buttons to that same instance via Flickity.data().
 (() => {
   const bindGalleryArrows = () => {
     document.querySelectorAll('[data-product-photos]').forEach((slider) => {
