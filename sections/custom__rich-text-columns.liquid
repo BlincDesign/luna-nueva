@@ -82,10 +82,10 @@
     width: 100%;
     overflow: hidden;
     border-radius: 16px;
-   {% if block.settings.orientation != 'none' %} aspect-ratio: 0.9; {% endif %}
+   {% if block.settings.orientation_1 != 'none' or block.settings.orientation_2 != 'none'  %} aspect-ratio: 0.9; {% endif %}
   }
 
-  {% if block.settings.orientation != 'none' %}
+  {% if block.settings.orientation_1 != 'none' or block.settings.orientation_2 != 'none' %}
   .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
     aspect-ratio: 3 / 4;
   }
@@ -1130,6 +1130,10 @@
           "id": "orientation_two",
           "label": "Orientation 2",
           "options": [
+            {
+              "value": "none",
+              "label": "None (Auto)"
+            },
             {
               "value": "landscape",
               "label": "Landscape"

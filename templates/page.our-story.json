@@ -235,7 +235,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8B8B8B",
+            "divider_bg": "#8b8b8b",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -261,10 +261,10 @@
           "type": "two_column_media",
           "settings": {
             "image_one": "shopify://shop_images/ev-airstream.jpg",
-            "orientation_one": "landscape",
+            "orientation_one": "none",
             "caption_one": "",
             "image_two": "shopify://shop_images/press-beach.jpg",
-            "orientation_two": "portrait",
+            "orientation_two": "none",
             "caption_two": "",
             "position": "right"
           }
