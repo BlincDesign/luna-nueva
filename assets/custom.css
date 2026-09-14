@@ -1305,7 +1305,7 @@ a.pdl__right {
 @media (max-width: 900px) {
     .pdp-gallery__stage {
         height: var(--gallery-height-mobile, 60vh);
-       position: static;
+       position: static !important;
     }
 }
 
