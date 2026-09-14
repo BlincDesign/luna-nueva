@@ -100,12 +100,12 @@
           "background": "#2d3135",
           "background_gradient": "",
           "text": "#f9f6f1",
-          "button": "#D39655",
-          "button_label": "#2D3135",
-          "button_border": "#D39655",
-          "button_hover": "#E0A768",
-          "button_label_hover": "#2D3135",
-          "button_border_hover": "#E0A768",
+          "button": "#d39655",
+          "button_label": "#2d3135",
+          "button_border": "#d39655",
+          "button_hover": "#e0a768",
+          "button_label_hover": "#2d3135",
+          "button_border_hover": "#e0a768",
           "secondary_button": "rgba(0,0,0,0)",
           "secondary_button_label": "#f9f6f1",
           "secondary_button_border": "#f9f6f1",
@@ -268,6 +268,31 @@
           "accent": "#000000",
           "overlay": "#000000",
           "shadow": "#000000"
+        }
+      },
+      "scheme-ff9a9495-afd7-4695-b377-baa896234ab9": {
+        "settings": {
+          "background": "#AEBFB4",
+          "background_gradient": "",
+          "text": "#2D3135",
+          "button": "rgba(0,0,0,0)",
+          "button_label": "#2d3135",
+          "button_border": "rgba(0,0,0,0)",
+          "button_hover": "rgba(0,0,0,0)",
+          "button_label_hover": "#2d3135",
+          "button_border_hover": "rgba(0,0,0,0)",
+          "secondary_button": "rgba(0,0,0,0)",
+          "secondary_button_label": "#f9f6f1",
+          "secondary_button_border": "#f9f6f1",
+          "secondary_button_hover": "#f9f6f1",
+          "secondary_button_label_hover": "#2d3135",
+          "secondary_button_border_hover": "#2d3135",
+          "link": "#f9f6f1",
+          "link_hover": "#f9f6f1",
+          "border": "#d9d9d9",
+          "accent": "#d39655",
+          "overlay": "rgba(0,0,0,0)",
+          "shadow": "rgba(0,0,0,0)"
         }
       }
     }
