@@ -296,10 +296,10 @@
           "type": "two_column_media",
           "settings": {
             "image_one": "shopify://shop_images/story-barrels-b.jpg",
-            "orientation_one": "none",
+            "orientation_one": "portrait",
             "caption_one": "",
             "image_two": "shopify://shop_images/ev-table.jpg",
-            "orientation_two": "none",
+            "orientation_two": "portrait",
             "caption_two": "",
             "position": "left"
           }
@@ -336,26 +336,31 @@
         "padding_bottom_mb": 52
       }
     },
-    "rich_text_hqBVKz": {
-      "type": "rich-text",
+    "custom_rich_text_columns_BJMnhT": {
+      "type": "custom__rich-text-columns",
       "blocks": {
-        "text_NHf3fw": {
+        "text_ACi3Nb": {
           "type": "text",
           "settings": {
+            "text": "<h3>Luna Nueva is the new moon — it’s pure</h3><h3>potential. <em><strong>The moment before the memory </strong></em></h3><h3><em><strong>is made</strong></em><em>,</em> when the night is still open, still </h3><h3>possible, and the choice in front of you </h3><h3>sets the tone for everything that follows.</h3>",
             "enlarge_text": false,
-            "text": "<h3>Luna Nueva is the new moon — it’s pure potential. <em><strong>The moment before the memory is made</strong></em><em>,</em> when the night is still open, still possible, and the choice in front of you sets the tone for everything that follows.</h3>"
+            "subheading": false,
+            "enable_italic": true,
+            "enable_fade": false,
+            "position": "left"
           }
         },
-        "divider_THNEGY": {
+        "divider_qkK6Ac": {
           "type": "divider",
           "settings": {
+            "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8b8b8b",
-            "divider_width": 90,
+            "divider_bg": "#8E8A8A",
+            "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
-            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "icon": "chat",
             "icon_size": 30,
             "margin_top": 30,
             "margin_bottom": 30
@@ -363,20 +368,30 @@
         }
       },
       "block_order": [
-        "text_NHf3fw",
-        "divider_THNEGY"
+        "text_ACi3Nb",
+        "divider_qkK6Ac"
       ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
+      "name": "Rich text columns",
       "settings": {
-        "header_secondary": false,
-        "stylized_bg": true,
         "color_scheme": "scheme-6",
-        "align_text": "left",
-        "narrow_column": false,
-        "padding_top": 80,
-        "padding_bottom": 20,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 20
+        "header_secondary": true,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "text_columns_zEEQiD": {
@@ -468,7 +483,7 @@
     "slideshow_VYRq3X",
     "custom_rich_text_columns_rNifbp",
     "custom_rich_text_columns_C63hck",
-    "rich_text_hqBVKz",
+    "custom_rich_text_columns_BJMnhT",
     "text_columns_zEEQiD",
     "rich_text_tcgtMa"
   ]

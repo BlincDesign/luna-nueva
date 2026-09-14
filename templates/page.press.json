@@ -707,10 +707,10 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "padding_top": 92,
-        "padding_bottom": 92,
-        "padding_top_mb": 52,
-        "padding_bottom_mb": 52
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
       }
     }
   },
