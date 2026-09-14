@@ -191,6 +191,69 @@
         "padding_bottom_mb": 40
       }
     },
+    "text_columns_tDGG3i": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_EWKnnV": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/brand-pool.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_cczbVy": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_3NtCFm": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_EWKnnV",
+        "text_block_cczbVy",
+        "text_block_3NtCFm"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_rich_text_columns_WrjTQ8": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -290,6 +353,7 @@
     "custom_rich_text_columns_Lwn8bC",
     "custom_media_gallery_m7dD7V",
     "custom_rich_text_columns_K6qJhy",
+    "text_columns_tDGG3i",
     "custom_rich_text_columns_WrjTQ8",
     "newsletter_bWQygA"
   ]
