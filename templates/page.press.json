@@ -14,80 +14,558 @@
       "disabled": true,
       "settings": {}
     },
-    "rich_text_LYbrUx": {
-      "type": "rich-text",
+    "custom_rich_text_columns_Nh8XnY": {
+      "type": "custom__rich-text-columns",
       "blocks": {
-        "heading_BQEhcc": {
-          "type": "heading",
+        "preheading_8g3cfT": {
+          "type": "preheading",
           "settings": {
-            "title": "Our Story"
+            "title": "<strong>Press & Partnerships</strong>",
+            "position": "left"
           }
         },
-        "text_PTVm9N": {
+        "heading_GbmUDU": {
+          "type": "heading",
+          "settings": {
+            "title": "The short version.",
+            "position": "left"
+          }
+        },
+        "text_aCkxhU": {
           "type": "text",
           "settings": {
+            "text": "<p>Everything a writer, buyer or partner usually asks for, in one place. If you need something that isn’t here, ask and we’ll send it.</p>",
             "enlarge_text": true,
-            "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. Luna Nueva invites you to create your own rituals and celebrate what matters most.<br/></p>"
+            "enable_italic": false,
+            "position": "right"
           }
         }
       },
       "block_order": [
-        "heading_BQEhcc",
-        "text_PTVm9N"
+        "preheading_8g3cfT",
+        "heading_GbmUDU",
+        "text_aCkxhU"
       ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.rich_text.name",
+      "name": "Rich text columns",
       "settings": {
-        "align_text": "center",
-        "narrow_column": true
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "enable_vertical_divider": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 31,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 92,
+        "padding_bottom": 42,
+        "padding_top_mb": 56,
+        "padding_bottom_mb": 26
       }
     },
-    "text_and_image_4AM8K8": {
-      "type": "text-and-image",
-      "disabled": true,
-      "name": "t:sections.text-and-image.presets.image_with_text.name",
-      "settings": {
-        "image": "shopify://shop_images/aging_b6bf8c6f-659c-47c9-a056-3689570100ac.png",
-        "image_mask": "none",
-        "image2": "shopify://shop_images/tequila_rising_right_276f0845-2143-43ba-9f0a-661b9e66450d.png",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Our Story",
-        "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. Luna Nueva invites you to create your own rituals and celebrate what matters most.<br/></p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "66",
-        "layout": "right",
-        "divider": false,
-        "top_padding": false,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
-    "background_image_text_JAqUcm": {
+    "background_image_text_gQWApd": {
       "type": "background-image-text",
+      "disabled": true,
       "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
       "settings": {
-        "subtitle": "",
-        "title": "Our Story",
-        "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. </p>",
-        "button_label": "",
-        "button_link": "",
-        "image": "shopify://shop_images/tequila_rising_right_276f0845-2143-43ba-9f0a-661b9e66450d.png",
+        "image": "shopify://shop_images/hero-tailgate.jpg",
         "layout": "left",
-        "height": 750,
+        "height": 580,
         "parallax": true,
         "parallax_direction": "top",
-        "lazyload_images": true
+        "lazyload_images": true,
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "slideshow_7trEW4": {
+      "type": "slideshow",
+      "blocks": {
+        "image_amFjXR": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "Born in LA. Made in Jalisco.",
+            "link": "",
+            "link_text": "",
+            "image": "shopify://shop_images/hero-tailgate.jpg",
+            "parallax_direction": "left",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_amFjXR"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "lazyload_images": true,
+        "content_color_scheme": "scheme-1"
+      }
+    },
+    "custom_rich_text_columns_i6zrRA": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_jV6XD8": {
+          "type": "preheading",
+          "settings": {
+            "title": "BOILERPLATE",
+            "position": "left"
+          }
+        },
+        "heading_bVDNjG": {
+          "type": "heading",
+          "settings": {
+            "title": "About Luna Nueva",
+            "position": "left"
+          }
+        },
+        "button_GRgcLc": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Copy text",
+            "button_type": "secondary",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_jV6XD8",
+        "heading_bVDNjG",
+        "button_GRgcLc"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 92,
+        "padding_bottom": 66,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 38
+      }
+    },
+    "custom_rich_text_columns_fnzgfp": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_yAPeEw": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Luna Nueva is an additive-free tequila from the Highlands and Lowlands of Jalisco. It is made at the Vivanco family distillery, NOM 1414, one of the most respected producers in Mexico, where the craft of tequila runs generations deep.</h4>",
+            "enlarge_text": false,
+            "enable_italic": false,
+            "position": "left"
+          }
+        },
+        "text_WqbkjF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise. The liquid is authentic to Mexico. The culture is California.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "left"
+          }
+        },
+        "text_6LQzVF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Three expressions: Silver, Reposado aged seven months, and Añejo aged thirteen months. 100% Blue Weber Agave, additive-free, 750ml.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "right"
+          }
+        },
+        "text_LBNpjA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Co-Founder & CEO Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap. Luna Nueva exists for a generation that doesn’t settle.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_yAPeEw",
+        "text_WqbkjF",
+        "text_6LQzVF",
+        "text_LBNpjA"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": true,
+        "left_column_width": 44,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 43,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 24
+      }
+    },
+    "custom_rich_text_columns_BwX3PY": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "divider_ekinYP": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#f9f6f1",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "divider_ekinYP"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 52,
+        "padding_bottom": 38,
+        "padding_top_mb": 32,
+        "padding_bottom_mb": 24
+      }
+    },
+    "custom_stats_f3hd47": {
+      "type": "custom__stats",
+      "blocks": {
+        "stat_eRG7fn": {
+          "type": "stat",
+          "settings": {
+            "heading": "NOM 1414",
+            "text": "<p>VIVANCO FAMILY DISTILLERY</p>"
+          }
+        },
+        "stat_3g3EPh": {
+          "type": "stat",
+          "settings": {
+            "heading": "750ml",
+            "text": "<p>40% ALC/VOL · 80 PROOF</p>"
+          }
+        },
+        "stat_eLedGh": {
+          "type": "stat",
+          "settings": {
+            "heading": "3",
+            "text": "<p>EXPRESSIONS</p>"
+          }
+        },
+        "stat_fLHXmt": {
+          "type": "stat",
+          "settings": {
+            "heading": "104",
+            "text": "<p>California accounts</p>"
+          }
+        }
+      },
+      "block_order": [
+        "stat_eRG7fn",
+        "stat_3g3EPh",
+        "stat_eLedGh",
+        "stat_fLHXmt"
+      ],
+      "name": "Stats",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_rich_text_columns_dFKwm8": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "heading_Qw7crD": {
+          "type": "heading",
+          "settings": {
+            "title": "Press kit",
+            "position": "left"
+          }
+        },
+        "divider_JTXMaH": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#2D3135",
+            "divider_width": 90,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 25,
+            "margin_bottom": 30
+          }
+        },
+        "text_F9VjVW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Logos, bottle cut-outs, lifestyle photography and the fact sheet. Tell us what you’re writing and we’ll send the right crop rather than the whole folder.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "left"
+          }
+        },
+        "button_Nm46ra": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "SEE WHAT'S COMING UP",
+            "button_type": "primary",
+            "position": "left"
+          }
+        },
+        "text_yQ6d8Q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’ve poured at Venice Fest and the <br/>LA Times Food Bowl, and we show up<br/> at the table, not just on the <br/>shelf.</p>",
+            "enlarge_text": false,
+            "enable_italic": false,
+            "position": "left"
+          }
+        },
+        "link_text_TqKYdq": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Primary logo and wordmark",
+            "subtext": "SVG · PNG",
+            "position": "right"
+          }
+        },
+        "link_text_YAQXkJ": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Bottle cut-outs, three expressions",
+            "subtext": "PNG, transparent",
+            "position": "right"
+          }
+        },
+        "link_text_3MwPpy": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Bottle photography on set",
+            "subtext": "JPG, high-res",
+            "position": "right"
+          }
+        },
+        "link_text_tCFDnQ": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Lifestyle and events photography",
+            "subtext": "JPG, high-res",
+            "position": "right"
+          }
+        },
+        "link_text_i3PnJV": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Founder portrait",
+            "subtext": "JPG, high-res",
+            "position": "right"
+          }
+        },
+        "link_text_9rYDNe": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Fact sheet and tasting notes",
+            "subtext": "PDF",
+            "position": "right"
+          }
+        },
+        "text_giaL3t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Assets are sent on request<br/> while the kit is being<br/> assembled.</p>",
+            "enlarge_text": false,
+            "enable_italic": false,
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Qw7crD",
+        "divider_JTXMaH",
+        "text_F9VjVW",
+        "button_Nm46ra",
+        "text_yQ6d8Q",
+        "link_text_TqKYdq",
+        "link_text_YAQXkJ",
+        "link_text_3MwPpy",
+        "link_text_tCFDnQ",
+        "link_text_i3PnJV",
+        "link_text_9rYDNe",
+        "text_giaL3t"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "enable_vertical_divider": false,
+        "left_column_width": 40,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 55,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
+      }
+    },
+    "custom_rich_text_columns_LTXbDy": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "heading_FHFfpd": {
+          "type": "heading",
+          "settings": {
+            "title": "Who to ask",
+            "position": "left"
+          }
+        },
+        "link_text_WnjfAV": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Press and editorial",
+            "subtext": "hello@lunanuevatequila.com",
+            "position": "left"
+          }
+        },
+        "link_text_hwHyqx": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Partnerships and collaborations",
+            "subtext": "hello@lunanuevatequila.com",
+            "position": "left"
+          }
+        },
+        "link_text_kUhxei": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Stockists and trade",
+            "subtext": "Stock Luna Nueva →",
+            "position": "left"
+          }
+        },
+        "link_text_WnMTxA": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Events and sampling",
+            "subtext": "Events →",
+            "position": "left"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FHFfpd",
+        "link_text_WnjfAV",
+        "link_text_hwHyqx",
+        "link_text_kUhxei",
+        "link_text_WnMTxA"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 100,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
       }
     }
   },
   "order": [
     "main",
-    "rich_text_LYbrUx",
-    "text_and_image_4AM8K8",
-    "background_image_text_JAqUcm"
+    "custom_rich_text_columns_Nh8XnY",
+    "background_image_text_gQWApd",
+    "slideshow_7trEW4",
+    "custom_rich_text_columns_i6zrRA",
+    "custom_rich_text_columns_fnzgfp",
+    "custom_rich_text_columns_BwX3PY",
+    "custom_stats_f3hd47",
+    "custom_rich_text_columns_dFKwm8",
+    "custom_rich_text_columns_LTXbDy"
   ]
 }
