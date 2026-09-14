@@ -247,7 +247,7 @@
       },
       "scheme-7": {
         "settings": {
-          "background": "#d5995a",
+          "background": "#D39554",
           "background_gradient": "",
           "text": "#2d3135",
           "button": "#1a1e33",
@@ -256,7 +256,7 @@
           "button_hover": "#33343f",
           "button_label_hover": "#ffffff",
           "button_border_hover": "#33343f",
-          "secondary_button": "#d5995a",
+          "secondary_button": "#D39554",
           "secondary_button_label": "#1a1e33",
           "secondary_button_border": "#1a1e33",
           "secondary_button_hover": "#c98a45",
