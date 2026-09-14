@@ -1291,7 +1291,7 @@ a.pdl__right {
     justify-content: center;
 }
 
-@media (hover: none) {
+/* @media (hover: none) {
     .pdp-gallery__nav {
         display: none;
     }
@@ -1301,7 +1301,7 @@ a.pdl__right {
     .pdp-gallery__nav {
         transition: opacity 0.2s linear;
     }
-}
+} */
 
 @media (max-width: 900px) {
     .pdp-gallery__stage {
