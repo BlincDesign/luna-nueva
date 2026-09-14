@@ -33,6 +33,7 @@
           "type": "image",
           "settings": {
             "tall": false,
+            "image_one": "shopify://shop_images/ev-pour.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -41,6 +42,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "image_one": "shopify://shop_images/team-founder.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
