@@ -321,7 +321,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/srv-watermelon.jpg",
+            "image": "shopify://shop_images/ev-luge.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
