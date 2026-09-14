@@ -355,7 +355,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8E8A8A",
+            "divider_bg": "#8e8a8a",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -405,7 +405,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>NEXT</strong></p><h3>Our Intentions →</h3>",
+            "text": "<p><strong>NEXT</strong></p><h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -419,7 +419,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>ALSO</strong></p><h3>The Team →</h3>",
+            "text": "<p><strong>ALSO</strong></p><h3><a href=\"/pages/our-team-1\" title=\"OUR TEAM\">The Team →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
