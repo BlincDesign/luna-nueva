@@ -37,7 +37,7 @@
             "position": "left",
             "enable_divider": true,
             "divider_bg": "#8B8B8B",
-            "divider_width": 100,
+            "divider_width": 80,
             "divider_height": 1,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
