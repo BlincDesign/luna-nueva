@@ -573,6 +573,10 @@ a.pdl__right {
     .pdc__desc {
         max-width: unset;
     }
+
+    .pdc__arch {
+        max-width: 290px;
+    }
 }
 
 .pdc__row {
