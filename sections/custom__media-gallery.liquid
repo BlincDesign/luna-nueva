@@ -225,7 +225,7 @@
       {%- endif -%}
       
       {% if content_block.settings.body != blank %}
-        <div class="media-gallery__body has-primary--font rte">{{ content_block.settings.body }}</div>
+        <div class="media-gallery__body has-primary--font rte{%- if section.settings.enlarge_text -%} enlarge-text{% endif %}">{{ content_block.settings.body }}</div>
       {% endif %}
       {% if content_block.settings.button_label != blank %}
         <div class="media-gallery__actions">
@@ -492,6 +492,12 @@
           "id": "body",
           "label": "Description",
           "default": "<p>Add your description here.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "Enlarge text",
+          "default": true
         },
         {
           "type": "text",
