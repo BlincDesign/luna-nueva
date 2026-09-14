@@ -75,6 +75,82 @@
         "padding_bottom_mb": 40
       }
     },
+    "custom_rich_text_columns_V9bynk": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_tcMTWe": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_Nn9RrG": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "detail_row_GHTDic": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<p>A bold spirit with a velvety body.</p>",
+            "icon": "droplet",
+            "icon_size": 30
+          }
+        },
+        "detail_row_p3KQNU": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Aroma",
+            "description": "<p>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</p>",
+            "icon": "leaf",
+            "icon_size": 30
+          }
+        },
+        "detail_row_agQMmd": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Palate",
+            "description": "<p>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</p>",
+            "icon": "circle",
+            "icon_size": 30
+          }
+        }
+      },
+      "block_order": [
+        "preheading_tcMTWe",
+        "heading_Nn9RrG",
+        "detail_row_GHTDic",
+        "detail_row_p3KQNU",
+        "detail_row_agQMmd"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "enable_vertical_divider": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "slideshow_3Nhhhk": {
       "type": "slideshow",
       "blocks": {
@@ -455,6 +531,7 @@
   "order": [
     "main",
     "custom_media_gallery_9APyLM",
+    "custom_rich_text_columns_V9bynk",
     "slideshow_3Nhhhk",
     "custom_rich_text_columns_P6dhUJ",
     "custom_rich_text_columns_QfLqFY",
