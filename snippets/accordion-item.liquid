@@ -1,0 +1,13 @@
+{%- unless block.settings.title == blank -%}
+  <details
+    class="accordion"
+    {{ block.shopify_attributes }}
+    {% if block.settings.open_by_default %}open{% endif %}
+  >
+    <summary>
+      {{ block.settings.title }}
+      <span class="accordion__icon" aria-hidden="true">+</span>
+    </summary>
+    {{ block.settings.content }}
+  </details>
+{%- endunless -%}

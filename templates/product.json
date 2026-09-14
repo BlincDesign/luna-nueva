@@ -1,1 +1,302 @@
-{"sections":{"main":{"type":"main-product","blocks":{"price":{"type":"price","settings":{}},"separator":{"type":"separator","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","product_dynamic_variants_enable":true,"color_swatches":true}},"sales_point":{"type":"sales_point","settings":{"icon":"globe","text":"Free worldwide shipping"}},"inventory_status":{"type":"inventory_status","settings":{"inventory_threshold":10,"inventory_transfers_enable":true}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"surface_pickup_enable":true,"show_gift_card_recipient":false}},"description":{"type":"description","settings":{"is_tab":false}},"tab":{"type":"tab","settings":{"title":"Size guide","content":"","page":""}},"contact":{"type":"contact","settings":{"title":"Ask a question","phone":false}},"share":{"type":"share","settings":{}}},"block_order":["price","separator","variant_picker","sales_point","inventory_status","buy_buttons","description","tab","contact","share"],"settings":{"sku_enable":false,"image_size":"large","product_zoom_enable":true,"thumbnail_position":"beside","thumbnail_height":"flexible","thumbnail_arrows":false,"enable_video_looping":true,"product_video_style":"muted"}},"custom_rich_text_columns_EnMEYm":{"type":"custom__rich-text-columns","blocks":{"divider_rgctmw":{"type":"divider","settings":{"position":"left","enable_divider":false,"divider_bg":"#000","divider_width":50,"divider_height":2,"enable_icon":true,"icon_color":"#f9f6f1","icon":"crescent-moon","icon_size":30,"margin_top":30,"margin_bottom":30}},"preheading_mUdpfK":{"type":"preheading","settings":{"title":"The Tasting","position":"left"}},"text_dVNijU":{"type":"text","settings":{"enlarge_text":true,"text":"<h2>Añejo<\/h2>","position":"left"}},"divider_YyYDQe":{"type":"divider","settings":{"position":"left","enable_divider":true,"divider_bg":"#606264","divider_width":50,"divider_height":1,"enable_icon":false,"icon_color":"#f9f6f1","icon":"chat","icon_size":30,"margin_top":0,"margin_bottom":20}},"text_HFHKk6":{"type":"text","settings":{"enlarge_text":true,"text":"<p><strong>Tequila Añejo · <\/strong><\/p><p><strong>13 Months · 40% <\/strong><\/p><p><strong>Alc\/Vol<\/strong><\/p>","position":"left"}},"detail_row_q4LxNb":{"type":"detail_row","settings":{"position":"right","label":"Character & texture","description":"<h5>A bold spirit with a velvety body.<\/h5>","icon":"texture","icon_size":30}},"detail_row_tpf6Qx":{"type":"detail_row","settings":{"position":"right","label":"Aroma","description":"<h5>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.<\/h5>","icon":"aroma","icon_size":30}},"detail_row_Perrig":{"type":"detail_row","settings":{"position":"right","label":"Palate","description":"<h5>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.<\/h5>","icon":"palate","icon_size":30}}},"block_order":["divider_rgctmw","preheading_mUdpfK","text_dVNijU","divider_YyYDQe","text_HFHKk6","detail_row_q4LxNb","detail_row_tpf6Qx","detail_row_Perrig"],"name":"Rich text columns","settings":{"section_background":"#2d3135","text_color":"#f9f6f1","left_column_width":40,"left_text_align":"left","left_vertical_align":"flex-start","right_column_width":59,"right_text_align":"left","right_vertical_align":"flex-start","detail_accent_color":"#c9a063","padding_top":120,"padding_bottom":120,"mobile_padding_top":80,"mobile_padding_bottom":8}},"sub":{"type":"product-full-width","settings":{"max_width":true}},"product-recommendations":{"type":"product-recommendations","settings":{"product_recommendations_heading":"You may also like","related_count":4,"products_per_row":3}},"collection-return":{"type":"collection-return","settings":{}}},"order":["main","custom_rich_text_columns_EnMEYm","sub","product-recommendations","collection-return"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "text_4zfUb6": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>The Collection · 750ml · Additive-Free</strong>",
+            "uppercase": true,
+            "margin_bottom": 10
+          }
+        },
+        "title_bcgBPy": {
+          "type": "title",
+          "settings": {
+            "margin_bottom": 13
+          }
+        },
+        "character_texture_kbtB9k": {
+          "type": "character-texture",
+          "settings": {
+            "label": "Character & Texture",
+            "margin_bottom": 10
+          }
+        },
+        "price_mEWtYa": {
+          "type": "price",
+          "settings": {
+            "additional_text": "750ml",
+            "margin_bottom": 10
+          }
+        },
+        "separator_wEjmRV": {
+          "type": "separator",
+          "settings": {
+            "margin_bottom": 15
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "display_mode": "siblings",
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true,
+            "margin_bottom": 16
+          }
+        },
+        "tasting_notes_w9FFAp": {
+          "type": "tasting_notes",
+          "settings": {
+            "margin_bottom": 16
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false,
+            "margin_bottom": 12
+          }
+        },
+        "claims_Tx3Abi": {
+          "type": "claims",
+          "settings": {
+            "claim_1_icon": "no_additives",
+            "claim_1_custom_icon": "",
+            "claim_1_label": "No Additives",
+            "claim_2_icon": "no_sweetener",
+            "claim_2_custom_icon": "",
+            "claim_2_label": "No Sweetener",
+            "claim_3_icon": "no_coloring",
+            "claim_3_custom_icon": "",
+            "claim_3_label": "No Coloring",
+            "claim_4_icon": "agave",
+            "claim_4_custom_icon": "",
+            "claim_4_label": "100% Agave",
+            "claim_5_icon": "custom",
+            "claim_5_custom_icon": "",
+            "claim_5_label": "",
+            "margin_bottom": 16
+          }
+        },
+        "details_table_aqtr66": {
+          "type": "details-table",
+          "settings": {
+            "margin_bottom": 10
+          }
+        },
+        "accordion_YQxjUK": {
+          "type": "accordion",
+          "settings": {
+            "title": "The Additive Question",
+            "content": "<p>Mexican regulation permits up to 1% glycerin, oak extract, sugar-based sweetener and caramel coloring without a word on the label. We use none of them.</p>",
+            "open_by_default": false,
+            "margin_bottom": 0
+          }
+        },
+        "accordion_aFpwNb": {
+          "type": "accordion",
+          "settings": {
+            "title": "Distillery & Provenance",
+            "content": "<p>Distilled by the Vivanco family in the Highlands of Jalisco, one of the most respected producers in Mexico, where the craft runs generations deep. 100% Blue Weber agave, grown across highland and lowland terrain.</p>",
+            "open_by_default": false,
+            "margin_bottom": 10
+          }
+        }
+      },
+      "block_order": [
+        "text_4zfUb6",
+        "title_bcgBPy",
+        "character_texture_kbtB9k",
+        "price_mEWtYa",
+        "separator_wEjmRV",
+        "variant_picker",
+        "tasting_notes_w9FFAp",
+        "buy_buttons",
+        "claims_Tx3Abi",
+        "details_table_aqtr66",
+        "accordion_YQxjUK",
+        "accordion_aFpwNb"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "sku_enable": false,
+        "image_size": "auto",
+        "product_zoom_enable": true,
+        "gallery_height": "60vh",
+        "gallery_height_mobile": "60vh",
+        "thumbnail_position": "below",
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": false,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "padding_top": 90,
+        "padding_bottom": 0,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_EnMEYm": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "divider_rgctmw": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": false,
+            "divider_bg": "#000",
+            "divider_width": 50,
+            "divider_height": 2,
+            "enable_icon": true,
+            "icon_color": "#f9f6f1",
+            "icon": "crescent-moon",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        },
+        "preheading_mUdpfK": {
+          "type": "preheading",
+          "settings": {
+            "title": "The Tasting",
+            "position": "left"
+          }
+        },
+        "text_dVNijU": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h2>Añejo</h2>",
+            "position": "left"
+          }
+        },
+        "divider_YyYDQe": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#606264",
+            "divider_width": 50,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 0,
+            "margin_bottom": 20
+          }
+        },
+        "text_HFHKk6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Tequila Añejo · </strong></p><p><strong>13 Months · 40% </strong></p><p><strong>Alc/Vol</strong></p>",
+            "position": "left"
+          }
+        },
+        "detail_row_q4LxNb": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Character & texture",
+            "description": "<h5>A bold spirit with a velvety body.</h5>",
+            "icon": "texture",
+            "icon_size": 30
+          }
+        },
+        "detail_row_tpf6Qx": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Aroma",
+            "description": "<h5>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</h5>",
+            "icon": "aroma",
+            "icon_size": 30
+          }
+        },
+        "detail_row_Perrig": {
+          "type": "detail_row",
+          "settings": {
+            "position": "right",
+            "label": "Palate",
+            "description": "<h5>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</h5>",
+            "icon": "palate",
+            "icon_size": 30
+          }
+        }
+      },
+      "block_order": [
+        "divider_rgctmw",
+        "preheading_mUdpfK",
+        "text_dVNijU",
+        "divider_YyYDQe",
+        "text_HFHKk6",
+        "detail_row_q4LxNb",
+        "detail_row_tpf6Qx",
+        "detail_row_Perrig"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": true,
+        "stylized_bg": false,
+        "left_column_width": 40,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-start",
+        "right_column_width": 59,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-start",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "settings": {
+        "max_width": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "products_per_row": 3
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "custom_rich_text_columns_EnMEYm",
+    "sub",
+    "product-recommendations",
+    "collection-return"
+  ]
+}
