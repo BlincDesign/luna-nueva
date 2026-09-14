@@ -180,17 +180,17 @@
       "type": "background-image-text",
       "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
       "settings": {
-        "subtitle": "",
-        "title": "",
-        "text": "",
-        "button_label": "",
-        "button_link": "",
         "image": "shopify://shop_images/hero-tailgate_59b4500a-ab5e-486c-a152-45065ece3eb4.jpg",
         "layout": "left",
         "height": 550,
         "parallax": true,
         "parallax_direction": "top",
-        "lazyload_images": true
+        "lazyload_images": true,
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": ""
       }
     },
     "text_columns_LtEcyT": {
@@ -206,7 +206,8 @@
             "title": "",
             "text": "<p>ONCE IT'S OPEN</p>",
             "button_label": "EIght ways to pour it",
-            "button_link": ""
+            "button_link": "",
+            "button_type": "primary"
           }
         },
         "text_block_YrFMXG": {
@@ -219,7 +220,8 @@
             "title": "",
             "text": "<p>NEARBY</p>",
             "button_label": "Find a bottle",
-            "button_link": ""
+            "button_link": "",
+            "button_type": "primary"
           }
         }
       },
@@ -231,7 +233,8 @@
       "settings": {
         "title": "",
         "align_text": "left",
-        "divider": false
+        "divider": false,
+        "color_scheme": "scheme-6"
       }
     },
     "featured_collection_FjLrkD": {
