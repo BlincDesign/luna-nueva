@@ -339,7 +339,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>NEARBY</p><h3>Find a bottle →</h3>",
+            "text": "<p>ALSO</p><h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
