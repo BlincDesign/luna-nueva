@@ -99,7 +99,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8E8A8A",
+            "divider_bg": "#8e8a8a",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -120,13 +120,24 @@
             "enable_fade": false,
             "position": "left"
           }
+        },
+        "two_column_media_dpXb9X": {
+          "type": "two_column_media",
+          "settings": {
+            "orientation_one": "landscape",
+            "caption_one": "",
+            "orientation_two": "portrait",
+            "caption_two": "",
+            "position": "right"
+          }
         }
       },
       "block_order": [
         "preheading_tcMTWe",
         "heading_Nn9RrG",
         "divider_P9iyte",
-        "text_TiTchX"
+        "text_TiTchX",
+        "two_column_media_dpXb9X"
       ],
       "name": "Rich text columns",
       "settings": {
