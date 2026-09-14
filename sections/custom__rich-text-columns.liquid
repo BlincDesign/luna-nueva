@@ -212,7 +212,7 @@
   class="color-{{ section.settings.color_scheme }} rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   {%- if section.settings.divider -%}<div class="section--divider page-width">{%- endif -%}
-  <div class="rich-text__main page-width">
+  <div class="rich-text__main {% unless section.settings.divider %} page-width {% endunless %}">
     {%- comment -%}
       LEFT COLUMN
     {%- endcomment -%}
