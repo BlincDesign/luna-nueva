@@ -148,9 +148,9 @@
         "enable_video_looping": true,
         "product_video_style": "muted",
         "padding_top": 120,
-        "padding_bottom": 0,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_bottom": 30,
+        "padding_top_mb": 100,
+        "padding_bottom_mb": 18
       }
     },
     "custom_rich_text_columns_EnMEYm": {
