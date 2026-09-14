@@ -28,53 +28,53 @@
 
   .element-text:is([class*="element-text--body"]) {
     /* Body Font Styles */
-    --font-weight--body: var(--font-weight, var(--element-text-font-family--body));
-    --font-weight-fallback--body: var(--font-weight-fallback, var(--element-text-font-family-fallback--body));
-    --font-weight--body: var(--font-weight, var(--element-text-font-weight--body));
-    --letter-spacing--body: var(--letter-spacing, var(--element-text-letter-spacing--body));
-    --text-transform--body: var(--text-transform, var(--element-text-text-transform--body));
+    --_font-family--body: var(--_font-family, var(--element-text-font-family--body));
+    --_font-family-fallback--body: var(--_font-family-fallback, var(--element-text-font-family-fallback--body));
+    --_font-weight--body: var(--_font-weight, var(--element-text-font-weight--body));
+    --_letter-spacing--body: var(--_letter-spacing, var(--element-text-letter-spacing--body));
+    --_text-transform--body: var(--_text-transform, var(--element-text-text-transform--body));
 
     /* Body Color */
-    --color--body: var(--color, var(--element-text-color--body, currentColor));
+    --_color--body: var(--_color, var(--element-text-color--body, currentColor));
 
     /* Body Font Sizes */
-    --font-size--body: var(--font-size, var(--element-text-font-size--body));
-    --font-size--body-xs: var(--font-size--body, var(--element-text-font-size--body-xs));
-    --font-size--body-sm: var(--font-size--body, var(--element-text-font-size--body-sm));
-    --font-size--body-md: var(--font-size--body, var(--element-text-font-size--body-md));
-    --font-size--body-lg: var(--font-size--body, var(--element-text-font-size--body-lg));
+    --_font-size--body: var(--_font-size, var(--element-text-font-size--body));
+    --_font-size--body-xs: var(--_font-size--body, var(--element-text-font-size--body-xs));
+    --_font-size--body-sm: var(--_font-size--body, var(--element-text-font-size--body-sm));
+    --_font-size--body-md: var(--_font-size--body, var(--element-text-font-size--body-md));
+    --_font-size--body-lg: var(--_font-size--body, var(--element-text-font-size--body-lg));
 
     /* Body Line Heights */
-    --line-height--body: var(--line-height, var(--element-text-line-height--body));
-    --line-height--body-xs: var(--element-text-line-height--body-xs, var(--line-height--body));
-    --line-height--body-sm: var(--element-text-line-height--body-sm, var(--line-height--body));
-    --line-height--body-md: var(--element-text-line-height--body-md, var(--line-height--body));
-    --line-height--body-lg: var(--element-text-line-height--body-lg, var(--line-height--body));
+    --_line-height--body: var(--_line-height, var(--element-text-line-height--body));
+    --_line-height--body-xs: var(--element-text-line-height--body-xs, var(--_line-height--body));
+    --_line-height--body-sm: var(--element-text-line-height--body-sm, var(--_line-height--body));
+    --_line-height--body-md: var(--element-text-line-height--body-md, var(--_line-height--body));
+    --_line-height--body-lg: var(--element-text-line-height--body-lg, var(--_line-height--body));
 
-    font-family: var(--font-weight--body), var(--font-weight-fallback--body);
-    font-weight: var(--font-weight--body);
-    letter-spacing: var(--letter-spacing--body);
-    text-transform: var(--text-transform--body);
-    color: var(--color--body);
+    font-family: var(--_font-family--body), var(--_font-family-fallback--body);
+    font-weight: var(--_font-weight--body);
+    letter-spacing: var(--_letter-spacing--body);
+    text-transform: var(--_text-transform--body);
+    color: var(--_color--body);
 
     &:where(.element-text--body-xs) {
-      --font-size: var(--font-size--body-xs); 
-      line-height: var(--line-height--body-xs);
+      --_font-size: var(--_font-size--body-xs); 
+      line-height: var(--_line-height--body-xs);
     }
 
     &:where(.element-text--body-sm) {
-      font-size: var(--font-size--body-sm);
-      line-height: var(--line-height--body-sm);
+      font-size: var(--_font-size--body-sm);
+      line-height: var(--_line-height--body-sm);
     }
 
     &:where(.element-text--body-md) {
-      font-size: var(--font-size--body-md);
-      line-height: var(--line-height--body-md);
+      font-size: var(--_font-size--body-md);
+      line-height: var(--_line-height--body-md);
     } 
 
     &:where(.element-text--body-lg) {
-      font-size: var(--font-size--body-lg);
-      line-height: var(--line-height--body-lg);
+      font-size: var(--_font-size--body-lg);
+      line-height: var(--_line-height--body-lg);
     }
   }
 {% endstylesheet %}
