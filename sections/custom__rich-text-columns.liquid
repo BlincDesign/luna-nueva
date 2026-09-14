@@ -303,7 +303,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}">
+            <div id="block-{{ block.id }}" class="block-{{ block.type }}">
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
