@@ -205,7 +205,7 @@
         "align_text": "left",
         "narrow_column": false,
         "padding_top": 120,
-        "padding_bottom": 120,
+        "padding_bottom": 20,
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
