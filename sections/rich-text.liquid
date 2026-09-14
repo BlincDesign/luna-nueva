@@ -75,18 +75,23 @@
               <div class="rich-text__divider">
           {% endif %}
           {% if block.settings.enable_icon %}
-            <div class="rich-text__divider--icon">
-
-            </div>
+            <div class="rich-text__divider--icon"></div>
           {% endif %}
           {% if block.settings.enable_divider %}
             </div>
             </div>
           {% endif %}
         {%- when 'heading' -%}
+          {% style %}
+            #block-{{ block.id }} h2 {
+              font-size: {{ block.settings.font_size }}px;
+            }
+          {% endstyle %}
+
           <h2 class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {{ block.settings.title }}
           </h2>
+
         {%- when 'page' -%}
           <div class="rte page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
             {%- if block.settings.page_text != blank -%}
@@ -345,6 +350,16 @@
           "id": "title",
           "label": "t:sections.rich-text.blocks.heading.settings.title.label",
           "default": "Rich text"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "label": "Font size",
+          "min": 18,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 84
         }
       ]
     },
