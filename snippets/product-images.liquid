@@ -54,10 +54,12 @@
         {%- if product.media.size > 1 -%}
           <span class="pdp-gallery__count" data-pdp-count aria-hidden="true"></span>
           <button type="button" class="pdp-gallery__nav pdp-gallery__nav--prev" data-pdp-nav="prev" aria-label="Previous image">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"fill="currentColor"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+            {% comment %} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"fill="currentColor"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg> {% endcomment %}
+            {% render 'icon', name: 'chevron-left', class: 'nav--icon' size: 54 %}
           </button>
           <button type="button" class="pdp-gallery__nav pdp-gallery__nav--next" data-pdp-nav="next" aria-label="Next image">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+            {% render 'icon', name: 'chevron-right', class: 'nav--icon' size: 54 %}
+
           </button>
         {%- endif -%}
 
