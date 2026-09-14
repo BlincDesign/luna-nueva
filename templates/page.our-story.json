@@ -185,6 +185,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "full_width": false,
+        "position": "right",
         "content_width": 35,
         "flow_right": false,
         "tile_width_min": 240,
@@ -217,10 +218,11 @@
             "divider_bg": "#8b8b8b",
             "divider_width": 90,
             "divider_height": 1,
-            "enable_icon": false,
-            "icon_color": "#f9f6f1",
-            "icon": "chat",
             "icon_size": 30,
+            "icon_color": "#f9f6f1",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "enable_icon": false,
+            "icon": "chat",
             "margin_top": 30,
             "margin_bottom": 30
           }
