@@ -76,6 +76,20 @@
             width: 100%;
           }
         }
+
+        
+  .theme-block--two-column-media__media {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+   {% if block.settings.orientation != 'none' %} aspect-ratio: 0.9; {% endif %}
+  }
+
+  {% if block.settings.orientation != 'none' %}
+  .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
+    aspect-ratio: 3 / 4;
+  }
+  {% endif %}
       {% endfor %}
 
       .rich-text__content h2 {
@@ -255,17 +269,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     align-items: end;
-  }
-
-  .theme-block--two-column-media__media {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 16px;
-    aspect-ratio: 0.9;
-  }
-
-  .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
-    aspect-ratio: 3 / 4;
   }
 
   .theme-block--two-column-media__media img,
@@ -1088,6 +1091,10 @@
           "id": "orientation_one",
           "label": "Orientation 1",
           "options": [
+            {
+              "value": "none",
+              "label": "None (Auto)"
+            },
             {
               "value": "landscape",
               "label": "Landscape"
