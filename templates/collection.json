@@ -204,8 +204,8 @@
             "image_mask": "landscape",
             "image_width": 650,
             "title": "",
-            "text": "<p>ONCE IT'S OPEN</p>",
-            "button_label": "EIght ways to pour it",
+            "text": "<p>ONCE IT'S OPEN</p><h3>Eight ways to pour it →</h3>",
+            "button_label": "",
             "button_link": "",
             "button_type": "primary"
           }
@@ -218,8 +218,8 @@
             "image_mask": "landscape",
             "image_width": 650,
             "title": "",
-            "text": "<p>NEARBY</p>",
-            "button_label": "Find a bottle",
+            "text": "<p>NEARBY</p><h3>Find a bottle →</h3>",
+            "button_label": "",
             "button_link": "",
             "button_type": "primary"
           }
