@@ -1201,6 +1201,14 @@ a.pdl__right {
     object-fit: cover;
 }
 
+.pdp-gallery__count {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 3;
+    font-size: var(--type-caption-size);
+    font-weight: 700;
+}
 
 .pdp-gallery__nav {
     position: absolute;
