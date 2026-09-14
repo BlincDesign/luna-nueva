@@ -65,7 +65,7 @@ em:has(strong) strong {
     font-style: normal;
 }
 
-strong:has(em) em {
+em:has(strong) strong {
     color: rgb(var(--color-accent));
     font-weight: normal;
     font-style: normal;
