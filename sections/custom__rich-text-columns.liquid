@@ -93,7 +93,21 @@
       align-items: stretch;
       justify-content: space-between;
       gap: 20px;
+      position: relative;
     }
+
+    {% if section.settings.enable_vertical_divider %}
+      #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background: {{ section.settings.detail_divider_color }};
+        transform: translateX(-50%);
+      }
+    {% endif %}
 
     #custom__rich-text-columns-{{ section.id }} .rich-text__column {
       display: flex;
@@ -189,6 +203,9 @@
         gap: 16px;
       }
 
+      #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
+        display: none;
+      }
 
       #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
       #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
@@ -658,6 +675,12 @@
       "type": "checkbox",
       "id": "stylized_bg",
       "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_vertical_divider",
+      "label": "Vertical divider",
       "default": false
     },
     {
