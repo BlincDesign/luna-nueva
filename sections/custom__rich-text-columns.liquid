@@ -1,253 +1,301 @@
 {% style %}
-    {% for block in section.blocks %}
-      #block-{{ block.id }} .rich-text__divider-wrapper,
-      #block-{{ block.id }} .rich-text__divider--icon {
-        display: flex;
-        {%- if block.settings.position == 'left' -%}
-          justify-content: {{ section.settings.left_text_align }}
-        {%endif %}
-        {%- if block.settings.position == 'right' -%}
-          justify-content: {{ section.settings.right_text_align }}
-        {%endif %}
-      }
-
-      #block-{{ block.id }} .rich-text__divider {
-        position: relative;
-        width: {{block.settings.divider_width}}%;
-        height: {{ block.settings.divider_height }}px;
-        background: {{ block.settings.divider_bg }};
-      }
-
-      {% if block.settings.enable_divider %}
-        #block-{{ block.id }} .rich-text__divider {
-          margin-block-start: {{ block.settings.margin_top }}px;
-          margin-block-end: {{ block.settings.margin_bottom }}px;
-        }
-      {% else %}
+      {% for block in section.blocks %}
+        #block-{{ block.id }} .rich-text__divider-wrapper,
         #block-{{ block.id }} .rich-text__divider--icon {
-          margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
-          margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+          display: flex;
+          {%- if block.settings.position == 'left' -%}
+            justify-content: {{ section.settings.left_text_align }}
+          {%endif %}
+          {%- if block.settings.position == 'right' -%}
+            justify-content: {{ section.settings.right_text_align }}
+          {%endif %}
         }
-      {% endif %}
 
-      #block-{{ block.id }} .rich-text__divider--icon {
-        {% if block.settings.enable_divider %}
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        {% else %}
-          position: relative;
-        {%endif %}
-      }
-
-      #block-{{ block.id }} .rich-text__divider--icon .icon,
-      #block-{{ block.id }} .rich-text__divider--icon img {
-        display: block;
-        width: {{ block.settings.icon_size }}px;
-        height: {{ block.settings.icon_size }}px;
-        color: {{ block.settings.icon_color }};
-        background: {{ section.settings.icon_backdrop_color }};
-      }
-
-
-      #block-{{ block.id }} .rich-text__detail-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        color: {{ section.settings.detail_accent_color }};
-      }
-
-      #block-{{ block.id }} .rich-text__detail-icon .icon,
-      #block-{{ block.id }} .rich-text__detail-icon img {
-        width: {{ block.settings.icon_size }}px;
-        height: {{ block.settings.icon_size }}px;
-      }
-
-      {% if block.settings.enable_italic %}
-      #block-{{ block.id }} .theme-block__text em:has(strong) strong {
-        font-style: italic;
-      }
-      {%endif %}
-
-      @media screen and (max-width: 589px) {
         #block-{{ block.id }} .rich-text__divider {
-          width: 100%;
+          position: relative;
+          width: {{block.settings.divider_width}}%;
+          height: {{ block.settings.divider_height }}px;
+          background: {{ block.settings.divider_bg }};
         }
+
+        {% if block.settings.enable_divider %}
+          #block-{{ block.id }} .rich-text__divider {
+            margin-block-start: {{ block.settings.margin_top }}px;
+            margin-block-end: {{ block.settings.margin_bottom }}px;
+          }
+        {% else %}
+          #block-{{ block.id }} .rich-text__divider--icon {
+            margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+            margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+          }
+        {% endif %}
+
+        #block-{{ block.id }} .rich-text__divider--icon {
+          {% if block.settings.enable_divider %}
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          {% else %}
+            position: relative;
+          {%endif %}
+        }
+
+        #block-{{ block.id }} .rich-text__divider--icon .icon,
+        #block-{{ block.id }} .rich-text__divider--icon img {
+          display: block;
+          width: {{ block.settings.icon_size }}px;
+          height: {{ block.settings.icon_size }}px;
+          color: {{ block.settings.icon_color }};
+          background: {{ section.settings.icon_backdrop_color }};
+        }
+
+
+        #block-{{ block.id }} .rich-text__detail-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          color: {{ section.settings.detail_accent_color }};
+        }
+
+        #block-{{ block.id }} .rich-text__detail-icon .icon,
+        #block-{{ block.id }} .rich-text__detail-icon img {
+          width: {{ block.settings.icon_size }}px;
+          height: {{ block.settings.icon_size }}px;
+        }
+
+        {% if block.settings.enable_italic %}
+        #block-{{ block.id }} .theme-block__text em:has(strong) strong {
+          font-style: italic;
+        }
+        {%endif %}
+
+        @media screen and (max-width: 589px) {
+          #block-{{ block.id }} .rich-text__divider {
+            width: 100%;
+          }
+        }
+      {% endfor %}
+
+      .rich-text__content h2 {
+        margin: 0;
       }
-    {% endfor %}
 
-    .rich-text__content h2 {
-      margin: 0;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__main {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      justify-content: space-between;
-      gap: 20px;
-      position: relative;
-    }
-
-    {% if section.settings.enable_vertical_divider %}
-      #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 1px;
-        background: rgb(var(--color-border));
-        transform: translateX(-50%);
-      }
-    {% endif %}
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__column {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__column--left {
-      flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
-      justify-content: {{ section.settings.left_vertical_align }};
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
-      flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
-      justify-content: {{ section.settings.right_vertical_align }};
-    }
-
-    .rich-text__content ul li {
-      position: relative;
-      padding-left: 25px;
-    }
-
-    .rich-text__column ul {
-      list-style: none;
-    }
-
-    .rich-text__content ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #C64D27;
-    }
-
-    /* Detail row block (icon + label + description, tasting-note style) */
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-list {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .rich-text__detail-description * {
-      margin: 0;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px 40px;
-      padding: 28px 0;
-      border-top: 1px solid color-mix(in srgb, {{ section.settings.detail_divider_color }} 15%, transparent);
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 0 0 220px;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label-text {
-      font-size: var(--type-caption-size);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: {{ section.settings.detail_accent_color }};
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description {
-      flex: 1;
-    }
-  /*
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description p {
-      margin: 0;
-    } */
-
-    @media screen and (max-width: 589px) {
       #custom__rich-text-columns-{{ section.id }} {
-        padding-top: {{ section.settings.padding_top_mb }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-      }
-
-      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-        align-items: flex-start;
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
       }
 
       #custom__rich-text-columns-{{ section.id }} .rich-text__main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+      }
+
+      {% if section.settings.enable_vertical_divider %}
+        #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: 1px;
+          background: rgb(var(--color-border));
+          transform: translateX(-50%);
+        }
+      {% endif %}
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__column {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
       }
 
-      #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
-        display: none;
+      #custom__rich-text-columns-{{ section.id }} .rich-text__column--left {
+        flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+        justify-content: {{ section.settings.left_vertical_align }};
       }
 
-      #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
       #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
+        flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+        justify-content: {{ section.settings.right_vertical_align }};
+      }
+
+      .rich-text__content ul li {
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .rich-text__column ul {
+        list-style: none;
+      }
+
+      .rich-text__content ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #C64D27;
+      }
+
+      /* Detail row block (icon + label + description, tasting-note style) */
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-list {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        flex: unset;
-        display: block;
+      }
+
+      .rich-text__detail-description * {
+        margin: 0;
       }
 
       #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-        flex-direction: column;
-        gap: 12px;
-        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px 40px;
+        padding: 28px 0;
+        border-top: 1px solid color-mix(in srgb, {{ section.settings.detail_divider_color }} 15%, transparent);
       }
 
       #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
-        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 220px;
       }
 
-      .theme-block__buttons {
-        text-align: left !important;
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label-text {
+        font-size: var(--type-caption-size);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: {{ section.settings.detail_accent_color }};
       }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description {
+        flex: 1;
+      }
+    /*
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description p {
+        margin: 0;
+      } */
+
+      @media screen and (max-width: 589px) {
+        #custom__rich-text-columns-{{ section.id }} {
+          padding-top: {{ section.settings.padding_top_mb }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
+          align-items: flex-start;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__main {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__main::before {
+          display: none;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
+        #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
+          width: 100%;
+          flex: unset;
+          display: block;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
+          flex-direction: column;
+          gap: 12px;
+          padding: 20px 0;
+        }
+
+        #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
+          flex: 0 0 auto;
+        }
+
+        .theme-block__buttons {
+          text-align: left !important;
+        }
+      }
+
+
+
+
+    .theme-block--video .element-video video-media {
+      position: unset;
     }
 
+    .theme-block--video video {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
+    .theme-block--video, .theme-block--image {
+      margin-block: 1.5rem;
+    }
 
+    .theme-block--link_text:before {
+      display: none;
+    }
 
-  .theme-block--video .element-video video-media {
-    position: unset;
+    .theme-block--two-column-media {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: end;
   }
 
-  .theme-block--video video {
-      display: block;
-      width: 100%;
-      height: 100%;
+  .theme-block--two-column-media__media {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    aspect-ratio: 4 / 3;
   }
 
-  .theme-block--video, .theme-block--image {
-    margin-block: 1.5rem;
+  .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
+    aspect-ratio: 3 / 4;
   }
 
-  .theme-block--link_text:before {
-    display: none;
+  .theme-block--two-column-media__media img,
+  .theme-block--two-column-media__media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .theme-block--two-column-media__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-block--two-column-media__placeholder .placeholder-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .theme-block--two-column-media__caption {
+    display: block;
+    margin-top: 8px;
+  }
+
+  @media screen and (max-width: 589px) {
+    .theme-block--two-column-media {
+      grid-template-columns: 1fr;
+    }
   }
 {% endstyle %}
 
@@ -349,7 +397,10 @@
                   </div>
 
                 {%- when 'text' -%}
-                  <div class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}" {{ block.shopify_attributes }}>
+                  <div
+                    class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}"
+                    {{ block.shopify_attributes }}
+                  >
                     <div
                       class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
@@ -438,22 +489,93 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                    <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                      {% if block.settings.link != blank %}
-                        <a href="{{ block.settings.link | default: '#' }}">
-                      {% else %}
-                        <div>
-                      {% endif %}
-                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                      {% if block.settings.subtext != blank %}
-                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                      {% endif %}
-                      {% if block.settings.link != blank %}
-                        </a>
-                      {% else %}
+                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                    {% if block.settings.link != blank %}
+                      <a href="{{ block.settings.link | default: '#' }}">
+                    {% else %}
+                      <div>
+                    {% endif %}
+                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                    {% if block.settings.subtext != blank %}
+                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                    {% endif %}
+                    {% if block.settings.link != blank %}
+                      </a>
+                    {% else %}
+                      </div>
+                    {% endif %}
+                  </li>
+
+                {%- when 'two_column_media' -%}
+                  <div class="theme-block--two-column-media">
+                    <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}">
+                      {%- if block.settings.video_one != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'element.video',
+                            video: block.settings.video_one,
+                            autoplay: true,
+                            loop: true,
+                            muted: true,
+                            background: true
+                          -%}
                         </div>
-                      {% endif %}
-                    </li>
+
+                      {%- elsif block.settings.image_one != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'image-element',
+                            img: block.settings.image_one,
+                            widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                            classes: 'theme-block--two-column-media__image'
+                          -%}
+                        </div>
+
+                      {%- else -%}
+                        <div class="theme-block--two-column-media__media theme-block--two-column-media__placeholder">
+                          {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.caption_one != blank -%}
+                        <span class="theme-block--two-column-media__caption">
+                          {{- block.settings.caption_one -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+
+                    <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_two }}">
+                      {%- if block.settings.video_two != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'element.video',
+                            video: block.settings.video_two,
+                            autoplay: true,
+                            loop: true,
+                            muted: true,
+                            background: true
+                          -%}
+                        </div>
+
+                      {%- elsif block.settings.image_two != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'image-element',
+                            img: block.settings.image_two,
+                            widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                            classes: 'theme-block--two-column-media__image'
+                          -%}
+                        </div>
+
+                      {%- else -%}
+                        <div class="theme-block--two-column-media__media theme-block--two-column-media__placeholder">
+                          {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.caption_two != blank -%}
+                        <span class="theme-block--two-column-media__caption">
+                          {{- block.settings.caption_two -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+                  </div>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -556,7 +678,10 @@
                   </div>
 
                 {%- when 'text' -%}
-                  <div class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} theme-block__text" {{ block.shopify_attributes }}>
+                  <div
+                    class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} theme-block__text"
+                    {{ block.shopify_attributes }}
+                  >
                     <div
                       class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading != blank -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
@@ -645,22 +770,93 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                    <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                      {% if block.settings.link != blank %}
-                        <a href="{{ block.settings.link | default: '#' }}">
-                      {% else %}
-                        <div>
-                      {% endif %}
-                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                      {% if block.settings.subtext != blank %}
-                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                      {% endif %}
-                      {% if block.settings.link != blank %}
-                        </a>
-                      {% else %}
+                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                    {% if block.settings.link != blank %}
+                      <a href="{{ block.settings.link | default: '#' }}">
+                    {% else %}
+                      <div>
+                    {% endif %}
+                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                    {% if block.settings.subtext != blank %}
+                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                    {% endif %}
+                    {% if block.settings.link != blank %}
+                      </a>
+                    {% else %}
+                      </div>
+                    {% endif %}
+                  </li>
+
+                {%- when 'two_column_media' -%}
+                  <div class="theme-block--two-column-media">
+                    <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}">
+                      {%- if block.settings.video_one != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'element.video',
+                            video: block.settings.video_one,
+                            autoplay: true,
+                            loop: true,
+                            muted: true,
+                            background: true
+                          -%}
                         </div>
-                      {% endif %}
-                    </li>
+
+                      {%- elsif block.settings.image_one != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'image-element',
+                            img: block.settings.image_one,
+                            widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                            classes: 'theme-block--two-column-media__image'
+                          -%}
+                        </div>
+
+                      {%- else -%}
+                        <div class="theme-block--two-column-media__media theme-block--two-column-media__placeholder">
+                          {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.caption_one != blank -%}
+                        <span class="theme-block--two-column-media__caption">
+                          {{- block.settings.caption_one -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+
+                    <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_two }}">
+                      {%- if block.settings.video_two != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'element.video',
+                            video: block.settings.video_two,
+                            autoplay: true,
+                            loop: true,
+                            muted: true,
+                            background: true
+                          -%}
+                        </div>
+
+                      {%- elsif block.settings.image_two != blank -%}
+                        <div class="theme-block--two-column-media__media">
+                          {%- render 'image-element',
+                            img: block.settings.image_two,
+                            widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                            classes: 'theme-block--two-column-media__image'
+                          -%}
+                        </div>
+
+                      {%- else -%}
+                        <div class="theme-block--two-column-media__media theme-block--two-column-media__placeholder">
+                          {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.caption_two != blank -%}
+                        <span class="theme-block--two-column-media__caption">
+                          {{- block.settings.caption_two -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+                  </div>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -859,6 +1055,82 @@
   ],
 
   "blocks": [
+    {
+      "type": "two_column_media",
+      "name": "Two Column Media",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media 1"
+        },
+        {
+          "type": "video",
+          "id": "video_one",
+          "label": "Video 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_one",
+          "label": "Image 1"
+        },
+        {
+          "type": "select",
+          "id": "orientation_one",
+          "label": "Orientation 1",
+          "options": [
+            {
+              "value": "landscape",
+              "label": "Landscape"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            }
+          ],
+          "default": "landscape"
+        },
+        {
+          "type": "text",
+          "id": "caption_one",
+          "label": "Caption 1"
+        },
+        {
+          "type": "header",
+          "content": "Media 2"
+        },
+        {
+          "type": "video",
+          "id": "video_two",
+          "label": "Video 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_two",
+          "label": "Image 2"
+        },
+        {
+          "type": "select",
+          "id": "orientation_two",
+          "label": "Orientation 2",
+          "options": [
+            {
+              "value": "landscape",
+              "label": "Landscape"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            }
+          ],
+          "default": "portrait"
+        },
+        {
+          "type": "text",
+          "id": "caption_two",
+          "label": "Caption 2"
+        }
+      ]
+    },
     {
       "type": "link_text",
       "name": "Link with text",
