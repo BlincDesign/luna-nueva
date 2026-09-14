@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 (() => {
   const bindGalleryArrows = () => {
     document.querySelectorAll('[data-product-photos]').forEach((slider) => {
