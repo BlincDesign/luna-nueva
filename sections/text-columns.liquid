@@ -4,6 +4,15 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  .text-column__grid--item:hover img {
+    transform: scale(1.035);
+  }
+
+  .text-column__grid--item img {
+      transition: transform .7s cubic-bezier(.22,.7,.3,1);
+  }
+
+
   @media screen and (max-width: 589px) {
     #Text-with-images-columns-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
