@@ -365,7 +365,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#2D3135",
+            "divider_bg": "#2d3135",
             "divider_width": 90,
             "divider_height": 1,
             "enable_icon": false,
@@ -519,50 +519,10 @@
             "title": "Who to ask",
             "position": "left"
           }
-        },
-        "link_text_WnjfAV": {
-          "type": "link_text",
-          "settings": {
-            "link": "",
-            "title": "Press and editorial",
-            "subtext": "hello@lunanuevatequila.com",
-            "position": "left"
-          }
-        },
-        "link_text_hwHyqx": {
-          "type": "link_text",
-          "settings": {
-            "link": "",
-            "title": "Partnerships and collaborations",
-            "subtext": "hello@lunanuevatequila.com",
-            "position": "left"
-          }
-        },
-        "link_text_kUhxei": {
-          "type": "link_text",
-          "settings": {
-            "link": "",
-            "title": "Stockists and trade",
-            "subtext": "Stock Luna Nueva →",
-            "position": "left"
-          }
-        },
-        "link_text_WnMTxA": {
-          "type": "link_text",
-          "settings": {
-            "link": "",
-            "title": "Events and sampling",
-            "subtext": "Events →",
-            "position": "left"
-          }
         }
       },
       "block_order": [
-        "heading_FHFfpd",
-        "link_text_WnjfAV",
-        "link_text_hwHyqx",
-        "link_text_kUhxei",
-        "link_text_WnMTxA"
+        "heading_FHFfpd"
       ],
       "name": "Rich text columns",
       "settings": {
@@ -582,8 +542,77 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "padding_top": 92,
-        "padding_bottom": 92,
+        "padding_bottom": 0,
         "padding_top_mb": 52,
+        "padding_bottom_mb": 0
+      }
+    },
+    "custom_rich_text_columns_fRbQFh": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "link_text_8PQhck": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Press and editorial",
+            "subtext": "hello@lunanuevatequila.com",
+            "position": "left"
+          }
+        },
+        "link_text_EAXNJ9": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Partnerships and collaborations",
+            "subtext": "hello@lunanuevatequila.com",
+            "position": "left"
+          }
+        },
+        "link_text_rtKaib": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Stockists and trade",
+            "subtext": "Stock Luna Nueva →",
+            "position": "left"
+          }
+        },
+        "link_text_re4Thr": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Events and sampling",
+            "subtext": "Events →",
+            "position": "left"
+          }
+        }
+      },
+      "block_order": [
+        "link_text_8PQhck",
+        "link_text_EAXNJ9",
+        "link_text_rtKaib",
+        "link_text_re4Thr"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 100,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 50,
+        "padding_bottom": 92,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 52
       }
     }
@@ -598,6 +627,7 @@
     "custom_rich_text_columns_BwX3PY",
     "custom_stats_f3hd47",
     "custom_rich_text_columns_dFKwm8",
-    "custom_rich_text_columns_LTXbDy"
+    "custom_rich_text_columns_LTXbDy",
+    "custom_rich_text_columns_fRbQFh"
   ]
 }
