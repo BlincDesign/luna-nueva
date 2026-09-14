@@ -1098,35 +1098,23 @@ a.pdl__right {
     }
 }
 
+
+
+
 .pdp-gallery {
     --pdp-gallery-media-ar: 1 / 1.321;
     --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
 }
-/* 
-.pdp-gallery__frame {
-    position: relative;
-    padding: clamp(14px, 2.4vw, 32px);
-} */
 
 .starting-slide .pdp-gallery__frame {
     height: 100%;
     aspect-ratio: var(--pdp-gallery-media-ar);
     width: auto;
-    /* box-sizing: border-box;
-    overflow: hidden; */
 }
 
 .starting-slide {
     padding: 32px;
 }
-
-/* .starting-slide .pdp-gallery__frame::before,
-.starting-slide .pdp-gallery__frame::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-} */
 
 .starting-slide::before {
     content: "";
@@ -1137,15 +1125,6 @@ a.pdl__right {
     background: radial-gradient( 60% 50% at 28% 18%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 68%), radial-gradient( 85% 65% at 50% 100%, rgba(var(--color-shadow), 0.14), rgba(var(--color-shadow), 0) 65%);
 }
 
-/* .starting-slide .pdp-gallery__frame::after {
-    left: 50%;
-    bottom: clamp(6px, 1.6vw, 16px);
-    width: 60%;
-    height: 14%;
-    transform: translateX(-50%);
-    background: radial-gradient( 50% 100% at 50% 50%, rgba(var(--color-shadow), 0.3), rgba(var(--color-shadow), 0) 72%);
-    filter: blur(2px);
-} */
 
 .starting-slide .pdp-gallery__frame .image-wrap {
     position: relative;
@@ -1153,9 +1132,6 @@ a.pdl__right {
     overflow: visible;
 }
 
-/* .starting-slide .pdp-gallery__frame .image-wrap img {
-    filter: drop-shadow(0 16px 22px rgba(var(--color-shadow), 0.2)) drop-shadow(0 4px 8px rgba(var(--color-shadow), 0.14));
-} */
 
 .secondary-slide .pdp-gallery__frame {
     height: 100%;
@@ -1291,21 +1267,9 @@ a.pdl__right {
     justify-content: center;
 }
 
-/* @media (hover: none) {
-    .pdp-gallery__nav {
-        display: none;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .pdp-gallery__nav {
-        transition: opacity 0.2s linear;
-    }
-} */
-
 @media (max-width: 900px) {
     .pdp-gallery__stage {
-        height: var(--gallery-height-mobile, 60vh);
+       height: var(--gallery-height-mobile, 60vh);
        position: static !important;
     }
 }
@@ -1318,7 +1282,7 @@ a.pdl__right {
 
 .product__thumb-item a.is-active,
 .product__thumb-item a:focus {
-    border: 2px solid #000;
+    border: 2px solid rgba(var(--color-foreground));
 }
 
 .product__thumb-item a.is-active::before,
