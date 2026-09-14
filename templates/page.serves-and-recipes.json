@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_rich_text_columns_KrUFGK": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_bRwJzy": {
+          "type": "preheading",
+          "settings": {
+            "title": "Serves & Recipes",
+            "position": "left"
+          }
+        },
+        "heading_NJDaaK": {
+          "type": "heading",
+          "settings": {
+            "title": "Eight ways to pour it.",
+            "position": "left"
+          }
+        },
+        "text_hCzqhi": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</h2>",
+            "enlarge_text": false,
+            "enable_italic": false,
+            "position": "right"
+          }
+        },
+        "text_kNfegg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EVERY SERVE FROM OUR OWN BOOKLET</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_bRwJzy",
+        "heading_NJDaaK",
+        "text_hCzqhi",
+        "text_kNfegg"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "enable_vertical_divider": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "center",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "center",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 86,
+        "padding_bottom": 42,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_image_columns_66XDie": {
+      "type": "custom__image_columns",
+      "blocks": {
+        "service_z6m8gi": {
+          "type": "service",
+          "settings": {
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>"
+          }
+        }
+      },
+      "block_order": [
+        "service_z6m8gi"
+      ],
+      "name": "Image columns",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 3,
+        "gap": 32,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_rich_text_columns_ywq3Ct": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "text_w3wmXc": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Not every occasion calls for a drink. <em><strong>But when it does, what’s in the glass should be worth it.</strong></em></h1>",
+            "enlarge_text": false,
+            "enable_italic": true,
+            "position": "left"
+          }
+        },
+        "text_AVhb6T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DRAG ━━━</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_w3wmXc",
+        "text_AVhb6T"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "enable_vertical_divider": false,
+        "left_column_width": 70,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 30,
+        "right_text_align": "right",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 86,
+        "padding_bottom": 66,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "custom_media_gallery_xaH6wE": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "image_gKqeDk": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-icebucket.jpg",
+            "image_one_caption": "Poolside",
+            "image_two_caption": ""
+          }
+        },
+        "image_akUCVD": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/recipe-oldfashioned_55514ca4-9cb1-4d38-a49a-7bb321b07beb.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/srv-hero.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_wMcCdK": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-horchata.jpg",
+            "image_one_caption": "Behind the bar",
+            "image_two_caption": ""
+          }
+        },
+        "image_9mGrcU": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-lemondrop.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/night-glasses_9cfcd970-295f-4710-a221-21476b35f20c.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_hpLntN": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-honeydew2.jpg",
+            "image_one_caption": "Built to order",
+            "image_two_caption": ""
+          }
+        },
+        "image_PaUVx4": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-cucumber.jpg",
+            "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-ice_be077851-575f-4491-896d-05f677f1e54a.jpg",
+            "image_two_caption": ""
+          }
+        },
+        "image_jBrz8M": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/srv-honeydew.jpg",
+            "image_one_caption": "Between rounds",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_gKqeDk",
+        "image_akUCVD",
+        "image_wMcCdK",
+        "image_9mGrcU",
+        "image_hpLntN",
+        "image_PaUVx4",
+        "image_jBrz8M"
+      ],
+      "name": "Media gallery - media only",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "full_width": false,
+        "position": "left",
+        "content_width": 35,
+        "flow_right": true,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 300,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 160,
+        "gap": 22,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "custom_rich_text_columns_QP6dpM": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "divider_GYfCEX": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#93A09A",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "divider_GYfCEX"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 20,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
+      }
+    },
+    "text_columns_k946aK": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_wBRHDH": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/brand-pair.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>NEED A BOTTLE</p><h3>Three expressions →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_NreT4w": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/ev-fruitbar.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>OR LET US MAKE IT</p><h3>Events →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_wBRHDH",
+        "text_block_NreT4w"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "rich_text_dK6AVb": {
+      "type": "rich-text",
+      "blocks": {
+        "button_itKf77": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Shop Luna Nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_itKf77"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 0,
+        "padding_bottom": 86,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
+    "newsletter_fR6wVJ": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_7rgJ7g": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 24
+          }
+        },
+        "title_8Vc9ji": {
+          "type": "title",
+          "settings": {
+            "title": "Get invited to the next one.",
+            "heading_size": "h2",
+            "text_width": 600,
+            "margin_bottom": 24
+          }
+        },
+        "text_k3DPHY": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "text_color": "#f9f6f1",
+            "text_width": 600,
+            "margin_bottom": 24
+          }
+        },
+        "form_JPNDFe": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_7rgJ7g",
+        "title_8Vc9ji",
+        "text_k3DPHY",
+        "form_JPNDFe"
+      ],
+      "name": "t:sections.newsletter.presets.email_signup.name",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_rich_text_columns_KrUFGK",
+    "custom_image_columns_66XDie",
+    "custom_rich_text_columns_ywq3Ct",
+    "custom_media_gallery_xaH6wE",
+    "custom_rich_text_columns_QP6dpM",
+    "text_columns_k946aK",
+    "rich_text_dK6AVb",
+    "newsletter_fR6wVJ"
+  ]
+}
