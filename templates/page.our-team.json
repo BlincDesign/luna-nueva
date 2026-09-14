@@ -335,7 +335,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/loc-shelf.jpg",
+            "image": "shopify://shop_images/hero-coast.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
