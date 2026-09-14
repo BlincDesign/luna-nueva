@@ -115,6 +115,7 @@
           "settings": {
             "text": "<h3>An act of hospitality.</h3>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -124,6 +125,7 @@
           "settings": {
             "text": "<p>That instinct is what she brought to Luna Nueva. Knowing the bartender’s name, making sure everyone at the table feels it, caring for the people who drink this brand — that has always been an act of hospitality for her.</p><p>What she saw was that her generation lived differently, chose differently. They are selective. And when they decide to drink, they want something that feels unmistakably theirs: clean, additive-free, made with real craft, and belonging to the culture they actually live in.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -142,6 +144,7 @@
           "settings": {
             "text": "<h3>Built from the ground up.</h3>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
@@ -151,6 +154,7 @@
           "settings": {
             "text": "<p>She spent the last several years building Luna Nueva from the ground up: learning the liquid, cultivating the relationship with the Vivanco family distillery in the Highlands of Jalisco, and creating a presence in Los Angeles through community, events, and genuine belonging.</p><p>Luna Nueva is the first expression of a larger vision — one that sits at the intersection of hospitality, food, craft, and gathering. The tequila is where it begins, but the life it belongs to is much larger than a bottle.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
@@ -202,6 +206,7 @@
           "settings": {
             "text": "<h2>Management</h2>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -211,6 +216,7 @@
           "settings": {
             "text": "<p>Los Angeles · Jalisco</p>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
@@ -308,6 +314,56 @@
         "padding_bottom_mb": 40
       }
     },
+    "text_columns_jABiY4": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_Ln4BUR": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/srv-watermelon.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>ONCE IT'S OPEN</p><h3>Eight ways to pour it →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_N3DecQ": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/loc-shelf.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>NEARBY</p><h3>Find a bottle →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_Ln4BUR",
+        "text_block_N3DecQ"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "newsletter_9CWPKE": {
       "type": "newsletter",
       "blocks": {
@@ -350,7 +406,6 @@
         "text_xFafhP",
         "form_jTTfrd"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "header_secondary": false,
@@ -373,6 +428,7 @@
     "custom_rich_text_columns_P6dhUJ",
     "custom_rich_text_columns_QfLqFY",
     "custom_rich_text_columns_KKKFC6",
+    "text_columns_jABiY4",
     "newsletter_9CWPKE"
   ]
 }
