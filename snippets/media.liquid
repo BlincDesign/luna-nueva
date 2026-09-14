@@ -29,6 +29,16 @@
       assign image_set_group = image_set_full | split: '_' | first
     endif
   endif
+
+  assign slide_alt = media.alt | default: ''
+  assign alt_parts = slide_alt | split: '::'
+  assign media_caption = ''
+  if alt_parts.size > 1
+    assign alt_tag = alt_parts[0] | strip | downcase
+    if alt_tag == 'caption'
+      assign media_caption = slide_alt | remove_first: alt_parts[0] | remove_first: '::' | strip
+    endif
+  endif
 -%}
 
 <div class="product-main-slide {% if is_featured %}starting-slide{% else %}secondary-slide{% endif %}"
@@ -182,36 +192,10 @@
         {%- endunless -%}
       {%- endif -%}
     {%- endif -%}
+
+    {%- if media_caption != blank -%}
+      <span class="media-gallery__caption">{{- media_caption -}}</span>
+    {%- endif -%}
   </div>
 
 </div>
-{% comment %}
-
-This file has been rewritten to preserve the original behavior.
-
----
-Changes:
-- from: |-
-    {%- render 'image-element',
-              img: media.preview_image,
-              type: 'photoswipe',
-              classes: image_classes,
-              alt: media.alt | escape | split: '#' | first,
-              widths: '360, 540, 720, 900, 1080',
-              product_zoom_size: product_zoom_size,
-              loopIndex: loopIndex,
-              media: media,
-              media_width: media_width,
-              media_height: media_height,
-              sizes: sizes,
-              sizeVariable: sizeVariable,
-              fallback: fallback,
-              loading: loading,
-            -%}
-  to: "{%- render 'image-element', img: media.preview_image, type: 'photoswipe', classes:
-    image_classes, alt: media.alt, split: '#', widths: '360, 540, 720, 900, 1080',
-    product_zoom_size: product_zoom_size, loopIndex: loopIndex, media: media, media_width:
-    media_width, media_height: media_height, sizes: sizes, sizeVariable: sizeVariable,
-    fallback: fallback, loading: loading -%}"
-  position: 3235..3607
-{% endcomment %}
