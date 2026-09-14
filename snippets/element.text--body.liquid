@@ -38,11 +38,11 @@
     --_color--body: var(--_color, var(--element-text-color--body, currentColor));
 
     /* Body Font Sizes */
-    --_font-size--body: var(--_font-size, var(--element-text-font-size--body));
-    --_font-size--body-xs: var(--_font-size--body, var(--element-text-font-size--body-xs));
-    --_font-size--body-sm: var(--_font-size--body, var(--element-text-font-size--body-sm));
-    --_font-size--body-md: var(--_font-size--body, var(--element-text-font-size--body-md));
-    --_font-size--body-lg: var(--_font-size--body, var(--element-text-font-size--body-lg));
+    --font-size--body: var(--_font-size, var(--element-text-font-size--body));
+    --font-size--body-xs: var(--font-size--body, var(--element-text-font-size--body-xs));
+    --font-size--body-sm: var(--font-size--body, var(--element-text-font-size--body-sm));
+    --font-size--body-md: var(--font-size--body, var(--element-text-font-size--body-md));
+    --font-size--body-lg: var(--font-size--body, var(--element-text-font-size--body-lg));
 
     /* Body Line Heights */
     --_line-height--body: var(--_line-height, var(--element-text-line-height--body));
@@ -58,22 +58,22 @@
     color: var(--_color--body);
 
     &:where(.element-text--body-xs) {
-      --_font-size: var(--_font-size--body-xs); 
+      --_font-size: var(--font-size--body-xs); 
       line-height: var(--_line-height--body-xs);
     }
 
     &:where(.element-text--body-sm) {
-      font-size: var(--_font-size--body-sm);
+      font-size: var(--font-size--body-sm);
       line-height: var(--_line-height--body-sm);
     }
 
     &:where(.element-text--body-md) {
-      font-size: var(--_font-size--body-md);
+      font-size: var(--font-size--body-md);
       line-height: var(--_line-height--body-md);
     } 
 
     &:where(.element-text--body-lg) {
-      font-size: var(--_font-size--body-lg);
+      font-size: var(--font-size--body-lg);
       line-height: var(--_line-height--body-lg);
     }
   }
