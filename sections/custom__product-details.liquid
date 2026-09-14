@@ -64,7 +64,7 @@
             <h3 class="pdc__title">{{ product.title | default: product.title }}</h3>
 
             {%- if character_texture != blank -%}
-              <p class="pdc__desc">{{ character_texture }}</p>
+              <p class="pdc__desc has-primary--font">{{ character_texture }}</p>
             {%- endif -%}
 
             {% render 'product-details-table', product: product %}
