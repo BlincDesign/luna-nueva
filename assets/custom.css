@@ -115,7 +115,7 @@ strong:has(em) em {
     color: var(--btn-color, inherit);
     font-size: var(--btn-font-size);
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13rem;
     text-transform: uppercase;
     transition: background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), border-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
