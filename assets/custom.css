@@ -1148,9 +1148,9 @@ a.pdl__right {
 } */
 
 .starting-slide .pdp-gallery__frame .image-wrap {
-    position: relative;
+    position: unset;
     z-index: 1;
-    overflow: visible;
+    overflow: unset;
 }
 
 /* .starting-slide .pdp-gallery__frame .image-wrap img {
@@ -1161,7 +1161,6 @@ a.pdl__right {
     height: 100%;
     aspect-ratio: var(--pdp-gallery-media-ar);
     width: auto;
-    box-sizing: border-box;
     border-radius: var(--pdp-gallery-arch-r);
     overflow: hidden;
 }
