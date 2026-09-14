@@ -255,7 +255,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": false,
         "left_column_width": 40,
         "left_text_align": "left",
