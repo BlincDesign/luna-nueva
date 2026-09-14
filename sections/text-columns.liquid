@@ -1,4 +1,18 @@
-<div class="color-{{ section.settings.color_scheme }}">
+{% style %}
+  #Text-with-images-columns-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 589px) {
+    #Text-with-images-columns-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+{% endstyle %}
+
+<div id="Text-with-images-columns-{{ section.id }}" class="color-{{ section.settings.color_scheme }}">
   {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
   <div class="page-width">
@@ -65,7 +79,7 @@
 {% schema %}
 {
   "name": "t:sections.text-columns.name",
-  "class": "index-section",
+  "class": "text-with-images-columns-section",
   "settings": [
     {
       "type": "text",
@@ -99,6 +113,54 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
     }
   ],
   "blocks": [
