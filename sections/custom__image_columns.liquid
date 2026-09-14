@@ -95,14 +95,7 @@
     <article class="image-columns__item" {{ block.shopify_attributes }}>
       <figure class="image-columns__image-wrap">
         {%- if block.settings.image != blank -%}
-          {%- render 'image-element',
-            img: block.settings.image,
-            widths: '360, 540, 720, 900, 1080',
-            sizeVariable: image_size_vw | append: 'vw',
-            fallback: '100vw',
-            loading: 'lazy',
-            classes: 'image-columns__image'
-          -%}
+          {%- render 'image-element', img: block.settings.image, widths: '360, 540, 720, 900, 1080', sizeVariable: image_size_vw, append: 'vw', fallback: '100vw', loading: 'lazy', classes: 'image-columns__image' -%}
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
@@ -504,3 +497,18 @@
   "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'image-element',\r\n            img: block.settings.image,\r\n
+    \           widths: '360, 540, 720, 900, 1080',\r\n            sizeVariable: image_size_vw
+    | append: 'vw',\r\n            fallback: '100vw',\r\n            loading: 'lazy',\r\n
+    \           classes: 'image-columns__image'\r\n          -%}"
+  to: "{%- render 'image-element', img: block.settings.image, widths: '360, 540, 720,
+    900, 1080', sizeVariable: image_size_vw, append: 'vw', fallback: '100vw', loading:
+    'lazy', classes: 'image-columns__image' -%}"
+  position: 3333..3538
+{% endcomment %}
