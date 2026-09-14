@@ -21,6 +21,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>Press & Partnerships</strong>",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -36,7 +37,9 @@
           "settings": {
             "text": "<p>Everything a writer, buyer or partner usually asks for, in one place. If you need something that isn’t here, ask and we’ll send it.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -54,9 +57,11 @@
         "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 31,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -124,6 +129,7 @@
           "type": "preheading",
           "settings": {
             "title": "BOILERPLATE",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -157,9 +163,11 @@
         "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 20,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -178,7 +186,9 @@
           "settings": {
             "text": "<h4>Luna Nueva is an additive-free tequila from the Highlands and Lowlands of Jalisco. It is made at the Vivanco family distillery, NOM 1414, one of the most respected producers in Mexico, where the craft of tequila runs generations deep.</h4>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -187,7 +197,9 @@
           "settings": {
             "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise. The liquid is authentic to Mexico. The culture is California.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -196,7 +208,9 @@
           "settings": {
             "text": "<p>Three expressions: Silver, Reposado aged seven months, and Añejo aged thirteen months. 100% Blue Weber Agave, additive-free, 750ml.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         },
@@ -205,7 +219,9 @@
           "settings": {
             "text": "<p>Co-Founder & CEO Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap. Luna Nueva exists for a generation that doesn’t settle.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -224,9 +240,11 @@
         "enable_vertical_divider": true,
         "left_column_width": 44,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 43,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -268,9 +286,11 @@
         "enable_vertical_divider": false,
         "left_column_width": 100,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 50,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -325,7 +345,9 @@
         "header_secondary": true,
         "stylized_bg": true,
         "padding_top": 0,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "mobile_padding_top": 80,
+        "mobile_padding_bottom": 8
       }
     },
     "custom_rich_text_columns_dFKwm8": {
@@ -359,7 +381,9 @@
           "settings": {
             "text": "<p>Logos, bottle cut-outs, lifestyle photography and the fact sheet. Tell us what you’re writing and we’ll send the right crop rather than the whole folder.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -377,7 +401,9 @@
           "settings": {
             "text": "<p>We’ve poured at Venice Fest and the <br/>LA Times Food Bowl, and we show up<br/> at the table, not just on the <br/>shelf.</p>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -440,7 +466,9 @@
           "settings": {
             "text": "<p>Assets are sent on request<br/> while the kit is being<br/> assembled.</p>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -467,9 +495,11 @@
         "enable_vertical_divider": false,
         "left_column_width": 40,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 55,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -542,9 +572,11 @@
         "enable_vertical_divider": false,
         "left_column_width": 100,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 100,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
