@@ -138,7 +138,8 @@
         "heading_dhcXp3": {
           "type": "heading",
           "settings": {
-            "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>."
+            "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>.",
+            "font_size": 64
           }
         }
       },
@@ -1166,7 +1167,8 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "title": "Rich text"
+            "title": "Rich text",
+            "font_size": 84
           }
         },
         "text": {
