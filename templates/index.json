@@ -139,7 +139,8 @@
           "type": "heading",
           "settings": {
             "title": "When you drink less, what you drink should <em><strong>mean more</strong></em>.",
-            "font_size": 64
+            "font_size": 64,
+            "font_size_mb": 32
           }
         }
       },
@@ -224,7 +225,7 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": false,
-        "heading": "Three Expressions",
+        "heading": "<strong>Three Expressions</strong>",
         "preheading": "THE COLLECTION",
         "right_text": "750ml · Additive-Free · Jalisco",
         "right_link": "",
@@ -246,6 +247,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>WHAT'S IN IT, WHAT ISN'T</strong>",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -256,6 +258,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -274,6 +277,7 @@
             "enlarge_text": false,
             "subheading": true,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         },
@@ -558,6 +562,7 @@
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -568,6 +573,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -660,6 +666,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>IN THE WILD</strong>",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -867,6 +874,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>SHOT ON A DISPOSABLE</strong>",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -884,6 +892,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -1027,6 +1036,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>FOUR WAYS TO POUR IT</strong>",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -1037,6 +1047,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -1056,6 +1067,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         },
@@ -1176,7 +1188,8 @@
           "disabled": true,
           "settings": {
             "title": "Rich text",
-            "font_size": 84
+            "font_size": 84,
+            "font_size_mb": 32
           }
         },
         "text": {
