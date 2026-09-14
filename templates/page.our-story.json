@@ -126,6 +126,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "image_one": "shopify://shop_images/ev-airstream.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
@@ -134,6 +135,7 @@
           "type": "image",
           "settings": {
             "tall": true,
+            "image_one": "shopify://shop_images/press-beach.jpg",
             "image_one_caption": "",
             "image_two_caption": ""
           }
