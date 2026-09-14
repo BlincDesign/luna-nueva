@@ -1164,7 +1164,7 @@ a.pdl__right {
   transform: translateY(-50%) translateX(6px);
 }
 
-.pdp-gallery__nav:hover {
+.pdp-gallery .pdp-gallery__nav:hover {
   opacity: 1;
 }
 
