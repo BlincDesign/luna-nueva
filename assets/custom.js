@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkOverlap();
 });
 
+
 // PDP gallery hover arrows: click handling only. Drag, swipe and keyboard nav
 // are already provided by the theme's own Flickity slideshow; this just wires
 // the new stage-overlay buttons to that same instance via Flickity.data().
@@ -59,6 +60,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       stage.dataset.pdpNavBound = 'true';
+
+      const countEl = stage.querySelector('[data-pdp-count]');
+      const slides = slider.querySelectorAll('.product-main-slide');
+
+      if (countEl && slides.length > 1) {
+        const pad = (n) => String(n).padStart(2, '0');
+        const total = slides.length;
+
+        const updateCount = () => {
+          const activeIndex = Array.from(slides).findIndex((slide) => slide.classList.contains('is-selected'));
+          countEl.textContent = `${pad(activeIndex > -1 ? activeIndex + 1 : 1)} / ${pad(total)}`;
+        };
+
+        updateCount();
+
+        const observer = new MutationObserver(updateCount);
+        slides.forEach((slide) => {
+          observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
+        });
+      }
     });
   };
 
