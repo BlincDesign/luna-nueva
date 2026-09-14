@@ -141,7 +141,7 @@
         {%- case block.type -%}
           {%- when 'subheading' -%}
             <p
-              class="story-teaser__subheading subheading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              class="story-teaser__subheading text--faded subheading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
               data-block-id="{{ block.id }}"
               {{ block.shopify_attributes }}
             >
@@ -159,7 +159,7 @@
             <hr class="story-teaser__divider" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
           {%- when 'text' -%}
             <div
-              class="rte story-teaser__text appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+              class="rte story-teaser__text text--faded appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
               data-block-id="{{ block.id }}"
               {{ block.shopify_attributes }}
             >
