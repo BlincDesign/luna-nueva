@@ -33,6 +33,11 @@
       align-items: center;
   }
 
+  .scrolling-text__inner .text {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
   {% if section.settings.color_scheme == 'button' %}
     .scrolling-text--{{ section.id }} {
       background: {{ settings.color_button }};

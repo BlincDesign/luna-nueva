@@ -827,7 +827,8 @@ a.pdl__right {
 }
 
 .linklist__404--item a,
-.theme-block--link_text a {
+.theme-block--link_text a,
+.theme-block--link_text div {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
