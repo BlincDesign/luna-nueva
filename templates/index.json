@@ -254,6 +254,7 @@
           "settings": {
             "text": "<h2>Nothing added. </h2><h2>Nothing to hide.</h2>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -271,6 +272,7 @@
           "settings": {
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
             "enlarge_text": false,
+            "subheading": true,
             "enable_italic": false,
             "position": "right"
           }
@@ -554,6 +556,7 @@
           "settings": {
             "text": "<p><strong>THE LIQUID WAS BUILT WITH INTEGRITY BEFORE THE BRAND HAD A NAME.</strong></p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -563,6 +566,7 @@
           "settings": {
             "text": "<ul><li><strong>Highland and lowland agave.</strong> The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</li></ul><p></p><ul><li><strong>The Vivanco family, NOM 1414.</strong> One of the most respected producers in Mexico, where the craft of tequila runs generations deep.</li></ul><p></p><ul><li><strong>Additive-free, in full.</strong> No additives, no shortcuts, no compromise.</li></ul><p></p><ul><li><strong>Rested, not rushed.</strong> Silver goes straight to the glass. Reposado is aged seven months. Añejo, thirteen.</li></ul>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
@@ -877,6 +881,7 @@
           "settings": {
             "text": "<p>Flash, grain, and whatever the camera caught. Shot the way the nights actually looked.<br/><br/></p>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
@@ -1029,6 +1034,7 @@
           "settings": {
             "text": "<h2>Clean enough to </h2><h2>drink neat. Honest </h2><h2>enough to build on.</h2><p></p>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "left"
           }
@@ -1047,6 +1053,7 @@
           "settings": {
             "text": "",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
             "position": "right"
           }
