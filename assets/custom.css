@@ -1116,15 +1116,19 @@ a.pdl__right {
     overflow: hidden; */
 }
 
-.starting-slide .pdp-gallery__frame::before,
+/* .starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
     content: "";
     position: absolute;
     z-index: 0;
     pointer-events: none;
-}
+} */
 
-.starting-slide .pdp-gallery__frame::before {
+.starting-slide::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
     inset: 0;
     background: radial-gradient( 60% 50% at 28% 18%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 68%), radial-gradient( 85% 65% at 50% 100%, rgba(var(--color-shadow), 0.14), rgba(var(--color-shadow), 0) 65%);
 }
