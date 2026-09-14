@@ -156,7 +156,7 @@
               {%- endif -%}
 
               <div class="hero__image-wrapper{% unless hero_text %} hero__image-wrapper--no-overlay{% endunless %}">
-                {%- if block.settings.image != blank -%}
+                {%- if block.settings.image != blank or block.settings.video != blank -%}
                   {% comment %} Full width images so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
                   {%- liquid
                     if forloop.index == 1
