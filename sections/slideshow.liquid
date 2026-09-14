@@ -145,15 +145,17 @@
                 endif
               -%}
 
-              {%- if section.settings.parallax -%}
-                <parallax-image class="parallax-container">
-                  <div
-                    class="parallax-image"
-                    data-movement="15%"
-                    data-parallax-image
-                    data-angle="{{ block.settings.parallax_direction }}"
-                  >
-              {%- endif -%}
+              {% unless block.settings.video != blank %}
+                {%- if section.settings.parallax -%}
+                  <parallax-image class="parallax-container">
+                    <div
+                      class="parallax-image"
+                      data-movement="15%"
+                      data-parallax-image
+                      data-angle="{{ block.settings.parallax_direction }}"
+                    >
+                {%- endif -%}
+              {% endunless %}
 
               <div class="hero__image-wrapper{% unless hero_text %} hero__image-wrapper--no-overlay{% endunless %}">
                 {%- if block.settings.image != blank or block.settings.video != blank -%}
@@ -208,10 +210,12 @@
                 {%- endif -%}
               </div>
 
-              {%- if section.settings.parallax -%}
-                </div>
-                </parallax-image>
-              {%- endif -%}
+              {% unless block.settings.video != blank %}
+                {%- if section.settings.parallax -%}
+                  </div>
+                  </parallax-image>
+                {%- endif -%}
+              {% endunless %}
 
               {%- if link_slide -%}
                 <a href="{{ block.settings.link }}" class="hero__slide-link">
