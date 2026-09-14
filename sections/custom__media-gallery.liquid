@@ -158,6 +158,12 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  {% if section.settings.postion == 'right' %}
+    .media-gallery__inner {
+      flex-direction: row-reverse;
+    }
+  {% endif %}
+
   @media only screen and (max-width:589px){
     #custom__media-gallery-{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mb }}px;
@@ -287,6 +293,22 @@
       "id": "full_width",
       "label": "Full width",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "default": "left",
+      "label": "Position",
+      "options": [
+        {
+          "label": "Content left, Media right",
+          "value": "left"
+        },
+        {
+          "label": "Content right, Media left",
+          "value": "right"
+        }
+      ]
     },
     {
       "type": "header",
