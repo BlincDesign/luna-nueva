@@ -556,7 +556,7 @@
                 {%- when 'text' -%}
                   <div class="theme-block theme-block__text" {{ block.shopify_attributes }}>
                     <div
-                      class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                      class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading != blank -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
                     >
                       {%- if block.settings.text != blank -%}
@@ -1736,6 +1736,13 @@
           "type": "checkbox",
           "id": "enlarge_text",
           "label": "Enlarge text",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "subheading",
+          "label": "Subheading",
+          "info": "Will convert the text into subheading format (changes font size)",
           "default": true
         },
         {
