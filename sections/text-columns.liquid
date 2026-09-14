@@ -39,10 +39,12 @@
           <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
         {% endif %}
         {% if block.settings.button_label != blank %}
-          <a href="{{ block.settings.button_link }}" class="button--primary btn--small">
-            {{ block.settings.button_label }}
-            <span class="button__arrow">→</span>
-          </a>
+          {% render 'button',
+            label: block.settings.button_label,
+            url: block.settings.button_link,
+            type: block.settings.button_type,
+            arrow: true
+          %}
         {% endif %}
       </div>
     {%- endfor -%}
@@ -188,7 +190,27 @@
           "type": "url",
           "id": "button_link",
           "label": "t:sections.text-columns.blocks.column.settings.button_link.label"
-        }
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button style",
+          "default": "primary",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ]
+        },
       ]
     }
   ],
