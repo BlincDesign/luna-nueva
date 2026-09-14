@@ -50,9 +50,24 @@
         {{ product.selected_or_first_available_variant.image | image_url: width: 2400 | image_tag:  alt: media.alt }}
       {% endcapture %}
 
+      {% liquid
+        assign slide_alt = product.selected_or_first_available_variant.image.alt | default: ''
+        assign alt_parts = slide_alt | split: '::'
+        assign media_caption = ''
+        if alt_parts.size > 1
+          assign alt_tag = alt_parts[0] | strip | downcase
+          if alt_tag == 'caption'
+            assign media_caption = slide_alt | remove_first: alt_parts[0] | remove_first: '::' | strip
+          endif
+        endif
+      %}
+
       <div class="media-gallery__slide media-gallery__slide--active" data-media-id="{{ product.selected_or_first_available_variant.image.id }}" data-media-type="image">
         {%- assign group = 'product-gallery-' | append: id -%}
         {% render 'overlay.lightbox', slot: image_content, group: group %}
+        {%- if media_caption != blank -%}
+          <span class="media-gallery__caption">{{- media_caption -}}</span>
+        {%- endif -%}
       </div>
     {% endif %}
 
@@ -62,6 +77,16 @@
           assign is_active = true
         else
           assign is_active = false
+        endif
+
+        assign slide_alt = media.alt | default: ''
+        assign alt_parts = slide_alt | split: '::'
+        assign media_caption = ''
+        if alt_parts.size > 1
+          assign alt_tag = alt_parts[0] | strip | downcase
+          if alt_tag == 'caption'
+            assign media_caption = slide_alt | remove_first: alt_parts[0] | remove_first: '::' | strip
+          endif
         endif
       %}
 
@@ -82,6 +107,10 @@
             {% when 'model' %}
               {% render 'element.model', media: media, autoplay: autoplay %}
           {% endcase %}
+
+          {%- if media_caption != blank -%}
+            <span class="media-gallery__caption">{{- media_caption -}}</span>
+          {%- endif -%}
         </div>
       {% endunless %}
     {% endfor %}
