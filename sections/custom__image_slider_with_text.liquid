@@ -8,14 +8,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 100%;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__content {
+  .image-slider-text__grid .image-slider-text__content {
     flex: 0 0 40%;
     max-width: {{ section.settings.content_width }}px;
     padding: 30px 70px;
-    box-sizing: border-box;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__preheading {
@@ -35,12 +33,12 @@
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__heading * {
-    margin: 0;
+      margin: 0;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__highlight {
-    color: {{ section.settings.heading_highlight_color }};
-  }
+      color: {{ section.settings.heading_highlight_color }};
+    }
 
   #shopify-section-{{ section.id }} .image-slider-text__text {
     margin-bottom: 35px;
@@ -49,9 +47,9 @@
     line-height: 1.6;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__content .image-slider-text__text * {
-    margin: 0 !important;
-  }
+    #shopify-section-{{ section.id }} .image-slider-text__content  .image-slider-text__text * {
+        margin: 0 !important;
+    }
 
   #shopify-section-{{ section.id }} .image-slider-text__buttons {
     display: flex;
@@ -60,38 +58,24 @@
     gap: 20px;
   }
 
-  /*
-    IMPORTANT:
-    min-width: 0 allows the flex item to properly shrink
-    when the Shopify preview/editor width changes.
-  */
   #shopify-section-{{ section.id }} .image-slider-text__slides {
     position: relative;
     overflow: hidden;
-    flex: 1 1 60%;
-    min-width: 0;
-    width: 60%;
-    box-sizing: border-box;
-  }
-
-  /*
-    Make Flickity and its viewport use the actual
-    available width of the flex container.
-  */
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-viewport {
+    flex: 1 0 0;
     width: 100%;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-slider {
+   #shopify-section-{{ section.id }} .image-slider-text__slides {
+    position: relative;
+    overflow: hidden;
+    flex: 1 0 0;
     width: 100%;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__slide {
-    position: relative;
     width: 100%;
     height: 90vh;
-    min-width: 100%;
-    box-sizing: border-box;
+    aspect-ratio: 1;
   }
 
   #shopify-section-{{ section.id }} .image-slider-text__image {
@@ -107,7 +91,7 @@
     opacity: 1;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-page-dots {
+  .image-slider-text__slides .flickity-page-dots {
     bottom: 18px;
     left: 0;
     right: 0;
@@ -121,10 +105,9 @@
     border-radius: 50px;
     background: rgba(45, 49, 53, .42);
     backdrop-filter: blur(5px);
-    box-sizing: border-box;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-page-dots .dot {
+  .image-slider-text__slides .flickity-page-dots .dot {
     cursor: pointer;
     display: inline-block;
     height: 2px;
@@ -136,58 +119,49 @@
     border-radius: 0;
   }
 
-  #shopify-section-{{ section.id }} .image-slider-text__slides .flickity-page-dots .dot.is-selected {
+  .image-slider-text__slides .flickity-page-dots .dot.is-selected {
     background-color: #F9F6F1;
   }
 
 
-  /*
-    TABLET / MOBILE
-  */
   @media screen and (max-width: 1200px) {
     #custom__image_slider_with_text-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
 
-    #shopify-section-{{ section.id }} .image-slider-text__grid {
-      flex-direction: column-reverse;
+    #shopify-section-{{ section.id }} .image-slider-text__slide {
+      height: 70vh;
     }
 
     #shopify-section-{{ section.id }} .image-slider-text__slides {
       flex: 0 0 100%;
       width: 100%;
-      min-width: 100%;
     }
 
-    #shopify-section-{{ section.id }} .image-slider-text__slide {
-      height: 70vh;
-      width: 100%;
-      min-width: 100%;
+    #shopify-section-{{ section.id }} .image-slider-text__grid {
+      flex-direction: column-reverse;
     }
 
-    #shopify-section-{{ section.id }} .image-slider-text__content {
+    .image-slider-text__grid .image-slider-text__content {
       width: 100%;
       max-width: 100%;
       flex: 0 0 100%;
     }
   }
 
-
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .image-slider-text__content {
-      padding: 2.4rem 1.3rem;
+    .image-slider-text__grid .image-slider-text__content {
+        padding: 2.4rem 1.3rem;
     }
   }
 {% endstyle %}
-
 
 <div
   id="custom__image_slider_with_text-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} image-slider-text__grid{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   <div class="image-slider-text__content">
-
     {% if section.settings.preheading != blank %}
       <div class="image-slider-text__preheading">
         {{ section.settings.preheading }}
@@ -208,15 +182,17 @@
       </div>
     {% endif %}
 
-    {% if section.settings.text != blank %}
-      <div class="image-slider-text__text rte{% if section.settings.enlarge_text %} enlarge-text{% endif %}">
-        {{ section.settings.text }}
-      </div>
-    {% endif %}
+   {% if section.settings.text != blank %}
+
+  <div class="image-slider-text__text rte{% if section.settings.enlarge_text %} enlarge-text{% endif %}">
+
+    {{ section.settings.text }}
+
+  </div>
+{% endif %}
 
     {% if section.settings.button_1_label != blank or section.settings.button_2_label != blank %}
       <div class="image-slider-text__buttons">
-
         {% if section.settings.button_1_label != blank %}
           {% render 'button',
             label: section.settings.button_1_label,
@@ -234,34 +210,25 @@
             arrow: false
           %}
         {% endif %}
-
       </div>
     {% endif %}
-
   </div>
 
-
   <div class="image-slider-text__slides">
-
     {% for block in section.blocks %}
-
       <div
         class="image-slider-text__slide"
         {{ block.shopify_attributes }}
       >
-
         {% if block.settings.image != blank %}
-
           {% liquid
             assign img_loading = 'lazy'
             assign img_fetchpriority = null
-
             if forloop.first
               assign img_loading = 'eager'
               assign img_fetchpriority = 'high'
             endif
           %}
-
           {{
             block.settings.image
             | image_url: width: 1600
@@ -274,224 +241,82 @@
               class: 'image-slider-text__image',
               alt: block.settings.image.alt
           }}
-
         {% endif %}
-
       </div>
-
     {% endfor %}
-
   </div>
 </div>
 
-
 <script>
   (function () {
-    var sectionId = '{{ section.id }}';
-    var sectionSelector = '#shopify-section-' + sectionId;
-    var sliderSelector = sectionSelector + ' .image-slider-text__slides';
-
+    var sectionId = 'shopify-section-{{ section.id }}';
+    var sliderSelector = '#' + sectionId + ' .image-slider-text__slides';
     var flkty = null;
-    var resizeObserver = null;
-    var resizeTimeout = null;
 
-
-    /*
-      Get slider element
-    */
-    function getSlider() {
-      return document.querySelector(sliderSelector);
-    }
-
-
-    /*
-      Resize Flickity safely
-    */
-    function resizeSlider() {
-      if (!flkty) return;
-
-      clearTimeout(resizeTimeout);
-
-      resizeTimeout = setTimeout(function () {
-        if (flkty && !flkty.isAnimating) {
-          flkty.resize();
-        }
-      }, 50);
-    }
-
-
-    /*
-      Initialize Flickity
-    */
     function initSlider() {
-      var sliderEl = getSlider();
+      var sliderEl = document.querySelector(sliderSelector);
 
       if (!sliderEl) return;
 
-
-      /*
-        If Flickity already exists, don't initialize it again.
-      */
       if (flkty) {
-        resizeSlider();
-        return;
+        flkty.destroy();
+        flkty = null;
       }
-
 
       flkty = new Flickity(sliderEl, {
         cellAlign: 'left',
         contain: true,
         wrapAround: true,
-
         autoPlay: {% if section.settings.slider_autoplay_enabled %}{{ section.settings.slider_autoplay }}{% else %}false{% endif %},
-
         prevNextButtons: false,
         pageDots: true,
-
         fade: true,
-
-        pauseAutoPlayOnHover: true,
-
-        /*
-          Important for dynamic Shopify editor resizing.
-        */
-        resize: true
+        pauseAutoPlayOnHover: true
       });
 
-
-      /*
-        Resize after images are loaded.
-      */
       var images = sliderEl.querySelectorAll('.image-slider-text__image');
 
       images.forEach(function (img) {
         if (!img.complete) {
           img.addEventListener('load', function () {
-            resizeSlider();
+            if (flkty) {
+              flkty.resize();
+            }
           });
         }
       });
-
-
-      /*
-        Watch the actual slider container.
-        This is the important fix for Shopify's
-        stretch / preview resizing.
-      */
-      if (window.ResizeObserver) {
-        resizeObserver = new ResizeObserver(function () {
-          resizeSlider();
-        });
-
-        resizeObserver.observe(sliderEl);
-      }
-
-
-      /*
-        Initial resize after Flickity has calculated
-        the dimensions.
-      */
-      setTimeout(function () {
-        resizeSlider();
-      }, 100);
-
-      setTimeout(function () {
-        resizeSlider();
-      }, 500);
     }
 
-
-    /*
-      Destroy Flickity
-    */
     function destroySlider() {
-
-      if (resizeObserver) {
-        resizeObserver.disconnect();
-        resizeObserver = null;
-      }
-
-      if (resizeTimeout) {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = null;
-      }
-
       if (flkty) {
         flkty.destroy();
         flkty = null;
       }
     }
 
-
-    /*
-      Browser resize
-    */
-    window.addEventListener('resize', function () {
-      resizeSlider();
-    });
-
-
-    /*
-      Initial load
-    */
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () {
-        initSlider();
-      });
+      document.addEventListener('DOMContentLoaded', initSlider);
     } else {
       initSlider();
     }
 
-
-    /*
-      Shopify Theme Editor
-    */
     document.addEventListener('shopify:section:load', function (event) {
-      if (event.detail.sectionId === sectionId) {
-        destroySlider();
-
-        setTimeout(function () {
-          initSlider();
-        }, 50);
+      if (event.detail.sectionId === '{{ section.id }}') {
+        initSlider();
       }
     });
 
-
-    /*
-      Section unloaded
-    */
     document.addEventListener('shopify:section:unload', function (event) {
-      if (event.detail.sectionId === sectionId) {
+      if (event.detail.sectionId === '{{ section.id }}') {
         destroySlider();
       }
     });
 
-
-    /*
-      Section selected in Theme Editor
-    */
     document.addEventListener('shopify:section:select', function (event) {
-      if (event.detail.sectionId === sectionId) {
-        if (!flkty) {
-          initSlider();
-        } else {
-          setTimeout(function () {
-            resizeSlider();
-          }, 50);
-        }
+      if (event.detail.sectionId === '{{ section.id }}' && flkty) {
+        flkty.resize();
       }
     });
-
-
-    /*
-      Section deselected
-    */
-    document.addEventListener('shopify:section:deselect', function (event) {
-      if (event.detail.sectionId === sectionId) {
-        resizeSlider();
-      }
-    });
-
   })();
 </script>
 
