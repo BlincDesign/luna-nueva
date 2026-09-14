@@ -95,7 +95,7 @@ strong:has(em) em {
 }
 
 .has-primary--font {
-    font-family: var(--typeHeaderPrimary);
+    font-family: var(--typeHeaderPrimary) !important;
 }
 
 /* GLOBAL CSS*/
