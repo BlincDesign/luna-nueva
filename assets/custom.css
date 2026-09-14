@@ -797,4 +797,14 @@ a.pdl__right {
         }
     }
 
-/* 404 page end */
+/* Privacy Policy page start */
+
+.shopify-policy__container {
+    max-width: 1560px;
+}
+
+.main-content .shopify-policy__container:nth-child(1) {
+    margin-top: 98px;
+}
+
+/* Privacy Policy page end */
