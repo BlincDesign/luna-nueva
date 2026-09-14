@@ -871,6 +871,11 @@ a.pdl__right {
     .theme-block--link_text a {
         flex-direction: column;
     }
+
+    .linklist__404--subtext, 
+    .theme-block--link_text--subtext {
+        white-space: wrap;
+    }
 }
 
 
