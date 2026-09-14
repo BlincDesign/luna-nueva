@@ -1301,7 +1301,7 @@ a.pdl__right {
 }
 
 .pdp-gallery__stage .product-main-slide {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }
