@@ -438,7 +438,6 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                  <ul class="block__404--linklist block__404--{{ block.type | handle }}">
                     <li class="theme-block--link_text" {{ block.shopify_attributes }}>
                       {% if block.settings.link != blank %}
                         <a href="{{ block.settings.link | default: '#' }}">
@@ -455,7 +454,6 @@
                         </div>
                       {% endif %}
                     </li>
-                  </ul>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -512,7 +510,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}">
+            <div id="block-{{ block.id }}" class="block-{{ block.type }}">
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
@@ -647,7 +645,6 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                  <ul class="block__404--linklist block__404--{{ block.type | handle }}">
                     <li class="theme-block--link_text" {{ block.shopify_attributes }}>
                       {% if block.settings.link != blank %}
                         <a href="{{ block.settings.link | default: '#' }}">
@@ -664,7 +661,6 @@
                         </div>
                       {% endif %}
                     </li>
-                  </ul>
               {%- endcase -%}
             </div>
           {%- endif -%}
