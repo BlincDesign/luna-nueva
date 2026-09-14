@@ -113,7 +113,16 @@
         "text_gR3pDg": {
           "type": "text",
           "settings": {
-            "text": "<h3>An act of hospitality.</h3><p>That instinct is what she brought to Luna Nueva. Knowing the bartender’s name, making sure everyone at the table feels it, caring for the people who drink this brand — that has always been an act of hospitality for her.</p><p>What she saw was that her generation lived differently, chose differently. They are selective. And when they decide to drink, they want something that feels unmistakably theirs: clean, additive-free, made with real craft, and belonging to the culture they actually live in.</p>",
+            "text": "<h3>An act of hospitality.</h3>",
+            "enlarge_text": false,
+            "enable_italic": false,
+            "position": "left"
+          }
+        },
+        "text_dFcrhE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>That instinct is what she brought to Luna Nueva. Knowing the bartender’s name, making sure everyone at the table feels it, caring for the people who drink this brand — that has always been an act of hospitality for her.</p><p>What she saw was that her generation lived differently, chose differently. They are selective. And when they decide to drink, they want something that feels unmistakably theirs: clean, additive-free, made with real craft, and belonging to the culture they actually live in.</p>",
             "enlarge_text": true,
             "enable_italic": false,
             "position": "left"
@@ -153,6 +162,7 @@
       },
       "block_order": [
         "text_gR3pDg",
+        "text_dFcrhE",
         "media_TR33z4",
         "preheading_gaUzMW",
         "heading_fdTtiK",
