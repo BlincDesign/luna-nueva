@@ -221,7 +221,7 @@ strong:has(em) em {
 .site-nav .site-nav__icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.1rem;
+    /* gap: 2.1rem; */
 }
 
 .header-layout--center-split .site-nav.site-nav--icons .site-nav__icons {
@@ -360,6 +360,14 @@ strong:has(em) em {
 
 .site-nav__icons .site-nav__link--icon.js-drawer-open-cart:hover {
     background: rgba(45, 49, 53, .08);
+}
+
+.site-nav__item:nth-child(1) {
+    margin-left: 0;
+}
+
+.site-nav__item {
+    margin-left: 2.1rem;
 }
 
 .drawer#NavDrawer {
