@@ -1247,8 +1247,8 @@ a.pdl__right {
 }
 
 .product__thumbs--below .product__thumb-item {
-  width: calc(100% / 5 - 12px);
-  margin-right: 12px;
+  width: calc(100% / 5 - 10px);
+  margin-right: 10px;
   max-width: unset;
 }
 
