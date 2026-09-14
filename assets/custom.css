@@ -326,8 +326,7 @@ strong:has(em) em {
     background-color: rgba(var(--color-background));
 }
 
-.site-header .site-nav__link,
-.site-header .site-nav--has-dropdown>details[open]>summary {
+.site-header .site-nav__link {
     color: rgb(var(--color-foreground));
 }
 
