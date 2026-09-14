@@ -211,6 +211,7 @@
   id="custom__rich-text-columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
+  {%- if section.settings.divider -%}<div>{%- endif -%}
   <div class="rich-text__main page-width">
     {%- comment -%}
       LEFT COLUMN
@@ -504,6 +505,7 @@
       {%- endfor -%}
     </div>
   </div>
+  {%- if section.settings.divider -%}</div>{%- endif -%}
 </div>
 
 {% schema %}
@@ -529,6 +531,12 @@
       "type": "checkbox",
       "id": "stylized_bg",
       "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.text-columns.settings.divider.label",
       "default": false
     },
     {
