@@ -669,6 +669,15 @@
     "newsletter_jQHpgq": {
       "type": "newsletter",
       "blocks": {
+        "icon_tb3akP": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 24
+          }
+        },
         "title_3H8Ujj": {
           "type": "title",
           "settings": {
@@ -683,7 +692,7 @@
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
             "enlarge_text": true,
-            "text_color": "#F9F6F1",
+            "text_color": "#f9f6f1",
             "text_width": 650,
             "margin_bottom": 24
           }
@@ -694,6 +703,7 @@
         }
       },
       "block_order": [
+        "icon_tb3akP",
         "title_3H8Ujj",
         "text_ppDKzW",
         "form_jxWeXr"
