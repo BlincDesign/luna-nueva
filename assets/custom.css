@@ -1311,4 +1311,8 @@ a.pdl__right {
   .product-section .product-single__meta {
     padding: 20px 0 0;
   }
+
+  .pdp-gallery__nav {
+    display: none;
+  }
 }
