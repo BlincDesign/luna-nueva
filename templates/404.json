@@ -69,6 +69,8 @@
         "menu_list_HwkFqb"
       ],
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
         "color_scheme": "",
         "left_column_width": 60,
         "left_text_align": "left",
