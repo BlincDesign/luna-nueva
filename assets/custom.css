@@ -1108,13 +1108,13 @@ a.pdl__right {
     padding: clamp(14px, 2.4vw, 32px);
 }
 
-/* .starting-slide .pdp-gallery__frame {
+.starting-slide .pdp-gallery__frame {
     height: 100%;
     aspect-ratio: var(--pdp-gallery-media-ar);
     width: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-} */
+    /* box-sizing: border-box;
+    overflow: hidden; */
+}
 
 .starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
