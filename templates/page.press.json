@@ -615,6 +615,103 @@
         "padding_top_mb": 38,
         "padding_bottom_mb": 52
       }
+    },
+    "text_columns_aB8EbM": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_KjA7Nb": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/brand-agave.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><a href=\"our-story.html\"><strong>The background</strong></a></p>",
+            "button_label": "Our Story",
+            "button_link": "",
+            "button_type": "link"
+          }
+        },
+        "text_block_wEBEg3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/brand-pair.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><a href=\"collection.html\"><strong>The bottles</strong></a></p>",
+            "button_label": "Three expressions",
+            "button_link": "",
+            "button_type": "link"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_KjA7Nb",
+        "text_block_wEBEg3"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
+      }
+    },
+    "newsletter_jQHpgq": {
+      "type": "newsletter",
+      "blocks": {
+        "title_3H8Ujj": {
+          "type": "title",
+          "settings": {
+            "title": "Get invited to the next one.",
+            "heading_size": "h2",
+            "text_width": 600,
+            "margin_bottom": 24
+          }
+        },
+        "text_ppDKzW": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": true,
+            "text_color": "#F9F6F1",
+            "text_width": 600,
+            "margin_bottom": 24
+          }
+        },
+        "form_jxWeXr": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_3H8Ujj",
+        "text_ppDKzW",
+        "form_jxWeXr"
+      ],
+      "name": "t:sections.newsletter.presets.email_signup.name",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 92,
+        "padding_bottom": 92,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
+      }
     }
   },
   "order": [
@@ -628,6 +725,8 @@
     "custom_stats_f3hd47",
     "custom_rich_text_columns_dFKwm8",
     "custom_rich_text_columns_LTXbDy",
-    "custom_rich_text_columns_fRbQFh"
+    "custom_rich_text_columns_fRbQFh",
+    "text_columns_aB8EbM",
+    "newsletter_jQHpgq"
   ]
 }
