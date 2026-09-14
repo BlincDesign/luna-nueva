@@ -1,1 +1,49 @@
-{"type":"header","name":"t:sections.header-group.name","sections":{"announcement-bar":{"type":"announcement-bar","disabled":true,"custom_css":[],"settings":{"announcement_text":"Free shipping and returns over $50","announcement_link":"","announcement_closable":false}},"header":{"type":"header","custom_css":[],"settings":{"logo":"shopify:\/\/shop_images\/logo-new-ink.png","logo-inverted":"shopify:\/\/shop_images\/logo-green.png","desktop_logo_width":130,"mobile_logo_width":100,"main_menu_link_list":"header-menu-development","hover_menu":true,"main_menu_alignment":"center-split","header_sticky":false,"header_fixed":true,"sticky_index":false,"sticky_collection":false}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "announcement_text": "Free shipping and returns over $50",
+        "announcement_link": "",
+        "announcement_closable": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "color_scheme_secondary": "",
+        "logo": "shopify://shop_images/logo-new-ink.png",
+        "logo-inverted": "shopify://shop_images/logo-green.png",
+        "desktop_logo_width": 130,
+        "mobile_logo_width": 100,
+        "main_menu_link_list": "header-menu-development",
+        "hover_menu": true,
+        "highlight_link_handle": "",
+        "main_menu_alignment": "center-split",
+        "header_sticky": false,
+        "header_fixed": true,
+        "sticky_index": false,
+        "sticky_collection": false
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
