@@ -202,7 +202,8 @@
           "settings": {
             "link": "",
             "title": "Link title",
-            "subtext": "Description"
+            "subtext": "Description",
+            "position": "left"
           }
         }
       },
@@ -214,8 +215,8 @@
         "color_scheme": "",
         "header_secondary": true,
         "stylized_bg": true,
-        "enable_vertical_divider": true,
-        "left_column_width": 45,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
         "left_text_align": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 45,
