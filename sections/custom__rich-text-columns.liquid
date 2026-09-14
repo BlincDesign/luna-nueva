@@ -295,6 +295,16 @@
   .theme-block--two-column-media__caption {
     position: absolute;
   }
+
+  .theme-block--two-column-media__item--none .theme-block--two-column-media__media {
+    aspect-ratio: auto;
+  }
+
+  .theme-block--two-column-media__item--none .theme-block--two-column-media__media img,
+  .theme-block--two-column-media__item--none .theme-block--two-column-media__media video {
+    height: auto;
+    object-fit: contain;
+  }
 {% endstyle %}
 
 <div
