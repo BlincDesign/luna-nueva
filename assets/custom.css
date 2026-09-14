@@ -868,7 +868,8 @@ a.pdl__right {
 @media screen and (max-width: 589px) {
     .wrapper__404,
     .linklist__404--item a,
-    .theme-block--link_text a {
+    .theme-block--link_text a,
+    .block-link_text .theme-block--link_text  {
         flex-direction: column;
     }
 
