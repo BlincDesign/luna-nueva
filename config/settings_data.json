@@ -58,7 +58,7 @@
     "type_scale_body_sm_mobile": 10,
     "type_scale_button_mobile": 12,
     "type_scale_caption_mobile": 10,
-    "icon_weight": "3px",
+    "icon_weight": "2px",
     "icon_linecaps": "miter",
     "animate_page_transition_style": "page-slow-fade",
     "animate_images_style": "zoom-fade",
@@ -272,9 +272,9 @@
       },
       "scheme-ff9a9495-afd7-4695-b377-baa896234ab9": {
         "settings": {
-          "background": "#AEBFB4",
+          "background": "#aebfb4",
           "background_gradient": "",
-          "text": "#2D3135",
+          "text": "#2d3135",
           "button": "rgba(0,0,0,0)",
           "button_label": "#2d3135",
           "button_border": "rgba(0,0,0,0)",
