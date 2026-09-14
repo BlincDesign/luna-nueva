@@ -1030,7 +1030,7 @@ a.pdl__right {
 
 @media only screen and (max-width:900px) {
     .product-section .custom-width--auto {
-        width: 100%;
+        width: 100% !important;
     }
 }
 
