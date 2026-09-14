@@ -131,8 +131,7 @@
         "media_TR33z4": {
           "type": "media",
           "settings": {
-            "image_one": "shopify://shop_images/team-founder.jpg",
-            "video_one": "shopify://files/videos/jalisco.mp4",
+            "image_one": "shopify://shop_images/ev-longtable_b76b3703-9ff7-4ecd-8268-e0c5cda3a4e7.jpg",
             "image_one_caption": "",
             "position": "left"
           }
@@ -158,7 +157,7 @@
         "media_qyfTHH": {
           "type": "media",
           "settings": {
-            "image_one": "shopify://shop_images/team-founder.jpg",
+            "image_one": "shopify://shop_images/ev-fruitbar.jpg",
             "image_one_caption": "",
             "position": "right"
           }
