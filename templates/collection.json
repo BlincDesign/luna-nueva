@@ -201,7 +201,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/srv-watermelon.jpg",
-            "image_mask": "landscape",
+            "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
             "text": "<p>ONCE IT'S OPEN</p><h3>Eight ways to pour it →</h3>",
@@ -215,7 +215,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/loc-shelf.jpg",
-            "image_mask": "landscape",
+            "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
             "text": "<p>NEARBY</p><h3>Find a bottle →</h3>",
