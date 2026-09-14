@@ -616,11 +616,11 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                  <li class="linklist__404--item" {{ block.shopify_attributes }}>
+                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
                     <a href="{{ block.settings.link | default: '#' }}">
-                      <span class="linklist__404--title">{{ block.settings.title }}</span>
+                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
                       {% if block.settings.subtext != blank %}
-                        <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
                       {% endif %}
                     </a>
                   </li>
