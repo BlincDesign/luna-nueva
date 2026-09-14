@@ -72,7 +72,7 @@
         {% for block in section.blocks %}
           {% if block.type != previous_type %}
             {% unless previous_type == blank %}
-              </ul>
+              <ul>
             {% endunless %}
             <ul class="block__404--linklist block__404--{{ block.type | handle }}">
           {% endif %}
