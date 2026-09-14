@@ -14,68 +14,6 @@
       "disabled": true,
       "settings": {}
     },
-    "custom_media_gallery_9APyLM": {
-      "type": "custom__media-gallery",
-      "blocks": {
-        "content_zqCgbn": {
-          "type": "content",
-          "settings": {
-            "eyebrow": "Luna Nueva Story",
-            "heading": "Kelsey Selby",
-            "heading_size": "h2",
-            "show_divider": true,
-            "body": "<h5>Kelsey Selby came to Luna Nueva as an insider to the life the brand was built for.</h5><p>Growing up in a household where good food and drink were celebrated nightly — seasonal ingredients, considered wine pairings, a table that was always set with intention — she developed an early understanding of hospitality and the specific pleasure of a room where everything feels right.</p><p>She spent her years in Los Angeles deepening it: specialty grocers and farmers markets, the best restaurants in the city, an ongoing education in what makes people feel well taken care of. A good life, she learned early, is built around great food, great drinks, and the people you share them with.</p>",
-            "enlarge_text": true,
-            "button_label": "",
-            "button_url": ""
-          }
-        },
-        "image_4Yfn8t": {
-          "type": "image",
-          "settings": {
-            "tall": false,
-            "image_one": "shopify://shop_images/ev-pour.jpg",
-            "image_one_caption": "Los Angeles",
-            "image_two_caption": ""
-          }
-        },
-        "image_rG9gbT": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/team-founder.jpg",
-            "image_one_caption": "",
-            "image_two_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_zqCgbn",
-        "image_4Yfn8t",
-        "image_rG9gbT"
-      ],
-      "name": "Media gallery",
-      "settings": {
-        "color_scheme": "scheme-6",
-        "header_secondary": false,
-        "stylized_bg": true,
-        "full_width": false,
-        "position": "left",
-        "content_width": 35,
-        "flow_right": false,
-        "tile_width_min": 240,
-        "tile_width_max": 360,
-        "row_height": 220,
-        "tile_width_mobile_min": 150,
-        "tile_width_mobile_max": 280,
-        "row_height_mobile": 150,
-        "gap": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
-      }
-    },
     "custom_rich_text_columns_V9bynk": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -152,14 +90,14 @@
         "left_vertical_align": "flex-end",
         "right_column_width": 50,
         "right_text_align": "left",
-        "right_vertical_align": "flex-end",
+        "right_vertical_align": "center",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 86,
+        "padding_bottom": 86,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
       }
     },
     "slideshow_3Nhhhk": {
@@ -547,7 +485,6 @@
   },
   "order": [
     "main",
-    "custom_media_gallery_9APyLM",
     "custom_rich_text_columns_V9bynk",
     "slideshow_3Nhhhk",
     "custom_rich_text_columns_P6dhUJ",
