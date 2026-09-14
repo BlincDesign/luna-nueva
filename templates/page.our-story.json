@@ -167,39 +167,47 @@
         "padding_bottom_mb": 40
       }
     },
-    "custom_rich_text_columns_dCymfR": {
-      "type": "custom__rich-text-columns",
+    "rich_text_hqBVKz": {
+      "type": "rich-text",
       "blocks": {
-        "text_LHXaDd": {
+        "text_NHf3fw": {
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<h3>Luna Nueva is the new moon — it’s pure potential. <em><strong>The moment before the memory is made</strong></em><em>,</em> when the night is still open, still possible, and the choice in front of you sets the tone for everything that follows.</h3>",
-            "position": "left"
+            "text": "<h3>Luna Nueva is the new moon — it’s pure potential. <em><strong>The moment before the memory is made</strong></em><em>,</em> when the night is still open, still possible, and the choice in front of you sets the tone for everything that follows.</h3>"
+          }
+        },
+        "divider_THNEGY": {
+          "type": "divider",
+          "settings": {
+            "enable_divider": true,
+            "divider_bg": "#8B8B8B",
+            "divider_width": 90,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
           }
         }
       },
       "block_order": [
-        "text_LHXaDd"
+        "text_NHf3fw",
+        "divider_THNEGY"
       ],
-      "name": "Rich text columns",
+      "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
-        "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": false,
-        "left_column_width": 70,
-        "left_text_align": "left",
-        "left_vertical_align": "flex-end",
-        "right_column_width": 20,
-        "right_text_align": "left",
-        "right_vertical_align": "flex-end",
-        "detail_accent_color": "#c9a063",
-        "icon_backdrop_color": "#2d3135",
-        "detail_divider_color": "#f9f6f1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "left",
+        "narrow_column": false,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
       }
     }
   },
@@ -208,6 +216,6 @@
     "custom_rich_text_columns_MaNMBN",
     "hero_video_g7Yadw",
     "custom_media_gallery_nUaQF9",
-    "custom_rich_text_columns_dCymfR"
+    "rich_text_hqBVKz"
   ]
 }
