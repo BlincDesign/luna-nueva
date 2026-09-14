@@ -291,49 +291,6 @@
         "padding_bottom_mb": 40
       }
     },
-    "rich_text_JVLhFB": {
-      "type": "rich-text",
-      "blocks": {
-        "divider_F77aN8": {
-          "type": "divider",
-          "settings": {
-            "enable_divider": true,
-            "divider_bg": "#8E8A8A",
-            "divider_width": 100,
-            "divider_height": 1,
-            "enable_icon": false,
-            "icon_color": "#C78642",
-            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "icon_size": 26,
-            "margin_top": 30,
-            "margin_bottom": 30
-          }
-        },
-        "text_qQmJNH": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<h3>Luna Nueva lives in the moment </h3><h3>before — open, free, and completely alive. <em><strong>Like the new </strong></em></h3><h3><em><strong>moon, the anticipation of a night </strong></em></h3><h3><em><strong>that could go anywhere.</strong></em></h3>"
-          }
-        }
-      },
-      "block_order": [
-        "divider_F77aN8",
-        "text_qQmJNH"
-      ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": true,
-        "color_scheme": "",
-        "align_text": "left",
-        "narrow_column": false,
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
-      }
-    },
     "newsletter_bWQygA": {
       "type": "newsletter",
       "blocks": {
@@ -400,7 +357,6 @@
     "custom_rich_text_columns_K6qJhy",
     "text_columns_tDGG3i",
     "custom_rich_text_columns_WrjTQ8",
-    "rich_text_JVLhFB",
     "newsletter_bWQygA"
   ]
 }
