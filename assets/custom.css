@@ -129,7 +129,7 @@ strong:has(em) em {
     display: inline-flex;
     align-items: center;
     gap: 0.7rem;
-    padding: 13px 32px;
+    padding: 1.16rem 2.05rem;
     border-width: 1px;
     border-style: solid;
     border-radius: var(--btn-radius, 60px);
