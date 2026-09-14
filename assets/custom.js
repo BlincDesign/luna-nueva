@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!header || !sections.length) return;
 
   const baseScheme = header.dataset.scheme;
-  let currentScheme = baseScheme;
+  const secondaryScheme = header.dataset.schemeSecondary;
 
   const checkOverlap = () => {
     const headerRect = header.getBoundingClientRect();
 
-    const overlappingSection = [...sections].find((section) => {
+    const overlapping = [...sections].some((section) => {
       const sectionRect = section.getBoundingClientRect();
 
       return (
@@ -19,17 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    header.classList.toggle('header_overlap--secondary', !!overlappingSection);
+    header.classList.toggle('header_overlap--secondary', overlapping);
 
-    const sectionScheme = overlappingSection
-      && [...overlappingSection.classList].find((cls) => cls.startsWith('color-scheme-'));
-
-    const nextScheme = sectionScheme || baseScheme;
-
-    if (nextScheme !== currentScheme) {
-      if (currentScheme) header.classList.remove(currentScheme);
-      header.classList.add(nextScheme);
-      currentScheme = nextScheme;
+    if (baseScheme && secondaryScheme && baseScheme !== secondaryScheme) {
+      header.classList.toggle(secondaryScheme, overlapping);
+      header.classList.toggle(baseScheme, !overlapping);
     }
   };
 
