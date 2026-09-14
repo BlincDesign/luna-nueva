@@ -235,7 +235,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>ALSO</strong></p><h3><strong>The Team </strong>→</h3>",
+            "text": "<p><strong>ALSO</strong></p><h3>The Team →</h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
