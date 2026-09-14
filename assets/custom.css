@@ -1296,4 +1296,8 @@ a.pdl__right {
     height: var(--gallery-height-mobile, 60vh);
     position: static !important;
   }
+
+  .product__thumbs--below .product__thumb-item {
+    width: calc(100% / 4.25 - 8px);
+  }
 }
