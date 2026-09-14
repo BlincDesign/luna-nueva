@@ -231,10 +231,11 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image_mask": "none",
+            "image": "shopify://shop_images/team-room-wide.jpg",
+            "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "",
+            "text": "<p><strong>ALSO</strong></p><h3><strong>The Team </strong>→</h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
