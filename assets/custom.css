@@ -1292,6 +1292,10 @@ a.pdl__right {
     background: radial-gradient( 60% 50% at 28% 18%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 68%), radial-gradient( 85% 65% at 50% 100%, rgba(var(--color-shadow), 0.14), rgba(var(--color-shadow), 0) 65%);
 }
 
+.pdp-gallery__frame {
+    position: relative;
+}
+
 .starting-slide .pdp-gallery__frame {
     height: 100%;
     aspect-ratio: var(--pdp-gallery-media-ar);
