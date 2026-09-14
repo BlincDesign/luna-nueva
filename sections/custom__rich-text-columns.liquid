@@ -329,7 +329,7 @@
                   {% endif %}
                 {%- when 'preheading' -%}
                   <div
-                    class="theme-block subheading appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    class="theme-block subheading {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
                     {{ block.shopify_attributes }}
@@ -349,7 +349,7 @@
                   </div>
 
                 {%- when 'text' -%}
-                  <div class="theme-block theme-block__text" {{ block.shopify_attributes }}>
+                  <div class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}" {{ block.shopify_attributes }}>
                     <div
                       class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
@@ -536,7 +536,7 @@
                   {% endif %}
                 {%- when 'preheading' -%}
                   <div
-                    class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
                     {{ block.shopify_attributes }}
@@ -556,7 +556,7 @@
                   </div>
 
                 {%- when 'text' -%}
-                  <div class="theme-block theme-block__text" {{ block.shopify_attributes }}>
+                  <div class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} theme-block__text" {{ block.shopify_attributes }}>
                     <div
                       class="rte appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading != blank -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
@@ -1673,6 +1673,12 @@
           "default": "IN THE WILD"
         },
         {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
+        },
+        {
           "type": "select",
           "id": "position",
           "label": "Position",
@@ -1749,6 +1755,12 @@
           "type": "checkbox",
           "id": "enable_italic",
           "label": "Italic",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
           "default": false
         },
         {
