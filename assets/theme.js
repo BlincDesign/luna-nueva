@@ -7710,7 +7710,7 @@ if (console && console.log) {
           childNav: this.cache.thumbSlider,
           childNavScroller: this.cache.thumbScroller,
           childVertical: this.cache.thumbSlider.dataset.position === 'beside',
-          wrapAround: false,
+          wrapAround: true,
           callbacks: {
             onInit: this.onSliderInit.bind(this),
             onChange: this.onSlideChange.bind(this)
