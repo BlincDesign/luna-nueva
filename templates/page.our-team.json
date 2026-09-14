@@ -128,7 +128,9 @@
           "type": "media",
           "settings": {
             "image_one": "shopify://shop_images/team-founder.jpg",
-            "image_one_caption": ""
+            "video_one": "shopify://files/videos/jalisco.mp4",
+            "image_one_caption": "",
+            "position": "left"
           }
         }
       },
