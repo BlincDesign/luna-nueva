@@ -156,7 +156,7 @@
         "content_yi4PPW": {
           "type": "content",
           "settings": {
-            "eyebrow": "The gap she saw",
+            "eyebrow": "<strong>The gap she saw</strong>",
             "heading": "A category that had not caught up.",
             "heading_size": "h2",
             "show_divider": true,
