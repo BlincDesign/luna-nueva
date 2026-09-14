@@ -71,7 +71,7 @@ strong:has(em) em {
     font-style: normal;
 }
 
-.svg-mask--rounded-corners {
+.svg-mask--rounded-corners img {
   border-radius: 20px;
   padding-bottom:56.25% !important;
 }
