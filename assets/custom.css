@@ -1250,6 +1250,7 @@ a.pdl__right {
   width: calc(100% / 5 - 12px);
   margin-right: 12px;
   max-width: unset;
+  opacity: 0.8;
 }
 
 .product__thumb {
@@ -1274,6 +1275,7 @@ a.pdl__right {
 .product__thumb-item a.is-active,
 .product__thumb-item a:focus {
   border: 2px solid rgba(var(--color-foreground));
+  opacity: 1;
 }
 
 .product__thumb-item a.is-active::before,
