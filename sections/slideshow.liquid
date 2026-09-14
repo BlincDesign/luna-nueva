@@ -172,21 +172,25 @@
                     {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
                   {% endif %}
 
-                  {%- render 'image-element',
-                    img: block.settings.image,
-                    img_width: 2400,
-                    loading: loading,
-                    classes: desktop_classes
-                  -%}
-                  {%- if has_mobile_image -%}
-                    {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
-
+                  {% if block.settings.video != blank %}
+                    {{ block.settings.video | video_tag: autoplay: true, muted: true, controls: false, loop: true }}
+                  {% else %}
                     {%- render 'image-element',
-                      img: block.settings.image_mobile,
-                      img_width: 1200,
+                      img: block.settings.image,
+                      img_width: 2400,
                       loading: loading,
-                      classes: mobile_classes
+                      classes: desktop_classes
                     -%}
+                    {%- if has_mobile_image -%}
+                      {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
+
+                      {%- render 'image-element',
+                        img: block.settings.image_mobile,
+                        img_width: 1200,
+                        loading: loading,
+                        classes: mobile_classes
+                      -%}
+                    {%- endif -%}
                   {%- endif -%}
                 {%- else -%}
                   {%- if template == 'password' -%}
@@ -436,36 +440,9 @@
           "default": "Optional button"
         },
         {
-          "type": "select",
-          "id": "text_align",
-          "label": "t:sections.slideshow.blocks.slide.settings.text_align.label",
-          "default": "vertical-bottom horizontal-left",
-          "options": [
-            {
-              "value": "vertical-center horizontal-left",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-center_horizontal-left.label"
-            },
-            {
-              "value": "vertical-center horizontal-center",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-center_horizontal-center.label"
-            },
-            {
-              "value": "vertical-center horizontal-right",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-center_horizontal-right.label"
-            },
-            {
-              "value": "vertical-bottom horizontal-left",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-bottom_horizontal-left.label"
-            },
-            {
-              "value": "vertical-bottom horizontal-center",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-bottom_horizontal-center.label"
-            },
-            {
-              "value": "vertical-bottom horizontal-right",
-              "label": "t:sections.slideshow.blocks.slide.settings.text_align.options.vertical-bottom_horizontal-right.label"
-            }
-          ]
+          "type": "video",
+          "id": "video",
+          "label": "Video"
         },
         {
           "type": "image_picker",
