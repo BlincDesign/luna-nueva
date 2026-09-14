@@ -135,7 +135,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "sku_enable": false,
         "image_size": "auto",
