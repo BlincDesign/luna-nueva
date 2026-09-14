@@ -94,6 +94,9 @@ strong:has(em) em {
     width: 100%;
 }
 
+.has-primary--font {
+    font-family: var(--typeHeaderPrimary);
+}
 
 /* GLOBAL CSS*/
 
