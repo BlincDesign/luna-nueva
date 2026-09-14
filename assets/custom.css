@@ -1109,7 +1109,7 @@ a.pdl__right {
 
 .pdp-gallery__stage {
   height: var(--gallery-height, 70vh);
-  position: relative;
+  position: relative;.pdp-gallery__stage
 }
 
 .pdp-gallery__stage [data-product-photos],
@@ -1301,7 +1301,6 @@ a.pdl__right {
 @media (max-width: 900px) {
   .pdp-gallery__stage {
     height: var(--gallery-height-mobile, 60vh);
-    position: static !important;
   }
 
   .product__thumbs--below .product__thumb-item {
