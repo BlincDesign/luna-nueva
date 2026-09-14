@@ -204,7 +204,7 @@
         "color_scheme": "scheme-6",
         "align_text": "left",
         "narrow_column": false,
-        "padding_top": 120,
+        "padding_top": 80,
         "padding_bottom": 20,
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
@@ -257,6 +257,37 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "rich_text_tcgtMa": {
+      "type": "rich-text",
+      "blocks": {
+        "button_nfnbkp": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "shop luna nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_nfnbkp"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 80
+      }
     }
   },
   "order": [
@@ -265,6 +296,7 @@
     "hero_video_g7Yadw",
     "custom_media_gallery_nUaQF9",
     "rich_text_hqBVKz",
-    "text_columns_zEEQiD"
+    "text_columns_zEEQiD",
+    "rich_text_tcgtMa"
   ]
 }
