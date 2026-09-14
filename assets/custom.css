@@ -1153,9 +1153,9 @@ a.pdl__right {
     overflow: visible;
 }
 
-.starting-slide .pdp-gallery__frame .image-wrap img {
+/* .starting-slide .pdp-gallery__frame .image-wrap img {
     filter: drop-shadow(0 16px 22px rgba(var(--color-shadow), 0.2)) drop-shadow(0 4px 8px rgba(var(--color-shadow), 0.14));
-}
+} */
 
 .secondary-slide .pdp-gallery__frame {
     height: 100%;
