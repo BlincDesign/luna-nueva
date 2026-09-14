@@ -222,7 +222,7 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-7",
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
@@ -289,7 +289,7 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-7",
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
