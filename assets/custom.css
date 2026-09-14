@@ -76,6 +76,10 @@ strong:has(em) em {
   padding-bottom:56.25% !important;
 }
 
+.hero__image-wrapper video {
+    width: 100%;
+}
+
 /* GLOBAL CSS*/
 
 
