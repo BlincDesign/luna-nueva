@@ -209,6 +209,53 @@
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
+    },
+    "text_columns_zEEQiD": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_ijCpVz": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/hero-coast.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><strong>NEXT</strong></p><h3>Our Intentions →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_qMGrNh": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_ijCpVz",
+        "text_block_qMGrNh"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "scheme-6",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
@@ -216,6 +263,7 @@
     "custom_rich_text_columns_MaNMBN",
     "hero_video_g7Yadw",
     "custom_media_gallery_nUaQF9",
-    "rich_text_hqBVKz"
+    "rich_text_hqBVKz",
+    "text_columns_zEEQiD"
   ]
 }
