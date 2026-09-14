@@ -65,6 +65,12 @@
       height: {{ block.settings.icon_size }}px;
     }
 
+    {% if block.settings.enable_italic %}
+    #block-{{ block.id }} .theme-block__text {
+      font-style: italic;
+    }
+    {%endif %}
+
     @media screen and (max-width: 589px) {
       #block-{{ block.id }} .rich-text__divider {
         width: 100%;
@@ -301,7 +307,7 @@
                   </div>
 
                 {%- when 'text' -%}
-                  <div class="theme-block" {{ block.shopify_attributes }}>
+                  <div class="theme-block theme-block__text" {{ block.shopify_attributes }}>
                     <div
                       class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
@@ -1416,17 +1422,23 @@
       "name": "Text",
       "settings": [
         {
+          "id": "text",
+          "type": "richtext",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers.</p>",
+          "info": "Color will apply on bold and italic."
+        },
+        {
           "type": "checkbox",
           "id": "enlarge_text",
           "label": "Enlarge text",
           "default": true
         },
         {
-          "id": "text",
-          "type": "richtext",
-          "label": "Text",
-          "default": "<p>Use this text to share information about your brand with your customers.</p>",
-          "info": "Color will apply on bold and italic."
+          "type": "checkbox",
+          "id": "enable_italic",
+          "label": "Italic",
+          "default": true
         },
         {
           "type": "select",
