@@ -255,7 +255,7 @@
       {%- sections 'header-group' -%}
       {%- sections 'popup-group' -%}
 
-      <main class="main-content" id="MainContent">
+      <main class="main-content{% if request.page_type == 'product' %} product--page{% endif %}" id="MainContent">
         {{ content_for_layout }}
       </main>
 
