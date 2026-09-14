@@ -238,66 +238,102 @@
         "padding_bottom_mb": 52
       }
     },
-    "custom_media_gallery_YmgTwq": {
-      "type": "custom__media-gallery",
+    "custom_rich_text_columns_C63hck": {
+      "type": "custom__rich-text-columns",
       "blocks": {
-        "content_jdriaT": {
-          "type": "content",
+        "preheading_YEwmF9": {
+          "type": "preheading",
           "settings": {
-            "eyebrow": "Her answer",
-            "heading": "The answer she built for it.",
-            "heading_size": "h2",
-            "show_divider": true,
-            "body": "<p>Luna Nueva is the answer she built for that question. Made with craft and integrity, it exists in the same world she has always lived in — where the culture is coastal, alive, and ready for anything. Where the table matters, the people at it matter, and what you pour says something real about how you choose to live.</p>",
+            "title": "<strong>HER ANSWER</strong>",
+            "enable_fade": false,
+            "position": "right"
+          }
+        },
+        "heading_C9hDMB": {
+          "type": "heading",
+          "settings": {
+            "title": "The answer she built for it.",
+            "position": "right"
+          }
+        },
+        "divider_rP7Pfn": {
+          "type": "divider",
+          "settings": {
+            "position": "right",
+            "enable_divider": true,
+            "divider_bg": "#8b8b8b",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        },
+        "text_hkqYdw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luna Nueva is the answer she built for that question. Made with craft and integrity, it exists in the same world she has always lived in — where the culture is coastal, alive, and ready for anything. Where the table matters, the people at it matter, and what you pour says something real about how you choose to live.</p>",
             "enlarge_text": true,
-            "button_label": "three expressions",
-            "button_url": "shopify://collections/all"
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "right"
           }
         },
-        "image_488UqN": {
-          "type": "image",
+        "button_ALXCHd": {
+          "type": "button",
           "settings": {
-            "tall": true,
+            "link": "shopify://collections/all",
+            "link_text": "THREE EXPRESSIONS",
+            "button_type": "primary",
+            "position": "right"
+          }
+        },
+        "two_column_media_PArE7F": {
+          "type": "two_column_media",
+          "settings": {
             "image_one": "shopify://shop_images/story-barrels-b.jpg",
-            "image_one_caption": "",
-            "image_two_caption": ""
-          }
-        },
-        "image_epATBg": {
-          "type": "image",
-          "settings": {
-            "tall": true,
-            "image_one": "shopify://shop_images/ev-table.jpg",
-            "image_one_caption": "",
-            "image_two_caption": ""
+            "orientation_one": "none",
+            "caption_one": "",
+            "image_two": "shopify://shop_images/ev-table.jpg",
+            "orientation_two": "none",
+            "caption_two": "",
+            "position": "left"
           }
         }
       },
       "block_order": [
-        "content_jdriaT",
-        "image_488UqN",
-        "image_epATBg"
+        "preheading_YEwmF9",
+        "heading_C9hDMB",
+        "divider_rP7Pfn",
+        "text_hkqYdw",
+        "button_ALXCHd",
+        "two_column_media_PArE7F"
       ],
-      "name": "Media gallery",
+      "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
-        "full_width": false,
-        "position": "right",
-        "content_width": 35,
-        "flow_right": false,
-        "tile_width_min": 240,
-        "tile_width_max": 360,
-        "row_height": 220,
-        "tile_width_mobile_min": 150,
-        "tile_width_mobile_max": 280,
-        "row_height_mobile": 150,
-        "gap": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "enable_vertical_divider": false,
+        "left_column_width": 45,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "center",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "center",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 86,
+        "padding_bottom": 86,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 52
       }
     },
     "rich_text_hqBVKz": {
@@ -431,7 +467,7 @@
     "hero_video_g7Yadw",
     "slideshow_VYRq3X",
     "custom_rich_text_columns_rNifbp",
-    "custom_media_gallery_YmgTwq",
+    "custom_rich_text_columns_C63hck",
     "rich_text_hqBVKz",
     "text_columns_zEEQiD",
     "rich_text_tcgtMa"
