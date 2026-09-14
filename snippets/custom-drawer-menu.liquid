@@ -24,28 +24,39 @@
       <ul class="mobile-nav mobile-nav--flat" role="navigation" aria-label="Primary">
         {%- for link in main_menu.links -%}
           {%- liquid
-            assign animation_row = animation_row | plus: 1
             assign has_dropdown = false
             if link.links != blank
               assign has_dropdown = true
             endif
+
+            assign is_highlight = false
+            if section.settings.highlight_link_handle != blank
+              assign highlight_handle = section.settings.highlight_link_handle | handleize
+              assign link_handle = link.title | handleize
+              if link_handle == highlight_handle
+                assign is_highlight = true
+              endif
+            endif
           -%}
 
-          <li class="mobile-nav__item mobile-nav__item--parent{% unless template == 'index' %}{% if link.active %} mobile-nav__item--active{% endif %}{% endunless %} appear-animation appear-delay-{{ animation_row }}">
-            <a href="{{ link.url }}" class="mobile-nav__link mobile-nav__link--heading">{{ link.title }}</a>
+          {%- unless is_highlight -%}
+            {%- assign animation_row = animation_row | plus: 1 -%}
+            <li class="mobile-nav__item mobile-nav__item--parent{% unless template == 'index' %}{% if link.active %} mobile-nav__item--active{% endif %}{% endunless %} appear-animation appear-delay-{{ animation_row }}">
+              <a href="{{ link.url }}" class="mobile-nav__link mobile-nav__link--heading">{{ link.title }}</a>
 
-            {%- if has_dropdown -%}
-              <ul class="mobile-nav__sublist mobile-nav__sublist--flat">
-                {%- for childlink in link.links -%}
-                  <li class="mobile-nav__item{% unless template == 'index' %}{% if childlink.active %} mobile-nav__item--active{% endif %}{% endunless %}">
-                    <a href="{{ childlink.url }}" class="mobile-nav__link mobile-nav__link--sub">
-                      {{ childlink.title | escape }}
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            {%- endif -%}
-          </li>
+              {%- if has_dropdown -%}
+                <ul class="mobile-nav__sublist mobile-nav__sublist--flat">
+                  {%- for childlink in link.links -%}
+                    <li class="mobile-nav__item{% unless template == 'index' %}{% if childlink.active %} mobile-nav__item--active{% endif %}{% endunless %}">
+                      <a href="{{ childlink.url }}" class="mobile-nav__link mobile-nav__link--sub">
+                        {{ childlink.title | escape }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </li>
+          {%- endunless -%}
         {%- endfor -%}
 
         {% comment %} {%- if shop.customer_accounts_enabled -%}
