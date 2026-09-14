@@ -240,7 +240,7 @@
           "secondary_button_border_hover": "#35373a",
           "link": "#35373a",
           "link_hover": "#a26b25",
-          "border": "#c3d0c7",
+          "border": "#2D31353D",
           "accent": "#9b3a15",
           "overlay": "#000000",
           "shadow": "#000000"
