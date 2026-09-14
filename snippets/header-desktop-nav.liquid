@@ -21,7 +21,8 @@
 
       if section.settings.highlight_link_handle != blank
         assign highlight_handle = section.settings.highlight_link_handle | handleize
-        if link.title | handleize == highlight_handle
+        assign link_handle = link.title | handleize
+        if link_handle == highlight_handle
           assign is_highlight = true
         endif
       endif
