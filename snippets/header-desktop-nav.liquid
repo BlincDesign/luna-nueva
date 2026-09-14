@@ -14,8 +14,16 @@
     {%- liquid
       assign has_dropdown = false
       assign is_megamenu = false
+      assign is_highlight = false
       if link.links != blank
         assign has_dropdown = true
+      endif
+
+      if section.settings.highlight_link_handle != blank
+        assign highlight_handle = section.settings.highlight_link_handle | handleize
+        if link.title | handleize == highlight_handle
+          assign is_highlight = true
+        endif
       endif
 
       if has_dropdown
@@ -61,7 +69,7 @@
       {% else %}
         <a
           href="{{ link.url }}"
-          class="site-nav__link{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
+          class="site-nav__link{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}{% if is_highlight %} site-nav__link--highlight{% endif %}"
         >
           <span class="link-text">
             {{ link.title }}
