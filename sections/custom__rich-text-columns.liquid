@@ -434,22 +434,24 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                    {% if block.settings.link != blank %}
-                      <a href="{{ block.settings.link | default: '#' }}">
-                    {% else %}
-                      <div>
-                    {% endif %}
-                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                    {% if block.settings.subtext != blank %}
-                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                    {% endif %}
-                    {% if block.settings.link != blank %}
-                      </a>
-                    {% else %}
-                      </div>
-                    {% endif %}
-                  </li>
+                  <ul class="block__404--linklist block__404--{{ block.type | handle }}">
+                    <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                      {% if block.settings.link != blank %}
+                        <a href="{{ block.settings.link | default: '#' }}">
+                      {% else %}
+                        <div>
+                      {% endif %}
+                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                      {% if block.settings.subtext != blank %}
+                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                      {% endif %}
+                      {% if block.settings.link != blank %}
+                        </a>
+                      {% else %}
+                        </div>
+                      {% endif %}
+                    </li>
+                  </ul>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -641,22 +643,24 @@
                   {%- endif -%}
 
                 {% when 'link_text' %}
-                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
-                    {% if block.settings.link != blank %}
-                      <a href="{{ block.settings.link | default: '#' }}">
-                    {% else %}
-                      <div>
-                    {% endif %}
-                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
-                    {% if block.settings.subtext != blank %}
-                      <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
-                    {% endif %}
-                    {% if block.settings.link != blank %}
-                      </a>
-                    {% else %}
-                      </div>
-                    {% endif %}
-                  </li>
+                  <ul class="block__404--linklist block__404--{{ block.type | handle }}">
+                    <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                      {% if block.settings.link != blank %}
+                        <a href="{{ block.settings.link | default: '#' }}">
+                      {% else %}
+                        <div>
+                      {% endif %}
+                      <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                      {% if block.settings.subtext != blank %}
+                        <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
+                      {% endif %}
+                      {% if block.settings.link != blank %}
+                        </a>
+                      {% else %}
+                        </div>
+                      {% endif %}
+                    </li>
+                  </ul>
               {%- endcase -%}
             </div>
           {%- endif -%}
