@@ -79,7 +79,7 @@
 
           {% case block.type %}
             {% when 'link_text' %}
-              <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+              <li class="linklist__404--item" {{ block.shopify_attributes }}>
                 <a href="{{ block.settings.link | default: '#' }}">
                   <span class="linklist__404--title">{{ block.settings.title }}</span>
                   {% if block.settings.subtext != blank %}
@@ -91,7 +91,7 @@
             {% when 'menu-list' %}
               {% assign menu = linklists[block.settings.linklist] %}
               {% for link in menu.links %}
-                <li class="site-nav__item linklist__404--item" {{ block.shopify_attributes }}>
+                <li class="linklist__404--item" {{ block.shopify_attributes }}>
                   <a href="{{ link.url }}">
                     <span class="linklist__404--title">{{ link.title }}</span>
                   </a>
