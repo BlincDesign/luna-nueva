@@ -222,7 +222,7 @@
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
@@ -248,18 +248,48 @@
           "type": "link_text",
           "settings": {
             "link": "",
-            "title": "Link title",
-            "subtext": "Description",
+            "title": "Jessica McIntosh",
+            "subtext": "Director of Sales & Distributor Relationships",
+            "position": "left"
+          }
+        },
+        "link_text_JgUYTY": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Kelsey Selby",
+            "subtext": "Co-Founder & CEO",
+            "position": "left"
+          }
+        },
+        "link_text_LnRFdT": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Kimmy Pelino",
+            "subtext": "Head of Marketing",
+            "position": "left"
+          }
+        },
+        "link_text_Fp8QLJ": {
+          "type": "link_text",
+          "settings": {
+            "link": "",
+            "title": "Luis Cruz",
+            "subtext": "Production Partner",
             "position": "left"
           }
         }
       },
       "block_order": [
-        "link_text_nr9ngB"
+        "link_text_nr9ngB",
+        "link_text_JgUYTY",
+        "link_text_LnRFdT",
+        "link_text_Fp8QLJ"
       ],
       "name": "Rich text columns",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
