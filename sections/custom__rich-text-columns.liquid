@@ -211,8 +211,8 @@
   id="custom__rich-text-columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
+  {%- if section.settings.divider -%}<div class="section--divider page-width">{%- endif -%}
   <div class="rich-text__main page-width">
-    {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
     {%- comment -%}
       LEFT COLUMN
     {%- endcomment -%}
@@ -504,8 +504,8 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
-    {%- if section.settings.divider -%}</div>{%- endif -%}
   </div>
+  {%- if section.settings.divider -%}</div>{%- endif -%}
 </div>
 
 {% schema %}
