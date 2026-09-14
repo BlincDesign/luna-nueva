@@ -34,8 +34,9 @@
         "text_46QaL9": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<p>Luna Nueva was built around the belief that life is better when the conditions are right, and that the most important condition is presence.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
             "position": "right"
           }
         }
@@ -162,8 +163,9 @@
         "text_jEgCRD": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<h5>Connection is at the core of Luna Nueva, for a generation drinking to honor a moment. Their moment. Choosing what goes in the glass is how they take care of themselves and each other. Clean, additive-free, and made without compromise, because we believe what you bring to the table should be as good as everyone sitting around it.</h5>",
+            "enlarge_text": false,
+            "enable_italic": false,
             "position": "right"
           }
         }
@@ -278,8 +280,9 @@
         "text_9njbG9": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
             "text": "<h4>Luna Nueva lives in the moment before — open, free, and completely alive. <em><strong>Like the new moon, the anticipation of a night that could go anywhere.</strong></em></h4>",
+            "enlarge_text": false,
+            "enable_italic": true,
             "position": "right"
           }
         }
