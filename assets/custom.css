@@ -1097,7 +1097,7 @@ a.pdl__right {
         transition: none;
     }
 }
-/* 
+
 .pdp-gallery {
     --pdp-gallery-media-ar: 1 / 1.321;
     --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
@@ -1333,4 +1333,4 @@ a.pdl__right {
 
 .product__video {
     object-fit: cover;
-} */
+}
