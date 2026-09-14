@@ -73,6 +73,7 @@ strong:has(em) em {
 
 .svg-mask--rounded-corners img {
   border-radius: 20px;
+  padding-bottom:56.25% !important;
 }
 
 /* GLOBAL CSS*/
