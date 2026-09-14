@@ -1185,6 +1185,8 @@ a.pdl__right {
 .product__thumb {
     aspect-ratio: 1 / 1.14;
     overflow: hidden;
+    border-radius: 13px 13px 3px 3px;
+    border: 2px solid transparent;
 }
 
 .product__thumb>.image-wrap {
@@ -1318,12 +1320,6 @@ a.pdl__right {
     width: calc(100% / 5 - 12px);
     margin-right: 12px;
     max-width: unset;
-}
-
-.product__thumb {
-    border-radius: 13px 13px 3px 3px;
-    overflow: hidden;
-    border: 2px solid transparent;
 }
 
 .product__thumb-item a.is-active,
