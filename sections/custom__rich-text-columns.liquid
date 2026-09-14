@@ -415,6 +415,16 @@
                       {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
                     </div>
                   {%- endif -%}
+
+                {% when 'link_text' %}
+                  <li class="linklist__404--item" {{ block.shopify_attributes }}>
+                    <a href="{{ block.settings.link | default: '#' }}">
+                      <span class="linklist__404--title">{{ block.settings.title }}</span>
+                      {% if block.settings.subtext != blank %}
+                        <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                      {% endif %}
+                    </a>
+                  </li>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -604,6 +614,16 @@
                       {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
                     </div>
                   {%- endif -%}
+
+                {% when 'link_text' %}
+                  <li class="linklist__404--item" {{ block.shopify_attributes }}>
+                    <a href="{{ block.settings.link | default: '#' }}">
+                      <span class="linklist__404--title">{{ block.settings.title }}</span>
+                      {% if block.settings.subtext != blank %}
+                        <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                      {% endif %}
+                    </a>
+                  </li>
               {%- endcase -%}
             </div>
           {%- endif -%}
@@ -796,6 +816,29 @@
   ],
 
   "blocks": [
+    {
+      "type": "link_text",
+      "name": "Link with text",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Link title"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Description"
+        }
+      ]
+    },
     {
       "type": "media",
       "name": "Media",
