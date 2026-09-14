@@ -234,7 +234,11 @@
         "title": "",
         "align_text": "left",
         "divider": false,
-        "color_scheme": "scheme-6"
+        "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "featured_collection_FjLrkD": {
