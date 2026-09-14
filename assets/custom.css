@@ -245,7 +245,7 @@ strong:has(em) em {
 }
 
 .header-layout--center-split .site-nav.site-nav--icons {
-    padding-left: 1.6rem;
+    padding-left: 1.1rem;
 }
 
 @media only screen and (max-width:900px) {
@@ -367,8 +367,8 @@ strong:has(em) em {
 .site-nav__icons .site-nav__link--icon {
     transition: background .24s cubic-bezier(.2, .7, .3, 1);
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    height: 44px;
+    width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -383,7 +383,7 @@ strong:has(em) em {
 }
 
 .site-nav__item:has(.site-nav__link--highlight) {
-    margin-left: 21px;
+    margin-left: 1.1rem;
 }
 
 .site-nav__item:nth-child(1) {
