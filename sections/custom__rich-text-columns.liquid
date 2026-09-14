@@ -1,216 +1,216 @@
 {% style %}
-  {% for block in section.blocks %}
-    #block-{{ block.id }} .rich-text__divider-wrapper, 
-    #block-{{ block.id }} .rich-text__divider--icon {
-      display: flex;
-      {%- if block.settings.position == 'left' -%}
-        justify-content: {{ section.settings.left_text_align }}
-      {%endif %}
-      {%- if block.settings.position == 'right' -%}
-        justify-content: {{ section.settings.right_text_align }}
-      {%endif %}
-    }
-
-    #block-{{ block.id }} .rich-text__divider {
-      position: relative;
-      width: {{block.settings.divider_width}}%;
-      height: {{ block.settings.divider_height }}px;
-      background: {{ block.settings.divider_bg }};
-    }
-
-    {% if block.settings.enable_divider %}
-      #block-{{ block.id }} .rich-text__divider {
-        margin-block-start: {{ block.settings.margin_top }}px;
-        margin-block-end: {{ block.settings.margin_bottom }}px;
-      }
-    {% else %}
+    {% for block in section.blocks %}
+      #block-{{ block.id }} .rich-text__divider-wrapper,
       #block-{{ block.id }} .rich-text__divider--icon {
-        margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
-        margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+        display: flex;
+        {%- if block.settings.position == 'left' -%}
+          justify-content: {{ section.settings.left_text_align }}
+        {%endif %}
+        {%- if block.settings.position == 'right' -%}
+          justify-content: {{ section.settings.right_text_align }}
+        {%endif %}
       }
-    {% endif %}
 
-    #block-{{ block.id }} .rich-text__divider--icon {
-      {% if block.settings.enable_divider %}
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      {% else %}
-        position: relative;
-      {%endif %}
-    }
-
-    #block-{{ block.id }} .rich-text__divider--icon .icon,
-    #block-{{ block.id }} .rich-text__divider--icon img {
-      display: block;
-      width: {{ block.settings.icon_size }}px;
-      height: {{ block.settings.icon_size }}px;
-      color: {{ block.settings.icon_color }};
-      background: {{ section.settings.icon_backdrop_color }};
-    }
-
-    
-    #block-{{ block.id }} .rich-text__detail-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: {{ section.settings.detail_accent_color }};
-    }
-
-    #block-{{ block.id }} .rich-text__detail-icon .icon, 
-    #block-{{ block.id }} .rich-text__detail-icon img {
-      width: {{ block.settings.icon_size }}px;
-      height: {{ block.settings.icon_size }}px;
-    }
-
-    {% if block.settings.enable_italic %}
-    #block-{{ block.id }} .theme-block__text em:has(strong) strong {
-      font-style: italic;
-    }
-    {%endif %}
-
-    @media screen and (max-width: 589px) {
       #block-{{ block.id }} .rich-text__divider {
-        width: 100%;
+        position: relative;
+        width: {{block.settings.divider_width}}%;
+        height: {{ block.settings.divider_height }}px;
+        background: {{ block.settings.divider_bg }};
       }
+
+      {% if block.settings.enable_divider %}
+        #block-{{ block.id }} .rich-text__divider {
+          margin-block-start: {{ block.settings.margin_top }}px;
+          margin-block-end: {{ block.settings.margin_bottom }}px;
+        }
+      {% else %}
+        #block-{{ block.id }} .rich-text__divider--icon {
+          margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+          margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+        }
+      {% endif %}
+
+      #block-{{ block.id }} .rich-text__divider--icon {
+        {% if block.settings.enable_divider %}
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        {% else %}
+          position: relative;
+        {%endif %}
+      }
+
+      #block-{{ block.id }} .rich-text__divider--icon .icon,
+      #block-{{ block.id }} .rich-text__divider--icon img {
+        display: block;
+        width: {{ block.settings.icon_size }}px;
+        height: {{ block.settings.icon_size }}px;
+        color: {{ block.settings.icon_color }};
+        background: {{ section.settings.icon_backdrop_color }};
+      }
+
+
+      #block-{{ block.id }} .rich-text__detail-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: {{ section.settings.detail_accent_color }};
+      }
+
+      #block-{{ block.id }} .rich-text__detail-icon .icon,
+      #block-{{ block.id }} .rich-text__detail-icon img {
+        width: {{ block.settings.icon_size }}px;
+        height: {{ block.settings.icon_size }}px;
+      }
+
+      {% if block.settings.enable_italic %}
+      #block-{{ block.id }} .theme-block__text em:has(strong) strong {
+        font-style: italic;
+      }
+      {%endif %}
+
+      @media screen and (max-width: 589px) {
+        #block-{{ block.id }} .rich-text__divider {
+          width: 100%;
+        }
+      }
+    {% endfor %}
+
+    .rich-text__content h2 {
+      margin: 0;
     }
-  {% endfor %}
 
-  .rich-text__content h2 {
-    margin: 0;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__main {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__column--left {
-    flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
-    justify-content: {{ section.settings.left_vertical_align }};
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
-    flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
-    justify-content: {{ section.settings.right_vertical_align }};
-  }
-
-  .rich-text__content ul li {
-    position: relative;
-    padding-left: 25px;
-  }
-
-  .rich-text__column ul {
-    list-style: none;
-  }
-
-  .rich-text__content ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 5px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #C64D27;
-  }
-
-  /* Detail row block (icon + label + description, tasting-note style) */
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-list {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .rich-text__detail-description * {
-    margin: 0;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px 40px;
-    padding: 28px 0;
-    border-top: 1px solid color-mix(in srgb, {{ section.settings.detail_divider_color }} 15%, transparent);
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 0 0 220px;
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label-text {
-    font-size: var(--type-caption-size);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: {{ section.settings.detail_accent_color }};
-  }
-
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description {
-    flex: 1;
-  }
-/* 
-  #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description p {
-    margin: 0;
-  } */
-
-  @media screen and (max-width: 589px) {
     #custom__rich-text-columns-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_mb }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-    }
-
-    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-      align-items: flex-start;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 
     #custom__rich-text-columns-{{ section.id }} .rich-text__main {
-      flex-direction: column;
-      align-items: flex-start; 
-      gap: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
     }
-    
 
-    #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
+    #custom__rich-text-columns-{{ section.id }} .rich-text__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #custom__rich-text-columns-{{ section.id }} .rich-text__column--left {
+      flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+      justify-content: {{ section.settings.left_vertical_align }};
+    }
+
     #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
+      flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+      justify-content: {{ section.settings.right_vertical_align }};
+    }
+
+    .rich-text__content ul li {
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .rich-text__column ul {
+      list-style: none;
+    }
+
+    .rich-text__content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #C64D27;
+    }
+
+    /* Detail row block (icon + label + description, tasting-note style) */
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-list {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      flex: unset;
-      display: block;
+    }
+
+    .rich-text__detail-description * {
+      margin: 0;
     }
 
     #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
-      flex-direction: column;
-      gap: 12px;
-      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px 40px;
+      padding: 28px 0;
+      border-top: 1px solid color-mix(in srgb, {{ section.settings.detail_divider_color }} 15%, transparent);
     }
 
     #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
-      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 220px;
     }
 
-    .theme-block__buttons {
-      text-align: left !important;
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label-text {
+      font-size: var(--type-caption-size);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: {{ section.settings.detail_accent_color }};
     }
-  }
+
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description {
+      flex: 1;
+    }
+  /*
+    #custom__rich-text-columns-{{ section.id }} .rich-text__detail-description p {
+      margin: 0;
+    } */
+
+    @media screen and (max-width: 589px) {
+      #custom__rich-text-columns-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+      }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
+        align-items: flex-start;
+      }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
+      #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
+        width: 100%;
+        flex: unset;
+        display: block;
+      }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-row {
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 0;
+      }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__detail-label {
+        flex: 0 0 auto;
+      }
+
+      .theme-block__buttons {
+        text-align: left !important;
+      }
+    }
 {% endstyle %}
 
 <div
@@ -228,7 +228,11 @@
         {%- if block.settings.position == 'left' -%}
           {%- assign left_next_block = section.blocks[forloop.index] -%}
           {%- assign left_groups_with_next = false -%}
-          {%- if left_next_block and block.type == 'detail_row' and left_next_block.type == 'detail_row' and left_next_block.settings.position == 'left' -%}
+          {%- if left_next_block
+            and block.type == 'detail_row'
+            and left_next_block.type == 'detail_row'
+            and left_next_block.settings.position == 'left'
+          -%}
             {%- assign left_groups_with_next = true -%}
           {%- endif -%}
 
@@ -374,7 +378,11 @@
         {%- if block.settings.position == 'right' -%}
           {%- assign right_next_block = section.blocks[forloop.index] -%}
           {%- assign right_groups_with_next = false -%}
-          {%- if right_next_block and block.type == 'detail_row' and right_next_block.type == 'detail_row' and right_next_block.settings.position == 'right' -%}
+          {%- if right_next_block
+            and block.type == 'detail_row'
+            and right_next_block.type == 'detail_row'
+            and right_next_block.settings.position == 'right'
+          -%}
             {%- assign right_groups_with_next = true -%}
           {%- endif -%}
 
@@ -499,6 +507,47 @@
                       <div class="rte">
                         {{ block.settings.page_text.content }}
                       </div>
+                    </div>
+                  {%- endif -%}
+
+                {% when 'media' %}
+                  {%- if block.settings.video_one != blank -%}
+                    <div class="media-gallery__image media-gallery__image--video">
+                      {%- render 'element.video',
+                        video: block.settings.video_one,
+                        autoplay: true,
+                        loop: true,
+                        muted: true,
+                        background: true
+                      -%}
+
+                      {%- if block.settings.image_one_caption != blank -%}
+                        <span class="media-gallery__caption">
+                          {{- block.settings.image_one_caption -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+
+                  {%- elsif block.settings.image_one != blank -%}
+                    <div class="media-gallery__image">
+                      {%- render 'image-element',
+                        img: block.settings.image_one,
+                        widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                        sizeVariable: tile_width_px,
+                        fallback: tile_width_mobile_px,
+                        classes: 'media-gallery__image-img'
+                      -%}
+
+                      {%- if block.settings.image_one_caption != blank -%}
+                        <span class="media-gallery__caption">
+                          {{- block.settings.image_one_caption -}}
+                        </span>
+                      {%- endif -%}
+                    </div>
+
+                  {%- else -%}
+                    <div class="media-gallery__image media-gallery__image--placeholder">
+                      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
                     </div>
                   {%- endif -%}
               {%- endcase -%}
@@ -693,6 +742,28 @@
   ],
 
   "blocks": [
+    {
+      "type": "media",
+      "name": "Media",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_one",
+          "label": "First image"
+        },
+        {
+          "type": "video",
+          "id": "video_one",
+          "label": "First video",
+          "info": "Optional. If added, this video plays instead of the first image above."
+        },
+        {
+          "type": "text",
+          "id": "image_one_caption",
+          "label": "First image caption"
+        }
+      ]
+    },
     {
       "type": "divider",
       "name": "Divider / Icon",
