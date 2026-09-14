@@ -110,17 +110,12 @@
     "custom_rich_text_columns_P6dhUJ": {
       "type": "custom__rich-text-columns",
       "blocks": {
-        "preheading_qK3XXk": {
-          "type": "preheading",
+        "text_gR3pDg": {
+          "type": "text",
           "settings": {
-            "title": "IN THE WILD",
-            "position": "left"
-          }
-        },
-        "heading_TRGNQU": {
-          "type": "heading",
-          "settings": {
-            "title": "Where it actually gets poured.",
+            "text": "<h3>An act of hospitality.</h3><p>That instinct is what she brought to Luna Nueva. Knowing the bartender’s name, making sure everyone at the table feels it, caring for the people who drink this brand — that has always been an act of hospitality for her.</p><p>What she saw was that her generation lived differently, chose differently. They are selective. And when they decide to drink, they want something that feels unmistakably theirs: clean, additive-free, made with real craft, and belonging to the culture they actually live in.</p>",
+            "enlarge_text": true,
+            "enable_italic": false,
             "position": "left"
           }
         },
@@ -157,8 +152,7 @@
         }
       },
       "block_order": [
-        "preheading_qK3XXk",
-        "heading_TRGNQU",
+        "text_gR3pDg",
         "media_TR33z4",
         "preheading_gaUzMW",
         "heading_fdTtiK",
