@@ -259,6 +259,22 @@
     "custom_rich_text_columns_WrjTQ8": {
       "type": "custom__rich-text-columns",
       "blocks": {
+        "divider_D7YBiU": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#8B8B8B",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        },
         "text_9njbG9": {
           "type": "text",
           "settings": {
@@ -269,6 +285,7 @@
         }
       },
       "block_order": [
+        "divider_D7YBiU",
         "text_9njbG9"
       ],
       "name": "Rich text columns",
@@ -276,7 +293,7 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
-        "left_column_width": 80,
+        "left_column_width": 100,
         "left_text_align": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 55,
@@ -287,6 +304,56 @@
         "detail_divider_color": "#f9f6f1",
         "padding_top": 0,
         "padding_bottom": 92,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "text_columns_P9hWXg": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_dacAJh": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/team-room-wide.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><strong>ALSO</strong></p><h3>The Team →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_MtmfFq": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/hero-coast.jpg",
+            "image_mask": "rounded-corners",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><strong>NEXT</strong></p><h3>Our Intentions →</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_dacAJh",
+        "text_block_MtmfFq"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
@@ -357,6 +424,7 @@
     "custom_rich_text_columns_K6qJhy",
     "text_columns_tDGG3i",
     "custom_rich_text_columns_WrjTQ8",
+    "text_columns_P9hWXg",
     "newsletter_bWQygA"
   ]
 }
