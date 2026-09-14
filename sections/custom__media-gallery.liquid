@@ -159,7 +159,7 @@
   }
 
   {% if section.settings.position == 'right' %}
-    .media-gallery__inner {
+    #custom__media-gallery-{{ section.id }} .media-gallery__inner {
       flex-direction: row-reverse;
     }
   {% endif %}
