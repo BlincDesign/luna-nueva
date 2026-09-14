@@ -358,10 +358,10 @@
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
         "header_secondary": false,
         "stylized_bg": false,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 86,
+        "padding_bottom": 0,
+        "padding_top_mb": 52,
+        "padding_bottom_mb": 0
       }
     },
     "newsletter_9CWPKE": {
