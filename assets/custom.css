@@ -362,12 +362,16 @@ strong:has(em) em {
     background: rgba(45, 49, 53, .08);
 }
 
-.site-nav__item:nth-child(1) {
-    margin-left: 0;
-}
-
 .site-nav__item {
     margin-left: 2.1rem;
+}
+
+.site-nav__item:has(.site-nav__link--highlight) {
+    margin-left: 21px;
+}
+
+.site-nav__item:nth-child(1) {
+    margin-left: 0;
 }
 
 .drawer#NavDrawer {
