@@ -78,7 +78,7 @@
         }
 
         
-  .theme-block--two-column-media__media {
+  #block-{{ block.id }} .theme-block--two-column-media__media {
     width: 100%;
     overflow: hidden;
     border-radius: 16px;
@@ -86,7 +86,7 @@
   }
 
   {% if block.settings.orientation_1 != 'none' or block.settings.orientation_2 != 'none' %}
-  .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
+  #block-{{ block.id }} .theme-block--two-column-media__item--portrait .theme-block--two-column-media__media {
     aspect-ratio: 3 / 4;
   }
   {% endif %}
