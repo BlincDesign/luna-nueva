@@ -1,57 +1,66 @@
-{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+<div class="color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
-<div class="page-width">
-  {%- if section.settings.title != blank -%}
-    <div class="section-header text-{{ section.settings.align_text }}">
-      <h2>{{ section.settings.title }}</h2>
-    </div>
-  {% endif %}
-
-  <div class="text-column__grid">
-    {%- for block in section.blocks -%}
-      <div class="text-{{ section.settings.align_text }}" {{ block.shopify_attributes }} data-aos="row-of-3">
-        {%- if block.settings.enable_image -%}
-          <div style="{% if section.settings.align_text == 'center' %}margin: 0 auto;{% endif %} max-width: {{ block.settings.image_width }}px;">
-            {% if block.settings.button_link != blank %}
-              <a href="{{ block.settings.button_link }}">
-            {% endif %}
-            {% if block.settings.image != blank %}
-
-              <div class="image-wrap text-spacing {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
-                {%- render 'image-element',
-                  img: block.settings.image,
-                  sizeVariable: column_width,
-                  widths: '180, 360, 540, 720, 900, 1080',
-                -%}
-              </div>
-            {% else %}
-              <div class="image-wrap text-spacing {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}" style="height: 300px">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-            {% endif %}
-            {% if block.settings.button_link != blank %}
-              </a>
-            {% endif %}
-          </div>
-        {% endif %}
-        {%- if block.settings.title != blank -%}
-          <h3>{{ block.settings.title }}</h3>
-        {% endif %}
-        {% if block.settings.text != blank %}
-          <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
-        {% endif %}
-        {% if block.settings.button_label != blank %}
-          {% render 'button',
-            label: block.settings.button_label,
-            url: block.settings.button_link,
-            type: block.settings.button_type,
-            arrow: true
-          %}
-        {% endif %}
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="section-header text-{{ section.settings.align_text }}">
+        <h2>{{ section.settings.title }}</h2>
       </div>
-    {%- endfor -%}
-  </div>
-</div>
+    {% endif %}
 
-{%- if section.settings.divider -%}</div>{%- endif -%}
+    <div class="text-column__grid">
+      {%- for block in section.blocks -%}
+        <div class="text-{{ section.settings.align_text }}" {{ block.shopify_attributes }} data-aos="row-of-3">
+          {%- if block.settings.enable_image -%}
+            <div style="{% if section.settings.align_text == 'center' %}margin: 0 auto;{% endif %} max-width: {{ block.settings.image_width }}px;">
+              {% if block.settings.button_link != blank %}
+                <a href="{{ block.settings.button_link }}">
+              {% endif %}
+              {% if block.settings.image != blank %}
+                <div
+                  class="image-wrap text-spacing {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                  style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                >
+                  {%- render 'image-element',
+                    img: block.settings.image,
+                    sizeVariable: column_width,
+                    widths: '180, 360, 540, 720, 900, 1080'
+                  -%}
+                </div>
+              {% else %}
+                <div
+                  class="image-wrap text-spacing {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                  style="height: 300px"
+                >
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {% endif %}
+              {% if block.settings.button_link != blank %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+          {%- if block.settings.title != blank -%}
+            <h3>{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
+          {% endif %}
+          {% if block.settings.button_label != blank %}
+            {% render 'button',
+              label: block.settings.button_label,
+              url: block.settings.button_link,
+              type: block.settings.button_type,
+              arrow: true
+            %}
+          {% endif %}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if section.settings.divider -%}</div>{%- endif -%}
+</div>
 
 {% schema %}
 {
@@ -216,7 +225,7 @@
               "label": "Link"
             }
           ]
-        },
+        }
       ]
     }
   ],
