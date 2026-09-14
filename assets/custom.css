@@ -1308,4 +1308,8 @@ a.pdl__right {
     width: calc(100% / 4.25 - 6px);
     margin-right: 6px;
   }
+
+  .product-section .product-single__meta {
+    padding: 20px 0 0;
+  }
 }
