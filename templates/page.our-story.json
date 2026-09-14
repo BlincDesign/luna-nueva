@@ -36,7 +36,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8B8B8B",
+            "divider_bg": "#8b8b8b",
             "divider_width": 80,
             "divider_height": 1,
             "enable_icon": false,
@@ -181,7 +181,7 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#8B8B8B",
+            "divider_bg": "#8b8b8b",
             "divider_width": 90,
             "divider_height": 1,
             "enable_icon": false,
@@ -252,6 +252,8 @@
         "align_text": "left",
         "divider": false,
         "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
         "padding_top": 40,
         "padding_bottom": 40,
         "padding_top_mb": 40,
