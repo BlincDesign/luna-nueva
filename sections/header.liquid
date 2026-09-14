@@ -21,6 +21,11 @@
   if template_name contains 'collection' and collection.image and section.settings.sticky_collection
     assign overlay_header = true
   endif
+
+  assign header_color_scheme = section.settings.color_scheme
+  if product.metafields.custom.color_scheme.value != blank
+    assign header_color_scheme = product.metafields.custom.color_scheme.value | replace: " section--scheme-secondary", ""
+  endif
 -%}
 
 {%- render 'custom-drawer-menu', section: section, main_menu: main_menu, logo_alignment: logo_alignment -%}
@@ -46,13 +51,13 @@
 {%- endstyle -%}
 
 <div data-section-id="{{ section.id }}" data-section-type="header">
-  <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
+  <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %} ">
     <header
       id="SiteHeader"
-      class="site-header color-{{ section.settings.color_scheme }}{% if settings.type_navigation_style %} site-header--heading-style{% endif %} {% if section.settings.header_fixed %} header--fixed{% endif %}"
+      class="site-header color-{{ header_color_scheme }}{% if settings.type_navigation_style %} site-header--heading-style{% endif %} {% if section.settings.header_fixed %} header--fixed{% endif %}"
       data-sticky="{{ sticky_header }}"
       data-overlay="{{ overlay_header }}"
-      data-scheme="color-{{ section.settings.color_scheme }}"
+      data-scheme="color-{{ header_color_scheme }}"
     >
       <div class="page-width">
         <div
