@@ -176,8 +176,8 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
-        "stylized_bg": false,
+        "header_secondary": true,
+        "stylized_bg": true,
         "enable_vertical_divider": true,
         "left_column_width": 45,
         "left_text_align": "left",
