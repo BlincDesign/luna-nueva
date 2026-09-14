@@ -869,7 +869,7 @@ a.pdl__right {
     .wrapper__404,
     .linklist__404--item a,
     .theme-block--link_text a,
-    .block-link_text .theme-block--link_text  {
+    .block-link_text .theme-block--link_text div  {
         flex-direction: column;
     }
 
