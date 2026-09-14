@@ -97,10 +97,10 @@
       "settings": {
         "title": "",
         "title_size": 80,
-        "subheading": "",
+        "subheading": "NOM 1414 · Vivanco Family Distillery · Los Altos de Jalisco",
         "link_text": "",
         "link": "",
-        "text_align": "vertical-center horizontal-center",
+        "text_align": "vertical-bottom horizontal-left",
         "video_url": "https://cdn.shopify.com/videos/c/o/v/6531ae64e7744adcaaeb8187daec8227.mp4",
         "overlay_opacity": 0,
         "section_height": "650px",
