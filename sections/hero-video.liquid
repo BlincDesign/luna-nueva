@@ -27,7 +27,7 @@
   data-section-id="{{ section.id }}"
   data-section-type="video-section"
   data-mobile-natural="false"
-  class="video-parent-section hero hero--{{ section.id }} hero--{{ section.settings.section_height }} hero--mobile--{{ section.settings.mobile_height }} color-{{ section.settings.color_scheme }}"
+  class="video-parent-section hero hero--{{ section.id }} hero--{{ section.settings.section_height }} hero--mobile--{{ section.settings.mobile_height }}"
   data-aos="hero__animation">
 
   <div class="hero__media hero__media--{{ section.id }}">
@@ -73,7 +73,7 @@
 
   </div>
 
-  <div class="hero__text-wrap color-{{ section.settings.color_scheme }}{% if section.settings.section_height == '16-9' %} hero__text-wrap--absolute{% endif %}">
+  <div class="hero__text-wrap{% if section.settings.section_height == '16-9' %} hero__text-wrap--absolute{% endif %}">
     <div class="page-width">
       <div class="hero__text-content {{ section.settings.text_align }}">
         {%- unless section.settings.title == blank -%}
@@ -136,12 +136,6 @@
   "name": "t:sections.hero-video.name",
   "class": "index-section--hero",
   "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-1"
-    },
     {
       "type": "textarea",
       "id": "title",
