@@ -178,7 +178,7 @@ strong:has(em) em {
 .site-header .site-nav__link.site-nav__link--highlight {
     display: inline-flex;
     align-items: center;
-    padding: 1.02rem 1.9rem;
+    padding: 11px 20px;
     border: 1px solid rgb(var(--color-button-border));
     border-radius: var(--btn-radius, 60px);
     background-color: rgba(var(--color-button));
