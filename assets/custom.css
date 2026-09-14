@@ -519,7 +519,6 @@ a.pdl__right {
     font-weight: 700;
     border-bottom: 1px solid #1a1a1a;
     padding-bottom: 2px;
-    font-size: var(--type-body-sm-size);
 }
 
 .pdl__grid {
