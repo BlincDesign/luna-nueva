@@ -336,7 +336,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>BACK TO</strong></p><h3>Our Story →</h3>",
+            "text": "<p><strong>BACK TO</strong></p><h3><a href=\"/pages/our-story\" title=\"OUR STORY\">Our Story →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
