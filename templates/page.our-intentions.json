@@ -264,7 +264,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#8B8B8B",
+            "divider_bg": "#8b8b8b",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -333,7 +333,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>NEXT</strong></p><h3>Our Intentions →</h3>",
+            "text": "<p><strong>BACK TO</strong></p><h3>Our Story →</h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
