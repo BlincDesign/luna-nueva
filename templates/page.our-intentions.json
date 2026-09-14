@@ -358,6 +358,37 @@
         "padding_bottom_mb": 40
       }
     },
+    "rich_text_j7jD4q": {
+      "type": "rich-text",
+      "blocks": {
+        "button_zTUUgw": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://collections/all",
+            "link_text": "shop luna nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_zTUUgw"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": true,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": false,
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 8
+      }
+    },
     "newsletter_bWQygA": {
       "type": "newsletter",
       "blocks": {
@@ -425,6 +456,7 @@
     "text_columns_tDGG3i",
     "custom_rich_text_columns_WrjTQ8",
     "text_columns_P9hWXg",
+    "rich_text_j7jD4q",
     "newsletter_bWQygA"
   ]
 }
