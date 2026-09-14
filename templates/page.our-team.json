@@ -74,10 +74,43 @@
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
       }
+    },
+    "slideshow_3Nhhhk": {
+      "type": "slideshow",
+      "blocks": {
+        "image_4U8NNY": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "A good life is food, drinks, and the people you share them with.",
+            "link": "",
+            "link_text": "",
+            "image": "shopify://shop_images/team-room-wide.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_4U8NNY"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true,
+        "content_color_scheme": ""
+      }
     }
   },
   "order": [
     "main",
-    "custom_media_gallery_9APyLM"
+    "custom_media_gallery_9APyLM",
+    "slideshow_3Nhhhk"
   ]
 }
