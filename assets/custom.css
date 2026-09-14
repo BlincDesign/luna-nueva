@@ -303,7 +303,7 @@ strong:has(em) em {
 
 .site-nav__dropdown li .site-nav__dropdown-link {
     background: var(--colorDrawers);
-    color: #fff;
+    color: var(--header-text-secondary);
 }
 
 .site-nav__dropdown li:hover {
