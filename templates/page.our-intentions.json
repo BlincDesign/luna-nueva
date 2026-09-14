@@ -140,6 +140,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "full_width": false,
+        "position": "left",
         "content_width": 35,
         "flow_right": true,
         "tile_width_min": 240,
@@ -251,7 +252,7 @@
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
             "enlarge_text": false,
-            "text_color": "#F9F6F1",
+            "text_color": "#f9f6f1",
             "text_width": 600,
             "margin_bottom": 24
           }
@@ -267,6 +268,7 @@
         "text_LVNkFk",
         "form_FBcXjw"
       ],
+      "disabled": true,
       "name": "t:sections.newsletter.presets.email_signup.name",
       "settings": {
         "color_scheme": "scheme-1",
