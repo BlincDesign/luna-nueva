@@ -1109,6 +1109,7 @@ a.pdl__right {
 
 .pdp-gallery__stage {
   height: var(--gallery-height, 70vh);
+  position: relative;
 }
 
 .pdp-gallery__stage [data-product-photos],
