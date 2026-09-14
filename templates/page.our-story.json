@@ -14,6 +14,83 @@
       "disabled": true,
       "settings": {}
     },
+    "custom_rich_text_columns_MaNMBN": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_GkMLQ9": {
+          "type": "preheading",
+          "settings": {
+            "title": "LUNA NUEVA STORY",
+            "position": "left"
+          }
+        },
+        "heading_C8y6Vp": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Story",
+            "position": "left"
+          }
+        },
+        "divider_f3tptC": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#8B8B8B",
+            "divider_width": 100,
+            "divider_height": 1,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 30
+          }
+        },
+        "text_DX6iBb": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Born in the Mountains.</strong></p><p><strong>Made for the Sea.</strong></p><p><em><strong>Guided by the Moon.</strong></em></p>",
+            "position": "left"
+          }
+        },
+        "text_KYyp7w": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h4>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery, NOM 1414 — one of the most respected producers in Mexico, where the craft of tequila runs generations deep.</h4><p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise. The liquid was built with integrity before the brand had a name.<br/><br/></p>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_GkMLQ9",
+        "heading_C8y6Vp",
+        "divider_f3tptC",
+        "text_DX6iBb",
+        "text_KYyp7w"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "hero_video_g7Yadw": {
       "type": "hero-video",
       "name": "t:sections.hero-video.presets.video_hero.name",
@@ -33,6 +110,7 @@
   },
   "order": [
     "main",
+    "custom_rich_text_columns_MaNMBN",
     "hero_video_g7Yadw"
   ]
 }
