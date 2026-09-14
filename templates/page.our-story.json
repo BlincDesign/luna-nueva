@@ -185,6 +185,67 @@
         "header_secondary": false,
         "stylized_bg": true,
         "full_width": false,
+        "position": "left",
+        "content_width": 35,
+        "flow_right": false,
+        "tile_width_min": 240,
+        "tile_width_max": 360,
+        "row_height": 220,
+        "tile_width_mobile_min": 150,
+        "tile_width_mobile_max": 280,
+        "row_height_mobile": 150,
+        "gap": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
+    "custom_media_gallery_YmgTwq": {
+      "type": "custom__media-gallery",
+      "blocks": {
+        "content_jdriaT": {
+          "type": "content",
+          "settings": {
+            "eyebrow": "Her answer",
+            "heading": "The answer she built for it.",
+            "heading_size": "h2",
+            "show_divider": true,
+            "body": "<p>Luna Nueva is the answer she built for that question. Made with craft and integrity, it exists in the same world she has always lived in — where the culture is coastal, alive, and ready for anything. Where the table matters, the people at it matter, and what you pour says something real about how you choose to live.</p>",
+            "button_label": "three expressions",
+            "button_url": "shopify://collections/all"
+          }
+        },
+        "image_488UqN": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/ev-airstream.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        },
+        "image_epATBg": {
+          "type": "image",
+          "settings": {
+            "tall": true,
+            "image_one": "shopify://shop_images/press-beach.jpg",
+            "image_one_caption": "",
+            "image_two_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_jdriaT",
+        "image_488UqN",
+        "image_epATBg"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "full_width": false,
         "position": "right",
         "content_width": 35,
         "flow_right": false,
@@ -218,11 +279,10 @@
             "divider_bg": "#8b8b8b",
             "divider_width": 90,
             "divider_height": 1,
-            "icon_size": 30,
+            "enable_icon": false,
             "icon_color": "#f9f6f1",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "enable_icon": false,
-            "icon": "chat",
+            "icon_size": 30,
             "margin_top": 30,
             "margin_bottom": 30
           }
@@ -333,6 +393,7 @@
     "hero_video_g7Yadw",
     "slideshow_VYRq3X",
     "custom_media_gallery_nUaQF9",
+    "custom_media_gallery_YmgTwq",
     "rich_text_hqBVKz",
     "text_columns_zEEQiD",
     "rich_text_tcgtMa"
