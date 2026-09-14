@@ -147,7 +147,7 @@
         "thumbnail_arrows": false,
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "padding_top": 30,
+        "padding_top": 90,
         "padding_bottom": 0,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
