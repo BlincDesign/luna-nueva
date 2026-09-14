@@ -21,6 +21,7 @@
           "type": "preheading",
           "settings": {
             "title": "LUNA NUEVA STORY",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -50,16 +51,22 @@
         "text_DX6iBb": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<h5><strong>Born in the Mountains.</strong></h5><h5><strong>Made for the Sea.</strong></h5><h5><em><strong>Guided by the Moon.</strong></em></h5>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
         "text_KYyp7w": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<h4>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery, NOM 1414 — one of the most respected producers in Mexico, where the craft of tequila runs generations deep.</h4><p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise. The liquid was built with integrity before the brand had a name.<br/><br/></p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -76,11 +83,14 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 50,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -151,6 +161,7 @@
             "heading_size": "h2",
             "show_divider": true,
             "body": "<p>Co-Founder & CEO, Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap — something missing for her generation.</p><p>A generation of people who had already redefined how they eat, where they shop, what they put in their bodies, and a tequila category that had not caught up. They were still selling heritage and legacy to people who were asking a different question entirely: is it honest? Is it clean? Does it belong to my life?</p>",
+            "enlarge_text": true,
             "button_label": "",
             "button_url": ""
           }
@@ -182,7 +193,7 @@
       "name": "Media gallery",
       "settings": {
         "color_scheme": "scheme-6",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "full_width": false,
         "position": "left",
@@ -212,6 +223,7 @@
             "heading_size": "h2",
             "show_divider": true,
             "body": "<p>Luna Nueva is the answer she built for that question. Made with craft and integrity, it exists in the same world she has always lived in — where the culture is coastal, alive, and ready for anything. Where the table matters, the people at it matter, and what you pour says something real about how you choose to live.</p>",
+            "enlarge_text": true,
             "button_label": "three expressions",
             "button_url": "shopify://collections/all"
           }
