@@ -34,7 +34,7 @@
         "text_46QaL9": {
           "type": "text",
           "settings": {
-            "enlarge_text": false,
+            "enlarge_text": true,
             "text": "<h5>Luna Nueva was built around the belief that life is better when the conditions are right, and that the most important condition is presence.</h5>",
             "position": "right"
           }
