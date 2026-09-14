@@ -132,12 +132,37 @@
             "image_one_caption": "",
             "position": "left"
           }
+        },
+        "preheading_gaUzMW": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "right"
+          }
+        },
+        "heading_fdTtiK": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "right"
+          }
+        },
+        "media_qyfTHH": {
+          "type": "media",
+          "settings": {
+            "image_one": "shopify://shop_images/team-founder.jpg",
+            "image_one_caption": "",
+            "position": "right"
+          }
         }
       },
       "block_order": [
         "preheading_qK3XXk",
         "heading_TRGNQU",
-        "media_TR33z4"
+        "media_TR33z4",
+        "preheading_gaUzMW",
+        "heading_fdTtiK",
+        "media_qyfTHH"
       ],
       "name": "Rich text columns",
       "settings": {
