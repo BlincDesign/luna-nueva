@@ -306,7 +306,7 @@
       LEFT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }}">
+    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}">
       {%- assign left_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'left' -%}
@@ -587,7 +587,7 @@
       RIGHT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }}">
+    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}">
       {%- assign right_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {%- if block.settings.position == 'right' -%}
@@ -918,6 +918,12 @@
       "default": "left"
     },
     {
+      "type": "text_alignment",
+      "id": "left_text_align_mb",
+      "label": "Horizontal alignment mobile",
+      "default": "left"
+    },
+    {
       "type": "select",
       "id": "left_vertical_align",
       "label": "Vertical alignment",
@@ -955,6 +961,12 @@
       "type": "text_alignment",
       "id": "right_text_align",
       "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align_mb",
+      "label": "Horizontal alignment mobile",
       "default": "left"
     },
     {
