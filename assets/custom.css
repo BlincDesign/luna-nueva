@@ -1120,10 +1120,6 @@ a.pdl__right {
     padding: 32px;
 }
 
-.starting-slide .pdp-gallery__frame .image-wrap img {
-    object-fit: contain;
-}
-
 /* .starting-slide .pdp-gallery__frame::before,
 .starting-slide .pdp-gallery__frame::after {
     content: "";
@@ -1339,4 +1335,9 @@ a.pdl__right {
 
 .product__video {
     object-fit: cover;
+}
+
+
+.starting-slide .pdp-gallery__frame .image-wrap img {
+    object-fit: contain;
 }
