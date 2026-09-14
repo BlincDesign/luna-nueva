@@ -1102,11 +1102,11 @@ a.pdl__right {
     --pdp-gallery-media-ar: 1 / 1.321;
     --pdp-gallery-arch-r: 50% 50% 0 0 / 38% 38% 0 0;
 }
-
+/* 
 .pdp-gallery__frame {
     position: relative;
     padding: clamp(14px, 2.4vw, 32px);
-}
+} */
 
 .starting-slide .pdp-gallery__frame {
     height: 100%;
@@ -1114,6 +1114,10 @@ a.pdl__right {
     width: auto;
     /* box-sizing: border-box;
     overflow: hidden; */
+}
+
+.starting-slide {
+    padding: 32px;
 }
 
 /* .starting-slide .pdp-gallery__frame::before,
