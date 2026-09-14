@@ -106,11 +106,62 @@
         "lazyload_images": true,
         "content_color_scheme": ""
       }
+    },
+    "custom_rich_text_columns_P6dhUJ": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_qK3XXk": {
+          "type": "preheading",
+          "settings": {
+            "title": "IN THE WILD",
+            "position": "left"
+          }
+        },
+        "heading_TRGNQU": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left"
+          }
+        },
+        "media_TR33z4": {
+          "type": "media",
+          "settings": {
+            "image_one": "shopify://shop_images/team-founder.jpg",
+            "image_one_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "preheading_qK3XXk",
+        "heading_TRGNQU",
+        "media_TR33z4"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
     "custom_media_gallery_9APyLM",
-    "slideshow_3Nhhhk"
+    "slideshow_3Nhhhk",
+    "custom_rich_text_columns_P6dhUJ"
   ]
 }
