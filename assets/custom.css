@@ -65,10 +65,10 @@ em:has(strong) strong {
     font-style: normal;
 }
 
-em:has(strong) strong {
+span[style="text-decoration:underline"]:has(em:has(strong)) {
     color: rgb(var(--color-accent));
     font-weight: normal;
-    font-style: normal;
+    text-decoration: none;
 }
 
 .svg-mask--rounded-corners {
