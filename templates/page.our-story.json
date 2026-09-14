@@ -148,9 +148,9 @@
       ],
       "name": "Media gallery",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-6",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "full_width": false,
         "content_width": 35,
         "flow_right": false,
