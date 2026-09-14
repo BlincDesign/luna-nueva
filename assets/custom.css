@@ -1201,19 +1201,6 @@ a.pdl__right {
     object-fit: cover;
 }
 
-.pdp-gallery__count {
-    position: absolute;
-    top: clamp(10px, 1.4vw, 18px);
-    right: clamp(10px, 1.4vw, 18px);
-    z-index: 3;
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-    font-weight: 700;
-    font-size: var(--type-caption-size);
-    letter-spacing: 0.15em;
-    color: rgba(var(--color-foreground), 0.7);
-    font-variant-numeric: tabular-nums;
-    pointer-events: none;
-}
 
 .pdp-gallery__nav {
     position: absolute;
