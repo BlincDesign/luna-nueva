@@ -128,10 +128,11 @@
             "divider_bg": "#606264",
             "divider_width": 100,
             "divider_height": 2,
-            "enable_icon": true,
-            "icon_color": "#f9f6f1",
-            "icon": "crescent-moon",
             "icon_size": 30,
+            "icon_color": "#D39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "enable_icon": true,
+            "icon": "crescent-moon",
             "margin_top": 0,
             "margin_bottom": 86
           }
@@ -171,7 +172,6 @@
             "subheading": "Bring your brand to life",
             "link": "",
             "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
@@ -184,7 +184,6 @@
             "subheading": "And big, beautiful imagery",
             "link": "",
             "link_text": "Optional button",
-            "text_align": "vertical-bottom horizontal-left",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
@@ -203,7 +202,8 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "content_color_scheme": ""
       }
     },
     "featured-collection-switcher": {
@@ -517,10 +517,11 @@
             "divider_bg": "#2d3135",
             "divider_width": 100,
             "divider_height": 1,
-            "enable_icon": false,
-            "icon_color": "#f9f6f1",
-            "icon": "chat",
             "icon_size": 30,
+            "icon_color": "#f9f6f1",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "enable_icon": false,
+            "icon": "chat",
             "margin_top": 30,
             "margin_bottom": 0
           }
@@ -634,9 +635,7 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
-        "full_width": false,
         "layout_type": "grid",
-        "flow_right": false,
         "columns": 3,
         "gap": 52,
         "gap_mb": 16,
@@ -785,6 +784,7 @@
           "settings": {
             "eyebrow": "Bring the Party",
             "heading": "The bottle you grab before the night starts.",
+            "heading_size": "h2",
             "show_divider": true,
             "body": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.</p>",
             "button_label": "See what's coming up",
@@ -1138,9 +1138,7 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
-        "full_width": false,
         "layout_type": "slider",
-        "flow_right": true,
         "columns": 4,
         "gap": 28,
         "gap_mb": 16,
