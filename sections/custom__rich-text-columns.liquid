@@ -396,7 +396,7 @@
                     </div>
 
                   {%- elsif block.settings.image_one != blank -%}
-                    <div class="theme-block--image">
+                    <div class="theme-block--image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
                       {%- render 'image-element',
                         img: block.settings.image_one,
                         widths: '300, 400, 600, 800, 1000, 1200, 1600',
