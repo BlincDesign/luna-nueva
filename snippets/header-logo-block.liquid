@@ -66,29 +66,8 @@
     {%- capture mobile_sizes -%}{{ section.settings.mobile_logo_width }}px{%- endcapture -%}
     {%- capture mobile_widths -%}{{ section.settings.mobile_logo_width }}, {{ section.settings.mobile_logo_width | times: 2 }}{%- endcapture -%}
 
-    {%- render 'image-element',
-      img: section.settings.logo,
-      img_width: width,
-      img_height: height,
-      img_tag_width: section.settings.desktop_logo_width,
-      sizes: sizes,
-      widths: widths,
-      classes: 'small--hide',
-      loading: 'eager',
-      alt: section.settings.logo.alt | default: shop.name,
-      itemprop: 'logo',
-    -%}
-    {%- render 'image-element',
-      img: section.settings.logo,
-      img_width: mobile_width,
-      img_height: mobile_height,
-      img_tag_width: section.settings.desktop_logo_width,
-      sizes: mobile_sizes,
-      widths: mobile_widths,
-      classes: 'medium-up--hide',
-      loading: 'eager',
-      alt: section.settings.logo.alt | default: shop.name,
-    -%}
+    {%- render 'image-element', img: section.settings.logo, img_width: width, img_height: height, img_tag_width: section.settings.desktop_logo_width, sizes: sizes, widths: widths, classes: 'small--hide', loading: 'eager', alt: section.settings.logo.alt, default: shop.name, itemprop: 'logo' -%}
+    {%- render 'image-element', img: section.settings.logo, img_width: mobile_width, img_height: mobile_height, img_tag_width: section.settings.desktop_logo_width, sizes: mobile_sizes, widths: mobile_widths, classes: 'medium-up--hide', loading: 'eager', alt: section.settings.logo.alt, default: shop.name -%}
   </a>
   {%- if section.settings.logo-inverted -%}
     <a
@@ -109,29 +88,8 @@
       {%- capture mobile_sizes -%}{{ section.settings.mobile_logo_width }}px{%- endcapture -%}
       {%- capture mobile_widths -%}{{ section.settings.mobile_logo_width }}, {{ section.settings.mobile_logo_width | times: 2 }}{%- endcapture -%}
 
-      {%- render 'image-element',
-        img: section.settings.logo-inverted,
-        img_width: width,
-        img_height: height,
-        img_tag_width: section.settings.desktop_logo_width,
-        sizes: sizes,
-        widths: widths,
-        classes: 'small--hide',
-        loading: 'eager',
-        alt: section.settings.logo-inverted.alt | default: shop.name,
-        itemprop: 'logo',
-      -%}
-      {%- render 'image-element',
-        img: section.settings.logo-inverted,
-        img_width: mobile_width,
-        img_height: mobile_height,
-        img_tag_width: section.settings.mobile_logo_width,
-        sizes: mobile_sizes,
-        widths: mobile_widths,
-        classes: 'medium-up--hide',
-        loading: 'eager',
-        alt: section.settings.logo-inverted.alt | default: shop.name,
-      -%}
+      {%- render 'image-element', img: section.settings.logo-inverted, img_width: width, img_height: height, img_tag_width: section.settings.desktop_logo_width, sizes: sizes, widths: widths, classes: 'small--hide', loading: 'eager', alt: section.settings.logo-inverted.alt, default: shop.name, itemprop: 'logo' -%}
+      {%- render 'image-element', img: section.settings.logo-inverted, img_width: mobile_width, img_height: mobile_height, img_tag_width: section.settings.mobile_logo_width, sizes: mobile_sizes, widths: mobile_widths, classes: 'medium-up--hide', loading: 'eager', alt: section.settings.logo-inverted.alt, default: shop.name -%}
     </a>
   {%- endif -%}
 {%- else -%}
@@ -159,3 +117,80 @@
     </div>
   {%- endif -%}
 {%- endunless -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'image-element',
+          img: section.settings.logo,
+          img_width: width,
+          img_height: height,
+          img_tag_width: section.settings.desktop_logo_width,
+          sizes: sizes,
+          widths: widths,
+          classes: 'small--hide',
+          loading: 'eager',
+          alt: section.settings.logo.alt | default: shop.name,
+          itemprop: 'logo',
+        -%}
+  to: "{%- render 'image-element', img: section.settings.logo, img_width: width, img_height:
+    height, img_tag_width: section.settings.desktop_logo_width, sizes: sizes, widths:
+    widths, classes: 'small--hide', loading: 'eager', alt: section.settings.logo.alt,
+    default: shop.name, itemprop: 'logo' -%}"
+  position: 2993..3283
+- from: |-
+    {%- render 'image-element',
+          img: section.settings.logo,
+          img_width: mobile_width,
+          img_height: mobile_height,
+          img_tag_width: section.settings.desktop_logo_width,
+          sizes: mobile_sizes,
+          widths: mobile_widths,
+          classes: 'medium-up--hide',
+          loading: 'eager',
+          alt: section.settings.logo.alt | default: shop.name,
+        -%}
+  to: "{%- render 'image-element', img: section.settings.logo, img_width: mobile_width,
+    img_height: mobile_height, img_tag_width: section.settings.desktop_logo_width,
+    sizes: mobile_sizes, widths: mobile_widths, classes: 'medium-up--hide', loading:
+    'eager', alt: section.settings.logo.alt, default: shop.name -%}"
+  position: 3288..3592
+- from: |-
+    {%- render 'image-element',
+            img: section.settings.logo-inverted,
+            img_width: width,
+            img_height: height,
+            img_tag_width: section.settings.desktop_logo_width,
+            sizes: sizes,
+            widths: widths,
+            classes: 'small--hide',
+            loading: 'eager',
+            alt: section.settings.logo-inverted.alt | default: shop.name,
+            itemprop: 'logo',
+          -%}
+  to: "{%- render 'image-element', img: section.settings.logo-inverted, img_width:
+    width, img_height: height, img_tag_width: section.settings.desktop_logo_width,
+    sizes: sizes, widths: widths, classes: 'small--hide', loading: 'eager', alt: section.settings.logo-inverted.alt,
+    default: shop.name, itemprop: 'logo' -%}"
+  position: 4840..5148
+- from: |-
+    {%- render 'image-element',
+            img: section.settings.logo-inverted,
+            img_width: mobile_width,
+            img_height: mobile_height,
+            img_tag_width: section.settings.mobile_logo_width,
+            sizes: mobile_sizes,
+            widths: mobile_widths,
+            classes: 'medium-up--hide',
+            loading: 'eager',
+            alt: section.settings.logo-inverted.alt | default: shop.name,
+          -%}
+  to: "{%- render 'image-element', img: section.settings.logo-inverted, img_width:
+    mobile_width, img_height: mobile_height, img_tag_width: section.settings.mobile_logo_width,
+    sizes: mobile_sizes, widths: mobile_widths, classes: 'medium-up--hide', loading:
+    'eager', alt: section.settings.logo-inverted.alt, default: shop.name -%}"
+  position: 5155..5476
+{% endcomment %}
