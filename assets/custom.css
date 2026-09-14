@@ -540,7 +540,7 @@ a.pdl__right {
     align-items: flex-end;
     justify-content: center;
     padding: 70px 24px 0px;
-    margin-bottom: 24px;
+    margin: auto auto 24px auto;
     transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
