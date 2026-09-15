@@ -670,7 +670,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>IN THE WILD</strong>",
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "left"
           }
         },
