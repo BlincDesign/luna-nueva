@@ -22,14 +22,16 @@
           "settings": {
             "title": "<strong>BRING THE PARTY</strong>",
             "enable_fade": true,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_kW39JE": {
           "type": "heading",
           "settings": {
             "title": "For the nights that turn into something nobody planned.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_KBqznW": {
@@ -40,7 +42,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -135,7 +138,7 @@
         "content_width": 35,
         "flow_right": true,
         "tile_width_min": 240,
-        "tile_width_max": 360,
+        "tile_width_max": 260,
         "row_height": 280,
         "tile_width_mobile_min": 150,
         "tile_width_mobile_max": 280,
@@ -155,14 +158,16 @@
           "settings": {
             "title": "PAST NIGHTS",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_kQW6H7": {
           "type": "heading",
           "settings": {
             "title": "Everything thatalready happened.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_86nrbW": {
@@ -173,7 +178,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
