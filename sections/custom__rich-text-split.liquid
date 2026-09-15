@@ -1,0 +1,706 @@
+{% style %}
+  #rich-text-split-{{ section.id }} {
+    position: relative;
+    overflow: clip;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  /* Full-bleed color background layer, split at the exact same point as the real columns */
+  #rich-text-split-{{ section.id }} .split__bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  #rich-text-split-{{ section.id }} .split__bg-panel--left {
+    width: {{ section.settings.left_column_width }}%;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    padding-left: calc((100vw - 100%) / 2);
+    box-sizing: content-box;
+  }
+
+  #rich-text-split-{{ section.id }} .split__bg-panel--right {
+    width: {{ section.settings.right_column_width }}%;
+    margin-right: calc(-1 * (100vw - 100%) / 2);
+    padding-right: calc((100vw - 100%) / 2);
+    box-sizing: content-box;
+  }
+
+  #rich-text-split-{{ section.id }} .split__main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  {% if section.settings.enable_vertical_divider %}
+    #rich-text-split-{{ section.id }} .split__main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgb(var(--color-border));
+      transform: translateX(-50%);
+    }
+  {% endif %}
+
+  #rich-text-split-{{ section.id }} .split__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #rich-text-split-{{ section.id }} .split__column--left {
+    flex: 0 1 calc({{ section.settings.left_column_width }}% - 10px);
+    justify-content: {{ section.settings.left_vertical_align }};
+  }
+
+  #rich-text-split-{{ section.id }} .split__column--right {
+    flex: 0 1 calc({{ section.settings.right_column_width }}% - 10px);
+    justify-content: {{ section.settings.right_vertical_align }};
+  }
+
+  #rich-text-split-{{ section.id }} .split__column .h4,
+  #rich-text-split-{{ section.id }} .split__column h4,
+  #rich-text-split-{{ section.id }} .split__column .h5,
+  #rich-text-split-{{ section.id }} .split__column h5,
+  #rich-text-split-{{ section.id }} .split__column .h6,
+  #rich-text-split-{{ section.id }} .split__column h6,
+  #rich-text-split-{{ section.id }} .split__column p {
+    margin-bottom: 0;
+  }
+
+  #rich-text-split-{{ section.id }} h2 {
+    margin: 0;
+  }
+
+  {% for block in section.blocks %}
+    {% if block.type == 'divider' %}
+      #block-{{ block.id }} .split__divider-wrapper,
+      #block-{{ block.id }} .split__divider--icon {
+        display: flex;
+        justify-content: {{ section.settings.left_text_align }};
+      }
+
+      #block-{{ block.id }} .split__divider {
+        position: relative;
+        width: {{ block.settings.divider_width }}%;
+        height: {{ block.settings.divider_height }}px;
+        background: {{ block.settings.divider_bg }};
+      }
+
+      {% if block.settings.enable_divider %}
+        #block-{{ block.id }} .split__divider {
+          margin-block-start: {{ block.settings.margin_top }}px;
+          margin-block-end: {{ block.settings.margin_bottom }}px;
+        }
+      {% else %}
+        #block-{{ block.id }} .split__divider--icon {
+          margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+          margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+        }
+      {% endif %}
+
+      #block-{{ block.id }} .split__divider--icon {
+        {% if block.settings.enable_divider %}
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        {% else %}
+          position: relative;
+        {% endif %}
+      }
+
+      #block-{{ block.id }} .split__divider--icon .icon,
+      #block-{{ block.id }} .split__divider--icon img {
+        display: block;
+        width: {{ block.settings.icon_size }}px;
+        height: {{ block.settings.icon_size }}px;
+        color: {{ block.settings.icon_color }};
+      }
+
+      @media screen and (max-width: 589px) {
+        #block-{{ block.id }} .split__divider {
+          width: 100%;
+        }
+      }
+    {% endif %}
+  {% endfor %}
+
+  @media screen and (max-width: 589px) {
+    #rich-text-split-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+
+    #rich-text-split-{{ section.id }} .split__bg {
+      display: none;
+    }
+
+    #rich-text-split-{{ section.id }} .split__main {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    #rich-text-split-{{ section.id }} .split__main::before {
+      display: none;
+    }
+
+    #rich-text-split-{{ section.id }} .split__column--left,
+    #rich-text-split-{{ section.id }} .split__column--right {
+      width: 100%;
+      flex: unset;
+      position: relative;
+      margin-inline: calc(-1 * (100vw - 100%) / 2);
+      padding-inline: calc((100vw - 100%) / 2 + 20px);
+      padding-block: 24px;
+    }
+  }
+{% endstyle %}
+
+<div
+  id="rich-text-split-{{ section.id }}"
+  class="rich-text-split{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+>
+  <div class="split__bg" aria-hidden="true">
+    <div class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}"></div>
+    <div class="split__bg-panel split__bg-panel--right color-{{ section.settings.right_color_scheme }}"></div>
+  </div>
+
+  <div class="split__main page-width {{ section.settings.custom_class }}">
+
+    {%- comment -%} LEFT COLUMN — driven by blocks {%- endcomment -%}
+    <div
+      class="split__column split__column--left color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
+      data-aos
+    >
+      {%- for block in section.blocks -%}
+        {% liquid
+          capture margin_bottom
+            echo 'margin-bottom: ' | append: block.settings.margin_bottom | append: 'px'
+          endcapture
+        %}
+        <div id="block-{{ block.id }}" class="block-{{ block.type }}" {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'preheading' -%}
+              <div
+                class="theme-block subheading {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                style="{{ margin_bottom }}"
+              >
+                {{ block.settings.title }}
+              </div>
+
+            {%- when 'heading' -%}
+              <div
+                class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                style="{{ margin_bottom }}"
+              >
+                <h2>{{ block.settings.title }}</h2>
+              </div>
+
+            {%- when 'divider' -%}
+              {% if block.settings.enable_divider %}
+                <div class="split__divider-wrapper">
+                  <div class="split__divider">
+              {% endif %}
+              {% if block.settings.enable_icon %}
+                <div class="split__divider--icon">
+                  {% if block.settings.custom_icon != blank %}
+                    {{
+                      block.settings.custom_icon
+                      | image_url: width: 80
+                      | image_tag: loading: 'lazy', widths: '40, 80', sizes: '40px'
+                    }}
+                  {% elsif block.settings.icon != blank %}
+                    {% render 'icon', name: block.settings.icon %}
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if block.settings.enable_divider %}
+                  </div>
+                </div>
+              {% endif %}
+
+            {%- when 'text' -%}
+              <div
+                class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}"
+                style="{{ margin_bottom }}"
+              >
+                <div
+                  class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {% if block.settings.subheading %}subheading{% endif %}"
+                  data-block-id="{{ block.id }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.enlarge_text -%}
+                      <div class="enlarge-text">{{ block.settings.text }}</div>
+                    {%- else -%}
+                      {{ block.settings.text }}
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ 'home_page.onboarding.no_content' | t }}
+                  {%- endif -%}
+                </div>
+              </div>
+
+            {%- when 'button' -%}
+              <div
+                class="theme-block theme-block__buttons theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                data-block-id="{{ block.id }}"
+                style="{{ margin_bottom }}"
+              >
+                {% render 'button',
+                  label: block.settings.link_text,
+                  url: block.settings.link,
+                  type: block.settings.button_type,
+                  arrow: true
+                %}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} RIGHT COLUMN — single richtext from section settings {%- endcomment -%}
+    <div
+      class="split__column split__column--right color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
+      data-aos
+    >
+      <div class="theme-block__text">
+        {%- if section.settings.right_text != blank -%}
+          {{ section.settings.right_text }}
+        {%- else -%}
+          {{ 'home_page.onboarding.no_content' | t }}
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich text split",
+  "class": "rich-text-split-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_vertical_divider",
+      "label": "Vertical divider",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "header",
+      "content": "Left column"
+    },
+    {
+      "type": "color_scheme",
+      "id": "left_color_scheme",
+      "label": "Left column color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "left_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "left_text_align_mb",
+      "label": "Horizontal alignment mobile",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "left_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Right column"
+    },
+    {
+      "type": "color_scheme",
+      "id": "right_color_scheme",
+      "label": "Right column color scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "richtext",
+      "id": "right_text",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your brand with your customers.</p>"
+    },
+    {
+      "type": "range",
+      "id": "right_column_width",
+      "label": "Width",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align",
+      "label": "Horizontal alignment",
+      "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "right_text_align_mb",
+      "label": "Horizontal alignment mobile",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "right_vertical_align",
+      "label": "Vertical alignment",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "preheading",
+      "name": "Preheading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Eyebrow",
+          "default": "IN THE WILD"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Spacing bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Heading",
+          "default": "Where it actually gets poured."
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Spacing bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider / Icon",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_divider",
+          "label": "Enable divider",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "divider_bg",
+          "label": "Background",
+          "default": "#000",
+          "alpha": true
+        },
+        {
+          "type": "range",
+          "id": "divider_width",
+          "label": "Width",
+          "min": 30,
+          "max": 100,
+          "unit": "%",
+          "step": 5,
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "divider_height",
+          "label": "Height",
+          "min": 0.5,
+          "max": 10,
+          "unit": "px",
+          "step": 0.5,
+          "default": 2
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_icon",
+          "label": "Enable icon",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon color",
+          "default": "#f9f6f1"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon",
+          "info": "Image takes priority over icon selector"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon name",
+          "info": "Matches an icon in the theme's icon snippet"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "label": "Icon size",
+          "min": 30,
+          "max": 100,
+          "unit": "px",
+          "step": 2,
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "label": "Spacing top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Spacing bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 30
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "Enlarge text",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_italic",
+          "label": "Italic",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Spacing bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Button text",
+          "default": "SEE WHAT'S COMING UP →"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button style",
+          "default": "secondary",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "link", "label": "Link" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "label": "Spacing bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text split",
+      "blocks": [
+        { "type": "preheading" },
+        { "type": "heading" },
+        { "type": "divider" },
+        { "type": "text" },
+        { "type": "button" }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups", "header"]
+  }
+}
+{% endschema %}
