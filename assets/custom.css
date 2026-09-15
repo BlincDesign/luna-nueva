@@ -33,7 +33,7 @@ h5,
 h6 {
   font-size: var(--type-h4-size);
   line-height: 1.45;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
 }
 
 .enlarge-text * {
@@ -52,16 +52,6 @@ h6 {
   font-size: var(--type-caption-size);
 }
 
-@media screen and (max-width: 589px) { 
-.h4,
-h4,
-.h5,
-h5,
-.h6,
-h6 {
-    letter-spacing: unset;
-  }
-}
 
 .main-content .shopify-section:nth-child(1) {
   margin-top: 94px;
