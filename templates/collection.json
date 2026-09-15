@@ -67,7 +67,7 @@
         "text_akRLmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Three expressions, all 100% Blue Weber agave and all additive-free, made at the Vivanco family distillery in the Highlands of Jalisco.</strong></p>",
+            "text": "<h4>Three expressions, all 100% Blue Weber agave and all additive-free, made at the Vivanco family distillery in the Highlands of Jalisco.</h4>",
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
@@ -87,11 +87,11 @@
         "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 70,
+        "left_column_width": 68,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 30,
+        "right_column_width": 32,
         "right_text_align": "left",
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
