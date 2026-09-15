@@ -83,28 +83,32 @@
           "type": "stat",
           "settings": {
             "heading": "NOM 1414",
-            "text": "<p>Vivanco family distillery</p>"
+            "text": "<p>Vivanco family distillery</p>",
+            "enable_fade": true
           }
         },
         "stat_cQYm7Q": {
           "type": "stat",
           "settings": {
             "heading": "100+",
-            "text": "<p>Blue Weber agave</p>"
+            "text": "<p>Blue Weber agave</p>",
+            "enable_fade": true
           }
         },
         "stat_Qx4gWT": {
           "type": "stat",
           "settings": {
             "heading": "3",
-            "text": "<p>Expressions · 750ml</p>"
+            "text": "<p>Expressions · 750ml</p>",
+            "enable_fade": true
           }
         },
         "stat_fDzEHL": {
           "type": "stat",
           "settings": {
             "heading": "104",
-            "text": "<p>California accounts</p>"
+            "text": "<p>California accounts</p>",
+            "enable_fade": true
           }
         }
       },
@@ -269,7 +273,8 @@
             "image": "shopify://shop_images/ev-bartender_9c697c5a-6c87-4492-977b-c460b88585ac.jpg",
             "number": "01",
             "heading": "Tell us where you are",
-            "text": "<p>City, the kind of place it is, and who currently delivers your spirits. Two minutes.</p>"
+            "text": "<p>City, the kind of place it is, and who currently delivers your spirits. Two minutes.</p>",
+            "tags": "All"
           }
         },
         "step_3DUAa6": {
@@ -278,7 +283,8 @@
             "image": "shopify://shop_images/brand-pair.jpg",
             "number": "02",
             "heading": "We route you correctly",
-            "text": "<p>California goes to our distributor partner. Everywhere else, we come back with the options that exist in your state.</p>"
+            "text": "<p>California goes to our distributor partner. Everywhere else, we come back with the options that exist in your state.</p>",
+            "tags": "All"
           }
         },
         "step_xtF7w7": {
@@ -287,7 +293,8 @@
             "image": "shopify://shop_images/ev-longtable_b76b3703-9ff7-4ecd-8268-e0c5cda3a4e7.jpg",
             "number": "03",
             "heading": "Taste it first",
-            "text": "<p>Samples and a staff tasting before you commit to a listing, and an invitation to the next event near you.</p>"
+            "text": "<p>Samples and a staff tasting before you commit to a listing, and an invitation to the next event near you.</p>",
+            "tags": "All"
           }
         }
       },
@@ -306,6 +313,12 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
+        "tags": "All, Silver, Reposado, Añejo",
+        "tab_active_bg": "#2d3135",
+        "tab_active_text": "#ffffff",
+        "tab_inactive_bg": "#f9f6f1",
+        "tab_inactive_text": "#2d3135",
+        "tab_border_color": "#2d3135",
         "layout_type": "grid",
         "columns": 3,
         "gap": 32,
