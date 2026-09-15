@@ -136,9 +136,9 @@
         "image_cMgg66": {
           "type": "image",
           "settings": {
-            "title": "Two line\nslide titles.",
+            "title": "",
             "title_size": 80,
-            "subheading": "And big, beautiful imagery",
+            "subheading": "Specialty grocers . Bottle shops . Bars & restaurants",
             "enable_fade": false,
             "link": "",
             "link_text": "Optional button",
