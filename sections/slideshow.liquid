@@ -223,7 +223,7 @@
               {%- endif -%}
 
               {%- if hero_text -%}
-                <div class="hero__text-wrap" style="display: flex; align-items: flex-end;">
+                <div class="hero__text-wrap {% if section.settings.stylized_bg %} background-image{% endif %}" style="display: flex; align-items: flex-end;">
                   <div style="flex: 1; height: fit-content;" class="color-{{ section.settings.content_color_scheme }}">
                     <div class="page-width">
                       <div class="hero__text-content {{ block.settings.text_align }}">
@@ -292,6 +292,12 @@
       "id": "header_secondary",
       "label": "Secondary header",
       "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
       "default": false
     },
     {
