@@ -1,0 +1,72 @@
+{%- doc -%}
+
+  Renders a single image/video slot for the mobile gallery grid.
+
+  @param block {object} An 'image' type block from section.blocks
+  @param slot {string} Which media slot to render - 'one' or 'two'
+  @param modifier {string} Optional tile modifier class, e.g. 'full' for the full-width tile
+
+  @example
+  {% render 'mobile-gallery-media', block: block, slot: 'one', modifier: 'full' %}
+
+{%- enddoc -%}
+
+{%- liquid
+  if slot == 'two'
+    assign video = block.settings.video_two
+    assign image = block.settings.image_two
+    assign caption = block.settings.image_two_caption
+  else
+    assign video = block.settings.video_one
+    assign image = block.settings.image_one
+    assign caption = block.settings.image_one_caption
+  endif
+
+  if modifier == 'full'
+    assign sizes = '100vw'
+  else
+    assign sizes = '50vw'
+  endif
+-%}
+
+<div class="mobile-gallery__tile{% if modifier %} mobile-gallery__tile--{{ modifier }}{% endif %}" {{- block.shopify_attributes -}}>
+  {%- if video != blank -%}
+    <div class="media-gallery__image media-gallery__image--video">
+      {%- render 'element.video',
+        video: video,
+        autoplay: true,
+        loop: true,
+        muted: true,
+        background: true
+      -%}
+
+      {%- if caption != blank -%}
+        <span class="media-gallery__caption">
+          {{- caption -}}
+        </span>
+      {%- endif -%}
+    </div>
+
+  {%- elsif image != blank -%}
+    <div class="media-gallery__image">
+      {%- render 'image-element',
+        img: image,
+        widths: '300, 400, 600, 800, 1000, 1200, 1600',
+        sizeVariable: sizes,
+        fallback: sizes,
+        classes: 'media-gallery__image-img'
+      -%}
+
+      {%- if caption != blank -%}
+        <span class="media-gallery__caption">
+          {{- caption -}}
+        </span>
+      {%- endif -%}
+    </div>
+
+  {%- else -%}
+    <div class="media-gallery__image media-gallery__image--placeholder">
+      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+    </div>
+  {%- endif -%}
+</div>
