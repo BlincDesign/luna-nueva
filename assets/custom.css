@@ -525,6 +525,10 @@ strong:has(em) em {
     padding-left: 6px;
   }
 
+  .button--primary, .button--secondary {
+    padding: 1.02rem 1.9rem;
+  }
+
   .site-header .site-nav__link.site-nav__link--highlight {
     padding: 13.6px 16px;
   }
