@@ -40,7 +40,6 @@
   .store-locator__stat-label {
     display: block;
     margin-top: 6px;
-    font-size: var(--type-caption-size);
     text-transform: uppercase;
     opacity: 0.7;
   }
@@ -153,14 +152,14 @@
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
 
     {%- if stats_block and stats_block.settings.show_stats -%}
-      <div class="store-locator__stats has-primary--font" {{ stats_block.shopify_attributes }}>
+      <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
         <div class="store-locator__stat">
-          <span class="store-locator__stat-number" data-stat="accounts">&mdash;</span>
-          <span class="store-locator__stat-label">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
+          <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
+          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
         </div>
         <div class="store-locator__stat">
-          <span class="store-locator__stat-number" data-stat="cities">&mdash;</span>
-          <span class="store-locator__stat-label">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
+          <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
+          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
         </div>
       </div>
     {%- endif -%}
