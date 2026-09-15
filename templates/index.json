@@ -517,7 +517,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<h2>From the Highlands </h2><h2>to your table.</h2>"
+            "text": "<h2>From the Highlands<br/>to your table.</h2>"
           }
         },
         "divider_tkEFq8": {
@@ -1028,7 +1028,9 @@
       "name": "Photo Wall",
       "settings": {
         "gallery_label": "Event photos, scroll horizontally",
-        "section_background": "#2d3135",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "color_scheme": "",
         "card_background": "#f7f4ee",
         "card_text": "#2d3135",
         "padding_top": 40,
