@@ -32,6 +32,7 @@ h5,
 .h6,
 h6 {
   font-size: var(--type-h4-size);
+  line-height: 1.45;
 }
 
 .enlarge-text * {
@@ -737,7 +738,6 @@ a.pdl__right {
 
 .drawer__top-message p {
   margin: 14px 0 0;
-  font-size: var(--type-caption-size);
   opacity: 0.6;
 }
 
