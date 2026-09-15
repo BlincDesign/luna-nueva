@@ -46,7 +46,7 @@
     {% if section.blocks.size > 0 %}
       <div class="stats-grid">
         {% for block in section.blocks %}
-          <div class="stats-item {% if block.settings.enable_fade %}text--faded{% endif %}" {{ block.shopify_attributes }}>
+          <div class="stats-item" {{ block.shopify_attributes }}>
             {% if block.settings.heading != blank %}
               <h3 class="stats-heading">
                 {{ block.settings.heading }}
@@ -54,7 +54,7 @@
             {% endif %}
 
             {% if block.settings.text != blank %}
-              <div class="stats-text rte">
+              <div class="stats-text rte {% if block.settings.enable_fade %}text--faded{% endif %}">
                 {{ block.settings.text }}
               </div>
             {% endif %}
