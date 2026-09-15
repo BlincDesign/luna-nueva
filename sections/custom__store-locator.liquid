@@ -153,7 +153,7 @@
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
 
     {%- if stats_block and stats_block.settings.show_stats -%}
-      <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
+      <div class="store-locator__stats has-primary--font" {{ stats_block.shopify_attributes }}>
         <div class="store-locator__stat">
           <span class="store-locator__stat-number" data-stat="accounts">&mdash;</span>
           <span class="store-locator__stat-label">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
