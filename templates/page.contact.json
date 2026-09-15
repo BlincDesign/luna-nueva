@@ -340,6 +340,68 @@
         "padding_bottom_mb": 52
       }
     },
+    "custom_rich_text_columns_JMc7qr": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_nijDaX": {
+          "type": "preheading",
+          "settings": {
+            "title": "<strong>STOCK LUNA NUEVA</strong>",
+            "enable_fade": true,
+            "position": "left",
+            "margin_bottom": 0
+          }
+        },
+        "heading_eckXWK": {
+          "type": "heading",
+          "settings": {
+            "title": "Where it actually gets poured.",
+            "position": "left",
+            "margin_bottom": 0
+          }
+        },
+        "text_hfkrr9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Prefer email?<br/><br/><a href=\"mailto:hello@lunanuevatequila.com\" title=\"mailto:hello@lunanuevatequila.com\">hello@lunanuevatequila.com</a></p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "right",
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "preheading_nijDaX",
+        "heading_eckXWK",
+        "text_hfkrr9"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 50,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 50,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "form": {
       "type": "contact-form",
       "blocks": {
@@ -519,6 +581,7 @@
     "rich_text_kTFHaV",
     "custom_rich_text_columns_RcFzWx",
     "custom_image_columns_4cRtE3",
+    "custom_rich_text_columns_JMc7qr",
     "form",
     "rich_text_NVjGhb",
     "slideshow_RPk6bm"
