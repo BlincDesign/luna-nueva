@@ -78,7 +78,7 @@
         "content_K93THW": {
           "type": "content",
           "settings": {
-            "eyebrow": "How we gather",
+            "eyebrow": "<strong>How we gather</strong>",
             "heading": "The night that could go anywhere.",
             "heading_size": "h3",
             "show_divider": true,
