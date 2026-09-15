@@ -143,6 +143,17 @@
             "note": "<p>orange twist, Over one large cube</p>",
             "tags": "All"
           }
+        },
+        "service_YMc3YB": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/srv-horchata2.jpg",
+            "number": "04",
+            "title": "Tequila Old Fashioned",
+            "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
+            "note": "<p>orange twist, Over one large cube</p>",
+            "tags": "All"
+          }
         }
       },
       "block_order": [
@@ -150,7 +161,8 @@
         "service_A9cHEk",
         "service_iFVmFj",
         "service_WPAjcE",
-        "service_TTFPp8"
+        "service_TTFPp8",
+        "service_YMc3YB"
       ],
       "name": "Image columns",
       "settings": {
