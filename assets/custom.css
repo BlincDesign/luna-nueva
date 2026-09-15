@@ -279,7 +279,7 @@ strong:has(em) em {
 }
 
 .header-layout--center-split .site-nav.site-nav--icons {
-  padding-left: 1.1rem;
+  padding-left: 6px;
 }
 
 @media only screen and (max-width: 900px) {
