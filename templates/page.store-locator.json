@@ -14,29 +14,6 @@
       "disabled": true,
       "settings": {}
     },
-    "17894136022828b58b": {
-      "type": "apps",
-      "blocks": {
-        "stockist_store_locator_locator_block_v1_Xe9zyE": {
-          "type": "shopify://apps/stockist-store-locator/blocks/locator_block_v1/019cc9e1-93e7-7b09-8c2f-1f193ba24811",
-          "settings": {
-            "width": "custom",
-            "max_width": 1400,
-            "padding_top": 60,
-            "padding_bottom": 60,
-            "loading_message": "Loading <a href=\"https://stockist.co?ref=sabl\" target=\"_blank\">Stockist Store Locator</a>..."
-          }
-        }
-      },
-      "block_order": [
-        "stockist_store_locator_locator_block_v1_Xe9zyE"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "space_around": false
-      }
-    },
     "custom_store_locator_KB7mpr": {
       "type": "custom__store-locator",
       "blocks": {
@@ -87,41 +64,6 @@
         "padding_bottom_mb": 40
       }
     },
-    "rich_text_LYbrUx": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_BQEhcc": {
-          "type": "heading",
-          "settings": {
-            "title": "Our Story"
-          }
-        },
-        "text_PTVm9N": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Luna Nueva begins in Jalisco, Mexico, where agave grows slowly in the mountains and tradition is honored through craft. Made at Destilería El Ranchito (NOM 1414), our tequila is traditionally produced and additive-free, created from a thoughtful blend of highland and lowland agave. Rooted in respect for the land, the people, and the spirit itself, Luna Nueva reflects a commitment to purity, balance, and time-tested methods.<br/><br/>While born in Jalisco, Luna Nueva has been reimagined for how our generation gathers today. Designed around modern ritual, it’s a tequila made for hosting, connection, and moments that unfold naturally, from long dinners to coastal nights, guided by intention and the moon. Luna Nueva invites you to create your own rituals and celebrate what matters most.<br/></p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_BQEhcc",
-        "text_PTVm9N"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.rich_text.name",
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": false,
-        "color_scheme": "",
-        "align_text": "center",
-        "narrow_column": true,
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
-      }
-    },
     "text_and_image_4AM8K8": {
       "type": "text-and-image",
       "disabled": true,
@@ -167,9 +109,7 @@
   },
   "order": [
     "main",
-    "17894136022828b58b",
     "custom_store_locator_KB7mpr",
-    "rich_text_LYbrUx",
     "text_and_image_4AM8K8",
     "background_image_text_JAqUcm"
   ]
