@@ -138,7 +138,7 @@
         "content_width": 35,
         "flow_right": true,
         "tile_width_min": 240,
-        "tile_width_max": 300,
+        "tile_width_max": 260,
         "row_height": 280,
         "tile_width_mobile_min": 150,
         "tile_width_mobile_max": 280,
