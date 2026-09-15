@@ -436,11 +436,10 @@ strong:has(em) em {
 }
 
 .mobile-nav .mobile-nav__item .mobile-nav__link--sub {
-  font-size: var(--type-body-sm-size);
   padding-bottom: 0;
   opacity: 0.66;
   text-transform: uppercase;
-  padding-top: 7px;
+  padding-top: 12px;
 }
 
 .mobile-nav__link.mobile-nav__link--heading {
