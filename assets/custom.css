@@ -736,7 +736,7 @@ a.pdl__right {
 }
 
 .drawer__top-message p {
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   font-size: var(--type-caption-size);
   opacity: 0.6;
 }
