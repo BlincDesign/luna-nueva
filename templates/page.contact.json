@@ -90,7 +90,7 @@
         "stat_cQYm7Q": {
           "type": "stat",
           "settings": {
-            "heading": "100+",
+            "heading": "100%",
             "text": "<p>Blue Weber agave</p>",
             "enable_fade": true
           }
@@ -305,6 +305,17 @@
       ],
       "name": "Image columns",
       "settings": {
+        "preheading": "IN THE WILD",
+        "enable_fade_preheading": false,
+        "title": "Heading",
+        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "enlarge_text": true,
+        "subheading": false,
+        "enable_italic": false,
+        "enable_fade_text": false,
+        "link": "",
+        "link_text": "SEE WHAT'S COMING UP →",
+        "button_type": "secondary",
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
