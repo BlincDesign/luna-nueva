@@ -65,7 +65,19 @@
         "text_eazntk": {
           "type": "text",
           "settings": {
-            "text": "<p>Growing up in a household where good food and drink were celebrated nightly — seasonal ingredients, considered wine pairings, a table that was always set with intention — she developed an early understanding of hospitality and the specific pleasure of a room where everything feels right.</p><p>She spent her years in Los Angeles deepening it: specialty grocers and farmers markets, the best restaurants in the city, an ongoing education in what makes people feel well taken care of. A good life, she learned early, is built around great food, great drinks, and the people you share them with.</p>",
+            "text": "<p>Growing up in a household where good food and drink were celebrated nightly — seasonal ingredients, considered wine pairings, a table that was always set with intention — she developed an early understanding of hospitality and the specific pleasure of a room where everything feels right.</p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 20
+          }
+        },
+        "text_fQTJrB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>She spent her years in Los Angeles deepening it: specialty grocers and farmers markets, the best restaurants in the city, an ongoing education in what makes people feel well taken care of. A good life, she learned early, is built around great food, great drinks, and the people you share them with.</p>",
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
@@ -94,6 +106,7 @@
         "divider_P9iyte",
         "text_TiTchX",
         "text_eazntk",
+        "text_fQTJrB",
         "two_column_media_dpXb9X"
       ],
       "name": "Rich text columns",

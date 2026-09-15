@@ -721,10 +721,14 @@
             "margin_bottom": 18
           }
         },
-        "heading_7FY4NB": {
-          "type": "heading",
+        "text_WnbQcm": {
+          "type": "text",
           "settings": {
-            "title": "Where it actually gets poured.",
+            "text": "<h2>Where it actually<br/>gets poured.</h2>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "left",
             "margin_bottom": 0
           }
@@ -742,7 +746,7 @@
       },
       "block_order": [
         "preheading_DXAxHU",
-        "heading_7FY4NB",
+        "text_WnbQcm",
         "button_bCtMDn"
       ],
       "name": "Rich text columns",
@@ -751,7 +755,7 @@
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 50,
+        "left_column_width": 60,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
@@ -858,6 +862,7 @@
           "type": "content",
           "settings": {
             "eyebrow": "<strong>BRING THE PARTY</strong>",
+            "enable_fade_eyebrow": false,
             "heading": "The bottle you grab before the night starts.",
             "heading_size": "h2",
             "show_divider": true,
