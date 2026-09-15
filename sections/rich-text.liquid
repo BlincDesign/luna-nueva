@@ -46,6 +46,18 @@
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
+
+  {% if section.settings.enable_max_width %}
+    #rich-text-{{ section.id }} .page-width {
+      max-width: {{ section.settings.max_width_desktop }}px;
+    }
+
+    @media screen and (max-width: 589px) {
+      #rich-text-{{ section.id }} .page-width {
+        max-width: {{ section.settings.max_width_mobile }}px;
+      }
+    }
+  {% endif %}
 {% endstyle %}
 
 <div
@@ -193,6 +205,30 @@
       "id": "narrow_column",
       "label": "t:sections.rich-text.settings.narrow_column.label",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Max-width"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_max_width",
+      "label": "Enable max-width",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "max_width_desktop",
+      "label": "Desktop max-width (px)",
+      "default": 1000,
+      "visible_if": "{{ section.settings.enable_max_width }}"
+    },
+    {
+      "type": "number",
+      "id": "max_width_mobile",
+      "label": "Mobile max-width (px)",
+      "default": 400,
+      "visible_if": "{{ section.settings.enable_max_width }}"
     },
     {
       "type": "header",
