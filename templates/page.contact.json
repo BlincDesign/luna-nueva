@@ -176,7 +176,7 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#2D3135",
+            "divider_bg": "#8F9D96",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
