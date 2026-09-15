@@ -174,7 +174,7 @@
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
-          <div class="image-columns__rail" data-aos="image-columns__animation">
+          <div class="image-columns__rail aos-animate" data-aos="fade-up">
             {{ blocks_markup }}
           </div>
         {%- endcapture -%}
@@ -184,7 +184,7 @@
           label: 'Image columns, scroll horizontally'
         -%}
       {%- else -%}
-        <div class="image-columns__grid" data-aos="image-columns__animation">
+        <div class="image-columns__grid">
           {{ blocks_markup }}
         </div>
       {%- endif -%}
@@ -228,18 +228,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  [data-animate_images="true"] .image-columns__item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .no-js [data-animate_images="true"] .image-columns__item,
-  [data-animate_images="true"] .aos-animate[data-aos="image-columns__animation"] .image-columns__item {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .image-columns__step-number {

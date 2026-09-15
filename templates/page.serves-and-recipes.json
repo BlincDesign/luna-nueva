@@ -75,6 +75,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 42,
         "padding_top_mb": 56,
@@ -116,7 +117,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-7",
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 50,
@@ -130,6 +131,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 42,
         "padding_top_mb": 52,
@@ -189,7 +191,7 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "scheme-7",
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
@@ -320,6 +322,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 40,
         "padding_top_mb": 52,
@@ -467,6 +470,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mb": 0,
@@ -572,8 +576,7 @@
         "title_8Vc9ji": {
           "type": "title",
           "settings": {
-            "title": "Get invited to the next one.",
-            "heading_size": "h2",
+            "title": "<p>Get invited to the next one.</p>",
             "text_width": 600,
             "margin_bottom": 24
           }
@@ -583,7 +586,7 @@
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
             "enlarge_text": false,
-            "text_color": "#f9f6f1",
+            "enable_fade": false,
             "text_width": 600,
             "margin_bottom": 24
           }
