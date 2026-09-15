@@ -7,8 +7,6 @@
     assign tablet_columns = 2
   endif
 
-  assign columns_mobile = section.settings.columns_mobile | default: 1.2
-
   assign image_size_vw = 100 | divided_by: columns
 
   assign has_tabs = false
@@ -103,6 +101,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 40px;
+    margin-bottom: 30px;
   }
 
   .top__heading-content {
@@ -153,9 +152,7 @@
     }
 
     #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
-      flex-basis: calc(
-        (100% - {{ columns_mobile | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns_mobile }}
-      );
+      flex-basis: min(78vw, 352px);
     }
   }
 {%- endstyle -%}
@@ -253,39 +250,46 @@
 >
   <div class="page-width image-columns__inner" data-aos="fade-up">
     <div class="top__heading">
-      <div class="top__heading-content">
-        <div
-          class="theme-block subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-        >
-          {{ section.settings.preheading }}
+      {%- if section.settings.preheading != blank
+        or section.settings.title != blank
+        or section.settings.text != blank
+      -%}
+        <div class="top__heading-content">
+          {%- if section.settings.preheading != blank -%}
+            <div
+              class="theme-block subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+            >
+              {{ section.settings.preheading }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.title != blank -%}
+            <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+              <h2>
+                {{ section.settings.title }}
+              </h2>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.text != blank -%}
+            <div
+              class="theme-block theme-block__text {% if section.settings.enable_fade_text %}text--faded{% endif %}"
+            >
+              <div class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+                {%- if section.settings.enlarge_text -%}
+                  <div class="enlarge-text">
+                {%- endif -%}
+
+                {{ section.settings.text }}
+
+                {%- if section.settings.enlarge_text -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
         </div>
-
-        <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-          <h2>
-            {{ section.settings.title }}
-          </h2>
-        </div>
-
-        <div
-          class="theme-block theme-block__text {% if section.settings.enable_fade_text %}text--faded{% endif %}"
-        >
-          <div class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-            {%- if section.settings.text != blank -%}
-              {%- if section.settings.enlarge_text -%}
-                <div class="enlarge-text">
-              {%- endif -%}
-
-              {{ section.settings.text }}
-
-              {%- if section.settings.enlarge_text -%}
-                </div>
-              {%- endif -%}
-            {%- else -%}
-              {{ 'home_page.onboarding.no_content' | t }}
-            {%- endif -%}
-          </div>
-        </div>
-      </div>
+      {%- endif -%}
 
       <div class="top__heading-actions">
         {%- if has_tabs -%}
@@ -311,14 +315,16 @@
           </div>
         {%- endif -%}
 
-        <div class="theme-block theme-block__buttons appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-          {% render 'button',
-            label: section.settings.link_text,
-            url: section.settings.link,
-            type: section.settings.button_type,
-            arrow: true
-          %}
-        </div>
+        {% if section.settings.link_text != blank %}
+          <div class="theme-block theme-block__buttons appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+            {% render 'button',
+              label: section.settings.link_text,
+              url: section.settings.link,
+              type: section.settings.button_type,
+              arrow: true
+            %}
+          </div>
+        {% endif %}
       </div>
     </div>
 
@@ -349,15 +355,17 @@
   }
 
   .image-columns__tab {
+    -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: .85rem 1.4rem;
+    min-width: 96px;
     border: 1px solid transparent;
     border-radius: 999px;
     font-size: var(--type-caption-size);
-    letter-spacing: 0.05em;
+    letter-spacing: .05em;
     text-transform: uppercase;
-    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
   }
 
   .image-columns__grid {
@@ -551,6 +559,7 @@
   "tag": "section",
   "class": "section-image-columns",
   "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
     {
       "type": "header",
       "content": "Top heading"
@@ -637,7 +646,10 @@
         }
       ]
     },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
+    {
+      "type": "header",
+      "content": "Block settings"
+    },
     {
       "type": "checkbox",
       "id": "header_secondary",
@@ -685,17 +697,6 @@
       ]
     },
     { "type": "range", "id": "columns", "label": "Number of columns", "min": 1, "max": 6, "step": 1, "default": 3 },
-    {
-      "type": "range",
-      "id": "columns_mobile",
-      "label": "Number of columns (mobile)",
-      "min": 1,
-      "max": 3,
-      "step": 0.1,
-      "default": 1.2,
-      "info": "Slider layout only. Fractional values (e.g. 1.2) show a peek of the next item.",
-      "visible_if": "{{ section.settings.layout_type == 'slider' }}"
-    },
     {
       "type": "range",
       "id": "gap",
