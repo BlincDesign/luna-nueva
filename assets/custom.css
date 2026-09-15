@@ -536,6 +536,10 @@ strong:has(em) em {
   }
 }
 
+.site-header {
+  border-bottom: 1px solid var(--color-foreground);
+}
+
 /* End header and Menu */
 
 .product--page.main-content .shopify-section:nth-child(1) {
