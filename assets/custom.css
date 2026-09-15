@@ -518,7 +518,7 @@ strong:has(em) em {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  margin-bottom: 38px;
+  margin-bottom: 66px;
 }
 
 .pdl__header .heading {
