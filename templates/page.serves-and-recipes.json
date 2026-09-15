@@ -155,7 +155,8 @@
             "number": "01",
             "title": "Watermelon Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
+            "tags": "All"
           }
         },
         "service_A9cHEk": {
@@ -165,7 +166,8 @@
             "number": "02",
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>bibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>cointreau . simple syrup <strong>.25 02  each</strong></p>",
-            "note": "<p>dried hibiscub flower or lime wheel</p>"
+            "note": "<p>dried hibiscub flower or lime wheel</p>",
+            "tags": "All"
           }
         },
         "service_iFVmFj": {
@@ -175,7 +177,8 @@
             "number": "03",
             "title": "Horchata Swirl",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Almond Milk <strong>3 oz</strong></p><p>Orgeat Syrup <strong>1 oz</strong></p><p>Ground Cinnamon <strong>A Dash</strong></p>",
-            "note": "<p>Cinnamon on top, swirl before sipping</p>"
+            "note": "<p>Cinnamon on top, swirl before sipping</p>",
+            "tags": "All"
           }
         },
         "service_WPAjcE": {
@@ -185,7 +188,8 @@
             "number": "04",
             "title": "Tequila Old Fashioned",
             "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
-            "note": "<p>orange twist, Over one large cube</p>"
+            "note": "<p>orange twist, Over one large cube</p>",
+            "tags": "All"
           }
         }
       },
@@ -205,76 +209,6 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
-        "layout_type": "slider",
-        "columns": 4,
-        "gap": 28,
-        "gap_mb": 16,
-        "padding_top": 0,
-        "padding_bottom": 86,
-        "padding_top_mb": 0,
-        "padding_bottom_mb": 52
-      }
-    },
-    "custom_collections_tabs_qrctdw": {
-      "type": "custom__collections-tabs",
-      "blocks": {
-        "service_tpmBC8": {
-          "type": "service",
-          "settings": {
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>",
-            "tags": "All, Silver"
-          }
-        },
-        "service_yX6pTc": {
-          "type": "service",
-          "settings": {
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>",
-            "tags": "All"
-          }
-        },
-        "service_nJdDWn": {
-          "type": "service",
-          "settings": {
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>",
-            "tags": "All"
-          }
-        },
-        "service_cAcmcV": {
-          "type": "service",
-          "settings": {
-            "number": "01",
-            "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>",
-            "tags": "All"
-          }
-        }
-      },
-      "block_order": [
-        "service_tpmBC8",
-        "service_yX6pTc",
-        "service_nJdDWn",
-        "service_cAcmcV"
-      ],
-      "name": "Collection tabs",
-      "settings": {
-        "color_scheme": "",
-        "header_secondary": false,
-        "stylized_bg": false,
-        "number_color": "#9b3a15",
-        "card_background": "#f9f6f1",
-        "card_text_color": "#2d3135",
-        "accent_color": "#9b3a15",
-        "track_color": "#2d3135",
         "tags": "All, Silver, Reposado, Añejo",
         "tab_active_bg": "#2d3135",
         "tab_active_text": "#ffffff",
@@ -283,12 +217,12 @@
         "tab_border_color": "#2d3135",
         "layout_type": "slider",
         "columns": 4,
-        "gap": 32,
+        "gap": 28,
         "gap_mb": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 0,
+        "padding_bottom": 86,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
       }
     },
     "custom_rich_text_columns_ywq3Ct": {
@@ -642,7 +576,6 @@
     "custom_rich_text_columns_KrUFGK",
     "custom_rich_text_columns_iFegyC",
     "custom_image_columns_Ycj7GX",
-    "custom_collections_tabs_qrctdw",
     "custom_rich_text_columns_ywq3Ct",
     "custom_media_gallery_xaH6wE",
     "custom_rich_text_columns_QP6dpM",
