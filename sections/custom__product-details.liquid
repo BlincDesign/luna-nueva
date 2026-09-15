@@ -12,10 +12,7 @@
   }
 {% endstyle %}
 
-<div
-  id="custom__product-details-{{ section.id }}"
-  class="color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
->
+<div id="custom__product-details-{{ section.id }}" class="color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}">
   <div class="page-width">
     <div class="pdl__header">
       <div class="pdl__heading-group">
@@ -37,7 +34,7 @@
       {%- endif -%}
     </div>
 
-    <div class="product-details__list pdl__grid" data-aos="fade-up">
+    <div class="product-details__list pdl__grid"  data-aos="fade-up">
       {%- for product in section.settings.products -%}
         {%- liquid
           assign bg_color = product.metafields.custom.grid_background.value
@@ -48,21 +45,19 @@
 
         <div class="pdc" style="--pdc-bg: {{ bg_color }};">
           <div class="pdc__arch">
-            <a class="{{ product.url }}">
-              {%- if image != blank -%}
-                {{
-                  image
-                  | image_url: width: 800
-                  | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: details.title
-                }}
-              {%- elsif product.featured_image != blank -%}
-                {{
-                  product.featured_image
-                  | image_url: width: 800
-                  | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
-                }}
-              {%- endif -%}
-            </a>
+            {%- if image != blank -%}
+              {{
+                image
+                | image_url: width: 800
+                | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: details.title
+              }}
+            {%- elsif product.featured_image != blank -%}
+              {{
+                product.featured_image
+                | image_url: width: 800
+                | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
+              }}
+            {%- endif -%}
           </div>
 
           <div class="pdc__body mb-text-center">
