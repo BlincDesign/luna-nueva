@@ -504,9 +504,9 @@
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
         "padding_top": 86,
-        "padding_bottom": 20,
+        "padding_bottom": 0,
         "padding_top_mb": 52,
-        "padding_bottom_mb": 20
+        "padding_bottom_mb": 0
       }
     },
     "text_columns_zEEQiD": {
