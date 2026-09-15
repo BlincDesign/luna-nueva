@@ -96,6 +96,30 @@
     flex: 1;
   }
 
+  .top__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .top__heading-content {
+    flex: 1 1 auto;
+    max-width: 700px;
+  }
+
+  .top__heading-actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  .top__heading-actions .image-columns__tabs {
+    margin: 0;
+  }
+
   @media screen and (max-width: 900px) {
     #custom__image_columns-{{ section.id }} .image-columns__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
@@ -105,6 +129,19 @@
       flex-basis: calc(
         (100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }}
       );
+    }
+
+    .top__heading {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .top__heading-content {
+      max-width: none;
+    }
+
+    .top__heading-actions {
+      align-items: flex-start;
     }
   }
 
@@ -211,28 +248,75 @@
   {% endif %}
 >
   <div class="page-width image-columns__inner" data-aos="fade-up">
-    {%- if has_tabs -%}
-      <div
-        class="image-columns__tabs"
-        role="tablist"
-        aria-label="Filter"
-      >
-        {%- for tag in tag_list -%}
-          {%- assign tag_label = tag | strip -%}
-          {%- assign tag_slug = tag_label | downcase | remove: ' ' -%}
+    <div class="top__heading">
+      <div class="top__heading-content">
+        <div
+          class="theme-block subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+        >
+          {{ section.settings.preheading }}
+        </div>
 
-          <button
-            type="button"
-            class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
-            data-tab-value="{{ tag_slug }}"
-            role="tab"
-            aria-selected="{% if tag_slug == default_tag %}true{% else %}false{% endif %}"
-          >
-            {{ tag_label }}
-          </button>
-        {%- endfor -%}
+        <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+          <h2>
+            {{ section.settings.title }}
+          </h2>
+        </div>
+
+        <div
+          class="theme-block theme-block__text {% if section.settings.enable_fade_text %}text--faded{% endif %}"
+        >
+          <div class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+            {%- if section.settings.text != blank -%}
+              {%- if section.settings.enlarge_text -%}
+                <div class="enlarge-text">
+              {%- endif -%}
+
+              {{ section.settings.text }}
+
+              {%- if section.settings.enlarge_text -%}
+                </div>
+              {%- endif -%}
+            {%- else -%}
+              {{ 'home_page.onboarding.no_content' | t }}
+            {%- endif -%}
+          </div>
+        </div>
       </div>
-    {%- endif -%}
+
+      <div class="top__heading-actions">
+        {%- if has_tabs -%}
+          <div
+            class="image-columns__tabs"
+            role="tablist"
+            aria-label="Filter"
+          >
+            {%- for tag in tag_list -%}
+              {%- assign tag_label = tag | strip -%}
+              {%- assign tag_slug = tag_label | downcase | remove: ' ' -%}
+
+              <button
+                type="button"
+                class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
+                data-tab-value="{{ tag_slug }}"
+                role="tab"
+                aria-selected="{% if tag_slug == default_tag %}true{% else %}false{% endif %}"
+              >
+                {{ tag_label }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="theme-block theme-block__buttons appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+          {% render 'button',
+            label: section.settings.link_text,
+            url: section.settings.link,
+            type: section.settings.button_type,
+            arrow: true
+          %}
+        </div>
+      </div>
+    </div>
 
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
@@ -577,7 +661,7 @@
       "type": "text",
       "id": "tags",
       "label": "Tabs (comma separated)",
-      "info": "Leave blank to disable tabs. First tag is the default active tab. Example: All, Silver, Reposado, Añejo",
+      "info": "Leave blank to disable tabs. First tag is the default active tab. Example: All, Silver, Reposado, Añejo"
     },
     { "type": "color", "id": "tab_active_bg", "label": "Active tab background", "default": "#2d3135" },
     { "type": "color", "id": "tab_active_text", "label": "Active tab text", "default": "#ffffff" },
