@@ -635,6 +635,7 @@ a.pdl__right {
   border-top: 1px solid rgba(var(--color-foreground), 0.24);
   font-size: var(--type-caption-size);
   text-transform: uppercase;
+  letter-spacing: .17em;
 }
 
 .pdc__row.pdc__row--foot {
@@ -841,6 +842,12 @@ a.pdl__right {
 .cart__item--variants {
   opacity: 0.6;
   font-size: var(--type-caption-size);
+}
+
+.cart__item--specs {
+  opacity: 0.6;
+  font-size: var(--type-caption-size);
+  text-transform: uppercase;
 }
 
 .cart__item-sub {
