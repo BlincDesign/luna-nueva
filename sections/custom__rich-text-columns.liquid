@@ -1,6 +1,7 @@
 {% style %}
+
       .rich-text__column .h4,.rich-text__column h4,.rich-text__column .h5,.rich-text__column h5,.rich-text__column .h6,.rich-text__column h6, .rich-text__column p {
-        margin-bottom: 0;
+        margin-bottom: 0;   
       }
 
 
@@ -90,54 +91,6 @@
       #custom__rich-text-columns-{{ section.id }} {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-
-      #custom__rich-text-columns-{{ section.id }} {
-        position: relative;
-        overflow: clip; /* prevents the bleed from creating horizontal scroll */
-      }
-
-      #custom__rich-text-columns-{{ section.id }} .rich-text__main {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Desktop: overlay layer, split matches the real columns exactly */
-      #custom__rich-text-columns-{{ section.id }} .rich-text__bg {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      #custom__rich-text-columns-{{ section.id }} .rich-text__bg-panel--left {
-        width: {{ section.settings.left_column_width }}%;
-        margin-left: calc(-1 * (100vw - 100%) / 2);
-        padding-left: calc((100vw - 100%) / 2);
-        box-sizing: content-box;
-      }
-
-      #custom__rich-text-columns-{{ section.id }} .rich-text__bg-panel--right {
-        width: {{ section.settings.right_column_width }}%;
-        margin-right: calc(-1 * (100vw - 100%) / 2);
-        padding-right: calc((100vw - 100%) / 2);
-        box-sizing: content-box;
-      }
-
-      @media screen and (max-width: 589px) {
-        /* Mobile: columns stack, so the overlay approach can't track height — kill it, color the column itself */
-        #custom__rich-text-columns-{{ section.id }} .rich-text__bg {
-          display: none;
-        }
-
-        #custom__rich-text-columns-{{ section.id }} .rich-text__column--left,
-        #custom__rich-text-columns-{{ section.id }} .rich-text__column--right {
-          position: relative;
-          margin-inline: calc(-1 * (100vw - 100%) / 2);
-          padding-inline: calc((100vw - 100%) / 2 + 20px);
-          padding-block: 24px;
-        }
       }
 
       #custom__rich-text-columns-{{ section.id }} .rich-text__main {
@@ -384,21 +337,14 @@
 
 <div
   id="custom__rich-text-columns-{{ section.id }}"
-  class="rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  class="color-{{ section.settings.color_scheme }} rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
-  <div class="rich-text__bg" aria-hidden="true">
-    <div class="rich-text__bg-panel rich-text__bg-panel--left color-{{ section.settings.left_color_scheme }}"></div>
-    <div class="rich-text__bg-panel rich-text__bg-panel--right color-{{ section.settings.right_color_scheme }}"></div>
-  </div>
   <div class="rich-text__main page-width {{ section.settings.custom_class }}">
     {%- comment -%}
       LEFT COLUMN
     {%- endcomment -%}
 
-    <div
-      class="rich-text__column rich-text__column--left color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}"
-      data-aos
-    >
+    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}" data-aos>
       {%- assign left_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {% liquid
@@ -451,7 +397,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}" class="block-{{ block.type }}">
+            <div id="block-{{ block.id }}" class="block-{{ block.type }}" >
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
@@ -707,10 +653,7 @@
       RIGHT COLUMN
     {%- endcomment -%}
 
-    <div
-      class="rich-text__column rich-text__column--right color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}"
-      data-aos
-    >
+    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}" data-aos>
       {%- assign right_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {% liquid
@@ -1051,12 +994,6 @@
       "content": "Left column"
     },
     {
-      "type": "color_scheme",
-      "id": "left_color_scheme",
-      "label": "Left column color scheme",
-      "default": "scheme-1"
-    },
-    {
       "type": "range",
       "id": "left_column_width",
       "label": "Width",
@@ -1101,12 +1038,6 @@
     {
       "type": "header",
       "content": "Right column"
-    },
-    {
-      "type": "color_scheme",
-      "id": "right_color_scheme",
-      "label": "Right column color scheme",
-      "default": "scheme-2"
     },
     {
       "type": "range",
