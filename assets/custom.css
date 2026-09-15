@@ -140,10 +140,11 @@ strong:has(em) em {
   border-color: var(--btn-border, transparent);
   color: var(--btn-color, inherit);
   font-size: var(--btn-font-size);
-  font-weight: 700;
-  letter-spacing: 0.13rem;
+  font-weight: 600;
+  letter-spacing: 0.16rem;
   text-transform: uppercase;
-  transition: background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
+  transition:
+    background-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
     border-color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
     color 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
     transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
@@ -159,7 +160,6 @@ strong:has(em) em {
   border-style: solid;
   border-radius: var(--btn-radius, 60px);
   will-change: transform;
-  font-weight: 600;
 }
 
 .button--primary:hover,
