@@ -312,7 +312,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>BEFORE DARK</p>"
+            "text": "<p><strong>BEFORE DARK</strong></p>"
           }
         },
         "text_HddwKy": {
