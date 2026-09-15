@@ -529,7 +529,7 @@
           "settings": {
             "enlarge_text": false,
             "text": "<p><strong>THE MAKING</strong></p>",
-            "enable_fade": false
+            "enable_fade": true
           }
         },
         "text_MhzT48": {
@@ -1248,16 +1248,16 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "scheme-7",
-        "preheading": "IN THE WILD",
+        "preheading": "",
         "enable_fade_preheading": false,
-        "title": "Heading",
-        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "title": "",
+        "text": "",
         "enlarge_text": true,
         "subheading": false,
         "enable_italic": false,
         "enable_fade_text": false,
         "link": "",
-        "link_text": "SEE WHAT'S COMING UP →",
+        "link_text": "",
         "button_type": "secondary",
         "header_secondary": false,
         "stylized_bg": true,
