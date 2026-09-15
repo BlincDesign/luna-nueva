@@ -26,8 +26,7 @@
         "title_LAmdTR": {
           "type": "title",
           "settings": {
-            "title": "Get invited to the next one.",
-            "heading_size": "h2",
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
             "text_width": 1000,
             "margin_bottom": 17
           }
