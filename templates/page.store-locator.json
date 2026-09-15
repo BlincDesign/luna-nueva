@@ -200,7 +200,7 @@
       "name": "t:sections.text-columns.presets.text_columns_with_images.name",
       "settings": {
         "title": "",
-        "align_text": "center",
+        "align_text": "left",
         "divider": false,
         "color_scheme": "scheme-7",
         "header_secondary": false,
