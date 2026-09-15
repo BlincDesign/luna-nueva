@@ -155,7 +155,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "A good life is food, drinks, and the people you share them with.",
-            "enable_fade": false,
+            "enable_fade": true,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/team-room-wide.jpg",
@@ -170,7 +170,7 @@
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "header_secondary": false,
-        "section_height": "650px",
+        "section_height": "700px",
         "mobile_height": "auto",
         "parallax": false,
         "style": "arrows",
