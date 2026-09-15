@@ -1088,7 +1088,7 @@
       "settings": {
         "gallery_label": "Event photos, scroll horizontally",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "color_scheme": "",
         "card_background": "#f7f4ee",
         "card_text": "#2d3135",
