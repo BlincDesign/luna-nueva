@@ -313,6 +313,9 @@
         "button_ALXCHd",
         "two_column_media_PArE7F"
       ],
+      "custom_css": [
+        ".theme-block__buttons{margin-top: 20px;}"
+      ],
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-1",
