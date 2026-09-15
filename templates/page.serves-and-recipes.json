@@ -92,10 +92,10 @@
         "service_AGRKpw": {
           "type": "service",
           "settings": {
-            "image": "shopify://shop_images/recipe-margarita.jpg",
+            "image": "shopify://shop_images/srv-watermelon.jpg",
             "number": "01",
             "title": "Watermelon Margarita",
-            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>0.75 oz</strong></p><p>Lime juice <strong>0.75 oz</strong></p><p>Agave <strong>0.5 oz</strong></p>",
             "note": "<p>Lime wheel or a watermelon wedge</p>",
             "tags": "All, Silver"
           }
