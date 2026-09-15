@@ -183,7 +183,7 @@
   }
 
   #custom__media-gallery-{{ section.id }} .text--faded {
-    opacity: 0.84; 
+    opacity: 0.84;
   }
 
   {% if section.settings.position == 'right' %}
@@ -233,7 +233,7 @@
         margin-bottom: {{ section.settings.gap_mobile }}px;
       }
     }
-    
+
   {% else %}
     @media screen and (max-width: 680px) {
       #shopify-section-{{ section.id }} .media-gallery__grid {
@@ -272,7 +272,7 @@
   {% if content_block != nil %}
     <div class="media-gallery__content" {{ content_block.shopify_attributes }}>
       {% if content_block.settings.eyebrow != blank %}
-        <p class="media-gallery__eyebrow">{{ content_block.settings.eyebrow }}</p>
+        <p class="media-gallery__eyebrow{% if content_block.settings.enable_fade_eyebrow %}text--faded{% endif %}">{{ content_block.settings.eyebrow }}</p>
       {% endif %}
       {% if content_block.settings.heading != blank %}
         {% assign heading_tag = content_block.settings.heading_size %}
@@ -540,6 +540,12 @@
           "label": "Eyebrow text",
           "info": "Small label shown above the heading.",
           "default": "Bring the Party"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade_eyebrow",
+          "label": "Lighten text",
+          "default": false
         },
         {
           "type": "text",
