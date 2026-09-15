@@ -201,13 +201,14 @@
       ],
       "name": "t:sections.marquee.presets.scrolling_text.name",
       "settings": {
+        "stylized_bg": false,
         "plus_icon": "shopify://shop_images/validated_svg.svg",
         "plus_icon_size": 13,
         "text_spacing": true,
         "direction": "left",
         "speed": 100,
-        "color_background": "#2D3135",
-        "color_text": "#FFFFFF",
+        "color_background": "#2d3135",
+        "color_text": "#ffffff",
         "padding_top": 15,
         "padding_bottom": 15
       }
@@ -271,11 +272,11 @@
         "text_HFHKk6": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Tequila Añejo · </strong></p><p><strong>13 Months · 40% </strong></p><p><strong>Alc/Vol</strong></p>",
-            "enlarge_text": true,
+            "text": "<p><strong>Tequila Añejo · <br/>13 Months · 40% <br/>Alc/Vol</strong></p>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "left",
             "margin_bottom": 0
           }

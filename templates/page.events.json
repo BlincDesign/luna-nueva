@@ -317,38 +317,66 @@
         "padding_bottom_mb": 52
       }
     },
-    "rich_text_VVnapw": {
-      "type": "rich-text",
+    "custom_rich_text_columns_TJrmmP": {
+      "type": "custom__rich-text-columns",
       "blocks": {
-        "text_YaQcNR": {
-          "type": "text",
+        "preheading_CaYYPM": {
+          "type": "preheading",
           "settings": {
-            "enlarge_text": false,
-            "text": "<p><strong>BEFORE DARK</strong></p>"
+            "title": "<strong>BEFORE DARK</strong>",
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 0
           }
         },
-        "text_HddwKy": {
+        "text_deJQDJ": {
           "type": "text",
           "settings": {
+            "text": "<h2>Long tables, tailgates<br/>and the drive out.</h2>",
             "enlarge_text": false,
-            "text": "<h2>Long tables, tailgates<br/>and the drive out.</h2>"
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 0
+          }
+        },
+        "text_Ftk69g": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DRAG ━━━</p>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
       "block_order": [
-        "text_YaQcNR",
-        "text_HddwKy"
+        "preheading_CaYYPM",
+        "text_deJQDJ",
+        "text_Ftk69g"
       ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
+      "name": "Rich text columns",
       "settings": {
+        "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
-        "color_scheme": "scheme-7",
-        "align_text": "left",
-        "narrow_column": false,
-        "enable_max_width": false,
-        "max_width_desktop": 1000,
-        "max_width_mobile": 400,
+        "enable_vertical_divider": false,
+        "left_column_width": 70,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 30,
+        "right_text_align": "right",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 10,
         "padding_top_mb": 52,
@@ -580,7 +608,7 @@
     "custom_media_gallery_YzDhtb",
     "custom_rich_text_columns_fGGjFL",
     "custom_media_gallery_hxtBJd",
-    "rich_text_VVnapw",
+    "custom_rich_text_columns_TJrmmP",
     "custom_media_gallery_EmpQyy",
     "slideshow_m7Cqia",
     "text_columns_RjXxUA",
