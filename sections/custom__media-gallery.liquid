@@ -230,20 +230,7 @@
         margin-bottom: {{ section.settings.gap_mobile }}px;
       }
     }
-    {% comment %}
-
-    @media screen and (max-width: 589px) {
-      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
-        margin-right: -20px;
-      }
-    }
-
-    @media screen and (min-width: 590px) and (max-width: 680px) {
-      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
-        margin-right: -40px;
-      }
-    }
-    {% endcomment %}
+    
   {% else %}
     @media screen and (max-width: 680px) {
       #shopify-section-{{ section.id }} .media-gallery__grid {
