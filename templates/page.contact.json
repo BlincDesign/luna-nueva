@@ -138,7 +138,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "Nothing added. Nothing hidden.",
-            "enable_fade": false,
+            "enable_fade": true,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
