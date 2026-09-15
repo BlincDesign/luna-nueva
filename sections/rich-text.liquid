@@ -48,14 +48,14 @@
     }
 
     {% if section.settings.enable_max_width %}
-      {% if block.settings.max_width_desktop != blank %}
+      {% if section.settings.max_width_desktop != blank %}
         #rich-text-{{ section.id }} .page-width {
           max-width: {{ section.settings.max_width_desktop }}px;
         }
       {% endif %}
 
 
-      {% if block.settings.max_width_mobile != blank %}
+      {% if section.settings.max_width_mobile != blank %}
       @media screen and (max-width: 589px) {
         #rich-text-{{ section.id }} .page-width {
           max-width: {{ section.settings.max_width_mobile }}px;
