@@ -22,7 +22,7 @@
 
     .split__column {
         background: transparent;
-    } 
+    }
 
   #rich-text-split-{{ section.id }} .split__bg-panel--left {
     width: {{ section.settings.left_column_width }}%;
@@ -181,12 +181,15 @@
   class="rich-text-split{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   <div class="split__bg" aria-hidden="true">
-    <div class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"></div>
-    <div class="split__bg-panel split__bg-panel--right color-{{ section.settings.right_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"></div>
+    <div
+      class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"
+    ></div>
+    <div
+      class="split__bg-panel split__bg-panel--right color-{{ section.settings.right_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"
+    ></div>
   </div>
 
   <div class="split__main page-width {{ section.settings.custom_class }}">
-
     {%- comment -%} LEFT COLUMN — driven by blocks {%- endcomment -%}
     <div
       class="split__column split__column--left color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
@@ -237,7 +240,7 @@
                 </div>
               {% endif %}
               {% if block.settings.enable_divider %}
-                  </div>
+                </div>
                 </div>
               {% endif %}
 
@@ -256,8 +259,6 @@
                     {%- else -%}
                       {{ block.settings.text }}
                     {%- endif -%}
-                  {%- else -%}
-                    {{ 'home_page.onboarding.no_content' | t }}
                   {%- endif -%}
                 </div>
               </div>
@@ -287,13 +288,14 @@
     >
       <div class="theme-block__text">
         {%- if section.settings.right_text != blank -%}
-          {{ section.settings.right_text }}
-        {%- else -%}
-          {{ 'home_page.onboarding.no_content' | t }}
+          {%- if section.settings.enlarge_text -%}
+            <div class="enlarge-text">{{ section.settings.right_text }}</div>
+          {%- else -%}
+            {{ section.settings.right_text }}
+          {%- endif -%}
         {%- endif -%}
       </div>
     </div>
-
   </div>
 </div>
 
@@ -417,6 +419,30 @@
       "id": "right_text",
       "label": "Text",
       "default": "<p>Use this text to share information about your brand with your customers.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "enlarge_text",
+      "label": "Enlarge text",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_fade",
+      "label": "Lighten text",
+      "default": false
     },
     {
       "type": "header",
