@@ -123,7 +123,7 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#1c1d1d",
+          "background": "#2D3135",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
@@ -240,7 +240,7 @@
           "secondary_button_border_hover": "#35373a",
           "link": "#35373a",
           "link_hover": "#a26b25",
-          "border": "#2D31353D",
+          "border": "#2d31353d",
           "accent": "#9b3a15",
           "overlay": "#000000",
           "shadow": "#000000"
