@@ -134,7 +134,7 @@
   class="color-{{ section.settings.color_scheme }} story-teaser{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   <div class="story-teaser__inner story-teaser__inner--{{ section.settings.image_position }}{% unless section.settings.full_width %} page-width{% endunless %}">
-    <div class="story-teaser__media" data-aos data-aos="fade-up">
+    <div class="story-teaser__media" data-aos="fade-up">
       <div class="story-teaser__image-wrap story-teaser__image-wrap--{{ section.settings.image_shape }}">
         {%- if section.settings.image != blank -%}
           {%- render 'image-element',
