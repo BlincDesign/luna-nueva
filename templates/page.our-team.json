@@ -22,14 +22,16 @@
           "settings": {
             "title": "LUNA NUEVA STORY",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_Nn9RrG": {
           "type": "heading",
           "settings": {
             "title": "Kelsey Selby",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "divider_P9iyte": {
@@ -56,7 +58,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_eazntk": {
@@ -67,7 +70,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "two_column_media_dpXb9X": {
@@ -79,7 +83,8 @@
             "image_two": "shopify://shop_images/team-founder.jpg",
             "orientation_two": "portrait",
             "caption_two": "",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -159,7 +164,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_dFcrhE": {
@@ -170,7 +176,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "media_TR33z4": {
@@ -179,7 +186,8 @@
             "image_one": "shopify://shop_images/ev-longtable_b76b3703-9ff7-4ecd-8268-e0c5cda3a4e7.jpg",
             "image_one_caption": "",
             "image_mask": "rounded-corners",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_kepgX7": {
@@ -190,7 +198,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "text_367phy": {
@@ -201,7 +210,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "media_qyfTHH": {
@@ -210,7 +220,8 @@
             "image_one": "shopify://shop_images/ev-fruitbar.jpg",
             "image_one_caption": "",
             "image_mask": "rounded-corners",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -257,7 +268,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_BgFiqd": {
@@ -268,7 +280,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -309,7 +322,8 @@
             "link": "#",
             "title": "Jessica McIntosh",
             "subtext": "Director of Sales & Distributor Relationships",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_JgUYTY": {
@@ -318,7 +332,8 @@
             "link": "",
             "title": "Kelsey Selby",
             "subtext": "Co-Founder & CEO",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_LnRFdT": {
@@ -327,7 +342,8 @@
             "link": "",
             "title": "Kimmy Pelino",
             "subtext": "Head of Marketing",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_Fp8QLJ": {
@@ -336,7 +352,8 @@
             "link": "",
             "title": "Luis Cruz",
             "subtext": "Production Partner",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         }
       },
@@ -453,6 +470,61 @@
         "padding_top_mb": 30,
         "padding_bottom_mb": 52
       }
+    },
+    "newsletter_46DF4Y": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_LfyzPp": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title_DjNBjR": {
+          "type": "title",
+          "settings": {
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
+          }
+        },
+        "text_FgUF7p": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
+          }
+        },
+        "form_4dLNmE": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_LfyzPp",
+        "title_DjNBjR",
+        "text_FgUF7p",
+        "form_4dLNmE"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
     }
   },
   "order": [
@@ -463,6 +535,7 @@
     "custom_rich_text_columns_QfLqFY",
     "custom_rich_text_columns_KKKFC6",
     "text_columns_jABiY4",
-    "rich_text_NXFncn"
+    "rich_text_NXFncn",
+    "newsletter_46DF4Y"
   ]
 }
