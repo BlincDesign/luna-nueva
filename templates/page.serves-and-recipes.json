@@ -431,7 +431,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>OR LET US MAKE IT</p><h3>Events →</h3>",
+            "text": "<p>OR LET US MAKE IT</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Events →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"

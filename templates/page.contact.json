@@ -21,6 +21,7 @@
           "type": "preheading",
           "settings": {
             "title": "TRADE & WHOLESALE",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -34,8 +35,11 @@
         "text_wr4amG": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<p>Additive-free tequila from Jalisco, already poured in 104 verified accounts across California. If your room is the kind of room it belongs in, tell us where you are.</p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -50,16 +54,19 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 60,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 30,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
-        "padding_top": 40,
+        "padding_top": 92,
         "padding_bottom": 40,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
@@ -110,7 +117,7 @@
         "stylized_bg": true,
         "padding_top": 40,
         "padding_bottom": 64,
-        "mobile_padding_top": 80,
+        "mobile_padding_top": 0,
         "mobile_padding_bottom": 8
       }
     },
@@ -125,7 +132,6 @@
             "subheading": "Nothing added. Nothing hidden.",
             "link": "",
             "link_text": "",
-            "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
             "parallax_direction": "top",
             "overlay_opacity": 0
@@ -166,7 +172,7 @@
             "divider_height": 1,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
-            "icon": "chat",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
             "icon_size": 30,
             "margin_top": 30,
             "margin_bottom": 30
@@ -196,16 +202,22 @@
         "text_dHFEkD": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<p><strong>Nothing added. Nothing hidden.</strong></p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "left"
           }
         },
         "text_Jj8UTM": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
             "text": "<ul><li><strong>Additive-free, in full.</strong> 100% Blue Weber agave, made at the Vivanco family distillery in Los Altos de Jalisco.</li><li><strong>Three expressions, one list.</strong> Silver unaged, Reposado at seven months, Añejo at thirteen. 750ml, 40% Alc/Vol.</li><li><strong>We show up.</strong> Monthly events at top restaurants, bars and shops across Southern California. Stocking accounts are where those nights happen.</li><li><strong>A generation that doesn’t settle.</strong> Clean, additive-free, and made with the same integrity they bring to every other choice.</li></ul>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -219,11 +231,14 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 30,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 60,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -435,7 +450,6 @@
             "subheading": "Coastal. Local. Free.",
             "link": "",
             "link_text": "",
-            "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/hero-coast.jpg",
             "parallax_direction": "top",
             "overlay_opacity": 0
