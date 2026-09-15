@@ -1,8 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('#SiteHeader');
+
+  if (!header) return;
+
+  // Theme's sticky header script (theme.js) toggles `site-header--stuck` once
+  // the header is actually pinned to the top of the viewport. Mirror that
+  // real sticky state onto a `fixed` class so it stays correct in both
+  // scroll directions without duplicating theme.js's own scroll threshold.
+  const syncFixedState = () => {
+    header.classList.toggle('fixed', header.classList.contains('site-header--stuck'));
+  };
+
+  new MutationObserver(syncFixedState).observe(header, {
+    attributes: true,
+    attributeFilter: ['class'],
+  });
+  syncFixedState();
+
   const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
 
-  if (!header || !sections.length) return;
+  if (!sections.length) return;
 
   const baseScheme = header.dataset.scheme;
   let currentScheme = baseScheme;
@@ -19,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    header.classList.toggle('header_overlap--secondary', !!overlappingSection);
+    header.classList.toggle('header_overlap--secondary', header.classList.contains('fixed') && !!overlappingSection);
 
     const sectionScheme = overlappingSection
       && [...overlappingSection.classList].find((cls) => cls.startsWith('color-scheme-'));
@@ -40,9 +57,48 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// PDP gallery hover arrows: click handling only. Drag, swipe and keyboard nav
-// are already provided by the theme's own Flickity slideshow; this just wires
-// the new stage-overlay buttons to that same instance via Flickity.data().
+// document.addEventListener('DOMContentLoaded', () => {
+//   const header = document.querySelector('#SiteHeader');
+//   const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
+
+//   if (!header || !sections.length) return;
+
+//   const baseScheme = header.dataset.scheme;
+//   let currentScheme = baseScheme;
+
+//   const checkOverlap = () => {
+//     const headerRect = header.getBoundingClientRect();
+
+//     const overlappingSection = [...sections].find((section) => {
+//       const sectionRect = section.getBoundingClientRect();
+
+//       return (
+//         sectionRect.top < headerRect.bottom &&
+//         sectionRect.bottom > headerRect.top
+//       );
+//     });
+
+//     header.classList.toggle('header_overlap--secondary', !!overlappingSection);
+
+//     const sectionScheme = overlappingSection
+//       && [...overlappingSection.classList].find((cls) => cls.startsWith('color-scheme-'));
+
+//     const nextScheme = sectionScheme || baseScheme;
+
+//     if (nextScheme !== currentScheme) {
+//       if (currentScheme) header.classList.remove(currentScheme);
+//       header.classList.add(nextScheme);
+//       currentScheme = nextScheme;
+//     }
+//   };
+
+//   window.addEventListener('scroll', checkOverlap, { passive: true });
+//   window.addEventListener('resize', checkOverlap);
+
+//   checkOverlap();
+// });
+
+
 (() => {
   const bindGalleryArrows = () => {
     document.querySelectorAll('[data-product-photos]').forEach((slider) => {
