@@ -106,6 +106,7 @@
       ],
       "name": "t:sections.marquee.presets.scrolling_text.name",
       "settings": {
+        "stylized_bg": false,
         "plus_icon": "shopify://shop_images/sparkle-icon.svg",
         "plus_icon_size": 13,
         "text_spacing": true,
@@ -173,6 +174,7 @@
             "title": "Endless\npossibilities.",
             "title_size": 80,
             "subheading": "Bring your brand to life",
+            "enable_fade": false,
             "link": "",
             "link_text": "Optional button",
             "parallax_direction": "top",
@@ -185,6 +187,7 @@
             "title": "Two line\nslide titles.",
             "title_size": 80,
             "subheading": "And big, beautiful imagery",
+            "enable_fade": false,
             "link": "",
             "link_text": "Optional button",
             "parallax_direction": "top",
@@ -237,8 +240,10 @@
           "silver-copy",
           "anejo"
         ],
+        "full_width_desktop": false,
         "padding_top": 138,
         "padding_bottom": 138,
+        "full_width_mobile": true,
         "padding_top_mb": 72,
         "padding_bottom_mb": 72
       }
@@ -251,7 +256,8 @@
           "settings": {
             "title": "<strong>WHAT'S IN IT, WHAT ISN'T</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_j9B88a": {
@@ -262,7 +268,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_KpLY3N": {
@@ -270,7 +277,8 @@
           "disabled": true,
           "settings": {
             "title": "Where it actually gets poured.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_YrMjYV": {
@@ -281,7 +289,8 @@
             "subheading": true,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "button_XRaQDg": {
@@ -291,7 +300,8 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -319,6 +329,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 138,
         "padding_bottom": 66,
         "padding_top_mb": 72,
@@ -574,7 +585,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_DLDMxC": {
@@ -585,7 +597,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -610,6 +623,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 30,
         "padding_bottom": 0,
         "padding_top_mb": 40,
@@ -625,7 +639,8 @@
             "image": "shopify://shop_images/step-fields.jpg",
             "number": "01",
             "heading": "The land decides",
-            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>"
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>",
+            "tags": "All"
           }
         },
         "step_PtK4hm": {
@@ -634,7 +649,8 @@
             "image": "shopify://shop_images/step-barrels.jpg",
             "number": "02",
             "heading": "Then it waits",
-            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>"
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>",
+            "tags": "All"
           }
         },
         "step_4EQaK9": {
@@ -643,7 +659,8 @@
             "image": "shopify://shop_images/step-table.jpg",
             "number": "03",
             "heading": "The table it was made for",
-            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>"
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>",
+            "tags": "All"
           }
         }
       },
@@ -655,6 +672,17 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "",
+        "preheading": "IN THE WILD",
+        "enable_fade_preheading": false,
+        "title": "Heading",
+        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "enlarge_text": true,
+        "subheading": false,
+        "enable_italic": false,
+        "enable_fade_text": false,
+        "link": "",
+        "link_text": "SEE WHAT'S COMING UP →",
+        "button_type": "secondary",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
@@ -662,6 +690,12 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
+        "tags": "",
+        "tab_active_bg": "#2d3135",
+        "tab_active_text": "#ffffff",
+        "tab_inactive_bg": "#f9f6f1",
+        "tab_inactive_text": "#2d3135",
+        "tab_border_color": "#2d3135",
         "layout_type": "grid",
         "columns": 3,
         "gap": 52,
@@ -680,14 +714,16 @@
           "settings": {
             "title": "<strong>IN THE WILD</strong>",
             "enable_fade": true,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_7FY4NB": {
           "type": "heading",
           "settings": {
             "title": "Where it actually gets poured.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "button_bCtMDn": {
@@ -696,7 +732,8 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "secondary",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -722,6 +759,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 138,
         "padding_bottom": 66,
         "padding_top_mb": 72,
@@ -802,6 +840,8 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 200,
         "gap": 16,
+        "gap_mobile": 16,
+        "mobile_layout": "scroll",
         "padding_top": 0,
         "padding_bottom": 138,
         "padding_top_mb": 38,
@@ -876,6 +916,8 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 260,
         "gap": 16,
+        "gap_mobile": 16,
+        "mobile_layout": "scroll",
         "padding_top": 138,
         "padding_bottom": 138,
         "padding_top_mb": 72,
@@ -890,14 +932,16 @@
           "settings": {
             "title": "<strong>SHOT ON A DISPOSABLE</strong>",
             "enable_fade": true,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_XDjnmY": {
           "type": "heading",
           "settings": {
             "title": "Nobody photographs the good nights properly.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_MRqmLa": {
@@ -908,7 +952,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -934,6 +979,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 138,
         "padding_bottom": 66,
         "padding_top_mb": 72,
@@ -1056,7 +1102,8 @@
           "settings": {
             "title": "<strong>FOUR WAYS TO POUR IT</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_wjTinT": {
@@ -1067,7 +1114,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_NkHTUf": {
@@ -1075,7 +1123,8 @@
           "disabled": true,
           "settings": {
             "title": "Where it actually gets poured.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_kg7Aj7": {
@@ -1087,7 +1136,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "button_gjNy4H": {
@@ -1097,7 +1147,8 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -1125,6 +1176,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 138,
         "padding_bottom": 48,
         "padding_top_mb": 72,
@@ -1141,7 +1193,9 @@
             "number": "01",
             "title": "Watermelon Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
-            "note": "<p>Lime wheel or a watermelon wedge</p>"
+            "serve_richtext": "",
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
+            "tags": "All"
           }
         },
         "service_tJGatp": {
@@ -1151,7 +1205,9 @@
             "number": "02",
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>bibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>cointreau . simple syrup <strong>.25 02  each</strong></p>",
-            "note": "<p>dried hibiscub flower or lime wheel</p>"
+            "serve_richtext": "",
+            "note": "<p>dried hibiscub flower or lime wheel</p>",
+            "tags": "All"
           }
         },
         "service_xzRJne": {
@@ -1161,7 +1217,9 @@
             "number": "03",
             "title": "Horchata Swirl",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Almond Milk <strong>3 oz</strong></p><p>Orgeat Syrup <strong>1 oz</strong></p><p>Ground Cinnamon <strong>A Dash</strong></p>",
-            "note": "<p>Cinnamon on top, swirl before sipping</p>"
+            "serve_richtext": "",
+            "note": "<p>Cinnamon on top, swirl before sipping</p>",
+            "tags": "All"
           }
         },
         "service_9GaDAh": {
@@ -1171,7 +1229,9 @@
             "number": "04",
             "title": "Tequila Old Fashioned",
             "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
-            "note": "<p>orange twist, Over one large cube</p>"
+            "serve_richtext": "",
+            "note": "<p>orange twist, Over one large cube</p>",
+            "tags": "All"
           }
         }
       },
@@ -1184,6 +1244,17 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "scheme-7",
+        "preheading": "IN THE WILD",
+        "enable_fade_preheading": false,
+        "title": "Heading",
+        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "enlarge_text": true,
+        "subheading": false,
+        "enable_italic": false,
+        "enable_fade_text": false,
+        "link": "",
+        "link_text": "SEE WHAT'S COMING UP →",
+        "button_type": "secondary",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
@@ -1191,6 +1262,12 @@
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
+        "tags": "",
+        "tab_active_bg": "#2d3135",
+        "tab_active_text": "#ffffff",
+        "tab_inactive_bg": "#f9f6f1",
+        "tab_inactive_text": "#2d3135",
+        "tab_border_color": "#2d3135",
         "layout_type": "slider",
         "columns": 4,
         "gap": 28,
