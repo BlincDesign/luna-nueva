@@ -387,9 +387,9 @@
         "gap_mobile": 16,
         "mobile_layout": "scroll",
         "padding_top": 0,
-        "padding_bottom": 86,
+        "padding_bottom": 24,
         "padding_top_mb": 0,
-        "padding_bottom_mb": 52
+        "padding_bottom_mb": 24
       }
     },
     "custom_rich_text_columns_QP6dpM": {
