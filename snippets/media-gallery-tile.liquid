@@ -17,7 +17,7 @@
 {%- assign tile_width_mobile_px = tile_width_mobile | append: 'px' -%}
 
 <div
-  class="media-gallery__tile{% if block.settings.tall %} media-gallery__tile--tall{% endif %}"
+  class="media-gallery__tile{% if block.settings.tall %} media-gallery__tile--tall{% endif %}{% if block.settings.split_images %} media-gallery__tile--split{% endif %}"
   {{- block.shopify_attributes -}}
 >
   {%- if block.settings.video_one != blank -%}
