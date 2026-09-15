@@ -164,7 +164,7 @@
 >
   <div class="image-slider-text__content">
     {% if section.settings.preheading != blank %}
-      <div class="image-slider-text__preheading subheading">
+      <div class="image-slider-text__preheading subheading {% if section.settings.preheading_fade %}text--faded{% endif %}">
         {{ section.settings.preheading }}
       </div>
     {% endif %}
@@ -185,7 +185,7 @@
 
    {% if section.settings.text != blank %}
 
-  <div class="image-slider-text__text has-primary--font rte{% if section.settings.enlarge_text %} enlarge-text{% endif %}">
+  <div class="image-slider-text__text has-primary--font rte{% if section.settings.enlarge_text %} enlarge-text{% endif %} {% if section.settings.description_fade %}text--faded{% endif %}">
 
     {{ section.settings.text }}
 
@@ -397,6 +397,12 @@
       "default": "Discover more"
     },
     {
+      "type": "checkbox",
+      "id": "preheading_fade",
+      "label": "Lighten text",
+      "default": false
+    },
+    {
       "type": "richtext",
       "id": "heading",
       "label": "Heading",
@@ -413,6 +419,12 @@
       "id": "text",
       "label": "Text",
       "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_fade",
+      "label": "Lighten text",
+      "default": false
     },
     {
       "type": "header",
