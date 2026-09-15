@@ -13,6 +13,12 @@
   assign d_coefficient = d_slope | times: 100 | round: 3
   assign d_min_contribution = d_slope | times: 990
   assign d_intercept = section.settings.tile_width_min | minus: d_min_contribution | round: 3
+
+  assign m_span = section.settings.tile_width_mobile_max | minus: section.settings.tile_width_mobile_min
+  assign m_slope = m_span | divided_by: 360.0
+  assign m_coefficient = m_slope | times: 100 | round: 3
+  assign m_min_contribution = m_slope | times: 320
+  assign m_intercept = section.settings.tile_width_mobile_min | minus: m_min_contribution | round: 3
 -%}
 
 {% stylesheet %}
@@ -169,16 +175,6 @@
     position: absolute;
     inset: 0;
   }
-
-  @media screen and (max-width: 680px) {
-    .media-gallery__media--desktop {
-      display: none;
-    }
-
-    .mobile-gallery {
-      display: block;
-    }
-  }
 {% endstylesheet %}
 
 {% style %}
@@ -216,27 +212,61 @@
     gap: {{ section.settings.gap }}px;
   }
 
-  @media screen and (max-width: 680px) {
-    #shopify-section-{{ section.id }} .mobile-gallery__grid {
-      gap: {{ section.settings.gap_mobile }}px;
+  {% if section.settings.mobile_layout == 'grid' %}
+    @media screen and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__media--desktop {
+        display: none;
+      }
+
+      #shopify-section-{{ section.id }} .mobile-gallery {
+        display: block;
+      }
+
+      #shopify-section-{{ section.id }} .mobile-gallery__grid {
+        gap: {{ section.settings.gap_mobile }}px;
+      }
+
+      #shopify-section-{{ section.id }} .mobile-gallery__tile--full {
+        margin-bottom: {{ section.settings.gap_mobile }}px;
+      }
     }
 
-    #shopify-section-{{ section.id }} .mobile-gallery__tile--full {
-      margin-bottom: {{ section.settings.gap_mobile }}px;
+    @media screen and (max-width: 589px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
+        margin-right: -20px;
+      }
     }
-  }
 
-  @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
-      margin-right: -20px;
+    @media screen and (min-width: 590px) and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
+        margin-right: -40px;
+      }
     }
-  }
+  {% else %}
+    @media screen and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__grid {
+        grid-template-rows: repeat(2, {{ section.settings.row_height_mobile }}px);
+        grid-auto-columns: clamp({{ section.settings.tile_width_mobile_min }}px, calc({{ m_intercept }}px + {{ m_coefficient }}vw), {{ section.settings.tile_width_mobile_max }}px);
+        gap: {{ section.settings.gap_mobile }}px;
+      }
 
-  @media screen and (min-width: 590px) and (max-width: 680px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
-      margin-right: -40px;
+      #shopify-section-{{ section.id }} .media-gallery__tile {
+        gap: {{ section.settings.gap_mobile }}px;
+      }
     }
-  }
+
+    @media screen and (max-width: 589px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -20px;
+      }
+    }
+
+    @media screen and (min-width: 590px) and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -40px;
+      }
+    }
+  {% endif %}
 
   @media screen and (max-width: 900px) {
      #shopify-section-{{ section.id }} .media-gallery__content {
@@ -291,7 +321,9 @@
       {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
     </div>
 
-    {% render 'mobile-gallery', image_blocks: image_blocks %}
+    {% if section.settings.mobile_layout == 'grid' %}
+      {% render 'mobile-gallery', image_blocks: image_blocks %}
+    {% endif %}
   {% endif %}
 {% endcapture %}
 
@@ -401,6 +433,24 @@
       "default": 220
     },
     {
+      "type": "number",
+      "id": "tile_width_mobile_min",
+      "label": "Smallest column width (mobile)",
+      "default": 150
+    },
+    {
+      "type": "number",
+      "id": "tile_width_mobile_max",
+      "label": "Largest column width (mobile)",
+      "default": 280
+    },
+    {
+      "type": "number",
+      "id": "row_height_mobile",
+      "label": "Column height (mobile)",
+      "default": 150
+    },
+    {
       "type": "range",
       "id": "gap",
       "label": "Space between images (desktop)",
@@ -419,6 +469,23 @@
       "step": 2,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "info": "Scroll keeps the desktop drag gallery, resized. Grid stacks the first (full-height) tile on top and lays the rest out two per row.",
+      "options": [
+        {
+          "value": "scroll",
+          "label": "Horizontal scroll"
+        },
+        {
+          "value": "grid",
+          "label": "Stacked grid"
+        }
+      ],
+      "default": "scroll"
     },
     {
       "type": "header",
