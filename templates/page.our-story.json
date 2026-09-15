@@ -455,7 +455,7 @@
         "text_ACi3Nb": {
           "type": "text",
           "settings": {
-            "text": "<h3>Luna Nueva is the new moon — it’s pure</h3><h3>potential. <em><strong>The moment before the memory </strong></em></h3><h3><em><strong>is made</strong></em><em>,</em> when the night is still open, still </h3><h3>possible, and the choice in front of you </h3><h3>sets the tone for everything that follows.</h3>",
+            "text": "<h3>Luna Nueva is the new moon — it’s pure</h3><h3>potential. <em><strong>The moment before the memory </strong></em></h3><h3><em><strong>is made,</strong></em> when the night is still open, still </h3><h3>possible, and the choice in front of you </h3><h3>sets the tone for everything that follows.</h3>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": true,
