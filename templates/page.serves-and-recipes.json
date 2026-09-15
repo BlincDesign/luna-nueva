@@ -225,12 +225,45 @@
             "title": "Watermelon Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
             "note": "<p>Lime wheel or a watermelon wedge</p>",
+            "tags": "All, Silver"
+          }
+        },
+        "service_yX6pTc": {
+          "type": "service",
+          "settings": {
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
+            "tags": "All"
+          }
+        },
+        "service_nJdDWn": {
+          "type": "service",
+          "settings": {
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
+            "tags": "All"
+          }
+        },
+        "service_cAcmcV": {
+          "type": "service",
+          "settings": {
+            "number": "01",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
             "tags": "All"
           }
         }
       },
       "block_order": [
-        "service_tpmBC8"
+        "service_tpmBC8",
+        "service_yX6pTc",
+        "service_nJdDWn",
+        "service_cAcmcV"
       ],
       "name": "Collection tabs",
       "settings": {
