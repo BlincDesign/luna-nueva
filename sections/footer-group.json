@@ -27,8 +27,8 @@
           "type": "title",
           "settings": {
             "title": "Get invited to the next one.",
-            "heading_size": "h1",
-            "text_width": 480,
+            "heading_size": "h2",
+            "text_width": 630,
             "margin_bottom": 17
           }
         },
