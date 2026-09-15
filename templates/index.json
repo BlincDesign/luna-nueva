@@ -489,7 +489,7 @@
       "name": "Story teaser",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "image": "shopify://shop_images/story-pinas.jpg",
         "image_caption": "Agave piñas · Highlands of Jalisco",
@@ -699,7 +699,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 50,
@@ -780,7 +780,7 @@
       "name": "Media gallery - grid",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "full_width": false,
         "position": "left",
@@ -911,7 +911,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 60,
