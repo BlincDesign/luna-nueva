@@ -230,6 +230,12 @@
               </div>
             {%- endif -%}
 
+            {%- if section.settings.serve_richtext != blank -%}
+  <div class="serve-richtext">
+    {{ section.settings.serve_richtext }}
+  </div>
+{%- endif -%}
+
             {%- if block.settings.note != blank -%}
               <div class="image-columns__note rte">
                 {{ block.settings.note }}
@@ -803,6 +809,11 @@
           "label": "Ingredients",
           "info": "Use one paragraph per ingredient and bold the quantity, for example: Luna Nueva Silver <strong>2 oz</strong>.",
           "default": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>"
+        },
+        {
+          "type": "richtext",
+          "id": "serve_richtext",
+          "label": "Serve rich text"
         },
         {
           "type": "richtext",
