@@ -237,7 +237,7 @@
                         {%- endunless -%}
                         {%- if block.settings.subheading or block.settings.link -%}
                           {%- unless block.settings.subheading == blank -%}
-                            <div class="hero__subtitle">
+                            <div class="hero__subtitle subheading {% if block.settings.enable_fade %}text--faded{% endif %}">
                               <div class="animation-cropper">
                                 <div class="animation-contents">
                                   {{ block.settings.subheading | escape }}
@@ -431,6 +431,12 @@
           "id": "subheading",
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label",
           "default": "And an optional subheading"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
         },
         {
           "type": "url",
