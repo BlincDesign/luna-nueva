@@ -159,6 +159,7 @@ strong:has(em) em {
   border-style: solid;
   border-radius: var(--btn-radius, 60px);
   will-change: transform;
+  font-weight: 600;
 }
 
 .button--primary:hover,
