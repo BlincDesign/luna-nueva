@@ -1,0 +1,379 @@
+{%- liquid
+  assign stats_block = null
+  assign stockist_block = null
+  assign content_block = null
+  assign pills_block = null
+  for block in section.blocks
+    case block.type
+      when 'stats'
+        assign stats_block = block
+      when 'stockist_embed'
+        assign stockist_block = block
+      when 'content'
+        assign content_block = block
+      when 'city_pills'
+        assign pills_block = block
+    endcase
+  endfor
+
+  assign anchor_id = 'store-locator-map-' | append: section.id
+-%}
+
+{% stylesheet %}
+  .store-locator__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .store-locator__stats {
+    display: flex;
+    gap: clamp(24px, 5vw, 56px);
+  }
+
+  .store-locator__stat-number {
+    display: block;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1;
+  }
+
+  .store-locator__stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: var(--type-caption-size);
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .store-locator__map {
+    width: 100%;
+  }
+
+  .store-locator__content {
+    font-size: var(--type-caption-size);
+    opacity: 0.8;
+    max-width: 640px;
+  }
+
+  .store-locator__pours-heading {
+    margin: 0 0 16px;
+    font-size: var(--type-caption-size);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .store-locator__pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .store-locator__pill {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: transparent;
+    color: currentColor;
+    border: 1px solid currentColor;
+    opacity: 0.85;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, opacity 0.15s;
+  }
+
+  .store-locator__pill:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .store-locator__pill b {
+    font-weight: 700;
+    opacity: 0.62;
+    margin-left: 6px;
+  }
+
+  .store-locator__pill.is-active {
+    background: #2D3135;
+    color: #AEBFB4;
+  }
+
+  .store-locator__pours-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 16px;
+  }
+
+  .store-locator__pours-head .store-locator__pours-heading {
+    margin: 0;
+  }
+
+  .store-locator__clear-city[hidden] {
+    display: none;
+  }
+
+  @media screen and (max-width: 589px) {
+    .store-locator__stats {
+      gap: 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% style %}
+  #custom__store-locator-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media only screen and (max-width: 589px) {
+    #custom__store-locator-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  id="custom__store-locator-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} store-locator{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  data-store-locator
+  data-widget-tag="{{ section.settings.widget_tag | escape }}"
+  data-anchor-id="{{ anchor_id }}"
+>
+  <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
+
+    {%- if stats_block and stats_block.settings.show_stats -%}
+      <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
+        <div class="store-locator__stat">
+          <span class="store-locator__stat-number" data-stat="accounts">&mdash;</span>
+          <span class="store-locator__stat-label">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
+        </div>
+        <div class="store-locator__stat">
+          <span class="store-locator__stat-number" data-stat="cities">&mdash;</span>
+          <span class="store-locator__stat-label">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if stockist_block -%}
+      <div class="store-locator__map" id="{{ anchor_id }}" {{ stockist_block.shopify_attributes }}>
+        {{ stockist_block.settings.embed_code }}
+      </div>
+    {%- endif -%}
+
+    {%- if content_block and content_block.settings.text != blank -%}
+      <div class="store-locator__content rte" {{ content_block.shopify_attributes }}>
+        {{ content_block.settings.text }}
+      </div>
+    {%- endif -%}
+
+    {%- if pills_block -%}
+      <div class="store-locator__pours" {{ pills_block.shopify_attributes }}>
+        <div class="store-locator__pours-head">
+          {%- if pills_block.settings.heading != blank -%}
+            <p class="store-locator__pours-heading">{{ pills_block.settings.heading }}</p>
+          {%- endif -%}
+          <a href="#" class="store-locator__pill store-locator__clear-city" data-clear-city hidden>
+            {{ pills_block.settings.clear_label | default: 'Clear city' }}
+          </a>
+        </div>
+        <ul class="store-locator__pills" data-city-pills></ul>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script src="{{ 'custom__store-locator.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Store Locator",
+  "tag": "section",
+  "class": "store_locator_section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "stylized_bg",
+      "label": "Enable stylized background",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Stockist connection"
+    },
+    {
+      "type": "text",
+      "id": "widget_tag",
+      "label": "Stockist widget tag",
+      "default": "map_p3xwre6q",
+      "info": "Found in your Stockist embed code as data-stockist-widget-tag=\"...\". Keep this in sync with the code entered in the Stockist Map block below -- it drives the stats and Where It Pours pills, which read Stockist's public API directly."
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stats",
+      "name": "Accounts & cities",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_stats",
+          "label": "Show verified accounts and cities",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "accounts_label",
+          "label": "Accounts label",
+          "default": "Verified accounts"
+        },
+        {
+          "type": "text",
+          "id": "cities_label",
+          "label": "Cities label",
+          "default": "Cities"
+        }
+      ]
+    },
+    {
+      "type": "stockist_embed",
+      "name": "Stockist map",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "embed_code",
+          "label": "Stockist embed code",
+          "info": "Paste the exact embed code from Stockist > Installation. Make sure the widget tag here matches the \"Stockist widget tag\" setting above.",
+          "default": "<stockist-store-locator data-stockist-widget-tag=\"map_p3xwre6q\">\n  Loading store locator from <a href=\"https://stockist.co\">Stockist store locator</a>...\n</stockist-store-locator>\n<script async src=\"https://stockist.co/embed/v1/widget.min.js\"><\/script>"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Disclaimer text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Stock moves fast, so call ahead if you’re making a trip for it. Accounts marked for verification in the source list are held back until they’re confirmed.</p>"
+        }
+      ]
+    },
+    {
+      "type": "city_pills",
+      "name": "Where It Pours",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Where It Pours"
+        },
+        {
+          "type": "text",
+          "id": "clear_label",
+          "label": "Clear button label",
+          "default": "Clear city"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator",
+      "blocks": [
+        { "type": "stats" },
+        { "type": "stockist_embed" },
+        { "type": "content" },
+        { "type": "city_pills" }
+      ]
+    }
+  ]
+}
+{% endschema %}
