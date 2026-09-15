@@ -190,7 +190,42 @@
     #shopify-section-{{ section.id }} .media-gallery__tile {
       gap: {{ section.settings.gap_mobile }}px;
     }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid.media-gallery__grid--stack {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: none;
+      padding-bottom: 0;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .media-gallery__tile {
+      grid-row: auto;
+      aspect-ratio: 1 / 1;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .media-gallery__tile--tall {
+      grid-column: 1 / -1;
+      aspect-ratio: 4 / 5;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .spacer {
+      display: none;
+    }
   }
+
+  {% if section.settings.mobile_layout == 'grid' %}
+    @media screen and (max-width: 589px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -20px;
+      }
+    }
+
+    @media screen and (min-width: 590px) and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -40px;
+      }
+    }
+  {% endif %}
 
   @media screen and (max-width: 900px) {
      #shopify-section-{{ section.id }} .media-gallery__content {
@@ -231,7 +266,7 @@
   {% if image_blocks.size > 0 %}
     <div class="media-gallery__media" data-aos="fade-up">
       {% capture track %}
-        <div class="media-gallery__grid">
+        <div class="media-gallery__grid{% if section.settings.mobile_layout == 'grid' %} media-gallery__grid--stack{% endif %}">
           {% for block in image_blocks %}
             {% render 'media-gallery-tile',
               block: block,
@@ -389,6 +424,23 @@
       "step": 2,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "info": "Scroll keeps the desktop drag gallery, resized. Grid stacks the first (full-height) tile on top and lays the rest out two per row.",
+      "options": [
+        {
+          "value": "scroll",
+          "label": "Horizontal scroll"
+        },
+        {
+          "value": "grid",
+          "label": "Stacked grid"
+        }
+      ],
+      "default": "scroll"
     },
     {
       "type": "header",
