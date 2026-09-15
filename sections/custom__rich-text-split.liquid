@@ -174,7 +174,7 @@
 
 <div
   id="rich-text-split-{{ section.id }}"
-  class="rich-text-split{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  class="rich-text-split{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   <div class="split__bg" aria-hidden="true">
     <div class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"></div>
@@ -185,7 +185,7 @@
 
     {%- comment -%} LEFT COLUMN — driven by blocks {%- endcomment -%}
     <div
-      class="split__column split__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
+      class="split__column split__column--left color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
       data-aos
     >
       {%- for block in section.blocks -%}
@@ -278,7 +278,7 @@
 
     {%- comment -%} RIGHT COLUMN — single richtext from section settings {%- endcomment -%}
     <div
-      class="split__column split__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
+      class="split__column split__column--right color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
       data-aos
     >
       <div class="theme-block__text">
