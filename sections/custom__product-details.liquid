@@ -10,6 +10,26 @@
         padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
   }
+
+  {%- if section.settings.full_width_desktop -%}
+    @media only screen and (min-width:590px){
+      #custom__product-details-{{ section.id }} .page-width{
+          max-width: none;
+          padding-left: 0;
+          padding-right: 0;
+      }
+    }
+  {%- endif -%}
+
+  {%- if section.settings.full_width_mobile -%}
+    @media only screen and (max-width:589px){
+      #custom__product-details-{{ section.id }} .page-width{
+          max-width: none;
+          padding-left: 0;
+          padding-right: 0;
+      }
+    }
+  {%- endif -%}
 {% endstyle %}
 
 <div id="custom__product-details-{{ section.id }}" class="color-{{ section.settings.color_scheme }} {% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}">
@@ -148,6 +168,12 @@
       "content": "Desktop spacing"
     },
     {
+      "type": "checkbox",
+      "id": "full_width_desktop",
+      "label": "Full width (Desktop)",
+      "default": false
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
@@ -170,6 +196,12 @@
     {
       "type": "header",
       "content": "Mobile spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_mobile",
+      "label": "Full width (Mobile)",
+      "default": false
     },
     {
       "type": "range",
