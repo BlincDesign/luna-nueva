@@ -128,7 +128,7 @@
           {%- endif -%}
 
           {%- if block.settings.text != blank -%}
-            <div class="image-columns__step-text has-primary--font">
+            <div class="image-columns__step-text has-primary--font rte">
               {{ block.settings.text }}
             </div>
           {%- endif -%}
@@ -150,13 +150,13 @@
             </div>
 
             {%- if block.settings.ingredients != blank -%}
-              <div class="image-columns__ingredients">
+              <div class="image-columns__ingredients rte">
                 {{ block.settings.ingredients }}
               </div>
             {%- endif -%}
 
             {%- if block.settings.note != blank -%}
-              <div class="image-columns__note">
+              <div class="image-columns__note rte">
                 {{ block.settings.note }}
               </div>
             {%- endif -%}
