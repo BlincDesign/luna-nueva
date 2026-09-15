@@ -47,8 +47,8 @@
         -%}
 
         <div class="pdc" style="--pdc-bg: {{ bg_color }};">
-          <a class="{{ product.url }}">
-            <div class="pdc__arch">
+          <div class="pdc__arch">
+            <a class="{{ product.url }}">
               {%- if image != blank -%}
                 {{
                   image
@@ -62,8 +62,8 @@
                   | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
                 }}
               {%- endif -%}
-            </div>
-          </a>
+            </a>
+          </div>
 
           <div class="pdc__body mb-text-center">
             <h3 class="pdc__title">{{ product.title | default: product.title }}</h3>
