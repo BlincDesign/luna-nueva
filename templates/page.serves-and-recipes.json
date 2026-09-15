@@ -96,6 +96,7 @@
             "number": "01",
             "title": "Watermelon Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>0.75 oz</strong></p><p>Lime juice <strong>0.75 oz</strong></p><p>Agave <strong>0.5 oz</strong></p>",
+            "serve_richtext": "<p>Shake with ice for 10 to 15 seconds. Strain into a rocks or margarita glass filled with ice.</p>",
             "note": "<p>Lime wheel or a watermelon wedge</p>",
             "tags": "All, Silver"
           }
@@ -107,6 +108,7 @@
             "number": "02",
             "title": "Cucumber Mule",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Lime juice <strong>0.5 oz</strong></p><p>Fresh cucumber <strong>MUDDLED</strong></p><p>Ginger beer <strong>TO TOP</strong></p>",
+            "serve_richtext": "",
             "note": "<p>Cucumber ribbon or lime wedge</p>",
             "tags": "All, Silver"
           }
@@ -118,6 +120,7 @@
             "number": "03",
             "title": "Honeydew Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>LEMON JUICE <strong>0.75 OZ</strong></p><p>Ginger · simple syrup <strong>0.25 OZ EA</strong></p><p>fRESH hONEYBREW <strong>Blended</strong></p>",
+            "serve_richtext": "",
             "note": "<p>Melon ball or lemon peel</p>",
             "tags": "All, Silver"
           }
@@ -129,6 +132,7 @@
             "number": "04",
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Hibiscus Juice <strong>1.5 oz</strong></p><p>Lime juice <strong>0.75 oz</strong></p><p>Cointreau · simple <strong>0.25 oz ea</strong></p><p></p>",
+            "serve_richtext": "",
             "note": "<p>Dried hibiscus flower or lime wheel</p>",
             "tags": "All, Silver"
           }
@@ -140,6 +144,7 @@
             "number": "05",
             "title": "Pineapple Lemon-Drop",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Pineapple Juice <strong>1.5 oz</strong></p><p>Cointreau · simple <strong>0.75 oz ea</strong></p><p>Simple syrup <strong>0.25 oz</strong></p>",
+            "serve_richtext": "",
             "note": "<p>Pineapple wedge or lemon twist</p>",
             "tags": "All, Silver"
           }
@@ -151,6 +156,7 @@
             "number": "06",
             "title": "Horchata Swirl",
             "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Almond milk <strong>3 oz</strong></p><p>Orgeat syrup <strong>1 oz</strong></p><p>Ground cinnamon <strong>a dash</strong></p>",
+            "serve_richtext": "",
             "note": "<p>Cinnamon on top, swirl before sipping</p>",
             "tags": "All, Reposado"
           }
@@ -162,6 +168,7 @@
             "number": "07",
             "title": "Italian Margarita",
             "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Amaretto <strong>1 oz</strong></p><p>Lime juice <strong>0.5 oz</strong></p><p>Lemon Juice <strong>0.5 oz</strong></p>",
+            "serve_richtext": "",
             "note": "<p>A sage leaf</p>",
             "tags": "All, Reposado"
           }
@@ -173,6 +180,7 @@
             "number": "08",
             "title": "Tequila Old Fashioned",
             "ingredients": "<p>Luna Nueva Añejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
+            "serve_richtext": "",
             "note": "<p>Orange twist, over one large cube</p>",
             "tags": "All, Añejo"
           }
@@ -288,7 +296,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-icebucket.jpg",
             "image_one_caption": "Poolside",
             "image_two_caption": ""
@@ -298,7 +305,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/recipe-oldfashioned_55514ca4-9cb1-4d38-a49a-7bb321b07beb.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/srv-hero.jpg",
@@ -309,7 +315,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-horchata.jpg",
             "image_one_caption": "Behind the bar",
             "image_two_caption": ""
@@ -319,7 +324,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-lemondrop.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/night-glasses_9cfcd970-295f-4710-a221-21476b35f20c.jpg",
@@ -330,7 +334,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-honeydew2.jpg",
             "image_one_caption": "on the table",
             "image_two_caption": ""
@@ -340,7 +343,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-cucumber.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/ev-ice_be077851-575f-4491-896d-05f677f1e54a.jpg",
@@ -351,7 +353,6 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": false,
             "image_one": "shopify://shop_images/srv-honeydew.jpg",
             "image_one_caption": "make the table longer",
             "image_two_caption": ""
