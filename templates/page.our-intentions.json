@@ -278,7 +278,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "padding_top": 60,
-        "padding_bottom": 0,
+        "padding_bottom": 10,
         "padding_top_mb": 30,
         "padding_bottom_mb": 0
       }
@@ -337,8 +337,8 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
-        "padding_top": 0,
-        "padding_bottom": 86,
+        "padding_top": 20,
+        "padding_bottom": 46,
         "padding_top_mb": 0,
         "padding_bottom_mb": 52
       }
