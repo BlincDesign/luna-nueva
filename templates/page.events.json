@@ -334,7 +334,7 @@
         "color_scheme": "scheme-7",
         "align_text": "left",
         "narrow_column": false,
-        "padding_top": 92,
+        "padding_top": 86,
         "padding_bottom": 10,
         "padding_top_mb": 52,
         "padding_bottom_mb": 8
@@ -436,9 +436,9 @@
         "row_height_mobile": 160,
         "gap": 22,
         "padding_top": 10,
-        "padding_bottom": 92,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_bottom": 86,
+        "padding_top_mb": 10,
+        "padding_bottom_mb": 52
       }
     },
     "slideshow_m7Cqia": {

@@ -604,6 +604,12 @@ a.pdl__right {
   text-transform: uppercase;
 }
 
+.pdc__row.pdc__row--foot {
+  font-weight: 600;
+  opacity: 0.8;
+  letter-spacing: .13em;
+}
+
 .pdc__row--lead {
   padding: 11px 0;
 }
