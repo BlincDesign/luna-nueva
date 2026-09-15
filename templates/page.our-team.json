@@ -170,6 +170,7 @@
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "header_secondary": false,
+        "stylized_bg": true,
         "section_height": "700px",
         "mobile_height": "auto",
         "parallax": false,
@@ -186,7 +187,7 @@
         "text_gR3pDg": {
           "type": "text",
           "settings": {
-            "text": "<h3>An act of hospitality.</h3>",
+            "text": "<h4>An act of hospitality.</h4>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
@@ -220,7 +221,7 @@
         "text_kepgX7": {
           "type": "text",
           "settings": {
-            "text": "<h3>Built from the ground up.</h3>",
+            "text": "<h4>Built from the ground up.</h4>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
