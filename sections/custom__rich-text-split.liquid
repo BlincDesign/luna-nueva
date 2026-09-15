@@ -100,6 +100,10 @@
     margin: 0;
   }
 
+  .split__column--right .theme-block__text h4 {
+    margin-bottom: 30px;
+  }
+
   {% for block in section.blocks %}
     {% if block.type == 'divider' %}
       #block-{{ block.id }} .split__divider-wrapper,
