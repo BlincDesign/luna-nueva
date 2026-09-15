@@ -162,10 +162,14 @@
             "margin_bottom": 0
           }
         },
-        "heading_kQW6H7": {
-          "type": "heading",
+        "text_Px9GDL": {
+          "type": "text",
           "settings": {
-            "title": "Everything thatalready happened.",
+            "text": "<h2>Everything that<br/>already happened.</h2>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "left",
             "margin_bottom": 0
           }
@@ -185,7 +189,7 @@
       },
       "block_order": [
         "preheading_EdBFBm",
-        "heading_kQW6H7",
+        "text_Px9GDL",
         "text_86nrbW"
       ],
       "name": "Rich text columns",
@@ -194,11 +198,11 @@
         "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 50,
+        "left_column_width": 70,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 50,
+        "right_column_width": 30,
         "right_text_align": "right",
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
