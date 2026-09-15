@@ -45,6 +45,12 @@
     );
   }
 
+  {%- for i in (1..columns) -%}
+    #custom__image_columns-{{ section.id }} .image-columns__item:nth-child({{ columns }}n+{{ i }}) {
+      transition-delay: {{ i | minus: 1 | times: 80 }}ms;
+    }
+  {%- endfor -%}
+
   #custom__image_columns-{{ section.id }} .image-columns__step-number {
     color: {{ section.settings.number_color }};
   }
@@ -174,7 +180,7 @@
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
-          <div class="image-columns__rail">
+          <div class="image-columns__rail" data-aos="image-columns__animation">
             {{ blocks_markup }}
           </div>
         {%- endcapture -%}
@@ -184,7 +190,7 @@
           label: 'Image columns, scroll horizontally'
         -%}
       {%- else -%}
-        <div class="image-columns__grid">
+        <div class="image-columns__grid" data-aos="image-columns__animation">
           {{ blocks_markup }}
         </div>
       {%- endif -%}
@@ -228,6 +234,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  [data-animate_images="true"] .image-columns__item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .no-js [data-animate_images="true"] .image-columns__item,
+  [data-animate_images="true"] .aos-animate[data-aos="image-columns__animation"] .image-columns__item {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .image-columns__step-number {
@@ -504,23 +522,3 @@
   "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
 }
 {% endschema %}
-{% comment %}
-
-This file has been rewritten to preserve the original behavior.
-
----
-Changes:
-- from: |-
-    {%- render 'image-element',
-                img: block.settings.image,
-                widths: '360, 540, 720, 900, 1080',
-                sizeVariable: image_size_vw | append: 'vw',
-                fallback: '100vw',
-                loading: 'lazy',
-                classes: 'image-columns__image'
-              -%}
-  to: "{%- render 'image-element', img: block.settings.image, widths: '360, 540, 720,
-    900, 1080', sizeVariable: image_size_vw, append: 'vw', fallback: '100vw', loading:
-    'lazy', classes: 'image-columns__image' -%}"
-  position: 3497..3702
-{% endcomment %}
