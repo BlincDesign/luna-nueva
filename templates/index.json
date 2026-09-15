@@ -734,7 +734,7 @@
           "settings": {
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
-            "button_type": "secondary",
+            "button_type": "primary",
             "position": "right",
             "margin_bottom": 0
           }
@@ -863,7 +863,7 @@
             "show_divider": true,
             "body": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.</p>",
             "enlarge_text": true,
-            "enable_fade": false,
+            "enable_fade": true,
             "button_label": "See what's coming up",
             "button_url": ""
           }
