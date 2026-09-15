@@ -175,20 +175,22 @@
         "preheading_mUdpfK": {
           "type": "preheading",
           "settings": {
-            "title": "The Tasting",
-            "enable_fade": false,
-            "position": "left"
+            "title": "<strong>THE TASTING</strong>",
+            "enable_fade": true,
+            "position": "left",
+            "margin_bottom": 18
           }
         },
         "text_dVNijU": {
           "type": "text",
           "settings": {
-            "text": "<h2>Añejo</h2>",
-            "enlarge_text": true,
+            "text": "<h2>{{ product.title }}</h2>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 14
           }
         },
         "divider_YyYDQe": {
@@ -215,7 +217,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "detail_row_q4LxNb": {
@@ -225,7 +228,8 @@
             "label": "Character & texture",
             "description": "<h5>A bold spirit with a velvety body.</h5>",
             "icon": "texture",
-            "icon_size": 30
+            "icon_size": 30,
+            "margin_bottom": 0
           }
         },
         "detail_row_tpf6Qx": {
@@ -235,7 +239,8 @@
             "label": "Aroma",
             "description": "<h5>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</h5>",
             "icon": "aroma",
-            "icon_size": 30
+            "icon_size": 30,
+            "margin_bottom": 0
           }
         },
         "detail_row_Perrig": {
@@ -245,7 +250,8 @@
             "label": "Palate",
             "description": "<h5>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</h5>",
             "icon": "palate",
-            "icon_size": 30
+            "icon_size": 30,
+            "margin_bottom": 0
           }
         }
       },
@@ -263,7 +269,7 @@
       "settings": {
         "color_scheme": "",
         "header_secondary": true,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 40,
         "left_text_align": "left",
@@ -276,6 +282,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 100,
         "padding_bottom": 100,
         "padding_top_mb": 40,
