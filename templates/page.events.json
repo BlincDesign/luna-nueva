@@ -29,7 +29,7 @@
         "text_MK8fAt": {
           "type": "text",
           "settings": {
-            "text": "<h2>For the nights that turn into something nobody planned.</h2>",
+            "text": "<h2>For the nights that<br/>turn into something nobody<br/>planned.</h2>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
