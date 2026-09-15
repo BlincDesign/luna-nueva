@@ -34,7 +34,7 @@
       {%- endif -%}
     </div>
 
-    <div class="product-details__list pdl__grid">
+    <div class="product-details__list pdl__grid"  data-aos="fade-up">
       {%- for product in section.settings.products -%}
         {%- liquid
           assign bg_color = product.metafields.custom.grid_background.value
