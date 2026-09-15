@@ -104,6 +104,10 @@
     flex-direction: column;
   }
 
+  .media-gallery__tile--split {
+    flex-direction: row;
+  }
+
   .media-gallery__image {
     position: relative;
     flex: 1 1 0;
@@ -574,6 +578,13 @@
           "id": "tall",
           "label": "Full-height tile",
           "info": "Makes this tile twice as tall. If you add two images below, they'll stack on top of each other instead of sitting side by side.",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "split_images",
+          "label": "Split images side by side",
+          "info": "Makes the first and second image each take up 50% of the tile's width instead of stacking. Overrides the stacking from Full-height tile.",
           "default": false
         },
         {
