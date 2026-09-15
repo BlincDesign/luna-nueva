@@ -108,7 +108,7 @@
             "number": "02",
             "title": "Cucumber Mule",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Lime juice <strong>0.5 oz</strong></p><p>Fresh cucumber <strong>MUDDLED</strong></p><p>Ginger beer <strong>TO TOP</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Muddle cucumber with lime, shake briefly with ice, strain over ice into a highball or copper mug and top with ginger beer.</p>",
             "note": "<p>Cucumber ribbon or lime wedge</p>",
             "tags": "All, Silver"
           }
@@ -120,7 +120,7 @@
             "number": "03",
             "title": "Honeydew Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>LEMON JUICE <strong>0.75 OZ</strong></p><p>Ginger · simple syrup <strong>0.25 OZ EA</strong></p><p>fRESH hONEYBREW <strong>Blended</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Blend the honeydew, shake everything with ice until well chilled, then double strain over fresh ice.</p>",
             "note": "<p>Melon ball or lemon peel</p>",
             "tags": "All, Silver"
           }
