@@ -418,7 +418,7 @@
           "type": "image",
           "settings": {
             "tall": true,
-            "split_images": true,
+            "split_images": false,
             "image_one": "shopify://shop_images/ev-longtable.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/ev-faces.jpg",
@@ -504,7 +504,7 @@
         "row_height_mobile": 160,
         "gap": 22,
         "gap_mobile": 16,
-        "mobile_layout": "grid",
+        "mobile_layout": "scroll",
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
