@@ -143,6 +143,13 @@
       max-width: 0;
     }
   }
+
+  @media screen and (max-width: 680px) {
+    .media-gallery__tile--split,
+    .media-gallery__tile--tall.media-gallery__tile--split {
+      flex-direction: row;
+    }
+  }
 {% endstylesheet %}
 
 {% style %}
@@ -190,7 +197,42 @@
     #shopify-section-{{ section.id }} .media-gallery__tile {
       gap: {{ section.settings.gap_mobile }}px;
     }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid.media-gallery__grid--stack {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: none;
+      padding-bottom: 0;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .media-gallery__tile {
+      grid-row: auto;
+      aspect-ratio: 1 / 1;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .media-gallery__tile--tall {
+      grid-column: 1 / -1;
+      aspect-ratio: 4 / 5;
+    }
+
+    #shopify-section-{{ section.id }} .media-gallery__grid--stack .spacer {
+      display: none;
+    }
   }
+
+  {% if section.settings.mobile_layout == 'grid' %}
+    @media screen and (max-width: 589px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -20px;
+      }
+    }
+
+    @media screen and (min-width: 590px) and (max-width: 680px) {
+      #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+        margin-right: -40px;
+      }
+    }
+  {% endif %}
 
   @media screen and (max-width: 900px) {
      #shopify-section-{{ section.id }} .media-gallery__content {
@@ -231,7 +273,7 @@
   {% if image_blocks.size > 0 %}
     <div class="media-gallery__media" data-aos="fade-up">
       {% capture track %}
-        <div class="media-gallery__grid">
+        <div class="media-gallery__grid{% if section.settings.mobile_layout == 'grid' %} media-gallery__grid--stack{% endif %}">
           {% for block in image_blocks %}
             {% render 'media-gallery-tile',
               block: block,
@@ -391,6 +433,23 @@
       "default": 16
     },
     {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "info": "Scroll keeps the desktop drag gallery, resized. Grid stacks the first (full-height) tile on top and lays the rest out two per row.",
+      "options": [
+        {
+          "value": "scroll",
+          "label": "Horizontal scroll"
+        },
+        {
+          "value": "grid",
+          "label": "Stacked grid"
+        }
+      ],
+      "default": "scroll"
+    },
+    {
       "type": "header",
       "content": "Desktop spacing"
     },
@@ -522,6 +581,13 @@
           "id": "tall",
           "label": "Full-height tile",
           "info": "Makes this tile twice as tall. If you add two images below, they'll stack on top of each other instead of sitting side by side.",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "split_images",
+          "label": "Split images side by side (mobile)",
+          "info": "On mobile, makes the first and second image each take up 50% of the tile's width instead of stacking. Overrides the stacking from Full-height tile. Desktop is unaffected.",
           "default": false
         },
         {
