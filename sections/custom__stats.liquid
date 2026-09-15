@@ -19,7 +19,7 @@
     margin: 0;
   }
 
-  @media screen and (max-width: 589) {
+  @media screen and (max-width: 589px) {
     #stats-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
@@ -91,7 +91,7 @@
     },
     {
       "type": "header",
-      "content": "Padding"
+      "content": "Desktop Padding"
     },
     {
       "type": "range",
@@ -120,7 +120,7 @@
     },
     {
       "type": "range",
-      "id": "mobile_padding_top",
+      "id": "padding_top_mb",
       "label": "Padding top",
       "min": 0,
       "max": 120,
@@ -130,7 +130,7 @@
     },
     {
       "type": "range",
-      "id": "mobile_padding_bottom",
+      "id": "padding_bottom_mb",
       "label": "Padding bottom",
       "min": 0,
       "max": 120,
