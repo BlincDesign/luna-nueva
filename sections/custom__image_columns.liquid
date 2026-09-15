@@ -264,85 +264,91 @@
   {% endif %}
 >
   <div class="page-width image-columns__inner" data-aos="fade-up">
-    <div class="top__heading">
-      {%- if section.settings.preheading != blank
-        or section.settings.title != blank
-        or section.settings.text != blank
-      -%}
-        <div class="top__heading-content">
-          {%- if section.settings.preheading != blank -%}
-            <div
-              class="theme-block subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
-            >
-              {{ section.settings.preheading }}
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.title != blank -%}
-            <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-              <h2>
-                {{ section.settings.title }}
-              </h2>
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.text != blank -%}
-            <div
-              class="theme-block theme-block__text {% if section.settings.enable_fade_text %}text--faded{% endif %}"
-            >
-              <div class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-                {%- if section.settings.enlarge_text -%}
-                  <div class="enlarge-text">
-                {%- endif -%}
-
-                {{ section.settings.text }}
-
-                {%- if section.settings.enlarge_text -%}
-                  </div>
-                {%- endif -%}
-              </div>
-            </div>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
-
-      <div class="top__heading-actions">
-        {%- if has_tabs -%}
-          <div
-            class="image-columns__tabs"
-            role="tablist"
-            aria-label="Filter"
-          >
-            {%- for tag in tag_list -%}
-              {%- assign tag_label = tag | strip -%}
-              {%- assign tag_slug = tag_label | downcase | remove: ' ' -%}
-
-              <button
-                type="button"
-                class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
-                data-tab-value="{{ tag_slug }}"
-                role="tab"
-                aria-selected="{% if tag_slug == default_tag %}true{% else %}false{% endif %}"
+    {%- if section.settings.preheading != blank
+      or section.settings.title != blank
+      or section.settings.text != blank
+      or has_tabs
+      or section.settings.link_text != blank
+    -%}
+      <div class="top__heading">
+        {%- if section.settings.preheading != blank
+          or section.settings.title != blank
+          or section.settings.text != blank
+        -%}
+          <div class="top__heading-content">
+            {%- if section.settings.preheading != blank -%}
+              <div
+                class="theme-block subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
               >
-                {{ tag_label }}
-              </button>
-            {%- endfor -%}
+                {{ section.settings.preheading }}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+              <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+                <h2>
+                  {{ section.settings.title }}
+                </h2>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.text != blank -%}
+              <div
+                class="theme-block theme-block__text {% if section.settings.enable_fade_text %}text--faded{% endif %}"
+              >
+                <div class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+                  {%- if section.settings.enlarge_text -%}
+                    <div class="enlarge-text">
+                  {%- endif -%}
+
+                  {{ section.settings.text }}
+
+                  {%- if section.settings.enlarge_text -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
           </div>
         {%- endif -%}
 
-        {% if section.settings.link_text != blank %}
-          <div class="theme-block theme-block__buttons appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-            {% render 'button',
-              label: section.settings.link_text,
-              url: section.settings.link,
-              type: section.settings.button_type,
-              arrow: true
-            %}
-          </div>
-        {% endif %}
-      </div>
-    </div>
+        <div class="top__heading-actions">
+          {%- if has_tabs -%}
+            <div
+              class="image-columns__tabs"
+              role="tablist"
+              aria-label="Filter"
+            >
+              {%- for tag in tag_list -%}
+                {%- assign tag_label = tag | strip -%}
+                {%- assign tag_slug = tag_label | downcase | remove: ' ' -%}
 
+                <button
+                  type="button"
+                  class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
+                  data-tab-value="{{ tag_slug }}"
+                  role="tab"
+                  aria-selected="{% if tag_slug == default_tag %}true{% else %}false{% endif %}"
+                >
+                  {{ tag_label }}
+                </button>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          {% if section.settings.link_text != blank %}
+            <div class="theme-block theme-block__buttons appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
+              {% render 'button',
+                label: section.settings.link_text,
+                url: section.settings.link,
+                type: section.settings.button_type,
+                arrow: true
+              %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
