@@ -305,7 +305,6 @@
       ],
       "name": "Image columns",
       "settings": {
-        "color_scheme": "",
         "preheading": "",
         "enable_fade_preheading": false,
         "title": "",
@@ -317,6 +316,7 @@
         "link": "",
         "link_text": "",
         "button_type": "secondary",
+        "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",

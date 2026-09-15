@@ -139,7 +139,7 @@
             "image": "shopify://shop_images/srv-lemondrop2.jpg",
             "number": "05",
             "title": "Pineapple Lemon-Drop",
-            "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
+            "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Pineapple Juice <strong>1.5 oz</strong></p><p>Cointreau · simple <strong>0.75 oz ea</strong></p><p></p>",
             "note": "<p>orange twist, Over one large cube</p>",
             "tags": "All, Silver"
           }
@@ -190,7 +190,6 @@
       ],
       "name": "Image columns",
       "settings": {
-        "color_scheme": "scheme-7",
         "preheading": "<strong>FROM THE BOOKLET</strong>",
         "enable_fade_preheading": false,
         "title": "Clean enough to drink neat. Honest enough to build on.",
@@ -202,6 +201,7 @@
         "link": "",
         "link_text": "",
         "button_type": "primary",
+        "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
