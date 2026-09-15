@@ -153,6 +153,65 @@
         "padding_bottom_mb": 18
       }
     },
+    "scrolling_text_QG3wHw": {
+      "type": "scrolling-text",
+      "blocks": {
+        "text_PJk343": {
+          "type": "text",
+          "settings": {
+            "text": "Additive-Free",
+            "link": ""
+          }
+        },
+        "text_DLYeGA": {
+          "type": "text",
+          "settings": {
+            "text": "NOM 1414 · Vivanco Family Distillery",
+            "link": ""
+          }
+        },
+        "text_d47iLU": {
+          "type": "text",
+          "settings": {
+            "text": "Highlands & Lowlands of Jalisco",
+            "link": ""
+          }
+        },
+        "text_THEDkb": {
+          "type": "text",
+          "settings": {
+            "text": "100% Blue Weber Agave",
+            "link": ""
+          }
+        },
+        "text_M8aPmt": {
+          "type": "text",
+          "settings": {
+            "text": "Poured Across California",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_PJk343",
+        "text_DLYeGA",
+        "text_d47iLU",
+        "text_THEDkb",
+        "text_M8aPmt"
+      ],
+      "name": "t:sections.marquee.presets.scrolling_text.name",
+      "settings": {
+        "plus_icon": "shopify://shop_images/validated_svg.svg",
+        "plus_icon_size": 13,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 100,
+        "color_background": "#2D3135",
+        "color_text": "#FFFFFF",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
     "custom_rich_text_columns_EnMEYm": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -311,6 +370,7 @@
   },
   "order": [
     "main",
+    "scrolling_text_QG3wHw",
     "custom_rich_text_columns_EnMEYm",
     "sub",
     "product-recommendations",
