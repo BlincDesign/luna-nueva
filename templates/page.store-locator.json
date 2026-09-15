@@ -22,18 +22,20 @@
           "settings": {
             "title": "<strong>STORE LOCATOR</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_CiYWjN": {
           "type": "text",
           "settings": {
-            "text": "<h1>Find a bottle <br/>near you.</h1>",
+            "text": "<h2>Find a bottle <br/>near you.</h2>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_TGGwHq": {
@@ -44,7 +46,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -70,6 +73,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 0,
         "padding_top_mb": 52,
