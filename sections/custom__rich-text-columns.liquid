@@ -319,6 +319,11 @@
     <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}">
       {%- assign left_previous_type = '' -%}
       {%- for block in section.blocks -%}
+        {% liquid
+          capture margin_bottom
+            echo 'margin-bottom: ' | append: block.settings.margin_bottom | append: 'px'
+          endcapture
+        %}
         {%- if block.settings.position == 'left' -%}
           {%- assign left_next_block = section.blocks[forloop.index] -%}
           {%- assign left_groups_with_next = false -%}
@@ -335,7 +340,12 @@
               <div class="rich-text__detail-list">
             {%- endif -%}
 
-            <div class="rich-text__detail-row" id="block-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div
+              class="rich-text__detail-row"
+              id="block-{{ block.id }}"
+              {{ block.shopify_attributes }}
+              style="{{ margin_bottom }}"
+            >
               <div class="rich-text__detail-label">
                 <span class="rich-text__detail-icon">
                   {% if block.settings.custom_icon != blank %}
@@ -388,6 +398,7 @@
                     class="theme-block subheading {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.title }}
@@ -397,6 +408,8 @@
                   <div
                     class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
+
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <h2>
@@ -407,6 +420,7 @@
                 {%- when 'text' -%}
                   <div
                     class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <div
@@ -434,6 +448,7 @@
                   <div
                     class="theme-block theme-block__buttons theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'button',
@@ -449,6 +464,7 @@
                     <div
                       class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
+                      style="{{ margin_bottom }}"
                       {{ block.shopify_attributes }}
                     >
                       <div class="rte">
@@ -458,46 +474,55 @@
                   {%- endif -%}
 
                 {% when 'media' %}
-                  {%- if block.settings.video_one != blank -%}
-                    <div class="theme-block--video">
-                      {%- render 'element.video',
-                        video: block.settings.video_one,
-                        autoplay: true,
-                        loop: true,
-                        muted: true,
-                        background: true
-                      -%}
+                  <div
+                    {{ block.shopify_attributes }}
+                    style="{{ margin_bottom }}"
+                  >
+                    {%- if block.settings.video_one != blank -%}
+                      <div class="theme-block--video">
+                        {%- render 'element.video',
+                          video: block.settings.video_one,
+                          autoplay: true,
+                          loop: true,
+                          muted: true,
+                          background: true
+                        -%}
 
-                      {%- if block.settings.image_one_caption != blank -%}
-                        <span class="media-gallery__caption">
-                          {{- block.settings.image_one_caption -}}
-                        </span>
-                      {%- endif -%}
-                    </div>
+                        {%- if block.settings.image_one_caption != blank -%}
+                          <span class="media-gallery__caption">
+                            {{- block.settings.image_one_caption -}}
+                          </span>
+                        {%- endif -%}
+                      </div>
 
-                  {%- elsif block.settings.image_one != blank -%}
-                    <div class="theme-block--image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
-                      {%- render 'image-element',
-                        img: block.settings.image_one,
-                        widths: '300, 400, 600, 800, 1000, 1200, 1600',
-                        classes: '-img'
-                      -%}
+                    {%- elsif block.settings.image_one != blank -%}
+                      <div class="theme-block--image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
+                        {%- render 'image-element',
+                          img: block.settings.image_one,
+                          widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                          classes: '-img'
+                        -%}
 
-                      {%- if block.settings.image_one_caption != blank -%}
-                        <span class="media-gallery__caption">
-                          {{- block.settings.image_one_caption -}}
-                        </span>
-                      {%- endif -%}
-                    </div>
+                        {%- if block.settings.image_one_caption != blank -%}
+                          <span class="media-gallery__caption">
+                            {{- block.settings.image_one_caption -}}
+                          </span>
+                        {%- endif -%}
+                      </div>
 
-                  {%- else -%}
-                    <div class="theme-block--image--placeholder">
-                      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
-                    </div>
-                  {%- endif -%}
+                    {%- else -%}
+                      <div class="theme-block--image--placeholder">
+                        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                      </div>
+                    {%- endif -%}
+                  </div>
 
                 {% when 'link_text' %}
-                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                  <li
+                    class="theme-block--link_text"
+                    {{ block.shopify_attributes }}
+                    style="{{ margin_bottom }}"
+                  >
                     {% if block.settings.link != blank %}
                       <a href="{{ block.settings.link | default: '#' }}">
                     {% else %}
@@ -515,7 +540,11 @@
                   </li>
 
                 {%- when 'two_column_media' -%}
-                  <div class="theme-block--two-column-media">
+                  <div
+                    class="theme-block--two-column-media"
+                    style="{{ margin_bottom }}"
+                    {{ block.shopify_attributes }}
+                  >
                     <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}">
                       {%- if block.settings.video_one != blank -%}
                         <div class="theme-block--two-column-media__media">
@@ -600,6 +629,11 @@
     <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}">
       {%- assign right_previous_type = '' -%}
       {%- for block in section.blocks -%}
+        {% liquid
+          capture margin_bottom
+            echo 'margin-bottom: ' | append: block.settings.margin_bottom | append: 'px'
+          endcapture
+        %}
         {%- if block.settings.position == 'right' -%}
           {%- assign right_next_block = section.blocks[forloop.index] -%}
           {%- assign right_groups_with_next = false -%}
@@ -616,7 +650,12 @@
               <div class="rich-text__detail-list">
             {%- endif -%}
 
-            <div class="rich-text__detail-row" id="block-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div
+              class="rich-text__detail-row"
+              id="block-{{ block.id }}"
+              {{ block.shopify_attributes }}
+              style="{{ margin_bottom }}"
+            >
               <div class="rich-text__detail-label">
                 <span class="rich-text__detail-icon">
                   {% if block.settings.custom_icon != blank %}
@@ -669,6 +708,7 @@
                     class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     style="margin-bottom: 20px"
                     data-block-id="{{ block.id }}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.title }}
@@ -678,6 +718,7 @@
                   <div
                     class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <h2>
@@ -688,6 +729,7 @@
                 {%- when 'text' -%}
                   <div
                     class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} theme-block__text"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <div
@@ -715,6 +757,7 @@
                   <div
                     class="theme-block theme-block__buttons theme-block__button--{{ block.id }} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
+                    style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'button',
@@ -730,6 +773,7 @@
                     <div
                       class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
+                      style="{{ margin_bottom }}"
                       {{ block.shopify_attributes }}
                     >
                       <div class="rte">
@@ -739,46 +783,54 @@
                   {%- endif -%}
 
                 {% when 'media' %}
-                  {%- if block.settings.video_one != blank -%}
-                    <div class=" theme-block--video">
-                      {%- render 'element.video',
-                        video: block.settings.video_one,
-                        autoplay: true,
-                        loop: true,
-                        muted: true,
-                        background: true
-                      -%}
+                  <div
+                    style="{{ margin_bottom }}"
+                  >
+                    {%- if block.settings.video_one != blank -%}
+                      <div class=" theme-block--video">
+                        {%- render 'element.video',
+                          video: block.settings.video_one,
+                          autoplay: true,
+                          loop: true,
+                          muted: true,
+                          background: true
+                        -%}
 
-                      {%- if block.settings.image_one_caption != blank -%}
-                        <span class="media-gallery__caption">
-                          {{- block.settings.image_one_caption -}}
-                        </span>
-                      {%- endif -%}
-                    </div>
+                        {%- if block.settings.image_one_caption != blank -%}
+                          <span class="media-gallery__caption">
+                            {{- block.settings.image_one_caption -}}
+                          </span>
+                        {%- endif -%}
+                      </div>
 
-                  {%- elsif block.settings.image_one != blank -%}
-                    <div class="theme-block--image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
-                      {%- render 'image-element',
-                        img: block.settings.image_one,
-                        widths: '300, 400, 600, 800, 1000, 1200, 1600',
-                        classes: '-img'
-                      -%}
+                    {%- elsif block.settings.image_one != blank -%}
+                      <div class="theme-block--image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
+                        {%- render 'image-element',
+                          img: block.settings.image_one,
+                          widths: '300, 400, 600, 800, 1000, 1200, 1600',
+                          classes: '-img'
+                        -%}
 
-                      {%- if block.settings.image_one_caption != blank -%}
-                        <span class="media-gallery__caption">
-                          {{- block.settings.image_one_caption -}}
-                        </span>
-                      {%- endif -%}
-                    </div>
+                        {%- if block.settings.image_one_caption != blank -%}
+                          <span class="media-gallery__caption">
+                            {{- block.settings.image_one_caption -}}
+                          </span>
+                        {%- endif -%}
+                      </div>
 
-                  {%- else -%}
-                    <div class=" theme-block--image--placeholder">
-                      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
-                    </div>
-                  {%- endif -%}
+                    {%- else -%}
+                      <div class=" theme-block--image--placeholder">
+                        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+                      </div>
+                    {%- endif -%}
+                  </div>
 
                 {% when 'link_text' %}
-                  <li class="theme-block--link_text" {{ block.shopify_attributes }}>
+                  <li
+                    class="theme-block--link_text"
+                    {{ block.shopify_attributes }}
+                    style="{{ margin_bottom }}"
+                  >
                     {% if block.settings.link != blank %}
                       <a href="{{ block.settings.link | default: '#' }}">
                     {% else %}
@@ -796,7 +848,11 @@
                   </li>
 
                 {%- when 'two_column_media' -%}
-                  <div class="theme-block--two-column-media">
+                  <div
+                    class="theme-block--two-column-media"
+                    {{ block.shopify_attributes }}
+                    style="{{ margin_bottom }}"
+                  >
                     <div class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}">
                       {%- if block.settings.video_one != blank -%}
                         <div class="theme-block--two-column-media__media">
@@ -1163,6 +1219,10 @@
           "label": "Caption 2"
         },
         {
+          "type": "header",
+          "content": "Position"
+        },
+        {
           "type": "select",
           "id": "position",
           "label": "Position",
@@ -1177,6 +1237,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -1216,6 +1290,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -1315,6 +1403,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -1980,6 +2082,20 @@
           "unit": "px",
           "step": 2,
           "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -2014,6 +2130,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -2044,6 +2174,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -2099,6 +2243,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -2156,8 +2314,17 @@
         },
         {
           "type": "header",
-          "content": "Primary",
-          "visible_if": "{{ block.settings.button_type == 'primary' }}"
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     },
@@ -2185,6 +2352,20 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Spacing bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "label": "Add spacing"
         }
       ]
     }
