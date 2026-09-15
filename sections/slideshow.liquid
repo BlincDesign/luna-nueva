@@ -4,6 +4,7 @@
   {% if section.settings.parallax %}
     data-parallax="true"
   {% endif %}
+  class="{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   {%- if section.blocks.size > 0 -%}
     <div class="slideshow-wrapper">
@@ -286,6 +287,13 @@
   "class": "index-section--hero",
   "max_blocks": 5,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_secondary",
+      "label": "Secondary header",
+      "info": "Changes header's color scheme on intersection.",
+      "default": false
+    },
     {
       "type": "select",
       "id": "section_height",
