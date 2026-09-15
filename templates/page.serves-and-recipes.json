@@ -86,65 +86,6 @@
         "padding_bottom_mb": 26
       }
     },
-    "custom_rich_text_columns_iFegyC": {
-      "type": "custom__rich-text-columns",
-      "blocks": {
-        "preheading_etKep6": {
-          "type": "preheading",
-          "settings": {
-            "title": "<strong>FROM THE BOOKLET</strong>",
-            "enable_fade": false,
-            "position": "left",
-            "margin_bottom": 0
-          }
-        },
-        "heading_L6FqEw": {
-          "type": "heading",
-          "settings": {
-            "title": "Clean enough to drink neat. Honest enough to build on.",
-            "position": "left",
-            "margin_bottom": 0
-          }
-        },
-        "preheading_kaVnM3": {
-          "type": "preheading",
-          "settings": {
-            "title": "ALL EIGHT SERVES ━━ DRAG",
-            "enable_fade": true,
-            "position": "right",
-            "margin_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "preheading_etKep6",
-        "heading_L6FqEw",
-        "preheading_kaVnM3"
-      ],
-      "name": "Rich text columns",
-      "settings": {
-        "color_scheme": "scheme-7",
-        "header_secondary": false,
-        "stylized_bg": true,
-        "enable_vertical_divider": false,
-        "left_column_width": 50,
-        "left_text_align": "left",
-        "left_text-align_mb": "left",
-        "left_vertical_align": "center",
-        "right_column_width": 50,
-        "right_text_align": "right",
-        "right_text-align_mb": "left",
-        "right_vertical_align": "flex-end",
-        "detail_accent_color": "#c9a063",
-        "icon_backdrop_color": "#2d3135",
-        "detail_divider_color": "#f9f6f1",
-        "custom_class": "",
-        "padding_top": 86,
-        "padding_bottom": 42,
-        "padding_top_mb": 52,
-        "padding_bottom_mb": 26
-      }
-    },
     "custom_image_columns_Ycj7GX": {
       "type": "custom__image_columns",
       "blocks": {
@@ -201,6 +142,7 @@
       ],
       "name": "Image columns",
       "settings": {
+        "color_scheme": "scheme-7",
         "preheading": "<strong>FROM THE BOOKLET</strong>",
         "enable_fade_preheading": false,
         "title": "Clean enough to drink neat. Honest enough to build on.",
@@ -212,7 +154,6 @@
         "link": "",
         "link_text": "",
         "button_type": "primary",
-        "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
@@ -230,9 +171,9 @@
         "columns": 4,
         "gap": 28,
         "gap_mb": 16,
-        "padding_top": 0,
+        "padding_top": 86,
         "padding_bottom": 86,
-        "padding_top_mb": 0,
+        "padding_top_mb": 52,
         "padding_bottom_mb": 52
       }
     },
@@ -589,7 +530,6 @@
   "order": [
     "main",
     "custom_rich_text_columns_KrUFGK",
-    "custom_rich_text_columns_iFegyC",
     "custom_image_columns_Ycj7GX",
     "custom_rich_text_columns_ywq3Ct",
     "custom_media_gallery_xaH6wE",
