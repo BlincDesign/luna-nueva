@@ -41,13 +41,6 @@
       letter-spacing: 1.7px;
       font-weight: 600;
     }
-
-    {%- if settings.color_header == settings.color_body_bg or settings.color_body_bg contains settings.color_header -%}
-      .site-header {
-        border-bottom: 1px solid;
-        border-bottom-color: {{ settings.color_borders }};
-      }
-    {%- endif -%}
 {%- endstyle -%}
 
 <div data-section-id="{{ section.id }}" data-section-type="header">
