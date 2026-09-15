@@ -19,6 +19,11 @@
     }
 @media screen and (min-width: 590px) {
 
+    #rich-text-split-{{ section.id }} .split__column--left.background-image::before,
+    #rich-text-split-{{ section.id }} .split__column--right.background-image::before {
+        display: none;
+    }
+
     #rich-text-split-{{ section.id }} {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -157,6 +162,11 @@
     #rich-text-split-{{ section.id }} .split__column--right {
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
+
+    #rich-text-split-{{ section.id }} .split__column--left.background-image::before,
+    #rich-text-split-{{ section.id }} .split__column--right.background-image::before {
+        display: block;
+    }
     
     #rich-text-split-{{ section.id }} .page-width {
         padding: 0;
@@ -207,7 +217,7 @@
   <div class="split__main page-width {{ section.settings.custom_class }}">
     {%- comment -%} LEFT COLUMN — driven by blocks {%- endcomment -%}
     <div
-      class="split__column split__column--left color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
+      class="split__column split__column--left {% if section.settings.stylized_bg %} background-image{% endif %} color-{{ section.settings.left_color_scheme }} text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text_align_mb }}"
       data-aos
     >
       {%- for block in section.blocks -%}
@@ -298,7 +308,7 @@
 
     {%- comment -%} RIGHT COLUMN — single richtext from section settings {%- endcomment -%}
     <div
-      class="split__column split__column--right color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
+      class="split__column split__column--right {% if section.settings.stylized_bg %} background-image{% endif %} color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
       data-aos
     >
       <div class="theme-block__text">
