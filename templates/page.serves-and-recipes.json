@@ -252,7 +252,7 @@
       "settings": {
         "color_scheme": "scheme-7",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "heading": "Featured collections",
         "subheading": "",
         "tab_active_bg": "#2d3135",
