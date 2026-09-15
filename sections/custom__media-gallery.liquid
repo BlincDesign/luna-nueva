@@ -281,7 +281,7 @@
       {%- endif -%}
       
       {% if content_block.settings.body != blank %}
-        <div class="media-gallery__body has-primary--font rte{% if content_block.settings.enlarge_text %} enlarge-text{% endif %}">{{ content_block.settings.body }}</div>
+        <div class="media-gallery__body has-primary--font rte{% if content_block.settings.enlarge_text %} enlarge-text{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %}">{{ content_block.settings.body }}</div>
       {% endif %}
       {% if content_block.settings.button_label != blank %}
         <div class="media-gallery__actions">
@@ -585,6 +585,12 @@
           "id": "enlarge_text",
           "label": "Enlarge text",
           "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
         },
         {
           "type": "text",
