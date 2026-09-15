@@ -81,7 +81,7 @@
             "orientation_one": "landscape",
             "caption_one": "LOS ANGELES",
             "image_two": "shopify://shop_images/team-founder.jpg",
-            "orientation_two": "portrait",
+            "orientation_two": "none",
             "caption_two": "",
             "position": "right",
             "margin_bottom": 0
@@ -143,6 +143,7 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": false,
         "section_height": "650px",
         "mobile_height": "auto",
         "parallax": false,
@@ -429,7 +430,7 @@
         "align_text": "left",
         "divider": false,
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": true,
         "padding_top": 86,
         "padding_bottom": 0,
