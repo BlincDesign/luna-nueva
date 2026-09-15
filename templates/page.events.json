@@ -616,6 +616,61 @@
         "padding_top_mb": 0,
         "padding_bottom_mb": 52
       }
+    },
+    "newsletter_JexEq4": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_qq8Wtd": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title_xdKhqn": {
+          "type": "title",
+          "settings": {
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
+          }
+        },
+        "text_BEURw8": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
+          }
+        },
+        "form_cJNmJh": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_qq8Wtd",
+        "title_xdKhqn",
+        "text_BEURw8",
+        "form_cJNmJh"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
     }
   },
   "order": [
@@ -628,6 +683,7 @@
     "custom_media_gallery_EmpQyy",
     "slideshow_m7Cqia",
     "text_columns_RjXxUA",
-    "rich_text_ECkFVq"
+    "rich_text_ECkFVq",
+    "newsletter_JexEq4"
   ]
 }
