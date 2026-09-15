@@ -253,7 +253,7 @@
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
-        "heading": "Featured collections",
+        "heading": "",
         "subheading": "",
         "tab_active_bg": "#2d3135",
         "tab_active_text": "#ffffff",
@@ -266,9 +266,9 @@
         "columns": 4,
         "gap": 32,
         "gap_mb": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
+        "padding_top": 86,
+        "padding_bottom": 86,
+        "padding_top_mb": 52,
         "padding_bottom_mb": 40
       }
     },
