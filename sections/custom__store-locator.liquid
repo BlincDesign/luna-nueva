@@ -47,9 +47,8 @@
   }
 
   .store-locator__content {
-    font-size: var(--type-caption-size);
     opacity: 0.8;
-    max-width: 640px;
+    max-width:62ch
   }
 
   .store-locator__pours-heading {
@@ -169,7 +168,7 @@
     {%- endif -%}
 
     {%- if content_block and content_block.settings.text != blank -%}
-      <div class="store-locator__content rte" {{ content_block.shopify_attributes }}>
+      <div class="store-locator__content text-body-small rte" {{ content_block.shopify_attributes }}>
         {{ content_block.settings.text }}
       </div>
     {%- endif -%}
