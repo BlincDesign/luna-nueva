@@ -34,6 +34,18 @@
             "margin_bottom": 0
           }
         },
+        "text_LbYVhx": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Co-Founder & CEO</em></p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 0
+          }
+        },
         "divider_P9iyte": {
           "type": "divider",
           "settings": {
@@ -103,6 +115,7 @@
       "block_order": [
         "preheading_tcMTWe",
         "heading_Nn9RrG",
+        "text_LbYVhx",
         "divider_P9iyte",
         "text_TiTchX",
         "text_eazntk",
