@@ -406,7 +406,7 @@
         "image_L3PUNY": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/ev-longtable.jpg",
             "image_one_caption": "",
             "image_two": "shopify://shop_images/ev-faces.jpg",
