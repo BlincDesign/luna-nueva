@@ -130,17 +130,21 @@
         justify-content: {{ section.settings.right_vertical_align }};
       }
 
-      .rich-text__content ul li {
+      #custom__rich-text-columns-{{ section.id }} .rich-text__content ul li {
         position: relative;
         padding-left: 25px;
         margin-bottom: 1.15rem;
       }
 
-      .rich-text__column ul {
+      #custom__rich-text-columns-{{ section.id }} .rich-text__content ul li:last-child {
+          margin-bottom: 0;
+      }
+
+      #custom__rich-text-columns-{{ section.id }} .rich-text__column ul {
         list-style: none;
       }
 
-      .rich-text__content ul li::before {
+      #custom__rich-text-columns-{{ section.id }} .rich-text__content ul li::before {
         content: '';
         position: absolute;
         left: 0;
