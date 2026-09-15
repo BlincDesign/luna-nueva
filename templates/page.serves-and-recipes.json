@@ -215,7 +215,7 @@
         "tab_inactive_bg": "rgba(0,0,0,0)",
         "tab_inactive_text": "#2d3135",
         "tab_border_color": "#2d3135",
-        "layout_type": "slider",
+        "layout_type": "grid",
         "columns": 4,
         "columns_mobile": 3,
         "gap": 28,
