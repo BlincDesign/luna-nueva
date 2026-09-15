@@ -95,8 +95,10 @@
 
       {% if block.type == 'text' and block.settings.enable_max_width %}
         {% if block.settings.max_width_desktop != blank %}
-          #shopify-section-{{ section.id }} [data-block-id="{{ block.id }}"] {
-            max-width: {{ block.settings.max_width_desktop }}px;
+          @media screen and (min-width: 901px) {
+            #shopify-section-{{ section.id }} [data-block-id="{{ block.id }}"] {
+              max-width: {{ block.settings.max_width_desktop }}px;
+            }
           }
         {% endif %}
 

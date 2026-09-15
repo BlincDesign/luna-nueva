@@ -49,21 +49,21 @@
 
     {% if section.settings.enable_max_width %}
       {% if section.settings.max_width_desktop != blank %}
-        #rich-text-{{ section.id }} .page-width {
-          max-width: {{ section.settings.max_width_desktop }}px;
+        @media screen and (min-width: 590px) {
+          #rich-text-{{ section.id }} .page-width {
+            max-width: {{ section.settings.max_width_desktop }}px;
+          }
         }
       {% endif %}
 
-
       {% if section.settings.max_width_mobile != blank %}
-      @media screen and (max-width: 589px) {
-        #rich-text-{{ section.id }} .page-width {
-          max-width: {{ section.settings.max_width_mobile }}px;
+        @media screen and (max-width: 589px) {
+          #rich-text-{{ section.id }} .page-width {
+            max-width: {{ section.settings.max_width_mobile }}px;
+          }
         }
-      }
+      {% endif %}
     {% endif %}
-  {% endif %}
-  
 {% endstyle %}
 
 <div
