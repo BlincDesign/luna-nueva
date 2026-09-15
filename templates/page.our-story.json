@@ -293,7 +293,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         },
         "two_column_media_6jj9Bd": {
@@ -410,7 +410,7 @@
             "orientation_two": "portrait",
             "caption_two": "",
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         }
       },
