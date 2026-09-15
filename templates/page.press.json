@@ -633,7 +633,7 @@
             "button_type": "link"
           }
         },
-        "text_block_wEBEg3": {
+        "text_block_QKJHWm": {
           "type": "text_block",
           "settings": {
             "enable_image": true,
@@ -641,8 +641,8 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><a href=\"collection.html\"><strong>The bottles</strong></a></p>",
-            "button_label": "Three expressions",
+            "text": "<h4><a href=\"collection.html\"><strong>The bottles</strong></a><br/><br/>Three expressions →</h4>",
+            "button_label": "",
             "button_link": "",
             "button_type": "link"
           }
@@ -650,7 +650,7 @@
       },
       "block_order": [
         "text_block_KjA7Nb",
-        "text_block_wEBEg3"
+        "text_block_QKJHWm"
       ],
       "name": "t:sections.text-columns.presets.text_columns_with_images.name",
       "settings": {
