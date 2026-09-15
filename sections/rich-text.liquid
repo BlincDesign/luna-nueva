@@ -1,62 +1,67 @@
 {% style %}
-  {% for block in section.blocks %}
+    {% for block in section.blocks %}
 
-    #block-{{ block.id }} .rich-text__divider {
-      position: relative;
-      width: {{block.settings.divider_width}}%;
-      height: {{ block.settings.divider_height }}px;
-      background: {{ block.settings.divider_bg }};
-      margin-inline: auto;
-    }
-
-    {% if block.settings.enable_divider %}
       #block-{{ block.id }} .rich-text__divider {
-        margin-block-start: {{ block.settings.margin_top }}px;
-        margin-block-end: {{ block.settings.margin_bottom }}px;
-      }
-    {% else %}
-      #block-{{ block.id }} .rich-text__divider--icon {
-        margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
-        margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
-      }
-    {% endif %}
-
-    #block-{{ block.id }} .rich-text__divider--icon {
-      {% if block.settings.enable_divider %}
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      {% else %}
         position: relative;
-      {%endif %}
-    }
+        width: {{block.settings.divider_width}}%;
+        height: {{ block.settings.divider_height }}px;
+        background: {{ block.settings.divider_bg }};
+        margin-inline: auto;
+      }
 
-  {% endfor %}
+      {% if block.settings.enable_divider %}
+        #block-{{ block.id }} .rich-text__divider {
+          margin-block-start: {{ block.settings.margin_top }}px;
+          margin-block-end: {{ block.settings.margin_bottom }}px;
+        }
+      {% else %}
+        #block-{{ block.id }} .rich-text__divider--icon {
+          margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+          margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
+        }
+      {% endif %}
+
+      #block-{{ block.id }} .rich-text__divider--icon {
+        {% if block.settings.enable_divider %}
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        {% else %}
+          position: relative;
+        {%endif %}
+      }
+
+    {% endfor %}
 
 
-  #rich-text-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  @media screen and (max-width: 589px) {
     #rich-text-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_mb }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-    }
-  }
-
-  {% if section.settings.enable_max_width %}
-    #rich-text-{{ section.id }} .page-width {
-      max-width: {{ section.settings.max_width_desktop }}px;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 
     @media screen and (max-width: 589px) {
-      #rich-text-{{ section.id }} .page-width {
-        max-width: {{ section.settings.max_width_mobile }}px;
+      #rich-text-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mb }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
       }
     }
+
+    {% if section.settings.enable_max_width %}
+      {% if block.settings.max_width_desktop != blank %}
+        #rich-text-{{ section.id }} .page-width {
+          max-width: {{ section.settings.max_width_desktop }}px;
+        }
+      {% endif %}
+
+
+      {% if block.settings.max_width_mobile != blank %}
+      @media screen and (max-width: 589px) {
+        #rich-text-{{ section.id }} .page-width {
+          max-width: {{ section.settings.max_width_mobile }}px;
+        }
+      }
+    {% endif %}
   {% endif %}
 {% endstyle %}
 
@@ -103,7 +108,7 @@
              #block-{{ block.id }} h2 {
                 font-size: {{ block.settings.font_size_mb }}px;
                 line-height: 1.14;
-              } 
+              }
             }
           {% endstyle %}
 
