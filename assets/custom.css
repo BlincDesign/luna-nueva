@@ -445,7 +445,7 @@ strong:has(em) em {
 
 .mobile-nav__link.mobile-nav__link--heading {
   position: relative;
-  font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+  font-size: rgba(var(--type-h3-size));
 }
 
 .mobile-nav__link.mobile-nav__link--heading:after {

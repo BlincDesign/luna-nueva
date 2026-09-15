@@ -225,6 +225,7 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": true,
         "section_height": "750px",
         "mobile_height": "auto",
         "parallax": true,
@@ -320,7 +321,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-6",
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 45,
