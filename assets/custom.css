@@ -53,7 +53,12 @@ h6 {
 }
 
 @media screen and (max-width: 589px) { 
-  h6 {
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
     letter-spacing: unset;
   }
 }
