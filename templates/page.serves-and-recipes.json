@@ -201,10 +201,10 @@
       ],
       "name": "Image columns",
       "settings": {
-        "preheading": "IN THE WILD",
+        "preheading": "<strong>FROM THE BOOKLET</strong>",
         "enable_fade_preheading": false,
-        "title": "Heading",
-        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "title": "Clean enough to drink neat. Honest enough to build on.",
+        "text": "",
         "enlarge_text": true,
         "subheading": false,
         "enable_italic": false,
