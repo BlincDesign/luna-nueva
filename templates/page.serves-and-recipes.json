@@ -132,7 +132,7 @@
             "number": "04",
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Hibiscus Juice <strong>1.5 oz</strong></p><p>Lime juice <strong>0.75 oz</strong></p><p>Cointreau · simple <strong>0.25 oz ea</strong></p><p></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Shake with ice until chilled and strain into a tall glass over ice.</p>",
             "note": "<p>Dried hibiscus flower or lime wheel</p>",
             "tags": "All, Silver"
           }
@@ -144,7 +144,7 @@
             "number": "05",
             "title": "Pineapple Lemon-Drop",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Pineapple Juice <strong>1.5 oz</strong></p><p>Cointreau · simple <strong>0.75 oz ea</strong></p><p>Simple syrup <strong>0.25 oz</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Shake vigorously with ice and strain into a coupe or martini glass, sugar-rimmed if you like.</p>",
             "note": "<p>Pineapple wedge or lemon twist</p>",
             "tags": "All, Silver"
           }
