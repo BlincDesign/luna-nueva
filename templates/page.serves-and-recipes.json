@@ -103,7 +103,7 @@
         "service_A9cHEk": {
           "type": "service",
           "settings": {
-            "image": "shopify://shop_images/recipe-paloma.jpg",
+            "image": "shopify://shop_images/srv-mule.jpg",
             "number": "02",
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>bibiscus juice <strong>1.5 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>cointreau . simple syrup <strong>.25 02  each</strong></p>",
@@ -114,7 +114,7 @@
         "service_iFVmFj": {
           "type": "service",
           "settings": {
-            "image": "shopify://shop_images/recipe-horchata.jpg",
+            "image": "shopify://shop_images/srv-honeydew2.jpg",
             "number": "03",
             "title": "Horchata Swirl",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Almond Milk <strong>3 oz</strong></p><p>Orgeat Syrup <strong>1 oz</strong></p><p>Ground Cinnamon <strong>A Dash</strong></p>",
