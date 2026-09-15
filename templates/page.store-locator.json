@@ -170,7 +170,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/loc-shelf.jpg",
+            "image": "shopify://shop_images/brand-pair_05da5b32-33b6-49e7-ab11-f9a53f94b64a.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
@@ -184,7 +184,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/image-55797.jpg",
+            "image": "shopify://shop_images/ev-red_82294ebc-c2fa-45e7-b9f1-2afba62584a7.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
@@ -217,6 +217,40 @@
         "padding_top_mb": 52,
         "padding_bottom_mb": 10
       }
+    },
+    "rich_text_RkXw8G": {
+      "type": "rich-text",
+      "blocks": {
+        "button_XVXHcC": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://collections/all",
+            "link_text": "Shop Luna Nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_XVXHcC"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
+        "padding_top": 0,
+        "padding_bottom": 86,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
     }
   },
   "order": [
@@ -224,6 +258,7 @@
     "custom_rich_text_columns_wUN6iB",
     "custom_store_locator_KB7mpr",
     "slideshow_QLmVVw",
-    "text_columns_WWqjEk"
+    "text_columns_WWqjEk",
+    "rich_text_RkXw8G"
   ]
 }
