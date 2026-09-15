@@ -47,9 +47,10 @@
   }
 
   #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
-    flex-basis: calc(
+    max-width: calc(
       (100% - {{ columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ columns }}
     );
+    width: 100%;
   }
 
   #custom__image_columns-{{ section.id }} .image-columns__step-number {
@@ -127,9 +128,10 @@
     }
 
     #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
-      flex-basis: calc(
+      max-width: calc(
         (100% - {{ tablet_columns | minus: 1 }} * var(--image-columns-gap-rail)) / {{ tablet_columns }}
       );
+      width: 100%;
     }
 
     .top__heading {
