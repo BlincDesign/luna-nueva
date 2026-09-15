@@ -170,11 +170,11 @@
   id="custom__image_columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} image-columns{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
-  <div class="page-width image-columns__inner">
+  <div class="page-width image-columns__inner" data-aos="fade-up">
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
-          <div class="image-columns__rail" data-aos="fade-up">
+          <div class="image-columns__rail">
             {{ blocks_markup }}
           </div>
         {%- endcapture -%}
