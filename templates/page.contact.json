@@ -183,7 +183,7 @@
             "icon_color": "#f9f6f1",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
             "icon_size": 30,
-            "margin_top": 30,
+            "margin_top": 25,
             "margin_bottom": 30
           }
         }
