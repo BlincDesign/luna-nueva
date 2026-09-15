@@ -211,7 +211,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "NOM 1414 · Vivanco Family Distillery · Los Altos de Jalisco",
-            "enable_fade": false,
+            "enable_fade": true,
             "link": "",
             "link_text": "",
             "video": "shopify://files/videos/jalisco.mp4",
@@ -274,7 +274,19 @@
         "text_bmYbaa": {
           "type": "text",
           "settings": {
-            "text": "<p>Co-Founder & CEO, Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap — something missing for her generation.</p><p>A generation of people who had already redefined how they eat, where they shop, what they put in their bodies, and a tequila category that had not caught up. They were still selling heritage and legacy to people who were asking a different question entirely: is it honest? Is it clean? Does it belong to my life?</p>",
+            "text": "<p>Co-Founder & CEO, Kelsey Selby, a Gen Z California native, spent years inside the hospitality world she loved before recognizing a gap — something missing for her generation.</p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 20
+          }
+        },
+        "text_VHtdMa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A generation of people who had already redefined how they eat, where they shop, what they put in their bodies, and a tequila category that had not caught up. They were still selling heritage and legacy to people who were asking a different question entirely: is it honest? Is it clean? Does it belong to my life?</p>",
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
@@ -302,6 +314,7 @@
         "heading_E6y4DF",
         "divider_kgAwWQ",
         "text_bmYbaa",
+        "text_VHtdMa",
         "two_column_media_6jj9Bd"
       ],
       "name": "Rich text columns",
