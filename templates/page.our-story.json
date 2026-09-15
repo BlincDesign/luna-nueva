@@ -112,7 +112,7 @@
         "preheading_eAaFKh": {
           "type": "preheading",
           "settings": {
-            "title": "IN THE WILD",
+            "title": "<strong>LUNA NUEVA STORY</strong>",
             "enable_fade": false,
             "margin_bottom": 0
           }
@@ -120,7 +120,7 @@
         "heading_PdY3Fm": {
           "type": "heading",
           "settings": {
-            "title": "Where it actually gets poured.",
+            "title": "Our Story",
             "margin_bottom": 0
           }
         },
@@ -128,9 +128,9 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#000",
-            "divider_width": 50,
-            "divider_height": 2,
+            "divider_bg": "#8B8B8B",
+            "divider_width": 80,
+            "divider_height": 0.5,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
             "icon": "",
@@ -142,8 +142,8 @@
         "text_LftFww": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers.</p>",
-            "enlarge_text": false,
+            "text": "<p><strong>Born in the Mountains.</strong></p><p><strong>Made for the Sea.</strong></p><p><em><strong>Guided by the Moon.</strong></em></p>",
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
