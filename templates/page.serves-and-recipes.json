@@ -20,7 +20,7 @@
         "preheading_bRwJzy": {
           "type": "preheading",
           "settings": {
-            "title": "Serves & Recipes",
+            "title": "<strong>Serves & Recipes</strong>",
             "enable_fade": false,
             "position": "left"
           }
@@ -35,21 +35,18 @@
         "text_hCzqhi": {
           "type": "text",
           "settings": {
-            "text": "<h2>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</h2>",
-            "enlarge_text": false,
+            "text": "<p><strong>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</strong></p>",
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
             "position": "right"
           }
         },
-        "text_kNfegg": {
-          "type": "text",
+        "preheading_4cgNVK": {
+          "type": "preheading",
           "settings": {
-            "text": "<p>EVERY SERVE FROM OUR OWN BOOKLET</p>",
-            "enlarge_text": true,
-            "subheading": false,
-            "enable_italic": false,
+            "title": "EVERY SERVE FROM OUR OWN BOOKLET",
             "enable_fade": false,
             "position": "right"
           }
@@ -59,7 +56,7 @@
         "preheading_bRwJzy",
         "heading_NJDaaK",
         "text_hCzqhi",
-        "text_kNfegg"
+        "preheading_4cgNVK"
       ],
       "name": "Rich text columns",
       "settings": {
