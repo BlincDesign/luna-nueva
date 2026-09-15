@@ -188,7 +188,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>FOR VENUES</strong></p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
+            "text": "<p><strong>FOR BARS, RESTAURANTS AND SHOPS</strong></p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
