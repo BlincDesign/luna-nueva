@@ -7,13 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseScheme = header.dataset.scheme;
   let currentScheme = baseScheme;
 
-  const checkOverlap = () => {
-    if (!header.classList.contains('fixed')) {
+  const updateHeader = () => {
+    const shouldBeFixed = window.scrollY > 0;
+
+    header.classList.toggle('fixed', shouldBeFixed);
+
+    if (!shouldBeFixed) {
       header.classList.remove('header_overlap--secondary');
 
       if (currentScheme !== baseScheme) {
         if (currentScheme) header.classList.remove(currentScheme);
         if (baseScheme) header.classList.add(baseScheme);
+
         currentScheme = baseScheme;
       }
 
@@ -51,12 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('scroll', checkOverlap, { passive: true });
-  window.addEventListener('resize', checkOverlap);
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  window.addEventListener('resize', updateHeader);
 
-  checkOverlap();
+  updateHeader();
 });
-
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const header = document.querySelector('#SiteHeader');
