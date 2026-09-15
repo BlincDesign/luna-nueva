@@ -52,7 +52,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 44,
@@ -66,6 +66,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 108,
         "padding_bottom": 108,
         "padding_top_mb": 52,
@@ -198,6 +199,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 40,
         "padding_top_mb": 52,
@@ -334,6 +336,9 @@
         "color_scheme": "scheme-7",
         "align_text": "left",
         "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 86,
         "padding_bottom": 10,
         "padding_top_mb": 52,
@@ -450,6 +455,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "The night that could go anywhere.",
+            "enable_fade": false,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/ev-ice_96cb0382-0469-4175-a186-e4007821e11c.jpg",
@@ -548,6 +554,9 @@
         "color_scheme": "scheme-6",
         "align_text": "center",
         "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
@@ -569,8 +578,7 @@
         "title_QfwKcB": {
           "type": "title",
           "settings": {
-            "title": "Get invited to the next one.",
-            "heading_size": "h2",
+            "title": "<p>Get invited to the next one.</p>",
             "text_width": 600,
             "margin_bottom": 24
           }
@@ -580,7 +588,7 @@
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
             "enlarge_text": false,
-            "text_color": "#f9f6f1",
+            "enable_fade": false,
             "text_width": 600,
             "margin_bottom": 24
           }
