@@ -414,7 +414,7 @@
         "button_GegnPJ": {
           "type": "button",
           "settings": {
-            "link": "shopify://collections/all",
+            "link": "shopify://pages/stor-locator",
             "link_text": "SHOP luna nueva",
             "button_type": "primary",
             "link_2": "",
