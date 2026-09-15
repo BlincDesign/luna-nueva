@@ -23,7 +23,7 @@
             "title": "<strong>SERVES & RECIPES</strong>",
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 20
+            "margin_bottom": 18
           }
         },
         "heading_NJDaaK": {
@@ -43,7 +43,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "right",
-            "margin_bottom": 20
+            "margin_bottom": 13
           }
         },
         "preheading_4cgNVK": {
@@ -72,7 +72,7 @@
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "center",
-        "right_column_width": 41,
+        "right_column_width": 35,
         "right_text_align": "left",
         "right_text-align_mb": "left",
         "right_vertical_align": "center",
