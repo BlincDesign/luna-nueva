@@ -718,7 +718,7 @@
             "title": "<strong>IN THE WILD</strong>",
             "enable_fade": true,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         },
         "heading_7FY4NB": {
@@ -751,11 +751,11 @@
         "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 50,
+        "left_column_width": 60,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 50,
+        "right_column_width": 40,
         "right_text_align": "right",
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
