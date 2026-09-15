@@ -4,6 +4,10 @@
         margin-bottom: 0;   
       }
 
+      #custom__rich-text-columns-{{ section.id }} .rich-text__content ul li:not(last-child) {
+          margin-bottom: 1.15rem;
+      }
+
 
       {% for block in section.blocks %}
         #block-{{ block.id }} .rich-text__divider-wrapper,
