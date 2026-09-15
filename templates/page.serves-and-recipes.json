@@ -119,7 +119,7 @@
             "title": "Honeydew Margarita",
             "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>LEMON JUICE <strong>0.75 OZ</strong></p><p>Ginger · simple syrup <strong>0.25 OZ EA</strong></p><p>fRESH hONEYBREW <strong>Blended</strong></p>",
             "note": "<p>Cinnamon on top, swirl before sipping</p>",
-            "tags": "All"
+            "tags": "All, Silver"
           }
         },
         "service_WPAjcE": {
@@ -130,7 +130,7 @@
             "title": "Hibiscus Paloma",
             "ingredients": "<p>Luna Nueva Silver <strong>1.5 oz</strong></p><p>Hibiscus Juice <strong>1.5 oz</strong></p><p>Lime juice <strong>0.75 oz</strong></p><p>Cointreau · simple <strong>0.25 oz ea</strong></p><p></p>",
             "note": "<p>orange twist, Over one large cube</p>",
-            "tags": "All"
+            "tags": "All, Silver"
           }
         },
         "service_TTFPp8": {
@@ -138,10 +138,10 @@
           "settings": {
             "image": "shopify://shop_images/srv-lemondrop2.jpg",
             "number": "05",
-            "title": "Tequila Old Fashioned",
+            "title": "Pineapple Lemon-Drop",
             "ingredients": "<p>Luna Nueva Anejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
             "note": "<p>orange twist, Over one large cube</p>",
-            "tags": "All"
+            "tags": "All, Silver"
           }
         },
         "service_YMc3YB": {
