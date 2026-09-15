@@ -251,8 +251,13 @@ strong:has(em) em {
 .site-header.header--fixed.site-header--product {
   background: color-mix(in srgb, rgb(var(--color-background)) 74%, transparent);
   backdrop-filter: blur(18px) saturate(165%);
+  transition: background 0.5s ease;
+}
+
+.site-header.header--fixed.site-header--product.fixed {
   box-shadow: 3px 8px 20px 1px #0000002e;
 }
+
 
 .header-item--logo-split .header-item.header-item--split-right {
   justify-content: flex-end;
