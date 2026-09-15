@@ -542,7 +542,7 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#2d3135",
+            "divider_bg": "#2D3135A3",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
