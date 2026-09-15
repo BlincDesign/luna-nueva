@@ -130,37 +130,36 @@
         "padding_bottom_mb": 52
       }
     },
-    "custom_image_slider_with_text_YkrRpy": {
-      "type": "custom__image_slider_with_text",
+    "slideshow_QLmVVw": {
+      "type": "slideshow",
       "blocks": {
-        "image_r9Gxqi": {
+        "image_cMgg66": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "title": "Two line\nslide titles.",
+            "title_size": 80,
+            "subheading": "And big, beautiful imagery",
+            "enable_fade": false,
+            "link": "",
+            "link_text": "Optional button",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
-        "image_r9Gxqi"
+        "image_cMgg66"
       ],
-      "name": "Image slider with text",
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "color_scheme": "",
-        "header_secondary": false,
-        "stylized_bg": false,
-        "slider_autoplay_enabled": true,
-        "slider_autoplay": 4000,
-        "preheading": "Discover more",
-        "heading": "<p>Image slider with text</p>",
-        "enlarge_text": false,
-        "text": "<p>Add your description here.</p>",
-        "button_1_label": "",
-        "button_1_type": "secondary",
-        "button_2_label": "",
-        "button_2_type": "link",
-        "content_width": 550,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true,
+        "content_color_scheme": ""
       }
     }
   },
@@ -168,6 +167,6 @@
     "main",
     "custom_rich_text_columns_wUN6iB",
     "custom_store_locator_KB7mpr",
-    "custom_image_slider_with_text_YkrRpy"
+    "slideshow_QLmVVw"
   ]
 }
