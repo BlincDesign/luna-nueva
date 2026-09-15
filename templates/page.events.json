@@ -37,8 +37,8 @@
         "text_KBqznW": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Luna Nueva hosts monthly events at top restaurants, bars, and shops to bring together a like-minded community over exceptional tequila.</strong></p>",
-            "enlarge_text": true,
+            "text": "<h5>Luna Nueva hosts monthly events at top restaurants, bars, and shops to bring together a like-minded community over exceptional tequila.</h5>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
