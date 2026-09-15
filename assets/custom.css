@@ -801,7 +801,7 @@ a.pdl__right {
 }
 
 .cart__item .cart__item--image {
-  flex: 1 0 80px;
+  flex: 0 0 80px;
 }
 
 .cart__item--details {
