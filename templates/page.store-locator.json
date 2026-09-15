@@ -14,6 +14,68 @@
       "disabled": true,
       "settings": {}
     },
+    "custom_rich_text_columns_wUN6iB": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_zAQFcK": {
+          "type": "preheading",
+          "settings": {
+            "title": "<strong>STORE LOCATOR</strong>",
+            "enable_fade": false,
+            "position": "left"
+          }
+        },
+        "text_CiYWjN": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Find a bottle <br/>near you.</h1>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left"
+          }
+        },
+        "text_TGGwHq": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Bars, restaurants, bottle shops and specialty grocers across California. Search by venue, city or zip, or filter by the kind of place you’re headed to.</strong></p>",
+            "enlarge_text": true,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "preheading_zAQFcK",
+        "text_CiYWjN",
+        "text_TGGwHq"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 70,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "flex-end",
+        "right_column_width": 30,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_store_locator_KB7mpr": {
       "type": "custom__store-locator",
       "blocks": {
@@ -109,6 +171,7 @@
   },
   "order": [
     "main",
+    "custom_rich_text_columns_wUN6iB",
     "custom_store_locator_KB7mpr",
     "text_and_image_4AM8K8",
     "background_image_text_JAqUcm"
