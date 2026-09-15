@@ -94,6 +94,8 @@ strong:has(em) em {
 
 .hero__image-wrapper video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero__text-content:not(:has(.hero__title)) .hero__subtitle.subheading {
