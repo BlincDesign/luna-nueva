@@ -627,7 +627,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<h4>The background<br/><br/>Our Story  →</h4>",
+            "text": "<h4>The background<br/><br/><a href=\"/pages/our-story\" title=\"OUR STORY\">Our Story  →</a></h4>",
             "button_label": "",
             "button_link": "",
             "button_type": "link"
@@ -661,8 +661,39 @@
         "header_secondary": false,
         "stylized_bg": false,
         "padding_top": 92,
-        "padding_bottom": 92,
+        "padding_bottom": 0,
         "padding_top_mb": 52,
+        "padding_bottom_mb": 0
+      }
+    },
+    "rich_text_iHqHVk": {
+      "type": "rich-text",
+      "blocks": {
+        "button_MKqC6X": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/store-locator",
+            "link_text": "Shop Luna Nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_MKqC6X"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": true,
+        "padding_top": 0,
+        "padding_bottom": 92,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 52
       }
     },
@@ -737,6 +768,7 @@
     "custom_rich_text_columns_LTXbDy",
     "custom_rich_text_columns_fRbQFh",
     "text_columns_aB8EbM",
+    "rich_text_iHqHVk",
     "newsletter_jQHpgq"
   ]
 }
