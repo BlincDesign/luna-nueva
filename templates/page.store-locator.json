@@ -162,12 +162,61 @@
         "lazyload_images": true,
         "content_color_scheme": "scheme-6"
       }
+    },
+    "text_columns_qVqGxK": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_PKK9fA": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        },
+        "text_block_yrpyje": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_PKK9fA",
+        "text_block_yrpyje"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
     }
   },
   "order": [
     "main",
     "custom_rich_text_columns_wUN6iB",
     "custom_store_locator_KB7mpr",
-    "slideshow_QLmVVw"
+    "slideshow_QLmVVw",
+    "text_columns_qVqGxK"
   ]
 }
