@@ -82,6 +82,7 @@
         "text_DX6iBb",
         "text_KYyp7w"
       ],
+      "disabled": true,
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-6",
