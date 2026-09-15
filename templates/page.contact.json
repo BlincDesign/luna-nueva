@@ -67,9 +67,9 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "padding_top": 92,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_bottom": 42,
+        "padding_top_mb": 56,
+        "padding_bottom_mb": 26
       }
     },
     "custom_stats_nEGdxw": {
@@ -115,10 +115,10 @@
         "color_scheme": "scheme-1",
         "header_secondary": false,
         "stylized_bg": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 64,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 8
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 40
       }
     },
     "slideshow_xJWHir": {
