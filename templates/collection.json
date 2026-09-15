@@ -228,7 +228,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>ONCE IT'S OPEN</p><h3>Eight ways to pour it →</h3>",
+            "text": "<p>ONCE IT'S OPEN</p><h3><a href=\"/pages/serves-recipes\" title=\"SERVES & RECIPES\">Eight ways to pour it →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
