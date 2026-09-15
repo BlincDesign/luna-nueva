@@ -4,10 +4,6 @@
         margin-bottom: 0;   
       }
 
-      .rich-text__content ul li:not(last-child) {
-          margin-bottom: 1.15rem;
-      }
-
 
       {% for block in section.blocks %}
         #block-{{ block.id }} .rich-text__divider-wrapper,
@@ -137,6 +133,7 @@
       .rich-text__content ul li {
         position: relative;
         padding-left: 25px;
+        margin-bottom: 1.15rem;
       }
 
       .rich-text__column ul {
