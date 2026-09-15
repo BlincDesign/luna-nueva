@@ -22,14 +22,16 @@
           "settings": {
             "title": "<strong>SERVES & RECIPES</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_NJDaaK": {
           "type": "heading",
           "settings": {
             "title": "Eight ways to pour it.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_hCzqhi": {
@@ -40,7 +42,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 20
           }
         },
         "preheading_4cgNVK": {
@@ -48,7 +51,8 @@
           "settings": {
             "title": "EVERY SERVE FROM OUR OWN BOOKLET",
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -90,14 +94,16 @@
           "settings": {
             "title": "<strong>FROM THE BOOKLET</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_L6FqEw": {
           "type": "heading",
           "settings": {
             "title": "Clean enough to drink neat. Honest enough to build on.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "preheading_kaVnM3": {
@@ -105,7 +111,8 @@
           "settings": {
             "title": "ALL EIGHT SERVES ━━ DRAG",
             "enable_fade": true,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -286,7 +293,8 @@
             "subheading": false,
             "enable_italic": true,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_AVhb6T": {
@@ -297,7 +305,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
