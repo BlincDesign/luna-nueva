@@ -21,26 +21,29 @@
           "type": "preheading",
           "settings": {
             "title": "TRADE & WHOLESALE",
-            "enable_fade": false,
-            "position": "left"
+            "enable_fade": true,
+            "position": "left",
+            "margin_bottom": 18
           }
         },
         "heading_gz8wex": {
           "type": "heading",
           "settings": {
             "title": "Carry Luna Nueva.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_wr4amG": {
           "type": "text",
           "settings": {
-            "text": "<p>Additive-free tequila from Jalisco, already poured in 104 verified accounts across California. If your room is the kind of room it belongs in, tell us where you are.</p>",
-            "enlarge_text": true,
+            "text": "<h4>Additive-free tequila from Jalisco, already poured in 104 verified accounts across California. If your room is the kind of room it belongs in, tell us where you are.</h4>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -59,13 +62,14 @@
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
-        "right_column_width": 30,
+        "right_column_width": 40,
         "right_text_align": "left",
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 92,
         "padding_bottom": 42,
         "padding_top_mb": 56,
@@ -130,6 +134,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "Nothing added. Nothing hidden.",
+            "enable_fade": false,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/ev-faces_0ec16a2c-3b91-46a1-ac4a-5cb54cd3e30e.jpg",
@@ -190,6 +195,9 @@
         "color_scheme": "scheme-6",
         "align_text": "left",
         "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 96,
         "padding_bottom": 10,
         "padding_top_mb": 52,
@@ -207,7 +215,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_Jj8UTM": {
@@ -218,7 +227,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -243,6 +253,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 40,
         "padding_top_mb": 0,
@@ -433,6 +444,9 @@
         "color_scheme": "",
         "align_text": "center",
         "narrow_column": true,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 0,
         "padding_bottom": 92,
         "padding_top_mb": 10,
@@ -448,6 +462,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "Coastal. Local. Free.",
+            "enable_fade": false,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/hero-coast.jpg",
