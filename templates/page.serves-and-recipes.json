@@ -218,52 +218,19 @@
     "custom_collections_tabs_qrctdw": {
       "type": "custom__collections-tabs",
       "blocks": {
-        "step_Hite6C": {
-          "type": "step",
+        "service_tpmBC8": {
+          "type": "service",
           "settings": {
-            "image": "shopify://shop_images/brand-agave.jpg",
             "number": "01",
-            "heading": "The land decides",
-            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>",
-            "tags": "All, Silver"
-          }
-        },
-        "step_zACHt4": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/srv-cucumber.jpg",
-            "number": "02",
-            "heading": "Then it waits",
-            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>",
-            "tags": "All"
-          }
-        },
-        "step_AzWykc": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/night-glasses_9cfcd970-295f-4710-a221-21476b35f20c.jpg",
-            "number": "03",
-            "heading": "The table it was made for",
-            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>",
-            "tags": "All"
-          }
-        },
-        "step_HmrU3j": {
-          "type": "step",
-          "settings": {
-            "image": "shopify://shop_images/ev-red_1bd8b71d-4484-42ee-b212-a73bc293d5ae.jpg",
-            "number": "03",
-            "heading": "The table it was made for",
-            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>",
+            "title": "Watermelon Margarita",
+            "ingredients": "<p>Luna Nueva Silver <strong>2 oz</strong></p><p>Watermelon juice <strong>.75 oz</strong></p><p>Lime juice <strong>.75 oz</strong></p><p>Agave <strong>.5 oz</strong></p>",
+            "note": "<p>Lime wheel or a watermelon wedge</p>",
             "tags": "All"
           }
         }
       },
       "block_order": [
-        "step_Hite6C",
-        "step_zACHt4",
-        "step_AzWykc",
-        "step_HmrU3j"
+        "service_tpmBC8"
       ],
       "name": "Collection tabs",
       "settings": {
