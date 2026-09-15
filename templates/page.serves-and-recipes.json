@@ -215,71 +215,66 @@
         "padding_bottom_mb": 52
       }
     },
-    "custom_collections_tabs_VBm66E": {
+    "custom_collections_tabs_qrctdw": {
       "type": "custom__collections-tabs",
       "blocks": {
-        "collection_VkdrXy": {
-          "type": "collection",
+        "step_Hite6C": {
+          "type": "step",
           "settings": {
-            "collection": "blanco",
-            "tab_label": "",
-            "products_to_show": 8,
-            "show_price": true,
-            "show_view_all": true,
-            "view_all_label": "View all"
+            "number": "01",
+            "heading": "The land decides",
+            "text": "<p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment.</p>",
+            "tags": "All"
           }
         },
-        "collection_ty69kw": {
-          "type": "collection",
+        "step_zACHt4": {
+          "type": "step",
           "settings": {
-            "collection": "buy-a-case-or-three-bottles",
-            "tab_label": "",
-            "products_to_show": 8,
-            "show_price": true,
-            "show_view_all": true,
-            "view_all_label": "View all"
+            "number": "02",
+            "heading": "Then it waits",
+            "text": "<p>Reposado and Añejo rest in barrel at the Vivanco family distillery in the Highlands of Jalisco. Nothing is added while they do. Silver skips this part entirely.</p>",
+            "tags": "All"
           }
         },
-        "collection_MzkA4X": {
-          "type": "collection",
+        "step_AzWykc": {
+          "type": "step",
           "settings": {
-            "collection": "frontpage",
-            "tab_label": "",
-            "products_to_show": 12,
-            "show_price": true,
-            "show_view_all": true,
-            "view_all_label": "View all"
+            "number": "03",
+            "heading": "The table it was made for",
+            "text": "<p>The point was never the bottle. It was the room the bottle ends up in, and the people who are still there at the end of the night.</p>",
+            "tags": "All"
           }
         }
       },
       "block_order": [
-        "collection_VkdrXy",
-        "collection_ty69kw",
-        "collection_MzkA4X"
+        "step_Hite6C",
+        "step_zACHt4",
+        "step_AzWykc"
       ],
-      "disabled": true,
-      "name": "Featured tab collections",
+      "name": "Collection tabs",
       "settings": {
-        "color_scheme": "scheme-7",
+        "color_scheme": "",
         "header_secondary": false,
-        "stylized_bg": true,
-        "heading": "",
-        "subheading": "",
+        "stylized_bg": false,
+        "number_color": "#9b3a15",
+        "card_background": "#f9f6f1",
+        "card_text_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "tags": "All, Silver, Reposado, Añejo",
         "tab_active_bg": "#2d3135",
         "tab_active_text": "#ffffff",
         "tab_inactive_bg": "#f9f6f1",
         "tab_inactive_text": "#2d3135",
         "tab_border_color": "#2d3135",
-        "accent_color": "#9b3a15",
-        "track_color": "#2d3135",
         "layout_type": "grid",
-        "columns": 4,
+        "columns": 3,
         "gap": 32,
         "gap_mb": 16,
-        "padding_top": 86,
-        "padding_bottom": 86,
-        "padding_top_mb": 52,
-        "padding_bottom_mb": 52
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
       }
     },
     "custom_rich_text_columns_ywq3Ct": {
@@ -433,6 +428,7 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 160,
         "gap": 22,
+        "gap_mobile": 16,
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
@@ -632,7 +628,7 @@
     "custom_rich_text_columns_KrUFGK",
     "custom_rich_text_columns_iFegyC",
     "custom_image_columns_Ycj7GX",
-    "custom_collections_tabs_VBm66E",
+    "custom_collections_tabs_qrctdw",
     "custom_rich_text_columns_ywq3Ct",
     "custom_media_gallery_xaH6wE",
     "custom_rich_text_columns_QP6dpM",
