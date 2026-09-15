@@ -373,7 +373,7 @@
             "icon_color": "#f9f6f1",
             "icon": "chat",
             "icon_size": 30,
-            "margin_top": 30,
+            "margin_top": 25,
             "margin_bottom": 30
           }
         },
@@ -384,9 +384,9 @@
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
-            "margin_bottom": 0
+            "margin_bottom": 41
           }
         },
         "button_ALXCHd": {
