@@ -45,12 +45,6 @@
     );
   }
 
-  {%- for i in (1..columns) -%}
-    #custom__image_columns-{{ section.id }} .image-columns__item:nth-child({{ columns }}n+{{ i }}) {
-      transition-delay: {{ i | minus: 1 | times: 80 }}ms;
-    }
-  {%- endfor -%}
-
   #custom__image_columns-{{ section.id }} .image-columns__step-number {
     color: {{ section.settings.number_color }};
   }
