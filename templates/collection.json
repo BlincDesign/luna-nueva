@@ -194,6 +194,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "The bottle you grab before the night starts.",
+            "enable_fade": true,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/hero-tailgate_59b4500a-ab5e-486c-a152-45065ece3eb4.jpg",
