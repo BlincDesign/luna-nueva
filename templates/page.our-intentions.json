@@ -22,25 +22,28 @@
           "settings": {
             "title": "<strong>LUNA NUEVA STORY</strong>",
             "enable_fade": true,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 18
           }
         },
         "heading_NVPU6T": {
           "type": "heading",
           "settings": {
             "title": "Our Intentions",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_46QaL9": {
           "type": "text",
           "settings": {
-            "text": "<p>Luna Nueva was built around the belief that life is better when the conditions are right, and that the most important condition is presence.</p>",
-            "enlarge_text": true,
+            "text": "<h4>Luna Nueva was built around the belief that life is better when the conditions are right, and that the most important condition is presence.</h4>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -66,6 +69,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 42,
         "padding_top_mb": 56,
@@ -84,6 +88,7 @@
             "show_divider": true,
             "body": "<h6>The right people. The right room. The feeling that the night is already going somewhere before anyone has poured the first drink.</h6><p>This is a brand for people who love to gather. Who make the table longer, turn a quiet evening into something everyone talks about later, and understand that the best moments are rarely planned and never performed.</p>",
             "enlarge_text": true,
+            "enable_fade": false,
             "button_label": "",
             "button_url": ""
           }
@@ -162,6 +167,8 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 200,
         "gap": 16,
+        "gap_mobile": 16,
+        "mobile_layout": "scroll",
         "padding_top": 86,
         "padding_bottom": 86,
         "padding_top_mb": 52,
@@ -179,7 +186,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -203,6 +211,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 0,
         "padding_top_mb": 52,
@@ -301,7 +310,8 @@
             "subheading": false,
             "enable_italic": true,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -326,6 +336,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
@@ -407,6 +418,9 @@
         "color_scheme": "scheme-6",
         "align_text": "center",
         "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 30,
         "padding_bottom": 86,
         "padding_top_mb": 32,
