@@ -1,3 +1,4 @@
+```liquid
 {%- liquid
   assign layout_type = section.settings.layout_type | default: 'grid'
   assign columns = section.settings.columns | default: 3
@@ -9,8 +10,6 @@
 
   assign image_size_vw = 100 | divided_by: columns
 
-  # Tabs are entirely optional. Leave the "Tabs" field blank and this behaves
-  # exactly like the original Image columns section — no tab bar, no filtering.
   assign has_tabs = false
   if section.settings.tags != blank
     assign has_tabs = true
@@ -127,23 +126,14 @@
       assign block_tags_attr = block.settings.tags | default: 'All' | downcase | remove: ' '
       assign padded_tags = ',' | append: block_tags_attr | append: ','
       assign is_visible_default = true
-      assign block_has_valid_tag = true
 
       if has_tabs
         assign default_needle = ',' | append: default_tag | append: ','
         assign is_visible_default = false
+
         if padded_tags contains default_needle
           assign is_visible_default = true
         endif
-
-        assign block_has_valid_tag = false
-        for tag in tag_list
-          assign tag_slug = tag | strip | downcase | remove: ' '
-          assign tag_needle = ',' | append: tag_slug | append: ','
-          if padded_tags contains tag_needle
-            assign block_has_valid_tag = true
-          endif
-        endfor
       endif
     -%}
 
@@ -153,12 +143,6 @@
       {% if has_tabs and is_visible_default == false %}hidden{% endif %}
       {{ block.shopify_attributes }}
     >
-      {%- if has_tabs and block_has_valid_tag == false and request.design_mode -%}
-        <p class="image-columns__tag-warning">
-          No tab matches this block's tags ("{{ block.settings.tags }}") — check spelling against the section's Tabs field.
-        </p>
-      {%- endif -%}
-
       <figure class="image-columns__image-wrap">
         {%- if block.settings.image != blank -%}
           {%- render 'image-element', img: block.settings.image, widths: '360, 540, 720, 900, 1080', sizeVariable: image_size_vw, append: 'vw', fallback: '100vw', loading: 'lazy', classes: 'image-columns__image' -%}
@@ -227,10 +211,15 @@
 >
   <div class="page-width image-columns__inner" data-aos="fade-up">
     {%- if has_tabs -%}
-      <div class="image-columns__tabs" role="tablist" aria-label="{{ section.settings.heading | default: 'Filter' | escape }}">
+      <div
+        class="image-columns__tabs"
+        role="tablist"
+        aria-label="Filter"
+      >
         {%- for tag in tag_list -%}
           {%- assign tag_label = tag | strip -%}
           {%- assign tag_slug = tag_label | downcase | remove: ' ' -%}
+
           <button
             type="button"
             class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
@@ -283,14 +272,6 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  }
-
-  .image-columns__tag-warning {
-    margin: 0 0 8px;
-    padding: 6px 10px;
-    background-color: #fdecea;
-    color: #b42318;
-    font-size: 12px;
   }
 
   .image-columns__grid {
@@ -426,6 +407,7 @@
   @media screen and (min-width: 901px) {
     .image-columns {
       --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
+      
     }
 
     .image-columns .drag-scroller__bar {
@@ -439,10 +421,16 @@
   (function () {
     function initTagFilter(root) {
       if (!root || root.dataset.tagFilterInit === 'true') return;
+
       root.dataset.tagFilterInit = 'true';
 
-      var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-tab-value]'));
-      var items = Array.prototype.slice.call(root.querySelectorAll('[data-tags]'));
+      var tabs = Array.prototype.slice.call(
+        root.querySelectorAll('[data-tab-value]')
+      );
+
+      var items = Array.prototype.slice.call(
+        root.querySelectorAll('[data-tags]')
+      );
 
       tabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
@@ -450,17 +438,22 @@
 
           tabs.forEach(function (t) {
             var isActive = t === tab;
+
             t.classList.toggle('is-active', isActive);
-            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            t.setAttribute(
+              'aria-selected',
+              isActive ? 'true' : 'false'
+            );
           });
 
           items.forEach(function (item) {
-            var tags = item.dataset.tags ? item.dataset.tags.split(',') : [];
+            var tags = item.dataset.tags
+              ? item.dataset.tags.split(',')
+              : [];
+
             item.hidden = tags.indexOf(value) === -1;
           });
 
-          // A drag-scroller rail measures width while items are visible.
-          // Give it a tick to recalc once the filtered set has settled.
           window.requestAnimationFrame(function () {
             window.dispatchEvent(new Event('resize'));
           });
@@ -469,7 +462,10 @@
     }
 
     function initAll() {
-      var sections = document.querySelectorAll('.image-columns[data-has-tabs="true"]');
+      var sections = document.querySelectorAll(
+        '.image-columns[data-has-tabs="true"]'
+      );
+
       Array.prototype.slice.call(sections).forEach(initTagFilter);
     }
 
@@ -480,7 +476,7 @@
 
 {% schema %}
 {
-  "name": "Collection tabs",
+  "name": "Image columns",
   "tag": "section",
   "class": "section-image-columns",
   "settings": [
@@ -503,7 +499,11 @@
     { "type": "color", "id": "card_text_color", "label": "Service card text color", "default": "#2d3135" },
     { "type": "color", "id": "accent_color", "label": "Service accent color", "default": "#9b3a15" },
     { "type": "color", "id": "track_color", "label": "Slider scroll indicator color", "default": "#2d3135" },
-    { "type": "header", "content": "Tabs" },
+
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
     {
       "type": "text",
       "id": "tags",
@@ -516,6 +516,7 @@
     { "type": "color", "id": "tab_inactive_bg", "label": "Inactive tab background", "default": "#f9f6f1" },
     { "type": "color", "id": "tab_inactive_text", "label": "Inactive tab text", "default": "#2d3135" },
     { "type": "color", "id": "tab_border_color", "label": "Tab border color", "default": "#2d3135" },
+
     { "type": "header", "content": "Layout" },
     {
       "type": "select",
@@ -615,7 +616,7 @@
           "type": "text",
           "id": "tags",
           "label": "Tags (comma separated)",
-          "info": "Which tabs this block should appear under. Must match tag(s) from the section's Tabs field above. Example: All, Silver",
+          "info": "Which tabs this block should appear under. Example: All, Silver",
           "default": "All"
         }
       ]
@@ -644,7 +645,7 @@
           "type": "text",
           "id": "tags",
           "label": "Tags (comma separated)",
-          "info": "Which tabs this block should appear under. Must match tag(s) from the section's Tabs field above. Example: All, Silver",
+          "info": "Which tabs this block should appear under. Example: All, Silver",
           "default": "All"
         }
       ]
@@ -652,7 +653,7 @@
   ],
   "presets": [
     {
-      "name": "Collection tabs",
+      "name": "Image columns",
       "blocks": [
         { "type": "step" },
         {
@@ -677,3 +678,4 @@
   "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
 }
 {% endschema %}
+```
