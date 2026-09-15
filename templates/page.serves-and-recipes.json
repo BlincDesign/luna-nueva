@@ -206,6 +206,72 @@
         "padding_bottom_mb": 52
       }
     },
+    "custom_collections_tabs_VBm66E": {
+      "type": "custom__collections-tabs",
+      "blocks": {
+        "collection_VkdrXy": {
+          "type": "collection",
+          "settings": {
+            "collection": "blanco",
+            "tab_label": "",
+            "products_to_show": 8,
+            "show_price": true,
+            "show_view_all": true,
+            "view_all_label": "View all"
+          }
+        },
+        "collection_ty69kw": {
+          "type": "collection",
+          "settings": {
+            "collection": "buy-a-case-or-three-bottles",
+            "tab_label": "",
+            "products_to_show": 8,
+            "show_price": true,
+            "show_view_all": true,
+            "view_all_label": "View all"
+          }
+        },
+        "collection_MzkA4X": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "tab_label": "",
+            "products_to_show": 12,
+            "show_price": true,
+            "show_view_all": true,
+            "view_all_label": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_VkdrXy",
+        "collection_ty69kw",
+        "collection_MzkA4X"
+      ],
+      "name": "Featured tab collections",
+      "settings": {
+        "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": false,
+        "heading": "Featured collections",
+        "subheading": "",
+        "tab_active_bg": "#2d3135",
+        "tab_active_text": "#ffffff",
+        "tab_inactive_bg": "#f9f6f1",
+        "tab_inactive_text": "#2d3135",
+        "tab_border_color": "#2d3135",
+        "accent_color": "#9b3a15",
+        "track_color": "#2d3135",
+        "layout_type": "grid",
+        "columns": 4,
+        "gap": 32,
+        "gap_mb": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mb": 40,
+        "padding_bottom_mb": 40
+      }
+    },
     "custom_rich_text_columns_ywq3Ct": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -481,6 +547,9 @@
         "color_scheme": "scheme-6",
         "align_text": "center",
         "narrow_column": true,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
@@ -550,6 +619,7 @@
     "custom_rich_text_columns_KrUFGK",
     "custom_rich_text_columns_iFegyC",
     "custom_image_columns_Ycj7GX",
+    "custom_collections_tabs_VBm66E",
     "custom_rich_text_columns_ywq3Ct",
     "custom_media_gallery_xaH6wE",
     "custom_rich_text_columns_QP6dpM",
