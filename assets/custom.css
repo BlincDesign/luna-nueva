@@ -323,7 +323,7 @@ strong:has(em) em {
   position: absolute;
   left: 0;
   bottom: -5px;
-  height: 1px;
+  height: 2px;
   width: 100%;
   background: var(--colorNavText);
   transform: scaleX(0);
