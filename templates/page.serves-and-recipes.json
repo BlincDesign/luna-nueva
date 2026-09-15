@@ -384,7 +384,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/srv-honeydew2.jpg",
-            "image_one_caption": "Built to order",
+            "image_one_caption": "on the table",
             "image_two_caption": ""
           }
         },
@@ -403,7 +403,7 @@
           "settings": {
             "tall": true,
             "image_one": "shopify://shop_images/srv-honeydew.jpg",
-            "image_one_caption": "Between rounds",
+            "image_one_caption": "make the table longer",
             "image_two_caption": ""
           }
         }
