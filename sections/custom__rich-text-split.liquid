@@ -2,8 +2,6 @@
   #rich-text-split-{{ section.id }} {
     position: relative;
     overflow: clip;
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
   /* Full-bleed color background layer, split at the exact same point as the real columns */
@@ -20,6 +18,11 @@
     height: 100%;
     }
 @media screen and (min-width: 590px) {
+
+    #rich-text-split-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
 
     .split__column {
         background: transparent;
