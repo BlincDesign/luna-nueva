@@ -104,10 +104,6 @@
     flex-direction: column;
   }
 
-  .media-gallery__tile--split {
-    flex-direction: row;
-  }
-
   .media-gallery__image {
     position: relative;
     flex: 1 1 0;
@@ -145,6 +141,12 @@
 
     .media-gallery__grid .spacer {
       max-width: 0;
+    }
+  }
+
+  @media screen and (max-width: 680px) {
+    .media-gallery__tile--split {
+      flex-direction: row;
     }
   }
 {% endstylesheet %}
@@ -583,8 +585,8 @@
         {
           "type": "checkbox",
           "id": "split_images",
-          "label": "Split images side by side",
-          "info": "Makes the first and second image each take up 50% of the tile's width instead of stacking. Overrides the stacking from Full-height tile.",
+          "label": "Split images side by side (mobile)",
+          "info": "On mobile, makes the first and second image each take up 50% of the tile's width instead of stacking. Overrides the stacking from Full-height tile. Desktop is unaffected.",
           "default": false
         },
         {
