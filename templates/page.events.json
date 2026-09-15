@@ -140,8 +140,8 @@
         "tile_width_mobile_max": 280,
         "row_height_mobile": 150,
         "gap": 26,
-        "padding_top": 92,
-        "padding_bottom": 92,
+        "padding_top": 86,
+        "padding_bottom": 86,
         "padding_top_mb": 52,
         "padding_bottom_mb": 52
       }
