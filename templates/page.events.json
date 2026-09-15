@@ -484,7 +484,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>Can’t wait</p><h3>Find a bottle near you →</h3>",
+            "text": "<p>Can’t wait</p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
