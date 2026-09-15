@@ -193,7 +193,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 16
           }
         },
         "text_dFcrhE": {
@@ -227,7 +227,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "right",
-            "margin_bottom": 0
+            "margin_bottom": 16
           }
         },
         "text_367phy": {
