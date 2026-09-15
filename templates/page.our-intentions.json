@@ -305,7 +305,7 @@
         "text_9njbG9": {
           "type": "text",
           "settings": {
-            "text": "<h3>Luna Nueva lives in the moment before — open, free, and completely alive. <em><strong>Like the new moon, the anticipation of a night that could go anywhere.</strong></em></h3>",
+            "text": "<h3>Luna Nueva lives in the moment before<br/>— open, free, and completely alive.<br/><em><strong>Like the new moon, the anticipation<br/>of a night that could go anywhere.</strong></em></h3>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": true,
