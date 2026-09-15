@@ -311,7 +311,7 @@
   id="custom__rich-text-columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} rich-text__content{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
-  <div class="rich-text__main page-width">
+  <div class="rich-text__main page-width {{ section.settings.custom_class }}">
     {%- comment -%}
       LEFT COLUMN
     {%- endcomment -%}
@@ -1023,6 +1023,11 @@
       "label": "Detail row divider color",
       "info": "Color used for the line between Detail row blocks.",
       "default": "#f9f6f1"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
     },
     {
       "type": "header",
