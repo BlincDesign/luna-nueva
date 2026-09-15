@@ -185,21 +185,36 @@
         "padding_bottom_mb": 52
       }
     },
-    "background_image_text_kqUrBm": {
-      "type": "background-image-text",
-      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+    "slideshow_RFj3V4": {
+      "type": "slideshow",
+      "blocks": {
+        "image_FxnhAN": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "The bottle you grab before the night starts.",
+            "link": "",
+            "link_text": "",
+            "image": "shopify://shop_images/hero-tailgate_59b4500a-ab5e-486c-a152-45065ece3eb4.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_FxnhAN"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "image": "shopify://shop_images/hero-tailgate_59b4500a-ab5e-486c-a152-45065ece3eb4.jpg",
-        "layout": "left",
-        "height": 550,
+        "section_height": "650px",
+        "mobile_height": "auto",
         "parallax": true,
-        "parallax_direction": "top",
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
         "lazyload_images": true,
-        "subtitle": "",
-        "title": "",
-        "text": "",
-        "button_label": "",
-        "button_link": ""
+        "content_color_scheme": ""
       }
     },
     "text_columns_LtEcyT": {
@@ -284,7 +299,7 @@
     "custom_rich_text_columns_h8hPax",
     "scrolling_text_jPUBXx",
     "custom_product_details_kxMqC9",
-    "background_image_text_kqUrBm",
+    "slideshow_RFj3V4",
     "text_columns_LtEcyT",
     "featured_collection_FjLrkD",
     "featured_collection_aeKpQw"
