@@ -240,10 +240,8 @@
           "silver-copy",
           "anejo"
         ],
-        "full_width_desktop": false,
         "padding_top": 138,
         "padding_bottom": 138,
-        "full_width_mobile": true,
         "padding_top_mb": 72,
         "padding_bottom_mb": 72
       }
@@ -860,6 +858,7 @@
             "show_divider": true,
             "body": "<p>Luna Nueva hosts monthly events at top restaurants, bars, and shops across Southern California to bring together a like-minded community over exceptional tequila. These gatherings are more than tastings — they're immersive experiences that introduce new people to the craft and culture behind Luna Nueva.</p>",
             "enlarge_text": true,
+            "enable_fade": false,
             "button_label": "See what's coming up",
             "button_url": ""
           }
@@ -1329,6 +1328,61 @@
         "padding_top_mb": 80,
         "padding_bottom_mb": 8
       }
+    },
+    "newsletter_p6kHKC": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_eBxjYx": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title_q9niPQ": {
+          "type": "title",
+          "settings": {
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
+          }
+        },
+        "text_mdjJpq": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
+          }
+        },
+        "form_B3wjxx": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_eBxjYx",
+        "title_q9niPQ",
+        "text_mdjJpq",
+        "form_B3wjxx"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
     }
   },
   "order": [
@@ -1352,6 +1406,7 @@
     "custom_photo_wall_zfaPtC",
     "custom_rich_text_columns_EeJbUR",
     "custom_image_columns_WKgQjK",
-    "rich-text"
+    "rich-text",
+    "newsletter_p6kHKC"
   ]
 }
