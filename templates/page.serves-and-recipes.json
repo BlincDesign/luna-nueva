@@ -563,6 +563,7 @@
         "text_k3DPHY",
         "form_JPNDFe"
       ],
+      "disabled": true,
       "name": "t:sections.newsletter.presets.email_signup.name",
       "settings": {
         "color_scheme": "scheme-1",
