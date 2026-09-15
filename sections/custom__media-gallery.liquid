@@ -38,7 +38,6 @@
       max-width: 50px;
   }
 
-
   @media screen and (min-width: 901px) {
     .media-gallery__inner--flush-right {
       --media-gallery-right-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
@@ -181,6 +180,10 @@
   #custom__media-gallery-{{ section.id }}{
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #custom__media-gallery-{{ section.id }} .text--faded {
+    opacity: 0.84; 
   }
 
   {% if section.settings.position == 'right' %}

@@ -172,8 +172,8 @@
   class="rich-text-split{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   <div class="split__bg" aria-hidden="true">
-    <div class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}"></div>
-    <div class="split__bg-panel split__bg-panel--right color-{{ section.settings.right_color_scheme }}"></div>
+    <div class="split__bg-panel split__bg-panel--left color-{{ section.settings.left_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"></div>
+    <div class="split__bg-panel split__bg-panel--right color-{{ section.settings.right_color_scheme }}{% if section.settings.stylized_bg %} background-image{% endif %}"></div>
   </div>
 
   <div class="split__main page-width {{ section.settings.custom_class }}">
