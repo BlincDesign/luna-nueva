@@ -641,7 +641,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<h4><a href=\"collection.html\"><strong>The bottles</strong></a><br/><br/>Three expressions →</h4>",
+            "text": "<h4>The bottles<br/><br/>Three expressions →</h4>",
             "button_label": "",
             "button_link": "",
             "button_type": "link"
