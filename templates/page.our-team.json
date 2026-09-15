@@ -200,7 +200,7 @@
           "type": "text",
           "settings": {
             "text": "<p>That instinct is what she brought to Luna Nueva. Knowing the bartender’s name, making sure everyone at the table feels it, caring for the people who drink this brand — that has always been an act of hospitality for her.</p>",
-            "enlarge_text": false,
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
@@ -212,7 +212,7 @@
           "type": "text",
           "settings": {
             "text": "<p>What she saw was that her generation lived differently, chose differently. They are selective. And when they decide to drink, they want something that feels unmistakably theirs: clean, additive-free, made with real craft, and belonging to the culture they actually live in.</p>",
-            "enlarge_text": false,
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
@@ -246,7 +246,7 @@
           "type": "text",
           "settings": {
             "text": "<p>She spent the last several years building Luna Nueva from the ground up: learning the liquid, cultivating the relationship with the Vivanco family distillery in the Highlands of Jalisco, and creating a presence in Los Angeles through community, events, and genuine belonging.</p>",
-            "enlarge_text": false,
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
@@ -258,7 +258,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Luna Nueva is the first expression of a larger vision — one that sits at the intersection of hospitality, food, craft, and gathering. The tequila is where it begins, but the life it belongs to is much larger than a bottle.</p>",
-            "enlarge_text": false,
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
