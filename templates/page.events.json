@@ -532,7 +532,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>Can’t wait</p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
+            "text": "<p>Can’t wait</p><h4><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h4>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
