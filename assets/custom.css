@@ -729,7 +729,7 @@ a.pdl__right {
 /* Cart drawer start */
 
 #CartDrawer .drawer__fixed-header {
-  padding-top: 30px;
+  padding-top: 16px;
   background: var(--colorDrawers);
   z-index: 20;
   min-height: unset;
