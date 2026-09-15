@@ -144,6 +144,41 @@
       flex-direction: row;
     }
   }
+
+  .mobile-gallery {
+    display: none;
+  }
+
+  .mobile-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-gallery__tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .mobile-gallery__tile--full {
+    aspect-ratio: 4 / 5;
+  }
+
+  .mobile-gallery__tile .media-gallery__image {
+    position: absolute;
+    inset: 0;
+  }
+
+  @media screen and (max-width: 680px) {
+    .media-gallery__media--desktop {
+      display: none;
+    }
+
+    .mobile-gallery {
+      display: block;
+    }
+  }
 {% endstylesheet %}
 
 {% style %}
@@ -182,38 +217,23 @@
   }
 
   @media screen and (max-width: 680px) {
-    #shopify-section-{{ section.id }} .media-gallery__grid {
-      grid-auto-flow: row;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: none;
-      gap: {{ section.settings.gap_mobile }}px;
-      padding-bottom: 0;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__tile {
-      grid-row: auto;
-      aspect-ratio: 1 / 1;
+    #shopify-section-{{ section.id }} .mobile-gallery__grid {
       gap: {{ section.settings.gap_mobile }}px;
     }
 
-    #shopify-section-{{ section.id }} .media-gallery__tile:first-child {
-      grid-column: 1 / -1;
-      aspect-ratio: 4 / 5;
-    }
-
-    #shopify-section-{{ section.id }} .media-gallery__grid .spacer {
-      display: none;
+    #shopify-section-{{ section.id }} .mobile-gallery__tile--full {
+      margin-bottom: {{ section.settings.gap_mobile }}px;
     }
   }
 
   @media screen and (max-width: 589px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
       margin-right: -20px;
     }
   }
 
   @media screen and (min-width: 590px) and (max-width: 680px) {
-    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .media-gallery__media {
+    #shopify-section-{{ section.id }} .media-gallery__inner--flush-right .mobile-gallery {
       margin-right: -40px;
     }
   }
@@ -255,7 +275,7 @@
 
 {% capture media_markup %}
   {% if image_blocks.size > 0 %}
-    <div class="media-gallery__media" data-aos="fade-up">
+    <div class="media-gallery__media media-gallery__media--desktop" data-aos="fade-up">
       {% capture track %}
         <div class="media-gallery__grid">
           {% for block in image_blocks %}
@@ -270,6 +290,8 @@
       {% endcapture %}
       {% render 'layout.drag-scroller', slot: track, label: 'Gallery, scroll horizontally' %}
     </div>
+
+    {% render 'mobile-gallery', image_blocks: image_blocks %}
   {% endif %}
 {% endcapture %}
 
