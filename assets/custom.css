@@ -619,10 +619,6 @@ a.pdl__right {
   .pdc__desc {
     max-width: unset;
   }
-
-  .pdc__arch {
-    max-width: 290px;
-  }
 }
 
 .pdc__row {
@@ -688,6 +684,7 @@ a.pdl__right {
   .pdl__grid .pdc {
     flex: 0 1 calc((100% - 32px) / 2);
     max-width: calc((100% - 32px) / 2);
+    max-width: 290px;
   }
   .pdc .pdc__explore--wrapper {
     text-align: center;
@@ -697,7 +694,6 @@ a.pdl__right {
 @media only screen and (max-width: 589px) {
   .pdl__grid .pdc {
     flex: 0 1 100%;
-    max-width: 100%;
   }
 }
 
