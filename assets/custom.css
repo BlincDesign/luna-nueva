@@ -33,7 +33,7 @@ h5,
 h6 {
   font-size: var(--type-h4-size);
   line-height: 1.45;
-  /* letter-spacing: 1.2px; */
+  letter-spacing: normal;
 }
 
 .enlarge-text * {
