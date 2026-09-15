@@ -288,7 +288,7 @@
       "name": "Media gallery - media only",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "full_width": false,
         "position": "left",
