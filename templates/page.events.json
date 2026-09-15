@@ -504,7 +504,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "The night that could go anywhere.",
-            "enable_fade": false,
+            "enable_fade": true,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/ev-ice_96cb0382-0469-4175-a186-e4007821e11c.jpg",
