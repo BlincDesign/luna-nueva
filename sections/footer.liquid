@@ -461,15 +461,15 @@
         {%- endif -%}
 
         <div class="footer__copyright site-footer__bottom-block">
-          {%- if section.settings.show_copyright -%}
+          {% if section.settings.show_copyright %}
             <span>
               &copy; {{ 'now' | date: '%Y' }}
               {{ shop.name }}. 
-              {%- if section.settings.copyright_text != blank -%}
+              {% if section.settings.copyright_text != blank %}
                 {{ section.settings.copyright_text }}
-              {%- endif -%}
+              {% endif %}
             </span>
-          {%- endif -%}
+          {% endif %}
 
           {% comment %} <span class="footer__powered_by">
             {{ powered_by_link }}

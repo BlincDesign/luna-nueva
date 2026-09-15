@@ -178,10 +178,10 @@
         "subheading": false,
         "enable_italic": false,
         "enable_fade": false,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mb": 40,
-        "padding_bottom_mb": 40
+        "padding_top": 76,
+        "padding_bottom": 76,
+        "padding_top_mb": 56,
+        "padding_bottom_mb": 56
       }
     },
     "hero_video_g7Yadw": {
