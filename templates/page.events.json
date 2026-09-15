@@ -92,7 +92,7 @@
             "show_divider": true,
             "body": "<p>These gatherings are more than just tastings — they’re immersive experiences that introduce new customers to the craft and culture behind Luna Nueva. Whether you’re discovering us for the first time or already part of the family, each one is a chance to connect, celebrate, and raise a glass to good tequila.</p>",
             "enlarge_text": true,
-            "enable_fade": false,
+            "enable_fade": true,
             "button_label": "Get invited to the next one",
             "button_url": ""
           }
