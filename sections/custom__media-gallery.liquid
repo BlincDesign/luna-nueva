@@ -226,7 +226,7 @@
   {% if image_blocks.size > 0 %}
     <div class="media-gallery__media">
       {% capture track %}
-        <div class="media-gallery__grid">
+        <div class="media-gallery__grid"  data-aos="fade-up">
           {% for block in image_blocks %}
             {% render 'media-gallery-tile',
               block: block,
