@@ -272,7 +272,7 @@
   {% if content_block != nil %}
     <div class="media-gallery__content" {{ content_block.shopify_attributes }}>
       {% if content_block.settings.eyebrow != blank %}
-        <p class="media-gallery__eyebrow{% if content_block.settings.enable_fade_eyebrow %}text--faded{% endif %}">{{ content_block.settings.eyebrow }}</p>
+        <p class="media-gallery__eyebrow{% if content_block.settings.enable_fade_eyebrow %} text--faded{% endif %}">{{ content_block.settings.eyebrow }}</p>
       {% endif %}
       {% if content_block.settings.heading != blank %}
         {% assign heading_tag = content_block.settings.heading_size %}
