@@ -37,8 +37,8 @@
         "text_LbYVhx": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Co-Founder & CEO</em></p>",
-            "enlarge_text": true,
+            "text": "<h4><em>Co-Founder & CEO</em></h4>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
