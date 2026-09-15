@@ -83,6 +83,7 @@
           "type": "content",
           "settings": {
             "eyebrow": "<strong>How we gather</strong>",
+            "enable_fade_eyebrow": true,
             "heading": "The night that could go anywhere.",
             "heading_size": "h4",
             "show_divider": true,
