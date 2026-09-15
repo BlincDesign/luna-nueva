@@ -846,8 +846,9 @@ a.pdl__right {
 
 .cart__item--specs {
   opacity: 0.6;
-  font-size: var(--type-caption-size);
+  font-size: var(--type-body-sm-size);
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .cart__item-sub {
