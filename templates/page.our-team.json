@@ -108,6 +108,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 86,
         "padding_top_mb": 52,
@@ -123,6 +124,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "A good life is food, drinks, and the people you share them with.",
+            "enable_fade": false,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/team-room-wide.jpg",
@@ -237,6 +239,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 86,
         "padding_top_mb": 52,
@@ -290,6 +293,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 10,
         "padding_top_mb": 52,
@@ -359,6 +363,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 86,
         "padding_top_mb": 0,
@@ -440,66 +445,13 @@
         "color_scheme": "scheme-6",
         "align_text": "left",
         "narrow_column": false,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 30,
         "padding_bottom": 86,
         "padding_top_mb": 30,
         "padding_bottom_mb": 52
-      }
-    },
-    "newsletter_9CWPKE": {
-      "type": "newsletter",
-      "blocks": {
-        "icon_gLzM4L": {
-          "type": "icon",
-          "settings": {
-            "icon_size": 26,
-            "icon_color": "#d39655",
-            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "margin_bottom": 38
-          }
-        },
-        "title_KrgCjV": {
-          "type": "title",
-          "settings": {
-            "title": "Get invited to the next one.",
-            "heading_size": "h1",
-            "text_width": 480,
-            "margin_bottom": 17
-          }
-        },
-        "text_xFafhP": {
-          "type": "text",
-          "settings": {
-            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
-            "enlarge_text": false,
-            "text_color": "#f9f6f1",
-            "text_width": 660,
-            "margin_bottom": 36
-          }
-        },
-        "form_jTTfrd": {
-          "type": "form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "icon_gLzM4L",
-        "title_KrgCjV",
-        "text_xFafhP",
-        "form_jTTfrd"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "header_secondary": true,
-        "stylized_bg": true,
-        "align_text": "center",
-        "image_width": "33",
-        "image_mask": "none",
-        "image_position": "right",
-        "padding_top": 138,
-        "padding_bottom": 138,
-        "padding_top_mb": 72,
-        "padding_bottom_mb": 72
       }
     }
   },
@@ -511,7 +463,6 @@
     "custom_rich_text_columns_QfLqFY",
     "custom_rich_text_columns_KKKFC6",
     "text_columns_jABiY4",
-    "rich_text_NXFncn",
-    "newsletter_9CWPKE"
+    "rich_text_NXFncn"
   ]
 }
