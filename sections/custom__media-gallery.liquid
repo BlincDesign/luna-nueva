@@ -145,15 +145,18 @@
   }
 
   @media screen and (max-width: 680px) {
-    .media-gallery__tile--split,
-    .media-gallery__tile--tall.media-gallery__tile--split {
-      flex-direction: row;
-    }
-
-    .media-gallery__tile--split .media-gallery__image {
-      aspect-ratio: 1 / 1;
-    }
+  .media-gallery__tile--split,
+  .media-gallery__tile--tall.media-gallery__tile--split {
+    flex-direction: row;
+    align-items: center;
   }
+
+  .media-gallery__tile--split .media-gallery__image {
+    aspect-ratio: 1 / 1;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
 {% endstylesheet %}
 
 {% style %}
