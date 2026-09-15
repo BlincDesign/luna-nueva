@@ -627,8 +627,8 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><a href=\"our-story.html\"><strong>The background</strong></a></p>",
-            "button_label": "Our Story",
+            "text": "<h4>The background<br/><br/>Our Story  →</h4>",
+            "button_label": "",
             "button_link": "",
             "button_type": "link"
           }

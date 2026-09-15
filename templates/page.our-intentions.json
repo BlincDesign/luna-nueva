@@ -21,6 +21,7 @@
           "type": "preheading",
           "settings": {
             "title": "LUNA NUEVA STORY",
+            "enable_fade": false,
             "position": "left"
           }
         },
@@ -36,7 +37,9 @@
           "settings": {
             "text": "<p>Luna Nueva was built around the belief that life is better when the conditions are right, and that the most important condition is presence.</p>",
             "enlarge_text": true,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -51,11 +54,14 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 27,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -77,6 +83,7 @@
             "heading_size": "h3",
             "show_divider": true,
             "body": "<h6>The right people. The right room. The feeling that the night is already going somewhere before anyone has poured the first drink.</h6><p>This is a brand for people who love to gather. Who make the table longer, turn a quiet evening into something everyone talks about later, and understand that the best moments are rarely planned and never performed.</p>",
+            "enlarge_text": true,
             "button_label": "",
             "button_url": ""
           }
@@ -93,14 +100,16 @@
         "image_aRLfH9": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/night-group.jpg",
             "image_one_caption": "",
+            "image_two": "shopify://shop_images/ev-tray.jpg",
             "image_two_caption": ""
           }
         },
         "image_t38c3z": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "tall": false,
             "image_one": "shopify://shop_images/ev-tray.jpg",
@@ -111,14 +120,16 @@
         "image_r9DgNr": {
           "type": "image",
           "settings": {
-            "tall": false,
+            "tall": true,
             "image_one": "shopify://shop_images/night-station.jpg",
             "image_one_caption": "",
+            "image_two": "shopify://shop_images/night-late.jpg",
             "image_two_caption": ""
           }
         },
         "image_zCYx7K": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "tall": false,
             "image_one": "shopify://shop_images/night-late.jpg",
@@ -165,7 +176,9 @@
           "settings": {
             "text": "<h5>Connection is at the core of Luna Nueva, for a generation drinking to honor a moment. Their moment. Choosing what goes in the glass is how they take care of themselves and each other. Clean, additive-free, and made without compromise, because we believe what you bring to the table should be as good as everyone sitting around it.</h5>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": false,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -178,11 +191,14 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 50,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-start",
         "right_column_width": 70,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
@@ -282,7 +298,9 @@
           "settings": {
             "text": "<h4>Luna Nueva lives in the moment before — open, free, and completely alive. <em><strong>Like the new moon, the anticipation of a night that could go anywhere.</strong></em></h4>",
             "enlarge_text": false,
+            "subheading": false,
             "enable_italic": true,
+            "enable_fade": false,
             "position": "right"
           }
         }
@@ -296,11 +314,14 @@
         "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
+        "enable_vertical_divider": false,
         "left_column_width": 100,
         "left_text_align": "left",
+        "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
         "right_column_width": 55,
         "right_text_align": "left",
+        "right_text-align_mb": "left",
         "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
