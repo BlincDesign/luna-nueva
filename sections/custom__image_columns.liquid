@@ -206,7 +206,9 @@
 <div
   id="custom__image_columns-{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} image-columns{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
-  {% if has_tabs %}data-has-tabs="true"{% endif %}
+  {% if has_tabs %}
+    data-has-tabs="true"
+  {% endif %}
 >
   <div class="page-width image-columns__inner" data-aos="fade-up">
     {%- if has_tabs -%}
@@ -240,10 +242,7 @@
           </div>
         {%- endcapture -%}
 
-        {%- render 'layout.drag-scroller',
-          slot: rail_markup,
-          label: 'Image columns, scroll horizontally'
-        -%}
+        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
       {%- else -%}
         <div class="image-columns__grid">
           {{ blocks_markup }}
@@ -406,7 +405,7 @@
   @media screen and (min-width: 901px) {
     .image-columns {
       --image-columns-bleed: max(68px, calc((100vw - 1560px) / 2 + 68px));
-      
+
     }
 
     .image-columns .drag-scroller__bar {
@@ -450,9 +449,7 @@
   };
 
   const initAllTagFilters = () => {
-    document
-      .querySelectorAll('.image-columns[data-has-tabs="true"]')
-      .forEach(initTagFilter);
+    document.querySelectorAll('.image-columns[data-has-tabs="true"]').forEach(initTagFilter);
   };
 
   initAllTagFilters();
@@ -466,6 +463,92 @@
   "tag": "section",
   "class": "section-image-columns",
   "settings": [
+    {
+      "type": "header",
+      "content": "Top heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "preheading",
+      "label": "Prehading",
+      "default": "IN THE WILD"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_fade_preheading",
+      "label": "Lighten preheading",
+      "default": false
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading",
+      "info": "Color will apply on bold and italic."
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your brand with your customers.</p>",
+      "info": "Color will apply on bold and italic."
+    },
+    {
+      "type": "checkbox",
+      "id": "enlarge_text",
+      "label": "Enlarge text",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "subheading",
+      "label": "Subheading",
+      "info": "Will convert the text into subheading format (changes font size)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_italic",
+      "label": "Italic",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_fade_text",
+      "label": "Lighten text",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Button text",
+      "default": "SEE WHAT'S COMING UP →"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "Button style",
+      "default": "secondary",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "link",
+          "label": "Link"
+        }
+      ]
+    },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
     {
       "type": "checkbox",
