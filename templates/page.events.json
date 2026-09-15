@@ -26,10 +26,14 @@
             "margin_bottom": 0
           }
         },
-        "heading_kW39JE": {
-          "type": "heading",
+        "text_MK8fAt": {
+          "type": "text",
           "settings": {
-            "title": "For the nights that turn into something nobody planned.",
+            "text": "<h2>For the nights that turn into something nobody planned.</h2>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
             "position": "left",
             "margin_bottom": 0
           }
@@ -49,7 +53,7 @@
       },
       "block_order": [
         "preheading_VLrbFD",
-        "heading_kW39JE",
+        "text_MK8fAt",
         "text_KBqznW"
       ],
       "name": "Rich text columns",
