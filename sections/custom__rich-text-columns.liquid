@@ -316,7 +316,7 @@
       LEFT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}">
+    <div class="rich-text__column rich-text__column--left text-{{ section.settings.left_text_align }} mb-text-{{ section.settings.left_text-align_mb }}" data-aos>
       {%- assign left_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {% liquid
@@ -369,7 +369,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div id="block-{{ block.id }}" class="block-{{ block.type }}">
+            <div id="block-{{ block.id }}" class="block-{{ block.type }}" >
               {%- case block.type -%}
                 {% when 'divider' %}
                   {% if block.settings.enable_divider %}
@@ -625,7 +625,7 @@
       RIGHT COLUMN
     {%- endcomment -%}
 
-    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}">
+    <div class="rich-text__column rich-text__column--right text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text-align_mb }}" data-aos>
       {%- assign right_previous_type = '' -%}
       {%- for block in section.blocks -%}
         {% liquid
