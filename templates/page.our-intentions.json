@@ -310,7 +310,7 @@
             "subheading": false,
             "enable_italic": true,
             "enable_fade": false,
-            "position": "right",
+            "position": "left",
             "margin_bottom": 0
           }
         }
