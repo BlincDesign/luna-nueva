@@ -95,6 +95,10 @@ strong:has(em) em {
   width: 100%;
 }
 
+.hero__subtitle.subheading {
+    margin-top: 0;
+}
+
 .has-primary--font,
 .has-primary--font * {
   font-family: var(--typeHeaderPrimary) !important;

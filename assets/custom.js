@@ -1,30 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('#SiteHeader');
-
-  if (!header) return;
-
-  // Theme's sticky header script (theme.js) toggles `site-header--stuck` once
-  // the header is actually pinned to the top of the viewport. Mirror that
-  // real sticky state onto a `fixed` class so it stays correct in both
-  // scroll directions without duplicating theme.js's own scroll threshold.
-  const syncFixedState = () => {
-    header.classList.toggle('fixed', header.classList.contains('site-header--stuck'));
-  };
-
-  new MutationObserver(syncFixedState).observe(header, {
-    attributes: true,
-    attributeFilter: ['class'],
-  });
-  syncFixedState();
-
   const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
 
-  if (!sections.length) return;
+  if (!header || !sections.length) return;
 
   const baseScheme = header.dataset.scheme;
   let currentScheme = baseScheme;
 
   const checkOverlap = () => {
+    if (!header.classList.contains('fixed')) {
+      header.classList.remove('header_overlap--secondary');
+
+      if (currentScheme !== baseScheme) {
+        if (currentScheme) header.classList.remove(currentScheme);
+        if (baseScheme) header.classList.add(baseScheme);
+        currentScheme = baseScheme;
+      }
+
+      return;
+    }
+
     const headerRect = header.getBoundingClientRect();
 
     const overlappingSection = [...sections].find((section) => {
@@ -36,16 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    header.classList.toggle('header_overlap--secondary', header.classList.contains('fixed') && !!overlappingSection);
+    header.classList.toggle(
+      'header_overlap--secondary',
+      !!overlappingSection
+    );
 
     const sectionScheme = overlappingSection
-      && [...overlappingSection.classList].find((cls) => cls.startsWith('color-scheme-'));
+      && [...overlappingSection.classList].find((cls) =>
+        cls.startsWith('color-scheme-')
+      );
 
     const nextScheme = sectionScheme || baseScheme;
 
     if (nextScheme !== currentScheme) {
       if (currentScheme) header.classList.remove(currentScheme);
-      header.classList.add(nextScheme);
+      if (nextScheme) header.classList.add(nextScheme);
+
       currentScheme = nextScheme;
     }
   };
