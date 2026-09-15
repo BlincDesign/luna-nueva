@@ -528,21 +528,23 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p><strong>THE MAKING</strong></p>"
+            "text": "<p><strong>THE MAKING</strong></p>",
+            "enable_fade": false
           }
         },
         "text_MhzT48": {
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<h2>From the Highlands<br/>to your table.</h2>"
+            "text": "<h2>From the Highlands<br/>to your table.</h2>",
+            "enable_fade": false
           }
         },
         "divider_tkEFq8": {
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#2D31353D",
+            "divider_bg": "#2d31353d",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
@@ -673,16 +675,16 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "",
-        "preheading": "IN THE WILD",
+        "preheading": "",
         "enable_fade_preheading": false,
-        "title": "Heading",
-        "text": "<p>Use this text to share information about your brand with your customers.</p>",
+        "title": "",
+        "text": "",
         "enlarge_text": true,
         "subheading": false,
         "enable_italic": false,
         "enable_fade_text": false,
         "link": "",
-        "link_text": "SEE WHAT'S COMING UP →",
+        "link_text": "",
         "button_type": "secondary",
         "header_secondary": false,
         "stylized_bg": true,
@@ -1296,7 +1298,8 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>"
+            "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>",
+            "enable_fade": false
           }
         },
         "button_c7KAPk": {
