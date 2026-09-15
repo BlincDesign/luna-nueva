@@ -163,7 +163,7 @@
         "preheading_EdBFBm": {
           "type": "preheading",
           "settings": {
-            "title": "PAST NIGHTS",
+            "title": "<strong>PAST NIGHTS</strong>",
             "enable_fade": true,
             "position": "left",
             "margin_bottom": 18
