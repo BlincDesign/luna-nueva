@@ -157,9 +157,11 @@
   @media screen and (max-width: 589px) {
     #rich-text-split-{{ section.id }} .split__column--left {
       padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: 24px;
     }
 
     #rich-text-split-{{ section.id }} .split__column--right {
+        padding-top: 24px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
 
@@ -196,7 +198,6 @@
       flex: unset;
       position: relative;
       padding-inline: calc((100vw - 100%) / 2 + 20px);
-      padding-block: 24px;
     }
   }
 {% endstyle %}
