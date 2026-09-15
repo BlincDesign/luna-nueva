@@ -336,12 +336,6 @@
               {%- endfor -%}
             </div>
 
-            {%- if section.settings.dynamic_tab_text != blank -%}
-              <div class="image-columns__dynamic-tab-text rte">
-                {{ section.settings.dynamic_tab_text }}
-              </div>
-            {%- endif -%}
-
             <div class="image-columns__serve-count" aria-live="polite"></div>
           {%- endif -%}
 
@@ -741,11 +735,6 @@
       "id": "tags",
       "label": "Tabs (comma separated)",
       "info": "Leave blank to disable tabs. First tag is the default active tab. Example: All, Silver, Reposado, Añejo"
-    },
-    {
-      "type": "richtext",
-      "id": "dynamic_tab_text",
-      "label": "Dynamic tab text"
     },
     { "type": "color", "id": "tab_active_bg", "label": "Active tab background", "default": "#2d3135" },
     { "type": "color", "id": "tab_active_text", "label": "Active tab text", "default": "#ffffff" },
