@@ -32,7 +32,10 @@
     .split__column {
         background: transparent;
     }
-    
+
+    #rich-text-split-{{ section.id }} .theme-block__text {
+        padding-left: 67px;
+    }
 }
   #rich-text-split-{{ section.id }} .split__bg-panel--left {
     width: {{ section.settings.left_column_width }}%;
@@ -321,7 +324,7 @@
       class="split__column split__column--right {% if section.settings.stylized_bg %} background-image{% endif %} color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
       data-aos
     >
-      <div class="theme-block__text" style="padding-left: 67px;">
+      <div class="theme-block__text">
         {%- if section.settings.right_text != blank -%}
           {%- if section.settings.enlarge_text -%}
             <div class="enlarge-text">{{ section.settings.right_text }}</div>
