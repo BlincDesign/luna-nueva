@@ -156,7 +156,7 @@
             "number": "06",
             "title": "Horchata Swirl",
             "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Almond milk <strong>3 oz</strong></p><p>Orgeat syrup <strong>1 oz</strong></p><p>Ground cinnamon <strong>a dash</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Shake until creamy and chilled, then strain into a rocks glass with fresh ice.</p>",
             "note": "<p>Cinnamon on top, swirl before sipping</p>",
             "tags": "All, Reposado"
           }
@@ -168,7 +168,7 @@
             "number": "07",
             "title": "Italian Margarita",
             "ingredients": "<p>Luna Nueva Reposado <strong>2 oz</strong></p><p>Amaretto <strong>1 oz</strong></p><p>Lime juice <strong>0.5 oz</strong></p><p>Lemon Juice <strong>0.5 oz</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Shake well with ice and strain into a rocks glass over fresh ice.</p>",
             "note": "<p>A sage leaf</p>",
             "tags": "All, Reposado"
           }
@@ -180,7 +180,7 @@
             "number": "08",
             "title": "Tequila Old Fashioned",
             "ingredients": "<p>Luna Nueva Añejo <strong>2 oz</strong></p><p>Demerara Syrup <strong>1 Bar Spoon</strong></p><p>Angosturea Bitters <strong>12 Dashes</strong></p>",
-            "serve_richtext": "",
+            "serve_richtext": "<p>Stir gently over ice for about 20 seconds, then strain into a rocks glass over one large cube.</p>",
             "note": "<p>Orange twist, over one large cube</p>",
             "tags": "All, Añejo"
           }
