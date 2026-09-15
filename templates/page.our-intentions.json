@@ -166,7 +166,7 @@
         "tile_width_mobile_min": 150,
         "tile_width_mobile_max": 280,
         "row_height_mobile": 200,
-        "gap": 16,
+        "gap": 26,
         "gap_mobile": 16,
         "mobile_layout": "scroll",
         "padding_top": 86,
