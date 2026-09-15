@@ -128,7 +128,7 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#8B8B8B",
+            "divider_bg": "#8b8b8b",
             "divider_width": 80,
             "divider_height": 0.5,
             "enable_icon": false,
@@ -170,7 +170,7 @@
         "left_vertical_align": "flex-end",
         "right_color_scheme": "scheme-1",
         "right_text": "<h4>Luna Nueva begins in the Highlands of Jalisco at the Vivanco family distillery, NOM 1414 — one of the most respected producers in Mexico, where the craft of tequila runs generations deep.</h4><p>The agave grows across highland and lowland terrain, each plant taking years to reach its moment. No additives, no shortcuts, no compromise. The liquid was built with integrity before the brand had a name.</p>",
-        "right_column_width": 50,
+        "right_column_width": 45,
         "right_text_align": "left",
         "right_text_align_mb": "left",
         "right_vertical_align": "flex-end",
