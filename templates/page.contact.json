@@ -214,8 +214,8 @@
         "text_dHFEkD": {
           "type": "text",
           "settings": {
-            "text": "<h6>NOTHING ADDED. NOTHING HIDDEN.</h6>",
-            "enlarge_text": false,
+            "text": "<p><strong>NOTHING ADDED. NOTHING HIDDEN.</strong></p>",
+            "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
