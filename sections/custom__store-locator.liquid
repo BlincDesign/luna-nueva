@@ -118,6 +118,11 @@
     display: none;
   }
 
+  .bleed-rule {
+    border: 0;
+    border-top: 1px solid var(--rule)
+  }
+
   @media screen and (max-width: 589px) {
     .store-locator__stats {
       gap: 24px;
@@ -171,6 +176,7 @@
       <div class="store-locator__content text-body-small rte" {{ content_block.shopify_attributes }}>
         {{ content_block.settings.text }}
       </div>
+      <hr class="bleed-rule">
     {%- endif -%}
 
     {%- if pills_block -%}
