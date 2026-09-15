@@ -16,6 +16,8 @@ h1 {
 .h2,
 h2 {
   font-size: var(--type-h2-size);
+  line-height: 1.06;
+  letter-spacing: -.012em;
 }
 
 .h3,
