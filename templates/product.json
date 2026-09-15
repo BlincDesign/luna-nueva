@@ -16,6 +16,7 @@
           "type": "text",
           "settings": {
             "text": "<strong>The Collection · 750ml · Additive-Free</strong>",
+            "subheading": true,
             "uppercase": true,
             "margin_bottom": 10
           }
@@ -367,6 +368,61 @@
     "collection-return": {
       "type": "collection-return",
       "settings": {}
+    },
+    "newsletter_jf3EtE": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_NKFpxh": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title_QXYzPq": {
+          "type": "title",
+          "settings": {
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
+          }
+        },
+        "text_geLh6D": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
+          }
+        },
+        "form_9XWTic": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_NKFpxh",
+        "title_QXYzPq",
+        "text_geLh6D",
+        "form_9XWTic"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
     }
   },
   "order": [
@@ -375,6 +431,7 @@
     "custom_rich_text_columns_EnMEYm",
     "sub",
     "product-recommendations",
-    "collection-return"
+    "collection-return",
+    "newsletter_jf3EtE"
   ]
 }
