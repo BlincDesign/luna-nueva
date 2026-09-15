@@ -124,9 +124,9 @@
         "stylized_bg": true,
         "full_width": false,
         "widget_tag": "map_p3xwre6q",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 86,
-        "padding_top_mb": 20,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 52
       }
     },
