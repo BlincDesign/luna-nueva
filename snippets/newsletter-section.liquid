@@ -54,9 +54,9 @@
                 {% endstyle %}
 
                 {%- if block.settings.title != blank -%}
-                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">
-                    {{ block.settings.title | escape }}
-                  </p>
+                  <div class="title-block">
+                    {{ block.settings.title }}
+                  </div>
                 {%- endif -%}
               {%- when 'text' -%}
                 {% style %}
