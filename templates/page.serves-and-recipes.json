@@ -417,7 +417,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>NEED A BOTTLE</p><h3>Three expressions →</h3>",
+            "text": "<p>NEED A BOTTLE</p><h3><a href=\"/collections/all\" title=\"All products\">Three expressions →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
