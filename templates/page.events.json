@@ -59,7 +59,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 60,
@@ -494,7 +494,7 @@
         "image_KEn99F": {
           "type": "image",
           "settings": {
-            "title": "",
+            "title": "s",
             "title_size": 80,
             "subheading": "The night that could go anywhere.",
             "enable_fade": false,
