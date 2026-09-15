@@ -43,7 +43,7 @@
   {% endif %}
 {% endstyle %}
 
-<div class="scrolling-text scrolling-text--{{ section.id }}">
+<div class="scrolling-text scrolling-text--{{ section.id }}{% if section.settings.stylized_bg %} background-image{% endif %}">
   <div
     class="scrolling-text__inner scrolling-text__inner--{{ section.settings.direction }}"
     aria-hidden="true"
