@@ -1,69 +1,69 @@
 {% style %}
-    {% for block in section.blocks %}
+  {% for block in section.blocks %}
 
+    #block-{{ block.id }} .rich-text__divider {
+      position: relative;
+      width: {{block.settings.divider_width}}%;
+      height: {{ block.settings.divider_height }}px;
+      background: {{ block.settings.divider_bg }};
+      margin-inline: auto;
+    }
+
+    {% if block.settings.enable_divider %}
       #block-{{ block.id }} .rich-text__divider {
-        position: relative;
-        width: {{block.settings.divider_width}}%;
-        height: {{ block.settings.divider_height }}px;
-        background: {{ block.settings.divider_bg }};
-        margin-inline: auto;
+        margin-block-start: {{ block.settings.margin_top }}px;
+        margin-block-end: {{ block.settings.margin_bottom }}px;
       }
-
-      {% if block.settings.enable_divider %}
-        #block-{{ block.id }} .rich-text__divider {
-          margin-block-start: {{ block.settings.margin_top }}px;
-          margin-block-end: {{ block.settings.margin_bottom }}px;
-        }
-      {% else %}
-        #block-{{ block.id }} .rich-text__divider--icon {
-          margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
-          margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
-        }
-      {% endif %}
-
+    {% else %}
       #block-{{ block.id }} .rich-text__divider--icon {
-        {% if block.settings.enable_divider %}
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        {% else %}
-          position: relative;
-        {%endif %}
+        margin-block-start: {{ block.settings.margin_top | divided_by: 2 }}px;
+        margin-block-end: {{ block.settings.margin_bottom | divided_by: 2 }}px;
       }
-
-    {% endfor %}
-
-
-    #rich-text-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-
-    @media screen and (max-width: 589px) {
-      #rich-text-{{ section.id }} {
-        padding-top: {{ section.settings.padding_top_mb }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mb }}px;
-      }
-    }
-
-    {% if section.settings.enable_max_width %}
-      {% if section.settings.max_width_desktop != blank and section.settings.max_width_desktop != 0 %}
-        @media screen and (min-width: 590px) {
-          #rich-text-{{ section.id }} .page-width {
-            max-width: {{ section.settings.max_width_desktop }}px;
-          }
-        }
-      {% endif %}
-
-      {% if section.settings.max_width_mobile != blank and section.settings.max_width_mobile != 0 %}
-        @media screen and (max-width: 589px) {
-          #rich-text-{{ section.id }} .page-width {
-            max-width: {{ section.settings.max_width_mobile }}px;
-          }
-        }
-      {% endif %}
     {% endif %}
+
+    #block-{{ block.id }} .rich-text__divider--icon {
+      {% if block.settings.enable_divider %}
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      {% else %}
+        position: relative;
+      {%endif %}
+    }
+
+  {% endfor %}
+
+
+  #rich-text-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 589px) {
+    #rich-text-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  }
+
+  {% if section.settings.enable_max_width %}
+    {% if section.settings.max_width_desktop != blank and section.settings.max_width_desktop != 0 %}
+      @media screen and (min-width: 590px) {
+        #rich-text-{{ section.id }} .page-width {
+          max-width: {{ section.settings.max_width_desktop }}px;
+        }
+      }
+    {% endif %}
+
+    {% if section.settings.max_width_mobile != blank and section.settings.max_width_mobile != 0 %}
+      @media screen and (max-width: 589px) {
+        #rich-text-{{ section.id }} .page-width {
+          max-width: {{ section.settings.max_width_mobile }}px;
+        }
+      }
+    {% endif %}
+  {% endif %}
 {% endstyle %}
 
 <div
@@ -126,7 +126,7 @@
             {%- endif -%}
           </div>
         {%- when 'text' -%}
-          <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+          <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %}">
             {%- if block.settings.text != blank -%}
               {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
               {{ block.settings.text }}
@@ -438,6 +438,12 @@
           "type": "richtext",
           "label": "t:sections.rich-text.blocks.text.settings.text.label",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
         }
       ]
     },
