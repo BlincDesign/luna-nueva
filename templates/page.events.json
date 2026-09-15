@@ -184,7 +184,7 @@
         "text_86nrbW": {
           "type": "text",
           "settings": {
-            "text": "<p>DRAG ──</p>",
+            "text": "<p>DRAG ──<br/><br/></p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
@@ -539,7 +539,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>Can’t wait</p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
+            "text": "<p>CAN'T WAIT</p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -553,7 +553,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>For venues</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
+            "text": "<p>FOR VENUES</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
