@@ -10,8 +10,8 @@
     >
       <div class="drawer__fixed-header">
         <div class="drawer__header appear-animation appear-delay-1">
-          <div class="drawer__controls h4">
-            <div class="drawer__title">Your Bag</div>
+          <div class="drawer__controls">
+            <div class="drawer__title h4">Your Bag</div>
             <div class="drawer__close">
               <button type="button" class="drawer__close-button js-drawer-close">
                 <span>Close</span>
@@ -42,7 +42,7 @@
         <div class="drawer__footer appear-animation appear-delay-4">
           <div data-discounts>
             {% if cart.cart_level_discount_applications != blank %}
-              <div class="cart__item-sub cart__item-row">
+              <div class="cart__item-sub cart__item-row text-body-small">
                 <div>{{ 'cart.general.discounts' | t }}</div>
                 <div class="text-right">
                   {% for cart_discount in cart.cart_level_discount_applications %}
