@@ -539,7 +539,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>CAN'T WAIT</p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
+            "text": "<p><strong>CAN'T WAIT</strong></p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -553,7 +553,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p>FOR VENUES</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
+            "text": "<p><strong>FOR VENUES</strong></p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
