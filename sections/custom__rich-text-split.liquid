@@ -147,11 +147,14 @@
   {% endfor %}
 
   @media screen and (max-width: 589px) {
-    #rich-text-split-{{ section.id }} .split__main {
+    #rich-text-split-{{ section.id }} .split__column--left {
       padding-top: {{ section.settings.padding_top_mb }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
     }
 
+    #rich-text-split-{{ section.id }} .split__column--right {
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+    
     #rich-text-split-{{ section.id }} .page-width {
         padding: 0;
     }
