@@ -176,9 +176,9 @@
           "type": "divider",
           "settings": {
             "enable_divider": true,
-            "divider_bg": "#8F9D96",
+            "divider_bg": "#8f9d96",
             "divider_width": 100,
-            "divider_height": 1,
+            "divider_height": 0.5,
             "enable_icon": false,
             "icon_color": "#f9f6f1",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
@@ -305,6 +305,7 @@
       ],
       "name": "Image columns",
       "settings": {
+        "color_scheme": "",
         "preheading": "IN THE WILD",
         "enable_fade_preheading": false,
         "title": "Heading",
@@ -316,7 +317,6 @@
         "link": "",
         "link_text": "SEE WHAT'S COMING UP →",
         "button_type": "secondary",
-        "color_scheme": "",
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
