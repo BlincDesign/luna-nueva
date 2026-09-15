@@ -937,7 +937,7 @@
             "title": "<strong>SHOT ON A DISPOSABLE</strong>",
             "enable_fade": true,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 16
           }
         },
         "heading_XDjnmY": {
@@ -1107,7 +1107,7 @@
             "title": "<strong>FOUR WAYS TO POUR IT</strong>",
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 16
           }
         },
         "text_wjTinT": {
