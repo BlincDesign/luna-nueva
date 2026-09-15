@@ -81,6 +81,10 @@
     background-color: {{ section.settings.track_color }};
   }
 
+  featured-tab-collections {
+    display: block;
+  }
+
   @media screen and (max-width: 900px) {
     #custom__featured_tab_collections-{{ section.id }} .featured-tab-collections__grid {
       grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
