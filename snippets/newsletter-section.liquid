@@ -64,25 +64,25 @@
                     max-width: {{ block.settings.text_width }}px;
                     margin: 0 auto;
                     margin-bottom : {{ block.settings.margin_bottom }}px;
-                    color: {{ block.settings.text_color }};
-                    opacity: .66;
                   }
 
                   .theme-block--{{ block.id }} .enlarge-text * {
                       margin: 0;
                   }
                 {% endstyle %}
-                {%- if block.settings.text != blank -%}
-                  {% if block.settings.enlarge_text %}
-                    <div class="rte">
-                      <div class="enlarge-text">
-                  {% endif %}
-                  {{ block.settings.text }}
-                  {% if block.settings.enlarge_text %}
-                    </div>
-                    </div>
-                  {% endif %}
-                {%- endif -%}
+                <div class="text-block {% if block.settings.enable_fade %}text--faded{% endif %}">
+                  {%- if block.settings.text != blank -%}
+                    {% if block.settings.enlarge_text %}
+                      <div class="rte">
+                        <div class="enlarge-text">
+                    {% endif %}
+                    {{ block.settings.text }}
+                    {% if block.settings.enlarge_text %}
+                      </div>
+                      </div>
+                    {% endif %}
+                  {%- endif -%}
+                </div>
               {%- when 'form' -%}
                 {%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
               {%- when 'share_buttons' -%}
