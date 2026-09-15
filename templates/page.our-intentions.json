@@ -20,8 +20,8 @@
         "preheading_GHArPE": {
           "type": "preheading",
           "settings": {
-            "title": "LUNA NUEVA STORY",
-            "enable_fade": false,
+            "title": "<strong>LUNA NUEVA STORY</strong>",
+            "enable_fade": true,
             "position": "left"
           }
         },
