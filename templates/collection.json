@@ -50,7 +50,8 @@
           "settings": {
             "title": "{{ collection.title }}",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_74fBbx": {
@@ -61,7 +62,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_akRLmh": {
@@ -72,7 +74,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -98,6 +101,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 86,
         "padding_bottom": 42,
         "padding_top_mb": 56,
@@ -152,6 +156,7 @@
       ],
       "name": "t:sections.marquee.presets.scrolling_text.name",
       "settings": {
+        "stylized_bg": false,
         "plus_icon": "shopify://shop_images/sparkle-icon.svg",
         "plus_icon_size": 13,
         "text_spacing": true,
@@ -268,6 +273,61 @@
         "padding_bottom_mb": 52
       }
     },
+    "newsletter_jzCWYw": {
+      "type": "newsletter",
+      "blocks": {
+        "icon_UqMQtf": {
+          "type": "icon",
+          "settings": {
+            "icon_size": 26,
+            "icon_color": "#d39655",
+            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
+            "margin_bottom": 38
+          }
+        },
+        "title_H4TiQM": {
+          "type": "title",
+          "settings": {
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
+          }
+        },
+        "text_JmAnpd": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
+          }
+        },
+        "form_j6ztaQ": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "icon_UqMQtf",
+        "title_H4TiQM",
+        "text_JmAnpd",
+        "form_j6ztaQ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "header_secondary": true,
+        "stylized_bg": true,
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 72
+      }
+    },
     "featured_collection_FjLrkD": {
       "type": "featured-collection",
       "disabled": true,
@@ -302,6 +362,7 @@
     "custom_product_details_kxMqC9",
     "slideshow_RFj3V4",
     "text_columns_LtEcyT",
+    "newsletter_jzCWYw",
     "featured_collection_FjLrkD",
     "featured_collection_aeKpQw"
   ]
