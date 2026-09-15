@@ -87,7 +87,7 @@
         "preheading_etKep6": {
           "type": "preheading",
           "settings": {
-            "title": "<strong>SERVES & RECIPES</strong>",
+            "title": "<strong>FROM THE BOOKLET</strong>",
             "enable_fade": false,
             "position": "left"
           }
@@ -95,25 +95,14 @@
         "heading_L6FqEw": {
           "type": "heading",
           "settings": {
-            "title": "Eight ways to pour it.",
+            "title": "Clean enough to drink neat. Honest enough to build on.",
             "position": "left"
           }
         },
-        "text_hUhcyh": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</strong></p>",
-            "enlarge_text": true,
-            "subheading": false,
-            "enable_italic": false,
-            "enable_fade": false,
-            "position": "right"
-          }
-        },
-        "preheading_MMifWL": {
+        "preheading_kaVnM3": {
           "type": "preheading",
           "settings": {
-            "title": "EVERY SERVE FROM OUR OWN BOOKLET",
+            "title": "ALL EIGHT SERVES -- DRAG",
             "enable_fade": false,
             "position": "right"
           }
@@ -122,8 +111,7 @@
       "block_order": [
         "preheading_etKep6",
         "heading_L6FqEw",
-        "text_hUhcyh",
-        "preheading_MMifWL"
+        "preheading_kaVnM3"
       ],
       "name": "Rich text columns",
       "settings": {
@@ -136,9 +124,9 @@
         "left_text-align_mb": "left",
         "left_vertical_align": "center",
         "right_column_width": 50,
-        "right_text_align": "left",
+        "right_text_align": "right",
         "right_text-align_mb": "left",
-        "right_vertical_align": "center",
+        "right_vertical_align": "flex-end",
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
