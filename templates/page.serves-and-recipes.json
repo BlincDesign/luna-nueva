@@ -102,8 +102,8 @@
         "preheading_kaVnM3": {
           "type": "preheading",
           "settings": {
-            "title": "ALL EIGHT SERVES -- DRAG",
-            "enable_fade": false,
+            "title": "ALL EIGHT SERVES ━━ DRAG",
+            "enable_fade": true,
             "position": "right"
           }
         }
