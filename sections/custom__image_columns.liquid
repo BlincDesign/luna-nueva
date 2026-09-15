@@ -327,6 +327,7 @@
                   type="button"
                   class="image-columns__tab{% if tag_slug == default_tag %} is-active{% endif %}"
                   data-tab-value="{{ tag_slug }}"
+                  data-tab-label="{{ tag_label | escape }}"
                   role="tab"
                   aria-selected="{% if tag_slug == default_tag %}true{% else %}false{% endif %}"
                 >
@@ -334,6 +335,14 @@
                 </button>
               {%- endfor -%}
             </div>
+
+            {%- if section.settings.dynamic_tab_text != blank -%}
+              <div class="image-columns__dynamic-tab-text rte">
+                {{ section.settings.dynamic_tab_text }}
+              </div>
+            {%- endif -%}
+
+            <div class="image-columns__serve-count" aria-live="polite"></div>
           {%- endif -%}
 
           {% if section.settings.link_text != blank %}
@@ -541,29 +550,61 @@
 
     const tabs = [...root.querySelectorAll('[data-tab-value]')];
     const items = [...root.querySelectorAll('[data-tags]')];
+    const serveCount = root.querySelector('.image-columns__serve-count');
+
+    const updateServeCount = (tab) => {
+      if (!serveCount) return;
+
+      const value = tab.dataset.tabValue;
+      const label = tab.dataset.tabLabel || value;
+
+      if (value === 'all') {
+        serveCount.textContent = `ALL ${items.length} SERVES`;
+        return;
+      }
+
+      const count = items.filter((item) => {
+        const tags = item.dataset.tags?.split(',') || [];
+        return tags.includes(value);
+      }).length;
+
+      serveCount.textContent = `${count} SERVES WITH ${label.toUpperCase()}`;
+    };
+
+    const updateFilter = (tab) => {
+      const value = tab.dataset.tabValue;
+
+      tabs.forEach((currentTab) => {
+        const isActive = currentTab === tab;
+
+        currentTab.classList.toggle('is-active', isActive);
+        currentTab.setAttribute('aria-selected', isActive);
+      });
+
+      items.forEach((item) => {
+        const tags = item.dataset.tags?.split(',') || [];
+
+        item.hidden = value !== 'all' && !tags.includes(value);
+      });
+
+      updateServeCount(tab);
+
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new Event('resize'));
+      });
+    };
 
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        const value = tab.dataset.tabValue;
-
-        tabs.forEach((currentTab) => {
-          const isActive = currentTab === tab;
-
-          currentTab.classList.toggle('is-active', isActive);
-          currentTab.setAttribute('aria-selected', isActive);
-        });
-
-        items.forEach((item) => {
-          const tags = item.dataset.tags?.split(',') || [];
-
-          item.hidden = value !== 'all' && !tags.includes(value);
-        });
-
-        requestAnimationFrame(() => {
-          window.dispatchEvent(new Event('resize'));
-        });
+        updateFilter(tab);
       });
     });
+
+    const activeTab = tabs.find((tab) => tab.classList.contains('is-active'));
+
+    if (activeTab) {
+      updateServeCount(activeTab);
+    }
   };
 
   const initAllTagFilters = () => {
@@ -700,6 +741,11 @@
       "id": "tags",
       "label": "Tabs (comma separated)",
       "info": "Leave blank to disable tabs. First tag is the default active tab. Example: All, Silver, Reposado, Añejo"
+    },
+    {
+      "type": "richtext",
+      "id": "dynamic_tab_text",
+      "label": "Dynamic tab text"
     },
     { "type": "color", "id": "tab_active_bg", "label": "Active tab background", "default": "#2d3135" },
     { "type": "color", "id": "tab_active_text", "label": "Active tab text", "default": "#ffffff" },
