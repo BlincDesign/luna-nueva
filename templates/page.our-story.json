@@ -348,9 +348,9 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>HER ANSWER</strong>",
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         },
         "heading_C9hDMB": {
