@@ -373,8 +373,8 @@ strong:has(em) em {
 .site-nav__dropdown li .site-nav__dropdown-link {
   background: var(--colorDrawers);
   color: #fff;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .site-nav__dropdown li:hover {
