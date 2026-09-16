@@ -158,7 +158,7 @@
                     {% render block %}
                   {%- when 'title' -%}
                     <div
-                      class="product-block product-block--{{ block.id }} product-block--header"
+                      class="product-block product-block--{{ block.id }} product-block--header" data-aos="fade-up"
                       {{ block.shopify_attributes }}
                     >
                       {%- if isModal -%}
