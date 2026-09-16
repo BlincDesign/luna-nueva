@@ -30,7 +30,7 @@
           <span aria-hidden="true">→</span>
         </a>
       {% else %}
-        <span class="pdl__right subheading">{{ section.settings.right_text }}</span>
+        <span class="pdl__right subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %}">{{ section.settings.right_text }}</span>
       {%- endif -%}
     </div>
 
