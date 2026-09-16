@@ -939,7 +939,7 @@
         "row_height_mobile": 260,
         "gap": 16,
         "gap_mobile": 16,
-        "mobile_layout": "scroll",
+        "mobile_layout": "grid",
         "padding_top": 138,
         "padding_bottom": 138,
         "padding_top_mb": 72,
