@@ -226,6 +226,7 @@
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "header_secondary": true,
+        "stylized_bg": false,
         "section_height": "750px",
         "mobile_height": "auto",
         "parallax": true,
@@ -519,6 +520,7 @@
             "image": "shopify://shop_images/hero-coast.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
+            "image_link": "shopify://pages/our-intentions",
             "title": "",
             "text": "<p><strong>NEXT</strong></p><h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
             "button_label": "",
@@ -533,6 +535,7 @@
             "image": "shopify://shop_images/team-room-wide.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
+            "image_link": "shopify://pages/our-team-1",
             "title": "",
             "text": "<p><strong>ALSO</strong></p><h3><a href=\"/pages/our-team-1\" title=\"OUR TEAM\">The Team →</a></h3>",
             "button_label": "",
