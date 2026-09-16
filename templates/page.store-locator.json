@@ -203,7 +203,7 @@
       ],
       "custom_css": [
         ".text-column__grid--item a {font-size: 35px;}",
-        "p {margin: 0 0 5px;}",
+        "p {margin: 0 0 13px;}",
         "@media screen and (max-width: 589px) {.text-column__grid--item a {font-size: 24px; }}"
       ],
       "name": "t:sections.text-columns.presets.text_columns_with_images.name",
