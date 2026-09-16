@@ -740,7 +740,7 @@
           "type": "preheading",
           "settings": {
             "title": "DRAG ────",
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
             "margin_bottom": 18
           }
