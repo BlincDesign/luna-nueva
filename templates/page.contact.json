@@ -55,7 +55,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 65,
@@ -152,6 +152,8 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
         "section_height": "650px",
         "mobile_height": "auto",
         "parallax": false,
@@ -169,7 +171,8 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<h2>A bottle your<br/> guests already want <br/>to be seen with.</h2>"
+            "text": "<h2>A bottle your<br/> guests already want <br/>to be seen with.</h2>",
+            "enable_fade": false
           }
         },
         "divider_7KBFxr": {
@@ -500,6 +503,8 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
         "section_height": "650px",
         "mobile_height": "auto",
         "parallax": true,

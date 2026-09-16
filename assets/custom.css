@@ -974,6 +974,7 @@ a.pdl__right {
   color: rgba(var(--color-foreground));
   font-weight: 600;
   letter-spacing: 1.6px;
+  font-size: var(--type-body-sm-size);
 }
 
 .sibling-switcher__option.is-active {
