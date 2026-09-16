@@ -213,7 +213,7 @@
         "divider": false,
         "color_scheme": "scheme-7",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "padding_top": 86,
         "padding_bottom": 48,
         "padding_top_mb": 52,
@@ -241,7 +241,7 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "color_scheme": "scheme-7",
         "align_text": "center",
         "narrow_column": false,
