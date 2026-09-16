@@ -119,7 +119,7 @@
       "settings": {
         "header_secondary": false,
         "stylized_bg": false,
-        "section_height": "550px",
+        "section_height": "650px",
         "mobile_height": "auto",
         "parallax": false,
         "style": "arrows",
