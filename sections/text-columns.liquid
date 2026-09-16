@@ -70,12 +70,19 @@
               {% endif %}
             </div>
           {% endif %}
-          {%- if block.settings.title != blank -%}
-            <h3>{{ block.settings.title }}</h3>
+
+          {%- if block.settings.subheading != blank -%}
+            <div class="subheading">{{ block.settings.subheading }}</div>
           {% endif %}
+
+          {%- if block.settings.title != blank -%}
+            <div class="heading">{{ block.settings.title }}</div>
+          {% endif %}
+
           {% if block.settings.text != blank %}
             <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
           {% endif %}
+
           {% if block.settings.button_label != blank %}
             {% render 'button',
               label: block.settings.button_label,
@@ -284,10 +291,14 @@
           "label": "Image link"
         },
         {
-          "type": "text",
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "richtext",
           "id": "title",
-          "label": "t:sections.text-columns.blocks.column.settings.title.label",
-          "default": "Example title"
+          "label": "t:sections.text-columns.blocks.column.settings.title.label"
         },
         {
           "type": "richtext",
