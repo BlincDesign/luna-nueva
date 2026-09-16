@@ -246,7 +246,7 @@
             "title": "<strong>THE GAP SHE SAW</strong>",
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         },
         "heading_E6y4DF": {
@@ -301,10 +301,12 @@
           "type": "two_column_media",
           "settings": {
             "image_one": "shopify://shop_images/ev-airstream.jpg",
-            "orientation_one": "none",
+            "orientation_one": "custom",
+            "image_custom_size_1": 0.8,
             "caption_one": "",
             "image_two": "shopify://shop_images/press-beach.jpg",
-            "orientation_two": "none",
+            "orientation_two": "custom",
+            "image_custom_size_2": 0.8,
             "caption_two": "",
             "position": "right",
             "margin_bottom": 0
@@ -325,7 +327,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 35,
+        "left_column_width": 32,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
@@ -406,9 +408,11 @@
           "settings": {
             "image_one": "shopify://shop_images/story-barrels-b.jpg",
             "orientation_one": "portrait",
+            "image_custom_size_1": 1,
             "caption_one": "",
             "image_two": "shopify://shop_images/ev-table.jpg",
             "orientation_two": "portrait",
+            "image_custom_size_2": 1,
             "caption_two": "",
             "position": "left",
             "margin_bottom": 18
