@@ -152,6 +152,9 @@
         "image_r9DgNr",
         "image_zCYx7K"
       ],
+      "custom_css": [
+        ".media-gallery__heading{font-size: 37px;}"
+      ],
       "name": "Media gallery",
       "settings": {
         "color_scheme": "",
