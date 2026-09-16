@@ -202,6 +202,7 @@
           {% render 'button',
             label: section.settings.button_1_label,
             type: section.settings.button_1_type,
+            url: section.settings.button_1_link,
             as: 'button',
             arrow: true
           %}
@@ -211,6 +212,7 @@
           {% render 'button',
             label: section.settings.button_2_label,
             type: section.settings.button_2_type,
+            url: section.settings.button_2_link,
             as: 'button',
             arrow: false
           %}
@@ -440,6 +442,11 @@
       "label": "Button label"
     },
     {
+      "type": "text",
+      "id": "button_1_link",
+      "label": "Button link"
+    },
+    {
       "type": "select",
       "id": "button_1_type",
       "label": "Button style",
@@ -459,6 +466,11 @@
       "type": "text",
       "id": "button_2_label",
       "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "button_2_link",
+      "label": "Button link"
     },
     {
       "type": "select",
