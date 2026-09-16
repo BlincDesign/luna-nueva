@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateHeader, { passive: true });
   window.addEventListener('resize', updateHeader);
 
-  // updateHeader();
+  updateHeader();
 });
 
 

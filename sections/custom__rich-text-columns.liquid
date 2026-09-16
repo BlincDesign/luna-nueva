@@ -333,6 +333,7 @@
     height: auto;
     object-fit: contain;
   }
+
 {% endstyle %}
 
 <div
@@ -567,6 +568,13 @@
                   </li>
 
                 {%- when 'two_column_media' -%}
+                  {% style %}
+                    
+                    #block-{{ block.id }} .theme-block--two-column-media__item--custom .theme-block--two-column-media__media img,
+                    #block-{{ block.id }} .theme-block--two-column-media__item--custom .theme-block--two-column-media__media video {
+                      aspect-ratio: {{ block.settings.image_custom_size_1 }};
+                    }
+                  {% endstyle %}  
                   <div
                     class="theme-block--two-column-media"
                     style="{{ margin_bottom }}"
@@ -874,6 +882,13 @@
                   </li>
 
                 {%- when 'two_column_media' -%}
+                  {% style %}
+                    
+                    #block-{{ block.id }} .theme-block--two-column-media__item--custom .theme-block--two-column-media__media img,
+                    #block-{{ block.id }} .theme-block--two-column-media__item--custom .theme-block--two-column-media__media video {
+                      aspect-ratio: {{ block.settings.image_custom_size_1 }};
+                    }
+                  {% endstyle %}  
                   <div
                     class="theme-block--two-column-media"
                     {{ block.shopify_attributes }}
@@ -1196,9 +1211,19 @@
             {
               "value": "portrait",
               "label": "Portrait"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
             }
           ],
           "default": "landscape"
+        },
+        {
+          "type": "number",
+          "id": "image_custom_size_1",
+          "label": "Custom size",
+          "default": 1
         },
         {
           "type": "text",
@@ -1235,9 +1260,19 @@
             {
               "value": "portrait",
               "label": "Portrait"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
             }
           ],
           "default": "portrait"
+        },
+        {
+          "type": "number",
+          "id": "image_custom_size_2",
+          "label": "Custom size",
+          "default": 1
         },
         {
           "type": "text",
