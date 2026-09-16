@@ -1300,7 +1300,7 @@
         "tab_inactive_bg": "#f9f6f1",
         "tab_inactive_text": "#2d3135",
         "tab_border_color": "#2d3135",
-        "layout_type": "grid",
+        "layout_type": "slider",
         "columns": 4,
         "gap": 28,
         "gap_mb": 16,
