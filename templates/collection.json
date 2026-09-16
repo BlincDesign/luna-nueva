@@ -175,8 +175,8 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
-        "heading": "Three Expressions",
         "preheading": "",
+        "heading": "Three Expressions",
         "right_text": "750ml · Additive-Free · Jalisco",
         "right_link": "",
         "enable_fade_preheading": false,
@@ -275,9 +275,43 @@
         "header_secondary": false,
         "stylized_bg": true,
         "padding_top": 86,
-        "padding_bottom": 86,
-        "padding_top_mb": 52,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 52
+      }
+    },
+    "rich_text_AMGdTU": {
+      "type": "rich-text",
+      "blocks": {
+        "button_FrbqBT": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://collections/all",
+            "link_text": "Shop Luna Nueva",
+            "button_type": "primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_type_2": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_FrbqBT"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
+        "color_scheme": "scheme-6",
+        "align_text": "center",
+        "narrow_column": true,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 0
       }
     },
     "newsletter_jzCWYw": {
@@ -343,6 +377,7 @@
     "custom_product_details_kxMqC9",
     "slideshow_RFj3V4",
     "text_columns_LtEcyT",
+    "rich_text_AMGdTU",
     "newsletter_jzCWYw"
   ]
 }
