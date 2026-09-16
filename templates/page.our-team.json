@@ -333,7 +333,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": true,
+            "enable_fade": false,
             "position": "right",
             "margin_bottom": 0
           }
