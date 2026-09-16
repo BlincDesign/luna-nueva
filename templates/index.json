@@ -532,7 +532,7 @@
           "settings": {
             "enlarge_text": false,
             "text": "<p><strong>THE MAKING</strong></p>",
-            "enable_fade": true
+            "enable_fade": false
           }
         },
         "text_MhzT48": {
