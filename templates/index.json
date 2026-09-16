@@ -540,7 +540,7 @@
         "text_mrmzFJ": {
           "type": "text",
           "settings": {
-            "text": "<h6>THE MAKING</h6>",
+            "text": "<p><strong>THE MAKING</strong></p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
