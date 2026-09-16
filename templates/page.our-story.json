@@ -226,7 +226,7 @@
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "header_secondary": true,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "section_height": "750px",
         "mobile_height": "auto",
         "parallax": true,
