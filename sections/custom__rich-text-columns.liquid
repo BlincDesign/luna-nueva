@@ -740,7 +740,7 @@
                   {% endif %}
                 {%- when 'preheading' -%}
                   <div
-                    class="theme-block {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                    class="theme-block subheading {% if block.settings.enable_fade %}text--faded{% endif %} appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                     data-block-id="{{ block.id }}"
                     style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
