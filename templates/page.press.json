@@ -201,7 +201,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 30
           }
         },
         "text_WqbkjF": {
@@ -211,7 +211,7 @@
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -223,9 +223,9 @@
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
-            "margin_bottom": 0
+            "margin_bottom": 20
           }
         },
         "text_LBNpjA": {
@@ -235,7 +235,7 @@
             "enlarge_text": true,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
             "margin_bottom": 0
           }
