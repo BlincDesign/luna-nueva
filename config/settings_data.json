@@ -242,7 +242,7 @@
           "link_hover": "#a26b25",
           "border": "#2d31353d",
           "accent": "#9b3a15",
-          "overlay": "#FFFFFF",
+          "overlay": "#FFFFFF33",
           "shadow": "#000000"
         }
       },
