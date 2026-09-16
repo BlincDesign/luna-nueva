@@ -120,7 +120,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "section_height": "650px",
-        "mobile_height": "auto",
+        "mobile_height": "400px",
         "parallax": false,
         "style": "arrows",
         "autoplay": false,
