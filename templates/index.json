@@ -871,7 +871,7 @@
             "enlarge_text": true,
             "enable_fade": true,
             "button_label": "See what's coming up",
-            "button_url": ""
+            "button_url": "shopify://pages/events"
           }
         },
         "image_8McHDm": {
