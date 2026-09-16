@@ -531,7 +531,7 @@
           "type": "preheading",
           "settings": {
             "title": "<strong>THE MAKING</strong>",
-            "enable_fade": true,
+            "enable_fade": false,
             "position": "left",
             "margin_bottom": 18
           }
