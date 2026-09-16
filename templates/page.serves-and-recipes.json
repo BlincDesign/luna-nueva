@@ -449,6 +449,7 @@
             "image": "shopify://shop_images/brand-pair.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
+            "image_link": "shopify://collections",
             "title": "",
             "text": "<p>NEED A BOTTLE</p><h3><a href=\"/collections/all\" title=\"All products\">Three expressions →</a></h3>",
             "button_label": "",
@@ -463,6 +464,7 @@
             "image": "shopify://shop_images/ev-fruitbar.jpg",
             "image_mask": "rounded-corners",
             "image_width": 650,
+            "image_link": "shopify://collections/all",
             "title": "",
             "text": "<p>OR LET US MAKE IT</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Events →</a></h3>",
             "button_label": "",
@@ -564,7 +566,6 @@
         "text_k3DPHY",
         "form_JPNDFe"
       ],
-      "disabled": true,
       "name": "t:sections.newsletter.presets.email_signup.name",
       "settings": {
         "color_scheme": "scheme-1",
