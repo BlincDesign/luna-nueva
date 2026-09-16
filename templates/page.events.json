@@ -542,8 +542,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://collections/all",
-            "title": "",
-            "text": "<p><strong>CAN'T WAIT</strong></p><h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
+            "subheading": "<p><strong>CAN'T WAIT</strong></p>",
+            "title": "<h3><a href=\"/pages/stor-locator\" title=\"STORE LOCATOR\">Find a bottle near you →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -557,8 +558,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://collections/all",
-            "title": "",
-            "text": "<p><strong>FOR VENUES</strong></p><h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
+            "subheading": "<p><strong>FOR VENUES</strong></p>",
+            "title": "<h3><a href=\"/pages/events\" title=\"EVENTS\">Host an event →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
