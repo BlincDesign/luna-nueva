@@ -1,65 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('#SiteHeader');
-  const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
+    const header = document.querySelector('#SiteHeader');
+    const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
 
-  if (!header || !sections.length) return;
+    if (!header || !sections.length) return;
 
-  const baseScheme = header.dataset.scheme;
-  let currentScheme = baseScheme;
+    const baseScheme = header.dataset.scheme;
+    let currentScheme = baseScheme;
 
-  const updateHeader = () => {
-    const shouldBeFixed = window.scrollY > 0;
+    const updateHeader = () => {
+        const shouldBeFixed = window.scrollY > 0;
 
-    header.classList.toggle('fixed', shouldBeFixed);
+        header.classList.toggle('fixed', shouldBeFixed);
 
-    if (!shouldBeFixed) {
-      header.classList.remove('header_overlap--secondary');
+        if (!shouldBeFixed) {
+            header.classList.remove('header_overlap--secondary');
+            header.classList.remove('no-logo-change');
 
-      if (currentScheme !== baseScheme) {
-        if (currentScheme) header.classList.remove(currentScheme);
-        if (baseScheme) header.classList.add(baseScheme);
+            if (currentScheme !== baseScheme) {
+                if (currentScheme) header.classList.remove(currentScheme);
+                if (baseScheme) header.classList.add(baseScheme);
 
-        currentScheme = baseScheme;
-      }
+                currentScheme = baseScheme;
+            }
 
-      return;
-    }
+            return;
+        }
 
-    const headerRect = header.getBoundingClientRect();
+        const headerRect = header.getBoundingClientRect();
 
-    const overlappingSection = [...sections].find((section) => {
-      const sectionRect = section.getBoundingClientRect();
+        const overlappingSection = [...sections].find((section) => {
+            const sectionRect = section.getBoundingClientRect();
 
-      return (
-        sectionRect.top < headerRect.bottom &&
-        sectionRect.bottom > headerRect.top
-      );
-    });
+            return (
+                sectionRect.top < headerRect.bottom &&
+                sectionRect.bottom > headerRect.top
+            );
+        });
 
-    header.classList.toggle(
-      'header_overlap--secondary',
-      !!overlappingSection
-    );
+        header.classList.toggle(
+            'header_overlap--secondary', !!overlappingSection
+        );
 
-    const sectionScheme = overlappingSection
-      && [...overlappingSection.classList].find((cls) =>
-        cls.startsWith('color-scheme-')
-      );
+        header.classList.toggle(
+            'no-logo-change',
+            !!overlappingSection && overlappingSection.classList.contains('no-logo-change')
+        );
 
-    const nextScheme = sectionScheme || baseScheme;
+        const sectionScheme = overlappingSection &&
+            [...overlappingSection.classList].find((cls) =>
+                cls.startsWith('color-scheme-')
+            );
 
-    if (nextScheme !== currentScheme) {
-      if (currentScheme) header.classList.remove(currentScheme);
-      if (nextScheme) header.classList.add(nextScheme);
+        const nextScheme = sectionScheme || baseScheme;
 
-      currentScheme = nextScheme;
-    }
-  };
+        if (nextScheme !== currentScheme) {
+            if (currentScheme) header.classList.remove(currentScheme);
+            if (nextScheme) header.classList.add(nextScheme);
 
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  window.addEventListener('resize', updateHeader);
+            currentScheme = nextScheme;
+        }
+    };
 
-  updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+
+    updateHeader();
 });
 
 
