@@ -32,7 +32,7 @@
         "mobile_logo_width": 100,
         "main_menu_link_list": "header-menu-development",
         "hover_menu": true,
-        "highlight_link_handle": "Shop",
+        "highlight_link_handle": "",
         "main_menu_alignment": "center-split",
         "header_sticky": false,
         "header_fixed": true,
