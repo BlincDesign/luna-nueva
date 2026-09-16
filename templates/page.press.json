@@ -414,7 +414,7 @@
           "type": "button",
           "settings": {
             "link": "",
-            "link_text": "SEE WHAT'S COMING UP",
+            "link_text": "Request the press kit",
             "button_type": "primary",
             "position": "left",
             "margin_bottom": 20
