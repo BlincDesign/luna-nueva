@@ -70,7 +70,7 @@
           "type": "text",
           "settings": {
             "text": "<h4>Three expressions, all 100% Blue Weber agave and all additive-free, made at the Vivanco family distillery in the Highlands of Jalisco.</h4>",
-            "enlarge_text": true,
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
