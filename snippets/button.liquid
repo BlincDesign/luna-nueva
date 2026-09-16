@@ -29,7 +29,7 @@
 <{{ as }}
   {%- if id != blank %} id="{{ id }}"{% endif %}
   {%- if as == 'a' %} href="{{ url | default: '#' }}"{% endif %}
-  {%- if as == 'button' %} type="button"{% endif %}
+  {%- if as == 'button' %} type="submit"{% endif %}
   class="{{ classlist }}"
   {%- if attributes != blank %} {{ attributes }}{% endif %}
 >
