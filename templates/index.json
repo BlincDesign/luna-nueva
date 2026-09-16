@@ -524,6 +524,59 @@
         "padding_bottom_mb": 72
       }
     },
+    "custom_rich_text_columns_xhy9KU": {
+      "type": "custom__rich-text-columns",
+      "blocks": {
+        "preheading_F6MRyw": {
+          "type": "preheading",
+          "settings": {
+            "title": "THE MAKING",
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 18
+          }
+        },
+        "text_UPPJQz": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>From the Highlands<br/>to your table.</h2>",
+            "enlarge_text": false,
+            "subheading": false,
+            "enable_italic": false,
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "preheading_F6MRyw",
+        "text_UPPJQz"
+      ],
+      "name": "Rich text columns",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "enable_vertical_divider": false,
+        "left_column_width": 100,
+        "left_text_align": "left",
+        "left_text-align_mb": "left",
+        "left_vertical_align": "center",
+        "right_column_width": 16,
+        "right_text_align": "left",
+        "right_text-align_mb": "left",
+        "right_vertical_align": "flex-end",
+        "detail_accent_color": "#c9a063",
+        "icon_backdrop_color": "#2d3135",
+        "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
+        "padding_top": 138,
+        "padding_bottom": 0,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 0
+      }
+    },
     "rich_text_T7ntjy": {
       "type": "rich-text",
       "blocks": {
@@ -564,6 +617,7 @@
         "text_MhzT48",
         "divider_tkEFq8"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "header_secondary": false,
@@ -1430,6 +1484,7 @@
     "custom_additives_table_H9ebp3",
     "text_with_icons_W6xt7F",
     "custom_story_teaser_grtbFU",
+    "custom_rich_text_columns_xhy9KU",
     "rich_text_T7ntjy",
     "custom_rich_text_columns_n6Ddd9",
     "custom_image_columns_GdzTt9",
