@@ -1223,7 +1223,8 @@
           "type": "number",
           "id": "image_custom_size_1",
           "label": "Custom size",
-          "default": 1
+          "default": 1,
+          "visible_if": "{{ block.settings.orientation_1 == 'custom' }}"
         },
         {
           "type": "text",
@@ -1272,7 +1273,8 @@
           "type": "number",
           "id": "image_custom_size_2",
           "label": "Custom size",
-          "default": 1
+          "default": 1,
+          "visible_if": "{{ block.settings.orientation_2 == 'custom' }}"
         },
         {
           "type": "text",
