@@ -59,49 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateHeader, { passive: true });
   window.addEventListener('resize', updateHeader);
 
-  updateHeader();
+  // updateHeader();
 });
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const header = document.querySelector('#SiteHeader');
-//   const sections = document.querySelectorAll('.shopify-section > .section--scheme-secondary');
-
-//   if (!header || !sections.length) return;
-
-//   const baseScheme = header.dataset.scheme;
-//   let currentScheme = baseScheme;
-
-//   const checkOverlap = () => {
-//     const headerRect = header.getBoundingClientRect();
-
-//     const overlappingSection = [...sections].find((section) => {
-//       const sectionRect = section.getBoundingClientRect();
-
-//       return (
-//         sectionRect.top < headerRect.bottom &&
-//         sectionRect.bottom > headerRect.top
-//       );
-//     });
-
-//     header.classList.toggle('header_overlap--secondary', !!overlappingSection);
-
-//     const sectionScheme = overlappingSection
-//       && [...overlappingSection.classList].find((cls) => cls.startsWith('color-scheme-'));
-
-//     const nextScheme = sectionScheme || baseScheme;
-
-//     if (nextScheme !== currentScheme) {
-//       if (currentScheme) header.classList.remove(currentScheme);
-//       header.classList.add(nextScheme);
-//       currentScheme = nextScheme;
-//     }
-//   };
-
-//   window.addEventListener('scroll', checkOverlap, { passive: true });
-//   window.addEventListener('resize', checkOverlap);
-
-//   checkOverlap();
-// });
 
 
 (() => {
