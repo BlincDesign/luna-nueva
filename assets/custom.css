@@ -1178,11 +1178,11 @@ a.pdl__right {
 }
 
 .product-section .custom-width--auto {
-  width: 45%;
+  width: 46%;
 }
 
 .product-section .custom-width--auto:has(.product-single__meta) {
-  width: 55%;
+  width: 54%;
 }
 
 @media only screen and (max-width: 900px) {
