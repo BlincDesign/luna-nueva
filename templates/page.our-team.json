@@ -103,9 +103,11 @@
           "settings": {
             "image_one": "shopify://shop_images/recipe-oldfashioned_55514ca4-9cb1-4d38-a49a-7bb321b07beb.jpg",
             "orientation_one": "landscape",
+            "image_custom_size_1": 1,
             "caption_one": "LOS ANGELES",
             "image_two": "shopify://shop_images/team-founder.jpg",
             "orientation_two": "none",
+            "image_custom_size_2": 1,
             "caption_two": "",
             "position": "right",
             "margin_bottom": 0
@@ -452,8 +454,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://pages/events",
-            "title": "",
-            "text": "<p>NEXT</p><h3><a href=\"/pages/events\" title=\"EVENTS\">Events →</a></h3>",
+            "subheading": "<p>NEXT</p>",
+            "title": "<h3><a href=\"/pages/events\" title=\"EVENTS\">Events →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -467,8 +470,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://pages/our-intentions",
-            "title": "",
-            "text": "<p>ALSO</p><h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
+            "subheading": "<p>ALSO</p>",
+            "title": "<h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
