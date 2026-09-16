@@ -1502,4 +1502,8 @@ a.pdl__right {
     .h1, h1 {
         font-size: 64px;
     }
+
+    .media-gallery__heading h3 {
+      font-size: 37px;
+    }
 }
