@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!header || !sections.length) return;
 
+    const isProductPage = header.classList.contains('site-header--product');
     const baseScheme = header.dataset.scheme;
     let currentScheme = baseScheme;
 
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         header.classList.toggle('fixed', shouldBeFixed);
 
-        if (!shouldBeFixed) {
+        if (!isProductPage && !shouldBeFixed) {
             header.classList.remove('header_overlap--secondary');
             header.classList.remove('no-logo-change');
 
@@ -42,14 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         header.classList.toggle(
-            'no-logo-change',
-            !!overlappingSection && overlappingSection.classList.contains('no-logo-change')
+            'no-logo-change', !!overlappingSection && overlappingSection.classList.contains('no-logo-change')
         );
 
-        const sectionScheme = overlappingSection &&
-            [...overlappingSection.classList].find((cls) =>
-                cls.startsWith('color-scheme-')
-            );
+        const sectionScheme = overlappingSection && [...overlappingSection.classList].find((cls) =>
+            cls.startsWith('color-scheme-')
+        );
 
         const nextScheme = sectionScheme || baseScheme;
 
@@ -64,10 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeader, { passive: true });
     window.addEventListener('resize', updateHeader);
 
- 
-    if (window.location.href.includes('/products')) {
-        updateHeader();
-    }
+    updateHeader();
 });
 
 
