@@ -87,6 +87,7 @@
           "type": "content",
           "settings": {
             "eyebrow": "",
+            "enable_fade_eyebrow": false,
             "heading": "We’ve poured at Venice Fest and the LA Times Food Bowl, and we show up at the table, not just on the shelf.",
             "heading_size": "h4",
             "show_divider": true,
@@ -184,7 +185,7 @@
         "text_86nrbW": {
           "type": "text",
           "settings": {
-            "text": "<p>DRAG ──<br/><br/></p>",
+            "text": "<p>DRAG ──</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
@@ -353,7 +354,7 @@
         "text_Ftk69g": {
           "type": "text",
           "settings": {
-            "text": "<p>DRAG ━━━</p>",
+            "text": "<p>DRAG ──</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
@@ -518,6 +519,8 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
         "section_height": "750px",
         "mobile_height": "300px",
         "parallax": false,
