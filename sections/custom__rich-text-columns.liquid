@@ -590,7 +590,7 @@
                     <div
                       class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}"
                       {% if block.settings.orientation_one == 'custom' %}
-                        style="aspect-ratio: 1 / {{ block.settings.image_custom_size_1 }};"
+                        style="aspect-ratio: {{ block.settings.image_custom_size_1 }};"
                       {% endif %}
                     >
                       {%- if block.settings.video_one != blank -%}
@@ -629,7 +629,7 @@
                     <div
                       class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_two }}"
                       {% if block.settings.orientation_two == 'custom' %}
-                        style="aspect-ratio: 1 / {{ block.settings.image_custom_size_2 }};"
+                        style="aspect-ratio: {{ block.settings.image_custom_size_2 }};"
                       {% endif %}
                     >
                       {%- if block.settings.video_two != blank -%}
@@ -918,7 +918,7 @@
                     <div
                       class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_one }}"
                       {% if block.settings.orientation_one == 'custom' %}
-                        style="aspect-ratio: 1 / {{ block.settings.image_custom_size_1 }};"
+                        style="aspect-ratio: {{ block.settings.image_custom_size_1 }};"
                       {% endif %}
                     >
                       {%- if block.settings.video_one != blank -%}
@@ -957,7 +957,7 @@
                     <div
                       class="theme-block--two-column-media__item theme-block--two-column-media__item--{{ block.settings.orientation_two }}"
                       {% if block.settings.orientation_two == 'custom' %}
-                        style="aspect-ratio: 1 / {{ block.settings.image_custom_size_2 }};"
+                        style="aspect-ratio: {{ block.settings.image_custom_size_2 }};"
                       {% endif %}
                     >
                       {%- if block.settings.video_two != blank -%}
