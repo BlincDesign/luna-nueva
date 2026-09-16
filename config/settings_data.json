@@ -34,7 +34,7 @@
     "color_large_image_bg": "#17172c",
     "type_header_font_family": "cardo_i4",
     "custom_header_font_filename": "AveriaSerifLibre-Regular",
-    "type_base_font_family": "space_mono_n4",
+    "type_base_font_family": "space_mono_n7",
     "custom_base_font_filename": "",
     "type_header_spacing": "-25",
     "type_header_line_height": 1,
@@ -117,7 +117,7 @@
           "link_hover": "#f9f6f1",
           "border": "#d9d9d9",
           "accent": "#d39655",
-          "overlay": "#F9F6F10D",
+          "overlay": "#f9f6f10d",
           "shadow": "rgba(0,0,0,0)"
         }
       },
@@ -142,7 +142,7 @@
           "link_hover": "#d6a15c",
           "border": "#4a4a4a",
           "accent": "#d6a15c",
-          "overlay": "#F9F6F10D",
+          "overlay": "#f9f6f10d",
           "shadow": "#000000"
         }
       },
