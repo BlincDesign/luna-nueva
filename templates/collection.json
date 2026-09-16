@@ -332,32 +332,6 @@
         "padding_top_mb": 72,
         "padding_bottom_mb": 72
       }
-    },
-    "featured_collection_FjLrkD": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "",
-        "home_featured_products": "blanco",
-        "per_row": 3,
-        "rows": 1,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "featured_collection_aeKpQw": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "",
-        "home_featured_products": "buy-a-case-or-three-bottles",
-        "per_row": 4,
-        "rows": 1,
-        "view_all": true,
-        "divider": false
-      }
     }
   },
   "order": [
@@ -367,8 +341,6 @@
     "custom_product_details_kxMqC9",
     "slideshow_RFj3V4",
     "text_columns_LtEcyT",
-    "newsletter_jzCWYw",
-    "featured_collection_FjLrkD",
-    "featured_collection_aeKpQw"
+    "newsletter_jzCWYw"
   ]
 }
