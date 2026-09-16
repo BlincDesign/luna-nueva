@@ -4,7 +4,7 @@
   {% if section.settings.parallax %}
     data-parallax="true"
   {% endif %}
-  class="{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  class="color-{{ section.settings.content_color_scheme }} {% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
 >
   {%- if section.blocks.size > 0 -%}
     <div class="slideshow-wrapper">
