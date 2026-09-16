@@ -12,6 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     header.classList.toggle('fixed', shouldBeFixed);
 
+    if (!shouldBeFixed) {
+      header.classList.remove('header_overlap--secondary');
+
+      if (currentScheme !== baseScheme) {
+        if (currentScheme) header.classList.remove(currentScheme);
+        if (baseScheme) header.classList.add(baseScheme);
+
+        currentScheme = baseScheme;
+      }
+
+      return;
+    }
+
     const headerRect = header.getBoundingClientRect();
 
     const overlappingSection = [...sections].find((section) => {
