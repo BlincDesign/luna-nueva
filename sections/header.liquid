@@ -24,7 +24,7 @@
 
   assign header_color_scheme = section.settings.color_scheme
   if product.metafields.custom.color_scheme.value != blank
-    assign header_color_scheme = product.metafields.custom.color_scheme.value | replace: " section--scheme-secondary", ""
+    assign header_color_scheme = product.metafields.custom.color_scheme.value
   endif
 -%}
 
