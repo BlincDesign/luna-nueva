@@ -241,6 +241,7 @@
         "preheading": "<strong>THE COLLECTION</strong>",
         "right_text": "750ml · Additive-Free · Jalisco",
         "right_link": "",
+        "enable_fade_preheading": true,
         "products": [
           "silver",
           "silver-copy",
