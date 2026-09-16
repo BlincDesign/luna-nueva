@@ -41,7 +41,7 @@
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "left",
             "margin_bottom": 0
           }
