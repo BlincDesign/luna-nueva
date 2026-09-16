@@ -1506,4 +1506,8 @@ a.pdl__right {
     .media-gallery__heading h3 {
       font-size: 37px;
     }
+
+    .text-column__grid {
+      gap: 26px;
+    }
 }
