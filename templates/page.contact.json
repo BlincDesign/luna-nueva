@@ -121,7 +121,7 @@
       "name": "Stats",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "padding_top": 0,
         "padding_bottom": 64,
