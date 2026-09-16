@@ -236,7 +236,7 @@
       "settings": {
         "color_scheme": "scheme-6",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "heading": "Three Expressions",
         "preheading": "<strong>THE COLLECTION</strong>",
         "right_text": "750ml · Additive-Free · Jalisco",
