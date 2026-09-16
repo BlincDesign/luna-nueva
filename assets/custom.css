@@ -358,10 +358,11 @@ strong:has(em) em {
 
 .site-nav__dropdown {
   background: var(--colorDrawers);
+  padding: 9px 0;
 }
 
 .site-nav__dropdown li {
-  padding: 10px 22px;
+  padding: 0 22px;
   color: #fff;
 }
 
@@ -372,6 +373,8 @@ strong:has(em) em {
 .site-nav__dropdown li .site-nav__dropdown-link {
   background: var(--colorDrawers);
   color: #fff;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .site-nav__dropdown li:hover {
