@@ -1467,6 +1467,10 @@ a.pdl__right {
   margin-top: 94px;
 }
 
+.product__unit-price .rte a{
+  color: currentColor !important;
+}
+
 /* Privacy Policy page end */
 
 .text--faded {
