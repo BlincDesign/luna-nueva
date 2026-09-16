@@ -598,7 +598,7 @@
         "link_text_EAXNJ9": {
           "type": "link_text",
           "settings": {
-            "link": "",
+            "link": "#",
             "title": "Partnerships and collaborations",
             "subtext": "<strong>hello@lunanuevatequila.com</strong>",
             "position": "left",
@@ -608,7 +608,7 @@
         "link_text_rtKaib": {
           "type": "link_text",
           "settings": {
-            "link": "",
+            "link": "shopify://pages/contact",
             "title": "Stockists and trade",
             "subtext": "<strong>Stock Luna Nueva →</strong>",
             "position": "left",
@@ -618,7 +618,7 @@
         "link_text_re4Thr": {
           "type": "link_text",
           "settings": {
-            "link": "",
+            "link": "shopify://pages/events",
             "title": "Events and sampling",
             "subtext": "<strong>Events →</strong>",
             "position": "left",
