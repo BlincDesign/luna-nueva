@@ -547,11 +547,28 @@
             "position": "left",
             "margin_bottom": 0
           }
+        },
+        "divider_RQDdAg": {
+          "type": "divider",
+          "settings": {
+            "position": "left",
+            "enable_divider": true,
+            "divider_bg": "#2D31353D",
+            "divider_width": 100,
+            "divider_height": 0.5,
+            "enable_icon": false,
+            "icon_color": "#f9f6f1",
+            "icon": "chat",
+            "icon_size": 30,
+            "margin_top": 30,
+            "margin_bottom": 0
+          }
         }
       },
       "block_order": [
         "preheading_F6MRyw",
-        "text_UPPJQz"
+        "text_UPPJQz",
+        "divider_RQDdAg"
       ],
       "name": "Rich text columns",
       "settings": {
