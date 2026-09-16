@@ -393,7 +393,7 @@
         "heading_permitted": "PERMITTED UP TO 1%",
         "heading_bottle": "IN THIS BOTTLE",
         "padding_top": 0,
-        "padding_bottom": 40,
+        "padding_bottom": 0,
         "padding_top_mb": 38,
         "padding_bottom_mb": 44
       }
@@ -444,9 +444,9 @@
         "button_type": "primary",
         "divider": false,
         "padding_top": 80,
-        "padding_bottom": 138,
+        "padding_bottom": 88,
         "mobile_padding_top": 0,
-        "mobile_padding_bottom": 72
+        "mobile_padding_bottom": 22
       }
     },
     "custom_story_teaser_grtbFU": {
