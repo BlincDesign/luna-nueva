@@ -1,32 +1,3 @@
-{%- comment -%}
-  Tasting Notes (Aroma / Palate)
-  ------------------------------------------------------------------
-  Renders two chip lists sourced from list.metaobject_reference product
-  metafields. Each referenced metaobject entry (type "aroma" / "palate")
-  carries its own icon, so adding, removing or reordering a note is a
-  merchant edit in the metaobject list — nothing here needs to change.
-
-  Expects:
-    product: {{ product }}   -- the product object
-
-  Reads:
-    product.metafields.custom.aroma_notes   (list.metaobject_reference)
-    product.metafields.custom.palate_notes  (list.metaobject_reference)
-
-  Each referenced metaobject exposes:
-    label  (single_line_text_field) -- the note name, e.g. "Cinnamon"
-    svg    (multi_line_text_field)  -- raw <svg>…</svg> markup for the note
-
-  Usage:
-    {% render 'tasting-notes', product: product %}
-
-  Empty states:
-    - A group with no entries is omitted entirely.
-    - If neither metafield has entries, nothing is rendered (no empty
-      shell, no stylesheet request).
-    - A note missing its svg field still renders as a text-only chip.
-{%- endcomment -%}
-
 {%- liquid
   assign aroma_notes = product.metafields.custom.aroma_notes.value
   assign palate_notes = product.metafields.custom.palate_notes.value
@@ -92,7 +63,7 @@
           </span>
           <span>Palate</span>
         </h3>
-        <ul class="tasting-notes__list" role="list">
+        <ul class="tasting-notes__list" role="list" data-aos="fade-up">
           {%- for note in palate_notes -%}
             {%- unless note.label == blank -%}
               <li class="tasting-notes__chip">
