@@ -1043,7 +1043,7 @@ a.pdl__right {
   border: 1px solid rgba(45, 49, 53, 0.24);
   background: rgba(var(--color-overlay));
   border-radius: 15px;
-  border: 1px solid rgba(var(--color-foreground), 0.24);
+  border: 1px solid rgba(var(--color-foreground), 0.32);
 }
 
 .tasting-notes__group {
