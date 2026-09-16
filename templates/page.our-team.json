@@ -329,11 +329,11 @@
         "text_BgFiqd": {
           "type": "text",
           "settings": {
-            "text": "<p>Los Angeles · Jalisco</p>",
+            "text": "<p>LOS ANGELES · JALISCO</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "right",
             "margin_bottom": 0
           }
