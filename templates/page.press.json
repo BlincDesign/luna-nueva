@@ -20,27 +20,30 @@
         "preheading_8g3cfT": {
           "type": "preheading",
           "settings": {
-            "title": "<strong>Press & Partnerships</strong>",
+            "title": "<strong>PRESS & PARTNERSHIPS</strong>",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 18
           }
         },
         "heading_GbmUDU": {
           "type": "heading",
           "settings": {
             "title": "The short version.",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_aCkxhU": {
           "type": "text",
           "settings": {
-            "text": "<p>Everything a writer, buyer or partner usually asks for, in one place. If you need something that isn’t here, ask and we’ll send it.</p>",
-            "enlarge_text": true,
+            "text": "<h4>Everything a writer, buyer or partner usually asks for, in one place. If you need something that isn’t here, ask and we’ll send it.</h4>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -66,6 +69,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 92,
         "padding_bottom": 42,
         "padding_top_mb": 56,
@@ -99,6 +103,7 @@
             "title": "",
             "title_size": 80,
             "subheading": "Born in LA. Made in Jalisco.",
+            "enable_fade": false,
             "link": "",
             "link_text": "",
             "image": "shopify://shop_images/hero-tailgate.jpg",
@@ -112,6 +117,8 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "header_secondary": false,
+        "stylized_bg": false,
         "section_height": "550px",
         "mobile_height": "auto",
         "parallax": false,
@@ -130,14 +137,16 @@
           "settings": {
             "title": "BOILERPLATE",
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "heading_bVDNjG": {
           "type": "heading",
           "settings": {
             "title": "About Luna Nueva",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "button_GRgcLc": {
@@ -146,7 +155,8 @@
             "link": "",
             "link_text": "Copy text",
             "button_type": "secondary",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -172,6 +182,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 92,
         "padding_bottom": 66,
         "padding_top_mb": 52,
@@ -189,7 +200,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_WqbkjF": {
@@ -200,7 +212,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_6LQzVF": {
@@ -211,7 +224,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "text_LBNpjA": {
@@ -222,7 +236,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -249,6 +264,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mb": 0,
@@ -295,6 +311,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 52,
         "padding_bottom": 38,
         "padding_top_mb": 32,
@@ -308,28 +325,32 @@
           "type": "stat",
           "settings": {
             "heading": "NOM 1414",
-            "text": "<p>VIVANCO FAMILY DISTILLERY</p>"
+            "text": "<p>VIVANCO FAMILY DISTILLERY</p>",
+            "enable_fade": false
           }
         },
         "stat_3g3EPh": {
           "type": "stat",
           "settings": {
             "heading": "750ml",
-            "text": "<p>40% ALC/VOL · 80 PROOF</p>"
+            "text": "<p>40% ALC/VOL · 80 PROOF</p>",
+            "enable_fade": false
           }
         },
         "stat_eLedGh": {
           "type": "stat",
           "settings": {
             "heading": "3",
-            "text": "<p>EXPRESSIONS</p>"
+            "text": "<p>EXPRESSIONS</p>",
+            "enable_fade": false
           }
         },
         "stat_fLHXmt": {
           "type": "stat",
           "settings": {
             "heading": "104",
-            "text": "<p>California accounts</p>"
+            "text": "<p>California accounts</p>",
+            "enable_fade": false
           }
         }
       },
@@ -346,8 +367,8 @@
         "stylized_bg": true,
         "padding_top": 0,
         "padding_bottom": 80,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 8
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 8
       }
     },
     "custom_rich_text_columns_dFKwm8": {
@@ -357,7 +378,8 @@
           "type": "heading",
           "settings": {
             "title": "Press kit",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "divider_JTXMaH": {
@@ -384,7 +406,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "button_Nm46ra": {
@@ -393,7 +416,8 @@
             "link": "",
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "text_yQ6d8Q": {
@@ -404,7 +428,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_TqKYdq": {
@@ -413,7 +438,8 @@
             "link": "",
             "title": "Primary logo and wordmark",
             "subtext": "SVG · PNG",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "link_text_YAQXkJ": {
@@ -422,7 +448,8 @@
             "link": "",
             "title": "Bottle cut-outs, three expressions",
             "subtext": "PNG, transparent",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "link_text_3MwPpy": {
@@ -431,7 +458,8 @@
             "link": "",
             "title": "Bottle photography on set",
             "subtext": "JPG, high-res",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "link_text_tCFDnQ": {
@@ -440,7 +468,8 @@
             "link": "",
             "title": "Lifestyle and events photography",
             "subtext": "JPG, high-res",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "link_text_i3PnJV": {
@@ -449,7 +478,8 @@
             "link": "",
             "title": "Founder portrait",
             "subtext": "JPG, high-res",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "link_text_9rYDNe": {
@@ -458,7 +488,8 @@
             "link": "",
             "title": "Fact sheet and tasting notes",
             "subtext": "PDF",
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         },
         "text_giaL3t": {
@@ -469,7 +500,8 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "position": "right"
+            "position": "right",
+            "margin_bottom": 0
           }
         }
       },
@@ -504,6 +536,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 92,
         "padding_bottom": 92,
         "padding_top_mb": 52,
@@ -517,7 +550,8 @@
           "type": "heading",
           "settings": {
             "title": "Who to ask",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         }
       },
@@ -541,6 +575,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 92,
         "padding_bottom": 0,
         "padding_top_mb": 52,
@@ -556,7 +591,8 @@
             "link": "",
             "title": "Press and editorial",
             "subtext": "hello@lunanuevatequila.com",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_EAXNJ9": {
@@ -565,7 +601,8 @@
             "link": "",
             "title": "Partnerships and collaborations",
             "subtext": "hello@lunanuevatequila.com",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_rtKaib": {
@@ -574,7 +611,8 @@
             "link": "",
             "title": "Stockists and trade",
             "subtext": "Stock Luna Nueva →",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         },
         "link_text_re4Thr": {
@@ -583,7 +621,8 @@
             "link": "",
             "title": "Events and sampling",
             "subtext": "Events →",
-            "position": "left"
+            "position": "left",
+            "margin_bottom": 0
           }
         }
       },
@@ -610,6 +649,7 @@
         "detail_accent_color": "#c9a063",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
+        "custom_class": "",
         "padding_top": 50,
         "padding_bottom": 92,
         "padding_top_mb": 38,
@@ -691,6 +731,9 @@
         "color_scheme": "scheme-6",
         "align_text": "center",
         "narrow_column": true,
+        "enable_max_width": false,
+        "max_width_desktop": 1000,
+        "max_width_mobile": 400,
         "padding_top": 36,
         "padding_bottom": 92,
         "padding_top_mb": 18,
@@ -700,49 +743,47 @@
     "newsletter_jQHpgq": {
       "type": "newsletter",
       "blocks": {
-        "icon_tb3akP": {
+        "icon_xFchrp": {
           "type": "icon",
           "settings": {
             "icon_size": 26,
             "icon_color": "#d39655",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "margin_bottom": 24
+            "margin_bottom": 38
           }
         },
-        "title_3H8Ujj": {
+        "title_LAmdTR": {
           "type": "title",
           "settings": {
-            "title": "Get invited to the next one.",
-            "heading_size": "h2",
-            "text_width": 600,
-            "margin_bottom": 24
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
           }
         },
-        "text_ppDKzW": {
+        "text_TkG8yd": {
           "type": "text",
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
-            "enlarge_text": true,
-            "text_color": "#f9f6f1",
-            "text_width": 650,
-            "margin_bottom": 24
+            "enlarge_text": false,
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
           }
         },
-        "form_jxWeXr": {
+        "form_p7r6aW": {
           "type": "form",
           "settings": {}
         }
       },
       "block_order": [
-        "icon_tb3akP",
-        "title_3H8Ujj",
-        "text_ppDKzW",
-        "form_jxWeXr"
+        "icon_xFchrp",
+        "title_LAmdTR",
+        "text_TkG8yd",
+        "form_p7r6aW"
       ],
-      "name": "t:sections.newsletter.presets.email_signup.name",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "align_text": "center",
         "image_width": "33",
