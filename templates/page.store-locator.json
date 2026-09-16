@@ -176,7 +176,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>NOTHING CLOSE BY?</strong></p><h3>We ship nationwide →</h3>",
+            "text": "<p><strong>NOTHING CLOSE BY?</strong></p><h3><a href=\"#\" title=\"#\">We ship nationwide →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -190,7 +190,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>FOR BARS, RESTAURANTS AND SHOPS</strong></p><h3>Stock Luna Nueva →</h3>",
+            "text": "<p><strong>FOR BARS, RESTAURANTS AND SHOPS</strong></p><h3><a href=\"/pages/contact\" title=\"Contact\">Stock Luna Nueva →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"

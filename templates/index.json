@@ -322,7 +322,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
-        "left_column_width": 80,
+        "left_column_width": 82,
         "left_text_align": "left",
         "left_text-align_mb": "left",
         "left_vertical_align": "flex-end",
