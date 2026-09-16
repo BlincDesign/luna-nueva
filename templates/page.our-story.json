@@ -525,8 +525,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://pages/our-intentions",
-            "title": "",
-            "text": "<p><strong>NEXT</strong></p><h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
+            "subheading": "<p><strong>NEXT</strong></p>",
+            "title": "<h3><a href=\"/pages/our-intentions\" title=\"OUR INTENTIONS\">Our Intentions →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
@@ -540,8 +541,9 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "image_link": "shopify://pages/our-team-1",
-            "title": "",
-            "text": "<p><strong>ALSO</strong></p><h3><a href=\"/pages/our-team-1\" title=\"OUR TEAM\">The Team →</a></h3>",
+            "subheading": "<p><strong>ALSO</strong></p>",
+            "title": "<h3><a href=\"/pages/our-team-1\" title=\"OUR TEAM\">The Team →</a></h3>",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
