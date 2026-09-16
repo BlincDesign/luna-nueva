@@ -969,10 +969,19 @@
         "text_MRqmLa": {
           "type": "text",
           "settings": {
-            "text": "<p>Flash, grain, and whatever the camera caught. Shot the way the nights actually looked.<br/><br/></p>",
+            "text": "<p>Flash, grain, and whatever the camera caught. Shot the way the nights actually looked.</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
+            "enable_fade": true,
+            "position": "right",
+            "margin_bottom": 18
+          }
+        },
+        "preheading_WXRHQg": {
+          "type": "preheading",
+          "settings": {
+            "title": "DRAG ────",
             "enable_fade": true,
             "position": "right",
             "margin_bottom": 0
@@ -982,7 +991,8 @@
       "block_order": [
         "preheading_mwqaRw",
         "heading_XDjnmY",
-        "text_MRqmLa"
+        "text_MRqmLa",
+        "preheading_WXRHQg"
       ],
       "name": "Rich text columns",
       "settings": {
