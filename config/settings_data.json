@@ -117,7 +117,7 @@
           "link_hover": "#f9f6f1",
           "border": "#d9d9d9",
           "accent": "#d39655",
-          "overlay": "rgba(0,0,0,0)",
+          "overlay": "#F9F6F10D",
           "shadow": "rgba(0,0,0,0)"
         }
       },
@@ -142,7 +142,7 @@
           "link_hover": "#d6a15c",
           "border": "#4a4a4a",
           "accent": "#d6a15c",
-          "overlay": "#000000",
+          "overlay": "#F9F6F10D",
           "shadow": "#000000"
         }
       },
