@@ -279,7 +279,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#f9f6f1",
+            "divider_bg": "#F9F6F138",
             "divider_width": 100,
             "divider_height": 1,
             "enable_icon": false,
