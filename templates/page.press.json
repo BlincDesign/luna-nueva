@@ -183,10 +183,10 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
-        "padding_top": 92,
+        "padding_top": 86,
         "padding_bottom": 66,
         "padding_top_mb": 52,
-        "padding_bottom_mb": 38
+        "padding_bottom_mb": 52
       }
     },
     "custom_rich_text_columns_fnzgfp": {

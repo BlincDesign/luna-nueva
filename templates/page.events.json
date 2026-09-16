@@ -185,7 +185,7 @@
         "text_86nrbW": {
           "type": "text",
           "settings": {
-            "text": "<p>DRAG ──</p>",
+            "text": "<p>DRAG ────</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
@@ -354,7 +354,7 @@
         "text_Ftk69g": {
           "type": "text",
           "settings": {
-            "text": "<p>DRAG ──</p>",
+            "text": "<p>DRAG ────</p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
