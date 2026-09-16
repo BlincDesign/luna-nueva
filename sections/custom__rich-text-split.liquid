@@ -284,7 +284,7 @@
 
             {%- when 'text' -%}
               <div
-                class="theme-block theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}"
+                class="theme-block has-primary--font theme-block__text {% if block.settings.enable_fade %}text--faded{% endif %}"
                 style="{{ margin_bottom }}"
               >
                 <div
@@ -324,7 +324,7 @@
       class="split__column split__column--right {% if section.settings.stylized_bg %} background-image{% endif %} color-{{ section.settings.right_color_scheme }} text-{{ section.settings.right_text_align }} mb-text-{{ section.settings.right_text_align_mb }}"
       data-aos
     >
-      <div class="theme-block__text">
+      <div class="theme-block__text has-primary--font">
         {%- if section.settings.right_text != blank -%}
           {%- if section.settings.enlarge_text -%}
             <div class="enlarge-text">{{ section.settings.right_text }}</div>
