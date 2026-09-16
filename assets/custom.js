@@ -64,7 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeader, { passive: true });
     window.addEventListener('resize', updateHeader);
 
-    updateHeader();
+ 
+    if (window.location.href.includes('/products')) {
+        updateHeader();
+    }
 });
 
 
