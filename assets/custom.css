@@ -124,6 +124,16 @@ strong:has(em) em {
   transform: translateY(0);
 }
 
+[data-animate_sections="true"] [data-aos="fade-show"] {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.no-js [data-animate_sections="true"] [data-aos="fade-show"],
+[data-animate_sections="true"] .aos-animate[data-aos="fade-show"] {
+  opacity: 1;
+}
+
 /* GLOBAL CSS*/
 
 /* Global button system */
