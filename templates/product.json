@@ -412,7 +412,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-6",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "align_text": "center",
         "image_width": "33",
