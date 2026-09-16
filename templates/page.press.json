@@ -590,7 +590,7 @@
           "settings": {
             "link": "",
             "title": "Press and editorial",
-            "subtext": "hello@lunanuevatequila.com",
+            "subtext": "<strong>hello@lunanuevatequila.com</strong>",
             "position": "left",
             "margin_bottom": 0
           }
@@ -600,7 +600,7 @@
           "settings": {
             "link": "",
             "title": "Partnerships and collaborations",
-            "subtext": "hello@lunanuevatequila.com",
+            "subtext": "<strong>hello@lunanuevatequila.com</strong>",
             "position": "left",
             "margin_bottom": 0
           }
@@ -610,7 +610,7 @@
           "settings": {
             "link": "",
             "title": "Stockists and trade",
-            "subtext": "Stock Luna Nueva →",
+            "subtext": "<strong>Stock Luna Nueva →</strong>",
             "position": "left",
             "margin_bottom": 0
           }
@@ -620,7 +620,7 @@
           "settings": {
             "link": "",
             "title": "Events and sampling",
-            "subtext": "Events →",
+            "subtext": "<strong>Events →</strong>",
             "position": "left",
             "margin_bottom": 0
           }
