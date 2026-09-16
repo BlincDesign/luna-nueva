@@ -43,8 +43,8 @@
         <div class="text-column__grid--item text-{{ section.settings.align_text }}" {{ block.shopify_attributes }} data-aos="row-of-3">
           {%- if block.settings.enable_image -%}
             <div style="{% if section.settings.align_text == 'center' %}margin: 0 auto;{% endif %} max-width: {{ block.settings.image_width }}px;">
-              {% if block.settings.button_link != blank %}
-                <a href="{{ block.settings.button_link }}">
+              {% if block.settings.image_link != blank %}
+                <a href="{{ block.settings.image_link }}">
               {% endif %}
               {% if block.settings.image != blank %}
                 <div
@@ -65,7 +65,7 @@
                   {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                 </div>
               {% endif %}
-              {% if block.settings.button_link != blank %}
+              {% if block.settings.image_link != blank %}
                 </a>
               {% endif %}
             </div>
@@ -277,6 +277,11 @@
           "max": 650,
           "step": 10,
           "unit": "px"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
         },
         {
           "type": "text",
