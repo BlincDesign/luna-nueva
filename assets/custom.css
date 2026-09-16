@@ -26,23 +26,12 @@ h3 {
 }
 
 .h4,
-h4 {
-  font-size: var(--type-h4-size);
-  line-height: 1.45;
-  letter-spacing: normal;
-}
-
-
+h4,
 .h5,
-h5 {
-  font-size: var(--type-h5-size);
-  line-height: 1.45;
-  letter-spacing: normal;
-}
-
+h5,
 .h6,
 h6 {
-  font-size: var(--type-h6-size);
+  font-size: var(--type-h4-size);
   line-height: 1.45;
   letter-spacing: normal;
 }
@@ -1054,7 +1043,7 @@ a.pdl__right {
   border: 1px solid rgba(45, 49, 53, 0.24);
   background: rgba(var(--color-overlay));
   border-radius: 15px;
-  border: 1px solid rgba(var(--color-foreground), 0.32);
+  border: 1px solid rgba(var(--color-foreground), 0.16);
 }
 
 .tasting-notes__group {
@@ -1063,7 +1052,7 @@ a.pdl__right {
 }
 
 .tasting-notes__group:nth-last-child(1) {
-  border-left: 1px solid rgba(var(--color-foreground), 0.24);
+  border-left: 1px solid rgba(var(--color-foreground), 0.16);
 }
 
 .tasting-notes__heading {
@@ -1109,7 +1098,6 @@ a.pdl__right {
   background: var(--tasting-notes-chip-bg);
   line-height: 1;
   font-weight: 600;
-  font-size: var(--type-button-size);
 }
 
 .tasting-notes__chip-icon {
