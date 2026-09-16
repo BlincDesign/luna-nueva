@@ -541,10 +541,10 @@
           "type": "text",
           "settings": {
             "text": "<p><strong>THE MAKING</strong></p>",
-            "enlarge_text": true,
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
-            "enable_fade": false,
+            "enable_fade": true,
             "position": "left",
             "margin_bottom": 18
           }
