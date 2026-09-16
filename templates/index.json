@@ -529,21 +529,8 @@
       "blocks": {
         "preheading_F6MRyw": {
           "type": "preheading",
-          "disabled": true,
           "settings": {
-            "title": "THE MAKING",
-            "enable_fade": false,
-            "position": "left",
-            "margin_bottom": 18
-          }
-        },
-        "text_mrmzFJ": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>THE MAKING</strong></p>",
-            "enlarge_text": false,
-            "subheading": false,
-            "enable_italic": false,
+            "title": "<strong>THE MAKING</strong>",
             "enable_fade": true,
             "position": "left",
             "margin_bottom": 18
@@ -580,7 +567,6 @@
       },
       "block_order": [
         "preheading_F6MRyw",
-        "text_mrmzFJ",
         "text_UPPJQz",
         "divider_RQDdAg"
       ],
