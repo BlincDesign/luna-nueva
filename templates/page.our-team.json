@@ -102,12 +102,12 @@
           "type": "two_column_media",
           "settings": {
             "image_one": "shopify://shop_images/recipe-oldfashioned_55514ca4-9cb1-4d38-a49a-7bb321b07beb.jpg",
-            "orientation_one": "landscape",
-            "image_custom_size_1": 1,
+            "orientation_one": "custom",
+            "image_custom_size_1": 0.8,
             "caption_one": "LOS ANGELES",
             "image_two": "shopify://shop_images/team-founder.jpg",
-            "orientation_two": "none",
-            "image_custom_size_2": 1,
+            "orientation_two": "custom",
+            "image_custom_size_2": 0.8,
             "caption_two": "",
             "position": "right",
             "margin_bottom": 0
