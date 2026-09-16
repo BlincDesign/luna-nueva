@@ -45,19 +45,21 @@
 
         <div class="pdc" style="--pdc-bg: {{ bg_color }};">
           <div class="pdc__arch">
-            {%- if image != blank -%}
-              {{
-                image
-                | image_url: width: 800
-                | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: details.title
-              }}
-            {%- elsif product.featured_image != blank -%}
-              {{
-                product.featured_image
-                | image_url: width: 800
-                | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
-              }}
-            {%- endif -%}
+            <a href="{{ product.url }}" class="pdc__image-link">
+              {%- if image != blank -%}
+                {{
+                  image
+                  | image_url: width: 800
+                  | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
+                }}
+              {%- elsif product.featured_image != blank -%}
+                {{
+                  product.featured_image
+                  | image_url: width: 800
+                  | image_tag: loading: 'lazy', class: 'pdc__bottle', alt: product.title
+                }}
+              {%- endif -%}
+            </a>
           </div>
 
           <div class="pdc__body mb-text-center">
