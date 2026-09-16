@@ -287,7 +287,7 @@
           "settings": {
             "position": "right",
             "label": "Character & texture",
-            "description": "<h5>A bold spirit with a velvety body.</h5>",
+            "description": "<h5>{{ product.metafields.custom.character_texture | metafield_tag }}</h5>",
             "icon": "texture",
             "icon_size": 30,
             "margin_bottom": 0
