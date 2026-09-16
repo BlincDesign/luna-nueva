@@ -738,7 +738,7 @@
           "type": "button",
           "settings": {
             "link": "shopify://pages/events",
-            "link_text": "SEE WHAT'S COMING UP",
+            "link_text": "SEE WHAT'S COMING UP →",
             "button_type": "secondary",
             "position": "right",
             "margin_bottom": 0
