@@ -627,7 +627,6 @@ a.pdl__right {
 .pdc__desc {
   margin-bottom: 14px;
   max-width: 250px;
-  font-weight: 400;
 }
 
 @media screen and (max-width: 589px) {
