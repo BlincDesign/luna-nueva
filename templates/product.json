@@ -202,7 +202,7 @@
       ],
       "name": "t:sections.marquee.presets.scrolling_text.name",
       "settings": {
-        "stylized_bg": false,
+        "stylized_bg": true,
         "plus_icon": "shopify://shop_images/validated_svg.svg",
         "plus_icon_size": 13,
         "text_spacing": true,
