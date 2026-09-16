@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateHeader);
 
  
-    if (window.location.href.includes('/products')) {
+    if (!window.location.href.includes('/products')) {
         updateHeader();
     }
 });
