@@ -25,7 +25,7 @@
       </div>
 
       {%- if section.settings.right_text != blank and section.settings.right_link != blank -%}
-        <a href="{{ section.settings.right_link }}" class="pdl__right subheading">
+        <a href="{{ section.settings.right_link }}" class="pdl__right subheading {% if section.settings.enable_fade_preheading %}text--faded{% endif %}">
           {{ section.settings.right_text }}
           <span aria-hidden="true">→</span>
         </a>
