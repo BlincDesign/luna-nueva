@@ -588,7 +588,7 @@
         "link_text_8PQhck": {
           "type": "link_text",
           "settings": {
-            "link": "",
+            "link": "#custom__rich-text-columns-template--28432258302228__custom_rich_text_columns_dFKwm8",
             "title": "Press and editorial",
             "subtext": "<strong>hello@lunanuevatequila.com</strong>",
             "position": "left",
@@ -598,7 +598,7 @@
         "link_text_EAXNJ9": {
           "type": "link_text",
           "settings": {
-            "link": "#custom__rich-text-columns-template--28432258302228__custom_rich_text_columns_dFKwm8",
+            "link": "#",
             "title": "Partnerships and collaborations",
             "subtext": "<strong>hello@lunanuevatequila.com</strong>",
             "position": "left",
