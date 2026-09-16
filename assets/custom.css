@@ -410,6 +410,14 @@ strong:has(em) em {
   display: none;
 }
 
+.site-header.header_overlap--secondary.no-logo-change .site-header__logo .logo--inverted {
+  display: none;
+}
+
+.site-header.header_overlap--secondary.no-logo-change .logo--has-inverted {
+  display: flex;
+}
+
 .site-header .site-nav__link .link-text::before,
 .site-header .site-nav__dropdown-link .site-nav-item--1 .link-text::before {
   background: rgb(var(--color-foreground));
