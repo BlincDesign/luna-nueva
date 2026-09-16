@@ -529,8 +529,21 @@
       "blocks": {
         "preheading_F6MRyw": {
           "type": "preheading",
+          "disabled": true,
           "settings": {
             "title": "THE MAKING",
+            "enable_fade": false,
+            "position": "left",
+            "margin_bottom": 18
+          }
+        },
+        "text_mrmzFJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>THE MAKING</p>",
+            "enlarge_text": false,
+            "subheading": true,
+            "enable_italic": false,
             "enable_fade": false,
             "position": "left",
             "margin_bottom": 18
@@ -553,7 +566,7 @@
           "settings": {
             "position": "left",
             "enable_divider": true,
-            "divider_bg": "#2D31353D",
+            "divider_bg": "#2d31353d",
             "divider_width": 100,
             "divider_height": 0.5,
             "enable_icon": false,
@@ -567,6 +580,7 @@
       },
       "block_order": [
         "preheading_F6MRyw",
+        "text_mrmzFJ",
         "text_UPPJQz",
         "divider_RQDdAg"
       ],
