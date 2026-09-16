@@ -907,7 +907,7 @@ a.pdl__right {
 }
 
 .linklist__404--title:hover,
-.theme-block--link_text--title:hover {
+.theme-block--link_text a .theme-block--link_text--title:hover {
   text-decoration: underline;
   text-decoration-color: rgb(var(--color-link));
 }
