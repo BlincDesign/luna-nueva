@@ -721,6 +721,28 @@
       },
       {
         "type": "range",
+        "id": "type_scale_h5_desktop",
+        "label": "Heading 5",
+        "info": "Sub-section titles",
+        "default": 20,
+        "min": 16,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h6_desktop",
+        "label": "Heading 6",
+        "info": "Minor headings",
+        "default": 18,
+        "min": 14,
+        "max": 48,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
         "id": "type_scale_body_lg_desktop",
         "label": "Body large",
         "info": "Intro text and emphasized paragraphs",
@@ -821,6 +843,28 @@
         "label": "Heading 4",
         "info": "Minor headings",
         "default": 18,
+        "min": 14,
+        "max": 40,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h5_mobile",
+        "label": "Heading 5",
+        "info": "Sub-section titles",
+        "default": 16,
+        "min": 16,
+        "max": 48,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_scale_h6_mobile",
+        "label": "Heading 6",
+        "info": "Minor headings",
+        "default": 14,
         "min": 14,
         "max": 40,
         "step": 1,
