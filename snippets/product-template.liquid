@@ -77,7 +77,7 @@
 
 <div
   id="ProductSection-{{ section_id }}"
-  class="product-section{% if product.metafields.custom.color_scheme.value != blank %} color-{{ product.metafields.custom.color_scheme.value }}{% else %} color-{{ section.settings.color_scheme }}{% endif %}{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %} {% if product.metafields.custom.secondary_logo %} no-logo-change{% endif %}"
+  class="product-section{% if product.metafields.custom.color_scheme.value != blank %} color-{{ product.metafields.custom.color_scheme.value }}{% else %} color-{{ section.settings.color_scheme }}{% endif %}{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %} {% unless product.metafields.custom.secondary_logo %} no-logo-change{% endunless %}"
   data-section-id="{{ section_id }}"
   data-product-id="{{ product.id }}"
   data-section-type="product"
