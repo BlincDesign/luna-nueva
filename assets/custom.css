@@ -1047,7 +1047,7 @@ a.pdl__right {
 }
 
 .tasting-notes {
-  --tasting-notes-chip-bg: rgba(0, 0, 0, 0.06);
+  --tasting-notes-chip-bg: rgba(var(--color-foreground), 0.08);
   --tasting-notes-icon-size: 1rem;
   --tasting-notes-chip-icon-size: 13px;
   display: flex;
