@@ -287,7 +287,7 @@
           "settings": {
             "position": "right",
             "label": "Character & texture",
-            "description": "<h5>{{ product.metafields.custom.character_texture | metafield_tag }}</h5>",
+            "description": "<h4>{{ product.metafields.custom.character_texture | metafield_tag }}</h4>",
             "icon": "texture",
             "icon_size": 30,
             "margin_bottom": 0
@@ -298,7 +298,7 @@
           "settings": {
             "position": "right",
             "label": "Aroma",
-            "description": "<h5>An engaging bouquet of cinnamon, spices, vanilla, and fresh citrus.</h5>",
+            "description": "<h4>{{ product.metafields.custom.aroma_details.value }}</h4>",
             "icon": "aroma",
             "icon_size": 30,
             "margin_bottom": 0
@@ -309,7 +309,7 @@
           "settings": {
             "position": "right",
             "label": "Palate",
-            "description": "<h5>Loaded with spice, butterscotch, cocoa, vanilla, and notes of pepper.</h5>",
+            "description": "<h4>{{ product.metafields.custom.palate_details.value }}</h4>",
             "icon": "palate",
             "icon_size": 30,
             "margin_bottom": 0
@@ -340,7 +340,7 @@
         "right_text_align": "left",
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-start",
-        "detail_accent_color": "#D39655",
+        "detail_accent_color": "#d39655",
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
