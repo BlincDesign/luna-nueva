@@ -48,10 +48,10 @@
         "preheading_BbDrX8": {
           "type": "preheading",
           "settings": {
-            "title": "{{ collection.title }}",
+            "title": "<strong>THE COLLECTION</strong>",
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 18
           }
         },
         "text_74fBbx": {
