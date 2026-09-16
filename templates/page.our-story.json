@@ -143,8 +143,8 @@
         "text_LftFww": {
           "type": "text",
           "settings": {
-            "text": "<h5>Born in the Mountains.</h5><h4>Made for the Sea.</h4><h5><em><strong>Guided by the Moon.</strong></em></h5>",
-            "enlarge_text": true,
+            "text": "<h6><strong>Born in the Mountains.</strong></h6><h6><strong>Made for the Sea.</strong></h6><h6><em><strong>Guided by the Moon.</strong></em></h6>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
