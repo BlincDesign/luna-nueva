@@ -1289,11 +1289,12 @@ a.pdl__right {
 
 .pdp-gallery__count {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 5px;
+  right: 0px;
   z-index: 3;
   font-size: var(--type-caption-size);
   font-weight: 700;
+  opacity: 0.6;
 }
 
 .pdp-gallery__nav {
