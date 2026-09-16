@@ -152,7 +152,7 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": false,
         "section_height": "650px",
         "mobile_height": "auto",
