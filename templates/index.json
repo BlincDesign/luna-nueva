@@ -739,7 +739,7 @@
         "preheading_cCLQaa": {
           "type": "preheading",
           "settings": {
-            "title": "DRAG",
+            "title": "DRAG ────",
             "enable_fade": false,
             "position": "right",
             "margin_bottom": 18
