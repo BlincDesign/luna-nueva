@@ -1109,6 +1109,7 @@ a.pdl__right {
   background: var(--tasting-notes-chip-bg);
   line-height: 1;
   font-weight: 600;
+  font-size: var(--type-button-size);
 }
 
 .tasting-notes__chip-icon {
