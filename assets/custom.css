@@ -914,10 +914,9 @@ a.pdl__right {
 
 .linklist__404--subtext,
 .theme-block--link_text--subtext {
-  font-size: 1.1rem;
+  font-size: var(--type-body-sm-size);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.6;
   white-space: nowrap;
 }
 
