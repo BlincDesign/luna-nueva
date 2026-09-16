@@ -407,12 +407,12 @@
           "type": "two_column_media",
           "settings": {
             "image_one": "shopify://shop_images/story-barrels-b.jpg",
-            "orientation_one": "portrait",
-            "image_custom_size_1": 1,
+            "orientation_one": "custom",
+            "image_custom_size_1": 0.8,
             "caption_one": "",
             "image_two": "shopify://shop_images/ev-table.jpg",
-            "orientation_two": "portrait",
-            "image_custom_size_2": 1,
+            "orientation_two": "custom",
+            "image_custom_size_2": 0.8,
             "caption_two": "",
             "position": "left",
             "margin_bottom": 18
