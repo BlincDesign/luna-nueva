@@ -20,6 +20,10 @@
 -%}
 
 {% stylesheet %}
+  .stockist-layout {
+    background: rgba(var(--color-background), .20)
+  }
+
   .store-locator__inner {
     display: flex;
     flex-direction: column;
@@ -77,8 +81,7 @@
     border-radius: 999px;
     background: transparent;
     color: currentColor;
-    border: 1px solid currentColor;
-    opacity: 0.85;
+    border: 1px solid rgba(45,49,53,.24);
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.15s, opacity 0.15s;
