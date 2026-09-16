@@ -267,7 +267,7 @@
           "link_hover": "#a26b25",
           "border": "#2d3135",
           "accent": "#000000",
-          "overlay": "#000000",
+          "overlay": "#F9F6F152",
           "shadow": "#000000"
         }
       },
