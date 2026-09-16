@@ -667,7 +667,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>THE BACKGROUND</strong><br/><br/><a href=\"/pages/our-story\" title=\"OUR STORY\">Our Story  →</a></p>",
+            "text": "<p><strong>THE BACKGROUND</strong><br/><a href=\"/pages/our-story\" title=\"OUR STORY\">Our Story  →</a></p>",
             "button_label": "",
             "button_link": "",
             "button_type": "link"
@@ -681,7 +681,7 @@
             "image_mask": "rounded-corners",
             "image_width": 650,
             "title": "",
-            "text": "<p><strong>THE BOTTLES</strong><br/><br/><a href=\"/collections/all\" title=\"All products\">Three expressions →</a></p>",
+            "text": "<p><strong>THE BOTTLES</strong><br/><a href=\"/collections/all\" title=\"All products\">Three expressions →</a></p>",
             "button_label": "",
             "button_link": "",
             "button_type": "link"
