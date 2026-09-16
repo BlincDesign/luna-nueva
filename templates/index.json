@@ -737,9 +737,9 @@
         "button_bCtMDn": {
           "type": "button",
           "settings": {
-            "link": "",
+            "link": "shopify://pages/events",
             "link_text": "SEE WHAT'S COMING UP",
-            "button_type": "primary",
+            "button_type": "secondary",
             "position": "right",
             "margin_bottom": 0
           }
