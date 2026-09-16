@@ -138,7 +138,7 @@
       "settings": {
         "color_scheme": "scheme-6",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "full_width": false,
         "position": "left",
         "content_width": 35,
@@ -519,7 +519,7 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": false,
         "section_height": "750px",
         "mobile_height": "300px",
@@ -581,7 +581,7 @@
         "divider": false,
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "padding_top": 86,
         "padding_bottom": 48,
         "padding_top_mb": 52,
