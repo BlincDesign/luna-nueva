@@ -431,7 +431,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "pre_title": "Stock Luna Nueva",
         "title": "Where should we send it?",
