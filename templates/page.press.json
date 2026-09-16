@@ -407,7 +407,7 @@
             "enable_italic": false,
             "enable_fade": false,
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 40
           }
         },
         "button_Nm46ra": {
@@ -417,7 +417,7 @@
             "link_text": "SEE WHAT'S COMING UP",
             "button_type": "primary",
             "position": "left",
-            "margin_bottom": 0
+            "margin_bottom": 20
           }
         },
         "text_yQ6d8Q": {
