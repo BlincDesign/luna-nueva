@@ -926,7 +926,7 @@
       "settings": {
         "color_scheme": "scheme-6",
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "full_width": false,
         "position": "left",
         "content_width": 35,
