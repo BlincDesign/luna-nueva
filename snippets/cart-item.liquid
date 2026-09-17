@@ -17,7 +17,16 @@
   <div class="cart__item--details">
     <div class="cart__item--name enlarge-text">
       <a href="{{ product.url }}" class="cart__product-name has-primary--font">
-        {% if settings.add_shop_item_title %}{{ shop.name }} {% endif %}{{ product.product.title }}
+        {%- assign product_title_lower = product.title | downcase -%}
+        {%- assign shop_name_lower = 'Luna Nueva' | downcase -%}
+
+        {%- if settings.add_shop_item_title and product_title_lower contains shop_name_lower -%}
+          {{ product.title }}
+        {%- elsif settings.add_shop_item_title -%}
+          Luna Nueva {{ product.title }}
+        {%- else -%}
+          {{ product.title }}
+        {%- endif -%}
       </a>
 
       {%- unless product.product.has_only_default_variant -%}
