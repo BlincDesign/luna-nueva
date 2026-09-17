@@ -10,7 +10,7 @@
     {%- if aroma_count > 0 -%}
       <div class="tasting-notes__group">
         <h3 class="tasting-notes__heading">
-          <span class="tasting-notes__heading-icon">
+          <span class="tasting-notes__heading-icon has-primary--font">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -31,7 +31,7 @@
         <ul class="tasting-notes__list" role="list" data-aos="fade-up">
           {%- for note in aroma_notes -%}
             {%- unless note.label == blank -%}
-              <li class="tasting-notes__chip">
+              <li class="tasting-notes__chip has-primary--font">
                 {%- if note.svg != blank -%}
                   <span class="tasting-notes__chip-icon" aria-hidden="true">{{ note.svg }}</span>
                 {%- endif -%}
@@ -46,7 +46,7 @@
     {%- if palate_count > 0 -%}
       <div class="tasting-notes__group">
         <h3 class="tasting-notes__heading">
-          <span class="tasting-notes__heading-icon">
+          <span class="tasting-notes__heading-icon has-primary--font">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -63,10 +63,10 @@
           </span>
           <span>Palate</span>
         </h3>
-        <ul class="tasting-notes__list has-primary--font" role="list" data-aos="fade-up">
+        <ul class="tasting-notes__list" role="list" data-aos="fade-up">
           {%- for note in palate_notes -%}
             {%- unless note.label == blank -%}
-              <li class="tasting-notes__chip">
+              <li class="tasting-notes__chip has-primary--font">
                 {%- if note.svg != blank -%}
                   <span class="tasting-notes__chip-icon" aria-hidden="true">{{ note.svg }}</span>
                 {%- endif -%}
