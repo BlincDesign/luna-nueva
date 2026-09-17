@@ -23,9 +23,11 @@
   endif
 
   assign header_color_scheme = section.settings.color_scheme
-  if product.metafields.custom.color_scheme.value != blank
-    assign header_color_scheme = product.metafields.custom.color_scheme.value | replace: " section--scheme-secondary", ""
-  endif
+  comment
+    if product.metafields.custom.color_scheme.value != blank
+      assign header_color_scheme = product.metafields.custom.color_scheme.value | replace: " section--scheme-secondary", ""
+    endif
+  endcomment
 -%}
 
 {%- render 'custom-drawer-menu', section: section, main_menu: main_menu, logo_alignment: logo_alignment -%}
