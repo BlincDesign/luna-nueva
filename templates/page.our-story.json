@@ -58,6 +58,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -70,6 +71,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -281,6 +283,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 20
           }
@@ -293,6 +296,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 18
           }
@@ -389,6 +393,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 41
           }
@@ -465,6 +470,7 @@
             "subheading": false,
             "enable_italic": true,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -493,7 +499,7 @@
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
-        "header_secondary": true,
+        "header_secondary": false,
         "stylized_bg": true,
         "enable_vertical_divider": false,
         "left_column_width": 100,
