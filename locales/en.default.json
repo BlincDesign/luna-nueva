@@ -327,7 +327,7 @@
       "sold_out": "Sold Out",
       "unavailable": "Unavailable",
       "quantity": "Quantity",
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Add to bag",
       "preorder": "Pre-order",
       "include_taxes": "Tax included.",
       "shipping_policy_html": "<a href='{{ link }}'>Shipping</a> calculated at checkout.",
@@ -406,7 +406,7 @@
     "from_price": "from {{ price }}"
   },
   "actions": {
-    "add_to_cart": "Add to Cart",
+    "add_to_cart": "Add to bag",
     "close": "Close",
     "get_directions": "Get directions",
     "view_store_info": "View store information",
