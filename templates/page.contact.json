@@ -42,6 +42,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -218,10 +219,11 @@
           "type": "text",
           "settings": {
             "text": "<p><strong>NOTHING ADDED. NOTHING HIDDEN.</strong></p>",
-            "enlarge_text": true,
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -234,6 +236,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -309,6 +312,8 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "",
+        "header_secondary": false,
+        "stylized_bg": true,
         "preheading": "",
         "enable_fade_preheading": false,
         "title": "",
@@ -320,8 +325,6 @@
         "link": "",
         "link_text": "",
         "button_type": "secondary",
-        "header_secondary": false,
-        "stylized_bg": true,
         "number_color": "#9b3a15",
         "card_background": "#f9f6f1",
         "card_text_color": "#2d3135",
