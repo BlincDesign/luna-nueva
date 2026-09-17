@@ -10,6 +10,10 @@
       letter-spacing: .18em;
   }
 
+  #Text-with-images-columns-{{ section.id }} .text-column__grid {
+    --image-columns-mobile: {{ section.settings.mobile_columns | plus: 0 }}
+  }
+
   .text-column__grid--item:hover img {
     scale: 1.035  
   }
@@ -155,6 +159,26 @@
       "id": "stylized_bg",
       "label": "Enable stylized background",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "default": "1",
+      "label": "Columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
     },
     {
       "type": "header",

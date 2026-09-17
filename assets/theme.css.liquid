@@ -2964,7 +2964,7 @@ html[dir=rtl] .grid--small-gutters .grid__item{
 .text-column__grid{
   display:grid;
   gap: 14px;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(var(--image-columns-mobile), 1fr);
 }
 
 @media (min-width:769px){
