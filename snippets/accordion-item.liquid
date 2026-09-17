@@ -8,6 +8,8 @@
       {{ block.settings.title }}
       <span class="accordion__icon" aria-hidden="true">+</span>
     </summary>
-    {{ block.settings.content }}
+    <div class="has-primary--font text--faded">
+      {{ block.settings.content }}
+    </div>
   </details>
 {%- endunless -%}
