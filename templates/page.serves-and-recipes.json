@@ -42,6 +42,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 13
           }
@@ -199,6 +200,8 @@
       "name": "Image columns",
       "settings": {
         "color_scheme": "scheme-7",
+        "header_secondary": false,
+        "stylized_bg": true,
         "preheading": "<strong>FROM THE BOOKLET</strong>",
         "enable_fade_preheading": false,
         "title": "Clean enough to drink neat. Honest enough to build on.",
@@ -210,16 +213,14 @@
         "link": "",
         "link_text": "",
         "button_type": "primary",
-        "header_secondary": false,
-        "stylized_bg": true,
         "number_color": "#9b3a15",
-        "card_background": "#f9f6f1",
+        "card_background": "#F2ECE2",
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
         "tags": "All, Silver, Reposado, Añejo",
         "tab_active_bg": "#2d3135",
-        "tab_active_text": "#ffffff",
+        "tab_active_text": "#AEBFB4",
         "tab_inactive_bg": "rgba(0,0,0,0)",
         "tab_inactive_text": "#2d3135",
         "tab_border_color": "#2d31353d",
@@ -244,6 +245,7 @@
             "subheading": false,
             "enable_italic": true,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -256,6 +258,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
