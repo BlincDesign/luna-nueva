@@ -910,6 +910,7 @@ a.pdl__right {
 
 .cart__item-sub {
   font-weight: 600;
+  font-size: var(--type-body-sm-size);
 }
 
 /* 404 page */
