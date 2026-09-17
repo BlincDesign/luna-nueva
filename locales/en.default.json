@@ -13,7 +13,7 @@
       "title": "404",
       "text": "Nothing poured here.",
       "subtext_html": "<h4 class='{{ class }}'>The page you were looking for does not exist.</h4>",
-      "continue_shopping": "Continue shopping"
+      "continue_shopping": "Back to Homepage"
     },
     "accessibility": {
       "skip_to_content": "Skip to content",
