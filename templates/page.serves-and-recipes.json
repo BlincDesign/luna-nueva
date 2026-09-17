@@ -37,8 +37,8 @@
         "text_hCzqhi": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</strong></p>",
-            "enlarge_text": true,
+            "text": "<h4><strong>Invite your people over. Make them dinner. Grab a bottle of Luna Nueva.</strong></h4>",
+            "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
