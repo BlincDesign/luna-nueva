@@ -26,12 +26,23 @@ h3 {
 }
 
 .h4,
-h4,
+h4
+  {
+  font-size: var(--type-h4-size);
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
 .h5,
-h5,
+h5 {
+  font-size: var(--type-h5-size);
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
 .h6,
 h6 {
-  font-size: var(--type-h4-size);
+  font-size: var(--type-h6-size);
   line-height: 1.45;
   letter-spacing: normal;
 }
@@ -1482,7 +1493,7 @@ a.pdl__right {
 /* Privacy Policy page end */
 
 .text--faded {
-  opacity: 0.6;
+  opacity: 0.66;
 }
 
 .media-gallery__caption {
