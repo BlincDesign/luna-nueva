@@ -199,7 +199,7 @@
       ],
       "name": "Image columns",
       "settings": {
-        "flow_right": true,
+        "flow_right": false,
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
