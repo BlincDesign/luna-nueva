@@ -85,8 +85,8 @@
         "right_vertical_align": "flex-end",
         "padding_top": 120,
         "padding_bottom": 120,
-        "mobile_padding_top": 80,
-        "mobile_padding_bottom": 80
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 0
       }
     },
     "featured-collection": {
