@@ -328,13 +328,10 @@
             "margin_bottom": 0
           }
         },
-        "text_BgFiqd": {
-          "type": "text",
+        "preheading_K4PyNj": {
+          "type": "preheading",
           "settings": {
-            "text": "<p>LOS ANGELES · JALISCO</p>",
-            "enlarge_text": false,
-            "subheading": false,
-            "enable_italic": false,
+            "title": "LOS ANGELES · JALISCO",
             "enable_fade": false,
             "position": "right",
             "margin_bottom": 0
@@ -343,7 +340,7 @@
       },
       "block_order": [
         "text_WeG6TX",
-        "text_BgFiqd"
+        "preheading_K4PyNj"
       ],
       "name": "Rich text columns",
       "settings": {
