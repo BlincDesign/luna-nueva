@@ -274,7 +274,7 @@
         "text_HFHKk6": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Tequila </strong><strong>{{ product.title }}</strong><strong> · </strong><strong>{{ product.metafields.custom.rested.value }}</strong><strong> · </strong><strong>{{ product.metafields.custom.abv.value }}</strong><strong>% <br/>Alc/Vol</strong></p>",
+            "text": "<p><strong>Tequila </strong><strong>{{ product.title }}</strong><strong> · <br/></strong><strong>{{ product.metafields.custom.rested.value }}</strong><strong> · </strong><strong>{{ product.metafields.custom.abv.value }}</strong><strong>% <br/>Alc/Vol</strong></p>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
