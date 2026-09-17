@@ -52,7 +52,7 @@
     {% endif %}
     name="add"
     data-add-to-cart
-    class="button btn--full button--primary add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups.size == 0 %} add-to-cart--secondary{% endif %}"
+    class="button btn--full button--primary add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups.size == 0 %} add-to-cart--secondary{% endif %} has-primary--font"
     {% unless current_variant.available %}
       disabled="disabled"
     {% endunless %}
