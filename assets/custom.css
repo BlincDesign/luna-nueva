@@ -1352,7 +1352,6 @@ a.pdl__right {
   z-index: 3;
   font-size: var(--type-caption-size);
   font-weight: 700;
-  opacity: 0.6;
 }
 
 .pdp-gallery__nav {
