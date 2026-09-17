@@ -1269,6 +1269,12 @@
       },
       {
         "type": "checkbox",
+        "id": "add_shop_item_title",
+        "label": "Shop name before item title",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "cart_notes_enable",
         "label": "t:settings_schema.cart.settings.cart_notes_enable.label"
       },
