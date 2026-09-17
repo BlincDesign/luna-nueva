@@ -453,7 +453,7 @@
 
                 {%- when 'text' -%}
                   <div
-                    class="theme-block theme-block__text has-primary--font {% if block.settings.enable_fade %}text--faded{% endif %}"
+                    class="theme-block theme-block__text {% if block.settings.enable_primary_font %} has-primary--font{% endif %} {% if block.settings.enable_fade %} text--faded{% endif %}"
                     style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
@@ -2209,6 +2209,12 @@
           "id": "enable_fade",
           "label": "Lighten text",
           "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_primary_font",
+          "label": "Heading font",
+          "default": true
         },
         {
           "type": "select",
