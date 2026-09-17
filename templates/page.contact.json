@@ -236,7 +236,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
-            "enable_primary_font": true,
+            "enable_primary_font": false,
             "position": "right",
             "margin_bottom": 0
           }
