@@ -497,6 +497,10 @@ strong:has(em) em {
   border: none;
 }
 
+.mobile-nav__item--active > a {
+  color: var(--highlight-color) !important;
+}
+
 .mobile-nav__item--parent:nth-child(1) {
   padding-top: 36px;
 }
