@@ -497,9 +497,6 @@ strong:has(em) em {
   border: none;
 }
 
-.mobile-nav__item--active > a {
-  color: var(--highlight-color) !important;
-}
 
 .mobile-nav__item--parent:nth-child(1) {
   padding-top: 36px;
@@ -535,6 +532,12 @@ strong:has(em) em {
   display: block;
   transform: translateY(100%);
   transition-duration: 0.2s;
+}
+
+
+#NavDrawer .mobile-nav__item--active>a {
+  color: var(--highlight-color);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 900px) {
