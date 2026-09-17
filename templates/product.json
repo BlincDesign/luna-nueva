@@ -326,9 +326,7 @@
         "detail_row_tpf6Qx",
         "detail_row_Perrig"
       ],
-      "custom_css": [
-        ".block-text .theme-block__text .has-primary--font * {font-family: var(--typeBasePrimary),var(--typeBaseFallback) !important;}"
-      ],
+      "custom_css": [],
       "name": "Rich text columns",
       "settings": {
         "color_scheme": "",
