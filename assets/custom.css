@@ -905,6 +905,7 @@ a.pdl__right {
   font-size: var(--type-body-sm-size);
   text-transform: uppercase;
   margin-bottom: 5px;
+  max-width: 124px;
 }
 
 .cart__item-sub {
