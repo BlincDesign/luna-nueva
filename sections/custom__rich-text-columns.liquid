@@ -782,12 +782,12 @@
 
                 {%- when 'text' -%}
                   <div
-                    class="theme-block{% if block.settings.enable_primary_font %} has-primary--font{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %} theme-block__text"
+                    class="theme-block{% if block.settings.enable_primary_font %} has-primary--font{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %} theme-block__text  {%- if block.settings.subheading -%} subheading{% endif %}"
                     style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <div
-                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading -%} subheading{% endif %}"
+                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
                       data-block-id="{{ block.id }}"
                     >
                       {%- if block.settings.text != blank -%}
