@@ -806,6 +806,11 @@ a.pdl__right {
   letter-spacing: 0.16rem;
 }
 
+#CartDrawer .drawer .js-qty__num {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
 #CartDrawer .drawer__header {
   border: none;
 }
