@@ -237,8 +237,8 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
-        "heading": "Three Expressions",
         "preheading": "<strong>THE COLLECTION</strong>",
+        "heading": "Three Expressions",
         "right_text": "750ml · Additive-Free · Jalisco",
         "right_link": "",
         "enable_fade_preheading": true,
@@ -273,6 +273,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -294,6 +295,7 @@
             "subheading": true,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -545,6 +547,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -663,6 +666,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -675,6 +679,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -804,6 +809,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -1046,6 +1052,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 18
           }
@@ -1218,6 +1225,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -1240,6 +1248,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -1362,7 +1371,7 @@
         "header_secondary": false,
         "stylized_bg": true,
         "number_color": "#9b3a15",
-        "card_background": "#f9f6f1",
+        "card_background": "#F2ECE2",
         "card_text_color": "#2d3135",
         "accent_color": "#9b3a15",
         "track_color": "#2d3135",
