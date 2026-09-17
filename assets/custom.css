@@ -872,6 +872,7 @@ a.pdl__right {
 
 #CartDrawer .drawer__footer {
   border-top: 1px solid var(--colorDrawerBorder);
+  padding-bottom: 60px;
 }
 
 .cart__checkout-wrapper .button.button--primary {
