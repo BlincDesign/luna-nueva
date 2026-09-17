@@ -611,7 +611,7 @@
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "header_secondary": false,
-        "stylized_bg": false,
+        "stylized_bg": true,
         "color_scheme": "scheme-6",
         "align_text": "center",
         "narrow_column": false,
