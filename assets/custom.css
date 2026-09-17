@@ -866,6 +866,14 @@ a.pdl__right {
   justify-content: center;
 }
 
+#CartDrawer .drawer__footer:after {
+  border: none;
+}
+
+#CartDrawer .drawer__footer {
+  border-top: 1px solid var(--colorDrawerBorder);
+}
+
 .cart__checkout-wrapper .button.button--primary {
   --btn-bg: transparent;
   --btn-border: transparent;
