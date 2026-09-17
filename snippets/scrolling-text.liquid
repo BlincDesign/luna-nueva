@@ -5,7 +5,7 @@
     color: {{ section.settings.color_text }};
     padding-top: {{ section.settings.padding_top }}px !important;
     padding-bottom: {{ section.settings.padding_bottom }}px !important;
-    border: 1px solid rgba({{ section.settings.color_text }}, 0.66);
+    border: 1px solid {{ section.settings.color_text | color_modify: 'alpha', 0.2 }};
   }
   
   .scrolling-text--{{ section.id }} {
