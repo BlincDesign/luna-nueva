@@ -967,6 +967,7 @@ a.pdl__right {
   opacity: 0.8;
   font-size: var(--type-body-sm-size);
   letter-spacing: .13em;
+  text-transform: uppercase;
 }
 
 .sibling-switcher {
