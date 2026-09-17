@@ -368,7 +368,7 @@
     {%- if section.blocks.size > 0 -%}
       {%- if layout_type == 'slider' -%}
         {%- capture rail_markup -%}
-          <div class="image-columns__rail">
+          <div class="image-columns__rail {% if section.settings.flow_right and section.settings.full_width == false %} media-gallery__inner--flush-right{% endif %}">
             {{ blocks_markup }}
           </div>
         {%- endcapture -%}
@@ -635,6 +635,13 @@
   "tag": "section",
   "class": "section-image-columns",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "flow_right",
+      "label": "Flow to right",
+      "info": "Extends the gallery to the right edge of the viewport.",
+      "default": false
+    },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-6" },
     {
       "type": "checkbox",
