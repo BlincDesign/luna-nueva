@@ -91,7 +91,7 @@
                 <a href="{{ block.settings.link | default: '#' }}">
                   <span class="linklist__404--title">{{ block.settings.title }}</span>
                   {% if block.settings.subtext != blank %}
-                    <span class="linklist__404--subtext">{{ block.settings.subtext }}</span>
+                    <span class="linklist__404--subtext{% if block.settings.enable_fade %}text--fade{% endif %}">{{ block.settings.subtext }}</span>
                   {% endif %}
                 </a>
               </li>
@@ -257,10 +257,16 @@
           "default": "Link title"
         },
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "subtext",
           "label": "Subtext",
           "default": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_fade",
+          "label": "Lighten text",
+          "default": false
         }
       ]
     },
