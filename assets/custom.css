@@ -799,6 +799,13 @@ a.pdl__right {
   min-height: unset;
 }
 
+#CartDrawer .drawer__close-button {
+  text-transform: uppercase;
+  font-size: var(--type-caption-size);
+  font-weight: 600;
+  letter-spacing: 0.16rem;
+}
+
 .drawer__top-message p {
   margin: 14px 0 0;
   opacity: 0.6;
