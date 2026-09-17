@@ -1174,6 +1174,11 @@ a.pdl__right {
   .tasting-notes {
     flex-direction: column;
   }
+
+  .product-block--buy_buttons .product__quantity {
+    max-width: 100px;
+    max-height: 50px;
+  }
 }
 
 .claims-block .product-claims {
