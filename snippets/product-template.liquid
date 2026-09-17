@@ -266,9 +266,9 @@
                         data-aos="fade-show"
                       >
                         {%- unless product.empty? -%}
-                          {{ current_variant.price | money }}
+                          {{ current_variant.price | money_without_trailing_zeros }}
                         {%- else -%}
-                          {{ 1999 | money }}
+                          {{ 1999 | money_without_trailing_zeros }}
                         {%- endunless -%}
                       </h3>
 
