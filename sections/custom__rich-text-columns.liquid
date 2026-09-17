@@ -787,7 +787,7 @@
                     {{ block.shopify_attributes }}
                   >
                     <div
-                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading != blank -%} subheading{% endif %}"
+                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
                     >
                       {%- if block.settings.text != blank -%}
