@@ -276,7 +276,7 @@
           "settings": {
             "text": "<p><strong>Tequila </strong><strong>{{ product.title }}</strong><strong> · <br/></strong><strong>{{ product.metafields.custom.rested.value }}</strong><strong> · </strong><strong>{{ product.metafields.custom.abv.value }}</strong><strong>% <br/>Alc/Vol</strong></p>",
             "enlarge_text": false,
-            "subheading": false,
+            "subheading": true,
             "enable_italic": false,
             "enable_fade": true,
             "enable_primary_font": false,
