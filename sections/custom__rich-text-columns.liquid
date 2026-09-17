@@ -453,12 +453,12 @@
 
                 {%- when 'text' -%}
                   <div
-                    class="theme-block theme-block__text {% if block.settings.enable_primary_font %} has-primary--font{% endif %} {% if block.settings.enable_fade %} text--faded{% endif %}"
+                    class="theme-block{% if block.settings.enable_primary_font %} has-primary--font{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %} theme-block__text"
                     style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <div
-                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
                     >
                       {%- if block.settings.text != blank -%}
@@ -782,12 +782,12 @@
 
                 {%- when 'text' -%}
                   <div
-                    class="theme-block{% if block.settings.enable_primary_font %} has-primary--font{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %} theme-block__text  {%- if block.settings.subheading -%} subheading{% endif %}"
+                    class="theme-block{% if block.settings.enable_primary_font %} has-primary--font{% endif %}{% if block.settings.enable_fade %} text--faded{% endif %} theme-block__text"
                     style="{{ margin_bottom }}"
                     {{ block.shopify_attributes }}
                   >
                     <div
-                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}"
+                      class="appear-delay{% cycle '', '-1', '-2', '-3', '-4' %} {%- if block.settings.subheading -%} subheading{% endif %}"
                       data-block-id="{{ block.id }}"
                     >
                       {%- if block.settings.text != blank -%}
