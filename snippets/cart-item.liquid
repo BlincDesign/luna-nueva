@@ -17,7 +17,7 @@
   <div class="cart__item--details">
     <div class="cart__item--name enlarge-text">
       <a href="{{ product.url }}" class="cart__product-name has-primary--font">
-        {{ product.product.title }}
+        {% if settings.add_shop_item_title %}{{ shop.name }} {% endif %}{{ product.product.title }}
       </a>
 
       {%- unless product.product.has_only_default_variant -%}
@@ -27,6 +27,18 @@
           {%- endfor -%}
         </div>
       {%- endunless -%}
+
+      {%- liquid
+        assign cart_item_net_content = product.product.metafields.custom.net_content.value
+        assign cart_item_abv = product.product.metafields.custom.abv.value
+      -%}
+      {%- if cart_item_net_content != blank or cart_item_abv != blank -%}
+        <div class="cart__item--specs">
+          {%- if cart_item_net_content != blank -%}{{ cart_item_net_content }}{%- endif -%}
+          {%- if cart_item_net_content != blank and cart_item_abv != blank -%} &middot; {%- endif -%}
+          {%- if cart_item_abv != blank -%}{{ cart_item_abv }}% Alc/Vol{%- endif -%}
+        </div>
+      {%- endif -%}
       <div class="{% if product.selling_plan_allocation == empty %}hide {% endif %}">
         {{ product.selling_plan_allocation.selling_plan.name }}
       </div>
