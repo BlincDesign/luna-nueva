@@ -91,7 +91,7 @@
                 <a href="{{ block.settings.link | default: '#' }}">
                   <span class="linklist__404--title">{{ block.settings.title }}</span>
                   {% if block.settings.subtext != blank %}
-                    <span class="linklist__404--subtext{% if block.settings.enable_fade %} text--fade{% endif %}">{{ block.settings.subtext }}</span>
+                    <span class="linklist__404--subtext{% if block.settings.enable_fade %} text--faded{% endif %}">{{ block.settings.subtext }}</span>
                   {% endif %}
                 </a>
               </li>
