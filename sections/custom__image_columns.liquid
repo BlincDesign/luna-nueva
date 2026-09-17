@@ -234,9 +234,9 @@
           <div class="image-columns__menu">
             <div class="image-columns__menu-header">
               {%- if block.settings.title != blank -%}
-                <h4 class="image-columns__service-title">
+                <h5 class="image-columns__service-title">
                   {{ block.settings.title }}
-                </h4>
+                </h5>
               {%- endif -%}
 
               {%- if block.settings.number != blank -%}
@@ -299,9 +299,9 @@
 
             {%- if section.settings.title != blank -%}
               <div class="theme-block appear-delay{% cycle '', '-1', '-2', '-3', '-4' %}">
-                <h5>
+                <h2>
                   {{ section.settings.title }}
-                </h5>
+                </h2>
               </div>
             {%- endif -%}
 
