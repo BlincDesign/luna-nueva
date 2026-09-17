@@ -142,7 +142,7 @@
         "image_size": "auto",
         "product_zoom_enable": false,
         "gallery_height": "60vh",
-        "gallery_height_mobile": "60vh",
+        "gallery_height_mobile": "50vh",
         "thumbnail_position": "below",
         "thumbnail_height": "fixed",
         "thumbnail_arrows": false,
