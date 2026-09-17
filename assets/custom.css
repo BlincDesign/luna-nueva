@@ -926,6 +926,7 @@ a.pdl__right {
 .wrapper__404 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 30px;
 }
 
