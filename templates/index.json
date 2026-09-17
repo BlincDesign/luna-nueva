@@ -814,15 +814,6 @@
             "margin_bottom": 0
           }
         },
-        "preheading_cCLQaa": {
-          "type": "preheading",
-          "settings": {
-            "title": "DRAG ────",
-            "enable_fade": true,
-            "position": "right",
-            "margin_bottom": 18
-          }
-        },
         "button_bCtMDn": {
           "type": "button",
           "settings": {
@@ -837,7 +828,6 @@
       "block_order": [
         "preheading_DXAxHU",
         "text_WnbQcm",
-        "preheading_cCLQaa",
         "button_bCtMDn"
       ],
       "name": "Rich text columns",
