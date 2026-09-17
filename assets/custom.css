@@ -896,7 +896,7 @@ a.pdl__right {
   opacity: 0.6;
   font-size: var(--type-body-sm-size);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .cart__item-sub {
