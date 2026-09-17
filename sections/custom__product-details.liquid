@@ -4,6 +4,10 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  #custom__product-details-{{ section.id }} .background-image:before{
+      z-index: 0;
+  }
+
   @media only screen and (max-width:589px){
     #custom__product-details-{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mb }}px;
