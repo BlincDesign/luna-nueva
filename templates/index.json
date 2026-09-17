@@ -861,7 +861,7 @@
         "padding_top": 138,
         "padding_bottom": 66,
         "padding_top_mb": 72,
-        "padding_bottom_mb": 0
+        "padding_bottom_mb": 38
       }
     },
     "custom_media_gallery_9bgdN4": {
@@ -942,7 +942,7 @@
         "mobile_layout": "scroll",
         "padding_top": 0,
         "padding_bottom": 138,
-        "padding_top_mb": 38,
+        "padding_top_mb": 0,
         "padding_bottom_mb": 72
       }
     },
