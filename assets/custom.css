@@ -965,7 +965,7 @@ a.pdl__right {
 
 .product-block .product__price-note {
   font-weight: 600;
-  opacity: 0.6;
+  opacity: 0.8;
   font-size: var(--type-body-sm-size);
 }
 
