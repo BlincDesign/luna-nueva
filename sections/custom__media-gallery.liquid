@@ -291,7 +291,7 @@
       {%- endif -%}
       
       {% if content_block.settings.body != blank %}
-        <div class="media-gallery__body has-primary--font rte{% if content_block.settings.enlarge_text %} enlarge-text{% endif %}{% if content_block.settings.enable_fade %} text--faded{% endif %}">{{ content_block.settings.body }}</div>
+        <div class="media-gallery__body has-primary--font {% if content_block.settings.enlarge_text %} enlarge-text{% endif %}{% if content_block.settings.enable_fade %} text--faded{% endif %}">{{ content_block.settings.body }}</div>
       {% endif %}
       {% if content_block.settings.button_label != blank %}
         <div class="media-gallery__actions">
