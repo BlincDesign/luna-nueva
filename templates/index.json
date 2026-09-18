@@ -118,6 +118,7 @@
         "speed": 100,
         "color_background": "#d39655",
         "color_text": "#2d3135",
+        "show_border": true,
         "padding_top": 15,
         "padding_bottom": 15
       }
@@ -1046,22 +1047,12 @@
             "position": "right",
             "margin_bottom": 18
           }
-        },
-        "preheading_WXRHQg": {
-          "type": "preheading",
-          "settings": {
-            "title": "DRAG ────",
-            "enable_fade": true,
-            "position": "right",
-            "margin_bottom": 0
-          }
         }
       },
       "block_order": [
         "preheading_mwqaRw",
         "heading_XDjnmY",
-        "text_MRqmLa",
-        "preheading_WXRHQg"
+        "text_MRqmLa"
       ],
       "name": "Rich text columns",
       "settings": {
