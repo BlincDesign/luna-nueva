@@ -210,6 +210,7 @@
         "speed": 100,
         "color_background": "#2d3135",
         "color_text": "#ffffff",
+        "show_border": false,
         "padding_top": 15,
         "padding_bottom": 15
       }
