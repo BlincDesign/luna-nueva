@@ -42,7 +42,7 @@
     "type_headers_align_text": false,
     "type_base_spacing": "25",
     "type_base_accent_transform": true,
-    "type_scale_h1_desktop": 48,
+    "type_scale_h1_desktop": 62,
     "type_scale_h2_desktop": 67,
     "type_scale_h3_desktop": 48,
     "type_scale_h4_desktop": 28,
@@ -244,7 +244,7 @@
           "link_hover": "#a26b25",
           "border": "#2d31353d",
           "accent": "#9b3a15",
-          "overlay": "#F9F6F152",
+          "overlay": "#f9f6f152",
           "shadow": "#000000"
         }
       },
