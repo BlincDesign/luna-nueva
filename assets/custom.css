@@ -1412,8 +1412,7 @@ a.pdl__right {
   z-index: 0;
   pointer-events: none;
   inset: 0;
-  background: radial-gradient(76% 58% at 32% 23%,
-    rgba(255,251,242,var(--bot-key,.36)), rgba(255,251,242,var(--bot-key-mid,.13)) 50%, rgba(255,251,242,0) 78%)
+  background: radial-gradient(76% 58% at 32% 23%,    rgba(255,251,242,var(--bot-key,.15)), rgba(255,251,242,var(--bot-key-mid,.05)) 50%, rgba(255,251,242,0) 78%);
 }
 
 .starting-slide .pdp-gallery__frame {
