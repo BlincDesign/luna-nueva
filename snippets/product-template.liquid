@@ -3,6 +3,12 @@
   context - used to determine whether on the featured product or main product template
 {% endcomment %}
 
+{% style %}
+  .starting-slide::before {
+    background: {{ Product.metafields.custom.gallery_shadow | default: "radial-gradient(76% 58% at 32% 23%, rgba(255,251,242,var(--bot-key,.36)), rgba(255,251,242,var(--bot-key-mid,.13)) 50%, rgba(255,251,242,0) 78%)" }};
+  }
+{% endstyle %}
+
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
