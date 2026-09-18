@@ -1557,7 +1557,11 @@ a.pdl__right {
 }
 
 @media only screen and (min-width: 1600px) {
-    .h1, h1 {
+  body {
+        zoom: 107.4%;
+  } 
+  
+  /* .h1, h1 {
         font-size: 64px;
     }
 
@@ -1567,5 +1571,5 @@ a.pdl__right {
 
     .text-column__grid {
       gap: 26px;
-    }
+    } */
 }
