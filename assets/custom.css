@@ -334,6 +334,7 @@ strong:has(em) em {
 
 .site-nav__link .link-text {
   position: relative;
+  font-weight: 600;
 }
 
 .site-nav--has-dropdown > details[open] > summary {
