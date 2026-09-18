@@ -1091,15 +1091,17 @@
         <path d="M3.5 21h17"></path><path d="M7 21v-6.2a5 5 0 0 1 10 0V21"></path><path d="M12 9.9V3.4h5.4"></path><path d="M17.4 3.4v8.4"></path>
       </svg>
     {% when 'crescent-moon' %}
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
-        <!-- Base circle (Light Brown/Tan) -->
-        <circle cx="100" cy="100" r="100" fill="#d09c5a" />
-
-        <!-- Crescent overlay (Dark Gray) -->
-        <path d="M 100,0
-                A 100,100 0 0,1 100,200
-                A 40,100 0 0,0 100,0 Z"
-              fill="#2f3136" />
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="
+          border: 1px solid #d396551f;
+          border-radius: 100%;
+      ">
+        <defs>
+          <clipPath id="moonClip">
+            <circle cx="50" cy="50" r="50"></circle>
+          </clipPath>
+        </defs>
+        <circle cx="50" cy="50" r="50" fill="#2D3135" style="fill: #00000073;"></circle>
+        <circle cx="25" cy="45" r="45" fill="#d39655 " clip-path="url(#moonClip)"></circle>
       </svg>
     {% when 'texture' %}
       <svg viewBox="0 0 24 24">
