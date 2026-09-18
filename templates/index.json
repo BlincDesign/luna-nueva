@@ -599,63 +599,6 @@
         "padding_bottom_mb": 0
       }
     },
-    "rich_text_T7ntjy": {
-      "type": "rich-text",
-      "blocks": {
-        "text_8tMixn": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p><strong>THE MAKING</strong></p>",
-            "enable_fade": false
-          }
-        },
-        "text_MhzT48": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<h2>From the Highlands<br/>to your table.</h2>",
-            "enable_fade": false
-          }
-        },
-        "divider_tkEFq8": {
-          "type": "divider",
-          "settings": {
-            "enable_divider": true,
-            "divider_bg": "#2d31353d",
-            "divider_width": 100,
-            "divider_height": 1,
-            "enable_icon": false,
-            "icon_color": "#f9f6f1",
-            "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "icon_size": 30,
-            "margin_top": 30,
-            "margin_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "text_8tMixn",
-        "text_MhzT48",
-        "divider_tkEFq8"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.rich_text.name",
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": true,
-        "color_scheme": "scheme-6",
-        "align_text": "left",
-        "narrow_column": false,
-        "enable_max_width": false,
-        "max_width_desktop": 1000,
-        "max_width_mobile": 400,
-        "padding_top": 138,
-        "padding_bottom": 0,
-        "padding_top_mb": 72,
-        "padding_bottom_mb": 0
-      }
-    },
     "custom_rich_text_columns_n6Ddd9": {
       "type": "custom__rich-text-columns",
       "blocks": {
@@ -708,7 +651,7 @@
         "icon_backdrop_color": "#2d3135",
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
-        "padding_top": 26,
+        "padding_top": 10,
         "padding_bottom": 0,
         "padding_top_mb": 40,
         "padding_bottom_mb": 40
@@ -1493,7 +1436,6 @@
     "text_with_icons_W6xt7F",
     "custom_story_teaser_grtbFU",
     "custom_rich_text_columns_xhy9KU",
-    "rich_text_T7ntjy",
     "custom_rich_text_columns_n6Ddd9",
     "custom_image_columns_GdzTt9",
     "custom_rich_text_columns_TwtQDb",
