@@ -1,8 +1,5 @@
 {%- assign newsletter_form_id = 'newsletter-' | append: section_id -%}
 {%- form 'customer', id: newsletter_form_id -%}
-  {%- if form.posted_successfully? -%}
-    <div class="note note--success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
-  {%- endif -%}
   {%- if form.errors and form.context == snippet_context -%}
     {{ form.errors | default_errors }}
   {%- endif -%}
@@ -22,4 +19,8 @@
       </button>
     </span>
   </div>
+  
+  {%- if form.posted_successfully? -%}
+    <div class="note note--success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
+  {%- endif -%}
 {%- endform -%}
