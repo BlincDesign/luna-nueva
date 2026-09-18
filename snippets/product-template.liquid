@@ -5,7 +5,7 @@
 
 {% style %}
   .starting-slide::before {
-    background: {{ product.metafields.custom.gallery_shadow.value }};
+    background: {{ product.metafields.custom.gallery_shadow.value | default: "radial-gradient(  76% 58% at 32% 23%,  rgba(255, 251, 242, 0.36),  rgba(255, 251, 242, 0.13) 50%,  rgba(255, 251, 242, 0) 78%)" }};
   }
 {% endstyle %}
 
