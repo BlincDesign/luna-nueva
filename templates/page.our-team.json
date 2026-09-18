@@ -17,19 +17,6 @@
     "custom_rich_text_columns_V9bynk": {
       "type": "custom__rich-text-columns",
       "blocks": {
-        "text_3faXxn": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>LUNA NUEVA STORY</strong></p>",
-            "enlarge_text": false,
-            "subheading": false,
-            "enable_italic": false,
-            "enable_fade": true,
-            "enable_primary_font": false,
-            "position": "left",
-            "margin_bottom": 0
-          }
-        },
         "preheading_tcMTWe": {
           "type": "preheading",
           "settings": {
@@ -132,7 +119,6 @@
         }
       },
       "block_order": [
-        "text_3faXxn",
         "preheading_tcMTWe",
         "heading_Nn9RrG",
         "text_LbYVhx",
