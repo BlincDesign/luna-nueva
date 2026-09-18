@@ -227,7 +227,7 @@
             "divider_width": 50,
             "divider_height": 2,
             "enable_icon": true,
-            "icon_color": "#f9f6f1",
+            "icon_color": "#000000",
             "icon": "crescent-moon",
             "icon_size": 26,
             "margin_top": 30,
