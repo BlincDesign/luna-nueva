@@ -293,7 +293,7 @@
           "settings": {
             "text": "<p>Mexican regulation permits up to 1% of all four without a word on the label. We use none of them.</p>",
             "enlarge_text": false,
-            "subheading": false,
+            "subheading": true,
             "enable_italic": false,
             "enable_fade": false,
             "enable_primary_font": false,
