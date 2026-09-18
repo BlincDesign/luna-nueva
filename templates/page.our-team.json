@@ -42,6 +42,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -65,11 +66,12 @@
         "text_TiTchX": {
           "type": "text",
           "settings": {
-            "text": "<h5>Kelsey Selby came to Luna Nueva as an </h5><h5>insider to the life the brand was built for.</h5>",
+            "text": "<h4>Kelsey Selby came to Luna Nueva as an </h4><h4>insider to the life the brand was built for.</h4>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 30
           }
@@ -82,6 +84,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 20
           }
@@ -94,6 +97,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -194,6 +198,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 16
           }
@@ -206,6 +211,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 20
           }
@@ -218,6 +224,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -240,6 +247,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 16
           }
@@ -252,6 +260,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 20
           }
@@ -264,6 +273,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -324,6 +334,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -488,6 +499,7 @@
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
         "header_secondary": false,
         "stylized_bg": true,
+        "mobile_columns": "1",
         "padding_top": 86,
         "padding_bottom": 0,
         "padding_top_mb": 52,
