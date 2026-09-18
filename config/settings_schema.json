@@ -573,12 +573,6 @@
         "info": "Enter the font file name to override the body font selected above."
       },
       {
-        "type": "font_picker",
-        "id": "type_small_font_family",
-        "label": "Small font",
-        "default": "chivo_n4"
-      },
-      {
         "type": "header",
         "content": "Heading style"
       },

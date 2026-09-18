@@ -12,10 +12,6 @@
     --typeBaseLineHeight: {{ settings.type_base_line_height | default: 1.6 }};
     --typeBaseSpacing: {{ settings.type_base_spacing | default: '50' | divided_by: 1000.00 | append: 'em' }};
 
-    --typeSmallPrimary: {% if settings.custom_small_font_filename != blank %}'{{ settings.custom_small_font_filename | strip }}'{% else %}{{ settings.type_small_font_family.family }}{% endif %};
-    --typeSmallFallback: {{ settings.type_small_font_family.fallback_families }};
-    --typeSmallWeight: {{ settings.type_small_font_family.weight }};
-
     /* Centralized Typography Scale — Desktop */
     /* ========================= */
     --type-h1-size: {{ settings.type_scale_h1_desktop | default: 48 | append: 'px' }};
