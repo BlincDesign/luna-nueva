@@ -141,6 +141,11 @@
       --element-text-font-family-fallback--heading: {{ settings.type_header_font_family.fallback_families }};
       --element-text-font-weight--heading: {{ settings.type_header_font_family.weight }};
       --element-text-letter-spacing--heading: {{ settings.type_header_spacing | default: '25' | divided_by: 1000.00 | append: 'em' }};
+
+      /* Small Font Styles */
+      --element-text-font-family--small: {{ settings.type_small_font_family.family }};
+      --element-text-font-family-fallback--small: {{ settings.type_small_font_family.fallback_families }};
+      --element-text-font-weight--small: {{ settings.type_small_font_family.weight }};
       
       {% if settings.type_header_capitalize %}
       --element-text-text-transform--heading: uppercase;
