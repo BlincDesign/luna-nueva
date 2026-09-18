@@ -299,7 +299,7 @@
         "two_column_media_PArE7F": {
           "type": "two_column_media",
           "settings": {
-            "image_one": "shopify://shop_images/story-barrels-b.jpg",
+            "image_one": "shopify://shop_images/story-barrels.jpg",
             "orientation_one": "custom",
             "image_custom_size_1": 0.8,
             "caption_one": "",
