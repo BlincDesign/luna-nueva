@@ -517,51 +517,50 @@
         "padding_bottom_mb": 52
       }
     },
-    "newsletter_fR6wVJ": {
+    "newsletter_RLe89N": {
       "type": "newsletter",
       "blocks": {
-        "icon_7rgJ7g": {
+        "icon_WWRynk": {
           "type": "icon",
           "settings": {
             "icon_size": 26,
             "icon_color": "#d39655",
             "icon_box_shadow": "inset -8px -2px 0 0 #2D3135",
-            "margin_bottom": 24
+            "margin_bottom": 38
           }
         },
-        "title_8Vc9ji": {
+        "title_XKhyjT": {
           "type": "title",
           "settings": {
-            "title": "<p>Get invited to the next one.</p>",
-            "text_width": 600,
-            "margin_bottom": 24
+            "title": "<h2>Get invited to <br/>the next one.</h2>",
+            "text_width": 1000,
+            "margin_bottom": 17
           }
         },
-        "text_k3DPHY": {
+        "text_dFn8te": {
           "type": "text",
           "settings": {
             "text": "<h4>Events, new releases, and the occasional recipe worth making.</h4>",
             "enlarge_text": false,
-            "enable_fade": false,
-            "text_width": 600,
-            "margin_bottom": 24
+            "enable_fade": true,
+            "text_width": 730,
+            "margin_bottom": 36
           }
         },
-        "form_JPNDFe": {
+        "form_Lx8YfB": {
           "type": "form",
           "settings": {}
         }
       },
       "block_order": [
-        "icon_7rgJ7g",
-        "title_8Vc9ji",
-        "text_k3DPHY",
-        "form_JPNDFe"
+        "icon_WWRynk",
+        "title_XKhyjT",
+        "text_dFn8te",
+        "form_Lx8YfB"
       ],
-      "name": "t:sections.newsletter.presets.email_signup.name",
       "settings": {
         "color_scheme": "scheme-1",
-        "header_secondary": false,
+        "header_secondary": true,
         "stylized_bg": true,
         "align_text": "center",
         "image_width": "33",
@@ -583,6 +582,6 @@
     "custom_rich_text_columns_QP6dpM",
     "text_columns_k946aK",
     "rich_text_dK6AVb",
-    "newsletter_fR6wVJ"
+    "newsletter_RLe89N"
   ]
 }
