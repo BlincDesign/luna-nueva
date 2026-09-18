@@ -36,6 +36,7 @@
     "custom_header_font_filename": "AveriaSerifLibre-Regular",
     "type_base_font_family": "space_mono_n4",
     "custom_base_font_filename": "",
+    "type_small_font_family": "space_mono_n7",
     "type_header_spacing": "-25",
     "type_header_line_height": 1,
     "type_header_accent_transform": true,
