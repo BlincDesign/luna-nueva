@@ -5,7 +5,10 @@
     color: {{ section.settings.color_text }};
     padding-top: {{ section.settings.padding_top }}px !important;
     padding-bottom: {{ section.settings.padding_bottom }}px !important;
-    border: 1px solid {{ section.settings.color_text | color_modify: 'alpha', 0.2 }};
+    
+    {% if section.settings.show_border %}
+      border: 1px solid {{ section.settings.color_text | color_modify: 'alpha', 0.2 }};
+    {% endif %}
   }
   
   .scrolling-text--{{ section.id }} {
