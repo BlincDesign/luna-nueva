@@ -33,7 +33,7 @@
         "preheading_tcMTWe": {
           "type": "preheading",
           "settings": {
-            "title": "LUNA NUEVA STORY",
+            "title": "<strong>LUNA NUEVA STORY</strong>",
             "enable_fade": false,
             "position": "left",
             "margin_bottom": 18
