@@ -23,8 +23,10 @@
 
 {% stylesheet %}
 
-  .custom__zoom-in {
-      zoom: 107.4%;
+  @media screen and (min-width: 1600px) {
+    .custom__zoom-in .media-gallery__grid {
+        zoom: 107.4%;
+    }
   }
 
   .media-gallery__inner {
