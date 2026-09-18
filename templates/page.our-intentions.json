@@ -401,7 +401,7 @@
             "image_link": "shopify://pages/our-team-1",
             "subheading": "",
             "title": "",
-            "text": "<p><strong>ALSO</strong></p><h3>The Team →</h3>",
+            "text": "<p><strong>ALSO</strong></p><h3><a href=\"/pages/our-team-1\" title=\"OUR TEAM\">The Team →</a></h3>",
             "button_label": "",
             "button_link": "",
             "button_type": "primary"
