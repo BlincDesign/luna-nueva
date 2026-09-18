@@ -321,7 +321,7 @@
 
 <div
   id="custom__media-gallery-{{ section.id }}"
-  class="color-{{ section.settings.color_scheme }} media-gallery{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}"
+  class="color-{{ section.settings.color_scheme }} media-gallery{% if section.settings.stylized_bg %} background-image{% endif %}{% if section.settings.header_secondary %} section--scheme-secondary{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
 >
   <div class="media-gallery__inner{% unless section.settings.full_width %} page-width{% endunless %}{% if section.settings.flow_right and section.settings.full_width == false %} media-gallery__inner--flush-right{% endif %}">
     {{ content_markup }}
@@ -478,6 +478,11 @@
         }
       ],
       "default": "scroll"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
     },
     {
       "type": "header",
