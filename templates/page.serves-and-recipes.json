@@ -199,7 +199,6 @@
       ],
       "name": "Image columns",
       "settings": {
-        "flow_right": true,
         "color_scheme": "scheme-7",
         "header_secondary": false,
         "stylized_bg": true,
@@ -250,24 +249,10 @@
             "position": "left",
             "margin_bottom": 0
           }
-        },
-        "text_AVhb6T": {
-          "type": "text",
-          "settings": {
-            "text": "<p>DRAG ──</p>",
-            "enlarge_text": false,
-            "subheading": false,
-            "enable_italic": false,
-            "enable_fade": true,
-            "enable_primary_font": true,
-            "position": "right",
-            "margin_bottom": 0
-          }
         }
       },
       "block_order": [
-        "text_w3wmXc",
-        "text_AVhb6T"
+        "text_w3wmXc"
       ],
       "name": "Rich text columns",
       "settings": {
@@ -491,6 +476,7 @@
         "color_scheme": "scheme-ff9a9495-afd7-4695-b377-baa896234ab9",
         "header_secondary": false,
         "stylized_bg": true,
+        "mobile_columns": "1",
         "padding_top": 0,
         "padding_bottom": 40,
         "padding_top_mb": 40,
