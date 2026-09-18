@@ -51,7 +51,7 @@
           display: block;
           width: {{ block.settings.icon_size }}px;
           height: {{ block.settings.icon_size }}px;
-          color: rgba({{ block.settings.icon_color }});
+          color: rgba({{ block.settings.icon_color.red }}, {{ block.settings.icon_color.green }}, {{ block.settings.icon_color.blue }}, {{ block.settings.icon_color.alpha }} );
           background: {{ section.settings.icon_backdrop_color }};
         }
 
