@@ -553,7 +553,7 @@
 
                 {% when 'link_text' %}
                   <li
-                    class="theme-block--link_text has-primary--font"
+                    class="theme-block--link_text"
                     {{ block.shopify_attributes }}
                     style="{{ margin_bottom }}"
                   >
@@ -562,7 +562,7 @@
                     {% else %}
                       <div>
                     {% endif %}
-                    <span class="theme-block--link_text--title">{{ block.settings.title }}</span>
+                    <span class="theme-block--link_text--title has-primary--font">{{ block.settings.title }}</span>
                     {% if block.settings.subtext != blank %}
                       <span class="theme-block--link_text--subtext">{{ block.settings.subtext }}</span>
                     {% endif %}
