@@ -187,6 +187,7 @@
         },
         "text_86nrbW": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>DRAG ────</p>",
             "enlarge_text": false,
