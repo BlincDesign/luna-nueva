@@ -1043,7 +1043,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
-            "enable_primary_font": true,
+            "enable_primary_font": false,
             "position": "right",
             "margin_bottom": 18
           }
