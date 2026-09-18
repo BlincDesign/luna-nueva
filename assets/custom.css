@@ -1576,6 +1576,7 @@ a.pdl__right {
 
 @media screen and (min-width: 1700px) {
 
-Increase font sizes by 12.14% h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, label { font-size: 112.14%; } /* Increase images by 12.14% */ img { transform: scale(1.1214); }
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, label { font-size: 112.14%; }
+img { transform: scale(1.1214); }
 
 }
