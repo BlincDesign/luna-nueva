@@ -1557,9 +1557,9 @@ a.pdl__right {
 }
 
 @media only screen and (min-width: 1600px) {
-  body {
-        zoom: 107.4%;
-  } 
+  /* body {
+    zoom: 107.4%;
+  }  */
   
   /* .h1, h1 {
         font-size: 64px;
@@ -1572,4 +1572,19 @@ a.pdl__right {
     .text-column__grid {
       gap: 26px;
     } */
+}
+
+@media screen and (min-width: 1700px) {
+
+  /* Increase font sizes by 12.14% */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, button, input, textarea, label {
+    font-size: 112.14%;
+  }
+
+  /* Increase images by 12.14% */
+  img {
+    transform: scale(1.1214);
+  }
+
 }
