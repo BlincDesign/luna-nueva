@@ -345,7 +345,7 @@
         "right_text-align_mb": "left",
         "right_vertical_align": "flex-start",
         "detail_accent_color": "#d39655",
-        "icon_backdrop_color": "#2d3135",
+        "icon_backdrop_color": "rgba(0,0,0,0)",
         "detail_divider_color": "#f9f6f1",
         "custom_class": "",
         "padding_top": 88,
