@@ -240,7 +240,7 @@
         "text_w3wmXc": {
           "type": "text",
           "settings": {
-            "text": "<h1>Not every occasion calls for a drink. <em><strong>But when it does, what’s in the glass should be worth it.</strong></em></h1>",
+            "text": "<h3>Not every occasion calls for a drink. <em><strong>But when it does, what’s in the glass should be worth it.</strong></em></h3>",
             "enlarge_text": false,
             "subheading": false,
             "enable_italic": true,
@@ -375,6 +375,7 @@
         "gap": 22,
         "gap_mobile": 16,
         "mobile_layout": "scroll",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 24,
         "padding_top_mb": 0,
