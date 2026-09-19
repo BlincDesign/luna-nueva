@@ -42,6 +42,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -200,6 +201,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 30
           }
@@ -212,6 +214,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 0
           }
@@ -224,6 +227,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 20
           }
@@ -236,6 +240,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": true,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -406,6 +411,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "left",
             "margin_bottom": 40
           }
@@ -428,6 +434,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": false,
             "position": "left",
             "margin_bottom": 0
           }
@@ -500,6 +507,7 @@
             "subheading": false,
             "enable_italic": false,
             "enable_fade": false,
+            "enable_primary_font": true,
             "position": "right",
             "margin_bottom": 0
           }
@@ -704,6 +712,7 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
+        "mobile_columns": "1",
         "padding_top": 86,
         "padding_bottom": 0,
         "padding_top_mb": 52,
