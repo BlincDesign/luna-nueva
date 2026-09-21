@@ -458,16 +458,19 @@
             <div class="footer_bottom_linklist">
               <ul class="no-bullets site-footer__linklist">
                 {%- for link in footer_menu.links -%}
+                  {%- assign is_newsletter_link = false -%}
+                  {%- if link.handle contains 'newsletter' -%}
+                    {%- assign is_newsletter_link = true -%}
+                  {%- endif -%}
+
                   <li>
-                    <a
-                      data-link-handle="{{link.handle}}"
-                      href="{{ link.url }}"
-                      {% if link.handle == 'newsletter' %}
-                        data-footer-newsletter
-                      {% endif %}
-                    >
+                    {%- if is_newsletter_link -%}
+                      <a href="{{ routes.root_url }}#newsletter-redirect" data-footer-newsletter >
                       {{ link.title }}
-                    </a>
+                      </a>
+                    {%- else -%}
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    {%- endif -%}
                   </li>
                 {%- endfor -%}
               </ul>
@@ -498,28 +501,38 @@
 </footer>
 
 <script>
-  document.addEventListener('click', function (event) {
-    const link = event.target.closest('[data-footer-newsletter]');
+  (function () {
+    if (window.__footerNewsletterBound) return; // avoid duplicate listeners
+    window.__footerNewsletterBound = true;
 
-    if (!link) return;
+    var TARGET_ID = 'newsletter-redirect';
 
-    event.preventDefault();
-
-    const newsletter = document.querySelector('#newsletter-redirect');
-
-    if (newsletter) {
-      newsletter.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-      return;
+    function scrollToNewsletter() {
+      var el = document.getElementById(TARGET_ID);
+      if (!el) return false;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
     }
 
-    window.location.href = '{{ routes.root_url }}#newsletter-redirect';
-  });
-</script>
+    // Click: scroll if the section exists on this page.
+    // Otherwise let the link's href take the user to the homepage.
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('[data-footer-newsletter]');
+      if (!link) return;
 
+      if (scrollToNewsletter()) {
+        event.preventDefault();
+      }
+    });
+
+    // After landing on the homepage with the hash, scroll smoothly
+    window.addEventListener('load', function () {
+      if (window.location.hash === '#' + TARGET_ID) {
+        setTimeout(scrollToNewsletter, 150);
+      }
+    });
+  })();
+</script>
 {% schema %}
 {
   "name": "t:sections.footer.name",
