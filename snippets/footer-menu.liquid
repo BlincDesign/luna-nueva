@@ -16,7 +16,17 @@
       <div class="footer__collapsible{% unless block.settings.show_footer_title %} footer_collapsible--disabled{% endunless %}">
         <ul class="no-bullets site-footer__linklist">
           {%- for link in linklists[block.settings.menu].links -%}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- assign is_newsletter_link = false -%}
+            {%- if link.handle contains 'newsletter' or link.url contains 'newsletter' -%}
+              {%- assign is_newsletter_link = true -%}
+            {%- endif -%}
+            <li>
+              {%- if is_newsletter_link -%}
+                <a href="{{ routes.root_url }}#newsletter-redirect" data-newsletter-link>{{ link.title }}</a>
+              {%- else -%}
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              {%- endif -%}
+            </li>
           {%- endfor -%}
         </ul>
       </div>
