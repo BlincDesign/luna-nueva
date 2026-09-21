@@ -23,6 +23,10 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  #custom__image_columns-{{ section.id }} .wide-width{
+    margin-right: calc(50% - 50vw);
+  }
+
   @media only screen and (max-width: 589px) {
     #custom__image_columns-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_mb }}px;
