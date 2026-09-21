@@ -8214,34 +8214,4 @@ if (console && console.log) {
 
     document.dispatchEvent(new CustomEvent('page:loaded'));
   });
-
-
-  //redirct link
-  
-  document.addEventListener('DOMContentLoaded', function () {
-  scrollToHash();
-});
-
-window.addEventListener('load', function () {
-  scrollToHash();
-});
-
-function scrollToHash() {
-  if (!window.location.hash) return;
-
-  const hash = window.location.hash;
-
-  setTimeout(function () {
-    const target = document.querySelector(hash);
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }, 500);
-}
-
-
 })();
