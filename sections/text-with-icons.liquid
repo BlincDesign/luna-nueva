@@ -20,11 +20,18 @@
      stroke-width: {{ settings.icon_weight | replace: 'px', '' | minus: 1 }}px;
    } */
 
-   .text-with-icons__block-title * {
-    text-transform: uppercase;
-    letter-spacing: .13em;
+   #Text-with-icons-{{ section.id }} .text-with-icons__block-title * {
     margin-bottom: 13px;
+    font-size: .86rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    line-height: 1.45;
    }
+
+   #Text-with-icons-{{ section.id }} .text-with-icons__block-text p {
+      line-height: 24.072px;
+      font-size: 14px;
+  }
 
    .text-with-icons__block-icon {
     margin-bottom: 18px;
