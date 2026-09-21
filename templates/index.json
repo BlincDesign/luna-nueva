@@ -1247,7 +1247,7 @@
         "tab_inactive_text": "#2d3135",
         "tab_border_color": "#2d3135",
         "layout_type": "grid",
-        "columns": 3.5,
+        "columns": 3,
         "gap": 28,
         "gap_mb": 16,
         "padding_top": 0,
