@@ -12,6 +12,10 @@ html{
   scroll-behavior: smooth;
 }
 
+#newsletter-redirect {
+  scroll-margin-top: 100px;
+}
+
 .h1,
 h1 {
   font-size: var(--type-h1-size);
