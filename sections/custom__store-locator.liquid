@@ -154,7 +154,7 @@
   data-widget-tag="{{ section.settings.widget_tag | escape }}"
   data-anchor-id="{{ anchor_id }}"
 >
-  <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}{% unless section.settings.stockist_map %} hide_map {% endunless %}">
+  <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
 
     {%- if stats_block and stats_block.settings.show_stats -%}
       <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
@@ -201,47 +201,6 @@
 
 <script src="{{ 'custom__store-locator.js' | asset_url }}" defer="defer"></script>
 
-
-
-{%- if stockist_block -%}
-  <div class="store-locator__map" id="{{ anchor_id }}" {{ stockist_block.shopify_attributes }}>
-
-    {%- unless section.settings.stockist_map -%}
-      <script>
-        (function () {
-          if (window.__stockistHideMapPatched) return;
-          window.__stockistHideMapPatched = true;
-
-          var CSS =
-            '.stockist-map { display: none !important; }';
-
-          var sheet = null;
-          try { sheet = new CSSStyleSheet(); sheet.replaceSync(CSS); } catch (e) {}
-
-          var orig = Element.prototype.attachShadow;
-          Element.prototype.attachShadow = function (init) {
-            if (this.localName !== 'stockist-store-locator') {
-              return orig.call(this, init);
-            }
-            // Force open so we can style inside it
-            var root = orig.call(this, Object.assign({}, init, { mode: 'open' }));
-            if (sheet && 'adoptedStyleSheets' in root) {
-              root.adoptedStyleSheets = [sheet];
-            } else {
-              var s = document.createElement('style');
-              s.textContent = CSS;
-              root.appendChild(s);
-            }
-            return root;
-          };
-        })();
-      </script>
-    {%- endunless -%}
-
-    {{ stockist_block.settings.embed_code }}
-  </div>
-{%- endif -%}
-
 {% schema %}
 {
   "name": "Store Locator",
@@ -266,12 +225,6 @@
       "id": "stylized_bg",
       "label": "Enable stylized background",
       "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "stockist_map",
-      "label": "Show stockist map",
-      "default": true
     },
     {
       "type": "header",
