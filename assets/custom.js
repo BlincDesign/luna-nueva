@@ -124,28 +124,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', bindGalleryArrows);
   document.addEventListener('shopify:section:load', bindGalleryArrows);
 })();
-
-
-(()=> {
-   document.addEventListener('click', function (event) {
-    const link = event.target.closest('[data-footer-newsletter]');
-
-    if (!link) return;
-
-    const newsletter = document.querySelector('#newsletter-redirect');
-
-    if (newsletter) {
-      event.preventDefault();
-
-      newsletter.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-      return;
-    }
-
-    event.preventDefault();
-    window.location.href = '{{ routes.root_url }}#newsletter-redirect';
-  });
-})();
