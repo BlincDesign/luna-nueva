@@ -512,8 +512,30 @@
       return;
     }
 
-    window.location.href = '{{ routes.root_url }}#newsletter-redirect';
+    sessionStorage.setItem('scrollToNewsletter', 'true');
+    window.location.href = '{{ routes.root_url }}';
   });
+
+  if (sessionStorage.getItem('scrollToNewsletter') === 'true') {
+    const scrollToNewsletter = function () {
+      const newsletter = document.querySelector('#newsletter-redirect');
+
+      if (!newsletter) return;
+
+      sessionStorage.removeItem('scrollToNewsletter');
+
+      newsletter.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', scrollToNewsletter);
+    } else {
+      scrollToNewsletter();
+    }
+  }
 </script>
 {% schema %}
 {
