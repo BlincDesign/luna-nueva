@@ -497,13 +497,22 @@
   (function () {
     var KEY = 'scrollToNewsletter';
 
+    function getHeaderHeight() {
+      var header = document.querySelector('.site-header, #shopify-section-header, header');
+      return header ? header.getBoundingClientRect().height : 95;
+    }
+
     function scrollToNewsletter() {
       var el = document.getElementById('newsletter-redirect');
       if (!el) return false;
 
-      el.style.scrollMarginTop = '90px';
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      function go(behavior) {
+        var top = el.getBoundingClientRect().top + window.pageYOffset - getHeaderHeight();
+        window.scrollTo({ top: top, behavior: behavior });
+      }
 
+      go('smooth');
+      setTimeout(function () { go('auto'); }, 700); // re-align after any layout shift
       return true;
     }
 
