@@ -125,32 +125,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('shopify:section:load', bindGalleryArrows);
 })();
 
-
-(function () {
-  var KEY = 'scrollToNewsletter';
-
-  function scrollToNewsletter() {
-    var el = document.getElementById('newsletter-redirect');
-    if (!el) return false;
-
-    el.style.scrollMarginBottom = '100px';
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    return true;
-  }
-
-  document.addEventListener('click', function (event) {
-    if (!event.target.closest('[data-footer-newsletter]')) return;
-    event.preventDefault();
-
-    if (!scrollToNewsletter()) {
-      sessionStorage.setItem(KEY, '1');
-      window.location.href = '{{ routes.root_url }}';
-    }
-  });
-
-  if (sessionStorage.getItem(KEY)) {
-    sessionStorage.removeItem(KEY);
-    window.addEventListener('load', scrollToNewsletter);
-  }
-})();
