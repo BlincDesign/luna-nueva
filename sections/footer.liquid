@@ -462,7 +462,12 @@
               <ul class="no-bullets site-footer__linklist">
                 {%- for link in footer_menu.links -%}
                   <li>
-                    <a href="{{ link.url }}">
+                    <a
+                      href="{{ link.url }}"
+                      {% if link.handle == 'footer' %}
+                        data-footer-newsletter
+                      {% endif %}
+                    >
                       {{ link.title }}
                     </a>
                   </li>
