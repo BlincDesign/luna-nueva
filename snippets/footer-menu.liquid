@@ -26,10 +26,7 @@
 
             <li>
               <a
-                {% unless is_newsletter %}
-                  href="{{ link.url }}"
-                {% endunless %}
-                
+                href="{{ link.url }}"
                 {% if is_newsletter %}
                   data-footer-newsletter
                 {% endif %}
