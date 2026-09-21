@@ -592,7 +592,7 @@
   }
 {% endstylesheet %}
 
-<script>
+{% comment %} <script>
   const initTagFilter = (root) => {
     if (!root || root.dataset.tagFilterInit === 'true') return;
 
@@ -664,7 +664,7 @@
   initAllTagFilters();
 
   document.addEventListener('shopify:section:load', initAllTagFilters);
-</script>
+</script> {% endcomment %}
 
 {% schema %}
 {
