@@ -462,9 +462,15 @@
               <ul class="no-bullets site-footer__linklist">
                 {%- for link in footer_menu.links -%}
                   <li>
-                    <a href="{{ link.url }}">
-                      {{ link.title }}
-                    </a>
+                    {%- if link.handle contains 'newsletter' or link.url contains 'newsletter' -%}
+                      <a href="{{ routes.root_url }}#newsletter-redirect" data-newsletter-link>
+                        {{ link.title }}
+                      </a>
+                    {%- else -%}
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                      </a>
+                    {%- endif -%}
                   </li>
                 {%- endfor -%}
               </ul>
