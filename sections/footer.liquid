@@ -494,50 +494,31 @@
 
 
 <script>
-  document.addEventListener('click', function (event) {
-    const link = event.target.closest('[data-footer-newsletter]');
+  (function () {
+    var KEY = 'scrollToNewsletter';
 
-    if (!link) return;
-
-    event.preventDefault();
-
-    console.log("Click on newsletter");
-
-    const newsletter = document.querySelector('#newsletter-redirect');
-
-    if (newsletter) {
-      newsletter.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-      return;
+    function scrollToNewsletter() {
+      var el = document.getElementById('newsletter-redirect');
+      if (!el) return false;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
     }
 
-    sessionStorage.setItem('scrollToNewsletter', 'true');
-    window.location.href = '{{ routes.root_url }}';
-  });
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('[data-footer-newsletter]')) return;
+      event.preventDefault();
 
-  if (sessionStorage.getItem('scrollToNewsletter') === 'true') {
-    const scrollToNewsletter = function () {
-      const newsletter = document.querySelector('#newsletter-redirect');
+      if (!scrollToNewsletter()) {
+        sessionStorage.setItem(KEY, '1');
+        window.location.href = '{{ routes.root_url }}';
+      }
+    });
 
-      if (!newsletter) return;
-
-      sessionStorage.removeItem('scrollToNewsletter');
-
-      newsletter.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    };
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', scrollToNewsletter);
-    } else {
-      scrollToNewsletter();
+    if (sessionStorage.getItem(KEY)) {
+      sessionStorage.removeItem(KEY);
+      window.addEventListener('load', scrollToNewsletter);
     }
-  }
+  })();
 </script>
 {% schema %}
 {
