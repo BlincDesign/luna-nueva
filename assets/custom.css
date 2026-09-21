@@ -8,6 +8,10 @@
 
 /* Do not hardcode font sizes elsewhere in this file — use these variables/classes instead. */
 
+html{
+  scroll-behavior: smooth;
+}
+
 .h1,
 h1 {
   font-size: var(--type-h1-size);
