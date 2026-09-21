@@ -3,6 +3,11 @@
   assign columns = section.settings.columns | default: 3
   assign tablet_columns = columns
 
+    assign columns_floor = columns | floor
+  assign columns_ceil = columns | ceil
+  assign tablet_floor = tablet_columns | floor
+  assign tablet_ceil = tablet_columns | ceil
+
   if tablet_columns > 2
     assign tablet_columns = 2
   endif
@@ -51,8 +56,16 @@
     }
   }
 
-  #custom__image_columns-{{ section.id }} .image-columns__grid {
+    #custom__image_columns-{{ section.id }} .image-columns__grid {
+    {%- if columns == columns_floor %}
     grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+    {%- else %}
+    grid-template-columns: repeat(
+      {{ columns_ceil }},
+      calc((100% - {{ columns_ceil | minus: 1 }} * var(--image-columns-gap-grid)) / {{ columns }})
+    );
+    overflow: hidden;
+    {%- endif %}
   }
 
   #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
@@ -144,9 +157,17 @@
   }
 
   @media screen and (max-width: 900px) {
-    #custom__image_columns-{{ section.id }} .image-columns__grid {
-      grid-template-columns: repeat({{ tablet_columns }}, minmax(0, 1fr));
-    }
+      #custom__image_columns-{{ section.id }} .image-columns__grid {
+    {%- if columns == columns_floor %}
+    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+    {%- else %}
+    grid-template-columns: repeat(
+      {{ columns_ceil }},
+      calc((100% - {{ columns_ceil | minus: 1 }} * var(--image-columns-gap-grid)) / {{ columns }})
+    );
+    overflow: hidden;
+    {%- endif %}
+  }
 
     #custom__image_columns-{{ section.id }} .image-columns__rail .image-columns__item {
       flex-basis: calc(
