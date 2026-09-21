@@ -497,27 +497,23 @@
   (function () {
     var KEY = 'scrollToNewsletter';
 
-    function getHeaderHeight() {
-      var header = document.querySelector('.site-header, #shopify-section-header, header');
-      return header ? header.getBoundingClientRect().height : 95;
-    }
-
     function scrollToNewsletter() {
       var el = document.getElementById('newsletter-redirect');
       if (!el) return false;
 
-      function go(behavior) {
-        var top = el.getBoundingClientRect().top + window.pageYOffset - getHeaderHeight();
-        window.scrollTo({ top: top, behavior: behavior });
-      }
+      var header = document.querySelector('.site-header, #shopify-section-header, header');
+      var headerHeight = header ? header.getBoundingClientRect().height : 95;
+      var top = el.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-      go('smooth');
-      setTimeout(function () { go('auto'); }, 700); 
+      window.scrollTo({ top: top, behavior: 'smooth' });
+
       return true;
     }
 
     document.addEventListener('click', function (event) {
-      if (!event.target.closest('[data-footer-newsletter]')) return;
+      var trigger = event.target.closest('[data-footer-newsletter]');
+      if (!trigger) return;
+
       event.preventDefault();
 
       if (!scrollToNewsletter()) {
