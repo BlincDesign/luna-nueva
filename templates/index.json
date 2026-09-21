@@ -1256,6 +1256,56 @@
         "padding_bottom_mb": 72
       }
     },
+    "custom_store_locator_qiAjFb": {
+      "type": "custom__store-locator",
+      "blocks": {
+        "stats_q9D6DD": {
+          "type": "stats",
+          "settings": {
+            "show_stats": true,
+            "accounts_label": "Verified accounts",
+            "cities_label": "Cities"
+          }
+        },
+        "stockist_embed_XLNqYY": {
+          "type": "stockist_embed",
+          "settings": {
+            "embed_code": "<stockist-store-locator data-stockist-widget-tag=\"map_p3xwre6q\">\n  Loading store locator from <a href=\"https://stockist.co\">Stockist store locator</a>...\n</stockist-store-locator>\n<script async src=\"https://stockist.co/embed/v1/widget.min.js\"></script>"
+          }
+        },
+        "content_dkVcfR": {
+          "type": "content",
+          "settings": {
+            "text": "<p>Stock moves fast, so call ahead if you’re making a trip for it. Accounts marked for verification in the source list are held back until they’re confirmed.</p>"
+          }
+        },
+        "city_pills_FRyjcM": {
+          "type": "city_pills",
+          "settings": {
+            "heading": "Where It Pours",
+            "clear_label": "Clear city"
+          }
+        }
+      },
+      "block_order": [
+        "stats_q9D6DD",
+        "stockist_embed_XLNqYY",
+        "content_dkVcfR",
+        "city_pills_FRyjcM"
+      ],
+      "name": "Store Locator",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "header_secondary": false,
+        "stylized_bg": true,
+        "full_width": false,
+        "widget_tag": "map_p3xwre6q",
+        "padding_top": 138,
+        "padding_bottom": 138,
+        "padding_top_mb": 0,
+        "padding_bottom_mb": 52
+      }
+    },
     "newsletter_p6kHKC": {
       "type": "newsletter",
       "blocks": {
@@ -1331,6 +1381,7 @@
     "custom_photo_wall_zfaPtC",
     "custom_rich_text_columns_EeJbUR",
     "custom_image_columns_WKgQjK",
+    "custom_store_locator_qiAjFb",
     "newsletter_p6kHKC"
   ]
 }
