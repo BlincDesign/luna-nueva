@@ -170,67 +170,6 @@
         "padding_bottom_mb": 80
       }
     },
-    "slideshow_Gj6CyA": {
-      "type": "slideshow",
-      "blocks": {
-        "image_zBkPgJ": {
-          "type": "image",
-          "settings": {
-            "title": "Endless\npossibilities.",
-            "title_size": 80,
-            "subheading": "Bring your brand to life",
-            "enable_fade": false,
-            "link": "",
-            "link_text": "Optional button",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        },
-        "image_fBf9p9": {
-          "type": "image",
-          "settings": {
-            "title": "Two line\nslide titles.",
-            "title_size": 80,
-            "subheading": "And big, beautiful imagery",
-            "enable_fade": false,
-            "link": "",
-            "link_text": "Optional button",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_zBkPgJ",
-        "image_fBf9p9"
-      ],
-      "disabled": true,
-      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": false,
-        "section_height": "650px",
-        "mobile_height": "auto",
-        "parallax": true,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "lazyload_images": true,
-        "content_color_scheme": ""
-      }
-    },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "disabled": true,
-      "settings": {
-        "title": "Our Products",
-        "collection1": "blanco",
-        "collection2": "",
-        "per_row": 3,
-        "view_all": false,
-        "divider": false
-      }
-    },
     "custom_product_details_JbJXVn": {
       "type": "custom__product-details",
       "name": "Product Detail List",
@@ -1317,59 +1256,6 @@
         "padding_bottom_mb": 72
       }
     },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "title": "Rich text",
-            "font_size": 84,
-            "font_size_mb": 32
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Made intentionally in Jalisco, Mexico with a blend of highland and lowland agave, Luna Nueva is a traditionally crafted, additive-free tequila designed for modern rituals — gathering, hosting, and sipping with intention.</p>",
-            "enable_fade": false
-          }
-        },
-        "button_c7KAPk": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Button",
-            "button_type": "secondary",
-            "link_2": "",
-            "link_text_2": "Button",
-            "button_type_2": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button_c7KAPk"
-      ],
-      "disabled": true,
-      "settings": {
-        "header_secondary": false,
-        "stylized_bg": false,
-        "color_scheme": "scheme-2",
-        "align_text": "center",
-        "narrow_column": true,
-        "enable_max_width": false,
-        "max_width_desktop": 1000,
-        "max_width_mobile": 400,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 8
-      }
-    },
     "newsletter_p6kHKC": {
       "type": "newsletter",
       "blocks": {
@@ -1430,8 +1316,6 @@
     "custom_image_slider_with_text_fFfUKJ",
     "scrolling_text_PacCqL",
     "rich_text_VDFB8d",
-    "slideshow_Gj6CyA",
-    "featured-collection-switcher",
     "custom_product_details_JbJXVn",
     "custom_rich_text_columns_fapdXh",
     "custom_additives_table_H9ebp3",
@@ -1447,7 +1331,6 @@
     "custom_photo_wall_zfaPtC",
     "custom_rich_text_columns_EeJbUR",
     "custom_image_columns_WKgQjK",
-    "rich-text",
     "newsletter_p6kHKC"
   ]
 }
