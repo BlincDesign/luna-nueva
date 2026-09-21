@@ -1573,3 +1573,7 @@ a.pdl__right {
       gap: 26px;
     }
 }
+
+.hide_map #stockist-widget .stockist-layout-desktop.stockist-layout-results-right .stockist-map {
+    display: none !important;
+}
