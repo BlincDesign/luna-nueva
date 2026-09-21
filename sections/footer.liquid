@@ -460,7 +460,10 @@
                 {%- for link in footer_menu.links -%}
                   <li>
                     <a
-                      href="{{ link.url }}"
+                      {% unless link.handle == 'footer' %}
+                        href="{{ link.url }}"
+                      {% endunless %}
+                      
                       {% if link.handle == 'footer' %}
                         data-footer-newsletter
                       {% endif %}
