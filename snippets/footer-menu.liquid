@@ -19,18 +19,20 @@
       <div class="footer__collapsible{% unless block.settings.show_footer_title %} footer_collapsible--disabled{% endunless %}">
         <ul class="no-bullets site-footer__linklist">
           {%- for link in linklists[block.settings.menu].links -%}
+            {%- assign is_newsletter = false -%}
+            {%- if link.title contains 'newsletter' or link.title contains 'Newsletter' -%}
+              {%- assign is_newsletter = true -%}
+            {%- endif -%}
+
             <li>
-              <li>
-                <a
-                  href="{{ link.url }}"
-                  {% assign link_title = link.title | downcase %}
-                  {% if link_title contains 'newsletter' %}
-                    data-footer-newsletter
-                  {% endif %}
-                >
-                  {{ link.title }}
-                </a>
-              </li>
+              <a
+                href="{{ link.url }}"
+                {% if is_newsletter %}
+                  data-footer-newsletter
+                {% endif %}
+              >
+                {{ link.title }}
+              </a>
             </li>
           {%- endfor -%}
         </ul>

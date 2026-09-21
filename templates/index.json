@@ -1298,6 +1298,7 @@
         "color_scheme": "scheme-6",
         "header_secondary": false,
         "stylized_bg": true,
+        "stockist_map": false,
         "full_width": false,
         "widget_tag": "map_p3xwre6q",
         "padding_top": 138,
