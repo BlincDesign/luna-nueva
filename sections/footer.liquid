@@ -459,7 +459,7 @@
               <ul class="no-bullets site-footer__linklist">
                 {%- for link in footer_menu.links -%}
                   {%- assign is_newsletter_link = false -%}
-                  {%- if link.handle contains 'newsletter' -%}
+                  {%- if link.handle contains 'newsletter' or link.url contains 'newsletter-redirect' -%}
                     {%- assign is_newsletter_link = true -%}
                   {%- endif -%}
 
