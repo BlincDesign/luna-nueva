@@ -201,6 +201,59 @@
 
 <script src="{{ 'custom__store-locator.js' | asset_url }}" defer="defer"></script>
 
+
+
+{%- if stockist_block -%}
+  <div class="store-locator__map" id="{{ anchor_id }}" {{ stockist_block.shopify_attributes }}>
+
+    {%- unless section.settings.stockist_map -%}
+      <script>
+        (function () {
+          if (window.__stockistHideMapPatched) return;
+          window.__stockistHideMapPatched = true;
+
+          var CSS =
+            '.stockist-map { display: none !important; }' +
+            '.stockist-layout-desktop .stockist-result-panel {' +
+            '  grid-column: 1 / -1 !important;' +
+            '  margin: 0 !important;' +
+            '  border: 1px solid rgba(45,49,53,.24) !important;' +
+            '  border-top: 0 !important;' +
+            '  border-radius: 0 0 20px 20px !important;' +
+            '}' +
+            '.stockist-layout-desktop .stockist-result-list > ul {' +
+            '  display: grid;' +
+            '  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));' +
+            '  column-gap: 40px;' +
+            '}';
+
+          var sheet = null;
+          try { sheet = new CSSStyleSheet(); sheet.replaceSync(CSS); } catch (e) {}
+
+          var orig = Element.prototype.attachShadow;
+          Element.prototype.attachShadow = function (init) {
+            if (this.localName !== 'stockist-store-locator') {
+              return orig.call(this, init);
+            }
+            // Force open so we can style inside it
+            var root = orig.call(this, Object.assign({}, init, { mode: 'open' }));
+            if (sheet && 'adoptedStyleSheets' in root) {
+              root.adoptedStyleSheets = [sheet];
+            } else {
+              var s = document.createElement('style');
+              s.textContent = CSS;
+              root.appendChild(s);
+            }
+            return root;
+          };
+        })();
+      </script>
+    {%- endunless -%}
+
+    {{ stockist_block.settings.embed_code }}
+  </div>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Store Locator",

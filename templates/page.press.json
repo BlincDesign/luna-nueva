@@ -149,22 +149,11 @@
             "position": "left",
             "margin_bottom": 0
           }
-        },
-        "button_GRgcLc": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Copy text",
-            "button_type": "secondary",
-            "position": "right",
-            "margin_bottom": 0
-          }
         }
       },
       "block_order": [
         "preheading_jV6XD8",
-        "heading_bVDNjG",
-        "button_GRgcLc"
+        "heading_bVDNjG"
       ],
       "name": "Rich text columns",
       "settings": {
