@@ -154,7 +154,7 @@
   data-widget-tag="{{ section.settings.widget_tag | escape }}"
   data-anchor-id="{{ anchor_id }}"
 >
-  <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}{% if section.settings.stockist_map %} hide_map {% endif %}">
+  <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}{% unless section.settings.stockist_map %} hide_map {% endunless %}">
 
     {%- if stats_block and stats_block.settings.show_stats -%}
       <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
