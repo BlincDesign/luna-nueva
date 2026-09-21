@@ -22,7 +22,7 @@
             {%- endif -%}
             <li>
               {%- if is_newsletter_link -%}
-                <a href="{{ routes.root_url }}#newsletter-redirect" data-newsletter-link>{{ link.title }}</a>
+                <a href="{{ link.url }}" data-newsletter-link>{{ link.title }}</a>
               {%- else -%}
                 <a href="{{ link.url }}">{{ link.title }}</a>
               {%- endif -%}
