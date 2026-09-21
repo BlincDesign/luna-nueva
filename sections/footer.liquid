@@ -462,15 +462,9 @@
               <ul class="no-bullets site-footer__linklist">
                 {%- for link in footer_menu.links -%}
                   <li>
-                    {%- if link.handle contains 'newsletter' or link.url contains 'newsletter' -%}
-                      <a href="{{ link.url }}" data-newsletter-link>
-                        {{ link.title }}
-                      </a>
-                    {%- else -%}
-                      <a href="{{ link.url }}">
-                        {{ link.title }}
-                      </a>
-                    {%- endif -%}
+                    <a href="{{ link.url }}">
+                      {{ link.title }}
+                    </a>
                   </li>
                 {%- endfor -%}
               </ul>
@@ -498,46 +492,29 @@
   </div>
 </footer>
 
+
 <script>
-  (function () {
-    var links = document.querySelectorAll('[data-newsletter-link]');
-    if (!links.length) return;
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('[data-footer-newsletter]');
 
-    function scrollToNewsletter() {
-      var target = document.getElementById('newsletter-redirect');
-      if (!target) return false;
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return true;
+    if (!link) return;
+
+    event.preventDefault();
+
+    const newsletter = document.querySelector('#newsletter-redirect');
+
+    if (newsletter) {
+      newsletter.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      return;
     }
 
-    var STORAGE_KEY = 'scrollToNewsletter';
-
-    links.forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        // Newsletter on this page: just scroll, URL stays untouched.
-        if (scrollToNewsletter()) return;
-        // No newsletter here: go to the homepage and scroll there.
-        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-        window.location.href = '{{ routes.root_url }}';
-      });
-    });
-
-    // Arrived from another page via a newsletter link: scroll once loaded.
-    var pending = false;
-    try {
-      pending = sessionStorage.getItem(STORAGE_KEY) === '1';
-      sessionStorage.removeItem(STORAGE_KEY);
-    } catch (e) {}
-
-    if (pending) {
-      window.addEventListener('load', function () {
-        setTimeout(scrollToNewsletter, 100);
-      });
-    }
-  })();
+    window.location.href = '{{ routes.root_url }}#newsletter-redirect';
+  });
 </script>
-
 {% schema %}
 {
   "name": "t:sections.footer.name",
