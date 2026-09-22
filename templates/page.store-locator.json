@@ -85,19 +85,11 @@
     "custom_store_locator_KB7mpr": {
       "type": "custom__store-locator",
       "blocks": {
-        "heading_with_stats_PqTTrf": {
-          "type": "heading_with_stats",
-          "settings": {
-            "preheading": "Store Locator",
-            "heading": "Find a bottle near you.",
-            "show_stats": true,
-            "accounts_label": "Verified accounts",
-            "cities_label": "Cities"
-          }
-        },
         "stats_iABjeK": {
           "type": "stats",
           "settings": {
+            "preheading": "Store Locator",
+            "heading": "Find a bottle near you.",
             "show_stats": true,
             "accounts_label": "Verified accounts",
             "cities_label": "Cities"
@@ -124,7 +116,6 @@
         }
       },
       "block_order": [
-        "heading_with_stats_PqTTrf",
         "stats_iABjeK",
         "stockist_embed_bb6bcT",
         "content_9pKD8B",
