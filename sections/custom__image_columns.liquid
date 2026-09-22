@@ -795,7 +795,14 @@
     { "type": "color", "id": "tab_inactive_text", "label": "Inactive tab text", "default": "#2d3135" },
     { "type": "color", "id": "tab_border_color", "label": "Tab border color", "default": "#2d3135", "alpha": true },
 
-    { "type": "header", "content": "Layout" },
+    { "type": "header", "content": "Layout" }, 
+    {
+      "type": "checkbox",
+      "id": "wide_width",
+      "label": "Flow to right",
+      "info": "Extends the gallery to the right edge of the viewport. Only works with the slider layout.",
+      "default": false
+    },
     {
       "type": "select",
       "id": "layout_type",
