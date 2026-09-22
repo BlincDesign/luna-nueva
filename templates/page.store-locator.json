@@ -88,8 +88,8 @@
         "heading_with_stats_PqTTrf": {
           "type": "heading_with_stats",
           "settings": {
-            "preheading": "",
-            "heading": "",
+            "preheading": "Store Locator",
+            "heading": "Find a bottle near you.",
             "show_stats": true,
             "accounts_label": "Verified accounts",
             "cities_label": "Cities"
