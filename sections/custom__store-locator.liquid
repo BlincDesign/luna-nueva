@@ -150,6 +150,18 @@
     .store-locator__stats {
       gap: 24px;
     }
+    .store-locator__wrap .heading {
+        flex: 0 0 100%;
+        margin-bottom: 32px;
+    }
+
+    .store-locator__wrap:has(.heading) .store-locator__stats {
+        justify-content: flex-start;
+    }
+
+    .store-locator__wrap .heading h2 {
+        margin: 0;
+    }
   }
 {% endstylesheet %}
 
