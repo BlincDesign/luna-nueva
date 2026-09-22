@@ -20,6 +20,22 @@
 -%}
 
 {% stylesheet %}
+
+  .store-locator__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+  }
+
+  .store-locator__wrap .text {
+      flex: 0 0 50%;
+  }
+
+  .store-locator__wrap .store-locator__stats {
+      flex: 0 0 50%;
+      justify-content: flex-end;
+  }
+
   stockist-store-locator {
     background: rgba(var(--color-overlay));
     border-radius: 20px;
