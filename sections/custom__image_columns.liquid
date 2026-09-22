@@ -404,7 +404,7 @@
           </div>
         {%- endcapture -%}
 
-        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally' -%}
+        {%- render 'layout.drag-scroller', slot: rail_markup, label: 'Image columns, scroll horizontally', wide_width: section.settings.wide_width -%}
       {%- else -%}
         <div class="image-columns__grid">
           {{ blocks_markup }}

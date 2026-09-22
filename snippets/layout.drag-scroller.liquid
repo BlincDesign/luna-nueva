@@ -54,7 +54,7 @@
   }
 {% endstylesheet %}
 
-<drag-scroller tabindex="0" role="region"{% if label != blank %} aria-label="{{ label | escape }}"{% endif %} class="wide-width">
+<drag-scroller tabindex="0" role="region"{% if label != blank %} aria-label="{{ label | escape }}"{% endif %} class="{% if wide_width %} wide-width {% endif %}">
   {{ slot }}
 </drag-scroller>
 <div class="drag-scroller__bar" aria-hidden="true"><i></i></div>
