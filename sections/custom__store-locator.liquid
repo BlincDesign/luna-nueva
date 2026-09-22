@@ -27,7 +27,7 @@
       align-items: center;
   }
 
-  .store-locator__wrap .text {
+  .store-locator__wrap .heading {
       flex: 0 0 50%;
   }
 
@@ -182,9 +182,7 @@
         {%- endif -%}
         <div class="store-locator__wrap">
             {%- if stats_block.settings.heading != blank  -%}
-          <div class="text">
               <div class="heading">{{ stats_block.settings.heading }}</div>
-          </div>
             {%- endif -%}
           <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
             <div class="store-locator__stat">
