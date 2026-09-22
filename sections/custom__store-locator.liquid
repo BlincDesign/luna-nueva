@@ -155,25 +155,30 @@
   data-anchor-id="{{ anchor_id }}"
 >
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
-
     {%- if stats_block and stats_block.settings.show_stats -%}
       <div class="heading-with-stats">
-          {%- if stats_block.settings.preheading -%}
+        {%- if stats_block.settings.preheading -%}
           <p class="preheading">{{ stats_block.settings.preheading }}</p>
-          {%- endif -%}
-        <div class="text">
-          {%- if stats_block.settings.heading -%}
-          <h2 class="heading">{{ stats_block.settings.heading }}</h2>
-          {%- endif -%}
-        </div>
-        <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
-          <div class="store-locator__stat">
-            <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
-            <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
+        {%- endif -%}
+        <div class="store-locator__wrap">
+          <div class="text">
+            {%- if stats_block.settings.heading -%}
+              <h2 class="heading">{{ stats_block.settings.heading }}</h2>
+            {%- endif -%}
           </div>
-          <div class="store-locator__stat">
-            <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
-            <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
+          <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
+            <div class="store-locator__stat">
+              <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
+              <span class="store-locator__stat-label text-body-small">
+                {{- stats_block.settings.accounts_label | default: 'Verified accounts' -}}
+              </span>
+            </div>
+            <div class="store-locator__stat">
+              <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
+              <span class="store-locator__stat-label text-body-small">
+                {{- stats_block.settings.cities_label | default: 'Cities' -}}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -205,7 +210,6 @@
         <ul class="store-locator__pills" data-city-pills></ul>
       </div>
     {%- endif -%}
-
   </div>
 </div>
 
@@ -392,12 +396,7 @@
   "presets": [
     {
       "name": "Store Locator",
-      "blocks": [
-        { "type": "stats" },
-        { "type": "stockist_embed" },
-        { "type": "content" },
-        { "type": "city_pills" }
-      ]
+      "blocks": [{ "type": "stats" }, { "type": "stockist_embed" }, { "type": "content" }, { "type": "city_pills" }]
     }
   ]
 }
