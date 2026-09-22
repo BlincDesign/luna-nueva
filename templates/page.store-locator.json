@@ -89,7 +89,7 @@
           "type": "stats",
           "settings": {
             "preheading": "Store Locator",
-            "heading": "Find a bottle near you.",
+            "heading": "<h2>Find a bottle<br/>near you.</h2>",
             "show_stats": true,
             "accounts_label": "Verified accounts",
             "cities_label": "Cities"
