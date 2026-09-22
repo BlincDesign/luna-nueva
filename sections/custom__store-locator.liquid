@@ -174,7 +174,7 @@
     {%- if stats_block and stats_block.settings.show_stats -%}
       <div class="heading-with-stats">
         {%- if stats_block.settings.preheading != blank -%}
-          <p class="preheading">{{ stats_block.settings.preheading }}</p>
+          <div class="preheading">{{ stats_block.settings.preheading }}</div>
         {%- endif -%}
         <div class="store-locator__wrap">
             {%- if stats_block.settings.heading != blank  -%}
@@ -333,7 +333,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "preheading",
           "label": "Preheading"
         },
