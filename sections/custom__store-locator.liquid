@@ -158,14 +158,14 @@
 >
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
 
-  {%- if stats_block and stats_block.type == 'heading_with_stats' -%}
+  {%- if stats_block and stats_block.settings.show_stats -%}
     <div class="heading-with-stats">
     <div class="text">
-      {%- if stats_block and stats_block.settings.preheading -%}
-      <p class="preheading">Store Locator</p>
+      {%- if stats_block.settings.preheading -%}
+      <p class="preheading">{{ stats_block.settings.preheading }}</p>
       {%- endif -%}
-      {%- if stats_block and stats_block.settings.heading -%}
-      <h2 class="heading">Find a bottle near you.</h2>
+      {%- if stats_block.settings.heading -%}
+      <h2 class="heading">{{ stats_block.settings.heading }}</h2>
       {%- endif -%}
     </div>
       <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
