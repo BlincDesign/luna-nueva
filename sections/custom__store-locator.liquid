@@ -172,11 +172,11 @@
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
     {%- if stats_block and stats_block.settings.show_stats -%}
       <div class="heading-with-stats">
-        {%- if stats_block.settings.preheading -%}
+        {%- if stats_block.settings.preheading != blank -%}
           <p class="preheading">{{ stats_block.settings.preheading }}</p>
         {%- endif -%}
         <div class="store-locator__wrap">
-            {%- if stats_block.settings.heading -%}
+            {%- if stats_block.settings.heading != blank  -%}
           <div class="text">
               <h2 class="heading">{{ stats_block.settings.heading }}</h2>
           </div>
