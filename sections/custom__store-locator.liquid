@@ -31,8 +31,9 @@
       flex: 0 0 50%;
   }
 
-  .store-locator__wrap .store-locator__stats {
-      flex: 0 0 50%;
+  .store-locator__wrap:has(.text) .store-locator__stats {
+      justify-content: flex-end;
+      flex: 1 0 0;
   }
 
   stockist-store-locator {
