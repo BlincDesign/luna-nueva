@@ -5,8 +5,6 @@
   assign pills_block = null
   for block in section.blocks
     case block.type
-      when 'heading_with_stats'
-        assign stats_block = block
       when 'stats'
         assign stats_block = block
       when 'stockist_embed'
@@ -158,39 +156,25 @@
 >
   <div class="store-locator__inner{% unless section.settings.full_width %} page-width{% endunless %}">
 
-  {%- if stats_block and stats_block.settings.heading_with_stats -%}
-    <div class="heading-with-stats">
-    <div class="text">
-      {%- if stats_block.settings.preheading -%}
-      <p class="preheading">{{ stats_block.settings.preheading }}</p>
-      {%- endif -%}
-      {%- if stats_block.settings.heading -%}
-      <h2 class="heading">{{ stats_block.settings.heading }}</h2>
-      {%- endif -%}
-    </div>
-      <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
-        <div class="store-locator__stat">
-          <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
-          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
-        </div>
-        <div class="store-locator__stat">
-          <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
-          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
-        </div>
-      </div>
-    </div>
-    {%- endif -%}
-
-
     {%- if stats_block and stats_block.settings.show_stats -%}
-      <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
-        <div class="store-locator__stat">
-          <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
-          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
+      <div class="heading-with-stats">
+        <div class="text">
+          {%- if stats_block.settings.preheading -%}
+          <p class="preheading">{{ stats_block.settings.preheading }}</p>
+          {%- endif -%}
+          {%- if stats_block.settings.heading -%}
+          <h2 class="heading">{{ stats_block.settings.heading }}</h2>
+          {%- endif -%}
         </div>
-        <div class="store-locator__stat">
-          <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
-          <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
+        <div class="store-locator__stats" {{ stats_block.shopify_attributes }}>
+          <div class="store-locator__stat">
+            <span class="h3 store-locator__stat-number" data-stat="accounts">&mdash;</span>
+            <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.accounts_label | default: 'Verified accounts' }}</span>
+          </div>
+          <div class="store-locator__stat">
+            <span class="h3 store-locator__stat-number" data-stat="cities">&mdash;</span>
+            <span class="store-locator__stat-label text-body-small">{{ stats_block.settings.cities_label | default: 'Cities' }}</span>
+          </div>
         </div>
       </div>
     {%- endif -%}
@@ -324,8 +308,8 @@
   ],
   "blocks": [
     {
-      "type": "heading_with_stats",
-      "name": "Heading & accounts",
+      "type": "stats",
+      "name": "Accounts & cities",
       "limit": 1,
       "settings": [
         {
@@ -338,31 +322,6 @@
           "id": "heading",
           "label": "Heading"
         },
-        {
-          "type": "checkbox",
-          "id": "show_stats",
-          "label": "Show verified accounts and cities",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "accounts_label",
-          "label": "Accounts label",
-          "default": "Verified accounts"
-        },
-        {
-          "type": "text",
-          "id": "cities_label",
-          "label": "Cities label",
-          "default": "Cities"
-        }
-      ]
-    },
-    {
-      "type": "stats",
-      "name": "Accounts & cities",
-      "limit": 1,
-      "settings": [
         {
           "type": "checkbox",
           "id": "show_stats",
